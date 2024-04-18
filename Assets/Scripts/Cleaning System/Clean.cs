@@ -24,6 +24,11 @@ public class Clean : MonoBehaviour
         {
             if (Physics.Raycast(_camera.ScreenPointToRay(Input.mousePosition), out RaycastHit hit))
             {
+                if (hit.transform != gameObject.transform)
+                {
+                    return;
+                }
+
                 Vector2 textureCoord = hit.textureCoord;
 
                 int pixelX = (int)(textureCoord.x * _templateDirtMask.width);
@@ -36,12 +41,15 @@ public class Clean : MonoBehaviour
                         Color pixelDirt = _brush.GetPixel(x, y);
                         Color pixelDirtMask = _templateDirtMask.GetPixel(pixelX + x, pixelY + y);
 
-                        _templateDirtMask.SetPixel(pixelX + x,
-                            pixelY + y,
-                            new Color(0, pixelDirtMask.g * pixelDirt.g, 0));
+                        if (pixelX + x < _templateDirtMask.width && pixelX + x > 0)
+                        {
+                            if (pixelY + y < _templateDirtMask.height && pixelY + y > 0)
+                            {
+                                _templateDirtMask.SetPixel(pixelX + x, pixelY + y, new Color(0, pixelDirtMask.g * pixelDirt.g, 0));
+                            }
+                        }
                     }
                 }
-
                 _templateDirtMask.Apply();
             }
         }
