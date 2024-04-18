@@ -45,6 +45,7 @@ public class Clean : MonoBehaviour
                         {
                             if (pixelY + y < _templateDirtMask.height && pixelY + y > 0)
                             {
+                                //Sphere Cast clean based on its radius
                                 _templateDirtMask.SetPixel(pixelX + x, pixelY + y, new Color(0, pixelDirtMask.g * pixelDirt.g, 0));
                             }
                         }
