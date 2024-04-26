@@ -13,16 +13,24 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        float forward = inputManager.inputMaster.Movement.Forward.ReadValue<float>();
-        float right = inputManager.inputMaster.Movement.Right.ReadValue<float>();
+        Move();
+    }
 
-        Vector3 move = transform.right * right + transform.forward * forward;
+    private void Move()
+    {
+        Vector3 move = GetMoveVector3() * speed;
 
-        move *= inputManager.inputMaster.Movement.Run.ReadValue<float>() == 0 ? speed : runSpeed;
-
+        //move *= inputManager.inputMaster.Player.Run.ReadValue<float>() == 0 ? speed : runSpeed;
         rb.velocity = new Vector3(move.x, rb.velocity.y, move.z);
     }
 
+    Vector3 GetMoveVector3()
+    {
+        Vector2 forward = inputManager.inputMaster.Player.Movement.ReadValue<Vector2>();
 
+        Vector3 move = transform.right * forward.x + transform.forward * forward.y;
+
+        return move;
+    }
 
 }
