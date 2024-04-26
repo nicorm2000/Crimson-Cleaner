@@ -29,10 +29,13 @@ public class CameraLook : MonoBehaviour
         float finalXInput = isJoystickInput ? joystickX : mouseX;
         float finalYInput = isJoystickInput ? joystickY : mouseY;
 
-        xRotation -= finalYInput;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        if (Mathf.Abs(finalXInput) > 0.1f || Mathf.Abs(finalYInput) > 0.1f)
+        {
+            xRotation -= finalYInput;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        body.Rotate(Vector3.up * finalXInput);
+            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            body.Rotate(Vector3.up * finalXInput);
+        }
     }
 }

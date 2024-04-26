@@ -71,6 +71,15 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Crouch"",
+                    ""type"": ""Value"",
+                    ""id"": ""531017f7-60b1-4e26-bb2c-058bd34f3c85"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -249,6 +258,17 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""action"": ""ToggleLights"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4cd328de-070c-4af0-8b31-18b7def8d3ea"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -350,6 +370,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         m_Player_Clean = m_Player.FindAction("Clean", throwIfNotFound: true);
         m_Player_Open = m_Player.FindAction("Open", throwIfNotFound: true);
         m_Player_ToggleLights = m_Player.FindAction("ToggleLights", throwIfNotFound: true);
+        m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         // CameraLook
         m_CameraLook = asset.FindActionMap("CameraLook", throwIfNotFound: true);
         m_CameraLook_MouseX = m_CameraLook.FindAction("MouseX", throwIfNotFound: true);
@@ -422,6 +443,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Clean;
     private readonly InputAction m_Player_Open;
     private readonly InputAction m_Player_ToggleLights;
+    private readonly InputAction m_Player_Crouch;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -431,6 +453,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         public InputAction @Clean => m_Wrapper.m_Player_Clean;
         public InputAction @Open => m_Wrapper.m_Player_Open;
         public InputAction @ToggleLights => m_Wrapper.m_Player_ToggleLights;
+        public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -455,6 +478,9 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @ToggleLights.started += instance.OnToggleLights;
             @ToggleLights.performed += instance.OnToggleLights;
             @ToggleLights.canceled += instance.OnToggleLights;
+            @Crouch.started += instance.OnCrouch;
+            @Crouch.performed += instance.OnCrouch;
+            @Crouch.canceled += instance.OnCrouch;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -474,6 +500,9 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @ToggleLights.started -= instance.OnToggleLights;
             @ToggleLights.performed -= instance.OnToggleLights;
             @ToggleLights.canceled -= instance.OnToggleLights;
+            @Crouch.started -= instance.OnCrouch;
+            @Crouch.performed -= instance.OnCrouch;
+            @Crouch.canceled -= instance.OnCrouch;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -568,6 +597,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         void OnClean(InputAction.CallbackContext context);
         void OnOpen(InputAction.CallbackContext context);
         void OnToggleLights(InputAction.CallbackContext context);
+        void OnCrouch(InputAction.CallbackContext context);
     }
     public interface ICameraLookActions
     {
