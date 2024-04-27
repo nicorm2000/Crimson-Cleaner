@@ -1,53 +1,52 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Playables;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] InputManager inputManager;
-    [SerializeField] Rigidbody rb;
-    [SerializeField] float speed = 10f;
-    [SerializeField] float runSpeed = 15f;
+    [Header("SetUp")]
+    [SerializeField] private Rigidbody rigidBody;
+    [SerializeField] private Transform orientation;
 
-    private InputAction _crouchAction;
+    [Header("Movement")]
+    [SerializeField] private float speed;
+
+    private Vector3 moveDir;
+
+    private Vector2 _movementDirection;
+
+    private void OnEnable()
+    {
+        InputManager.MoveEvent += OnMove;
+    }
 
     private void OnDisable()
     {
-        _crouchAction.Disable();
+        InputManager.MoveEvent -= OnMove;
     }
 
-    private void Start()
+    private void OnValidate()
     {
-        _crouchAction = inputManager.inputMaster.Player.Crouch;
-        _crouchAction.started += ctx => StartCrouching();
-        _crouchAction.canceled += ctx => StopCrouching();
-        _crouchAction.Enable();
+        rigidBody ??= GetComponent<Rigidbody>();
     }
 
-    private void StartCrouching()
+    private void FixedUpdate()
     {
-        transform.localScale = new Vector3(1, 0.5f, 1);
+        moveDir = orientation.forward * _movementDirection.y + orientation.right * _movementDirection.x;
+
+        Vector3 velocity = new Vector3(moveDir.x * speed, rigidBody.velocity.y, moveDir.z * speed);
+
+        rigidBody.velocity = velocity;
     }
 
-    private void StopCrouching()
+    private void OnMove(Vector2 movementInput)
     {
-        transform.localScale = new Vector3(1, 1f, 1);
+        SetMovementDir(movementInput);
     }
 
-    private void Update()
+    public void SetMovementDir(Vector2 movementDirection)
     {
-        Move();
-    }
-
-    private void Move()
-    {
-        Vector3 move = GetMoveVector3() * speed;
-        rb.velocity = new Vector3(move.x, rb.velocity.y, move.z);
-    }
-
-    Vector3 GetMoveVector3()
-    {
-        Vector2 forward = inputManager.inputMaster.Player.Movement.ReadValue<Vector2>();
-        return transform.right * forward.x + transform.forward * forward.y;
+        _movementDirection = movementDirection;
     }
 }

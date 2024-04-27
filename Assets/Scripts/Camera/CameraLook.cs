@@ -1,41 +1,55 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraLook : MonoBehaviour
 {
-    [SerializeField] InputManager inputManager;
+    [SerializeField] private InputManager inputManager;
+    [SerializeField] private Transform orientation;
+
     [SerializeField] float mouseSensitivity = 25f;
     [SerializeField] float joystickSensitivity = 100f;
-    [SerializeField] Transform body;
 
     private float xRotation = 0f;
+    private float yRotation = 0f;
 
-    void Start()
+    private void OnEnable()
     {
-        Cursor.lockState = CursorLockMode.Locked;        
+        InputManager.LookEvent += OnLook;
     }
 
-    void FixedUpdate()
+    private void OnDisable()
     {
-        float mouseX = inputManager.inputMaster.CameraLook.MouseX.ReadValue<float>() * mouseSensitivity * Time.deltaTime;
-        float mouseY = inputManager.inputMaster.CameraLook.MouseY.ReadValue<float>() * mouseSensitivity * Time.deltaTime;
+        InputManager.LookEvent -= OnLook;
+    }
 
-        float joystickX = inputManager.inputMaster.CameraLook.JoystickX.ReadValue<float>() * joystickSensitivity * Time.deltaTime;
-        float joystickY = inputManager.inputMaster.CameraLook.JoystickY.ReadValue<float>() * joystickSensitivity * Time.deltaTime;
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
-        bool isJoystickInput = Mathf.Abs(joystickX) > 0.1f || Mathf.Abs(joystickY) > 0.1f;
+    private void OnLook(Vector2 cameraInput)
+    {
+        ProcessLook(cameraInput);
+    }
 
-        float finalXInput = isJoystickInput ? joystickX : mouseX;
-        float finalYInput = isJoystickInput ? joystickY : mouseY;
+    public void ProcessLook(Vector2 cameraInput)
+    {
+        Vector2 joystick = inputManager.inputMaster.Player.LookController.ReadValue<Vector2>() * joystickSensitivity * Time.deltaTime;
 
-        if (Mathf.Abs(finalXInput) > 0.1f || Mathf.Abs(finalYInput) > 0.1f)
-        {
-            xRotation -= finalYInput;
-            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        bool isJoystickInput = Mathf.Abs(joystick.x) > 0.1f || Mathf.Abs(joystick.y) > 0.1f;
 
-            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-            body.Rotate(Vector3.up * finalXInput);
-        }
+        float sensX = isJoystickInput ? joystickSensitivity : mouseSensitivity;
+        float sensY = isJoystickInput ? joystickSensitivity : mouseSensitivity;
+
+
+        float mouseX = cameraInput.x * Time.deltaTime * sensX;
+        float mouseY = cameraInput.y * Time.deltaTime * sensY;
+
+        yRotation += mouseX;
+
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+        orientation.rotation = Quaternion.Euler(0, yRotation, 0);
     }
 }

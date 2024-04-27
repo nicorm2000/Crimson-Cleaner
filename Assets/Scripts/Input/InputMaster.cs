@@ -28,9 +28,27 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             ""id"": ""5db76ec4-680c-4bd6-a9d2-9b257493d4f4"",
             ""actions"": [
                 {
-                    ""name"": ""Movement"",
+                    ""name"": ""Move"",
                     ""type"": ""Value"",
                     ""id"": ""70799dc0-314b-4f28-8031-55897c0b484f"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""LookMouse"",
+                    ""type"": ""Value"",
+                    ""id"": ""5d8dd195-d62f-433a-abd7-120aa15b7a3a"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""LookController"",
+                    ""type"": ""Value"",
+                    ""id"": ""ff6538d7-4b0f-4a70-b5c5-197104113908"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -84,13 +102,13 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""2D Vector"",
+                    ""name"": ""WASD"",
                     ""id"": ""511b015c-63d7-482f-b012-bb3693b253ce"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""Move"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -101,7 +119,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -112,7 +130,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -123,7 +141,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -134,64 +152,31 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""75feff6f-ad4f-4cab-9818-06382ebd8b1f"",
-                    ""path"": ""2DVector"",
+                    ""name"": """",
+                    ""id"": ""cd1b05a7-6ef2-4395-8984-16b846df05a5"",
+                    ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": true,
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""3bee61c0-c26d-4daa-86f8-3a56faad13a6"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""name"": """",
+                    ""id"": ""c2987b70-51d9-49c4-a6ab-ea0350da7e2f"",
+                    ""path"": ""<DualShockGamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""552f138c-e1ec-4010-926b-b20ba561a060"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""a96a6940-e51a-42ed-ac30-d5d3a0637ec1"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""6aa80f4b-ff9b-4be6-bc99-4d3639a43545"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -269,92 +254,37 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""action"": ""Crouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""CameraLook"",
-            ""id"": ""959c28ec-4013-4fa9-8dfe-a6d31822437d"",
-            ""actions"": [
-                {
-                    ""name"": ""MouseX"",
-                    ""type"": ""Value"",
-                    ""id"": ""71c21d37-702b-4245-affb-a5b5409cf3a4"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
                 },
-                {
-                    ""name"": ""MouseY"",
-                    ""type"": ""Value"",
-                    ""id"": ""60b6869c-eb7f-4934-92d4-9790144de946"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""JoystickX"",
-                    ""type"": ""Value"",
-                    ""id"": ""027163dd-7d68-4fe2-aaf3-83a39a301a24"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""JoystickY"",
-                    ""type"": ""Value"",
-                    ""id"": ""dfc48efe-9a58-4774-87c4-6893694831d9"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                }
-            ],
-            ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""bfd0cfa1-a661-4969-806b-d42b75f56d11"",
-                    ""path"": ""<Mouse>/delta/x"",
+                    ""id"": ""8df82dce-2103-4ef2-9416-79eb6a507395"",
+                    ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MouseX"",
+                    ""action"": ""LookMouse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""3c5f1e86-910e-4f92-8e2b-ab33e331f829"",
-                    ""path"": ""<Mouse>/delta/y"",
+                    ""id"": ""9feb2e72-56f6-4ea5-bbd1-4a5a1f8318b7"",
+                    ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MouseY"",
+                    ""action"": ""LookController"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""8aa9e719-e51b-4cf0-a31a-ea587d5e66c2"",
-                    ""path"": ""<Gamepad>/rightStick/x"",
+                    ""id"": ""c8642762-cc30-4750-8d23-e0167950a713"",
+                    ""path"": ""<DualShockGamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""JoystickX"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c38fd8f0-668b-4443-bfaa-1c6913e47178"",
-                    ""path"": ""<Gamepad>/rightStick/y"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""JoystickY"",
+                    ""action"": ""LookController"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -365,18 +295,14 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
+        m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
+        m_Player_LookMouse = m_Player.FindAction("LookMouse", throwIfNotFound: true);
+        m_Player_LookController = m_Player.FindAction("LookController", throwIfNotFound: true);
         m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
         m_Player_Clean = m_Player.FindAction("Clean", throwIfNotFound: true);
         m_Player_Open = m_Player.FindAction("Open", throwIfNotFound: true);
         m_Player_ToggleLights = m_Player.FindAction("ToggleLights", throwIfNotFound: true);
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
-        // CameraLook
-        m_CameraLook = asset.FindActionMap("CameraLook", throwIfNotFound: true);
-        m_CameraLook_MouseX = m_CameraLook.FindAction("MouseX", throwIfNotFound: true);
-        m_CameraLook_MouseY = m_CameraLook.FindAction("MouseY", throwIfNotFound: true);
-        m_CameraLook_JoystickX = m_CameraLook.FindAction("JoystickX", throwIfNotFound: true);
-        m_CameraLook_JoystickY = m_CameraLook.FindAction("JoystickY", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -438,7 +364,9 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
-    private readonly InputAction m_Player_Movement;
+    private readonly InputAction m_Player_Move;
+    private readonly InputAction m_Player_LookMouse;
+    private readonly InputAction m_Player_LookController;
     private readonly InputAction m_Player_Run;
     private readonly InputAction m_Player_Clean;
     private readonly InputAction m_Player_Open;
@@ -448,7 +376,9 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
     {
         private @InputMaster m_Wrapper;
         public PlayerActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Movement => m_Wrapper.m_Player_Movement;
+        public InputAction @Move => m_Wrapper.m_Player_Move;
+        public InputAction @LookMouse => m_Wrapper.m_Player_LookMouse;
+        public InputAction @LookController => m_Wrapper.m_Player_LookController;
         public InputAction @Run => m_Wrapper.m_Player_Run;
         public InputAction @Clean => m_Wrapper.m_Player_Clean;
         public InputAction @Open => m_Wrapper.m_Player_Open;
@@ -463,9 +393,15 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
-            @Movement.started += instance.OnMovement;
-            @Movement.performed += instance.OnMovement;
-            @Movement.canceled += instance.OnMovement;
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
+            @LookMouse.started += instance.OnLookMouse;
+            @LookMouse.performed += instance.OnLookMouse;
+            @LookMouse.canceled += instance.OnLookMouse;
+            @LookController.started += instance.OnLookController;
+            @LookController.performed += instance.OnLookController;
+            @LookController.canceled += instance.OnLookController;
             @Run.started += instance.OnRun;
             @Run.performed += instance.OnRun;
             @Run.canceled += instance.OnRun;
@@ -485,9 +421,15 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
 
         private void UnregisterCallbacks(IPlayerActions instance)
         {
-            @Movement.started -= instance.OnMovement;
-            @Movement.performed -= instance.OnMovement;
-            @Movement.canceled -= instance.OnMovement;
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
+            @LookMouse.started -= instance.OnLookMouse;
+            @LookMouse.performed -= instance.OnLookMouse;
+            @LookMouse.canceled -= instance.OnLookMouse;
+            @LookController.started -= instance.OnLookController;
+            @LookController.performed -= instance.OnLookController;
+            @LookController.canceled -= instance.OnLookController;
             @Run.started -= instance.OnRun;
             @Run.performed -= instance.OnRun;
             @Run.canceled -= instance.OnRun;
@@ -520,90 +462,15 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
-
-    // CameraLook
-    private readonly InputActionMap m_CameraLook;
-    private List<ICameraLookActions> m_CameraLookActionsCallbackInterfaces = new List<ICameraLookActions>();
-    private readonly InputAction m_CameraLook_MouseX;
-    private readonly InputAction m_CameraLook_MouseY;
-    private readonly InputAction m_CameraLook_JoystickX;
-    private readonly InputAction m_CameraLook_JoystickY;
-    public struct CameraLookActions
-    {
-        private @InputMaster m_Wrapper;
-        public CameraLookActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
-        public InputAction @MouseX => m_Wrapper.m_CameraLook_MouseX;
-        public InputAction @MouseY => m_Wrapper.m_CameraLook_MouseY;
-        public InputAction @JoystickX => m_Wrapper.m_CameraLook_JoystickX;
-        public InputAction @JoystickY => m_Wrapper.m_CameraLook_JoystickY;
-        public InputActionMap Get() { return m_Wrapper.m_CameraLook; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(CameraLookActions set) { return set.Get(); }
-        public void AddCallbacks(ICameraLookActions instance)
-        {
-            if (instance == null || m_Wrapper.m_CameraLookActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_CameraLookActionsCallbackInterfaces.Add(instance);
-            @MouseX.started += instance.OnMouseX;
-            @MouseX.performed += instance.OnMouseX;
-            @MouseX.canceled += instance.OnMouseX;
-            @MouseY.started += instance.OnMouseY;
-            @MouseY.performed += instance.OnMouseY;
-            @MouseY.canceled += instance.OnMouseY;
-            @JoystickX.started += instance.OnJoystickX;
-            @JoystickX.performed += instance.OnJoystickX;
-            @JoystickX.canceled += instance.OnJoystickX;
-            @JoystickY.started += instance.OnJoystickY;
-            @JoystickY.performed += instance.OnJoystickY;
-            @JoystickY.canceled += instance.OnJoystickY;
-        }
-
-        private void UnregisterCallbacks(ICameraLookActions instance)
-        {
-            @MouseX.started -= instance.OnMouseX;
-            @MouseX.performed -= instance.OnMouseX;
-            @MouseX.canceled -= instance.OnMouseX;
-            @MouseY.started -= instance.OnMouseY;
-            @MouseY.performed -= instance.OnMouseY;
-            @MouseY.canceled -= instance.OnMouseY;
-            @JoystickX.started -= instance.OnJoystickX;
-            @JoystickX.performed -= instance.OnJoystickX;
-            @JoystickX.canceled -= instance.OnJoystickX;
-            @JoystickY.started -= instance.OnJoystickY;
-            @JoystickY.performed -= instance.OnJoystickY;
-            @JoystickY.canceled -= instance.OnJoystickY;
-        }
-
-        public void RemoveCallbacks(ICameraLookActions instance)
-        {
-            if (m_Wrapper.m_CameraLookActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        public void SetCallbacks(ICameraLookActions instance)
-        {
-            foreach (var item in m_Wrapper.m_CameraLookActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_CameraLookActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    public CameraLookActions @CameraLook => new CameraLookActions(this);
     public interface IPlayerActions
     {
-        void OnMovement(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
+        void OnLookMouse(InputAction.CallbackContext context);
+        void OnLookController(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
         void OnClean(InputAction.CallbackContext context);
         void OnOpen(InputAction.CallbackContext context);
         void OnToggleLights(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
-    }
-    public interface ICameraLookActions
-    {
-        void OnMouseX(InputAction.CallbackContext context);
-        void OnMouseY(InputAction.CallbackContext context);
-        void OnJoystickX(InputAction.CallbackContext context);
-        void OnJoystickY(InputAction.CallbackContext context);
     }
 }
