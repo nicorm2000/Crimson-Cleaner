@@ -12,42 +12,38 @@ public class LightSwitch : MonoBehaviour
     [SerializeField] private GameObject[] lightsObject = null;
 
     private bool _lightsAreOn;
-    private bool _lightsAreOff;
 
-    private InputAction _toggleAction;
-
-    private void Start()
+    private void OnEnable()
     {
-        _lightsAreOn = false;
-        _lightsAreOff = true;
-        lightOn.SetActive(false);
-        lightOff.SetActive(true);
-
-        _toggleAction = inputManager.inputMaster.Player.ToggleLights;
-        _toggleAction.performed += ctx => ToggleLights();
-        _toggleAction.Enable();
+        inputManager.ToggleLightsEvent += ToggleLights;
     }
 
     private void OnDisable()
     {
-        _toggleAction.Disable();
+        inputManager.ToggleLightsEvent -= ToggleLights;
+    }
+
+    private void Start()
+    {
+        lightOn.SetActive(false);
+        lightOff.SetActive(true);
+        _lightsAreOn = lightOn.activeSelf;
     }
 
     private void ToggleLights()
     {
         _lightsAreOn = !_lightsAreOn;
-        _lightsAreOff = !_lightsAreOff;
-
-        IterateThroughLights(_lightsAreOn);
-        lightOn.SetActive(_lightsAreOn);
-        lightOff.SetActive(_lightsAreOff);
+        SetLightsState(_lightsAreOn);
     }
 
-    private void IterateThroughLights(bool value)
+    private void SetLightsState(bool lightsOn)
     {
-        for (int i = 0; i < lightsObject.Length; i++)
+        foreach (var lightObj in lightsObject)
         {
-            lightsObject[i].SetActive(value);
+            lightObj.SetActive(lightsOn);
         }
+
+        lightOn.SetActive(lightsOn);
+        lightOff.SetActive(!lightsOn);
     }
 }

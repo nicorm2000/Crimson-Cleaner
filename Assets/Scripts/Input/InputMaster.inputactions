@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "LookMouse",
+                    "name": "Look",
                     "type": "Value",
                     "id": "5d8dd195-d62f-433a-abd7-120aa15b7a3a",
                     "expectedControlType": "Vector2",
@@ -70,12 +70,12 @@
                 },
                 {
                     "name": "Crouch",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "531017f7-60b1-4e26-bb2c-058bd34f3c85",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -240,7 +240,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "LookMouse",
+                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

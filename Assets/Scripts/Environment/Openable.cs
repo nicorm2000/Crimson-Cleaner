@@ -12,19 +12,19 @@ public class Openable : MonoBehaviour
 
     private readonly string _openableOpen = "Open";
 
-    private InputAction _openAction;
-
-    private void Start()
+    private void OnEnable()
     {
-        _openableAnimator = GetComponent<Animator>();
-        _openAction = inputManager.inputMaster.Player.Open;
-        _openAction.performed += ctx => ToggleObjectState();
-        _openAction.Enable();
+        inputManager.OpenEvent += ToggleObjectState;
     }
 
     private void OnDisable()
     {
-        _openAction.Disable();
+        inputManager.OpenEvent -= ToggleObjectState;
+    }
+
+    private void Start()
+    {
+        _openableAnimator = GetComponent<Animator>();
     }
 
     private void ToggleObjectState()

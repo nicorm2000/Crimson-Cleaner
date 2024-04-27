@@ -37,7 +37,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""LookMouse"",
+                    ""name"": ""Look"",
                     ""type"": ""Value"",
                     ""id"": ""5d8dd195-d62f-433a-abd7-120aa15b7a3a"",
                     ""expectedControlType"": ""Vector2"",
@@ -92,12 +92,12 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Crouch"",
-                    ""type"": ""Value"",
+                    ""type"": ""Button"",
                     ""id"": ""531017f7-60b1-4e26-bb2c-058bd34f3c85"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -262,7 +262,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""LookMouse"",
+                    ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -296,7 +296,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
-        m_Player_LookMouse = m_Player.FindAction("LookMouse", throwIfNotFound: true);
+        m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_LookController = m_Player.FindAction("LookController", throwIfNotFound: true);
         m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
         m_Player_Clean = m_Player.FindAction("Clean", throwIfNotFound: true);
@@ -365,7 +365,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Move;
-    private readonly InputAction m_Player_LookMouse;
+    private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_LookController;
     private readonly InputAction m_Player_Run;
     private readonly InputAction m_Player_Clean;
@@ -377,7 +377,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         private @InputMaster m_Wrapper;
         public PlayerActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
-        public InputAction @LookMouse => m_Wrapper.m_Player_LookMouse;
+        public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @LookController => m_Wrapper.m_Player_LookController;
         public InputAction @Run => m_Wrapper.m_Player_Run;
         public InputAction @Clean => m_Wrapper.m_Player_Clean;
@@ -396,9 +396,9 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
-            @LookMouse.started += instance.OnLookMouse;
-            @LookMouse.performed += instance.OnLookMouse;
-            @LookMouse.canceled += instance.OnLookMouse;
+            @Look.started += instance.OnLook;
+            @Look.performed += instance.OnLook;
+            @Look.canceled += instance.OnLook;
             @LookController.started += instance.OnLookController;
             @LookController.performed += instance.OnLookController;
             @LookController.canceled += instance.OnLookController;
@@ -424,9 +424,9 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
-            @LookMouse.started -= instance.OnLookMouse;
-            @LookMouse.performed -= instance.OnLookMouse;
-            @LookMouse.canceled -= instance.OnLookMouse;
+            @Look.started -= instance.OnLook;
+            @Look.performed -= instance.OnLook;
+            @Look.canceled -= instance.OnLook;
             @LookController.started -= instance.OnLookController;
             @LookController.performed -= instance.OnLookController;
             @LookController.canceled -= instance.OnLookController;
@@ -465,7 +465,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
     public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
-        void OnLookMouse(InputAction.CallbackContext context);
+        void OnLook(InputAction.CallbackContext context);
         void OnLookController(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
         void OnClean(InputAction.CallbackContext context);

@@ -1,54 +1,102 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 
 public class InputManager : MonoBehaviour
 {
-    public InputMaster inputMaster;
+    [SerializeField] private bool shouldHideCursor;
 
-    public static event Action<Vector2> LookEvent;
-    public static event Action<Vector2> MoveEvent;
+    private PlayerInput playerinput;
 
-    private Vector2 lookInput;
+    public Vector2 Move { get; private set; }
+    public Vector2 Look { get; private set; }
+    public bool Crouch { get; private set; }
+
+    private InputActionMap currentMap;
+    private InputAction moveAction;
+    private InputAction lookAction;
+    private InputAction lightSwitchAction;
+    private InputAction openAction;
+    private InputAction cleanAction;
+    private InputAction crouchAction;
+
+    public event Action OpenEvent;
+    public event Action ToggleLightsEvent;
+    public event Action<bool> CleanEvent;
 
     private void Awake()
     {
-        inputMaster = new InputMaster();
+        playerinput = GetComponent<PlayerInput>();
+        currentMap = playerinput.currentActionMap;
+        moveAction = currentMap.FindAction("Move");
+        lookAction = currentMap.FindAction("Look");
+        lightSwitchAction = currentMap.FindAction("ToggleLights");
+        openAction = currentMap.FindAction("Open");
+        cleanAction = currentMap.FindAction("Clean");
+        crouchAction = currentMap.FindAction("Crouch");
+
+        moveAction.performed += OnMove;
+        lookAction.performed += OnLook;
+        crouchAction.performed += OnCrouch;
+        openAction.performed += OnOpen;
+        cleanAction.started += ctx => OnClean(true);
+        lightSwitchAction.performed += ctx => OnToggleLights();
+
+        moveAction.canceled += OnMove;
+        lookAction.canceled += OnLook;
+        crouchAction.canceled += OnCrouch;
+        //lightSwitchAction.canceled += OnToggleLights;
+        //openAction.canceled += OnOpen;
+        cleanAction.canceled += ctx => OnClean(false);
+        //lightSwitchAction.canceled += ctx => OnToggleLights(ctx);
+
+        if (shouldHideCursor) HideCursor();
     }
 
     private void OnEnable()
     {
-        inputMaster.Enable();
+        currentMap.Enable();
     }
 
     private void OnDisable()
     {
-        inputMaster.Disable();
+        currentMap.Disable();
     }
 
-    private void Update()
+    private void HideCursor()
     {
-        if (lookInput.magnitude > 0)
-            LookEvent?.Invoke(lookInput);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void OnMove(InputValue context)
+    private void OnMove(InputAction.CallbackContext context)
     {
-        var movementInput = context.Get<Vector2>();
-
-        MoveEvent?.Invoke(movementInput);
+        Move = context.ReadValue<Vector2>();
     }
 
-    public void OnLookMouse(InputValue context)
+    private void OnLook(InputAction.CallbackContext context)
     {
-        var lookInput = context.Get<Vector2>();
-        LookEvent?.Invoke(lookInput);
+        Look = context.ReadValue<Vector2>();
     }
 
-    public void OnLookController(InputValue context)
+    private void OnCrouch(InputAction.CallbackContext context)
     {
-        lookInput = context.Get<Vector2>();
+        Crouch = context.ReadValueAsButton();
     }
 
+    private void OnToggleLights()
+    {
+        ToggleLightsEvent?.Invoke();
+    }
 
+    private void OnOpen(InputAction.CallbackContext context)
+    {
+        OpenEvent?.Invoke();
+    }
+    
+    private void OnClean(bool isCleaning)
+    {
+        CleanEvent?.Invoke(isCleaning);
+    }
 }
