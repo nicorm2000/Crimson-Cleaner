@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Threading;
+using UnityEngine.Rendering;
 
 public class Clean : MonoBehaviour
 {
@@ -37,21 +38,6 @@ public class Clean : MonoBehaviour
 
     private void Start()
     {
-        //_brushPixels = new byte[256][];
-        //
-        //for (int i = 0; i < _brushPixels.Length; i++)
-        //{
-        //    _brushPixels[i] = new byte[256];
-        //}
-        //
-        //
-        //for (int i = 0; i < _brush.width; i++)
-        //{
-        //    for (int j = 0; j < _brush.height; j++)
-        //    {
-        //        _brushPixels[i][j] = (byte)_brush.GetPixel(i,j).grayscale;
-        //    }
-        //}
 
         CreateTexture();
     }
@@ -97,60 +83,6 @@ public class Clean : MonoBehaviour
         isCleaning = false;
     }
 
-    //private void CleanSurface()
-    //{
-    //    Vector3 mousePosition = Mouse.current.position.ReadValue();
-    //    if (Physics.Raycast(_camera.ScreenPointToRay(mousePosition), out RaycastHit hit, raycastDistance))
-    //    {
-    //        if (hit.transform != gameObject.transform)
-    //        {
-    //            return;
-    //        }
-    //
-    //        Vector2 textureCoord = hit.textureCoord;
-    //        int pixelX = (int)(textureCoord.x * _templateDirtMask.width);
-    //        int pixelY = (int)(textureCoord.y * _templateDirtMask.height);
-    //
-    //        // Define chunk size
-    //        int chunkSizeX = _brush.width / System.Environment.ProcessorCount;
-    //        int chunkSizeY = _brush.height / System.Environment.ProcessorCount;
-    //
-    //        // Clean chunks using ThreadPool
-    //        for (int i = 0; i < System.Environment.ProcessorCount; i++)
-    //        {
-    //            int startX = i * chunkSizeX;
-    //            int endX = Mathf.Min((i + 1) * chunkSizeX, _brush.width);
-    //            int startY = 0;
-    //            int endY = _brush.height;
-    //
-    //            ThreadPool.QueueUserWorkItem(state => CleanChunk(startX, endX, startY, endY, pixelX, pixelY));
-    //        }
-    //
-    //        // Wait for all threads to finish (optional)
-    //        // Thread.Sleep(1000); // Sleep for 1 second (or any other desired delay)
-    //        // _templateDirtMask.Apply(); // Apply changes after threads complete (if necessary)
-    //    }
-    //}
-    //
-    //private void CleanChunk(int startX, int endX, int startY, int endY, int pixelX, int pixelY)
-    //{
-    //    for (int x = startX; x < endX; x++)
-    //    {
-    //        for (int y = startY; y < endY; y++)
-    //        {
-    //            Color pixelDirt = _brush.GetPixel(x, y);
-    //            Color pixelDirtMask = _templateDirtMask.GetPixel(pixelX + x, pixelY + y);
-    //
-    //            if (pixelX + x < _templateDirtMask.width && pixelX + x > 0 &&
-    //                pixelY + y < _templateDirtMask.height && pixelY + y > 0)
-    //            {
-    //                _templateDirtMask.SetPixel(pixelX + x, pixelY + y, new Color(0, pixelDirtMask.g * pixelDirt.g, 0));
-    //            }
-    //        }
-    //    }
-    //    _templateDirtMask.Apply();
-    //}
-
     private void CleanSurface()
     {
         Vector3 mousePosition = Mouse.current.position.ReadValue();
@@ -165,18 +97,23 @@ public class Clean : MonoBehaviour
             int pixelX = (int)(textureCoord.x * _templateDirtMask.width);
             int pixelY = (int)(textureCoord.y * _templateDirtMask.height);
 
+            Unity.Collections.NativeArray<Color32> data = _templateDirtMask.GetRawTextureData<Color32>();
+
+            Unity.Collections.NativeArray<Color32> brushData = _brush.GetRawTextureData<Color32>();
 
             for (int x = 0; x < _brush.width; x++)
             {
                 for (int y = 0; y < _brush.height; y++)
                 {
-                    Color pixelDirt = _brush.GetPixel(x, y);
-                    Color pixelDirtMask = _templateDirtMask.GetPixel(pixelX + x, pixelY + y);
+                    //_templateDirtMask.GetPixel(pixelX + x, pixelY + y);
+                    Color32 pixelDirt = brushData[_brush.width * y + x];
+                    Color32 pixelDirtMask = data[_templateDirtMask.width * y + x];
 
                     if (pixelX + x < _templateDirtMask.width && pixelX + x > 0 &&
                         pixelY + y < _templateDirtMask.height && pixelY + y > 0)
                     {
-                        _templateDirtMask.SetPixel(pixelX + x, pixelY + y, new Color(0, pixelDirtMask.g * pixelDirt.g, 0));
+                        data[_templateDirtMask.width * y + x] = new Color32(0, (byte)(int)(pixelDirtMask.g * pixelDirt.g * 255), 0, 0);
+                        //_templateDirtMask.SetPixel(pixelX + x, pixelY + y, new Color(0, pixelDirtMask.g * pixelDirt.g, 0));
                     }
                 }
             }
