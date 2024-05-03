@@ -1,58 +1,48 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System.Threading;
 
 public class Clean : MonoBehaviour
 {
-    [SerializeField] private Camera _camera;
-    [SerializeField] private Animator animator;
-
-    [SerializeField] private Texture2D _dirtMaskBase;
-    [SerializeField] private Texture2D _brush;
-
-    [SerializeField] private Material _material;
-
-    [SerializeField] private InputManager inputManager;
+    [Header("Config")]
+    [SerializeField] private Material cleanMaterial;
     [SerializeField] private float raycastDistance;
 
-    private Texture2D _templateDirtMask;
+    private bool _isCleaning = false;
 
-    private bool isCleaning = false;
+    private float _alphaPercentage = 1.0f;
+
+    private Coroutine _coroutine = null;
 
     private void OnEnable()
     {
-        inputManager.CleanEvent += HandleCleanEvent;
+        CleaningManager.Instance.GetInputManager().CleanEvent += HandleCleanEvent;
     }
 
     private void OnDisable()
     {
-        inputManager.CleanEvent -= HandleCleanEvent;
+        CleaningManager.Instance.GetInputManager().CleanEvent -= HandleCleanEvent;
+        StopCleaning();
+    }
+
+    private void OnDestroy()
+    {
+
+        CleaningManager.Instance.GetInputManager().CleanEvent -= HandleCleanEvent;
         StopCleaning();
     }
 
     private void Start()
     {
-        CreateTexture();
+        UpdateAlpha(_alphaPercentage);
     }
 
     private void Update()
     {
-        if (isCleaning)
+        if (_isCleaning)
         {
             CleanSurface();
         }
-    }
-
-    private void CreateTexture()
-    {
-        _templateDirtMask = new Texture2D(_dirtMaskBase.width, _dirtMaskBase.height);
-        _templateDirtMask.SetPixels(_dirtMaskBase.GetPixels());
-        _templateDirtMask.Apply();
-
-        _material.SetTexture("DirtMask", _templateDirtMask);
     }
 
     private void HandleCleanEvent(bool startCleaning)
@@ -60,55 +50,87 @@ public class Clean : MonoBehaviour
         if (startCleaning)
         {
             StartCleaning();
-            animator.SetBool("Cleaning", true);
+            CleaningManager.Instance.GetPlayerAnimator().SetBool("Cleaning", true);
         }
         else
         {
             StopCleaning();
-            animator.SetBool("Cleaning", false);
+            CleaningManager.Instance.GetPlayerAnimator().SetBool("Cleaning", false);
         }
     }
 
     private void StartCleaning()
     {
-        isCleaning = true;
+        _isCleaning = true;
     }
 
     private void StopCleaning()
     {
-        isCleaning = false;
+        _isCleaning = false;
+    }
+
+    private IEnumerator CleaningCoroutine()
+    {
+        _alphaPercentage = 0.66f;
+
+        while (_isCleaning) //Evil While WARNING
+        {
+            switch (_alphaPercentage)
+            {
+                case 0.66f:
+                    Debug.Log("Updating Alpha 1");
+                    _alphaPercentage = 0.66f;
+                    UpdateAlpha(_alphaPercentage);
+                    yield return new WaitForSeconds(1.0f);
+                    if (_isCleaning)
+                    {
+                        _alphaPercentage = 0.33f;
+                    }
+                    break;
+                case 0.33f:
+                    Debug.Log("Updating Alpha 2");
+                    _alphaPercentage = 0.33f;
+                    UpdateAlpha(_alphaPercentage);
+                    yield return new WaitForSeconds(1.0f);
+                    if (_isCleaning)
+                    {
+                        _alphaPercentage = 0.0f;
+                    }
+                    break;
+                case 0:
+                    Debug.Log("Updating Alpha 3");
+                    Debug.Log("Destroyed");
+                    StopCleaning();
+                    Destroy(gameObject);
+                    break;
+                default:
+                    StopCleaning();
+                    break;
+            }
+        }
     }
 
     private void CleanSurface()
     {
         Vector3 mousePosition = Mouse.current.position.ReadValue();
-        if (Physics.Raycast(_camera.ScreenPointToRay(mousePosition), out RaycastHit hit, raycastDistance))
+        
+        if (Physics.Raycast(CleaningManager.Instance.GetCamera().ScreenPointToRay(mousePosition), out RaycastHit hit, raycastDistance))
         {
             if (hit.transform != gameObject.transform)
             {
                 return;
             }
 
-            Vector2 textureCoord = hit.textureCoord;
-            int pixelX = (int)(textureCoord.x * _templateDirtMask.width);
-            int pixelY = (int)(textureCoord.y * _templateDirtMask.height);
+            _coroutine ??= StartCoroutine(CleaningCoroutine());
 
-
-            for (int x = 0; x < _brush.width; x++)
-            {
-                for (int y = 0; y < _brush.height; y++)
-                {
-                    Color pixelDirt = _brush.GetPixel(x, y);
-                    Color pixelDirtMask = _templateDirtMask.GetPixel(pixelX + x, pixelY + y);
-
-                    if (pixelX + x < _templateDirtMask.width && pixelX + x > 0 &&
-                        pixelY + y < _templateDirtMask.height && pixelY + y > 0)
-                    {
-                        _templateDirtMask.SetPixel(pixelX + x, pixelY + y, new Color(0, pixelDirtMask.g * pixelDirt.g, 0));
-                    }
-                }
-            }
-            _templateDirtMask.Apply();
+            Debug.Log("Cleaning");
         }
+    }
+
+    private void UpdateAlpha(float alphaPercentage)
+    {
+        Color color = cleanMaterial.color;
+        color.a = alphaPercentage;
+        cleanMaterial.color = color;
     }
 }
