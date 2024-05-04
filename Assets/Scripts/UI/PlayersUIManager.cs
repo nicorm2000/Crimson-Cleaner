@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ToolsUIManager : MonoBehaviour
+public class PlayersUIManager : MonoBehaviour
 {
     [Header("Config")]
     [SerializeField] private CleaningToolSelector toolSelector;
     [SerializeField] private Image toolImage;
     [SerializeField] private Sprite[] toolSprites;
+    [SerializeField] private GameObject cleaningList;
+
+    private bool _cleaningListState = false;
 
     private void Start()
     {
@@ -17,6 +20,15 @@ public class ToolsUIManager : MonoBehaviour
     private void OnDestroy()
     {
         toolSelector.OnToolSwitched -= UpdateToolImage;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            _cleaningListState = !_cleaningListState;
+            cleaningList.SetActive(_cleaningListState);
+        }
     }
 
     private void UpdateToolImage(int currentToolIndex)
