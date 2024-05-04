@@ -27,7 +27,6 @@ public class Clean : MonoBehaviour
 
     private void OnDestroy()
     {
-
         CleaningManager.Instance.GetInputManager().CleanEvent -= HandleCleanEvent;
         StopCleaning();
     }
@@ -71,6 +70,7 @@ public class Clean : MonoBehaviour
 
     private IEnumerator CleaningCoroutine()
     {
+        Debug.Log("Cleaning.");
         _alphaPercentage = 0.66f;
 
         while (_isCleaning) //Evil While WARNING
@@ -84,6 +84,7 @@ public class Clean : MonoBehaviour
                     yield return new WaitForSeconds(1.0f);
                     if (_isCleaning)
                     {
+                        Debug.Log("Cleaning..");
                         _alphaPercentage = 0.33f;
                     }
                     break;
@@ -94,12 +95,13 @@ public class Clean : MonoBehaviour
                     yield return new WaitForSeconds(1.0f);
                     if (_isCleaning)
                     {
+                        Debug.Log("Cleaning...");
                         _alphaPercentage = 0.0f;
                     }
                     break;
                 case 0:
                     Debug.Log("Updating Alpha 3");
-                    Debug.Log("Destroyed");
+                    Debug.Log("Cleaned");
                     StopCleaning();
                     Destroy(gameObject);
                     break;
@@ -122,8 +124,6 @@ public class Clean : MonoBehaviour
             }
 
             _coroutine ??= StartCoroutine(CleaningCoroutine());
-
-            Debug.Log("Cleaning");
         }
     }
 
