@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class Clean : MonoBehaviour
 {
     [Header("Config")]
+    [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private Material cleanMaterial;
     [SerializeField] private float raycastDistance;
 
@@ -16,18 +17,18 @@ public class Clean : MonoBehaviour
 
     private void OnEnable()
     {
-        CleaningManager.Instance.GetInputManager().CleanEvent += HandleCleanEvent;
+        cleaningManager.GetInputManager().CleanEvent += HandleCleanEvent;
     }
 
     private void OnDisable()
     {
-        CleaningManager.Instance.GetInputManager().CleanEvent -= HandleCleanEvent;
+        cleaningManager.GetInputManager().CleanEvent -= HandleCleanEvent;
         StopCleaning();
     }
 
     private void OnDestroy()
     {
-        CleaningManager.Instance.GetInputManager().CleanEvent -= HandleCleanEvent;
+        cleaningManager.GetInputManager().CleanEvent -= HandleCleanEvent;
         StopCleaning();
     }
 
@@ -49,12 +50,12 @@ public class Clean : MonoBehaviour
         if (startCleaning)
         {
             StartCleaning();
-            CleaningManager.Instance.GetPlayerAnimator().SetBool("Cleaning", true);
+            cleaningManager.GetPlayerAnimator().SetBool("Cleaning", true);
         }
         else
         {
             StopCleaning();
-            CleaningManager.Instance.GetPlayerAnimator().SetBool("Cleaning", false);
+            cleaningManager.GetPlayerAnimator().SetBool("Cleaning", false);
         }
     }
 
@@ -71,7 +72,7 @@ public class Clean : MonoBehaviour
     private IEnumerator CleaningCoroutine()
     {
         Debug.Log("Cleaning.");
-        _alphaPercentage = 0.66f;
+        _alphaPercentage = cleaningManager.CleaningPercentages[1];
 
         while (_isCleaning) //Evil While WARNING
         {
@@ -79,24 +80,24 @@ public class Clean : MonoBehaviour
             {
                 case 0.66f:
                     Debug.Log("Updating Alpha 1");
-                    _alphaPercentage = 0.66f;
+                    _alphaPercentage = cleaningManager.CleaningPercentages[1];
                     UpdateAlpha(_alphaPercentage);
                     yield return new WaitForSeconds(1.0f);
                     if (_isCleaning)
                     {
                         Debug.Log("Cleaning..");
-                        _alphaPercentage = 0.33f;
+                        _alphaPercentage = cleaningManager.CleaningPercentages[2];
                     }
                     break;
                 case 0.33f:
                     Debug.Log("Updating Alpha 2");
-                    _alphaPercentage = 0.33f;
+                    _alphaPercentage = cleaningManager.CleaningPercentages[2];
                     UpdateAlpha(_alphaPercentage);
                     yield return new WaitForSeconds(1.0f);
                     if (_isCleaning)
                     {
                         Debug.Log("Cleaning...");
-                        _alphaPercentage = 0.0f;
+                        _alphaPercentage = cleaningManager.CleaningPercentages[3];
                     }
                     break;
                 case 0:
@@ -116,7 +117,7 @@ public class Clean : MonoBehaviour
     {
         Vector3 mousePosition = Mouse.current.position.ReadValue();
         
-        if (Physics.Raycast(CleaningManager.Instance.GetCamera().ScreenPointToRay(mousePosition), out RaycastHit hit, raycastDistance))
+        if (Physics.Raycast(cleaningManager.GetCamera().ScreenPointToRay(mousePosition), out RaycastHit hit, raycastDistance))
         {
             if (hit.transform != gameObject.transform)
             {
