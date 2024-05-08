@@ -12,7 +12,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float rotationUpperLimit = -40f;
     [SerializeField] private float rotationBottomLimit = 70f;
     [SerializeField] private float mouseSensitivity = 22f;
+    [SerializeField] private float controllerSensitivity = 22f;
 
+    private float sensitivity;
     private Rigidbody playerRigidBody;
     private Animator animator;
     private bool hasAnimator;
@@ -21,11 +23,10 @@ public class PlayerController : MonoBehaviour
     private int yVelHash;
     private int crouchlHash;
     
-
     private float xRotation;
-
-
     private Vector2 currentVelocity;
+
+    private ObjectGrabbable objectGrabbable;
 
     private void Start()
     {
@@ -76,15 +77,52 @@ public class PlayerController : MonoBehaviour
     {
         if (!hasAnimator) return;
 
-        var mouseX = inputManager.Look.x;
-        var mouseY = inputManager.Look.y;
+        sensitivity = mouseSensitivity;
+        if (inputManager.IsUsingController())
+        {
+            sensitivity = controllerSensitivity;
+        }
 
-        camera.position = cameraRoot.position;
+        if (objectGrabbable != null && inputManager.RotateObject)
+        {
+            RotateObject();
+        }
+        else
+        {
+            var mouseX = inputManager.Look.x;
+            var mouseY = inputManager.Look.y;
 
-        xRotation -= mouseY * mouseSensitivity * Time.deltaTime;
-        xRotation = Mathf.Clamp(xRotation, rotationUpperLimit, rotationBottomLimit);
+            camera.position = cameraRoot.position;
 
-        camera.localRotation = Quaternion.Euler(xRotation, 0, 0);
-        transform.Rotate(Vector3.up, mouseX * mouseSensitivity * Time.deltaTime);
+            xRotation -= mouseY * sensitivity * Time.deltaTime;
+            xRotation = Mathf.Clamp(xRotation, rotationUpperLimit, rotationBottomLimit);
+
+            camera.localRotation = Quaternion.Euler(xRotation, 0, 0);
+            transform.Rotate(Vector3.up, mouseX * sensitivity * Time.deltaTime);
+        }
+    }
+
+    private void RotateObject()
+    {
+        if (objectGrabbable != null)
+        {
+            float mouseX = inputManager.Look.x * sensitivity * Time.deltaTime;
+            float mouseY = inputManager.Look.y * sensitivity * Time.deltaTime;
+
+            if (mouseX != 0 || mouseY != 0)
+            {
+                objectGrabbable.RotateObject(mouseX, mouseY);
+            }
+        }
+    }
+
+    public void SetObjectGrabbable(ObjectGrabbable grabbable)
+    {
+        objectGrabbable = grabbable;
+    }
+
+    public void ClearObjectGrabbable()
+    {
+        objectGrabbable = null;
     }
 }

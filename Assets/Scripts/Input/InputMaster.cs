@@ -98,6 +98,24 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PickUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""5a6fb3b5-35f2-42bc-8666-75611a9b5800"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RotateObejct"",
+                    ""type"": ""Button"",
+                    ""id"": ""ddffdbd6-542f-43db-a56d-60847eaf0923"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -257,8 +275,52 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""eb44f123-6e4f-4ba8-9d45-59cb7dc993e9"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""30102cea-6725-467a-8417-15ea47cb6dbc"",
+                    ""path"": ""<DualShockGamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""8df82dce-2103-4ef2-9416-79eb6a507395"",
                     ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b218d9d2-1b44-47e7-95b9-5d35fa55b7d9"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f99e1b9c-1d41-4d63-ae55-f3c3e82231ac"",
+                    ""path"": ""<DualShockGamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -287,6 +349,72 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""action"": ""LookController"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3ed80e5a-ac82-45dd-a5d5-0034a9f82fe6"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""37ccdd21-794e-4899-b7fb-42cc783b722c"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7cc69dba-7ac4-4231-9662-9e8bcfaa615c"",
+                    ""path"": ""<DualShockGamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3087eb84-8a46-4413-9d3c-dc1608335cfb"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateObejct"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""db6f9974-8061-4110-bb82-70fab12568ea"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateObejct"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e5de29e4-b0da-4cc6-ad23-5d4377563e38"",
+                    ""path"": ""<DualShockGamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateObejct"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -303,6 +431,8 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         m_Player_Open = m_Player.FindAction("Open", throwIfNotFound: true);
         m_Player_ToggleLights = m_Player.FindAction("ToggleLights", throwIfNotFound: true);
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
+        m_Player_PickUp = m_Player.FindAction("PickUp", throwIfNotFound: true);
+        m_Player_RotateObejct = m_Player.FindAction("RotateObejct", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -372,6 +502,8 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Open;
     private readonly InputAction m_Player_ToggleLights;
     private readonly InputAction m_Player_Crouch;
+    private readonly InputAction m_Player_PickUp;
+    private readonly InputAction m_Player_RotateObejct;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -384,6 +516,8 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         public InputAction @Open => m_Wrapper.m_Player_Open;
         public InputAction @ToggleLights => m_Wrapper.m_Player_ToggleLights;
         public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
+        public InputAction @PickUp => m_Wrapper.m_Player_PickUp;
+        public InputAction @RotateObejct => m_Wrapper.m_Player_RotateObejct;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -417,6 +551,12 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @Crouch.started += instance.OnCrouch;
             @Crouch.performed += instance.OnCrouch;
             @Crouch.canceled += instance.OnCrouch;
+            @PickUp.started += instance.OnPickUp;
+            @PickUp.performed += instance.OnPickUp;
+            @PickUp.canceled += instance.OnPickUp;
+            @RotateObejct.started += instance.OnRotateObejct;
+            @RotateObejct.performed += instance.OnRotateObejct;
+            @RotateObejct.canceled += instance.OnRotateObejct;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -445,6 +585,12 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @Crouch.started -= instance.OnCrouch;
             @Crouch.performed -= instance.OnCrouch;
             @Crouch.canceled -= instance.OnCrouch;
+            @PickUp.started -= instance.OnPickUp;
+            @PickUp.performed -= instance.OnPickUp;
+            @PickUp.canceled -= instance.OnPickUp;
+            @RotateObejct.started -= instance.OnRotateObejct;
+            @RotateObejct.performed -= instance.OnRotateObejct;
+            @RotateObejct.canceled -= instance.OnRotateObejct;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -472,5 +618,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         void OnOpen(InputAction.CallbackContext context);
         void OnToggleLights(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
+        void OnPickUp(InputAction.CallbackContext context);
+        void OnRotateObejct(InputAction.CallbackContext context);
     }
 }

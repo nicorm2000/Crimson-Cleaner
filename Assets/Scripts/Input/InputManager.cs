@@ -12,6 +12,7 @@ public class InputManager : MonoBehaviour
     public Vector2 Move { get; private set; }
     public Vector2 Look { get; private set; }
     public bool Crouch { get; private set; }
+    public bool RotateObject { get; private set; }
 
     private InputActionMap currentMap;
     private InputAction moveAction;
@@ -20,8 +21,11 @@ public class InputManager : MonoBehaviour
     private InputAction openAction;
     private InputAction cleanAction;
     private InputAction crouchAction;
+    private InputAction rotateObejctAction;
+    private InputAction pickUpAction;
 
     public event Action OpenEvent;
+    public event Action PickUpEvent;
     public event Action ToggleLightsEvent;
     public event Action<bool> CleanEvent;
 
@@ -35,17 +39,22 @@ public class InputManager : MonoBehaviour
         openAction = currentMap.FindAction("Open");
         cleanAction = currentMap.FindAction("Clean");
         crouchAction = currentMap.FindAction("Crouch");
+        rotateObejctAction = currentMap.FindAction("RotateObejct");
+        pickUpAction = currentMap.FindAction("PickUp");
 
         moveAction.performed += OnMove;
         lookAction.performed += OnLook;
         crouchAction.performed += OnCrouch;
+        rotateObejctAction.performed += OnRotateObject;
         openAction.performed += OnOpen;
+        pickUpAction.performed += OnPickUp;
         cleanAction.started += ctx => OnClean(true);
         lightSwitchAction.performed += ctx => OnToggleLights();
 
         moveAction.canceled += OnMove;
         lookAction.canceled += OnLook;
         crouchAction.canceled += OnCrouch;
+        rotateObejctAction.canceled += OnRotateObject;
         //lightSwitchAction.canceled += OnToggleLights;
         //openAction.canceled += OnOpen;
         cleanAction.canceled += ctx => OnClean(false);
@@ -80,9 +89,19 @@ public class InputManager : MonoBehaviour
         Look = context.ReadValue<Vector2>();
     }
 
+    //private void OnLookController(InputAction.CallbackContext context)
+    //{
+    //    LookController = context.ReadValue<Vector2>();
+    //}
+
     private void OnCrouch(InputAction.CallbackContext context)
     {
         Crouch = context.ReadValueAsButton();
+    }
+
+    private void OnRotateObject(InputAction.CallbackContext context)
+    {
+        RotateObject = context.ReadValueAsButton();
     }
 
     private void OnToggleLights()
@@ -94,9 +113,19 @@ public class InputManager : MonoBehaviour
     {
         OpenEvent?.Invoke();
     }
-    
+
+    private void OnPickUp(InputAction.CallbackContext context)
+    {
+        PickUpEvent?.Invoke();
+    }
+
     private void OnClean(bool isCleaning)
     {
         CleanEvent?.Invoke(isCleaning);
+    }
+
+    public bool IsUsingController()
+    {
+        return Input.GetJoystickNames().Length > 0;
     }
 }
