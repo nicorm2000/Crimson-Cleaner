@@ -11,6 +11,7 @@ public class InputManager : MonoBehaviour
 
     public Vector2 Move { get; private set; }
     public Vector2 Look { get; private set; }
+    public bool IsLookInputMouse { get; private set; }
     public bool Crouch { get; private set; }
     public bool RotateObject { get; private set; }
 
@@ -87,6 +88,7 @@ public class InputManager : MonoBehaviour
     private void OnLook(InputAction.CallbackContext context)
     {
         Look = context.ReadValue<Vector2>();
+        IsLookInputMouse = context.control.device is Mouse;
     }
 
     //private void OnLookController(InputAction.CallbackContext context)

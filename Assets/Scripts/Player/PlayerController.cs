@@ -76,39 +76,39 @@ public class PlayerController : MonoBehaviour
     private void CameraMovements()
     {
         if (!hasAnimator) return;
-
-        sensitivity = mouseSensitivity;
-        if (inputManager.IsUsingController())
+      
+        if (inputManager.IsLookInputMouse)
+        {
+            sensitivity = mouseSensitivity;
+        }
+        else
         {
             sensitivity = controllerSensitivity;
         }
 
+        var mouseX = inputManager.Look.x * sensitivity * Time.deltaTime;
+        var mouseY = inputManager.Look.y * sensitivity * Time.deltaTime;
+
         if (objectGrabbable != null && inputManager.RotateObject)
         {
-            RotateObject();
+            RotateObject(mouseX, mouseY);
         }
         else
-        {
-            var mouseX = inputManager.Look.x;
-            var mouseY = inputManager.Look.y;
-
+        {            
             camera.position = cameraRoot.position;
 
-            xRotation -= mouseY * sensitivity * Time.deltaTime;
+            xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, rotationUpperLimit, rotationBottomLimit);
 
             camera.localRotation = Quaternion.Euler(xRotation, 0, 0);
-            transform.Rotate(Vector3.up, mouseX * sensitivity * Time.deltaTime);
+            transform.Rotate(Vector3.up, mouseX);
         }
     }
 
-    private void RotateObject()
+    private void RotateObject(float mouseX, float mouseY)
     {
         if (objectGrabbable != null)
         {
-            float mouseX = inputManager.Look.x * sensitivity * Time.deltaTime;
-            float mouseY = inputManager.Look.y * sensitivity * Time.deltaTime;
-
             if (mouseX != 0 || mouseY != 0)
             {
                 objectGrabbable.RotateObject(mouseX, mouseY);
