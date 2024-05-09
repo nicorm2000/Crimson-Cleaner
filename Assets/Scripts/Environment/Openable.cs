@@ -44,7 +44,7 @@ public class Openable : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 1000f, openableRaycastLayerMask))
         {
             Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.green, 2f);
-            return hit.transform == transform;
+            return hit.transform.parent == transform;
         }
         else
         {
