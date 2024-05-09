@@ -1,52 +1,36 @@
 using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class GarbageDisposal : MonoBehaviour
 {
-    private bool animationPlaying = false; 
-    private Animator garbageDisposalAnimator;
+    [SerializeField] private Cart openable;
+    [SerializeField] private BoxCollider collider;
+    private List<GameObject> disposalList = new List<GameObject>();
 
-    private void Start()
-    {
-        garbageDisposalAnimator = gameObject.GetComponent<Animator>();
-    }
 
-    void OnTriggerEnter(Collider other)
+    //void OnTriggerStay(Collider other)
+    //{
+    //    if (!openable._isOpen && other.CompareTag("Trash") && !disposalList.Contains(other.gameObject))
+    //    {
+    //        disposalList.Add(other.gameObject);
+
+    //        Destroy(other.gameObject, 0.5f);
+    //    }
+    //}
+
+
+    public void DestroyBoxContents()
     {
-        if (!animationPlaying && other.CompareTag("Trash")) 
+        RaycastHit[] trash = Physics.BoxCastAll(collider.transform.position, collider.size, Vector3.forward);
+
+        if (trash.Length > 0)
         {
-            Animator animator = other.GetComponentInParent<Animator>();
-
-            if (animator != null) 
+            foreach (RaycastHit raycastHits in trash) 
             {
-                StartCoroutine(PlayAnimationAndDestroy(animator)); 
-            }
-            else
-            {
-                Debug.LogWarning("Trash object does not have an Animator component.");
+                if (raycastHits.transform.CompareTag("Trash"))
+                    Destroy(raycastHits.collider.gameObject);
             }
         }
     }
 
-    IEnumerator PlayAnimationAndDestroy(Animator animator)
-    {
-        animationPlaying = true;
-        animator.SetTrigger("DisposalTrigger");
-        garbageDisposalAnimator.SetBool("isGarbageDisposalOpening", true);
-
-        if (animator.runtimeAnimatorController != null && animator.runtimeAnimatorController.animationClips.Length > 0)
-        {
-            float animationDuration = animator.runtimeAnimatorController.animationClips[0].length;
-
-            yield return new WaitForSeconds(animationDuration);
-        }
-        else
-        {
-            Debug.LogWarning("Animator doesn't have any animation clips.");
-        }
-
-        Destroy(animator.gameObject); 
-        animationPlaying = false; 
-        garbageDisposalAnimator.SetBool("isGarbageDisposalOpening", false);
-    }
 }

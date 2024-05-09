@@ -15,12 +15,12 @@ public class LightSwitch : MonoBehaviour
 
     private void OnEnable()
     {
-        inputManager.ToggleLightsEvent += ToggleLights;
+        inputManager.InteractEvent += ToggleLights;
     }
 
     private void OnDisable()
     {
-        inputManager.ToggleLightsEvent -= ToggleLights;
+        inputManager.InteractEvent -= ToggleLights;
     }
 
     private void Start()

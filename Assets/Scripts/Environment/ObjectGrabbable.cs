@@ -7,11 +7,14 @@ public class ObjectGrabbable : MonoBehaviour
 {
     [SerializeField] private float lerpSpeed = 10f;
     [SerializeField] private float rotationSpeed = 10f;
+    [SerializeField] private float throwingForce = 10f;
     
     private Rigidbody objectRigidBody;
     private Transform ObjectGrabPointTransform;
     private Vector3 initialLocalUp;
     private Vector3 initialLocalRight;
+    private Vector3 newPosition;
+    private Vector3 lastPosition;
 
     private void Awake()
     {
@@ -22,7 +25,8 @@ public class ObjectGrabbable : MonoBehaviour
     {
         this.ObjectGrabPointTransform = ObjectGrabPointTransform;
         objectRigidBody.useGravity = false;
-        objectRigidBody.isKinematic = true;
+        //objectRigidBody.isKinematic = true;
+        objectRigidBody.freezeRotation = true;
 
         initialLocalUp = transform.up;
         initialLocalRight = transform.right;
@@ -30,17 +34,22 @@ public class ObjectGrabbable : MonoBehaviour
 
     public void Drop()
     {
+        objectRigidBody.freezeRotation = false;
         this.ObjectGrabPointTransform = null;
         objectRigidBody.useGravity = true;
-        objectRigidBody.isKinematic = false;
+        //objectRigidBody.isKinematic = false;
+        objectRigidBody.velocity = (newPosition - lastPosition) * throwingForce;
+        Debug.Log(objectRigidBody.velocity + "in drop");
     }
 
     private void FixedUpdate()
     {
         if (ObjectGrabPointTransform != null)
         {
-            Vector3 newPosition = Vector3.Lerp(transform.position, ObjectGrabPointTransform.position, Time.deltaTime * lerpSpeed);
+            lastPosition = newPosition;
+            newPosition = Vector3.Lerp(transform.position, ObjectGrabPointTransform.position, Time.deltaTime * lerpSpeed);
             objectRigidBody.MovePosition(newPosition);
+            Debug.Log(objectRigidBody.velocity);
         }
     }
 

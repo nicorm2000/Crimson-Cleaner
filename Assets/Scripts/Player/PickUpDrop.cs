@@ -9,6 +9,7 @@ public class PickUpDrop : MonoBehaviour
     [SerializeField] private Transform mainCamera;
     [SerializeField] private Transform objectGrabPointTransform;
     [SerializeField] private LayerMask pickupLayerMask;
+    [SerializeField] float pickUpDistance = 10f;
 
     private ObjectGrabbable objectGrabbable;
 
@@ -26,7 +27,7 @@ public class PickUpDrop : MonoBehaviour
     {
         if (objectGrabbable == null)
         {
-            float pickUpDistance = 10f;
+            
             if (Physics.Raycast(mainCamera.position, mainCamera.forward, out RaycastHit raycastHit, pickUpDistance))
             {
                 if (raycastHit.transform.TryGetComponent(out objectGrabbable))

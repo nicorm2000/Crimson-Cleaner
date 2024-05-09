@@ -73,16 +73,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Open"",
-                    ""type"": ""Button"",
-                    ""id"": ""4abc5040-67e9-4d4f-8217-6239ebf079fb"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""ToggleLights"",
+                    ""name"": ""Interact"",
                     ""type"": ""Button"",
                     ""id"": ""5ba1d509-8cf5-42f3-a372-7ddec8d3cbe6"",
                     ""expectedControlType"": ""Button"",
@@ -242,45 +233,34 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4771dbbb-1d9b-4c7e-82ec-8c384d1b0a7c"",
+                    ""id"": ""49ba4e5c-05b9-4ba4-8006-1081e77353be"",
                     ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Open"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""79a94c92-38a5-4049-a9d8-8b37c02a3878"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""id"": ""ed5623ad-2e97-4799-a91d-2f5a70c59aa9"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Open"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""fa09bd57-a3cf-414e-a244-8c18abc76b69"",
-                    ""path"": ""<DualShockGamepad>/buttonNorth"",
+                    ""id"": ""bd742fcf-5a59-4882-b5a4-fc151f6426ac"",
+                    ""path"": ""<DualShockGamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Open"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""49ba4e5c-05b9-4ba4-8006-1081e77353be"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ToggleLights"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -375,7 +355,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""3ed80e5a-ac82-45dd-a5d5-0034a9f82fe6"",
-                    ""path"": ""<Keyboard>/f"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -450,8 +430,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         m_Player_LookController = m_Player.FindAction("LookController", throwIfNotFound: true);
         m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
         m_Player_Clean = m_Player.FindAction("Clean", throwIfNotFound: true);
-        m_Player_Open = m_Player.FindAction("Open", throwIfNotFound: true);
-        m_Player_ToggleLights = m_Player.FindAction("ToggleLights", throwIfNotFound: true);
+        m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_PickUp = m_Player.FindAction("PickUp", throwIfNotFound: true);
         m_Player_RotateObejct = m_Player.FindAction("RotateObejct", throwIfNotFound: true);
@@ -521,8 +500,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_LookController;
     private readonly InputAction m_Player_Run;
     private readonly InputAction m_Player_Clean;
-    private readonly InputAction m_Player_Open;
-    private readonly InputAction m_Player_ToggleLights;
+    private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Crouch;
     private readonly InputAction m_Player_PickUp;
     private readonly InputAction m_Player_RotateObejct;
@@ -535,8 +513,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         public InputAction @LookController => m_Wrapper.m_Player_LookController;
         public InputAction @Run => m_Wrapper.m_Player_Run;
         public InputAction @Clean => m_Wrapper.m_Player_Clean;
-        public InputAction @Open => m_Wrapper.m_Player_Open;
-        public InputAction @ToggleLights => m_Wrapper.m_Player_ToggleLights;
+        public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
         public InputAction @PickUp => m_Wrapper.m_Player_PickUp;
         public InputAction @RotateObejct => m_Wrapper.m_Player_RotateObejct;
@@ -564,12 +541,9 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @Clean.started += instance.OnClean;
             @Clean.performed += instance.OnClean;
             @Clean.canceled += instance.OnClean;
-            @Open.started += instance.OnOpen;
-            @Open.performed += instance.OnOpen;
-            @Open.canceled += instance.OnOpen;
-            @ToggleLights.started += instance.OnToggleLights;
-            @ToggleLights.performed += instance.OnToggleLights;
-            @ToggleLights.canceled += instance.OnToggleLights;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
             @Crouch.started += instance.OnCrouch;
             @Crouch.performed += instance.OnCrouch;
             @Crouch.canceled += instance.OnCrouch;
@@ -598,12 +572,9 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @Clean.started -= instance.OnClean;
             @Clean.performed -= instance.OnClean;
             @Clean.canceled -= instance.OnClean;
-            @Open.started -= instance.OnOpen;
-            @Open.performed -= instance.OnOpen;
-            @Open.canceled -= instance.OnOpen;
-            @ToggleLights.started -= instance.OnToggleLights;
-            @ToggleLights.performed -= instance.OnToggleLights;
-            @ToggleLights.canceled -= instance.OnToggleLights;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
             @Crouch.started -= instance.OnCrouch;
             @Crouch.performed -= instance.OnCrouch;
             @Crouch.canceled -= instance.OnCrouch;
@@ -637,8 +608,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         void OnLookController(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
         void OnClean(InputAction.CallbackContext context);
-        void OnOpen(InputAction.CallbackContext context);
-        void OnToggleLights(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnPickUp(InputAction.CallbackContext context);
         void OnRotateObejct(InputAction.CallbackContext context);
