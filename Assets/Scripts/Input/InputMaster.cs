@@ -46,15 +46,6 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""LookController"",
-                    ""type"": ""Value"",
-                    ""id"": ""ff6538d7-4b0f-4a70-b5c5-197104113908"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
                     ""name"": ""Run"",
                     ""type"": ""Value"",
                     ""id"": ""bd477d2f-3bc8-41db-b6b7-b87ecbb85f4f"",
@@ -233,6 +224,17 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""f1ebd2b6-025d-4c59-833b-42020a0f8bb8"",
+                    ""path"": ""<DualShockGamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Clean"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""49ba4e5c-05b9-4ba4-8006-1081e77353be"",
                     ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
@@ -332,28 +334,6 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""9feb2e72-56f6-4ea5-bbd1-4a5a1f8318b7"",
-                    ""path"": ""<Gamepad>/rightStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""LookController"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c8642762-cc30-4750-8d23-e0167950a713"",
-                    ""path"": ""<DualShockGamepad>/rightStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""LookController"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""3ed80e5a-ac82-45dd-a5d5-0034a9f82fe6"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
@@ -427,7 +407,6 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
-        m_Player_LookController = m_Player.FindAction("LookController", throwIfNotFound: true);
         m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
         m_Player_Clean = m_Player.FindAction("Clean", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
@@ -497,7 +476,6 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Look;
-    private readonly InputAction m_Player_LookController;
     private readonly InputAction m_Player_Run;
     private readonly InputAction m_Player_Clean;
     private readonly InputAction m_Player_Interact;
@@ -510,7 +488,6 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         public PlayerActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Look => m_Wrapper.m_Player_Look;
-        public InputAction @LookController => m_Wrapper.m_Player_LookController;
         public InputAction @Run => m_Wrapper.m_Player_Run;
         public InputAction @Clean => m_Wrapper.m_Player_Clean;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
@@ -532,9 +509,6 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
-            @LookController.started += instance.OnLookController;
-            @LookController.performed += instance.OnLookController;
-            @LookController.canceled += instance.OnLookController;
             @Run.started += instance.OnRun;
             @Run.performed += instance.OnRun;
             @Run.canceled += instance.OnRun;
@@ -563,9 +537,6 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
-            @LookController.started -= instance.OnLookController;
-            @LookController.performed -= instance.OnLookController;
-            @LookController.canceled -= instance.OnLookController;
             @Run.started -= instance.OnRun;
             @Run.performed -= instance.OnRun;
             @Run.canceled -= instance.OnRun;
@@ -605,7 +576,6 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
-        void OnLookController(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
         void OnClean(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);

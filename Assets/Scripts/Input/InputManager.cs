@@ -28,6 +28,8 @@ public class InputManager : MonoBehaviour
     public event Action InteractEvent;
     public event Action<bool> CleanEvent;
 
+    private bool isCursorVisible = true;
+
     private void Awake()
     {
         playerinput = GetComponent<PlayerInput>();
@@ -70,10 +72,28 @@ public class InputManager : MonoBehaviour
         currentMap.Disable();
     }
 
+    private void Update()
+    {
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            isCursorVisible = !isCursorVisible;
+            if (isCursorVisible)
+                ShowCursor();
+            else
+                HideCursor();
+        }
+    }
+
     private void HideCursor()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    private void ShowCursor()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void OnMove(InputAction.CallbackContext context)
