@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         HandleCrouch();
     }
 
-    private void LateUpdate()
+    private void Update()
     {
         CameraMovements();
     }
