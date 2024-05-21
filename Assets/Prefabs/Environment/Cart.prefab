@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openable: {fileID: 0}
+  collider: {fileID: 0}
 --- !u!1001 &5686203976901798989
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,6 +131,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cart
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b72abe6ac784d5c46a24a707f21d1ead,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -146,6 +152,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2454420846629862496}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b72abe6ac784d5c46a24a707f21d1ead,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8502973750395415865}
   m_SourcePrefab: {fileID: 100100000, guid: b72abe6ac784d5c46a24a707f21d1ead, type: 3}
 --- !u!1 &4767092856041509148 stripped
 GameObject:
@@ -195,6 +205,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.46, z: 2.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8502973750395415865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4767092856041509148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ed625e748c1ad4a8d49423dbee6592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionMessage: Press 'E' to Open/Close
 --- !u!4 &5288295918831422374 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b72abe6ac784d5c46a24a707f21d1ead,

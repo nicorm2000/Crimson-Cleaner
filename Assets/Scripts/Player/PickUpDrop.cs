@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PickUpDrop : MonoBehaviour
@@ -12,6 +14,8 @@ public class PickUpDrop : MonoBehaviour
     [SerializeField] float pickUpDistance = 10f;
 
     private ObjectGrabbable objectGrabbable;
+    private InteractableObject interactableObject;
+
 
     private void OnEnable()
     {
@@ -26,8 +30,7 @@ public class PickUpDrop : MonoBehaviour
     private void PickUpAndDrop()
     {
         if (objectGrabbable == null)
-        {
-            
+        {          
             if (Physics.Raycast(mainCamera.position, mainCamera.forward, out RaycastHit raycastHit, pickUpDistance))
             {
                 if (raycastHit.transform.TryGetComponent(out objectGrabbable))
@@ -35,12 +38,18 @@ public class PickUpDrop : MonoBehaviour
                     objectGrabbable.Grab(objectGrabPointTransform);
                     playerController.SetObjectGrabbable(objectGrabbable);
                 }
+
+                if (raycastHit.transform.TryGetComponent(out interactableObject))
+                {
+                    interactableObject.isObjectPickedUp = true;
+                }
             }
         }
         else
         {
             objectGrabbable.Drop();
             objectGrabbable = null;
+            interactableObject.isObjectPickedUp = false;
             playerController.ClearObjectGrabbable();
         }
     }
