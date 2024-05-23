@@ -73,7 +73,7 @@ public class Clean : MonoBehaviour
     {
         Debug.Log("Cleaning.");
         _alphaPercentage = cleaningManager.CleaningPercentages[1];
-
+    
         while (_isCleaning) //Evil While WARNING
         {
             switch (_alphaPercentage)
@@ -113,10 +113,49 @@ public class Clean : MonoBehaviour
         }
     }
 
+    //private void CleanObject()
+    //{
+    //    Debug.Log("Cleaning.");
+    //    _alphaPercentage = cleaningManager.CleaningPercentages[1];
+    //
+    //    switch (_alphaPercentage)
+    //    {
+    //        case 0.66f:
+    //            Debug.Log("Updating Alpha 1");
+    //            _alphaPercentage = cleaningManager.CleaningPercentages[1];
+    //            UpdateAlpha(_alphaPercentage);
+    //            if (_isCleaning)
+    //            {
+    //                Debug.Log("Cleaning..");
+    //                _alphaPercentage = cleaningManager.CleaningPercentages[2];
+    //            }
+    //            break;
+    //        case 0.33f:
+    //            Debug.Log("Updating Alpha 2");
+    //            _alphaPercentage = cleaningManager.CleaningPercentages[2];
+    //            UpdateAlpha(_alphaPercentage);
+    //            if (_isCleaning)
+    //            {
+    //                Debug.Log("Cleaning...");
+    //                _alphaPercentage = cleaningManager.CleaningPercentages[3];
+    //            }
+    //            break;
+    //        case 0:
+    //            Debug.Log("Updating Alpha 3");
+    //            Debug.Log("Cleaned");
+    //            StopCleaning();
+    //            Destroy(gameObject);
+    //            break;
+    //        default:
+    //            StopCleaning();
+    //            break;
+    //    }
+    //}
+
     private void CleanSurface()
     {
         Vector3 mousePosition = Mouse.current.position.ReadValue();
-        
+
         if (Physics.Raycast(cleaningManager.GetCamera().ScreenPointToRay(mousePosition), out RaycastHit hit, raycastDistance))
         {
             if (hit.transform != gameObject.transform)
@@ -125,6 +164,7 @@ public class Clean : MonoBehaviour
             }
 
             _coroutine ??= StartCoroutine(CleaningCoroutine());
+            //CleanObject();
         }
     }
 

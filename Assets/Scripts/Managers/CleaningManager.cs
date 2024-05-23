@@ -5,6 +5,9 @@ public class CleaningManager : MonoBehaviour
     [Header("Config")]
     [SerializeField] private Camera gameCamera = null;
     [SerializeField] private Animator playerAnimator = null;
+    [SerializeField] private Animator mopAnimator = null;
+    [SerializeField] private Animator spongeAnimator = null;
+    [SerializeField] private Animator handsAnimator = null;
     [SerializeField] private InputManager inputManager = null;
 
     public float[] CleaningPercentages { get; private set; }
@@ -32,6 +35,21 @@ public class CleaningManager : MonoBehaviour
     public Animator GetPlayerAnimator()
     {
         return playerAnimator;
+    }
+
+    public Animator GetMopAnimator()
+    {
+        return mopAnimator;
+    }
+
+    public Animator GetSpongeAnimator()
+    {
+        return spongeAnimator;
+    }
+
+    public Animator GetHandsAnimator()
+    {
+        return handsAnimator;
     }
 
     public InputManager GetInputManager()
