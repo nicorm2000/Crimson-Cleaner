@@ -39,7 +39,6 @@ public class ObjectGrabbable : MonoBehaviour
         objectRigidBody.useGravity = true;
         //objectRigidBody.isKinematic = false;
         objectRigidBody.velocity = (newPosition - lastPosition) * throwingForce;
-        Debug.Log(objectRigidBody.velocity + "in drop");
     }
 
     private void FixedUpdate()
@@ -49,7 +48,6 @@ public class ObjectGrabbable : MonoBehaviour
             lastPosition = newPosition;
             newPosition = Vector3.Lerp(transform.position, ObjectGrabPointTransform.position, Time.deltaTime * lerpSpeed);
             objectRigidBody.MovePosition(newPosition);
-            Debug.Log(objectRigidBody.velocity);
         }
     }
 

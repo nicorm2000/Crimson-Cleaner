@@ -1,27 +1,14 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 public class GarbageDisposal : MonoBehaviour
 {
     [SerializeField] private Cart openable;
-    [SerializeField] private BoxCollider collider;
-    private List<GameObject> disposalList = new List<GameObject>();
-
-
-    //void OnTriggerStay(Collider other)
-    //{
-    //    if (!openable._isOpen && other.CompareTag("Trash") && !disposalList.Contains(other.gameObject))
-    //    {
-    //        disposalList.Add(other.gameObject);
-
-    //        Destroy(other.gameObject, 0.5f);
-    //    }
-    //}
-
+    [SerializeField] private BoxCollider coll;
+    [SerializeField] private ParticleSystem burnParticles;
 
     public void DestroyBoxContents()
     {
-        RaycastHit[] trash = Physics.BoxCastAll(collider.transform.position, collider.size, Vector3.forward);
+        RaycastHit[] trash = Physics.BoxCastAll(coll.transform.position, coll.size, Vector3.forward);
 
         if (trash.Length > 0)
         {
@@ -33,4 +20,8 @@ public class GarbageDisposal : MonoBehaviour
         }
     }
 
+    public void ActivateBurning()
+    {
+        burnParticles.Play();
+    }
 }

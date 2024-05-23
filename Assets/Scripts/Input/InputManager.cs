@@ -189,6 +189,5 @@ public class InputManager : MonoBehaviour
     private void OnMouseScroll(InputAction.CallbackContext context)
     {
         Scroll = context.ReadValue<float>();
-        Debug.Log(Scroll);
     }
 }
