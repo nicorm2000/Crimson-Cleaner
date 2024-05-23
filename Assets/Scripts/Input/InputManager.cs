@@ -23,9 +23,13 @@ public class InputManager : MonoBehaviour
     private InputAction crouchAction;
     private InputAction rotateObejctAction;
     private InputAction pickUpAction;
+    private InputAction cleaningListAction;
+    private InputAction displayControlsAction;
 
     public event Action PickUpEvent;
     public event Action InteractEvent;
+    public event Action CleaningListEvent;
+    public event Action DisplayControlsEvent;
     public event Action<bool> CleanEvent;
 
     private bool isCursorVisible = true;
@@ -41,6 +45,8 @@ public class InputManager : MonoBehaviour
         crouchAction = currentMap.FindAction("Crouch");
         rotateObejctAction = currentMap.FindAction("RotateObejct");
         pickUpAction = currentMap.FindAction("PickUp");
+        cleaningListAction = currentMap.FindAction("CleaningList");
+        displayControlsAction = currentMap.FindAction("DisplayControls");
 
         moveAction.performed += OnMove;
         lookAction.performed += OnLook;
@@ -49,6 +55,8 @@ public class InputManager : MonoBehaviour
         interactAction.performed += OnInteract;
         pickUpAction.performed += OnPickUp;
         cleanAction.started += ctx => OnClean(true);
+        cleaningListAction.performed += OnCleaningList;
+        displayControlsAction.performed += OnDisplayControls;
 
         moveAction.canceled += OnMove;
         lookAction.canceled += OnLook;
@@ -135,5 +143,15 @@ public class InputManager : MonoBehaviour
     public bool IsUsingController()
     {
         return Input.GetJoystickNames().Length > 0;
+    }
+
+    private void OnCleaningList(InputAction.CallbackContext context)
+    {
+        CleaningListEvent?.Invoke();
+    }
+
+    private void OnDisplayControls(InputAction.CallbackContext context)
+    {
+        DisplayControlsEvent?.Invoke();
     }
 }

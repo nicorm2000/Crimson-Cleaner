@@ -76,6 +76,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "CleaningList",
+                    "type": "Button",
+                    "id": "c6f6e0dc-9a90-4b88-a07d-70b2d6e75f71",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DisplayControls",
+                    "type": "Button",
+                    "id": "5c0df730-ff71-4846-9a13-7ad64711bec2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -373,6 +391,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "RotateObejct",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c455bb73-a97c-400c-b55b-c9ac2d5e1700",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CleaningList",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "50f83341-6fa0-48f0-910b-7f56ec411baf",
+                    "path": "<Keyboard>/0",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DisplayControls",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

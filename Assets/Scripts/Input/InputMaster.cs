@@ -98,6 +98,24 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CleaningList"",
+                    ""type"": ""Button"",
+                    ""id"": ""c6f6e0dc-9a90-4b88-a07d-70b2d6e75f71"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DisplayControls"",
+                    ""type"": ""Button"",
+                    ""id"": ""5c0df730-ff71-4846-9a13-7ad64711bec2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -397,6 +415,28 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""action"": ""RotateObejct"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c455bb73-a97c-400c-b55b-c9ac2d5e1700"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CleaningList"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""50f83341-6fa0-48f0-910b-7f56ec411baf"",
+                    ""path"": ""<Keyboard>/0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DisplayControls"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -413,6 +453,8 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_PickUp = m_Player.FindAction("PickUp", throwIfNotFound: true);
         m_Player_RotateObejct = m_Player.FindAction("RotateObejct", throwIfNotFound: true);
+        m_Player_CleaningList = m_Player.FindAction("CleaningList", throwIfNotFound: true);
+        m_Player_DisplayControls = m_Player.FindAction("DisplayControls", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -482,6 +524,8 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Crouch;
     private readonly InputAction m_Player_PickUp;
     private readonly InputAction m_Player_RotateObejct;
+    private readonly InputAction m_Player_CleaningList;
+    private readonly InputAction m_Player_DisplayControls;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -494,6 +538,8 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
         public InputAction @PickUp => m_Wrapper.m_Player_PickUp;
         public InputAction @RotateObejct => m_Wrapper.m_Player_RotateObejct;
+        public InputAction @CleaningList => m_Wrapper.m_Player_CleaningList;
+        public InputAction @DisplayControls => m_Wrapper.m_Player_DisplayControls;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -527,6 +573,12 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @RotateObejct.started += instance.OnRotateObejct;
             @RotateObejct.performed += instance.OnRotateObejct;
             @RotateObejct.canceled += instance.OnRotateObejct;
+            @CleaningList.started += instance.OnCleaningList;
+            @CleaningList.performed += instance.OnCleaningList;
+            @CleaningList.canceled += instance.OnCleaningList;
+            @DisplayControls.started += instance.OnDisplayControls;
+            @DisplayControls.performed += instance.OnDisplayControls;
+            @DisplayControls.canceled += instance.OnDisplayControls;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -555,6 +607,12 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @RotateObejct.started -= instance.OnRotateObejct;
             @RotateObejct.performed -= instance.OnRotateObejct;
             @RotateObejct.canceled -= instance.OnRotateObejct;
+            @CleaningList.started -= instance.OnCleaningList;
+            @CleaningList.performed -= instance.OnCleaningList;
+            @CleaningList.canceled -= instance.OnCleaningList;
+            @DisplayControls.started -= instance.OnDisplayControls;
+            @DisplayControls.performed -= instance.OnDisplayControls;
+            @DisplayControls.canceled -= instance.OnDisplayControls;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -582,5 +640,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         void OnCrouch(InputAction.CallbackContext context);
         void OnPickUp(InputAction.CallbackContext context);
         void OnRotateObejct(InputAction.CallbackContext context);
+        void OnCleaningList(InputAction.CallbackContext context);
+        void OnDisplayControls(InputAction.CallbackContext context);
     }
 }
