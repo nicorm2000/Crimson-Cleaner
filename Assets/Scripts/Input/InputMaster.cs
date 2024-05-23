@@ -116,6 +116,42 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MouseScroll"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""7ac387ae-d80d-4e3d-92c6-991a76e6260f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectFirstTool"",
+                    ""type"": ""Button"",
+                    ""id"": ""9853615b-d67f-467a-aef9-18d29c2c2eb8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectSecondTool"",
+                    ""type"": ""Button"",
+                    ""id"": ""69d77823-c5df-4d7c-aa0d-03c46f44aec4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectThirdTool"",
+                    ""type"": ""Button"",
+                    ""id"": ""196f10cd-b841-4eea-a9fb-6909d66577a4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -437,6 +473,50 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""action"": ""DisplayControls"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""106b3306-160a-4176-b614-e41c848ffeb8"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseScroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8a1b33d1-0a45-472e-8800-3f73b73c1f81"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectFirstTool"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dd593baf-ee30-4c0c-b4f5-6f595a8d728e"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectSecondTool"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e526462e-1b20-4858-b3c7-de02ad0b30c0"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectThirdTool"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -455,6 +535,10 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         m_Player_RotateObejct = m_Player.FindAction("RotateObejct", throwIfNotFound: true);
         m_Player_CleaningList = m_Player.FindAction("CleaningList", throwIfNotFound: true);
         m_Player_DisplayControls = m_Player.FindAction("DisplayControls", throwIfNotFound: true);
+        m_Player_MouseScroll = m_Player.FindAction("MouseScroll", throwIfNotFound: true);
+        m_Player_SelectFirstTool = m_Player.FindAction("SelectFirstTool", throwIfNotFound: true);
+        m_Player_SelectSecondTool = m_Player.FindAction("SelectSecondTool", throwIfNotFound: true);
+        m_Player_SelectThirdTool = m_Player.FindAction("SelectThirdTool", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -526,6 +610,10 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_RotateObejct;
     private readonly InputAction m_Player_CleaningList;
     private readonly InputAction m_Player_DisplayControls;
+    private readonly InputAction m_Player_MouseScroll;
+    private readonly InputAction m_Player_SelectFirstTool;
+    private readonly InputAction m_Player_SelectSecondTool;
+    private readonly InputAction m_Player_SelectThirdTool;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -540,6 +628,10 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         public InputAction @RotateObejct => m_Wrapper.m_Player_RotateObejct;
         public InputAction @CleaningList => m_Wrapper.m_Player_CleaningList;
         public InputAction @DisplayControls => m_Wrapper.m_Player_DisplayControls;
+        public InputAction @MouseScroll => m_Wrapper.m_Player_MouseScroll;
+        public InputAction @SelectFirstTool => m_Wrapper.m_Player_SelectFirstTool;
+        public InputAction @SelectSecondTool => m_Wrapper.m_Player_SelectSecondTool;
+        public InputAction @SelectThirdTool => m_Wrapper.m_Player_SelectThirdTool;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -579,6 +671,18 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @DisplayControls.started += instance.OnDisplayControls;
             @DisplayControls.performed += instance.OnDisplayControls;
             @DisplayControls.canceled += instance.OnDisplayControls;
+            @MouseScroll.started += instance.OnMouseScroll;
+            @MouseScroll.performed += instance.OnMouseScroll;
+            @MouseScroll.canceled += instance.OnMouseScroll;
+            @SelectFirstTool.started += instance.OnSelectFirstTool;
+            @SelectFirstTool.performed += instance.OnSelectFirstTool;
+            @SelectFirstTool.canceled += instance.OnSelectFirstTool;
+            @SelectSecondTool.started += instance.OnSelectSecondTool;
+            @SelectSecondTool.performed += instance.OnSelectSecondTool;
+            @SelectSecondTool.canceled += instance.OnSelectSecondTool;
+            @SelectThirdTool.started += instance.OnSelectThirdTool;
+            @SelectThirdTool.performed += instance.OnSelectThirdTool;
+            @SelectThirdTool.canceled += instance.OnSelectThirdTool;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -613,6 +717,18 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @DisplayControls.started -= instance.OnDisplayControls;
             @DisplayControls.performed -= instance.OnDisplayControls;
             @DisplayControls.canceled -= instance.OnDisplayControls;
+            @MouseScroll.started -= instance.OnMouseScroll;
+            @MouseScroll.performed -= instance.OnMouseScroll;
+            @MouseScroll.canceled -= instance.OnMouseScroll;
+            @SelectFirstTool.started -= instance.OnSelectFirstTool;
+            @SelectFirstTool.performed -= instance.OnSelectFirstTool;
+            @SelectFirstTool.canceled -= instance.OnSelectFirstTool;
+            @SelectSecondTool.started -= instance.OnSelectSecondTool;
+            @SelectSecondTool.performed -= instance.OnSelectSecondTool;
+            @SelectSecondTool.canceled -= instance.OnSelectSecondTool;
+            @SelectThirdTool.started -= instance.OnSelectThirdTool;
+            @SelectThirdTool.performed -= instance.OnSelectThirdTool;
+            @SelectThirdTool.canceled -= instance.OnSelectThirdTool;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -642,5 +758,9 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         void OnRotateObejct(InputAction.CallbackContext context);
         void OnCleaningList(InputAction.CallbackContext context);
         void OnDisplayControls(InputAction.CallbackContext context);
+        void OnMouseScroll(InputAction.CallbackContext context);
+        void OnSelectFirstTool(InputAction.CallbackContext context);
+        void OnSelectSecondTool(InputAction.CallbackContext context);
+        void OnSelectThirdTool(InputAction.CallbackContext context);
     }
 }

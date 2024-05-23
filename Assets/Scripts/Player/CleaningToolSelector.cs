@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class CleaningToolSelector : MonoBehaviour
 {
     [Header("Config")]
+    [SerializeField] private InputManager inputManager;
     [SerializeField] private GameObject[] tools;
     
     private int _currentToolIndex = 0;
@@ -14,6 +15,20 @@ public class CleaningToolSelector : MonoBehaviour
     public GameObject[] Tools => tools;
     public int ToolsLength => tools.Length;
     public int CurrentToolIndex => _currentToolIndex;
+
+    private void OnEnable()
+    {
+        inputManager.SelectFirstToolEvent += SetMop;
+        inputManager.SelectSecondToolEvent += SetSponge;
+        inputManager.SelectThirdToolEvent += SetHands;
+    }
+
+    private void OnDisable()
+    {
+        inputManager.SelectFirstToolEvent -= SetMop;
+        inputManager.SelectSecondToolEvent -= SetSponge;
+        inputManager.SelectThirdToolEvent -= SetHands;
+    }
 
     private void Start()
     {
@@ -25,28 +40,11 @@ public class CleaningToolSelector : MonoBehaviour
 
     private void Update()
     {
-        if (Keyboard.current.digit1Key.wasPressedThisFrame)
-        {
-            Debug.Log("Mop");
-            SwitchTool(0);
-        }
-        else if (Keyboard.current.digit2Key.wasPressedThisFrame)
-        {
-            Debug.Log("Sponge");
-            SwitchTool(1);
-        }
-        else if (Keyboard.current.digit3Key.wasPressedThisFrame)
-        {
-            Debug.Log("Hands");
-            SwitchTool(2);
-        }
-
-        float scrollInput = Mouse.current.scroll.ReadValue().y;
-        if (scrollInput > 0f)
+        if (inputManager.Scroll > 0f)
         {
             SwitchTool(_currentToolIndex - 1);
         }
-        else if (scrollInput < 0f)
+        else if (inputManager.Scroll < 0f)
         {
             SwitchTool(_currentToolIndex + 1);
         }
@@ -55,13 +53,24 @@ public class CleaningToolSelector : MonoBehaviour
     private void SwitchTool(int newIndex)
     {
         newIndex = Mathf.Clamp(newIndex, 0, tools.Length - 1);
-
         tools[_currentToolIndex].SetActive(false);
-
         tools[newIndex].SetActive(true);
-
         _currentToolIndex = newIndex;
-
         OnToolSwitched?.Invoke(_currentToolIndex);
+    }
+
+    private void SetMop()
+    {
+        SwitchTool(0);
+    }
+
+    private void SetSponge()
+    {
+        SwitchTool(1);
+    }
+
+    private void SetHands()
+    {
+        SwitchTool(2);
     }
 }

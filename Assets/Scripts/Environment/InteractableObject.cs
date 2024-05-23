@@ -5,6 +5,5 @@ public class InteractableObject : MonoBehaviour
 {
     [NonSerialized] public bool isObjectPickedUp = false;
     public string interactionMessage = "Press [E] to interact";
-    public string rotateMessage = "Press [G] to rotate";
-
+    public string rotateMessage = "Hold [G] to rotate";
 }

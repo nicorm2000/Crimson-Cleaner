@@ -14,6 +14,7 @@ public class InputManager : MonoBehaviour
     public bool IsLookInputMouse { get; private set; }
     public bool Crouch { get; private set; }
     public bool RotateObject { get; private set; }
+    public float Scroll { get; private set; }
 
     private InputActionMap currentMap;
     private InputAction moveAction;
@@ -25,11 +26,18 @@ public class InputManager : MonoBehaviour
     private InputAction pickUpAction;
     private InputAction cleaningListAction;
     private InputAction displayControlsAction;
+    private InputAction selectFirstToolAction;
+    private InputAction selectSecondToolAction;
+    private InputAction selectThirdToolAction;
+    private InputAction mouseScrollAction;
 
     public event Action PickUpEvent;
     public event Action InteractEvent;
     public event Action CleaningListEvent;
     public event Action DisplayControlsEvent;
+    public event Action SelectFirstToolEvent;
+    public event Action SelectSecondToolEvent;
+    public event Action SelectThirdToolEvent;
     public event Action<bool> CleanEvent;
 
     private bool isCursorVisible = true;
@@ -47,6 +55,10 @@ public class InputManager : MonoBehaviour
         pickUpAction = currentMap.FindAction("PickUp");
         cleaningListAction = currentMap.FindAction("CleaningList");
         displayControlsAction = currentMap.FindAction("DisplayControls");
+        selectFirstToolAction = currentMap.FindAction("SelectFirstTool");
+        selectSecondToolAction = currentMap.FindAction("SelectSecondTool");
+        selectThirdToolAction = currentMap.FindAction("SelectThirdTool");
+        mouseScrollAction = currentMap.FindAction("MouseScroll");
 
         moveAction.performed += OnMove;
         lookAction.performed += OnLook;
@@ -57,6 +69,10 @@ public class InputManager : MonoBehaviour
         cleanAction.started += ctx => OnClean(true);
         cleaningListAction.performed += OnCleaningList;
         displayControlsAction.performed += OnDisplayControls;
+        selectFirstToolAction.performed += OnSelectFirstTool;
+        selectSecondToolAction.performed += OnSelectSecondTool;
+        selectThirdToolAction.performed += OnSelectThirdTool;
+        mouseScrollAction.performed += OnMouseScroll;
 
         moveAction.canceled += OnMove;
         lookAction.canceled += OnLook;
@@ -153,5 +169,26 @@ public class InputManager : MonoBehaviour
     private void OnDisplayControls(InputAction.CallbackContext context)
     {
         DisplayControlsEvent?.Invoke();
+    }
+
+    private void OnSelectFirstTool(InputAction.CallbackContext context)
+    {
+        SelectFirstToolEvent?.Invoke();
+    }
+
+    private void OnSelectSecondTool(InputAction.CallbackContext context)
+    {
+        SelectSecondToolEvent?.Invoke();
+    }
+
+    private void OnSelectThirdTool(InputAction.CallbackContext context)
+    {
+        SelectThirdToolEvent?.Invoke();
+    }
+
+    private void OnMouseScroll(InputAction.CallbackContext context)
+    {
+        Scroll = context.ReadValue<float>();
+        Debug.Log(Scroll);
     }
 }
