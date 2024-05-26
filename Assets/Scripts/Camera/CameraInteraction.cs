@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class CameraInteraction : MonoBehaviour
 {
-    [SerializeField] private float interactionDistance = 5f;
+    [SerializeField] private float interactionDistance;
     [SerializeField] private LayerMask interactableLayer;
     [SerializeField] private TextMeshProUGUI interactionText;
 
@@ -24,13 +24,10 @@ public class CameraInteraction : MonoBehaviour
     void DetectInteractableObject()
     {
         Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward);
-        RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, interactionDistance, interactableLayer))
+        if (Physics.Raycast(ray, out RaycastHit hit, interactionDistance, interactableLayer))
         {
-            InteractableObject interactableObject = hit.collider.GetComponent<InteractableObject>();
-
-            if (interactableObject != null)
+            if (hit.collider.TryGetComponent<InteractableObject>(out var interactableObject))
             {
                 interactionText.enabled = true;
 

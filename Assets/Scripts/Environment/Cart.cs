@@ -48,8 +48,7 @@ public class Cart : MonoBehaviour
     private bool IsMouseLookingAtObject()
     {
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, raycastDistance, openableRaycastLayerMask))
+        if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, openableRaycastLayerMask))
         {
             Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.green, 2f);
             return hit.transform == transform;

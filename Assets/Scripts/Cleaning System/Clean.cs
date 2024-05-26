@@ -155,8 +155,9 @@ public class Clean : MonoBehaviour
     private void CleanSurface()
     {
         Vector3 mousePosition = Mouse.current.position.ReadValue();
+        Ray ray = cleaningManager.GetCamera().ScreenPointToRay(mousePosition);
 
-        if (Physics.Raycast(cleaningManager.GetCamera().ScreenPointToRay(mousePosition), out RaycastHit hit, raycastDistance))
+        if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance))
         {
             if (hit.transform != gameObject.transform)
             {

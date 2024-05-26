@@ -1,9 +1,26 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class UVLight : MonoBehaviour
 {
-    public bool isOn = false;
+    [Header("Config")]
+    [SerializeField] private InputManager inputManager;
+    [SerializeField] private float raycastDistance;
+    [SerializeField] private LayerMask layerMask;
+    [SerializeField] private CleaningManager cleaningManager;
+    [SerializeField] private float minCoverage = 0.7f;
+    private bool isOn = false;
     private Light uvLight;
+
+    private void OnEnable()
+    {
+        inputManager.InteractEvent += ToggleLight;
+    }
+
+    private void OnDisable()
+    {
+        inputManager.InteractEvent -= ToggleLight;
+    }
 
     void Start()
     {
@@ -11,26 +28,30 @@ public class UVLight : MonoBehaviour
         uvLight.enabled = isOn;
     }
 
-    void Update()
+    public void ToggleLight()
     {
-        if (Input.GetKeyDown(KeyCode.L))
+        Vector3 mousePosition = Mouse.current.position.ReadValue();
+        Ray ray = cleaningManager.GetCamera().ScreenPointToRay(mousePosition);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance))
         {
-            ToggleLight();
+            if (hit.distance <= raycastDistance)
+            {
+                if (hit.transform != gameObject.transform)
+                {
+                    return;
+                }
+                isOn = !isOn;
+                uvLight.enabled = isOn;
+            }
         }
     }
 
-    public void ToggleLight()
-    {
-        isOn = !isOn;
-        uvLight.enabled = isOn;
-    }
-
-    public bool IsObjectInLightRadius(GameObject obj, float minCoverage = 0.7f, int samplePoints = 5)
+    public bool IsObjectInLightRadius(GameObject obj, int samplePoints = 5)
     {
         if (!isOn) return false;
 
-        Renderer renderer = obj.GetComponent<Renderer>();
-        if (renderer == null) return false;
+        if (!obj.TryGetComponent<Renderer>(out var renderer)) return false;
 
         Bounds bounds = renderer.bounds;
         Vector3[] samplePositions = new Vector3[samplePoints * samplePoints];

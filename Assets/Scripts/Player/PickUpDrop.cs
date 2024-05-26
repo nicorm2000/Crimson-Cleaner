@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class PickUpDrop : MonoBehaviour
@@ -11,7 +7,7 @@ public class PickUpDrop : MonoBehaviour
     [SerializeField] private Transform mainCamera;
     [SerializeField] private Transform objectGrabPointTransform;
     [SerializeField] private LayerMask pickupLayerMask;
-    [SerializeField] float pickUpDistance = 10f;
+    [SerializeField] float pickUpDistance = 3f;
 
     private ObjectGrabbable objectGrabbable;
     private InteractableObject interactableObject;
