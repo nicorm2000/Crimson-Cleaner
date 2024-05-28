@@ -9,6 +9,7 @@ public class CleaningTool : MonoBehaviour
     [SerializeField] private int[] dirtyPercentages;
     [SerializeField] private int dirtyIncrementAmount;
     [SerializeField] private Material dirtyMaterial;
+    [SerializeField] private Material originalMaterial;
 
     private Renderer _renderer;
     public int DirtyIncrement {get; private set;}
@@ -106,7 +107,7 @@ public class CleaningTool : MonoBehaviour
         return 0;
     }
 
-    private void ChangeToolMaterial(int toolIndex, Material newMaterial)
+    public void ChangeToolMaterial(int toolIndex, Material newMaterial)
     {
         Renderer toolRenderer = tools[toolIndex].GetComponentInChildren<Renderer>();
         if (toolRenderer != null)
@@ -116,6 +117,20 @@ public class CleaningTool : MonoBehaviour
         else
         {
             Debug.LogError($"Renderer component not found on tool {toolIndex}.");
+        }
+    }
+
+    public Material GetOriginalMaterial()
+    {
+        return originalMaterial;
+    }
+
+    public void ResetDirtyPercentage(int toolIndex)
+    {
+        if (toolIndex >= 0 && toolIndex < dirtyPercentages.Length)
+        {
+            dirtyPercentages[toolIndex] = 0;
+            Debug.Log($"Tool {toolIndex} cleaned. Dirty percentage reset to {dirtyPercentages[toolIndex]}%.");
         }
     }
 }
