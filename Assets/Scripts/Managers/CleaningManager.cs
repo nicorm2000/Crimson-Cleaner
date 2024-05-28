@@ -9,8 +9,11 @@ public class CleaningManager : MonoBehaviour
     [SerializeField] private Animator spongeAnimator = null;
     [SerializeField] private Animator handsAnimator = null;
     [SerializeField] private InputManager inputManager = null;
+    [SerializeField] private CleaningTool cleaningTool = null;
 
     public float[] CleaningPercentages { get; private set; }
+    public int DirtyMaxValue { get; private set; }
+    public int DirtyIncrementAmount { get; private set; }
 
     private void Start()
     {
@@ -20,6 +23,9 @@ public class CleaningManager : MonoBehaviour
         CleaningPercentages[1] = 0.66f;
         CleaningPercentages[2] = 0.33f;
         CleaningPercentages[3] = 0.0f;
+
+        DirtyMaxValue = 100;
+        DirtyIncrementAmount = cleaningTool.DirtyIncrement;
     }
 
     private void OnDestroy()
@@ -55,5 +61,20 @@ public class CleaningManager : MonoBehaviour
     public InputManager GetInputManager()
     {
         return inputManager;
+    }
+
+    public CleaningTool GetToolSelector()
+    {
+        return cleaningTool;
+    }
+
+    public int GetDirtyMaxValue()
+    {
+        return DirtyMaxValue;
+    }
+
+    public int GetDirtyIncrementAmount()
+    {
+        return cleaningTool.DirtyIncrement;
     }
 }

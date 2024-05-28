@@ -4014,7 +4014,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1010726447}
-  - component: {fileID: 1010726449}
   m_Layer: 0
   m_Name: Cleaning Tool Holder
   m_TagString: Untagged
@@ -4040,19 +4039,6 @@ Transform:
   - {fileID: 1399425797}
   m_Father: {fileID: 1563147782}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1010726449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1010726446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec131163e23850e42a8509574d43b32e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cleaningManager: {fileID: 1727464070}
 --- !u!1 &1024530165
 GameObject:
   m_ObjectHideFlags: 0
@@ -5083,6 +5069,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2403f6e1c2f3e2b48b56f5af285c067b, type: 2}
+    - target: {fileID: -2020283554064761796, guid: 645562b07606290459b2d6b1d5f46a66,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 645562b07606290459b2d6b1d5f46a66,
         type: 3}
       propertyPath: m_Name
@@ -5090,7 +5081,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 645562b07606290459b2d6b1d5f46a66,
         type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 645562b07606290459b2d6b1d5f46a66,
+        type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784655795150572064, guid: 645562b07606290459b2d6b1d5f46a66,
+        type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5996,7 +5997,7 @@ GameObject:
   - component: {fileID: 1356706668}
   - component: {fileID: 1356706667}
   - component: {fileID: 1356706666}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MesaTest (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6016,6 +6017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cleaningManager: {fileID: 1727464070}
+  cleanObject: {fileID: 8190219910073856266}
   cleanMaterial: {fileID: 2100000, guid: e5c8b337a17adf64298cbdf2250b90c0, type: 2}
   raycastDistance: 3
 --- !u!64 &1356706667
@@ -6497,6 +6499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cleaningManager: {fileID: 1727464070}
+  cleanObject: {fileID: 1909706265}
   cleanMaterial: {fileID: 2100000, guid: f91faac7bf9f53944ba1027fe905c4fc, type: 2}
   raycastDistance: 3
 --- !u!65 &1426975209
@@ -6727,10 +6730,20 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4b19fe96fa8bd02449cfa4d50dde0989, type: 2}
+    - target: {fileID: 210088036690408666, guid: 677dab4f36e131b4e8d76833e8548299,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 677dab4f36e131b4e8d76833e8548299,
         type: 3}
       propertyPath: m_Name
       value: Sponge
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 677dab4f36e131b4e8d76833e8548299,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 677dab4f36e131b4e8d76833e8548299,
         type: 3}
@@ -7432,7 +7445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 1560126}
-  toolSelector: {fileID: 6982812146447357856}
+  cleaningManager: {fileID: 1727464070}
   toolImage: {fileID: 1761720572}
   toolSprites:
   - {fileID: 21300000, guid: 04b59970880e8524885360a3d7c7e0b3, type: 3}
@@ -7588,10 +7601,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameCamera: {fileID: 1563147781}
   playerAnimator: {fileID: 6982812146447357851}
-  mopAnimator: {fileID: 0}
-  spongeAnimator: {fileID: 0}
-  handsAnimator: {fileID: 0}
+  mopAnimator: {fileID: 919132148047625305}
+  spongeAnimator: {fileID: 919132148513039355}
+  handsAnimator: {fileID: 1399425798}
   inputManager: {fileID: 1560126}
+  cleaningTool: {fileID: 6982812146447357856}
 --- !u!1 &1739602733
 GameObject:
   m_ObjectHideFlags: 0
@@ -10138,7 +10152,7 @@ GameObject:
   - component: {fileID: 2132290842}
   - component: {fileID: 2132290841}
   - component: {fileID: 2132290840}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SillaTest (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10158,6 +10172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cleaningManager: {fileID: 1727464070}
+  cleanObject: {fileID: 6304396458544093185}
   cleanMaterial: {fileID: 2100000, guid: 1c2dbe1bde1761342b12f10b004cb03d, type: 2}
   raycastDistance: 3
 --- !u!64 &2132290841
@@ -21674,7 +21689,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4416926081610323803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4e5ce75242b1034b9078cf5791b35b4, type: 3}
+  m_Script: {fileID: 11500000, guid: def47c206f56aa04581485d37823c7ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 1560126}
@@ -21682,6 +21697,9 @@ MonoBehaviour:
   - {fileID: 919132148047625304}
   - {fileID: 919132148513039354}
   - {fileID: 1399425796}
+  dirtyPercentages: 000000000000000000000000
+  dirtyIncrementAmount: 25
+  dirtyMaterial: {fileID: 2100000, guid: 47d12871f09da624a884bdfbda0b3c3b, type: 2}
 --- !u!114 &6982812146447357857
 MonoBehaviour:
   m_ObjectHideFlags: 0

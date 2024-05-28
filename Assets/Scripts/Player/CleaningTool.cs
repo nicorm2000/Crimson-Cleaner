@@ -1,20 +1,28 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
-public class CleaningToolSelector : MonoBehaviour
+public class CleaningTool : MonoBehaviour
 {
     [Header("Config")]
     [SerializeField] private InputManager inputManager;
     [SerializeField] private GameObject[] tools;
-    
+    [SerializeField] private int[] dirtyPercentages;
+    [SerializeField] private int dirtyIncrementAmount;
+    [SerializeField] private Material dirtyMaterial;
+
+    private Renderer _renderer;
+    public int DirtyIncrement {get; private set;}
     private int _currentToolIndex = 0;
 
-     public event UnityAction<int> OnToolSwitched;
-
+    public event UnityAction<int> OnToolSwitched;
     public GameObject[] Tools => tools;
     public int ToolsLength => tools.Length;
     public int CurrentToolIndex => _currentToolIndex;
+
+    private void Awake()
+    {
+        DirtyIncrement = dirtyIncrementAmount;
+    }
 
     private void OnEnable()
     {
@@ -35,6 +43,7 @@ public class CleaningToolSelector : MonoBehaviour
         for (int i = 0; i < tools.Length; i++)
         {
             tools[i].SetActive(i == _currentToolIndex);
+            dirtyPercentages[i] = 0;
         }
     }
 
@@ -72,5 +81,41 @@ public class CleaningToolSelector : MonoBehaviour
     private void SetHands()
     {
         SwitchTool(2);
+    }
+
+    public void IncrementDirtyPercentage(int toolIndex, int amount)
+    {
+        if (toolIndex >= 0 && toolIndex < dirtyPercentages.Length)
+        {
+            dirtyPercentages[toolIndex] = Mathf.Clamp(dirtyPercentages[toolIndex] + amount, 0, 100);
+            Debug.Log($"Tool {toolIndex} dirty percentage: {dirtyPercentages[toolIndex]}%");
+
+            if (dirtyPercentages[toolIndex] >= 100)
+            {
+                ChangeToolMaterial(toolIndex, dirtyMaterial);
+            }
+        }
+    }
+
+    public int GetDirtyPercentage(int toolIndex)
+    {
+        if (toolIndex >= 0 && toolIndex < dirtyPercentages.Length)
+        {
+            return dirtyPercentages[toolIndex];
+        }
+        return 0;
+    }
+
+    private void ChangeToolMaterial(int toolIndex, Material newMaterial)
+    {
+        Renderer toolRenderer = tools[toolIndex].GetComponentInChildren<Renderer>();
+        if (toolRenderer != null)
+        {
+            toolRenderer.material = newMaterial;
+        }
+        else
+        {
+            Debug.LogError($"Renderer component not found on tool {toolIndex}.");
+        }
     }
 }

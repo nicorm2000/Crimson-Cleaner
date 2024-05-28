@@ -5,7 +5,7 @@ public class PlayersUIManager : MonoBehaviour
 {
     [Header("Config")]
     [SerializeField] private InputManager inputManager;
-    [SerializeField] private CleaningToolSelector toolSelector;
+    [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private Image toolImage;
     [SerializeField] private Sprite[] toolSprites;
     [SerializeField] private GameObject cleaningList;
@@ -28,13 +28,13 @@ public class PlayersUIManager : MonoBehaviour
 
     private void Start()
     {
-        toolSelector.OnToolSwitched += UpdateToolImage;
-        UpdateToolImage(toolSelector.CurrentToolIndex);
+        cleaningManager.GetToolSelector().OnToolSwitched += UpdateToolImage;
+        UpdateToolImage(cleaningManager.GetToolSelector().CurrentToolIndex);
     }
 
     private void OnDestroy()
     {
-        toolSelector.OnToolSwitched -= UpdateToolImage;
+        cleaningManager.GetToolSelector().OnToolSwitched -= UpdateToolImage;
     }
 
     private void CleaningListState()
