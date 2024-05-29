@@ -1,4 +1,22 @@
+using System.Collections.Generic;
 using UnityEngine;
+
+[System.Serializable]
+public class CleanableObjectState
+{
+    public string objectName;
+    public GameObject cleanObject;
+    public GameObject dirtyObject;
+    public float cleanliness;
+
+    public CleanableObjectState(string objectName,GameObject cleanObject, GameObject dirtyObject, float cleanliness)
+    {
+        this.objectName = objectName;
+        this.cleanObject = cleanObject;
+        this.dirtyObject = dirtyObject;
+        this.cleanliness = cleanliness;
+    }
+}
 
 public class CleaningManager : MonoBehaviour
 {
@@ -14,6 +32,8 @@ public class CleaningManager : MonoBehaviour
     public float[] CleaningPercentages { get; private set; }
     public int DirtyMaxValue { get; private set; }
     public int DirtyIncrementAmount { get; private set; }
+
+    public List<CleanableObjectState> cleanableObjectStates = new ();
 
     private void Start()
     {
