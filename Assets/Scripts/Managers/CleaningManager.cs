@@ -28,6 +28,8 @@ public class CleaningManager : MonoBehaviour
     [SerializeField] private Animator handsAnimator = null;
     [SerializeField] private InputManager inputManager = null;
     [SerializeField] private CleaningTool cleaningTool = null;
+    [SerializeField] private LayerMask mopLayerMask;
+    [SerializeField] private LayerMask spongeLayerMask;
 
     public float[] CleaningPercentages { get; private set; }
     public int DirtyMaxValue { get; private set; }
@@ -53,48 +55,15 @@ public class CleaningManager : MonoBehaviour
         CleaningPercentages = null;
     }
 
-    public Camera GetCamera() 
-    { 
-        return gameCamera; 
-    }
-
-    public Animator GetPlayerAnimator()
-    {
-        return playerAnimator;
-    }
-
-    public Animator GetMopAnimator()
-    {
-        return mopAnimator;
-    }
-
-    public Animator GetSpongeAnimator()
-    {
-        return spongeAnimator;
-    }
-
-    public Animator GetHandsAnimator()
-    {
-        return handsAnimator;
-    }
-
-    public InputManager GetInputManager()
-    {
-        return inputManager;
-    }
-
-    public CleaningTool GetToolSelector()
-    {
-        return cleaningTool;
-    }
-
-    public int GetDirtyMaxValue()
-    {
-        return DirtyMaxValue;
-    }
-
-    public int GetDirtyIncrementAmount()
-    {
-        return cleaningTool.DirtyIncrement;
-    }
+    public Camera GetCamera() => gameCamera;
+    public Animator GetPlayerAnimator() => playerAnimator;
+    public Animator GetMopAnimator() => mopAnimator;
+    public Animator GetSpongeAnimator() => spongeAnimator;
+    public Animator GetHandsAnimator() => handsAnimator;
+    public InputManager GetInputManager() => inputManager;
+    public CleaningTool GetToolSelector() => cleaningTool;
+    public int GetDirtyMaxValue() => DirtyMaxValue;
+    public int GetDirtyIncrementAmount() => cleaningTool.DirtyIncrement;
+    public LayerMask GetMopLayerMask() => mopLayerMask;
+    public LayerMask GetSpongeLayerMask() => spongeLayerMask;
 }

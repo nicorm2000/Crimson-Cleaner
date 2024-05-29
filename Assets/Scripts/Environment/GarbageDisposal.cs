@@ -13,7 +13,9 @@ public class GarbageDisposal : MonoBehaviour
 
     public void DestroyBoxContents()
     {
-        RaycastHit[] trash = Physics.BoxCastAll(coll.transform.position, coll.size, Vector3.forward);
+        RaycastHit[] trash = Physics.BoxCastAll(coll.transform.position,
+                                                coll.size,
+                                                Vector3.forward);
 
         if (trash.Length > 0)
         {
@@ -25,18 +27,7 @@ public class GarbageDisposal : MonoBehaviour
         }
     }
 
-    public void ActivateBurning()
-    {
-        burnParticles.Play();
-    }
-
-    public void ActivateBarrier()
-    {
-        coll.enabled = true;
-    }
-
-    public void DeactivateBarrier()
-    {
-        coll.enabled = false;
-    }
+    public void ActivateBurning() => burnParticles.Play();
+    public void ActivateBarrier() => coll.enabled = true;
+    public void DeactivateBarrier() => coll.enabled = false;
 }

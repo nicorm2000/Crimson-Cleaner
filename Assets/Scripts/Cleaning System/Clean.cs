@@ -9,6 +9,7 @@ public class Clean : MonoBehaviour
     [SerializeField] private GameObject cleanObject;
     [SerializeField] private Material cleanMaterial;
     [SerializeField] private float raycastDistance;
+    [SerializeField] private bool hasReplacement;
 
     private bool _isCleaning = false;
 
@@ -36,9 +37,12 @@ public class Clean : MonoBehaviour
 
     private void Start()
     {
-        if (cleanObject != null)
+        if (hasReplacement)
         {
-            cleanObject.GetComponent<Collider>().enabled = false;
+            if (cleanObject != null)
+            {
+                cleanObject.GetComponent<Collider>().enabled = false;
+            }
         }
         UpdateAlpha(_alphaPercentage);
     }
@@ -118,7 +122,10 @@ public class Clean : MonoBehaviour
                     Debug.Log("Updating Alpha 3");
                     Debug.Log("Cleaned");
                     StopCleaning();
-                    cleanObject.GetComponent<Collider>().enabled = true;
+                    if (hasReplacement)
+                    {
+                        cleanObject.GetComponent<Collider>().enabled = true;
+                    }
                     Destroy(gameObject);
                     break;
                 default:
@@ -145,14 +152,23 @@ public class Clean : MonoBehaviour
 
             if (dirtyPercentage < cleaningManager.DirtyMaxValue)
             {
-                if (currentToolIndex == 0 || currentToolIndex == 1) // Mop or Sponge
+                LayerMask mopLayer = cleaningManager.GetMopLayerMask();
+                LayerMask spongeLayer = cleaningManager.GetSpongeLayerMask();
+
+                if (currentToolIndex == 0 && (mopLayer.value & (1 << hit.transform.gameObject.layer)) != 0) // Mop
                 {
+                    Debug.Log("Mop Cleaning");
                     _coroutine ??= StartCoroutine(CleaningCoroutine(currentToolIndex));
                 }
-            }
-            else
-            {
-                Debug.Log("Tool is too dirty to clean!");
+                else if (currentToolIndex == 1 && (spongeLayer.value & (1 << hit.transform.gameObject.layer)) != 0) // Sponge
+                {
+                    Debug.Log("Sponge Cleaning");
+                    _coroutine ??= StartCoroutine(CleaningCoroutine(currentToolIndex));
+                }
+                else
+                {
+                    Debug.Log("Tool is too dirty to clean or wrong tool for this surface!");
+                }
             }
         }
     }
