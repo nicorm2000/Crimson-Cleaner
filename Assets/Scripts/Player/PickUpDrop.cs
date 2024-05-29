@@ -3,6 +3,7 @@ using UnityEngine;
 public class PickUpDrop : MonoBehaviour
 {
     [SerializeField] private InputManager inputManager;
+    [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private Transform mainCamera;
     [SerializeField] private Transform objectGrabPointTransform;
@@ -15,38 +16,60 @@ public class PickUpDrop : MonoBehaviour
 
     private void OnEnable()
     {
-        inputManager.PickUpEvent += PickUpAndDrop;
+        inputManager.PickUpEvent += PickUpAndDropObject;
+        cleaningManager.GetToolSelector().OnToolSwitched += HandleToolSwitched;
     }
 
     private void OnDisable()
     {
-        inputManager.PickUpEvent -= PickUpAndDrop;
+        inputManager.PickUpEvent -= PickUpAndDropObject;
+        cleaningManager.GetToolSelector().OnToolSwitched -= HandleToolSwitched;
     }
 
-    private void PickUpAndDrop()
+    private void PickUpAndDropObject()
     {
-        if (objectGrabbable == null)
-        {          
+        if (objectGrabbable == null && cleaningManager.GetToolSelector().CurrentToolIndex == 2)
+        {
             if (Physics.Raycast(mainCamera.position, mainCamera.forward, out RaycastHit raycastHit, pickUpDistance))
             {
                 if (raycastHit.transform.TryGetComponent(out objectGrabbable))
                 {
                     objectGrabbable.Grab(objectGrabPointTransform);
                     playerController.SetObjectGrabbable(objectGrabbable);
-                }
-
-                if (raycastHit.transform.TryGetComponent(out interactableObject))
-                {
-                    interactableObject.isObjectPickedUp = true;
+                    if (raycastHit.transform.TryGetComponent(out interactableObject))
+                    {
+                        interactableObject.isObjectPickedUp = true;
+                    }
                 }
             }
         }
-        else
+        else if (objectGrabbable != null)
+        {
+            DropObject();
+        }
+    }
+
+    private void DropObject()
+    {
+        if (objectGrabbable != null)
         {
             objectGrabbable.Drop();
             objectGrabbable = null;
+        }
+
+        if (interactableObject != null)
+        {
             interactableObject.isObjectPickedUp = false;
-            playerController.ClearObjectGrabbable();
+        }
+
+        playerController.ClearObjectGrabbable();
+    }
+
+    private void HandleToolSwitched(int newToolIndex)
+    {
+        if (newToolIndex != 2 && objectGrabbable != null)
+        {
+            DropObject();
         }
     }
 }

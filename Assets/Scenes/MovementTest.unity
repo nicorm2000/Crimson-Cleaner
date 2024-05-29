@@ -1822,9 +1822,10 @@ GameObject:
   - component: {fileID: 413158296}
   - component: {fileID: 413158298}
   - component: {fileID: 413158297}
+  - component: {fileID: 413158299}
   m_Layer: 8
   m_Name: Water Bucket
-  m_TagString: Untagged
+  m_TagString: WaterBucket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1864,7 +1865,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6b21b4acc5d483b4e923d3d3228d95de, type: 2}
+  - {fileID: 2100000, guid: 2403f6e1c2f3e2b48b56f5af285c067b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1969,8 +1970,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15ed625e748c1ad4a8d49423dbee6592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionMessage: Press 'F' to clean tool
+  interactionMessage: Press [E] to pick up
   rotateMessage: 
+--- !u!114 &413158299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413158291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lerpSpeed: 10
+  rotationSpeed: 100
+  throwingForce: 50
 --- !u!65 &415959757
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5687,7 +5703,6 @@ Transform:
   - {fileID: 1803274236}
   - {fileID: 843353173}
   - {fileID: 1093727724}
-  - {fileID: 413158292}
   - {fileID: 5288295919700987546}
   - {fileID: 1341368064}
   - {fileID: 1434589231}
@@ -5701,6 +5716,7 @@ Transform:
   - {fileID: 1947372904}
   - {fileID: 137912252}
   - {fileID: 543450652897425497}
+  - {fileID: 413158292}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1264484613
@@ -7145,6 +7161,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   interactionText: {fileID: 1895389007}
+  cleaningManager: {fileID: 1727464070}
 --- !u!64 &1606472038
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10138,8 +10155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15ed625e748c1ad4a8d49423dbee6592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionMessage: Press 'F' to Open/Close
-  rotateMessage: Press 'G' to rotate
+  interactionMessage: Press [F] to Open/Close
+  rotateMessage: Press [G] to Rotate
 --- !u!64 &2065949225
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11961,6 +11978,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705533125199784133, guid: 10743b9ceba61f84ca21857b73cd501a,
+        type: 3}
+      propertyPath: rotateMessage
+      value: Press [G] to Rotate
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705533125199784133, guid: 10743b9ceba61f84ca21857b73cd501a,
+        type: 3}
+      propertyPath: interactionMessage
+      value: Press [F] to Open/Close
       objectReference: {fileID: 0}
     - target: {fileID: 8585546422213133727, guid: 10743b9ceba61f84ca21857b73cd501a,
         type: 3}
@@ -15059,7 +15086,7 @@ PrefabInstance:
     - target: {fileID: 4965941076370543824, guid: e4a5c6b779d4448489f8be4116d7d952,
         type: 3}
       propertyPath: interactionMessage
-      value: Press 'F' to Open/Close
+      value: Press [F] to Open/Close
       objectReference: {fileID: 0}
     - target: {fileID: 5608425266116864833, guid: e4a5c6b779d4448489f8be4116d7d952,
         type: 3}
@@ -15126,6 +15153,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4ee507375e45c1b4cbb1a136b29884c1, type: 2}
+    - target: {fileID: 6457915856145256211, guid: e4a5c6b779d4448489f8be4116d7d952,
+        type: 3}
+      propertyPath: interactionMessage
+      value: Press [F] to Close
+      objectReference: {fileID: 0}
     - target: {fileID: 7373403981591882512, guid: e4a5c6b779d4448489f8be4116d7d952,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -21879,6 +21911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 1560126}
+  cleaningManager: {fileID: 1727464070}
   playerController: {fileID: 6982812146447357855}
   mainCamera: {fileID: 1563147782}
   objectGrabPointTransform: {fileID: 493193073}
@@ -23345,6 +23378,16 @@ PrefabInstance:
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 1560126}
+    - target: {fileID: 2018335328137450811, guid: bbee11844d07b6745ae7b07229289e32,
+        type: 3}
+      propertyPath: rotateMessage
+      value: Press [G] to rotate
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018335328137450811, guid: bbee11844d07b6745ae7b07229289e32,
+        type: 3}
+      propertyPath: interactionMessage
+      value: Press [F] to Open/Close
+      objectReference: {fileID: 0}
     - target: {fileID: 3556080684696483929, guid: bbee11844d07b6745ae7b07229289e32,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

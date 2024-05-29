@@ -63,7 +63,6 @@ public class Cart : MonoBehaviour
     private void EmptyMethod()
     {
         ColliderState(!_isOpen, coll);
-        //ColliderState(_isOpen, collDestruct);
     }
 
     private void ColliderState(bool state, Collider collider)

@@ -7,30 +7,30 @@ public class CameraInteraction : MonoBehaviour
     [SerializeField] private float interactionDistance;
     [SerializeField] private LayerMask interactableLayer;
     [SerializeField] private TextMeshProUGUI interactionText;
+    [SerializeField] private CleaningManager cleaningManager;
 
     private Camera mainCamera;
 
-    void Start()
+    private void Start()
     {
         mainCamera = Camera.main;
-        interactionText.enabled = false; 
+        interactionText.enabled = false;
     }
 
-    void Update()
+    private void Update()
     {
         DetectInteractableObject();
     }
 
-    void DetectInteractableObject()
+    private void DetectInteractableObject()
     {
-        Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward);
+        Ray ray = new(mainCamera.transform.position, mainCamera.transform.forward);
 
         if (Physics.Raycast(ray, out RaycastHit hit, interactionDistance, interactableLayer))
         {
             if (hit.collider.TryGetComponent<InteractableObject>(out var interactableObject))
             {
-                interactionText.enabled = true;
-
+                SetTextState(true);
                 if (interactableObject.isObjectPickedUp)
                     interactionText.text = interactableObject.rotateMessage;
                 else
@@ -39,7 +39,12 @@ public class CameraInteraction : MonoBehaviour
         }
         else
         {
-            interactionText.enabled = false;
+            SetTextState(false);
         }
+    }
+
+    private void SetTextState(bool state)
+    {
+        interactionText.enabled = state;
     }
 }
