@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class UVLight : MonoBehaviour
+public class UVLight : MonoBehaviour, IToggable
 {
     [Header("Config")]
     [SerializeField] private InputManager inputManager;
@@ -11,6 +11,9 @@ public class UVLight : MonoBehaviour
     [SerializeField] private float minCoverage = 0.7f;
     private bool isOn = false;
     private Light uvLight;
+
+    public bool _isOn;
+    public string ToggleOnOffMessage => uvLight.enabled ? "Press F to turn off" : "Press F to turn on";
 
     private void OnEnable()
     {

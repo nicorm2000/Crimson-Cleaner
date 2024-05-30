@@ -1,15 +1,17 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Openable : MonoBehaviour
+public class Openable : MonoBehaviour, IOpenable
 {
     [Header("Openable Config")]
     [SerializeField] private InputManager inputManager;
     [SerializeField] private float raycastDistance = 3f;
-    [SerializeField] private LayerMask openableRaycastLayerMask = ~0;
+    [SerializeField] private LayerMask interactableLayerMask = ~0;
+    [SerializeField] private Animator _openableAnimator;
 
-    private Animator _openableAnimator;
     public bool _isOpen { get; private set; }
+
+    public string OpenCloseMessage => _isOpen ? "Press F to close" : "Press F to open";
 
     private readonly string _openableOpen = "Open";
 
@@ -25,8 +27,7 @@ public class Openable : MonoBehaviour
 
     private void Start()
     {
-        _openableAnimator = GetComponent<Animator>();
-        _isOpen = false;
+         _isOpen = false;
     }
 
     private void ToggleObjectState()
@@ -43,10 +44,10 @@ public class Openable : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
             RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, raycastDistance, openableRaycastLayerMask))
+        if (Physics.Raycast(ray, out hit, raycastDistance, interactableLayerMask))
         {
             Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.green, 2f);
-            return hit.transform.parent == transform;
+            return hit.collider.gameObject.GetComponent<Openable>() && hit.transform == transform;
         }
         else
         {

@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class WaterBucket : MonoBehaviour
+public class WaterBucket : MonoBehaviour, ICleanable
 {
     [SerializeField] private InputManager inputManager;
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private float raycastDistance;
     [SerializeField] private ParticleSystem washParticles;
+
+    public string CleanMessage => "Press F click to clean tool";
 
     private void OnEnable()
     {

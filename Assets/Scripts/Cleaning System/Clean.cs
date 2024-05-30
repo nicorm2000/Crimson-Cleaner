@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Clean : MonoBehaviour
+public class Clean : MonoBehaviour, ICleanable
 {
     [Header("Config")]
     [SerializeField] private CleaningManager cleaningManager;
@@ -10,6 +10,8 @@ public class Clean : MonoBehaviour
     [SerializeField] private Material cleanMaterial;
     [SerializeField] private float raycastDistance;
     [SerializeField] private bool hasReplacement;
+
+    public string CleanMessage => "Hold left click to clean";
 
     private bool _isCleaning = false;
 

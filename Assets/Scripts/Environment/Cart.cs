@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Cart : MonoBehaviour
+public class Cart : MonoBehaviour, IOpenable
 {
     [Header("Openable Config")]
     [SerializeField] private InputManager inputManager;
     [SerializeField] private Collider coll;
     [SerializeField] private Collider collDestruct;
-    [SerializeField] private LayerMask openableRaycastLayerMask = ~0;
+    [SerializeField] private LayerMask interactableLayerMask = ~0;
     [SerializeField] private float raycastDistance = 3f;
 
     private Animator _openableAnimator;
     public bool _isOpen { get; private set; }
+
+    public string OpenCloseMessage => _isOpen ? "Press F to close" : "Press F to open";
 
     private readonly string _openableOpen = "Open";
 
@@ -48,10 +50,10 @@ public class Cart : MonoBehaviour
     private bool IsMouseLookingAtObject()
     {
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-        if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, openableRaycastLayerMask))
+        if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, interactableLayerMask))
         {
             Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.green, 2f);
-            return hit.transform == transform;
+            return hit.collider.gameObject.GetComponent<Cart>() && hit.transform == transform;
         }
         else
         {

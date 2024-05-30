@@ -11,8 +11,6 @@ public class PickUpDrop : MonoBehaviour
     [SerializeField] float pickUpDistance = 3f;
 
     private ObjectGrabbable objectGrabbable;
-    private InteractableObject interactableObject;
-
 
     private void OnEnable()
     {
@@ -36,10 +34,6 @@ public class PickUpDrop : MonoBehaviour
                 {
                     objectGrabbable.Grab(objectGrabPointTransform);
                     playerController.SetObjectGrabbable(objectGrabbable);
-                    if (raycastHit.transform.TryGetComponent(out interactableObject))
-                    {
-                        interactableObject.isObjectPickedUp = true;
-                    }
                 }
             }
         }
@@ -55,11 +49,6 @@ public class PickUpDrop : MonoBehaviour
         {
             objectGrabbable.Drop();
             objectGrabbable = null;
-        }
-
-        if (interactableObject != null)
-        {
-            interactableObject.isObjectPickedUp = false;
         }
 
         playerController.ClearObjectGrabbable();
