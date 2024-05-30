@@ -7,10 +7,11 @@ public class Clean : MonoBehaviour, ICleanable
     [Header("Config")]
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private GameObject cleanObject;
-    [SerializeField] private Material cleanMaterial;
     [SerializeField] private float raycastDistance;
     [SerializeField] private bool hasReplacement;
 
+    private Renderer _renderer;
+    private Material _cleanMaterial;
     public string CleanMessage => "Hold left click to clean";
 
     private bool _isCleaning = false;
@@ -19,6 +20,12 @@ public class Clean : MonoBehaviour, ICleanable
     private float _alphaPercentage = 1.0f;
 
     private Coroutine _coroutine = null;
+
+    private void Awake()
+    {
+        _renderer = GetComponent<Renderer>();
+        _cleanMaterial = _renderer.material;
+    }
 
     private void OnEnable()
     {
@@ -177,8 +184,8 @@ public class Clean : MonoBehaviour, ICleanable
 
     private void UpdateAlpha(float alphaPercentage)
     {
-        Color color = cleanMaterial.color;
+        Color color = _cleanMaterial.color;
         color.a = alphaPercentage;
-        cleanMaterial.color = color;
+        _cleanMaterial.color = color;
     }
 }
