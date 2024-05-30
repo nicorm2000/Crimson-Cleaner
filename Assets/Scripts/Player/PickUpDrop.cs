@@ -2,26 +2,43 @@ using UnityEngine;
 
 public class PickUpDrop : MonoBehaviour
 {
-    [SerializeField] private InputManager inputManager;
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private Transform mainCamera;
     [SerializeField] private Transform objectGrabPointTransform;
     [SerializeField] private LayerMask pickupLayerMask;
     [SerializeField] float pickUpDistance = 3f;
+    [SerializeField] private float maxThrowingForce = 20f;
+    [SerializeField] private float forceChargeRate = 5f;
+    public InputManager inputManager;
 
     private ObjectGrabbable objectGrabbable;
+    private float currentThrowingForce;
+    private bool isChargingThrow;
 
     private void OnEnable()
     {
         inputManager.PickUpEvent += PickUpAndDropObject;
+        inputManager.ThrowStartEvent += StartChargingThrow;
+        inputManager.ThrowEndEvent += ThrowObject;
         cleaningManager.GetToolSelector().OnToolSwitched += HandleToolSwitched;
     }
 
     private void OnDisable()
     {
         inputManager.PickUpEvent -= PickUpAndDropObject;
+        inputManager.ThrowStartEvent -= StartChargingThrow;
+        inputManager.ThrowEndEvent -= ThrowObject;
         cleaningManager.GetToolSelector().OnToolSwitched -= HandleToolSwitched;
+    }
+
+    private void Update()
+    {
+        if (isChargingThrow)
+        {
+            currentThrowingForce += forceChargeRate * Time.deltaTime;
+            currentThrowingForce = Mathf.Min(currentThrowingForce, maxThrowingForce);
+        }
     }
 
     private void PickUpAndDropObject()
@@ -60,5 +77,38 @@ public class PickUpDrop : MonoBehaviour
         {
             DropObject();
         }
+    }
+
+    private void StartChargingThrow()
+    {
+        if (objectGrabbable != null)
+        {
+            isChargingThrow = true;
+            currentThrowingForce = 0f;
+        }
+    }
+
+    public float GetCurrentThrowingForce()
+    {
+        return currentThrowingForce;
+    }
+
+    public float GetMaxThrowingForce()
+    {
+        return maxThrowingForce;
+    }
+
+    private void ThrowObject()
+    {
+        if (objectGrabbable != null)
+        {
+            Vector3 throwDirection = mainCamera.forward;
+            objectGrabbable.Throw(currentThrowingForce, throwDirection);
+
+            objectGrabbable = null;
+            isChargingThrow = false;
+        }
+
+        playerController.ClearObjectGrabbable();
     }
 }

@@ -152,6 +152,15 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Throw"",
+                    ""type"": ""Button"",
+                    ""id"": ""c008ad94-5ed5-4e3b-84eb-48aff0114f6b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -517,6 +526,17 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""action"": ""SelectThirdTool"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""65f2fe7a-67cc-4172-ad85-64e0b9165d9e"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Throw"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -539,6 +559,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         m_Player_SelectFirstTool = m_Player.FindAction("SelectFirstTool", throwIfNotFound: true);
         m_Player_SelectSecondTool = m_Player.FindAction("SelectSecondTool", throwIfNotFound: true);
         m_Player_SelectThirdTool = m_Player.FindAction("SelectThirdTool", throwIfNotFound: true);
+        m_Player_Throw = m_Player.FindAction("Throw", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -614,6 +635,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SelectFirstTool;
     private readonly InputAction m_Player_SelectSecondTool;
     private readonly InputAction m_Player_SelectThirdTool;
+    private readonly InputAction m_Player_Throw;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -632,6 +654,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         public InputAction @SelectFirstTool => m_Wrapper.m_Player_SelectFirstTool;
         public InputAction @SelectSecondTool => m_Wrapper.m_Player_SelectSecondTool;
         public InputAction @SelectThirdTool => m_Wrapper.m_Player_SelectThirdTool;
+        public InputAction @Throw => m_Wrapper.m_Player_Throw;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -683,6 +706,9 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @SelectThirdTool.started += instance.OnSelectThirdTool;
             @SelectThirdTool.performed += instance.OnSelectThirdTool;
             @SelectThirdTool.canceled += instance.OnSelectThirdTool;
+            @Throw.started += instance.OnThrow;
+            @Throw.performed += instance.OnThrow;
+            @Throw.canceled += instance.OnThrow;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -729,6 +755,9 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @SelectThirdTool.started -= instance.OnSelectThirdTool;
             @SelectThirdTool.performed -= instance.OnSelectThirdTool;
             @SelectThirdTool.canceled -= instance.OnSelectThirdTool;
+            @Throw.started -= instance.OnThrow;
+            @Throw.performed -= instance.OnThrow;
+            @Throw.canceled -= instance.OnThrow;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -762,5 +791,6 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         void OnSelectFirstTool(InputAction.CallbackContext context);
         void OnSelectSecondTool(InputAction.CallbackContext context);
         void OnSelectThirdTool(InputAction.CallbackContext context);
+        void OnThrow(InputAction.CallbackContext context);
     }
 }

@@ -10,7 +10,7 @@ public class ObjectGrabbable : MonoBehaviour, IPick
     [SerializeField] private float throwingForce = 10f;
 
     private Rigidbody objectRigidBody;
-    private Transform ObjectGrabPointTransform;
+    private Transform objectGrabPointTransform;
     private Vector3 initialLocalUp;
     private Vector3 initialLocalRight;
     private Vector3 newPosition;
@@ -30,7 +30,7 @@ public class ObjectGrabbable : MonoBehaviour, IPick
 
     public void Grab(Transform ObjectGrabPointTransform)
     {
-        this.ObjectGrabPointTransform = ObjectGrabPointTransform;
+        this.objectGrabPointTransform = ObjectGrabPointTransform;
         objectRigidBody.useGravity = false;
         //objectRigidBody.isKinematic = true;
         objectRigidBody.freezeRotation = true;
@@ -44,7 +44,7 @@ public class ObjectGrabbable : MonoBehaviour, IPick
     public void Drop()
     {
         objectRigidBody.freezeRotation = false;
-        this.ObjectGrabPointTransform = null;
+        this.objectGrabPointTransform = null;
         objectRigidBody.useGravity = true;
         //objectRigidBody.isKinematic = false;
         objectRigidBody.velocity = (newPosition - lastPosition) * throwingForce;
@@ -52,12 +52,23 @@ public class ObjectGrabbable : MonoBehaviour, IPick
         isObjectPickedUp = false;
     }
 
+    public void Throw(float throwingForce, Vector3 throwDirection)
+    {
+        objectRigidBody.freezeRotation = false;
+        this.objectGrabPointTransform = null;
+        objectRigidBody.useGravity = true;
+
+        objectRigidBody.AddForce(throwDirection * throwingForce, ForceMode.Impulse);
+
+        isObjectPickedUp = false;
+    }
+
     private void FixedUpdate()
     {
-        if (ObjectGrabPointTransform != null)
+        if (objectGrabPointTransform != null)
         {
             lastPosition = newPosition;
-            newPosition = Vector3.Lerp(transform.position, ObjectGrabPointTransform.position, Time.deltaTime * lerpSpeed);
+            newPosition = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpSpeed);
             objectRigidBody.MovePosition(newPosition);
         }
     }

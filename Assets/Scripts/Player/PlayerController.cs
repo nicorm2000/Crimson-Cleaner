@@ -121,6 +121,11 @@ public class PlayerController : MonoBehaviour
         objectGrabbable = grabbable;
     }
 
+    public ObjectGrabbable GetObjectGrabbable()
+    {
+        return objectGrabbable;
+    }
+
     public void ClearObjectGrabbable()
     {
         objectGrabbable = null;

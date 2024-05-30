@@ -24,6 +24,7 @@ public class InputManager : MonoBehaviour
     private InputAction crouchAction;
     private InputAction rotateObejctAction;
     private InputAction pickUpAction;
+    private InputAction throwAction;
     private InputAction cleaningListAction;
     private InputAction displayControlsAction;
     private InputAction selectFirstToolAction;
@@ -39,6 +40,8 @@ public class InputManager : MonoBehaviour
     public event Action SelectSecondToolEvent;
     public event Action SelectThirdToolEvent;
     public event Action<bool> CleanEvent;
+    public event Action ThrowStartEvent;
+    public event Action ThrowEndEvent;
 
     private bool isCursorVisible = true;
 
@@ -53,6 +56,7 @@ public class InputManager : MonoBehaviour
         crouchAction = currentMap.FindAction("Crouch");
         rotateObejctAction = currentMap.FindAction("RotateObejct");
         pickUpAction = currentMap.FindAction("PickUp");
+        throwAction = currentMap.FindAction("Throw");
         cleaningListAction = currentMap.FindAction("CleaningList");
         displayControlsAction = currentMap.FindAction("DisplayControls");
         selectFirstToolAction = currentMap.FindAction("SelectFirstTool");
@@ -66,6 +70,8 @@ public class InputManager : MonoBehaviour
         rotateObejctAction.performed += OnRotateObject;
         interactAction.performed += OnInteract;
         pickUpAction.performed += OnPickUp;
+        throwAction.started += OnThrowStart; // New throw action started
+        throwAction.canceled += OnThrowEnd;
         cleanAction.started += ctx => OnClean(true);
         cleaningListAction.performed += OnCleaningList;
         displayControlsAction.performed += OnDisplayControls;
@@ -149,6 +155,15 @@ public class InputManager : MonoBehaviour
     private void OnPickUp(InputAction.CallbackContext context)
     {
         PickUpEvent?.Invoke();
+    }
+
+    private void OnThrowStart(InputAction.CallbackContext context)
+    {
+        ThrowStartEvent?.Invoke();
+    }
+    private void OnThrowEnd(InputAction.CallbackContext context)
+    {
+        ThrowEndEvent?.Invoke();
     }
 
     private void OnClean(bool isCleaning)
