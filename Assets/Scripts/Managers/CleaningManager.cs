@@ -30,6 +30,7 @@ public class CleaningManager : MonoBehaviour
     [SerializeField] private CleaningTool cleaningTool = null;
     [SerializeField] private LayerMask mopLayerMask;
     [SerializeField] private LayerMask spongeLayerMask;
+    [SerializeField] private float interactionDistance;
 
     public float[] CleaningPercentages { get; private set; }
     public int DirtyMaxValue { get; private set; }
@@ -66,4 +67,5 @@ public class CleaningManager : MonoBehaviour
     public int GetDirtyIncrementAmount() => cleaningTool.DirtyIncrement;
     public LayerMask GetMopLayerMask() => mopLayerMask;
     public LayerMask GetSpongeLayerMask() => spongeLayerMask;
+    public float GetInteractionDistance() => interactionDistance;
 }

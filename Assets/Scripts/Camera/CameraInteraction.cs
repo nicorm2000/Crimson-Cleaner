@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class CameraInteraction : MonoBehaviour
 {
-    [SerializeField] private float interactionDistance = 5f;
     [SerializeField] private LayerMask interactableLayers;
     [SerializeField] private TextMeshProUGUI[] interactionTexts;
     [SerializeField] private CleaningManager cleaningManager;
@@ -25,7 +24,7 @@ public class CameraInteraction : MonoBehaviour
     {
         Ray ray = new(mainCamera.transform.position, mainCamera.transform.forward);
 
-        if (Physics.Raycast(ray, out RaycastHit hit, interactionDistance, interactableLayers))
+        if (Physics.Raycast(ray, out RaycastHit hit, cleaningManager.GetInteractionDistance(), interactableLayers))
         {
             var activeTexts = new string[interactionTexts.Length];
 

@@ -7,7 +7,6 @@ public class Clean : MonoBehaviour, ICleanable
     [Header("Config")]
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private GameObject cleanObject;
-    [SerializeField] private float raycastDistance;
     [SerializeField] private bool hasReplacement;
 
     private Renderer _renderer;
@@ -149,7 +148,7 @@ public class Clean : MonoBehaviour, ICleanable
         Vector3 mousePosition = Mouse.current.position.ReadValue();
         Ray ray = cleaningManager.GetCamera().ScreenPointToRay(mousePosition);
 
-        if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance))
+        if (Physics.Raycast(ray, out RaycastHit hit, cleaningManager.GetInteractionDistance()))
         {
             if (hit.transform != gameObject.transform)
             {

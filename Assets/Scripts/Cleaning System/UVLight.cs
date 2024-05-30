@@ -5,7 +5,6 @@ public class UVLight : MonoBehaviour, IToggable
 {
     [Header("Config")]
     [SerializeField] private InputManager inputManager;
-    [SerializeField] private float raycastDistance;
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private float minCoverage = 0.7f;
@@ -36,9 +35,9 @@ public class UVLight : MonoBehaviour, IToggable
         Vector3 mousePosition = Mouse.current.position.ReadValue();
         Ray ray = cleaningManager.GetCamera().ScreenPointToRay(mousePosition);
 
-        if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance))
+        if (Physics.Raycast(ray, out RaycastHit hit, cleaningManager.GetInteractionDistance()))
         {
-            if (hit.distance <= raycastDistance)
+            if (hit.distance <= cleaningManager.GetInteractionDistance())
             {
                 if (hit.transform != gameObject.transform)
                 {

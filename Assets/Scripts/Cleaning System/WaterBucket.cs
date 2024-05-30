@@ -5,7 +5,6 @@ public class WaterBucket : MonoBehaviour, ICleanable
 {
     [SerializeField] private InputManager inputManager;
     [SerializeField] private CleaningManager cleaningManager;
-    [SerializeField] private float raycastDistance;
     [SerializeField] private ParticleSystem washParticles;
 
     public string CleanMessage => "Press F click to clean tool";
@@ -33,7 +32,7 @@ public class WaterBucket : MonoBehaviour, ICleanable
             return;
         }
 
-        if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance))
+        if (Physics.Raycast(ray, out RaycastHit hit, cleaningManager.GetInteractionDistance()))
         {
             if (hit.transform != gameObject.transform)
             {

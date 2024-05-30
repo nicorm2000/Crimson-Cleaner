@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class ObjectGrabbable : MonoBehaviour, IPick
 {
@@ -20,7 +17,7 @@ public class ObjectGrabbable : MonoBehaviour, IPick
 
     public string PickUpMessage => "Press E to pick up";
     public string DropMessage => "Press E to drop";
-    public string ThrowMessage => "Hold E to throw";
+    public string ThrowMessage => "Hold Right Click to throw";
     public string RotateMessage => "Hold G to rotate";
 
     private void Awake()

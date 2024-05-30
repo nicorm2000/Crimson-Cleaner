@@ -7,7 +7,6 @@ public class PickUpDrop : MonoBehaviour
     [SerializeField] private Transform mainCamera;
     [SerializeField] private Transform objectGrabPointTransform;
     [SerializeField] private LayerMask pickupLayerMask;
-    [SerializeField] float pickUpDistance = 3f;
     [SerializeField] private float maxThrowingForce = 20f;
     [SerializeField] private float forceChargeRate = 5f;
     public InputManager inputManager;
@@ -45,7 +44,7 @@ public class PickUpDrop : MonoBehaviour
     {
         if (objectGrabbable == null && cleaningManager.GetToolSelector().CurrentToolIndex == 2)
         {
-            if (Physics.Raycast(mainCamera.position, mainCamera.forward, out RaycastHit raycastHit, pickUpDistance))
+            if (Physics.Raycast(mainCamera.position, mainCamera.forward, out RaycastHit raycastHit, cleaningManager.GetInteractionDistance()))
             {
                 if (raycastHit.transform.TryGetComponent(out objectGrabbable))
                 {
