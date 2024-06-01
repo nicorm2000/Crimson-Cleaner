@@ -5,18 +5,18 @@ public class SceneTimer : MonoBehaviour
 {
     [Header("Config")]
     [SerializeField] private float totalTimeInSeconds;
-    [SerializeField] private GameObject jobFinished;
     [SerializeField] private TextMeshProUGUI countdownText;
     
+    private GameStateManager gameStateManager;
     private float _currentTimeInSeconds;
 
     private void Start()
     {
-        jobFinished.SetActive(false);
         _currentTimeInSeconds = totalTimeInSeconds;
 
         UpdateTimerDisplay();
-        StartTimer();
+
+        gameStateManager = FindObjectOfType<GameStateManager>();
     }
 
     private void UpdateTimerDisplay()
@@ -26,7 +26,7 @@ public class SceneTimer : MonoBehaviour
         countdownText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    private void StartTimer()
+    public void StartTimer()
     {
         InvokeRepeating(nameof(UpdateTimer), 1f, 1f);
     }
@@ -39,12 +39,11 @@ public class SceneTimer : MonoBehaviour
         if (_currentTimeInSeconds <= 0f)
         {
             CancelInvoke(nameof(UpdateTimer));
-            ShowCursor();
-            jobFinished.SetActive(true);
+            gameStateManager.OnTimerFinished();
         }
     }
 
-    private void ShowCursor()
+    public void ShowCursor()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;

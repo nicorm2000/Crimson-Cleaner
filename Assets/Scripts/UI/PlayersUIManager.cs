@@ -6,10 +6,14 @@ public class PlayersUIManager : MonoBehaviour
     [Header("Config")]
     [SerializeField] private InputManager inputManager;
     [SerializeField] private CleaningManager cleaningManager;
+    [SerializeField] private GameStateManager gameStateManager;
     [SerializeField] private Image toolImage;
     [SerializeField] private Sprite[] toolSprites;
     [SerializeField] private GameObject cleaningList;
     [SerializeField] private GameObject displayControls;
+    public GameObject jobFinished;
+    public GameObject jobUnfinished;
+
 
     private bool _cleaningListState = false;
     private bool _displayControlsState = false;
@@ -18,18 +22,26 @@ public class PlayersUIManager : MonoBehaviour
     {
         inputManager.CleaningListEvent += CleaningListState;
         inputManager.DisplayControlsEvent += DisplayControlsState;
+        gameStateManager.GameLost += TriggerLostUI;
+        gameStateManager.GameWon += TriggerWinUI;
     }
 
     private void OnDisable()
     {
         inputManager.CleaningListEvent -= CleaningListState;
         inputManager.DisplayControlsEvent -= DisplayControlsState;
+        gameStateManager.GameLost -= TriggerLostUI;
+        gameStateManager.GameWon -= TriggerWinUI;
     }
 
     private void Start()
     {
         cleaningManager.GetToolSelector().OnToolSwitched += UpdateToolImage;
         UpdateToolImage(cleaningManager.GetToolSelector().CurrentToolIndex);
+
+        jobFinished.SetActive(false);
+        jobUnfinished.SetActive(false);
+
     }
 
     private void OnDestroy()
@@ -59,5 +71,14 @@ public class PlayersUIManager : MonoBehaviour
         {
             Debug.LogWarning("No corresponding sprite found for the current tool.");
         }
+    }
+
+    private void TriggerLostUI()
+    {
+        jobUnfinished.SetActive(true);
+    }
+    private void TriggerWinUI()
+    {
+        jobFinished.SetActive(true);
     }
 }

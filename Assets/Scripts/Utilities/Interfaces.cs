@@ -1,3 +1,4 @@
+using System;
 
 public interface IPick
 {
@@ -17,6 +18,7 @@ public interface IOpenable
 public interface ICleanable
 {
     string CleanMessage { get; }
+    event Action Cleaned;
 }
 
 public interface IToggable

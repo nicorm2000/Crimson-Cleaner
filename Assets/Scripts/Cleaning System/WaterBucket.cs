@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,7 @@ public class WaterBucket : MonoBehaviour, ICleanable
     [SerializeField] private ParticleSystem washParticles;
 
     public string CleanMessage => "Press F click to clean tool";
+    public event Action Cleaned;
 
     private void OnEnable()
     {

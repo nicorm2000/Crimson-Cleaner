@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -19,6 +20,10 @@ public class Clean : MonoBehaviour, ICleanable
     private float _alphaPercentage = 1.0f;
 
     private Coroutine _coroutine = null;
+
+    public event Action Cleaned;
+    public bool IsCleaned => isCleaned;
+    private bool isCleaned = false;
 
     private void Awake()
     {
@@ -129,6 +134,8 @@ public class Clean : MonoBehaviour, ICleanable
                     cleaningManager.GetToolSelector().IncrementDirtyPercentage(toolIndex, cleaningManager.DirtyIncrementAmount);
                     Debug.Log("Updating Alpha 3");
                     Debug.Log("Cleaned");
+                    isCleaned = true;
+                    Cleaned?.Invoke();
                     StopCleaning();
                     if (hasReplacement)
                     {
