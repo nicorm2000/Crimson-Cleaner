@@ -101,7 +101,6 @@ public class Clean : MonoBehaviour, ICleanable
     private IEnumerator CleaningCoroutine(int toolIndex)
     {
         Debug.Log("Cleaning.");
-        _alphaPercentage = cleaningManager.CleaningPercentages[1];
 
         while (_isCleaning)
         {
@@ -115,6 +114,9 @@ public class Clean : MonoBehaviour, ICleanable
 
             switch (_alphaPercentage)
             {
+                case 1.00f:
+                    _alphaPercentage = cleaningManager.CleaningPercentages[1];
+                    break;
                 case 0.66f:
                     _alphaPercentage = cleaningManager.CleaningPercentages[2];
                     break;
@@ -122,7 +124,7 @@ public class Clean : MonoBehaviour, ICleanable
                     _alphaPercentage = cleaningManager.CleaningPercentages[3];
                     break;
                 case 0:
-                    FinishCleaning(toolIndex);
+                    FinishCleaning();
                     yield break;
             }
 
@@ -148,7 +150,7 @@ public class Clean : MonoBehaviour, ICleanable
         cleaningManager.GetToolSelector().IncrementDirtyPercentage(toolIndex, cleaningManager.DirtyIncrementAmount);
     }
 
-    private void FinishCleaning(int toolIndex)
+    private void FinishCleaning()
     {
         Debug.Log("Cleaned");
         isCleaned = true;
@@ -202,5 +204,10 @@ public class Clean : MonoBehaviour, ICleanable
         Color color = _cleanMaterial.color;
         color.a = alphaPercentage;
         _cleanMaterial.color = color;
+    }
+
+    public float GetAlphaPercentage()
+    {
+        return _alphaPercentage;
     }
 }

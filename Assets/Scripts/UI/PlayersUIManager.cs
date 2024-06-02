@@ -16,14 +16,16 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private GameObject textElementPrefab;
     [SerializeField] private Transform cleanableListParent;
     [SerializeField] private Transform disposableListParent;
+    [SerializeField] private GameObject objectBackground;
+    [SerializeField] private TextMeshProUGUI objectNameText;
+    [SerializeField] private Slider alphaPercentageSlider;
     public GameObject jobFinished;
     public GameObject jobUnfinished;
 
-
     private bool _cleaningListState = false;
     private bool _displayControlsState = false;
-    private List<GameObject> cleaningTextElements = new List<GameObject>();
-    private List<GameObject> disposalTextElements = new List<GameObject>();
+    private List<GameObject> cleaningTextElements = new();
+    private List<GameObject> disposalTextElements = new();
 
     private void OnEnable()
     {
@@ -75,6 +77,43 @@ public class PlayersUIManager : MonoBehaviour
     private void OnDestroy()
     {
         cleaningManager.GetToolSelector().OnToolSwitched -= UpdateToolImage;
+    }
+
+    private void Update()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, cleaningManager.GetInteractionDistance()))
+        {
+            Clean cleanable = hit.collider.GetComponent<Clean>();
+            if (cleanable != null)
+            {
+                DisplayObjectInfo(cleanable);
+            }
+            else
+            {
+                HideObjectInfo();
+            }
+        }
+        else
+        {
+            HideObjectInfo();
+        }
+    }
+
+    private void DisplayObjectInfo(Clean cleanable)
+    {
+        objectNameText.text = cleanable.gameObject.name;
+        alphaPercentageSlider.value = cleanable.GetAlphaPercentage();
+        objectBackground.gameObject.SetActive(true);
+        objectNameText.gameObject.SetActive(true);
+        alphaPercentageSlider.gameObject.SetActive(true);
+    }
+
+    private void HideObjectInfo()
+    {
+        objectNameText.gameObject.SetActive(false);
+        alphaPercentageSlider.gameObject.SetActive(false);
+        objectBackground.gameObject.SetActive(false);
     }
 
     private void CleaningListState()
