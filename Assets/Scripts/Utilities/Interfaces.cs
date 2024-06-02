@@ -25,3 +25,8 @@ public interface IToggable
 {
     string ToggleOnOffMessage { get; }
 }
+
+public interface IDisposable
+{
+    event Action Disposed;
+}

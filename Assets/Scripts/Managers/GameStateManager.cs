@@ -14,16 +14,21 @@ public class GameStateManager : MonoBehaviour
 {
     [SerializeField] private List<Clean> cleanableObjects;
     public List<Clean> CleanableObjects => cleanableObjects;
+
+    [SerializeField] private List<DisposableObject> disposableObjects;
+    public List<DisposableObject> DisposableObjects => disposableObjects;
+
     public SceneTimer sceneTimer;
 
     private IGameState currentState;
     private Dictionary<string, IGameState> states;
 
     public bool isTimerCompleted;
+    public int cleanedCount = 0;
+    public int disposedCount = 0;
 
     public event Action GameLost;
     public event Action GameWon;
-
 
     private void Start()
     {
@@ -62,7 +67,12 @@ public class GameStateManager : MonoBehaviour
 
     public void OnObjectCleaned()
     {
-        cleanableObjects.RemoveAll(obj => obj == null || obj.IsCleaned);
+        cleanedCount++;
+    }
+    
+    public void OnObjectDisposed()
+    {
+        disposedCount++;
     }
 
     public void OnTimerFinished()
@@ -89,6 +99,14 @@ public class InitializationState : IGameState
         {
             cleanableObject.Cleaned += gameStateManager.OnObjectCleaned;
         }
+
+        foreach (var disposableObject in gameStateManager.DisposableObjects)
+        {
+            disposableObject.Disposed += gameStateManager.OnObjectDisposed;
+        }
+
+        gameStateManager.cleanedCount = 0;
+        gameStateManager.disposedCount = 0;
 
         gameStateManager.isTimerCompleted = false;
         gameStateManager.sceneTimer.StartTimer();
@@ -117,7 +135,7 @@ public class GamePlayState : IGameState
 
     public void UpdateState(GameStateManager gameStateManager)
     {
-        if (gameStateManager.CleanableObjects.Count == 0)
+        if (gameStateManager.cleanedCount == gameStateManager.CleanableObjects.Count && gameStateManager.disposedCount == gameStateManager.DisposableObjects.Count)
         {
             gameStateManager.TransitionToState("Win");
             return;
@@ -204,7 +222,18 @@ public class DeInitializationState : IGameState
 {
     public void EnterState(GameStateManager gameStateManager)
     {
-        
+        foreach (var cleanableObject in gameStateManager.CleanableObjects)
+        {
+            cleanableObject.Cleaned -= gameStateManager.OnObjectCleaned;
+        }
+
+        foreach (var disposableObject in gameStateManager.DisposableObjects)
+        {
+            disposableObject.Disposed -= gameStateManager.OnObjectDisposed;
+        }
+
+        gameStateManager.CleanableObjects.Clear();
+        gameStateManager.DisposableObjects.Clear();
     }
 
     public void UpdateState(GameStateManager gameStateManager)
@@ -214,9 +243,6 @@ public class DeInitializationState : IGameState
 
     public void ExitState(GameStateManager gameStateManager)
     {
-        foreach (var cleanableObject in gameStateManager.CleanableObjects)
-        {
-            cleanableObject.Cleaned -= gameStateManager.OnObjectCleaned;
-        }
+        
     }
 }

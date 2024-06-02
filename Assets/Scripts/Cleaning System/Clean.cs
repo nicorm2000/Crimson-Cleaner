@@ -22,6 +22,7 @@ public class Clean : MonoBehaviour, ICleanable
     private Coroutine _coroutine = null;
 
     public event Action Cleaned;
+    public event Action<GameObject> CleanedGO;
     public bool IsCleaned => isCleaned;
     private bool isCleaned = false;
 
@@ -136,6 +137,7 @@ public class Clean : MonoBehaviour, ICleanable
                     Debug.Log("Cleaned");
                     isCleaned = true;
                     Cleaned?.Invoke();
+                    CleanedGO?.Invoke(gameObject);
                     StopCleaning();
                     if (hasReplacement)
                     {

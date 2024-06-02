@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class GarbageDisposal : MonoBehaviour
@@ -21,8 +22,11 @@ public class GarbageDisposal : MonoBehaviour
         {
             foreach (RaycastHit raycastHits in trash) 
             {
-                if (raycastHits.transform.CompareTag("Trash"))
-                    Destroy(raycastHits.collider.gameObject);
+                DisposableObject disposableObject = raycastHits.transform.GetComponent<DisposableObject>();
+                if (disposableObject)
+                {
+                    disposableObject.TriggerDisposal();
+                }
             }
         }
     }
