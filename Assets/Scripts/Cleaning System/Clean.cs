@@ -103,11 +103,12 @@ public class Clean : MonoBehaviour, ICleanable
         Debug.Log("Cleaning.");
         _alphaPercentage = cleaningManager.CleaningPercentages[1];
 
-        while (_isCleaning) //Evil While WARNING
+        while (_isCleaning)
         {
-            switch (_alphaPercentage)
+            if (_alphaPercentage == 0.66f)
             {
-                case 0.66f:
+                if (cleaningManager.GetToolSelector().GetDirtyPercentage(cleaningManager.GetToolSelector().CurrentToolIndex) < cleaningManager.DirtyMaxValue)
+                {
                     Debug.Log("Updating Alpha 1");
                     _alphaPercentage = cleaningManager.CleaningPercentages[1];
                     UpdateAlpha(_alphaPercentage);
@@ -118,8 +119,17 @@ public class Clean : MonoBehaviour, ICleanable
                         Debug.Log("Cleaning..");
                         _alphaPercentage = cleaningManager.CleaningPercentages[2];
                     }
-                    break;
-                case 0.33f:
+                }
+                else
+                {
+                    StopCleaning();
+                    yield break;
+                }
+            }
+            else if (_alphaPercentage == 0.33f)
+            {
+                if (cleaningManager.GetToolSelector().GetDirtyPercentage(cleaningManager.GetToolSelector().CurrentToolIndex) < cleaningManager.DirtyMaxValue)
+                {
                     Debug.Log("Updating Alpha 2");
                     _alphaPercentage = cleaningManager.CleaningPercentages[2];
                     UpdateAlpha(_alphaPercentage);
@@ -130,8 +140,17 @@ public class Clean : MonoBehaviour, ICleanable
                         Debug.Log("Cleaning...");
                         _alphaPercentage = cleaningManager.CleaningPercentages[3];
                     }
-                    break;
-                case 0:
+                }
+                else
+                {
+                    StopCleaning();
+                    yield break;
+                }
+            }
+            else if (_alphaPercentage == 0)
+            {
+                if (cleaningManager.GetToolSelector().GetDirtyPercentage(cleaningManager.GetToolSelector().CurrentToolIndex) < cleaningManager.DirtyMaxValue)
+                {
                     cleaningManager.GetToolSelector().IncrementDirtyPercentage(toolIndex, cleaningManager.DirtyIncrementAmount);
                     Debug.Log("Updating Alpha 3");
                     Debug.Log("Cleaned");
@@ -144,10 +163,18 @@ public class Clean : MonoBehaviour, ICleanable
                         cleanObject.GetComponent<Collider>().enabled = true;
                     }
                     Destroy(gameObject);
-                    break;
-                default:
+                    yield break;
+                }
+                else
+                {
                     StopCleaning();
-                    break;
+                    yield break;
+                }
+            }
+            else
+            {
+                StopCleaning();
+                yield break;
             }
         }
     }
@@ -165,21 +192,18 @@ public class Clean : MonoBehaviour, ICleanable
             }
 
             int currentToolIndex = cleaningManager.GetToolSelector().CurrentToolIndex;
-            int dirtyPercentage = cleaningManager.GetToolSelector().GetDirtyPercentage(currentToolIndex);
 
-            if (dirtyPercentage < cleaningManager.DirtyMaxValue)
+            if (cleaningManager.GetToolSelector().GetDirtyPercentage(currentToolIndex) < cleaningManager.DirtyMaxValue)
             {
                 LayerMask mopLayer = cleaningManager.GetMopLayerMask();
                 LayerMask spongeLayer = cleaningManager.GetSpongeLayerMask();
 
                 if (currentToolIndex == 0 && (mopLayer.value & (1 << hit.transform.gameObject.layer)) != 0) // Mop
                 {
-                    Debug.Log("Mop Cleaning");
                     _coroutine ??= StartCoroutine(CleaningCoroutine(currentToolIndex));
                 }
                 else if (currentToolIndex == 1 && (spongeLayer.value & (1 << hit.transform.gameObject.layer)) != 0) // Sponge
                 {
-                    Debug.Log("Sponge Cleaning");
                     _coroutine ??= StartCoroutine(CleaningCoroutine(currentToolIndex));
                 }
                 else

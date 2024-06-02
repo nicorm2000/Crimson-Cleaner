@@ -28,12 +28,15 @@ public class ThrowingForceSlider : MonoBehaviour
 
     private void OnThrowStart()
     {
-        slider.gameObject.SetActive(true); 
+        if (pickUpDrop.GetObjectGrabbable() != null)
+        {
+            slider.gameObject.SetActive(true);
+        }
     }
 
     private void OnThrowEnd()
     {
-        slider.gameObject.SetActive(false); 
+        slider.gameObject.SetActive(false);
     }
 
     private void Update()

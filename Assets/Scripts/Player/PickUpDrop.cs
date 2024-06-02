@@ -97,6 +97,11 @@ public class PickUpDrop : MonoBehaviour
         return maxThrowingForce;
     }
 
+    public ObjectGrabbable GetObjectGrabbable()
+    {
+        return objectGrabbable;
+    }
+
     private void ThrowObject()
     {
         if (objectGrabbable != null)
