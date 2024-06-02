@@ -18,6 +18,7 @@ public class GameStateManager : MonoBehaviour
     [SerializeField] private List<DisposableObject> disposableObjects;
     public List<DisposableObject> DisposableObjects => disposableObjects;
 
+    public InputManager inputManager;
     public SceneTimer sceneTimer;
 
     private IGameState currentState;
@@ -29,6 +30,16 @@ public class GameStateManager : MonoBehaviour
 
     public event Action GameLost;
     public event Action GameWon;
+
+    private void OnEnable()
+    {
+        inputManager.PauseEvent += TogglePause;
+    }
+
+    private void OnDisable()
+    {
+        
+    }
 
     private void Start()
     {
@@ -87,6 +98,13 @@ public class GameStateManager : MonoBehaviour
     public void TriggerWinEvent()
     {
         GameWon?.Invoke();
+    }
+
+    private void TogglePause()
+    {
+        bool isPauseState = currentState is PauseState;
+        TransitionToState(isPauseState ? "GamePlay" : "Pause");
+        inputManager.ToggleGameplayMap(isPauseState);
     }
 }
 
@@ -158,7 +176,7 @@ public class WinState : IGameState
 {
     public void EnterState(GameStateManager gameStateManager)
     {
-        gameStateManager.sceneTimer.ShowCursor();
+        gameStateManager.inputManager.ShowCursor();
 
         Debug.Log("Player won the game");
         gameStateManager.TriggerWinEvent();
@@ -181,7 +199,7 @@ public class LoseState : IGameState
 {
     public void EnterState(GameStateManager gameStateManager)
     {
-        gameStateManager.sceneTimer.ShowCursor();
+        gameStateManager.inputManager.ShowCursor();
 
         Debug.Log("Player lost the game");
         gameStateManager.TriggerLoseEvent();
@@ -204,7 +222,8 @@ public class PauseState : IGameState
 {
     public void EnterState(GameStateManager gameStateManager)
     {
-        
+        gameStateManager.inputManager.ShowCursor();
+        Debug.Log("Game Paused");
     }
 
     public void UpdateState(GameStateManager gameStateManager)
@@ -214,7 +233,8 @@ public class PauseState : IGameState
 
     public void ExitState(GameStateManager gameStateManager)
     {
-        
+        gameStateManager.inputManager.HideCursor();
+        Debug.Log("Game Resumed");
     }
 }
 

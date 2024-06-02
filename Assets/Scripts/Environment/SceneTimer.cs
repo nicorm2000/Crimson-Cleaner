@@ -42,10 +42,4 @@ public class SceneTimer : MonoBehaviour
             gameStateManager.OnTimerFinished();
         }
     }
-
-    public void ShowCursor()
-    {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-    }
 }

@@ -1,13 +1,15 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Interactions;
 
 public class InputManager : MonoBehaviour
 {
     [SerializeField] private bool shouldHideCursor;
 
-    private PlayerInput playerinput;
+    private PlayerInput playerInput;
+
+    private InputActionMap gameplayMap;
+    private InputActionMap pauseMap;
 
     public Vector2 Move { get; private set; }
     public Vector2 Look { get; private set; }
@@ -16,7 +18,6 @@ public class InputManager : MonoBehaviour
     public bool RotateObject { get; private set; }
     public float Scroll { get; private set; }
 
-    private InputActionMap currentMap;
     private InputAction moveAction;
     private InputAction lookAction;
     private InputAction interactAction;
@@ -31,6 +32,7 @@ public class InputManager : MonoBehaviour
     private InputAction selectSecondToolAction;
     private InputAction selectThirdToolAction;
     private InputAction mouseScrollAction;
+    private InputAction pauseAction;
 
     public event Action PickUpEvent;
     public event Action InteractEvent;
@@ -42,27 +44,33 @@ public class InputManager : MonoBehaviour
     public event Action<bool> CleanEvent;
     public event Action ThrowStartEvent;
     public event Action ThrowEndEvent;
+    public event Action PauseEvent;
 
     private bool isCursorVisible = true;
 
     private void Awake()
     {
-        playerinput = GetComponent<PlayerInput>();
-        currentMap = playerinput.currentActionMap;
-        moveAction = currentMap.FindAction("Move");
-        lookAction = currentMap.FindAction("Look");
-        interactAction = currentMap.FindAction("Interact");
-        cleanAction = currentMap.FindAction("Clean");
-        crouchAction = currentMap.FindAction("Crouch");
-        rotateObejctAction = currentMap.FindAction("RotateObejct");
-        pickUpAction = currentMap.FindAction("PickUp");
-        throwAction = currentMap.FindAction("Throw");
-        cleaningListAction = currentMap.FindAction("CleaningList");
-        displayControlsAction = currentMap.FindAction("DisplayControls");
-        selectFirstToolAction = currentMap.FindAction("SelectFirstTool");
-        selectSecondToolAction = currentMap.FindAction("SelectSecondTool");
-        selectThirdToolAction = currentMap.FindAction("SelectThirdTool");
-        mouseScrollAction = currentMap.FindAction("MouseScroll");
+        playerInput = GetComponent<PlayerInput>();
+
+        gameplayMap = playerInput.actions.FindActionMap("Player");
+        pauseMap = playerInput.actions.FindActionMap("Pause");
+
+        moveAction = gameplayMap.FindAction("Move");
+        lookAction = gameplayMap.FindAction("Look");
+        interactAction = gameplayMap.FindAction("Interact");
+        cleanAction = gameplayMap.FindAction("Clean");
+        crouchAction = gameplayMap.FindAction("Crouch");
+        rotateObejctAction = gameplayMap.FindAction("RotateObejct");
+        pickUpAction = gameplayMap.FindAction("PickUp");
+        throwAction = gameplayMap.FindAction("Throw");
+        cleaningListAction = gameplayMap.FindAction("CleaningList");
+        displayControlsAction = gameplayMap.FindAction("DisplayControls");
+        selectFirstToolAction = gameplayMap.FindAction("SelectFirstTool");
+        selectSecondToolAction = gameplayMap.FindAction("SelectSecondTool");
+        selectThirdToolAction = gameplayMap.FindAction("SelectThirdTool");
+        mouseScrollAction = gameplayMap.FindAction("MouseScroll");
+
+        pauseAction = playerInput.actions.FindAction("Pause");
 
         moveAction.performed += OnMove;
         lookAction.performed += OnLook;
@@ -79,6 +87,7 @@ public class InputManager : MonoBehaviour
         selectSecondToolAction.performed += OnSelectSecondTool;
         selectThirdToolAction.performed += OnSelectThirdTool;
         mouseScrollAction.performed += OnMouseScroll;
+        pauseAction.performed += OnPause;
 
         moveAction.canceled += OnMove;
         lookAction.canceled += OnLook;
@@ -94,12 +103,14 @@ public class InputManager : MonoBehaviour
 
     private void OnEnable()
     {
-        currentMap.Enable();
+        gameplayMap.Enable();
+        pauseMap.Enable();
     }
 
     private void OnDisable()
     {
-        currentMap.Disable();
+        gameplayMap.Disable();
+        pauseMap.Disable();
     }
 
     private void Update()
@@ -114,13 +125,13 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    private void HideCursor()
+    public void HideCursor()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    private void ShowCursor()
+    public void ShowCursor()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -204,5 +215,18 @@ public class InputManager : MonoBehaviour
     private void OnMouseScroll(InputAction.CallbackContext context)
     {
         Scroll = context.ReadValue<float>();
+    }
+
+    private void OnPause(InputAction.CallbackContext context)
+    {
+        PauseEvent?.Invoke();
+    }
+
+    public void ToggleGameplayMap(bool active)
+    {
+        if (active)
+            gameplayMap.Enable();
+        else
+            gameplayMap.Disable();
     }
 }
