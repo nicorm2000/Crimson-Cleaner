@@ -105,78 +105,61 @@ public class Clean : MonoBehaviour, ICleanable
 
         while (_isCleaning)
         {
-            if (_alphaPercentage == 0.66f)
+            if (!CanContinueCleaning())
             {
-                if (cleaningManager.GetToolSelector().GetDirtyPercentage(cleaningManager.GetToolSelector().CurrentToolIndex) < cleaningManager.DirtyMaxValue)
-                {
-                    Debug.Log("Updating Alpha 1");
-                    _alphaPercentage = cleaningManager.CleaningPercentages[1];
-                    UpdateAlpha(_alphaPercentage);
-                    cleaningManager.GetToolSelector().IncrementDirtyPercentage(toolIndex, cleaningManager.DirtyIncrementAmount);
-                    yield return new WaitForSeconds(_cleaningInterval);
-                    if (_isCleaning)
-                    {
-                        Debug.Log("Cleaning..");
-                        _alphaPercentage = cleaningManager.CleaningPercentages[2];
-                    }
-                }
-                else
-                {
-                    StopCleaning();
-                    yield break;
-                }
+                StopCleaning();
+                yield break;
             }
-            else if (_alphaPercentage == 0.33f)
+
+            UpdateAlphaAndDirtyPercentage(toolIndex);
+
+            switch (_alphaPercentage)
             {
-                if (cleaningManager.GetToolSelector().GetDirtyPercentage(cleaningManager.GetToolSelector().CurrentToolIndex) < cleaningManager.DirtyMaxValue)
-                {
-                    Debug.Log("Updating Alpha 2");
+                case 0.66f:
                     _alphaPercentage = cleaningManager.CleaningPercentages[2];
-                    UpdateAlpha(_alphaPercentage);
-                    cleaningManager.GetToolSelector().IncrementDirtyPercentage(toolIndex, cleaningManager.DirtyIncrementAmount);
-                    yield return new WaitForSeconds(_cleaningInterval);
-                    if (_isCleaning)
-                    {
-                        Debug.Log("Cleaning...");
-                        _alphaPercentage = cleaningManager.CleaningPercentages[3];
-                    }
-                }
-                else
-                {
-                    StopCleaning();
+                    break;
+                case 0.33f:
+                    _alphaPercentage = cleaningManager.CleaningPercentages[3];
+                    break;
+                case 0:
+                    FinishCleaning(toolIndex);
                     yield break;
-                }
             }
-            else if (_alphaPercentage == 0)
-            {
-                if (cleaningManager.GetToolSelector().GetDirtyPercentage(cleaningManager.GetToolSelector().CurrentToolIndex) < cleaningManager.DirtyMaxValue)
-                {
-                    cleaningManager.GetToolSelector().IncrementDirtyPercentage(toolIndex, cleaningManager.DirtyIncrementAmount);
-                    Debug.Log("Updating Alpha 3");
-                    Debug.Log("Cleaned");
-                    isCleaned = true;
-                    Cleaned?.Invoke();
-                    CleanedGO?.Invoke(gameObject);
-                    StopCleaning();
-                    if (hasReplacement)
-                    {
-                        cleanObject.GetComponent<Collider>().enabled = true;
-                    }
-                    Destroy(gameObject);
-                    yield break;
-                }
-                else
-                {
-                    StopCleaning();
-                    yield break;
-                }
-            }
-            else
+
+            yield return new WaitForSeconds(_cleaningInterval);
+
+            if (!CanContinueCleaning())
             {
                 StopCleaning();
                 yield break;
             }
         }
+    }
+
+    private bool CanContinueCleaning()
+    {
+        return cleaningManager.GetToolSelector().GetDirtyPercentage(cleaningManager.GetToolSelector().CurrentToolIndex) < cleaningManager.DirtyMaxValue;
+    }
+
+    private void UpdateAlphaAndDirtyPercentage(int toolIndex)
+    {
+        Debug.Log("Updating Alpha");
+        UpdateAlpha(_alphaPercentage);
+        cleaningManager.GetToolSelector().IncrementDirtyPercentage(toolIndex, cleaningManager.DirtyIncrementAmount);
+    }
+
+    private void FinishCleaning(int toolIndex)
+    {
+        Debug.Log("Cleaned");
+        isCleaned = true;
+        Cleaned?.Invoke();
+        CleanedGO?.Invoke(gameObject);
+        StopCleaning();
+        if (hasReplacement)
+        {
+            cleanObject.GetComponent<Collider>().enabled = true;
+        }
+        Destroy(gameObject);
     }
 
     private void CleanSurface()
