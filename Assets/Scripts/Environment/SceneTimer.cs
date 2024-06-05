@@ -9,6 +9,7 @@ public class SceneTimer : MonoBehaviour
     
     private GameStateManager gameStateManager;
     private float _currentTimeInSeconds;
+    private bool isPaused;
 
     private void Start()
     {
@@ -17,6 +18,7 @@ public class SceneTimer : MonoBehaviour
         UpdateTimerDisplay();
 
         gameStateManager = FindObjectOfType<GameStateManager>();
+        isPaused = false;
     }
 
     private void UpdateTimerDisplay()
@@ -33,6 +35,9 @@ public class SceneTimer : MonoBehaviour
 
     private void UpdateTimer()
     {
+        if (isPaused)
+            return;
+
         _currentTimeInSeconds -= 1f;
         UpdateTimerDisplay();
 
@@ -41,5 +46,10 @@ public class SceneTimer : MonoBehaviour
             CancelInvoke(nameof(UpdateTimer));
             gameStateManager.OnTimerFinished();
         }
+    }
+
+    public void TooglePauseTimer(bool active)
+    {
+        isPaused = active;
     }
 }

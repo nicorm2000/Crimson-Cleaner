@@ -70,12 +70,14 @@ public class PlayersUIManager : MonoBehaviour
 
         foreach (Clean cleanableObject in gameStateManager.CleanableObjects)
         {
-            cleanableObject.GetComponent<Clean>().CleanedGO -= UpdateCleaningList;
+            if (cleanableObject != null)
+                cleanableObject.GetComponent<Clean>().CleanedGO -= UpdateCleaningList;
         }
 
         foreach (DisposableObject disposableObject in gameStateManager.DisposableObjects)
         {
-            disposableObject.GetComponent<DisposableObject>().DisposedGO -= UpdateDisposableList;
+            if (disposableObject != null)
+                disposableObject.GetComponent<DisposableObject>().DisposedGO -= UpdateDisposableList;
         }
     }
 

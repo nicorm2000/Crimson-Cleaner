@@ -99,7 +99,7 @@ public class GameStateManager : MonoBehaviour
         GameWon?.Invoke();
     }
 
-    private void TogglePause()
+    public void TogglePause()
     {
         bool isPauseState = currentState is PauseState;
         TransitionToState(isPauseState ? "GamePlay" : "Pause");
@@ -222,6 +222,7 @@ public class PauseState : IGameState
     public void EnterState(GameStateManager gameStateManager)
     {
         gameStateManager.inputManager.ShowCursor();
+        gameStateManager.sceneTimer.TooglePauseTimer(true);
         Debug.Log("Game Paused");
     }
 
@@ -233,6 +234,7 @@ public class PauseState : IGameState
     public void ExitState(GameStateManager gameStateManager)
     {
         gameStateManager.inputManager.HideCursor();
+        gameStateManager.sceneTimer.TooglePauseTimer(false);
         Debug.Log("Game Resumed");
     }
 }
