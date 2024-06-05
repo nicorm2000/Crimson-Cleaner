@@ -11,7 +11,6 @@ public class CleaningTool : MonoBehaviour
     [SerializeField] private Material dirtyMaterial;
     [SerializeField] private Material originalMaterial;
 
-    private Renderer _renderer;
     public int DirtyIncrement {get; private set;}
     private int _currentToolIndex = 0;
 

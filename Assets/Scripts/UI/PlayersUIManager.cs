@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -9,8 +10,6 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private InputManager inputManager;
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private GameStateManager gameStateManager;
-    [SerializeField] private Image toolImage;
-    [SerializeField] private Sprite[] toolSprites;
     [SerializeField] private GameObject cleaningList;
     [SerializeField] private GameObject displayControls;
     [SerializeField] private GameObject textElementPrefab;
@@ -19,6 +18,21 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private GameObject objectBackground;
     [SerializeField] private TextMeshProUGUI objectNameText;
     [SerializeField] private Slider alphaPercentageSlider;
+
+    [Header("Tools UI")]
+    [SerializeField] private GameObject toolHolder;
+    [SerializeField] private float toolHolderLifetime;
+    [SerializeField] private Image mopImage;
+    [SerializeField] private Image spongeImage;
+    [SerializeField] private Image handImage;
+    [SerializeField] private Sprite mopSpriteOn;
+    [SerializeField] private Sprite mopSpriteOff;
+    [SerializeField] private Sprite spongeSpriteOn;
+    [SerializeField] private Sprite spongeSpriteOff;
+    [SerializeField] private Sprite handSpriteOn;
+    [SerializeField] private Sprite handSpriteOff;
+    [SerializeField] private Image[] toolSelectionImages;
+
     public GameObject jobFinished;
     public GameObject jobUnfinished;
 
@@ -27,6 +41,8 @@ public class PlayersUIManager : MonoBehaviour
     private List<GameObject> cleaningTextElements = new();
     private List<GameObject> disposalTextElements = new();
 
+    private Coroutine toolDissapearCoroutine;
+
     private void OnEnable()
     {
         inputManager.CleaningListEvent += CleaningListState;
@@ -34,12 +50,12 @@ public class PlayersUIManager : MonoBehaviour
         gameStateManager.GameLost += TriggerLostUI;
         gameStateManager.GameWon += TriggerWinUI;
 
-        foreach (var cleanableObject  in gameStateManager.CleanableObjects)
+        foreach (Clean cleanableObject  in gameStateManager.CleanableObjects)
         {
             cleanableObject.GetComponent<Clean>().CleanedGO += UpdateCleaningList;
         }
 
-        foreach (var disposableObject in gameStateManager.DisposableObjects)
+        foreach (DisposableObject disposableObject in gameStateManager.DisposableObjects)
         {
             disposableObject.GetComponent<DisposableObject>().DisposedGO += UpdateDisposableList;
         }
@@ -52,12 +68,12 @@ public class PlayersUIManager : MonoBehaviour
         gameStateManager.GameLost -= TriggerLostUI;
         gameStateManager.GameWon -= TriggerWinUI;
 
-        foreach (var cleanableObject in gameStateManager.CleanableObjects)
+        foreach (Clean cleanableObject in gameStateManager.CleanableObjects)
         {
             cleanableObject.GetComponent<Clean>().CleanedGO -= UpdateCleaningList;
         }
 
-        foreach (var disposableObject in gameStateManager.DisposableObjects)
+        foreach (DisposableObject disposableObject in gameStateManager.DisposableObjects)
         {
             disposableObject.GetComponent<DisposableObject>().DisposedGO -= UpdateDisposableList;
         }
@@ -68,6 +84,7 @@ public class PlayersUIManager : MonoBehaviour
         cleaningManager.GetToolSelector().OnToolSwitched += UpdateToolImage;
         UpdateToolImage(cleaningManager.GetToolSelector().CurrentToolIndex);
 
+        toolHolder.SetActive(false);
         jobFinished.SetActive(false);
         jobUnfinished.SetActive(false);
 
@@ -135,14 +152,42 @@ public class PlayersUIManager : MonoBehaviour
 
     private void UpdateToolImage(int currentToolIndex)
     {
-        if (currentToolIndex >= 0 && currentToolIndex < toolSprites.Length)
+        toolHolder.SetActive(true);
+        switch (cleaningManager.GetToolSelector().CurrentToolIndex)
         {
-            toolImage.sprite = toolSprites[currentToolIndex];
+            case 0:
+                mopImage.sprite = mopSpriteOn;
+                spongeImage.sprite = spongeSpriteOff;
+                handImage.sprite = handSpriteOff;
+                break;
+            case 1:
+                mopImage.sprite = mopSpriteOff;
+                spongeImage.sprite = spongeSpriteOn;
+                handImage.sprite = handSpriteOff;
+                break;
+            case 2:
+                mopImage.sprite = mopSpriteOff;
+                spongeImage.sprite = spongeSpriteOff;
+                handImage.sprite = handSpriteOn;
+                break;
+            default:
+                mopImage.sprite = mopSpriteOff;
+                spongeImage.sprite = spongeSpriteOff;
+                handImage.sprite = handSpriteOff;
+                break;
         }
-        else
+
+        if (toolDissapearCoroutine != null)
         {
-            Debug.LogWarning("No corresponding sprite found for the current tool.");
+            StopCoroutine(toolDissapearCoroutine);
         }
+        toolDissapearCoroutine = StartCoroutine(WaitToolDisappear());
+    }
+
+    private IEnumerator WaitToolDisappear()
+    {
+        yield return new WaitForSeconds(toolHolderLifetime);
+        toolHolder.SetActive(false);
     }
 
     private void TriggerLostUI()
@@ -166,8 +211,7 @@ public class PlayersUIManager : MonoBehaviour
         foreach (var cleanableObject in gameStateManager.CleanableObjects)
         {
             GameObject textElement = Instantiate(textElementPrefab, cleanableListParent);
-            TextMeshProUGUI tmp = textElement.GetComponent<TextMeshProUGUI>();
-            if (tmp != null)
+            if (textElement.TryGetComponent<TextMeshProUGUI>(out var tmp))
             {
                 tmp.text = cleanableObject.name;
 
@@ -186,8 +230,7 @@ public class PlayersUIManager : MonoBehaviour
         foreach (var disposableObject in gameStateManager.DisposableObjects)
         {
             GameObject textElement = Instantiate(textElementPrefab, disposableListParent);
-            TextMeshProUGUI tmp = textElement.GetComponent<TextMeshProUGUI>();
-            if (tmp != null)
+            if (textElement.TryGetComponent<TextMeshProUGUI>(out var tmp))
             {
                 tmp.text = disposableObject.name;
 
