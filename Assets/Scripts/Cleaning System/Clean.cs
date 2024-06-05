@@ -145,7 +145,6 @@ public class Clean : MonoBehaviour, ICleanable
         Cleaned?.Invoke();
         CleanedGO?.Invoke(gameObject);
         StopCleaning();
-        //Destroy(gameObject);
     }
 
     private void CleanSurface()
