@@ -8,7 +8,9 @@ public class WaterBucket : MonoBehaviour, ICleanable
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private ParticleSystem washParticles;
 
-    public string CleanMessage => "Press F click to clean tool";
+    [SerializeField] private Sprite cleanMessage;
+    public Sprite CleanMessage => cleanMessage;
+
     public event Action Cleaned;
 
     private void OnEnable()

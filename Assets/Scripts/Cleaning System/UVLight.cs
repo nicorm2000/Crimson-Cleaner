@@ -12,7 +12,9 @@ public class UVLight : MonoBehaviour, IToggable
     private Light uvLight;
 
     public bool _isOn;
-    public string ToggleOnOffMessage => uvLight.enabled ? "Press F to turn off" : "Press F to turn on";
+
+    [SerializeField] private Sprite toggleOnOffMessage;
+    public Sprite ToggleOnOffMessage => toggleOnOffMessage;
 
     private void OnEnable()
     {

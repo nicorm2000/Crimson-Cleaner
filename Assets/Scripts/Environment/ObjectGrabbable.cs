@@ -15,10 +15,15 @@ public class ObjectGrabbable : MonoBehaviour, IPick
 
     public bool isObjectPickedUp { get; private set; }
 
-    public string PickUpMessage => "Press E to pick up";
-    public string DropMessage => "Press E to drop";
-    public string ThrowMessage => "Hold Right Click to throw";
-    public string RotateMessage => "Hold G to rotate";
+    [SerializeField] private Sprite pickUpMessage;
+    [SerializeField] private Sprite dropMessage;
+    [SerializeField] private Sprite throwMessage;
+    [SerializeField] private Sprite rotateMessage;
+
+    public Sprite PickUpMessage => pickUpMessage;
+    public Sprite DropMessage => dropMessage;
+    public Sprite ThrowMessage => throwMessage;
+    public Sprite RotateMessage => rotateMessage;
 
     private void Awake()
     {

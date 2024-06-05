@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Openable : MonoBehaviour, IOpenable
 {
     [Header("Openable Config")]
     [SerializeField] private InputManager inputManager;
+    [SerializeField] private PlayerController playerController;
     [SerializeField] private float raycastDistance = 3f;
     [SerializeField] private LayerMask interactableLayerMask = ~0;
     [SerializeField] private Animator _openableAnimator;
@@ -12,6 +14,9 @@ public class Openable : MonoBehaviour, IOpenable
     public bool _isOpen { get; private set; }
 
     public string OpenCloseMessage => _isOpen ? "Press F to close" : "Press F to open";
+
+    [SerializeField] private Sprite interactMessage;
+    public Sprite InteractMessage => interactMessage;
 
     private readonly string _openableOpen = "Open";
 
@@ -32,7 +37,7 @@ public class Openable : MonoBehaviour, IOpenable
 
     private void ToggleObjectState()
     {
-        if (IsMouseLookingAtObject())
+        if (IsMouseLookingAtObject() && playerController.GetObjectGrabbable() == null)
         {
             _isOpen = !_isOpen;
             _openableAnimator.SetBool(_openableOpen, _isOpen);

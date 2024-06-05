@@ -1,29 +1,34 @@
 using System;
+using UnityEngine;
+using UnityEngine.UI;
 
 public interface IPick
 {
     bool isObjectPickedUp { get; }
-    string PickUpMessage { get; }
-    string DropMessage { get; }
-    string ThrowMessage { get; }
-    string RotateMessage { get; }
+
+    Sprite PickUpMessage { get; }
+    Sprite DropMessage { get; }
+    Sprite ThrowMessage { get; }
+    Sprite RotateMessage { get; }
 }
 
 public interface IOpenable
 {
     bool _isOpen { get; }
-    string OpenCloseMessage { get; }
+
+    Sprite InteractMessage { get; }
 }
 
 public interface ICleanable
 {
-    string CleanMessage { get; }
     event Action Cleaned;
+
+    //Sprite CleanMessage { get; }
 }
 
 public interface IToggable
 {
-    string ToggleOnOffMessage { get; }
+    Sprite ToggleOnOffMessage { get; }
 }
 
 public interface IDisposable

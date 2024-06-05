@@ -1,18 +1,20 @@
-using TMPro;
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraInteraction : MonoBehaviour
 {
     [SerializeField] private LayerMask interactableLayers;
-    [SerializeField] private TextMeshProUGUI[] interactionTexts;
+    [SerializeField] private Image[] interactionImages; // Changed from TextMeshProUGUI to Image
     [SerializeField] private CleaningManager cleaningManager;
+    [SerializeField] private PlayerController playerController;
 
     private Camera mainCamera;
 
     private void Start()
     {
         mainCamera = Camera.main;
-        SetTextState(false);
+        SetImageState(false);
     }
 
     private void Update()
@@ -26,99 +28,116 @@ public class CameraInteraction : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, cleaningManager.GetInteractionDistance(), interactableLayers))
         {
-            var activeTexts = new string[interactionTexts.Length];
+            var activeSprites = new Sprite[interactionImages.Length];
 
             IPick pickableObject = hit.collider.gameObject.GetComponent<ObjectGrabbable>() as IPick;
             IOpenable openableObject = hit.collider.gameObject.GetComponent<Openable>() as IOpenable;
             IOpenable cartOpenableObject = hit.collider.gameObject.GetComponent<Cart>() as IOpenable;
-            ICleanable cleanableObject = hit.collider.gameObject.GetComponent<Clean>() as ICleanable;
+            //ICleanable cleanableObject = hit.collider.gameObject.GetComponent<Clean>() as ICleanable;
             ICleanable cleanableToolObject = hit.collider.gameObject.GetComponent<WaterBucket>() as ICleanable;
             IToggable toggableObject = hit.collider.gameObject.GetComponent<UVLight>() as IToggable;
 
-            if (pickableObject != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().ToolsLength -1)
+            if (pickableObject != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().ToolsLength - 1)
             {
-                AppendPickUpTexts(pickableObject, ref activeTexts);
+                AppendPickUpSprites(pickableObject, ref activeSprites);
             }
 
-            if (openableObject != null)
+            if (openableObject != null && playerController.GetObjectGrabbable() == null)
             {
-                AppendOpenableTexts(openableObject, ref activeTexts);
+                AppendOpenableSprites(openableObject, ref activeSprites);
             }
 
-            if (cartOpenableObject != null)
+            if (cartOpenableObject != null && playerController.GetObjectGrabbable() == null)
             {
-                AppendOpenableTexts(cartOpenableObject, ref activeTexts);
+                AppendOpenableSprites(cartOpenableObject, ref activeSprites);
             }
 
-            if (cleanableObject != null)
-            {
-                AppendCleanableTexts(cleanableObject, ref activeTexts);
-            }
+            //if (cleanableObject != null && cleaningManager.GetToolSelector().CurrentToolIndex != cleaningManager.GetToolSelector().ToolsLength - 1)
+            //{
+            //    AppendCleanableSprites(cleanableObject, ref activeSprites);
+            //}
 
             if (cleanableToolObject != null && cleaningManager.GetToolSelector().CurrentToolIndex != cleaningManager.GetToolSelector().ToolsLength - 1)
             {
-                AppendCleanableTexts(cleanableToolObject, ref activeTexts);
+                AppendCleanableSprites(cleanableToolObject, ref activeSprites);
             }
 
-            if (toggableObject != null) 
+            if (toggableObject != null)
             {
-                AppendToggableTexts(toggableObject, ref activeTexts);
+                AppendToggableSprites(toggableObject, ref activeSprites);
             }
 
-            UpdateUI(activeTexts);
+            UpdateUI(activeSprites);
         }
         else
         {
-            SetTextState(false);
+            SetImageState(false);
         }
     }
 
-    private void SetTextState(bool state)
+    private void SetImageState(bool state)
     {
-        foreach (var text in interactionTexts)
+        foreach (var image in interactionImages)
         {
-            text.enabled = state;
+            image.enabled = state;
         }
     }
 
-    private void AppendPickUpTexts(IPick pickableObject, ref string[] activeTexts)
+    private void AppendPickUpSprites(IPick pickableObject, ref Sprite[] activeSprites)
     {
-        SetTextState(true);
+        SetImageState(true);
+        int index = GetNextAvailableSlot(activeSprites);
         if (pickableObject.isObjectPickedUp)
         {
-            activeTexts[0] = pickableObject.DropMessage;
-            activeTexts[1] = pickableObject.ThrowMessage;
-            activeTexts[2] = pickableObject.RotateMessage;
+            activeSprites[1] = pickableObject.ThrowMessage;
+            activeSprites[2] = pickableObject.RotateMessage;
+            activeSprites[3] = pickableObject.DropMessage;
         }
         else
         {
-            activeTexts[0] = pickableObject.PickUpMessage;
+            activeSprites[index] = pickableObject.PickUpMessage;
         }
     }
 
-    private void AppendOpenableTexts(IOpenable openableObject, ref string[] activeTexts)
+    private void AppendOpenableSprites(IOpenable openableObject, ref Sprite[] activeSprites)
     {
-        SetTextState(true);
-        activeTexts[0] = openableObject.OpenCloseMessage;
+        SetImageState(true);
+        int index = GetNextAvailableSlot(activeSprites);
+        activeSprites[index] = openableObject.InteractMessage;
     }
 
-    private void AppendCleanableTexts(ICleanable cleanableObject, ref string[] activeTexts)
+    private void AppendCleanableSprites(ICleanable cleanableObject, ref Sprite[] activeSprites)
     {
-        SetTextState(true);
-        activeTexts[1] = cleanableObject.CleanMessage;
+        SetImageState(true);
+        int index = GetNextAvailableSlot(activeSprites);
+        //activeSprites[index] = cleanableObject.CleanMessage;
     }
 
-    private void AppendToggableTexts(IToggable toggableObject, ref string[] activeTexts)
+    private void AppendToggableSprites(IToggable toggableObject, ref Sprite[] activeSprites)
     {
-        SetTextState(true);
-        activeTexts[3] = toggableObject.ToggleOnOffMessage;
+        SetImageState(true);
+        int index = GetNextAvailableSlot(activeSprites);
+        activeSprites[index] = toggableObject.ToggleOnOffMessage;
     }
 
-    private void UpdateUI(string[] activeTexts)
+    private int GetNextAvailableSlot(Sprite[] activeSprites)
     {
-        for (int i = 0; i < interactionTexts.Length; i++)
+        for (int i = 0; i < activeSprites.Length; i++)
         {
-            interactionTexts[i].text = activeTexts[i] ?? string.Empty;
+            if (activeSprites[i] == null)
+            {
+                return i;
+            }
+        }
+        return activeSprites.Length - 1; // Return last slot if no available slot is found
+    }
+
+    private void UpdateUI(Sprite[] activeSprites)
+    {
+        for (int i = 0; i < interactionImages.Length; i++)
+        {
+            interactionImages[i].sprite = activeSprites[i];
+            interactionImages[i].enabled = activeSprites[i] != null; // Enable image only if sprite is not null
         }
     }
 }

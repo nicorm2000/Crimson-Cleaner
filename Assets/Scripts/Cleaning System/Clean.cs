@@ -10,7 +10,8 @@ public class Clean : MonoBehaviour, ICleanable
     [SerializeField] private Material[] cleaningMaterials;
 
     private Renderer _renderer;
-    public string CleanMessage => "Hold left click to clean";
+    [SerializeField] private Sprite cleanMessage;
+    public Sprite CleanMessage => cleanMessage;
 
     private bool _isCleaning = false;
     private float _cleaningInterval = 1.0f;

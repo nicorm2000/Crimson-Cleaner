@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Cart : MonoBehaviour, IOpenable
 {
     [Header("Openable Config")]
     [SerializeField] private InputManager inputManager;
+    [SerializeField] private PlayerController playerController;
     [SerializeField] private Collider coll;
     [SerializeField] private Collider collDestruct;
     [SerializeField] private LayerMask interactableLayerMask = ~0;
@@ -16,6 +18,9 @@ public class Cart : MonoBehaviour, IOpenable
     public bool _isOpen { get; private set; }
 
     public string OpenCloseMessage => _isOpen ? "Press F to close" : "Press F to open";
+
+    [SerializeField] private Sprite interactMessage;
+    public Sprite InteractMessage => interactMessage;
 
     private readonly string _openableOpen = "Open";
 
@@ -37,7 +42,7 @@ public class Cart : MonoBehaviour, IOpenable
 
     private void ToggleObjectState()
     {
-        if (IsMouseLookingAtObject())
+        if (IsMouseLookingAtObject() && playerController.GetObjectGrabbable() == null)
         {
             _isOpen = !_isOpen;
             _openableAnimator.SetBool(_openableOpen, _isOpen);
