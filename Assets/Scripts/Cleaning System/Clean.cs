@@ -7,17 +7,15 @@ public class Clean : MonoBehaviour, ICleanable
 {
     [Header("Config")]
     [SerializeField] private CleaningManager cleaningManager;
-    [SerializeField] private GameObject cleanObject;
-    [SerializeField] private bool hasReplacement;
+    [SerializeField] private Material[] cleaningMaterials;
 
     private Renderer _renderer;
-    private Material _cleanMaterial;
     public string CleanMessage => "Hold left click to clean";
 
     private bool _isCleaning = false;
-
     private float _cleaningInterval = 1.0f;
-    private float _alphaPercentage = 1.0f;
+    private int _currentMaterialIndex = 0;
+    private float _currentUIIndex = 1.0f;
 
     private Coroutine _coroutine = null;
 
@@ -29,7 +27,6 @@ public class Clean : MonoBehaviour, ICleanable
     private void Awake()
     {
         _renderer = GetComponent<Renderer>();
-        _cleanMaterial = _renderer.material;
     }
 
     private void OnEnable()
@@ -49,21 +46,9 @@ public class Clean : MonoBehaviour, ICleanable
         StopCleaning();
     }
 
-    private void Start()
-    {
-        if (hasReplacement)
-        {
-            if (cleanObject != null)
-            {
-                cleanObject.GetComponent<Collider>().enabled = false;
-            }
-        }
-        UpdateAlpha(_alphaPercentage);
-    }
-
     private void Update()
     {
-        if (_isCleaning)
+        if (_isCleaning && !isCleaned)
         {
             CleanSurface();
         }
@@ -101,7 +86,6 @@ public class Clean : MonoBehaviour, ICleanable
     private IEnumerator CleaningCoroutine(int toolIndex)
     {
         Debug.Log("Cleaning.");
-
         while (_isCleaning)
         {
             if (!CanContinueCleaning())
@@ -110,20 +94,23 @@ public class Clean : MonoBehaviour, ICleanable
                 yield break;
             }
 
-            UpdateAlphaAndDirtyPercentage(toolIndex);
+            UpdateMaterialAndDirtyPercentage(toolIndex);
 
-            switch (_alphaPercentage)
+            switch (_currentMaterialIndex)
             {
-                case 1.00f:
-                    _alphaPercentage = cleaningManager.CleaningPercentages[1];
-                    break;
-                case 0.66f:
-                    _alphaPercentage = cleaningManager.CleaningPercentages[2];
-                    break;
-                case 0.33f:
-                    _alphaPercentage = cleaningManager.CleaningPercentages[3];
-                    break;
                 case 0:
+                    _currentMaterialIndex = 1;
+                    _currentUIIndex = 0.75f;
+                    break;
+                case 1:
+                    _currentMaterialIndex = 2;
+                    _currentUIIndex = 0.5f;
+                    break;
+                case 2:
+                    _currentMaterialIndex = 3;
+                    _currentUIIndex = 0.25f;
+                    break;
+                case 3:
                     FinishCleaning();
                     yield break;
             }
@@ -143,25 +130,22 @@ public class Clean : MonoBehaviour, ICleanable
         return cleaningManager.GetToolSelector().GetDirtyPercentage(cleaningManager.GetToolSelector().CurrentToolIndex) < cleaningManager.DirtyMaxValue;
     }
 
-    private void UpdateAlphaAndDirtyPercentage(int toolIndex)
+    private void UpdateMaterialAndDirtyPercentage(int toolIndex)
     {
-        Debug.Log("Updating Alpha");
-        UpdateAlpha(_alphaPercentage);
+        Debug.Log("Updating Material");
+        UpdateMaterial(_currentMaterialIndex);
         cleaningManager.GetToolSelector().IncrementDirtyPercentage(toolIndex, cleaningManager.DirtyIncrementAmount);
     }
 
     private void FinishCleaning()
     {
         Debug.Log("Cleaned");
+        _currentUIIndex = 0.0f;
         isCleaned = true;
         Cleaned?.Invoke();
         CleanedGO?.Invoke(gameObject);
         StopCleaning();
-        if (hasReplacement)
-        {
-            cleanObject.GetComponent<Collider>().enabled = true;
-        }
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     private void CleanSurface()
@@ -199,15 +183,21 @@ public class Clean : MonoBehaviour, ICleanable
         }
     }
 
-    private void UpdateAlpha(float alphaPercentage)
+    private void UpdateMaterial(int materialIndex)
     {
-        Color color = _cleanMaterial.color;
-        color.a = alphaPercentage;
-        _cleanMaterial.color = color;
+        if (materialIndex >= 0 && materialIndex < cleaningMaterials.Length)
+        {
+            _renderer.material = cleaningMaterials[materialIndex];
+        }
     }
 
-    public float GetAlphaPercentage()
+    public int GetMaterialIndex()
     {
-        return _alphaPercentage;
+        return _currentMaterialIndex;
+    }
+
+    public float GetCleanUIIndex()
+    {
+        return _currentUIIndex;
     }
 }

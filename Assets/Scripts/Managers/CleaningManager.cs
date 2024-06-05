@@ -32,7 +32,6 @@ public class CleaningManager : MonoBehaviour
     [SerializeField] private LayerMask spongeLayerMask;
     [SerializeField] private float interactionDistance;
 
-    public float[] CleaningPercentages { get; private set; }
     public int DirtyMaxValue { get; private set; }
     public int DirtyIncrementAmount { get; private set; }
 
@@ -40,20 +39,8 @@ public class CleaningManager : MonoBehaviour
 
     private void Start()
     {
-        CleaningPercentages = new float[4];
-
-        CleaningPercentages[0] = 1.0f;
-        CleaningPercentages[1] = 0.66f;
-        CleaningPercentages[2] = 0.33f;
-        CleaningPercentages[3] = 0.0f;
-
         DirtyMaxValue = 100;
         DirtyIncrementAmount = cleaningTool.DirtyIncrement;
-    }
-
-    private void OnDestroy()
-    {
-        CleaningPercentages = null;
     }
 
     public Camera GetCamera() => gameCamera;

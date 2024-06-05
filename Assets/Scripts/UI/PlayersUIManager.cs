@@ -81,13 +81,18 @@ public class PlayersUIManager : MonoBehaviour
 
     private void Update()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, cleaningManager.GetInteractionDistance()))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, cleaningManager.GetInteractionDistance()))
         {
-            Clean cleanable = hit.collider.GetComponent<Clean>();
-            if (cleanable != null)
+            if (hit.collider.TryGetComponent<Clean>(out var cleanable))
             {
-                DisplayObjectInfo(cleanable);
+                if (cleanable.GetCleanUIIndex() > 0.0f)
+                {
+                    DisplayObjectInfo(cleanable);
+                }
+                else
+                {
+                    HideObjectInfo();
+                }
             }
             else
             {
@@ -103,7 +108,7 @@ public class PlayersUIManager : MonoBehaviour
     private void DisplayObjectInfo(Clean cleanable)
     {
         objectNameText.text = cleanable.gameObject.name;
-        alphaPercentageSlider.value = cleanable.GetAlphaPercentage();
+        alphaPercentageSlider.value = cleanable.GetCleanUIIndex();
         objectBackground.gameObject.SetActive(true);
         objectNameText.gameObject.SetActive(true);
         alphaPercentageSlider.gameObject.SetActive(true);
