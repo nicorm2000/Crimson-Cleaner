@@ -32,7 +32,7 @@ public class CameraInteraction : MonoBehaviour
             var activeSprites = new Sprite[interactionImages.Length];
 
             IPickable pickableObject = hit.collider.gameObject.GetComponent<ObjectGrabbable>() as IPickable;
-            IRetrievable objectRetrievable = hit.collider.gameObject.GetComponent<ObjectRetrievable>() as IRetrievable;
+            IRetrievable objectRetrievable = hit.collider.gameObject.GetComponent<StealableObject>() as IRetrievable;
             IOpenable openableObject = hit.collider.gameObject.GetComponent<Openable>() as IOpenable;
             IOpenable cartOpenableObject = hit.collider.gameObject.GetComponent<Cart>() as IOpenable;
             //ICleanable cleanableObject = hit.collider.gameObject.GetComponent<Clean>() as ICleanable;
