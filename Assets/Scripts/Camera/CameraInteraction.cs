@@ -30,7 +30,8 @@ public class CameraInteraction : MonoBehaviour
         {
             var activeSprites = new Sprite[interactionImages.Length];
 
-            IPick pickableObject = hit.collider.gameObject.GetComponent<ObjectGrabbable>() as IPick;
+            IPickable pickableObject = hit.collider.gameObject.GetComponent<ObjectGrabbable>() as IPickable;
+            IRetrievable objectRetrievable = hit.collider.gameObject.GetComponent<ObjectRetrievable>() as IRetrievable;
             IOpenable openableObject = hit.collider.gameObject.GetComponent<Openable>() as IOpenable;
             IOpenable cartOpenableObject = hit.collider.gameObject.GetComponent<Cart>() as IOpenable;
             //ICleanable cleanableObject = hit.collider.gameObject.GetComponent<Clean>() as ICleanable;
@@ -40,6 +41,11 @@ public class CameraInteraction : MonoBehaviour
             if (pickableObject != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().ToolsLength - 1)
             {
                 AppendPickUpSprites(pickableObject, ref activeSprites);
+            }
+
+            if (objectRetrievable != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().ToolsLength - 1)
+            {
+                AppendRetrievableSprites(objectRetrievable, ref activeSprites);
             }
 
             if (openableObject != null && playerController.GetObjectGrabbable() == null)
@@ -83,7 +89,7 @@ public class CameraInteraction : MonoBehaviour
         }
     }
 
-    private void AppendPickUpSprites(IPick pickableObject, ref Sprite[] activeSprites)
+    private void AppendPickUpSprites(IPickable pickableObject, ref Sprite[] activeSprites)
     {
         SetImageState(true);
         int index = GetNextAvailableSlot(activeSprites);
@@ -97,6 +103,13 @@ public class CameraInteraction : MonoBehaviour
         {
             activeSprites[index] = pickableObject.PickUpMessage;
         }
+    }
+
+    private void AppendRetrievableSprites(IRetrievable openableObject, ref Sprite[] activeSprites)
+    {
+        SetImageState(true);
+        int index = GetNextAvailableSlot(activeSprites);
+        activeSprites[index] = openableObject.PickUpMessage;
     }
 
     private void AppendOpenableSprites(IOpenable openableObject, ref Sprite[] activeSprites)

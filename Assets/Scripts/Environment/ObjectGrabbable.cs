@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ObjectGrabbable : MonoBehaviour, IPick
+public class ObjectGrabbable : MonoBehaviour, IPickable
 {
     [SerializeField] private float lerpSpeed = 10f;
     [SerializeField] private float rotationSpeed = 10f;

@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public interface IPick
+public interface IPickable
 {
     bool isObjectPickedUp { get; }
 
@@ -10,6 +10,11 @@ public interface IPick
     Sprite DropMessage { get; }
     Sprite ThrowMessage { get; }
     Sprite RotateMessage { get; }
+}
+
+public interface IRetrievable
+{
+    Sprite PickUpMessage { get; }
 }
 
 public interface IOpenable

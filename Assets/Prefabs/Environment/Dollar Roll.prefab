@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 4111772767541307074}
   - component: {fileID: 1524075691242905096}
   - component: {fileID: 7854941294902880937}
+  - component: {fileID: 269256969762282661}
   m_Layer: 8
   m_Name: Dollar Roll
   m_TagString: Untagged
@@ -218,3 +219,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -6144200040443506303, guid: eeb0d47745a21ed429bf5e9961e19f1f, type: 3}
+--- !u!114 &269256969762282661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4235991994167578382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9eb429c2af781a42a686e6824a1fcc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputManager: {fileID: 0}
+  playerController: {fileID: 0}
+  raycastDistance: 3
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  pickUpMessage: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
