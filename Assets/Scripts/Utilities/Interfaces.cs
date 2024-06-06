@@ -28,7 +28,7 @@ public interface ICleanable
 {
     event Action Cleaned;
 
-    //Sprite CleanMessage { get; }
+    Sprite CleanMessage { get; }
 }
 
 public interface IToggable

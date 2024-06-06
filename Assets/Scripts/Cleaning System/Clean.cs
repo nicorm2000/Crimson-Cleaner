@@ -10,8 +10,6 @@ public class Clean : MonoBehaviour, ICleanable
     [SerializeField] private Material[] cleaningMaterials;
 
     private Renderer _renderer;
-    [SerializeField] private Sprite cleanMessage;
-    public Sprite CleanMessage => cleanMessage;
 
     private bool _isCleaning = false;
     private float _cleaningInterval = 1.0f;
@@ -23,6 +21,10 @@ public class Clean : MonoBehaviour, ICleanable
     public event Action Cleaned;
     public event Action<GameObject> CleanedGO;
     public bool IsCleaned => isCleaned;
+
+    private Sprite cleanMessage;
+    public Sprite CleanMessage => cleanMessage;
+
     private bool isCleaned = false;
 
     private void Awake()

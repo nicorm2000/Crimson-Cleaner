@@ -10,6 +10,7 @@ public class CameraInteraction : MonoBehaviour
     [SerializeField] private PlayerController playerController;
 
     private Camera mainCamera;
+    private IPickable currentPickableObject; // Track the currently picked up object
 
     private void Start()
     {
@@ -40,6 +41,7 @@ public class CameraInteraction : MonoBehaviour
 
             if (pickableObject != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().ToolsLength - 1)
             {
+                currentPickableObject = pickableObject;
                 AppendPickUpSprites(pickableObject, ref activeSprites);
             }
 
@@ -73,6 +75,13 @@ public class CameraInteraction : MonoBehaviour
                 AppendToggableSprites(toggableObject, ref activeSprites);
             }
 
+            UpdateUI(activeSprites);
+        }
+        else if (currentPickableObject != null && currentPickableObject.isObjectPickedUp)
+        {
+            // Keep showing the pick-up sprites if the object is still picked up
+            var activeSprites = new Sprite[interactionImages.Length];
+            AppendPickUpSprites(currentPickableObject, ref activeSprites);
             UpdateUI(activeSprites);
         }
         else
@@ -123,7 +132,7 @@ public class CameraInteraction : MonoBehaviour
     {
         SetImageState(true);
         int index = GetNextAvailableSlot(activeSprites);
-        //activeSprites[index] = cleanableObject.CleanMessage;
+        activeSprites[index] = cleanableObject.CleanMessage;
     }
 
     private void AppendToggableSprites(IToggable toggableObject, ref Sprite[] activeSprites)
