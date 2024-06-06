@@ -802,7 +802,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 27fdc72d7a48c664abf576b90b963b21, type: 2}
   - {fileID: 2100000, guid: 9b9f8b0df81fa044f83d2792265ad1e0, type: 2}
   - {fileID: 2100000, guid: 24a3b26dbea8386469d0241125b8d513, type: 2}
-  cleanMessage: {fileID: 21300000, guid: bcd9326ade0035e488417e174be0a480, type: 3}
 --- !u!114 &44940267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -963,7 +962,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 27fdc72d7a48c664abf576b90b963b21, type: 2}
   - {fileID: 2100000, guid: 9b9f8b0df81fa044f83d2792265ad1e0, type: 2}
   - {fileID: 2100000, guid: 24a3b26dbea8386469d0241125b8d513, type: 2}
-  cleanMessage: {fileID: 21300000, guid: bcd9326ade0035e488417e174be0a480, type: 3}
 --- !u!114 &49036403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2861,7 +2859,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 27fdc72d7a48c664abf576b90b963b21, type: 2}
   - {fileID: 2100000, guid: 9b9f8b0df81fa044f83d2792265ad1e0, type: 2}
   - {fileID: 2100000, guid: 24a3b26dbea8386469d0241125b8d513, type: 2}
-  cleanMessage: {fileID: 21300000, guid: bcd9326ade0035e488417e174be0a480, type: 3}
 --- !u!1 &333955505
 GameObject:
   m_ObjectHideFlags: 0
@@ -7816,7 +7813,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -50, y: -100}
+  m_AnchoredPosition: {x: -50, y: -86}
   m_SizeDelta: {x: 600, y: 750}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1204111978
@@ -8345,7 +8342,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 27fdc72d7a48c664abf576b90b963b21, type: 2}
   - {fileID: 2100000, guid: 9b9f8b0df81fa044f83d2792265ad1e0, type: 2}
   - {fileID: 2100000, guid: 24a3b26dbea8386469d0241125b8d513, type: 2}
-  cleanMessage: {fileID: 21300000, guid: bcd9326ade0035e488417e174be0a480, type: 3}
 --- !u!1 &1277221385
 GameObject:
   m_ObjectHideFlags: 0
@@ -8858,7 +8854,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 167701f95e4281c40b26042b127694e7, type: 2}
   - {fileID: 2100000, guid: 7c26b6768cdbf4e42a7ab19469452d1d, type: 2}
   - {fileID: 2100000, guid: b7596c5a8bdcc864d837e5d903b644ac, type: 2}
-  cleanMessage: {fileID: 21300000, guid: bcd9326ade0035e488417e174be0a480, type: 3}
 --- !u!64 &1356706667
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9081,15 +9076,17 @@ MonoBehaviour:
 
     PickUp: E
 
-    Rotate Object: G (Move Mouse)
+    Throw Object: G
 
-    Swap
-    Tool: Mouse Scroll Wheel / 1,2,3
+    Rotate Object:
+    R (Move Mouse)
 
-    Cleaning List: Tab
+    Swap Tool: Mouse Scroll Wheel / 1,2,3
 
-    Display Controls:
-    0'
+    Cleaning List:
+    Tab
+
+    Display Controls: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9343,7 +9340,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: ae2d96329beeb0f49810eca7b48005b0, type: 2}
   - {fileID: 2100000, guid: 6fab21c9790687349a0cb421bb801f99, type: 2}
   - {fileID: 2100000, guid: e7f535afe69139d40bb53702b06fbce9, type: 2}
-  cleanMessage: {fileID: 21300000, guid: bcd9326ade0035e488417e174be0a480, type: 3}
 --- !u!65 &1426975209
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11752,7 +11748,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 27fdc72d7a48c664abf576b90b963b21, type: 2}
   - {fileID: 2100000, guid: 9b9f8b0df81fa044f83d2792265ad1e0, type: 2}
   - {fileID: 2100000, guid: 24a3b26dbea8386469d0241125b8d513, type: 2}
-  cleanMessage: {fileID: 21300000, guid: bcd9326ade0035e488417e174be0a480, type: 3}
 --- !u!1 &1827753079
 GameObject:
   m_ObjectHideFlags: 0
@@ -12123,7 +12118,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cleaningManager: {fileID: 1727464070}
   cleaningMaterials: []
-  cleanMessage: {fileID: 21300000, guid: bcd9326ade0035e488417e174be0a480, type: 3}
 --- !u!65 &1951339008
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13182,7 +13176,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: f52cb9d64842beb47aac3f3bb781ffab, type: 2}
   - {fileID: 2100000, guid: 7acdab00737f40d41930c0698228d4cf, type: 2}
   - {fileID: 2100000, guid: 548e9b7adb9b86141a9f95f5fb194e29, type: 2}
-  cleanMessage: {fileID: 21300000, guid: bcd9326ade0035e488417e174be0a480, type: 3}
 --- !u!64 &2132290841
 MeshCollider:
   m_ObjectHideFlags: 0
