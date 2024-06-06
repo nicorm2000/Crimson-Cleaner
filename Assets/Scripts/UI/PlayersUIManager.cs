@@ -16,10 +16,13 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private Transform cleanableListParent;
     [SerializeField] private Transform disposableListParent;
     [SerializeField] private GameObject objectBackground;
+    
+    [Header("Clean UI")]
     [SerializeField] private TextMeshProUGUI objectNameText;
     [SerializeField] private Slider alphaPercentageSlider;
 
     [Header("Tools UI")]
+    [SerializeField] private GameObject reticle;
     [SerializeField] private GameObject toolHolder;
     [SerializeField] private float toolHolderLifetime;
     [SerializeField] private Image mopImage;
@@ -31,7 +34,6 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private Sprite spongeSpriteOff;
     [SerializeField] private Sprite handSpriteOn;
     [SerializeField] private Sprite handSpriteOff;
-    [SerializeField] private Image[] toolSelectionImages;
 
     public GameObject jobFinished;
     public GameObject jobUnfinished;
@@ -86,6 +88,7 @@ public class PlayersUIManager : MonoBehaviour
         cleaningManager.GetToolSelector().OnToolSwitched += UpdateToolImage;
         UpdateToolImage(cleaningManager.GetToolSelector().CurrentToolIndex);
 
+        reticle.SetActive(true);
         toolHolder.SetActive(false);
         jobFinished.SetActive(false);
         jobUnfinished.SetActive(false);
@@ -154,6 +157,7 @@ public class PlayersUIManager : MonoBehaviour
 
     private void UpdateToolImage(int currentToolIndex)
     {
+        reticle.SetActive(false);
         toolHolder.SetActive(true);
         switch (cleaningManager.GetToolSelector().CurrentToolIndex)
         {
@@ -190,6 +194,7 @@ public class PlayersUIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(toolHolderLifetime);
         toolHolder.SetActive(false);
+        reticle.SetActive(true);
     }
 
     private void TriggerLostUI()
