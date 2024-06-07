@@ -9,8 +9,8 @@ public class Cart : MonoBehaviour, IOpenable
     [Header("Openable Config")]
     [SerializeField] private InputManager inputManager;
     [SerializeField] private PlayerController playerController;
-    [SerializeField] private Collider coll;
-    [SerializeField] private Collider collDestruct;
+    [SerializeField] private BoxCollider coll;
+    [SerializeField] private BoxCollider collDestruct;
     [SerializeField] private LayerMask interactableLayerMask = ~0;
     [SerializeField] private float raycastDistance = 3f;
 

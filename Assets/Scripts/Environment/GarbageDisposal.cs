@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class GarbageDisposal : MonoBehaviour
 {
-    [SerializeField] private Cart openable;
     [SerializeField] private BoxCollider coll;
     [SerializeField] private ParticleSystem burnParticles;
 
@@ -23,6 +22,7 @@ public class GarbageDisposal : MonoBehaviour
             foreach (RaycastHit raycastHits in trash) 
             {
                 DisposableObject disposableObject = raycastHits.transform.GetComponent<DisposableObject>();
+                Debug.Log(disposableObject);
                 if (disposableObject)
                 {
                     disposableObject.TriggerDisposal();
