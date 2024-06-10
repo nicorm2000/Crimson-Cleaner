@@ -29,9 +29,21 @@ public class UIMainMenuManager : MonoBehaviour
     [SerializeField] private Button leftButton = null;
     [SerializeField] private Button rightButton = null;
 
-    [Header("Exit Game")]
+    [Header("Settings")]
     [SerializeField] private GameObject settingsPanel = null;
     [SerializeField] private Button settingsButton = null;
+
+    [Header("Credits")]
+    [SerializeField] private GameObject creditsPanel = null;
+    [SerializeField] private Button creditsButton = null;
+
+    [Header("Store")]
+    [SerializeField] private GameObject storePanel = null;
+    [SerializeField] private Button storeButton = null;
+
+    [Header("Deep Web")]
+    [SerializeField] private GameObject deepWebPanel = null;
+    [SerializeField] private Button deepWebButton = null;
 
     [Header("Exit Game")]
     [SerializeField] private MySceneManager mySceneManager = null;
@@ -44,13 +56,26 @@ public class UIMainMenuManager : MonoBehaviour
 
     private void Awake()
     {
+        exitPanel.SetActive(false);
+        settingsPanel.SetActive(false);
+        creditsPanel.SetActive(false);
+        storePanel.SetActive(false);
+        deepWebPanel.SetActive(false);
+
         leftButton.onClick.AddListener(NavigateLeft);
         rightButton.onClick.AddListener(NavigateRight);
+
+        deepWebButton.onClick.AddListener(() => { deepWebPanel.SetActive(true); });
+        
+        storeButton.onClick.AddListener(() => { storePanel.SetActive(true); });
+        
+        creditsButton.onClick.AddListener(() => { creditsPanel.SetActive(true); });
+        
         settingsButton.onClick.AddListener(() => { settingsPanel.SetActive(true); });
+        
         exitButton.onClick.AddListener(() => { exitPanel.SetActive(true); });
         yesExitButton.onClick.AddListener(() => { mySceneManager.Exit(); });
         noExitButton.onClick.AddListener(() => { exitPanel.SetActive(false); });
-        exitPanel.SetActive(false);
     }
 
     private void Start()
