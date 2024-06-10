@@ -29,12 +29,23 @@ public class UIMainMenuManager : MonoBehaviour
     [SerializeField] private Button leftButton = null;
     [SerializeField] private Button rightButton = null;
 
+    [Header("Exit Game")]
+    [SerializeField] private MySceneManager mySceneManager = null;
+    [SerializeField] private GameObject exitPanel = null;
+    [SerializeField] private Button exitButton = null;
+    [SerializeField] private Button yesExitButton = null;
+    [SerializeField] private Button noExitButton = null;
+
     private int currentIndex = 0;
 
     private void Awake()
     {
         leftButton.onClick.AddListener(NavigateLeft);
         rightButton.onClick.AddListener(NavigateRight);
+        exitButton.onClick.AddListener(() => { exitPanel.SetActive(true); });
+        yesExitButton.onClick.AddListener(() => { mySceneManager.Exit(); });
+        noExitButton.onClick.AddListener(() => { exitPanel.SetActive(false); });
+        exitPanel.SetActive(false);
     }
 
     private void Start()
