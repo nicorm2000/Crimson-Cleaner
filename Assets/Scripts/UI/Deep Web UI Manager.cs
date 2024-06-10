@@ -33,4 +33,35 @@ public class DeepWebUIManager : MonoBehaviour
 
         backToLobbyButton.onClick.AddListener(() => { deepWebTab.SetActive(false); });
     }
+
+    //private void Start()
+    //{
+    //    UpdateJob();
+    //}
+    //
+    //private void NavigateRight()
+    //{
+    //    currentIndex = (currentIndex + 1) % jobAvailables.Length;
+    //    UpdateJob();
+    //}
+    //
+    //private void NavigateLeft()
+    //{
+    //    currentIndex = (currentIndex - 1 + jobAvailables.Length) % jobAvailables.Length;
+    //    UpdateJob();
+    //}
+    //
+    //private void UpdateJob()
+    //{
+    //    if (jobAvailables.Length == 0) return;
+    //
+    //    jobNameText.text = jobAvailables[currentIndex].jobName;
+    //    jobImage.sprite = jobAvailables[currentIndex].jobImage;
+    //    jobDescriptionText.text = jobAvailables[currentIndex].jobDescription;
+    //
+    //    for (int i = 0; i < jobAvailables.Length; i++)
+    //    {
+    //        jobAvailables[i].jobButton.SetActive(i == currentIndex);
+    //    }
+    //}
 }
