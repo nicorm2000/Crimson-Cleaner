@@ -37,7 +37,7 @@ public class VideoHandler : MonoBehaviour
     private void LogCurrentTime()
     {
         DateTime now = DateTime.Now;
-        string formattedTime = now.ToString("hh:mm tt");
+        _ = now.ToString("hh:mm tt");
     }
 
     private void OnVideoEnd(VideoPlayer vp)

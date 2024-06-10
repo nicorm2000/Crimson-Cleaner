@@ -30,6 +30,10 @@ public class UIMainMenuManager : MonoBehaviour
     [SerializeField] private Button rightButton = null;
 
     [Header("Exit Game")]
+    [SerializeField] private GameObject settingsPanel = null;
+    [SerializeField] private Button settingsButton = null;
+
+    [Header("Exit Game")]
     [SerializeField] private MySceneManager mySceneManager = null;
     [SerializeField] private GameObject exitPanel = null;
     [SerializeField] private Button exitButton = null;
@@ -42,6 +46,7 @@ public class UIMainMenuManager : MonoBehaviour
     {
         leftButton.onClick.AddListener(NavigateLeft);
         rightButton.onClick.AddListener(NavigateRight);
+        settingsButton.onClick.AddListener(() => { settingsPanel.SetActive(true); });
         exitButton.onClick.AddListener(() => { exitPanel.SetActive(true); });
         yesExitButton.onClick.AddListener(() => { mySceneManager.Exit(); });
         noExitButton.onClick.AddListener(() => { exitPanel.SetActive(false); });

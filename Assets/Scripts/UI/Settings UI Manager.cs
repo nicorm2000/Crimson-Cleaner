@@ -28,10 +28,15 @@ public class SettingsUIManager : MonoBehaviour
         settingsTab.SetActive(false);
         audioTab.SetActive(false);
         controlsTab.SetActive(false);
+
         backToLobbyButton.onClick.AddListener(() => { settingsTab.SetActive(false); });
         audioTabButton.onClick.AddListener(() => { audioTab.SetActive(true); });
         controlsTabButton.onClick.AddListener(() => { controlsTab.SetActive(true); });
+
         audioBackToSettingsButton.onClick.AddListener(() => { audioTab.SetActive(false); });
+        musicStateButton.onClick.AddListener(() => { });
+        sfxStateButton.onClick.AddListener(() => { });
+
         controlsBackToSettingsButton.onClick.AddListener(() => { controlsTab.SetActive(false); });
     }
 }
