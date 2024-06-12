@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{FFBF9284-CEC9-44F6-8963-E727B7EDA001}" SchemaVersion="119">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{FFBF9284-CEC9-44F6-8963-E727B7EDA001}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{FFBF9284-CEC9-44F6-8963-E727B7EDA001}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Mouse_Click" ID="{8FA14562-0BD4-49F6-B80D-CF83252AE075}">
+					<ChildrenList>
+						<Action Name="" ID="{3E8A0D1D-D7B6-4D72-AFE6-624F1CFEF85E}" ShortID="1058377723">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Mouse Click" ID="{8B2B0C85-4541-454A-9904-B60916DEEAD3}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{4FE42845-15CE-4F74-A4E7-385F95B71DB3}" ShortID="110724740">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Mouse Click" ID="{8B2B0C85-4541-454A-9904-B60916DEEAD3}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

@@ -7,10 +7,18 @@ public class CreditsUIManager : MonoBehaviour
     [SerializeField] private GameObject creditsTab = null;
     [SerializeField] private Button backToLobbyButton = null;
 
+    [Header("Audio Config")]
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string clickEvent = null;
+
     private void Awake()
     {
-        creditsTab.SetActive(false);
+        backToLobbyButton.onClick.AddListener(() => { OpenTab(creditsTab, false); });
+    }
 
-        backToLobbyButton.onClick.AddListener(() => { creditsTab.SetActive(false); });
+    private void OpenTab(GameObject go, bool state)
+    {
+        go.SetActive(state);
+        audioManager.PlaySound(clickEvent);
     }
 }

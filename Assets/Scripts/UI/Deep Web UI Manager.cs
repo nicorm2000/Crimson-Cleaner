@@ -15,6 +15,10 @@ public class DeepWebUIManager : MonoBehaviour
     [SerializeField] private Button level3Button = null;
     [SerializeField] private string level3Name = null;
 
+    [Header("Audio Config")]
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string clickEvent = null;
+
     //[Header("Jobs")]
     //[SerializeField] private Jobs[] jobAvailables = null;
     //[SerializeField] private Image jobImage = null;
@@ -25,13 +29,11 @@ public class DeepWebUIManager : MonoBehaviour
 
     private void Awake()
     {
-        deepWebTab.SetActive(false);
+        level1Button.onClick.AddListener(() => { mySceneManager.LoadSceneByName(level1Name); audioManager.PlaySound(clickEvent); });
+        level2Button.onClick.AddListener(() => { mySceneManager.LoadSceneByName(level2Name); audioManager.PlaySound(clickEvent); });
+        level3Button.onClick.AddListener(() => { mySceneManager.LoadSceneByName(level3Name); audioManager.PlaySound(clickEvent); });
 
-        level1Button.onClick.AddListener(() => { mySceneManager.LoadSceneByName(level1Name); });
-        level2Button.onClick.AddListener(() => { mySceneManager.LoadSceneByName(level2Name); });
-        level3Button.onClick.AddListener(() => { mySceneManager.LoadSceneByName(level3Name); });
-
-        backToLobbyButton.onClick.AddListener(() => { deepWebTab.SetActive(false); });
+        backToLobbyButton.onClick.AddListener(() => { OpenTab(deepWebTab, false); });
     }
 
     //private void Start()
@@ -64,4 +66,10 @@ public class DeepWebUIManager : MonoBehaviour
     //        jobAvailables[i].jobButton.SetActive(i == currentIndex);
     //    }
     //}
+
+    private void OpenTab(GameObject go, bool state)
+    {
+        go.SetActive(state);
+        audioManager.PlaySound(clickEvent);
+    }
 }

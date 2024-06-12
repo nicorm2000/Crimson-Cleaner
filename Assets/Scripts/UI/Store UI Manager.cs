@@ -7,10 +7,18 @@ public class StoreUIManager : MonoBehaviour
     [SerializeField] private GameObject storeTab = null;
     [SerializeField] private Button backToLobbyButton = null;
 
+    [Header("Audio Config")]
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string clickEvent = null;
+
     private void Awake()
     {
-        storeTab.SetActive(false);
+        backToLobbyButton.onClick.AddListener(() => { OpenTab(storeTab, false); });
+    }
 
-        backToLobbyButton.onClick.AddListener(() => { storeTab.SetActive(false); });
+    private void OpenTab(GameObject go, bool state)
+    {
+        go.SetActive(state);
+        audioManager.PlaySound(clickEvent);
     }
 }

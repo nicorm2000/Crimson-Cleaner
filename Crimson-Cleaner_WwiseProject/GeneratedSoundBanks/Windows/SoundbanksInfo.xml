@@ -22,10 +22,23 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{5E8CD2DB-8E6E-D791-2DEF-480642B1E9A8}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{83FE9A95-D45B-1F0F-B52C-DD34A8249E17}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
+			<Media>
+				<File Id="307614010" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Mouse Click.wav</ShortName>
+					<CachePath>SFX/Mouse Click_5FEEB765.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3695522715" Name="Mouse_Click" DurationType="OneShot" DurationMin="0.12" DurationMax="0.12">
+					<MediaRefs>
+						<MediaRef Id="307614010"/>
+					</MediaRefs>
+				</Event>
+			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{BCF22FA7-E2B4-9716-9B98-C47314F39B8D}</FileHash>
+	<FileHash>{527F28D3-8A56-FF7D-78A5-1F27A02D4724}</FileHash>
 </SoundBanksInfo>

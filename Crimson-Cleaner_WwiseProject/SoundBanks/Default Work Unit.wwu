@@ -4,7 +4,9 @@
 		<WorkUnit Name="Default Work Unit" ID="{6D83443E-8FFE-43FC-8B4F-DB758BCD5F49}" PersistMode="Standalone">
 			<ChildrenList>
 				<SoundBank Name="Crimson_Cleaner" ID="{7625E7B4-4B12-4F7C-81AB-F6BF699CCF07}">
-					<ObjectInclusionList/>
+					<ObjectInclusionList>
+						<ObjectRef Name="Default Work Unit" ID="{FFBF9284-CEC9-44F6-8963-E727B7EDA001}" WorkUnitID="{FFBF9284-CEC9-44F6-8963-E727B7EDA001}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
 				</SoundBank>

@@ -52,6 +52,10 @@ public class UIMainMenuManager : MonoBehaviour
     [SerializeField] private Button yesExitButton = null;
     [SerializeField] private Button noExitButton = null;
 
+    [Header("Audio Config")]
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string clickEvent = null;
+
     private int currentIndex = 0;
 
     private void Awake()
@@ -62,20 +66,21 @@ public class UIMainMenuManager : MonoBehaviour
         storePanel.SetActive(false);
         deepWebPanel.SetActive(false);
 
-        leftButton.onClick.AddListener(NavigateLeft);
-        rightButton.onClick.AddListener(NavigateRight);
+        leftButton.onClick.AddListener(() => { NavigateLeft(); audioManager.PlaySound(clickEvent); });
+        rightButton.onClick.AddListener(() => { NavigateRight(); audioManager.PlaySound(clickEvent); });
 
-        deepWebButton.onClick.AddListener(() => { deepWebPanel.SetActive(true); });
+        deepWebButton.onClick.AddListener(() => { OpenTab(deepWebPanel, true); });
+
+        storeButton.onClick.AddListener(() => { OpenTab(storePanel, true); });
         
-        storeButton.onClick.AddListener(() => { storePanel.SetActive(true); });
+        creditsButton.onClick.AddListener(() => { OpenTab(creditsPanel, true); });
         
-        creditsButton.onClick.AddListener(() => { creditsPanel.SetActive(true); });
+        settingsButton.onClick.AddListener(() => { OpenTab(settingsPanel, true); });
         
-        settingsButton.onClick.AddListener(() => { settingsPanel.SetActive(true); });
-        
-        exitButton.onClick.AddListener(() => { exitPanel.SetActive(true); });
-        yesExitButton.onClick.AddListener(() => { mySceneManager.Exit(); });
-        noExitButton.onClick.AddListener(() => { exitPanel.SetActive(false); });
+        exitButton.onClick.AddListener(() => { OpenTab(exitPanel, true); });
+
+        yesExitButton.onClick.AddListener(() => { mySceneManager.Exit(); audioManager.PlaySound(clickEvent); });
+        noExitButton.onClick.AddListener(() => { OpenTab(exitPanel, false); });
     }
 
     private void Start()
@@ -119,5 +124,11 @@ public class UIMainMenuManager : MonoBehaviour
         {
             jobAvailables[i].jobButton.SetActive(i == currentIndex);
         }
+    }
+
+    private void OpenTab(GameObject go, bool state)
+    {
+        go.SetActive(state);
+        audioManager.PlaySound(clickEvent);
     }
 }
