@@ -530,7 +530,7 @@ public partial class @InputMaster: IInputActionCollection2
                 {
                     ""name"": """",
                     ""id"": ""65f2fe7a-67cc-4172-ad85-64e0b9165d9e"",
-                    ""path"": ""<Keyboard>/g"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
