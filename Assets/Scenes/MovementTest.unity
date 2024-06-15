@@ -2585,6 +2585,11 @@ PrefabInstance:
       objectReference: {fileID: 6982812146447357855}
     - target: {fileID: 4711356780880030120, guid: 3990ab5a6ce01cf4e921428949378625,
         type: 3}
+      propertyPath: stealableManager
+      value: 
+      objectReference: {fileID: 1084020802}
+    - target: {fileID: 4711356780880030120, guid: 3990ab5a6ce01cf4e921428949378625,
+        type: 3}
       propertyPath: moneyPopUpDuration
       value: 1.5
       objectReference: {fileID: 0}
@@ -4264,6 +4269,11 @@ PrefabInstance:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 6982812146447357855}
+    - target: {fileID: 4711356780880030120, guid: 3990ab5a6ce01cf4e921428949378625,
+        type: 3}
+      propertyPath: stealableManager
+      value: 
+      objectReference: {fileID: 1084020802}
     - target: {fileID: 4711356780880030120, guid: 3990ab5a6ce01cf4e921428949378625,
         type: 3}
       propertyPath: moneyPopUpDuration
@@ -8180,6 +8190,11 @@ PrefabInstance:
       objectReference: {fileID: 6982812146447357855}
     - target: {fileID: 269256969762282661, guid: df7dde607af4a8641a4e04a689a6c970,
         type: 3}
+      propertyPath: stealableManager
+      value: 
+      objectReference: {fileID: 1084020802}
+    - target: {fileID: 269256969762282661, guid: df7dde607af4a8641a4e04a689a6c970,
+        type: 3}
       propertyPath: moneyPopUpDuration
       value: 1.5
       objectReference: {fileID: 0}
@@ -8658,6 +8673,11 @@ PrefabInstance:
       objectReference: {fileID: 6982812146447357855}
     - target: {fileID: 4711356780880030120, guid: 3990ab5a6ce01cf4e921428949378625,
         type: 3}
+      propertyPath: stealableManager
+      value: 
+      objectReference: {fileID: 1084020802}
+    - target: {fileID: 4711356780880030120, guid: 3990ab5a6ce01cf4e921428949378625,
+        type: 3}
       propertyPath: moneyPopUpDuration
       value: 1.5
       objectReference: {fileID: 0}
@@ -8867,6 +8887,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1054572878}
   m_CullTransparentMesh: 1
+--- !u!1 &1084020800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1084020801}
+  - component: {fileID: 1084020802}
+  m_Layer: 0
+  m_Name: StealableManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1084020801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084020800}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1084020802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084020800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558c6310a1bda444bb54113e29225d06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyText: {fileID: 1590090948}
+  moneyPopUpDuration: 1.5
+  audioManager: {fileID: 1243886029}
+  moneyEvent: Money
 --- !u!1 &1098330417
 GameObject:
   m_ObjectHideFlags: 0
@@ -10528,6 +10596,11 @@ PrefabInstance:
       objectReference: {fileID: 6982812146447357855}
     - target: {fileID: 4711356780880030120, guid: 3990ab5a6ce01cf4e921428949378625,
         type: 3}
+      propertyPath: stealableManager
+      value: 
+      objectReference: {fileID: 1084020802}
+    - target: {fileID: 4711356780880030120, guid: 3990ab5a6ce01cf4e921428949378625,
+        type: 3}
       propertyPath: moneyPopUpDuration
       value: 1.5
       objectReference: {fileID: 0}
@@ -11385,6 +11458,11 @@ PrefabInstance:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 6982812146447357855}
+    - target: {fileID: 4711356780880030120, guid: 3990ab5a6ce01cf4e921428949378625,
+        type: 3}
+      propertyPath: stealableManager
+      value: 
+      objectReference: {fileID: 1084020802}
     - target: {fileID: 4711356780880030120, guid: 3990ab5a6ce01cf4e921428949378625,
         type: 3}
       propertyPath: moneyPopUpDuration
@@ -46753,3 +46831,4 @@ SceneRoots:
   - {fileID: 978816959}
   - {fileID: 1354998863}
   - {fileID: 1243886030}
+  - {fileID: 1084020801}
