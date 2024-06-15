@@ -22,17 +22,21 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{084229EB-E70F-8280-98BB-07A2FA15C9E5}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{0A3C162F-07B5-6892-4D83-334E456AD7FC}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
 				<File Id="1662537" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Throw.wav</ShortName>
-					<CachePath>SFX/Throw_F0E833CC.wem</CachePath>
+					<CachePath>SFX/Throw_F85D7E91.wem</CachePath>
 				</File>
 				<File Id="48240237" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Money.wav</ShortName>
 					<CachePath>SFX/Money_5C80BC33.wem</CachePath>
+				</File>
+				<File Id="146996785" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Bottle Drop.wav</ShortName>
+					<CachePath>SFX/Bottle Drop_71BB5FAF.wem</CachePath>
 				</File>
 				<File Id="208633118" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Wash Bubbles.wav</ShortName>
@@ -102,6 +106,11 @@
 						<MediaRef Id="420430069"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3514483227" Name="Bottle_Drop" DurationType="OneShot" DurationMin="0.3934709" DurationMax="0.3934709">
+					<MediaRefs>
+						<MediaRef Id="146996785"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3697444650" Name="Cart_Close" DurationType="OneShot" DurationMin="1" DurationMax="1">
 					<MediaRefs>
 						<MediaRef Id="592302926"/>
@@ -157,7 +166,7 @@
 						<MediaRef Id="1071313097"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="745179803" Name="Throw" DurationType="OneShot" DurationMin="0.58" DurationMax="0.58">
+				<Event Id="745179803" Name="Throw" DurationType="OneShot" DurationMin="0.28820464" DurationMax="0.32349876">
 					<MediaRefs>
 						<MediaRef Id="1662537"/>
 					</MediaRefs>
@@ -175,5 +184,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{358210D3-EB8D-2FCC-F328-205517EB7F38}</FileHash>
+	<FileHash>{61503D50-B1FB-C36C-FBEF-67C332C1016E}</FileHash>
 </SoundBanksInfo>

@@ -339,6 +339,27 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Bottle_Drop" ID="{B35A18D8-89FC-4B05-B5F9-966AE4E8B835}">
+					<ChildrenList>
+						<Action Name="" ID="{2417741B-8CE5-478D-A97A-3ED05163606D}" ShortID="476469914">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bottle Drop" ID="{D866559C-4213-4973-92B5-2F13BE14065F}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{DDF51921-FBA3-4571-9557-F2C9593B4D38}" ShortID="680599727">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bottle Drop" ID="{D866559C-4213-4973-92B5-2F13BE14065F}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

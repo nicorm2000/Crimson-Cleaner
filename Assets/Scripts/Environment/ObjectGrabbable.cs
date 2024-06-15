@@ -2,9 +2,20 @@ using UnityEngine;
 
 public class ObjectGrabbable : MonoBehaviour, IPickable
 {
+    [Header("Config")]
     [SerializeField] private float lerpSpeed = 10f;
     [SerializeField] private float rotationSpeed = 10f;
     [SerializeField] private float throwingForce = 10f;
+
+    [Header("UI Config")]
+    [SerializeField] private Sprite pickUpMessage;
+    [SerializeField] private Sprite dropMessage;
+    [SerializeField] private Sprite throwMessage;
+    [SerializeField] private Sprite rotateMessage;
+
+    //[Header("Audio Config")]
+    //[SerializeField] private AudioManager audioManager = null;
+    //[SerializeField] private string hitGroundEvent = null;
 
     private Rigidbody objectRigidBody;
     private Transform objectGrabPointTransform;
@@ -14,12 +25,6 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     private Vector3 lastPosition;
 
     public bool isObjectPickedUp { get; private set; }
-
-    [SerializeField] private Sprite pickUpMessage;
-    [SerializeField] private Sprite dropMessage;
-    [SerializeField] private Sprite throwMessage;
-    [SerializeField] private Sprite rotateMessage;
-
     public Sprite PickUpMessage => pickUpMessage;
     public Sprite DropMessage => dropMessage;
     public Sprite ThrowMessage => throwMessage;
@@ -30,11 +35,15 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
         objectRigidBody = GetComponent<Rigidbody>();
     }
 
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    audioManager.PlaySound(hitGroundEvent);
+    //}
+
     public void Grab(Transform ObjectGrabPointTransform)
     {
         this.objectGrabPointTransform = ObjectGrabPointTransform;
         objectRigidBody.useGravity = false;
-        //objectRigidBody.isKinematic = true;
         objectRigidBody.freezeRotation = true;
 
         initialLocalUp = transform.up;
@@ -48,7 +57,6 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
         objectRigidBody.freezeRotation = false;
         this.objectGrabPointTransform = null;
         objectRigidBody.useGravity = true;
-        //objectRigidBody.isKinematic = false;
         objectRigidBody.velocity = (newPosition - lastPosition) * throwingForce;
 
         isObjectPickedUp = false;

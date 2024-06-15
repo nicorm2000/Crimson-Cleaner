@@ -63,6 +63,28 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Throw" ID="{9FC54AC8-76B4-4B4C-92F1-7150CE447B18}" ShortID="185166485">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-50</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{30CF8AB9-69FC-4A89-9175-8C5B4AC97B32}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-200"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
@@ -74,10 +96,10 @@
 							<ChildrenList>
 								<AudioFileSource Name="Throw" ID="{C8E181EE-5FF5-46A2-9051-1E23644749DB}">
 									<PropertyList>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.58"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.147814833250373"/>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="0.62"/>
-										<Property Name="TrimEnd" Type="Real64" Value="1.2"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.22"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
 									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Throw.wav</AudioFile>
@@ -538,6 +560,34 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="Fire Cart" ID="{643ED68D-1FD2-48DB-80C0-21CD519742C0}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Bottle Drop" ID="{D866559C-4213-4973-92B5-2F13BE14065F}" ShortID="443001550">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Bottle Drop" ID="{4851C88D-5F63-4A29-9928-25840CBCC322}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.308823705605477"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.158"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.551470902866925"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Bottle Drop.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="146996785"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Bottle Drop" ID="{4851C88D-5F63-4A29-9928-25840CBCC322}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

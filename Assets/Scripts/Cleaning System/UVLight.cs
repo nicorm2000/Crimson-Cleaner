@@ -46,10 +46,8 @@ public class UVLight : MonoBehaviour, IToggable
         {
             if (hit.distance <= cleaningManager.GetInteractionDistance())
             {
-                if (hit.transform != gameObject.transform)
-                {
-                    return;
-                }
+                if (hit.transform != gameObject.transform) return;
+
                 audioManager.PlaySound(lampToolEvent);
                 isOn = !isOn;
                 uvLight.enabled = isOn;

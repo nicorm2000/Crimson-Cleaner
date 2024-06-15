@@ -10,6 +10,7 @@ public class PickUpDrop : MonoBehaviour
     [SerializeField] private LayerMask pickupLayerMask;
     [SerializeField] private float maxThrowingForce = 20f;
     [SerializeField] private float forceChargeRate = 5f;
+    //[SerializeField] private Material outlineMaterial;
 
     public InputManager inputManager;
 
@@ -21,7 +22,10 @@ public class PickUpDrop : MonoBehaviour
     private ObjectGrabbable objectGrabbable;
     private float currentThrowingForce;
     private bool isChargingThrow;
-    
+
+    //private Material originalMaterial;
+    //private Renderer objectRenderer;
+
     private void OnEnable()
     {
         inputManager.PickUpEvent += PickUpAndDropObject;
@@ -45,6 +49,38 @@ public class PickUpDrop : MonoBehaviour
             currentThrowingForce += forceChargeRate * Time.deltaTime;
             currentThrowingForce = Mathf.Min(currentThrowingForce, maxThrowingForce);
         }
+
+        ///Outline shader test
+        ///if (Physics.Raycast(mainCamera.position, mainCamera.forward, out RaycastHit raycastHit, cleaningManager.GetInteractionDistance()))
+        ///{
+        ///    if (raycastHit.transform.TryGetComponent(out objectGrabbable))
+        ///    {
+        ///        if (raycastHit.transform.TryGetComponent(out objectRenderer))
+        ///        {
+        ///            if (originalMaterial == null)
+        ///            {
+        ///                originalMaterial = objectRenderer.material;
+        ///            }
+        ///            objectRenderer.material = outlineMaterial;
+        ///        }
+        ///    }
+        ///    else
+        ///    {
+        ///        if (objectRenderer != null && originalMaterial != null)
+        ///        {
+        ///            objectRenderer.material = originalMaterial;
+        ///            originalMaterial = null;
+        ///        }
+        ///    }
+        ///}
+        ///else
+        ///{
+        ///    if (objectRenderer != null && originalMaterial != null)
+        ///    {
+        ///        objectRenderer.material = originalMaterial;
+        ///        originalMaterial = null;
+        ///    }
+        ///}
     }
 
     private void PickUpAndDropObject()
