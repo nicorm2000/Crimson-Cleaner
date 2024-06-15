@@ -20,12 +20,16 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button noBackToLobbyButton = null;
     [SerializeField] private string lobbySceneName = null;
 
+    [Header("Audio Config")]
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string clickEvent = null;
+
     private void Awake()
     {
-        resumeGameButton.onClick.AddListener(() => { gameStateManager.TogglePause(); ToggleCanvases(); });
-        backToLobbyButton.onClick.AddListener(() => { backToLobbyPanel.SetActive(true); });
-        yesBackToLobbyButton.onClick.AddListener(() => { mySceneManager.LoadSceneByName(lobbySceneName); });
-        noBackToLobbyButton.onClick.AddListener(() => { backToLobbyPanel.SetActive(false); });
+        resumeGameButton.onClick.AddListener(() => { gameStateManager.TogglePause(); ToggleCanvases(); audioManager.PlaySound(clickEvent); });
+        backToLobbyButton.onClick.AddListener(() => { backToLobbyPanel.SetActive(true); audioManager.PlaySound(clickEvent); });
+        yesBackToLobbyButton.onClick.AddListener(() => { mySceneManager.LoadSceneByName(lobbySceneName); audioManager.PlaySound(clickEvent); });
+        noBackToLobbyButton.onClick.AddListener(() => { backToLobbyPanel.SetActive(false); audioManager.PlaySound(clickEvent); });
         backToLobbyPanel.SetActive(false);
     }
 
