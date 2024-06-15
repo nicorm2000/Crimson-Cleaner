@@ -8139,6 +8139,7 @@ MonoBehaviour:
   - {fileID: 3840103294699131116}
   - {fileID: 1185065542}
   - {fileID: 2068521773}
+  - {fileID: 8074403229874855970}
   inputManager: {fileID: 1560126}
   sceneTimer: {fileID: 1036590942}
   isTimerCompleted: 0
@@ -15464,6 +15465,12 @@ Transform:
   - {fileID: 2746529179321512557}
   m_Father: {fileID: 608986337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1891176606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7690809669638452327, guid: 004a089b99b6d4844890c5a415705c34,
+    type: 3}
+  m_PrefabInstance: {fileID: 5693183193028016648}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1906143583
 GameObject:
   m_ObjectHideFlags: 0
@@ -25306,6 +25313,21 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 691850851228888238, guid: 690bb619e816f844c8007081d0dd5e00,
         type: 3}
+      propertyPath: openEvent
+      value: Cart_Open
+      objectReference: {fileID: 0}
+    - target: {fileID: 691850851228888238, guid: 690bb619e816f844c8007081d0dd5e00,
+        type: 3}
+      propertyPath: closeEvent
+      value: Cart_Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 691850851228888238, guid: 690bb619e816f844c8007081d0dd5e00,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: 691850851228888238, guid: 690bb619e816f844c8007081d0dd5e00,
+        type: 3}
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 1560126}
@@ -25314,6 +25336,11 @@ PrefabInstance:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 6982812146447357855}
+    - target: {fileID: 1344483237046855494, guid: 690bb619e816f844c8007081d0dd5e00,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5060637866250289829, guid: 690bb619e816f844c8007081d0dd5e00,
         type: 3}
       propertyPath: m_Name
@@ -32614,6 +32641,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bolsa
       objectReference: {fileID: 0}
+    - target: {fileID: 7690809669638452327, guid: 004a089b99b6d4844890c5a415705c34,
+        type: 3}
+      propertyPath: m_TagString
+      value: Trash
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -32621,7 +32653,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 342795524}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7690809669638452327, guid: 004a089b99b6d4844890c5a415705c34,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8074403229874855970}
   m_SourcePrefab: {fileID: 100100000, guid: 004a089b99b6d4844890c5a415705c34, type: 3}
 --- !u!4 &5706826587225331751
 Transform:
@@ -41673,6 +41709,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5693183193028016648}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8074403229874855970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891176606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b1c6b7bdcbaa74fa6fb0dcb9c46e7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8076376309348330986
 Transform:
   m_ObjectHideFlags: 0

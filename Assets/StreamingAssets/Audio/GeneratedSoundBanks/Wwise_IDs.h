@@ -15,6 +15,8 @@ namespace AK
     {
         static const AkUniqueID BAR_DOOR = 2533397739U;
         static const AkUniqueID BATHROOM_DOOR = 1431659638U;
+        static const AkUniqueID CART_CLOSE = 3697444650U;
+        static const AkUniqueID CART_OPEN = 2037208526U;
         static const AkUniqueID CUBICLE_BATHROOM_DOOR = 3141789928U;
         static const AkUniqueID GRAB_DROP = 1219063113U;
         static const AkUniqueID LAMP = 657744959U;

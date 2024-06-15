@@ -37,10 +37,7 @@ public class StealableObject : MonoBehaviour, IRetrievable
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, interactableLayerMask))
         {
-            if (hit.transform != gameObject.transform)
-            {
-                return false;
-            }
+            if (hit.transform != gameObject.transform) return false;
 
             stealableManager.PlayeMoneySFX();
             return hit.collider.gameObject.GetComponent<StealableObject>() && hit.transform == transform;

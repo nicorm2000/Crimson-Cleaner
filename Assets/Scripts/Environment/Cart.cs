@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 public class Cart : MonoBehaviour, IOpenable
 {
-    [Header("Openable Config")]
+    [Header("Cart Config")]
     [SerializeField] private InputManager inputManager;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private BoxCollider coll;
     [SerializeField] private BoxCollider collDestruct;
     [SerializeField] private LayerMask interactableLayerMask = ~0;
     [SerializeField] private float raycastDistance = 3f;
+
+    [Header("Audio Config")]
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string openEvent = null;
+    [SerializeField] private string closeEvent = null;
 
     private Animator _openableAnimator;
     public bool _isOpen { get; private set; }
@@ -45,10 +47,15 @@ public class Cart : MonoBehaviour, IOpenable
         if (IsMouseLookingAtObject() && playerController.GetObjectGrabbable() == null)
         {
             _isOpen = !_isOpen;
+            if (_isOpen)
+            {
+                audioManager.PlaySound(openEvent);
+            }
+            else
+            {
+                audioManager.PlaySound(closeEvent);
+            }
             _openableAnimator.SetBool(_openableOpen, _isOpen);
-            Debug.Log((_isOpen ? "Open" : "Close") + " Object: " + name);
-            
-            Invoke(nameof(EmptyMethod), 0.25f);
         }
     }
 
@@ -57,23 +64,10 @@ public class Cart : MonoBehaviour, IOpenable
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, interactableLayerMask))
         {
-            Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.green, 2f);
+            if (hit.transform != gameObject.transform) return false;
+
             return hit.collider.gameObject.GetComponent<Cart>() && hit.transform == transform;
         }
-        else
-        {
-            Debug.DrawRay(ray.origin, ray.direction * 1000, Color.red, 2f);
-        }
         return false;
-    }
-
-    private void EmptyMethod()
-    {
-        ColliderState(!_isOpen, coll);
-    }
-
-    private void ColliderState(bool state, Collider collider)
-    {
-        collider.enabled = state; 
     }
 }

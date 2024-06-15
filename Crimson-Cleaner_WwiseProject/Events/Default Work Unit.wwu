@@ -276,6 +276,48 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Cart_Open" ID="{E926E35A-6FCB-4EA5-9F00-AEF385AB6918}">
+					<ChildrenList>
+						<Action Name="" ID="{A40BF19E-C7AD-49AB-A6F7-3E7C5941F06E}" ShortID="624020630">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Cart Open" ID="{BDF32B3E-CE98-4D12-9022-B307627C5E77}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{C92838D6-21FA-4FB5-B05F-D97EDE76D247}" ShortID="586904593">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Cart Open" ID="{BDF32B3E-CE98-4D12-9022-B307627C5E77}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Cart_Close" ID="{A1C73376-386E-4A61-A498-7C19331AF2B1}">
+					<ChildrenList>
+						<Action Name="" ID="{DF122071-59A4-4975-A95A-D7A537E25A43}" ShortID="765674783">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Cart Close" ID="{BAC1D488-82B5-4309-AD2F-E5F2719CD089}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{E7C3EB57-01F4-4994-88AF-E2FFE2E496D7}" ShortID="424515393">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Cart Close" ID="{BAC1D488-82B5-4309-AD2F-E5F2719CD089}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
