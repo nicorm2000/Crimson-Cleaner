@@ -9,6 +9,9 @@ public class Clean : MonoBehaviour, ICleanable
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private Material[] cleaningMaterials;
 
+    [Header("Audio Config")]
+    [SerializeField] private AudioManager audioManager = null;
+
     private Renderer _renderer;
 
     private bool _isCleaning = false;
@@ -99,6 +102,15 @@ public class Clean : MonoBehaviour, ICleanable
 
             UpdateMaterialAndDirtyPercentage(toolIndex);
 
+            if (cleaningManager.GetToolSelector().CurrentToolIndex == 0)
+            {
+                audioManager.PlaySound(cleaningManager.GetMopEvent());
+            }
+            else if (cleaningManager.GetToolSelector().CurrentToolIndex == 1)
+            {
+                audioManager.PlaySound(cleaningManager.GetSpongeEvent());
+            }
+
             switch (_currentMaterialIndex)
             {
                 case 0:
@@ -142,6 +154,7 @@ public class Clean : MonoBehaviour, ICleanable
 
     private void FinishCleaning()
     {
+        audioManager.PlaySound(cleaningManager.GetCleanedEvent());
         Debug.Log("Cleaned");
         _currentUIIndex = 0.0f;
         isCleaned = true;
@@ -157,10 +170,7 @@ public class Clean : MonoBehaviour, ICleanable
 
         if (Physics.Raycast(ray, out RaycastHit hit, cleaningManager.GetInteractionDistance()))
         {
-            if (hit.transform != gameObject.transform)
-            {
-                return;
-            }
+            if (hit.transform != gameObject.transform) return;
 
             int currentToolIndex = cleaningManager.GetToolSelector().CurrentToolIndex;
 

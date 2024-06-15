@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{D3569834-A9B9-7807-0742-688B511E9187}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{3213D751-519C-1BA2-5821-484F3EB6B48E}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -54,6 +54,10 @@
 					<ShortName>Lamp Switch.wav</ShortName>
 					<CachePath>SFX/Lamp Switch_C9EE8446.wem</CachePath>
 				</File>
+				<File Id="618405621" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Object Cleaned.wav</ShortName>
+					<CachePath>SFX/Object Cleaned_DB295A31.wem</CachePath>
+				</File>
 				<File Id="647094345" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Mop.wav</ShortName>
 					<CachePath>SFX/Mop_818F3B66.wem</CachePath>
@@ -65,6 +69,10 @@
 				<File Id="746969751" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Water Drop.wav</ShortName>
 					<CachePath>SFX/Water Drop_0CFADA0E.wem</CachePath>
+				</File>
+				<File Id="988003584" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cubicle Bathroom Door.wav</ShortName>
+					<CachePath>SFX/Cubicle Bathroom Door_FD2417BD.wem</CachePath>
 				</File>
 				<File Id="1071313097" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Sponge.wav</ShortName>
@@ -82,9 +90,9 @@
 						<MediaRef Id="420430069"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3141789928" Name="Cubicle_Bathroom_Door" DurationType="OneShot" DurationMin="0.3414966" DurationMax="0.3414966">
+				<Event Id="3141789928" Name="Cubicle_Bathroom_Door" DurationType="OneShot" DurationMin="0.25370133" DurationMax="0.25370133">
 					<MediaRefs>
-						<MediaRef Id="647094345"/>
+						<MediaRef Id="988003584"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1219063113" Name="Grab_Drop" DurationType="OneShot" DurationMin="0.19640088" DurationMax="0.19640088">
@@ -112,6 +120,11 @@
 						<MediaRef Id="307614010"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="836873265" Name="Object_Cleaned" DurationType="OneShot" DurationMin="0.9305431" DurationMax="0.9305431">
+					<MediaRefs>
+						<MediaRef Id="618405621"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1165214467" Name="Sponge" DurationType="OneShot" DurationMin="0.52072406" DurationMax="0.52072406">
 					<MediaRefs>
 						<MediaRef Id="1071313097"/>
@@ -135,5 +148,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{E9774A7B-DE68-82FF-FEC6-D114A977AF2A}</FileHash>
+	<FileHash>{295A2044-60F6-1678-C2C4-0998E5CD4360}</FileHash>
 </SoundBanksInfo>

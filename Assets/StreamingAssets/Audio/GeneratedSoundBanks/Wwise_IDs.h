@@ -21,6 +21,7 @@ namespace AK
         static const AkUniqueID MONEY = 758863303U;
         static const AkUniqueID MOP = 1082004779U;
         static const AkUniqueID MOUSE_CLICK = 3695522715U;
+        static const AkUniqueID OBJECT_CLEANED = 836873265U;
         static const AkUniqueID SPONGE = 1165214467U;
         static const AkUniqueID THROW = 745179803U;
         static const AkUniqueID WASH_TOOL = 3752733365U;

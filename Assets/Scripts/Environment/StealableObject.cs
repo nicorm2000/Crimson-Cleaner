@@ -73,9 +73,9 @@ public class StealableObject : MonoBehaviour, IRetrievable
             currentPopUpCoroutine = StartCoroutine(ShowMoneyPopUp());
         }
 
+        gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
         gameObject.GetComponent<Collider>().enabled = false;
-        gameObject.GetComponent<Renderer>().enabled = false;
-        gameObject.GetComponentInChildren<Renderer>().enabled = false;
     }
 
     private IEnumerator ShowMoneyPopUp()

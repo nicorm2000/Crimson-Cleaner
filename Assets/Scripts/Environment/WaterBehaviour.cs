@@ -3,14 +3,13 @@ using UnityEngine;
 public class WaterBehaviour : MonoBehaviour
 {
     [Header("Config")]
+    [SerializeField] private WaterBucket waterBucket;
     [SerializeField] private GameObject water;
     [SerializeField] private float spillThreshold;
 
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
     [SerializeField] private string waterDropEvent = null;
-
-    private bool _hasWater = true;
 
     void Update()
     {
@@ -37,7 +36,7 @@ public class WaterBehaviour : MonoBehaviour
         {
             audioManager.PlaySound(waterDropEvent);
             Destroy(water);
-            _hasWater = false;
+            waterBucket.SetWaterState(false);
         }
     }
 }

@@ -15,8 +15,14 @@ public class WaterBucket : MonoBehaviour, ICleanable
     [SerializeField] private string washToolEvent = null;
 
     public Sprite CleanMessage => cleanMessage;
+    public bool HasWater { get; private set; }
 
     public event Action Cleaned;
+
+    private void Awake()
+    {
+        HasWater = true;
+    }
 
     private void OnEnable()
     {
@@ -36,18 +42,14 @@ public class WaterBucket : MonoBehaviour, ICleanable
         int currentToolIndex = cleaningManager.GetToolSelector().CurrentToolIndex;
         int dirtyPercentage = cleaningManager.GetToolSelector().GetDirtyPercentage(currentToolIndex);
 
-        if (dirtyPercentage == 0)
-        {
-            return;
-        }
+        if (dirtyPercentage == 0) return;
+
+        if (!HasWater) return;
 
         if (Physics.Raycast(ray, out RaycastHit hit, cleaningManager.GetInteractionDistance()))
         {
-            if (hit.transform != gameObject.transform)
-            {
-                return;
-            }
-            Debug.Log("Play");
+            if (hit.transform != gameObject.transform) return;
+
             audioManager.PlaySound(washToolEvent);
             ActivateWashing();
             cleaningManager.GetToolSelector().ResetDirtyPercentage(currentToolIndex);
@@ -56,4 +58,8 @@ public class WaterBucket : MonoBehaviour, ICleanable
     }
 
     public void ActivateWashing() => washParticles.Play();
+
+    public bool GetWaterState() => HasWater;
+
+    public void SetWaterState(bool state) => HasWater = state;
 }

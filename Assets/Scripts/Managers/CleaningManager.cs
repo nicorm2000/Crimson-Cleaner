@@ -32,10 +32,14 @@ public class CleaningManager : MonoBehaviour
     [SerializeField] private LayerMask spongeLayerMask;
     [SerializeField] private float interactionDistance;
 
+    [Header("Audio Config")]
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string mopEvent = null;
+    [SerializeField] private string spongeEvent = null;
+    [SerializeField] private string cleanedEvent = null;
+
     public int DirtyMaxValue { get; private set; }
     public int DirtyIncrementAmount { get; private set; }
-
-    public List<CleanableObjectState> cleanableObjectStates = new ();
 
     private void Start()
     {
@@ -55,4 +59,7 @@ public class CleaningManager : MonoBehaviour
     public LayerMask GetMopLayerMask() => mopLayerMask;
     public LayerMask GetSpongeLayerMask() => spongeLayerMask;
     public float GetInteractionDistance() => interactionDistance;
+    public string GetMopEvent() => mopEvent;
+    public string GetSpongeEvent() => spongeEvent;
+    public string GetCleanedEvent() => cleanedEvent;
 }

@@ -188,9 +188,21 @@
 										<MediaID ID="647094345"/>
 									</MediaIDList>
 								</AudioFileSource>
+								<AudioFileSource Name="Cubicle Bathroom Door" ID="{626D515C-ED6D-443D-842C-8FAA89CC6F8F}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.162344886606761"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.41604621309371"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Cubicle Bathroom Door.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="988003584"/>
+									</MediaIDList>
+								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="Mop" ID="{39E2EF7D-5B89-4D7A-91D3-8EA2A280E8E4}" Platform="Linked"/>
+								<ActiveSource Name="Cubicle Bathroom Door" ID="{626D515C-ED6D-443D-842C-8FAA89CC6F8F}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Bar Door" ID="{75376447-DA83-4C7E-871E-31B2DD36A18C}" ShortID="771812954">
@@ -387,6 +399,42 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="Mop" ID="{C9EA079C-95A3-405B-8AD1-8C73FC6C4D2B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Object Cleaned" ID="{CA6761DB-A665-4CB2-B2FD-53CEB2E4787F}" ShortID="928035572">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Object Cleaned" ID="{F2E11FF5-E091-486D-B98B-987756AE4635}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.264764117028925"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.930543111553564"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.219456888446436"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.15"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Object Cleaned.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="618405621"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Object Cleaned" ID="{F2E11FF5-E091-486D-B98B-987756AE4635}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
