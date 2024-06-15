@@ -182,6 +182,7 @@ GameObject:
   - component: {fileID: 4166982357481871321}
   - component: {fileID: 2477554787538987907}
   - component: {fileID: 5978755581075131631}
+  - component: {fileID: 3763355843516972746}
   m_Layer: 8
   m_Name: Water Bucket
   m_TagString: Untagged
@@ -364,6 +365,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6771394, y: 0.07768512, z: 0.4237938}
   m_Center: {x: 0.0070412755, y: -0.1865575, z: -0.00022792816}
+--- !u!114 &3763355843516972746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8646402649197588519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 968204b1e42cd55469b12798f1afc0b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  water: {fileID: 3812619476261258022}
+  spillThreshold: 40
+  audioManager: {fileID: 0}
+  waterDropEvent: Water_Drop
 --- !u!1001 &8786098378923746075
 PrefabInstance:
   m_ObjectHideFlags: 0

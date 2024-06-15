@@ -192,6 +192,69 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Water_Drop" ID="{F8D82329-8A24-4EEF-BAC3-26C6EC0C10F7}">
+					<ChildrenList>
+						<Action Name="" ID="{38776E50-78EA-4CA5-AD42-1818A6D97CCF}" ShortID="438563385">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Water Drop" ID="{25723C80-4766-4DF4-A518-A26F072F1B94}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{E3D35FB3-53E8-4613-BEA7-ABDA404B0FCC}" ShortID="1052125982">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Water Drop" ID="{25723C80-4766-4DF4-A518-A26F072F1B94}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Mop" ID="{9AB909D5-18CD-4F27-BD5C-C94F22F20871}">
+					<ChildrenList>
+						<Action Name="" ID="{96755FE2-DBC5-4654-BB11-211342949008}" ShortID="416765632">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Mop" ID="{C22F577A-573C-4C60-B2BC-F43E2160F25B}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{75B5E17C-F847-4DF5-8399-363C2B9D324A}" ShortID="179303627">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Mop" ID="{C22F577A-573C-4C60-B2BC-F43E2160F25B}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Sponge" ID="{0310E32D-D404-4426-9661-DDAA9206E8FF}">
+					<ChildrenList>
+						<Action Name="" ID="{881600B9-56CA-4E5C-9875-461751E49078}" ShortID="527033364">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Sponge" ID="{950FDA1E-F510-4A4B-BE13-1A9B75AAF198}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{0C76BF6A-72B0-41BC-8D8F-2CC41B684FA9}" ShortID="893790530">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Sponge" ID="{950FDA1E-F510-4A4B-BE13-1A9B75AAF198}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

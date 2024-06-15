@@ -181,9 +181,16 @@
 										<MediaID ID="530669559"/>
 									</MediaIDList>
 								</AudioFileSource>
+								<AudioFileSource Name="Mop" ID="{39E2EF7D-5B89-4D7A-91D3-8EA2A280E8E4}">
+									<Language>SFX</Language>
+									<AudioFile>Mop.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="647094345"/>
+									</MediaIDList>
+								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="Private Bathroom" ID="{39F41B13-1BD6-45B1-822E-26C264BC05A0}" Platform="Linked"/>
+								<ActiveSource Name="Mop" ID="{39E2EF7D-5B89-4D7A-91D3-8EA2A280E8E4}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Bar Door" ID="{75376447-DA83-4C7E-871E-31B2DD36A18C}" ShortID="771812954">
@@ -288,6 +295,98 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="Money" ID="{E6370F2A-3B17-4AB6-9B23-86A29E6EC30B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Sponge" ID="{950FDA1E-F510-4A4B-BE13-1A9B75AAF198}" ShortID="299955975">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sponge" ID="{CBDCE17A-9FEC-4C77-8CC7-67A44644BAB6}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.0309592292468977"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.268990024604193"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.0461850796961917"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.566909165062045"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Sponge.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1071313097"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sponge" ID="{CBDCE17A-9FEC-4C77-8CC7-67A44644BAB6}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Water Drop" ID="{25723C80-4766-4DF4-A518-A26F072F1B94}" ShortID="278836685">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Water Drop" ID="{BE345E47-85EB-4BC0-8901-2DB1333BB2A8}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.287949293966624"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Water Drop.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="746969751"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Water Drop" ID="{BE345E47-85EB-4BC0-8901-2DB1333BB2A8}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Mop" ID="{C22F577A-573C-4C60-B2BC-F43E2160F25B}" ShortID="631870315">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Mop" ID="{C9EA079C-95A3-405B-8AD1-8C73FC6C4D2B}">
+									<Language>SFX</Language>
+									<AudioFile>Mop.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="647094345"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Mop" ID="{C9EA079C-95A3-405B-8AD1-8C73FC6C4D2B}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
