@@ -16,10 +16,6 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private Transform cleanableListParent;
     [SerializeField] private Transform disposableListParent;
     [SerializeField] private GameObject objectBackground;
-    
-    [Header("Clean UI")]
-    [SerializeField] private TextMeshProUGUI objectNameText;
-    [SerializeField] private Slider alphaPercentageSlider;
 
     [Header("Tools UI")]
     [SerializeField] private GameObject reticle;
@@ -99,48 +95,6 @@ public class PlayersUIManager : MonoBehaviour
     private void OnDestroy()
     {
         cleaningManager.GetToolSelector().OnToolSwitched -= UpdateToolImage;
-    }
-
-    private void Update()
-    {
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit, cleaningManager.GetInteractionDistance()))
-        {
-            if (hit.collider.TryGetComponent<Clean>(out var cleanable))
-            {
-                if (cleanable.GetCleanUIIndex() > 0.0f)
-                {
-                    DisplayObjectInfo(cleanable);
-                }
-                else
-                {
-                    HideObjectInfo();
-                }
-            }
-            else
-            {
-                HideObjectInfo();
-            }
-        }
-        else
-        {
-            HideObjectInfo();
-        }
-    }
-
-    private void DisplayObjectInfo(Clean cleanable)
-    {
-        objectNameText.text = cleanable.gameObject.name;
-        alphaPercentageSlider.value = cleanable.GetCleanUIIndex();
-        objectBackground.gameObject.SetActive(true);
-        objectNameText.gameObject.SetActive(true);
-        alphaPercentageSlider.gameObject.SetActive(true);
-    }
-
-    private void HideObjectInfo()
-    {
-        objectNameText.gameObject.SetActive(false);
-        alphaPercentageSlider.gameObject.SetActive(false);
-        objectBackground.gameObject.SetActive(false);
     }
 
     private void CleaningListState()

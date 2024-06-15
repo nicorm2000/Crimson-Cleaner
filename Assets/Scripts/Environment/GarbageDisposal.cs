@@ -1,10 +1,14 @@
-using System;
 using UnityEngine;
 
 public class GarbageDisposal : MonoBehaviour
 {
+    [Header("Config")]
     [SerializeField] private BoxCollider coll;
     [SerializeField] private ParticleSystem burnParticles;
+
+    [Header("Audio Config")]
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string fireEvent = null;
 
     private void Start()
     {
@@ -19,10 +23,9 @@ public class GarbageDisposal : MonoBehaviour
 
         if (trash.Length > 0)
         {
-            foreach (RaycastHit raycastHits in trash) 
+            foreach (RaycastHit raycastHits in trash)
             {
                 DisposableObject disposableObject = raycastHits.transform.GetComponent<DisposableObject>();
-                Debug.Log(disposableObject);
                 if (disposableObject)
                 {
                     disposableObject.TriggerDisposal();
@@ -31,7 +34,12 @@ public class GarbageDisposal : MonoBehaviour
         }
     }
 
-    public void ActivateBurning() => burnParticles.Play();
+    public void ActivateBurning()
+    {
+        burnParticles.Play();
+        audioManager.PlaySound(fireEvent);
+    }
+
     public void ActivateBarrier() => coll.enabled = true;
     public void DeactivateBarrier() => coll.enabled = false;
 }
