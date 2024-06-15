@@ -171,6 +171,27 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Money" ID="{0CF83400-FD88-45C1-AE19-51FB9C1F3AC1}">
+					<ChildrenList>
+						<Action Name="" ID="{B7C16D71-2A9A-49C1-9C43-BDD4C87D35E6}" ShortID="91051358">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Money" ID="{AADC4F49-3A4D-4C4C-AB2E-5E8F6F1570BE}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{62F65EC9-D1F0-49FE-9B64-5653526E2070}" ShortID="612069759">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Money" ID="{AADC4F49-3A4D-4C4C-AB2E-5E8F6F1570BE}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

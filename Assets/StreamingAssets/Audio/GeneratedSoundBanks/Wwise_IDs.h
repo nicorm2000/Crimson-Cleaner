@@ -18,6 +18,7 @@ namespace AK
         static const AkUniqueID CUBICLE_BATHROOM_DOOR = 3141789928U;
         static const AkUniqueID GRAB_DROP = 1219063113U;
         static const AkUniqueID LAMP = 657744959U;
+        static const AkUniqueID MONEY = 758863303U;
         static const AkUniqueID MOUSE_CLICK = 3695522715U;
         static const AkUniqueID THROW = 745179803U;
         static const AkUniqueID WASH_TOOL = 3752733365U;

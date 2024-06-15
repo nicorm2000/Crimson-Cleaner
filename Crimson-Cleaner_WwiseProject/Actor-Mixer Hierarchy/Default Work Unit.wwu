@@ -254,6 +254,42 @@
 								<ActiveSource Name="Bathroom Door" ID="{F6341158-7321-4DAF-94C8-0C42D5662010}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Money" ID="{AADC4F49-3A4D-4C4C-AB2E-5E8F6F1570BE}" ShortID="792761968">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Money" ID="{E6370F2A-3B17-4AB6-9B23-86A29E6EC30B}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.422517545315088"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.302271037640559"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.248215268135496"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.779947531430202"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Money.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="48240237"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Money" ID="{E6370F2A-3B17-4AB6-9B23-86A29E6EC30B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
