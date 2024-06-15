@@ -13114,6 +13114,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1614045356}
   m_CullTransparentMesh: 1
+--- !u!1 &1644530366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2075077529589048217, guid: 690bb619e816f844c8007081d0dd5e00,
+    type: 3}
+  m_PrefabInstance: {fileID: 3128088994563146052}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1644530371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644530366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf4fe9d98051354ab8f684a47ff1f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputManager: {fileID: 1560126}
+  playerController: {fileID: 6982812146447357855}
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  raycastDistance: 3
+  audioManager: {fileID: 1243886029}
+  openEvent: Cart_Open
+  closeEvent: Cart_Close
+  interactMessage: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
 --- !u!1 &1659608036
 GameObject:
   m_ObjectHideFlags: 0
@@ -24663,6 +24691,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2075077529589048217, guid: 690bb619e816f844c8007081d0dd5e00,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3820661558845203230, guid: 690bb619e816f844c8007081d0dd5e00,
         type: 3}
       propertyPath: audioManager
@@ -24723,10 +24756,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8328037606656974040, guid: 690bb619e816f844c8007081d0dd5e00,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8917885497614263477, guid: 690bb619e816f844c8007081d0dd5e00,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2075077529589048217, guid: 690bb619e816f844c8007081d0dd5e00,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1644530371}
   m_SourcePrefab: {fileID: 100100000, guid: 690bb619e816f844c8007081d0dd5e00, type: 3}
 --- !u!4 &3137091673516289185
 Transform:
