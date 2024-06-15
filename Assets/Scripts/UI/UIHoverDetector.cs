@@ -36,5 +36,9 @@ public class UIHoverDetector : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            applicationName.text = "";
+        }
     }
 }

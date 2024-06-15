@@ -425,9 +425,14 @@
 						</Sound>
 						<Sound Name="Object Cleaned" ID="{CA6761DB-A665-4CB2-B2FD-53CEB2E4787F}" ShortID="928035572">
 							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-360</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-6</Value>
+										<Value>-8</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -443,10 +448,10 @@
 								<AudioFileSource Name="Object Cleaned" ID="{F2E11FF5-E091-486D-B98B-987756AE4635}">
 									<PropertyList>
 										<Property Name="FadeInDuration" Type="Real64" Value="0.264764117028925"/>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.930543111553564"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.655868038272219"/>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 										<Property Name="TrimBegin" Type="Real64" Value="0.219456888446436"/>
-										<Property Name="TrimEnd" Type="Real64" Value="1.15"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.875324926718655"/>
 									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Object Cleaned.wav</AudioFile>

@@ -22,13 +22,13 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{0A3C162F-07B5-6892-4D83-334E456AD7FC}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{411E7222-B509-E2E5-C468-6AD040CE1721}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
 				<File Id="1662537" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Throw.wav</ShortName>
-					<CachePath>SFX/Throw_F85D7E91.wem</CachePath>
+					<CachePath>SFX/Throw_7B6B57BA.wem</CachePath>
 				</File>
 				<File Id="48240237" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Money.wav</ShortName>
@@ -36,7 +36,7 @@
 				</File>
 				<File Id="146996785" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Bottle Drop.wav</ShortName>
-					<CachePath>SFX/Bottle Drop_71BB5FAF.wem</CachePath>
+					<CachePath>SFX/Bottle Drop_E8BD70C4.wem</CachePath>
 				</File>
 				<File Id="208633118" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Wash Bubbles.wav</ShortName>
@@ -66,9 +66,13 @@
 					<ShortName>Cart Close.wav</ShortName>
 					<CachePath>SFX/Cart Close_52E0F012.wem</CachePath>
 				</File>
+				<File Id="594709629" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Web Hover.wav</ShortName>
+					<CachePath>SFX/Web Hover_818F3B66.wem</CachePath>
+				</File>
 				<File Id="618405621" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Object Cleaned.wav</ShortName>
-					<CachePath>SFX/Object Cleaned_DB295A31.wem</CachePath>
+					<CachePath>SFX/Object Cleaned_A2BF65A6.wem</CachePath>
 				</File>
 				<File Id="647094345" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Mop.wav</ShortName>
@@ -80,19 +84,19 @@
 				</File>
 				<File Id="746969751" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Water Drop.wav</ShortName>
-					<CachePath>SFX/Water Drop_0CFADA0E.wem</CachePath>
+					<CachePath>SFX/Water Drop_E5CCF18B.wem</CachePath>
 				</File>
 				<File Id="988003584" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cubicle Bathroom Door.wav</ShortName>
-					<CachePath>SFX/Cubicle Bathroom Door_FD2417BD.wem</CachePath>
+					<CachePath>SFX/Cubicle Bathroom Door_5E4AD11E.wem</CachePath>
 				</File>
 				<File Id="996095744" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Fire Cart.wav</ShortName>
-					<CachePath>SFX/Fire Cart_2D2C3DF0.wem</CachePath>
+					<CachePath>SFX/Fire Cart_ACCEC0E4.wem</CachePath>
 				</File>
 				<File Id="1071313097" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Sponge.wav</ShortName>
-					<CachePath>SFX/Sponge_06B9B330.wem</CachePath>
+					<CachePath>SFX/Sponge_B64E5B73.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -136,6 +140,11 @@
 						<MediaRef Id="442455513"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3753593413" Name="Hover" DurationType="OneShot" DurationMin="0.24666667" DurationMax="0.24666667">
+					<MediaRefs>
+						<MediaRef Id="594709629"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="657744959" Name="Lamp" DurationType="OneShot" DurationMin="0.06" DurationMax="0.06">
 					<MediaRefs>
 						<MediaRef Id="449118208"/>
@@ -156,7 +165,7 @@
 						<MediaRef Id="307614010"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="836873265" Name="Object_Cleaned" DurationType="OneShot" DurationMin="0.9305431" DurationMax="0.9305431">
+				<Event Id="836873265" Name="Object_Cleaned" DurationType="OneShot" DurationMin="0.8074683" DurationMax="0.8074683">
 					<MediaRefs>
 						<MediaRef Id="618405621"/>
 					</MediaRefs>
@@ -184,5 +193,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{61503D50-B1FB-C36C-FBEF-67C332C1016E}</FileHash>
+	<FileHash>{7978B1ED-6CF3-EB73-1752-13AC351510F3}</FileHash>
 </SoundBanksInfo>
