@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 public class Openable : MonoBehaviour, IOpenable
 {
@@ -10,6 +9,10 @@ public class Openable : MonoBehaviour, IOpenable
     [SerializeField] private float raycastDistance = 3f;
     [SerializeField] private LayerMask interactableLayerMask = ~0;
     [SerializeField] private Animator _openableAnimator;
+
+    [Header("Audio Config")]
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string doorOpenCloseEvents = null;
 
     public bool _isOpen { get; private set; }
 
@@ -48,16 +51,17 @@ public class Openable : MonoBehaviour, IOpenable
     private bool IsMouseLookingAtObject()
     {
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-            RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, raycastDistance, interactableLayerMask))
+
+        if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, interactableLayerMask))
         {
-            Debug.DrawRay(ray.origin, ray.direction * hit.distance, Color.green, 2f);
+            if (hit.transform != gameObject.transform)
+            {
+                return false;
+            }
+            audioManager.PlaySound(doorOpenCloseEvents);
             return hit.collider.gameObject.GetComponent<Openable>() && hit.transform == transform;
         }
-        else
-        {
-            Debug.DrawRay(ray.origin, ray.direction * 1000, Color.red, 2f);
-        }
+
         return false;
     }
 }

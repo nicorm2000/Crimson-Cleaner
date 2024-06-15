@@ -1,14 +1,20 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class WaterBucket : MonoBehaviour, ICleanable
 {
+    [Header("Config")]
     [SerializeField] private InputManager inputManager;
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private ParticleSystem washParticles;
-
     [SerializeField] private Sprite cleanMessage;
+
+    [Header("Audio Config")]
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string washToolEvent = null;
+
     public Sprite CleanMessage => cleanMessage;
 
     public event Action Cleaned;
@@ -43,6 +49,7 @@ public class WaterBucket : MonoBehaviour, ICleanable
                 return;
             }
             Debug.Log("Play");
+            audioManager.PlaySound(washToolEvent);
             ActivateWashing();
             cleaningManager.GetToolSelector().ResetDirtyPercentage(currentToolIndex);
             cleaningManager.GetToolSelector().ChangeToolMaterial(currentToolIndex, cleaningManager.GetToolSelector().GetOriginalMaterial());

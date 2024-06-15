@@ -13,7 +13,14 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID BAR_DOOR = 2533397739U;
+        static const AkUniqueID BATHROOM_DOOR = 1431659638U;
+        static const AkUniqueID CUBICLE_BATHROOM_DOOR = 3141789928U;
+        static const AkUniqueID GRAB_DROP = 1219063113U;
+        static const AkUniqueID LAMP = 657744959U;
         static const AkUniqueID MOUSE_CLICK = 3695522715U;
+        static const AkUniqueID THROW = 745179803U;
+        static const AkUniqueID WASH_TOOL = 3752733365U;
     } // namespace EVENTS
 
     namespace BANKS

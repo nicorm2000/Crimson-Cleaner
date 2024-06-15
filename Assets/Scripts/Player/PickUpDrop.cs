@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PickUpDrop : MonoBehaviour
 {
+    [Header("Config")]
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private Transform mainCamera;
@@ -9,12 +10,18 @@ public class PickUpDrop : MonoBehaviour
     [SerializeField] private LayerMask pickupLayerMask;
     [SerializeField] private float maxThrowingForce = 20f;
     [SerializeField] private float forceChargeRate = 5f;
+
     public InputManager inputManager;
+
+    [Header("Audio Config")]
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string grabDropEvent = null;
+    [SerializeField] private string throwEvent = null;
 
     private ObjectGrabbable objectGrabbable;
     private float currentThrowingForce;
     private bool isChargingThrow;
-
+    
     private void OnEnable()
     {
         inputManager.PickUpEvent += PickUpAndDropObject;
@@ -48,6 +55,7 @@ public class PickUpDrop : MonoBehaviour
             {
                 if (raycastHit.transform.TryGetComponent(out objectGrabbable))
                 {
+                    audioManager.PlaySound(grabDropEvent);
                     objectGrabbable.Grab(objectGrabPointTransform);
                     playerController.SetObjectGrabbable(objectGrabbable);
                 }
@@ -55,6 +63,7 @@ public class PickUpDrop : MonoBehaviour
         }
         else if (objectGrabbable != null)
         {
+            audioManager.PlaySound(grabDropEvent);
             DropObject();
         }
     }
@@ -106,6 +115,7 @@ public class PickUpDrop : MonoBehaviour
     {
         if (objectGrabbable != null)
         {
+            audioManager.PlaySound(throwEvent);
             Vector3 throwDirection = mainCamera.forward;
             objectGrabbable.Throw(currentThrowingForce, throwDirection);
 

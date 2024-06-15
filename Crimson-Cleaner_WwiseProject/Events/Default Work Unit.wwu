@@ -24,6 +24,153 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Grab_Drop" ID="{3AE6EC18-8939-4155-A816-86B42DF91D8A}">
+					<ChildrenList>
+						<Action Name="" ID="{E7978C9F-4328-4013-95B7-02EA45BBEB77}" ShortID="422358185">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Grab &amp; Drop" ID="{6ED4DE61-D98E-4AA6-93DA-49C1576D2ACB}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{8F6448B5-E57B-4E86-A331-44898AEFF788}" ShortID="1012845042">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Grab &amp; Drop" ID="{6ED4DE61-D98E-4AA6-93DA-49C1576D2ACB}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Throw" ID="{D294BC31-B556-4556-996A-354ECD1FFF91}">
+					<ChildrenList>
+						<Action Name="" ID="{457C9428-7C01-4FB4-8A6E-505629DD33C3}" ShortID="854858362">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Throw" ID="{9FC54AC8-76B4-4B4C-92F1-7150CE447B18}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{36FF7356-820D-4A9E-BB9C-B5920FF4EB39}" ShortID="747718906">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Throw" ID="{9FC54AC8-76B4-4B4C-92F1-7150CE447B18}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Wash_Tool" ID="{7EED8274-DA5F-4E35-B088-A5E113113997}">
+					<ChildrenList>
+						<Action Name="" ID="{73B42A55-295A-46ED-99EA-7F122D74506D}" ShortID="245028068">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Wash Bubbles" ID="{7B8AF494-090D-432F-8645-8BD18F1FCD8C}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{8DFDC62D-7A13-4A63-A269-4DAC909EB250}" ShortID="880127735">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Wash Bubbles" ID="{7B8AF494-090D-432F-8645-8BD18F1FCD8C}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Lamp" ID="{5E0A10E0-F878-4D49-A432-B4DCC7CA53E7}">
+					<ChildrenList>
+						<Action Name="" ID="{C7DAD263-D62A-4DCB-BE81-F17B556B7AFD}" ShortID="672195491">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Lamp Switch" ID="{B966E7A6-FAB4-414E-9F2E-2C9A42C1DA5D}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{8FF9C8C2-BF1E-4B9F-A15A-47D799B98633}" ShortID="819015551">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Lamp Switch" ID="{B966E7A6-FAB4-414E-9F2E-2C9A42C1DA5D}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Cubicle_Bathroom_Door" ID="{21265A5C-AB31-4B21-95CF-2A4A0B7943CE}">
+					<ChildrenList>
+						<Action Name="" ID="{01EC3D80-E325-4106-BAE7-3B5F2DF3DC9F}" ShortID="11700626">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Cubicle Bathroom Door" ID="{38123E1E-F522-4203-868C-E6BB1BCCE307}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{D6D7BFB1-FC38-4C4B-87E4-87438F20268F}" ShortID="600524184">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Cubicle Bathroom Door" ID="{38123E1E-F522-4203-868C-E6BB1BCCE307}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Bar_Door" ID="{8BBE3B22-BDCA-4F37-8577-F18EAAB2C681}">
+					<ChildrenList>
+						<Action Name="" ID="{616B8937-E884-4C0F-9F45-45BBBC9066CA}" ShortID="135004118">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bar Door" ID="{75376447-DA83-4C7E-871E-31B2DD36A18C}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{BCB82231-D4BA-4BA5-B3C2-9EABBB4319B7}" ShortID="1004524989">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bar Door" ID="{75376447-DA83-4C7E-871E-31B2DD36A18C}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Bathroom_Door" ID="{13178D1B-A458-45B4-B3BC-99F3621CA407}">
+					<ChildrenList>
+						<Action Name="" ID="{FB484F23-18A2-4B64-912B-0E5879A5C42B}" ShortID="18193578">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bathroom Door" ID="{7410F81F-44C7-4C40-AC30-59CF6B615E56}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{43059386-3FDE-4BD8-B275-DBB4C1B18206}" ShortID="827341879">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bathroom Door" ID="{7410F81F-44C7-4C40-AC30-59CF6B615E56}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

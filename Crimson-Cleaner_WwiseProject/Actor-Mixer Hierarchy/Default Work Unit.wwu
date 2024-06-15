@@ -34,6 +34,228 @@
 						</Sound>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Game Interactions" ID="{FA1E034F-6B57-4D1D-9457-7ED05686817E}" ShortID="946708407">
+					<ChildrenList>
+						<Sound Name="Grab &amp; Drop" ID="{6ED4DE61-D98E-4AA6-93DA-49C1576D2ACB}" ShortID="195197656">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Grab" ID="{79B563C5-F16D-4EB9-8756-383A4D078DCE}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.314438127839925"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Grab.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="442455513"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Grab" ID="{79B563C5-F16D-4EB9-8756-383A4D078DCE}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Throw" ID="{9FC54AC8-76B4-4B4C-92F1-7150CE447B18}" ShortID="185166485">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Throw" ID="{C8E181EE-5FF5-46A2-9051-1E23644749DB}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.58"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.62"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.2"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Throw.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1662537"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Throw" ID="{C8E181EE-5FF5-46A2-9051-1E23644749DB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Wash Bubbles" ID="{7B8AF494-090D-432F-8645-8BD18F1FCD8C}" ShortID="1015329465">
+							<PropertyList>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Wash Bubbles" ID="{E7634FCB-AB26-4466-AE87-EDD1D38E2326}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.67805419472025"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.68069616550086"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.5"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.3"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Wash Bubbles.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="208633118"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Wash Bubbles" ID="{E7634FCB-AB26-4466-AE87-EDD1D38E2326}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Lamp Switch" ID="{B966E7A6-FAB4-414E-9F2E-2C9A42C1DA5D}" ShortID="289277751">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Lamp Switch" ID="{FB452097-F851-4ABC-AC47-D31510A13903}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.02"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.08"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Lamp Switch.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="449118208"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Lamp Switch" ID="{FB452097-F851-4ABC-AC47-D31510A13903}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Cubicle Bathroom Door" ID="{38123E1E-F522-4203-868C-E6BB1BCCE307}" ShortID="724980100">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Private Bathroom" ID="{39F41B13-1BD6-45B1-822E-26C264BC05A0}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.175823705605477"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.15"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Private Bathroom.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="530669559"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Private Bathroom" ID="{39F41B13-1BD6-45B1-822E-26C264BC05A0}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Bar Door" ID="{75376447-DA83-4C7E-871E-31B2DD36A18C}" ShortID="771812954">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Bar Door" ID="{E6D43E55-E6C9-423E-AA83-5EF4BB49B2AA}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.181568904840499"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.211026986746774"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Bar Door.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="706771327"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Bar Door" ID="{E6D43E55-E6C9-423E-AA83-5EF4BB49B2AA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Bathroom Door" ID="{7410F81F-44C7-4C40-AC30-59CF6B615E56}" ShortID="630122660">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Bathroom Door" ID="{F6341158-7321-4DAF-94C8-0C42D5662010}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.241493978849563"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Bathroom Door.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="420430069"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Bathroom Door" ID="{F6341158-7321-4DAF-94C8-0C42D5662010}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

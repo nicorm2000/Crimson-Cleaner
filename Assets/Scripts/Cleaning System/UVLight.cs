@@ -8,12 +8,17 @@ public class UVLight : MonoBehaviour, IToggable
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private float minCoverage = 0.7f;
-    private bool isOn = false;
-    private Light uvLight;
 
     public bool _isOn;
 
     [SerializeField] private Sprite toggleOnOffMessage;
+
+    [Header("Audio Config")]
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string lampToolEvent = null;
+
+    private bool isOn = false;
+    private Light uvLight;
     public Sprite ToggleOnOffMessage => toggleOnOffMessage;
 
     private void OnEnable()
@@ -45,6 +50,7 @@ public class UVLight : MonoBehaviour, IToggable
                 {
                     return;
                 }
+                audioManager.PlaySound(lampToolEvent);
                 isOn = !isOn;
                 uvLight.enabled = isOn;
             }
