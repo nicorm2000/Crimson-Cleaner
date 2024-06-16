@@ -360,6 +360,48 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Water_Tap" ID="{2E2ED251-1749-4FA1-B957-723884C00B8C}">
+					<ChildrenList>
+						<Action Name="" ID="{5473F080-497E-449C-8473-F8DB07868D81}" ShortID="428094500">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Water Tap" ID="{A2DD9FB3-6890-460B-9DB7-CCE06E9DFF2F}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{E189758E-689E-403A-8B08-4AC6C99A038A}" ShortID="779285972">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Water Tap" ID="{A2DD9FB3-6890-460B-9DB7-CCE06E9DFF2F}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Light_Switch" ID="{3A33A199-8287-4790-9BDD-B49376F31280}">
+					<ChildrenList>
+						<Action Name="" ID="{E43B0D8E-C435-4304-ADFD-1CF5DCB3F9A7}" ShortID="106761138">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Lights Switch" ID="{AF675C07-72A8-463D-B02C-9682CF7B1670}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{322E658F-AFC4-4A23-AB56-E249A19E2AA4}" ShortID="403907495">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Lights Switch" ID="{AF675C07-72A8-463D-B02C-9682CF7B1670}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

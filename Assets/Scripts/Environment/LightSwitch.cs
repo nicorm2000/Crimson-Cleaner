@@ -13,22 +13,22 @@ public class LightSwitch : MonoBehaviour
 
     private bool _lightsAreOn;
 
-    private void OnEnable()
-    {
-        inputManager.InteractEvent += ToggleLights;
-    }
-
-    private void OnDisable()
-    {
-        inputManager.InteractEvent -= ToggleLights;
-    }
-
-    private void Start()
-    {
-        lightOn.SetActive(false);
-        lightOff.SetActive(true);
-        _lightsAreOn = lightOn.activeSelf;
-    }
+    //private void OnEnable()
+    //{
+    //    inputManager.InteractEvent += ToggleLights;
+    //}
+    //
+    //private void OnDisable()
+    //{
+    //    inputManager.InteractEvent -= ToggleLights;
+    //}
+    //
+    //private void Start()
+    //{
+    //    lightOn.SetActive(false);
+    //    lightOff.SetActive(true);
+    //    _lightsAreOn = lightOn.activeSelf;
+    //}
 
     private void ToggleLights()
     {

@@ -21,8 +21,8 @@ namespace AK
         static const AkUniqueID CUBICLE_BATHROOM_DOOR = 3141789928U;
         static const AkUniqueID FIRE_CART = 1357891606U;
         static const AkUniqueID GRAB_DROP = 1219063113U;
-        static const AkUniqueID HOVER = 3753593413U;
         static const AkUniqueID LAMP = 657744959U;
+        static const AkUniqueID LIGHT_SWITCH = 790135102U;
         static const AkUniqueID MONEY = 758863303U;
         static const AkUniqueID MOP = 1082004779U;
         static const AkUniqueID MOUSE_CLICK = 3695522715U;
@@ -31,6 +31,7 @@ namespace AK
         static const AkUniqueID THROW = 745179803U;
         static const AkUniqueID WASH_TOOL = 3752733365U;
         static const AkUniqueID WATER_DROP = 2790747934U;
+        static const AkUniqueID WATER_TAP = 2864239532U;
     } // namespace EVENTS
 
     namespace BANKS
