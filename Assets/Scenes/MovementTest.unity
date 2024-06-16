@@ -10884,9 +10884,9 @@ RectTransform:
   - {fileID: 1025536204}
   - {fileID: 947935811}
   - {fileID: 154809064}
-  - {fileID: 1750715580}
   - {fileID: 2636328}
   - {fileID: 1578000372}
+  - {fileID: 1750715580}
   m_Father: {fileID: 1610821865}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -15400,6 +15400,10 @@ MonoBehaviour:
   gameplayCanvasGO: {fileID: 1986035784}
   pauseCanvasGO: {fileID: 1610821861}
   gameStateManager: {fileID: 978816960}
+  pauseMenuButton: {fileID: 578506394}
+  settingsButton: {fileID: 381526156}
+  pauseMenuPanel: {fileID: 1080390774}
+  settingsMenuPanel: {fileID: 1332349447}
   resumeGameButton: {fileID: 1025536207}
   mySceneManager: {fileID: 266125863}
   backToLobbyPanel: {fileID: 1750715579}
@@ -15407,6 +15411,16 @@ MonoBehaviour:
   yesBackToLobbyButton: {fileID: 864730065}
   noBackToLobbyButton: {fileID: 1683905197}
   lobbySceneName: Lobby
+  audioTabButton: {fileID: 1068800232}
+  controlsTabButton: {fileID: 2060230344}
+  audioTabPanel: {fileID: 1708401870}
+  musicStateButton: {fileID: 609383387}
+  musicVolumeSlider: {fileID: 213779674}
+  sfxStateButton: {fileID: 114529052}
+  sfxVolumeSlider: {fileID: 1862646214}
+  controlsTabPanel: {fileID: 162187397}
+  mouseSensitivityXSlider: {fileID: 361787100}
+  mouseSensitivityYSlider: {fileID: 388058276}
   audioManager: {fileID: 1243886029}
   clickEvent: Mouse_Click
 --- !u!1 &1514980734
@@ -19913,7 +19927,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1986035785
 MonoBehaviour:
   m_ObjectHideFlags: 0

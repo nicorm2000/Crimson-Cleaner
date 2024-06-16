@@ -38,6 +38,9 @@ public class SettingsUIManager : MonoBehaviour
         sfxStateButton.onClick.AddListener(() => { audioManager.PlaySound(clickEvent); });
 
         controlsBackToSettingsButton.onClick.AddListener(() => { OpenTab(controlsTab, false); });
+
+        musicStateButton.onClick.AddListener(() => { });
+        sfxStateButton.onClick.AddListener(() => { });
     }
 
     private void OpenTab(GameObject go, bool state)
