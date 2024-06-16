@@ -507,6 +507,8 @@ MonoBehaviour:
   audioTabButton: {fileID: 179315800}
   controlsTabButton: {fileID: 1926774956}
   backToLobbyButton: {fileID: 1136885458}
+  sensitivitySettings: {fileID: 11400000, guid: 75c7a7684c320b64d8058a96e27c308a,
+    type: 2}
   audioTab: {fileID: 495810637}
   audioBackToSettingsButton: {fileID: 39152058}
   musicStateButton: {fileID: 1456157318}
@@ -2523,9 +2525,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 847597011}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2926,6 +2928,7 @@ GameObject:
   - component: {fileID: 453095764}
   - component: {fileID: 453095766}
   - component: {fileID: 453095765}
+  - component: {fileID: 453095767}
   m_Layer: 5
   m_Name: Controls Tab
   m_TagString: Untagged
@@ -2996,6 +2999,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453095763}
   m_CullTransparentMesh: 1
+--- !u!114 &453095767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453095763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d1667dcdf8baf4ca76beca343c8d09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &458467356
 GameObject:
   m_ObjectHideFlags: 0
@@ -3494,8 +3509,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1096060972}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5185,8 +5200,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 834760688}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7030,7 +7045,7 @@ RectTransform:
   m_Father: {fileID: 881293367}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9724,9 +9739,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 531162296}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -9763,7 +9778,7 @@ RectTransform:
   m_Father: {fileID: 1231913968}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

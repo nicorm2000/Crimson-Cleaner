@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject gameplayCanvasGO;
     [SerializeField] private GameObject pauseCanvasGO;
     [SerializeField] private GameStateManager gameStateManager = null;
+    [SerializeField] private PlayerSensitivitySettings sensitivitySettings;
 
     [Header("Game Pause")]
     [SerializeField] private Button pauseMenuButton = null;
@@ -72,6 +73,13 @@ public class UIManager : MonoBehaviour
         sfxStateButton.onClick.AddListener(() => { });
 
         //Controls
+        mouseSensitivityXSlider.onValueChanged.AddListener(OnSensitivityXChanged);
+        mouseSensitivityYSlider.onValueChanged.AddListener(OnSensitivityYChanged);
+
+        mouseSensitivityXSlider.value = sensitivitySettings.sensitivityX;
+        mouseSensitivityYSlider.value = sensitivitySettings.sensitivityY;
+        mouseSensitivityXSlider.maxValue = sensitivitySettings.maxSensitivityX;
+        mouseSensitivityYSlider.maxValue = sensitivitySettings.maxSensitivityY;
 
     }
 
@@ -102,5 +110,21 @@ public class UIManager : MonoBehaviour
     {
         go.SetActive(state);
         audioManager.PlaySound(clickEvent);
+    }
+
+    private void OnSensitivityXChanged(float value)
+    {
+        sensitivitySettings.sensitivityX = value;
+    }
+
+    private void OnSensitivityYChanged(float value)
+    {
+        sensitivitySettings.sensitivityY = value;
+    }
+
+    private void OnDestroy()
+    {
+        mouseSensitivityXSlider.onValueChanged.RemoveListener(OnSensitivityXChanged);
+        mouseSensitivityYSlider.onValueChanged.RemoveListener(OnSensitivityYChanged);
     }
 }

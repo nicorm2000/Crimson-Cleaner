@@ -2238,7 +2238,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &162187398
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3885,7 +3885,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 451048948}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -4203,7 +4203,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 403600460}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -11288,7 +11288,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 06fc830c5405a1049833e1bb800366f5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d4f40e8a78c7def47a2ab7229de541f5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15250,7 +15250,7 @@ GameObject:
   - component: {fileID: 1508598330}
   - component: {fileID: 1508598329}
   m_Layer: 5
-  m_Name: Back To Lobby Image
+  m_Name: Controls Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15295,7 +15295,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 06fc830c5405a1049833e1bb800366f5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dd31c05d666fd5145932a746e31d2ef4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15400,6 +15400,8 @@ MonoBehaviour:
   gameplayCanvasGO: {fileID: 1986035784}
   pauseCanvasGO: {fileID: 1610821861}
   gameStateManager: {fileID: 978816960}
+  sensitivitySettings: {fileID: 11400000, guid: 75c7a7684c320b64d8058a96e27c308a,
+    type: 2}
   pauseMenuButton: {fileID: 578506394}
   settingsButton: {fileID: 381526156}
   pauseMenuPanel: {fileID: 1080390774}
@@ -16860,7 +16862,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1610821862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41114,6 +41116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 1560126}
+  playerSensitivitySettings: {fileID: 11400000, guid: 75c7a7684c320b64d8058a96e27c308a,
+    type: 2}
   animationBlendSpeed: 8.9
   cameraRoot: {fileID: 393952991}
   camera: {fileID: 1563147782}

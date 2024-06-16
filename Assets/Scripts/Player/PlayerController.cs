@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private InputManager inputManager;
+    [SerializeField] private PlayerSensitivitySettings playerSensitivitySettings;
     [SerializeField] private float animationBlendSpeed;
 
     [SerializeField] private Transform cameraRoot;
@@ -14,7 +15,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float mouseSensitivity = 22f;
     [SerializeField] private float controllerSensitivity = 22f;
 
-    private float sensitivity;
     private Rigidbody playerRigidBody;
     private Animator animator;
     private bool hasAnimator;
@@ -77,17 +77,17 @@ public class PlayerController : MonoBehaviour
     {
         if (!hasAnimator) return;
       
-        if (inputManager.IsLookInputMouse)
-        {
-            sensitivity = mouseSensitivity;
-        }
-        else
-        {
-            sensitivity = controllerSensitivity;
-        }
+        //if (inputManager.IsLookInputMouse)
+        //{
+        //    sensitivity = mouseSensitivity;
+        //}
+        //else
+        //{
+        //    sensitivity = controllerSensitivity;
+        //}
 
-        var mouseX = inputManager.Look.x * sensitivity * Time.deltaTime;
-        var mouseY = inputManager.Look.y * sensitivity * Time.deltaTime;
+        var mouseX = inputManager.Look.x * playerSensitivitySettings.sensitivityX * Time.deltaTime;
+        var mouseY = inputManager.Look.y * playerSensitivitySettings.sensitivityY * Time.deltaTime;
 
         if (objectGrabbable != null && inputManager.RotateObject)
         {

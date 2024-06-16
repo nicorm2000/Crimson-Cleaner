@@ -8,6 +8,7 @@ public class SettingsUIManager : MonoBehaviour
     [SerializeField] private Button audioTabButton = null;
     [SerializeField] private Button controlsTabButton = null;
     [SerializeField] private Button backToLobbyButton = null;
+    [SerializeField] private PlayerSensitivitySettings sensitivitySettings;
 
     [Header("Audio Tab")]
     [SerializeField] private GameObject audioTab = null;
@@ -41,11 +42,36 @@ public class SettingsUIManager : MonoBehaviour
 
         musicStateButton.onClick.AddListener(() => { });
         sfxStateButton.onClick.AddListener(() => { });
+
+        mouseSensitivityXSlider.onValueChanged.AddListener(OnSensitivityXChanged);
+        mouseSensitivityYSlider.onValueChanged.AddListener(OnSensitivityYChanged);
+
+        mouseSensitivityXSlider.value = sensitivitySettings.sensitivityX;
+        mouseSensitivityYSlider.value = sensitivitySettings.sensitivityY;
+        mouseSensitivityXSlider.maxValue = sensitivitySettings.maxSensitivityX;
+        mouseSensitivityYSlider.maxValue = sensitivitySettings.maxSensitivityY;
+
     }
 
     private void OpenTab(GameObject go, bool state)
     {
         go.SetActive(state);
         audioManager.PlaySound(clickEvent);
+    }
+
+    private void OnSensitivityXChanged(float value)
+    {
+        sensitivitySettings.sensitivityX = value;
+    }
+
+    private void OnSensitivityYChanged(float value)
+    {
+        sensitivitySettings.sensitivityY = value;
+    }
+
+    private void OnDestroy()
+    {
+        mouseSensitivityXSlider.onValueChanged.RemoveListener(OnSensitivityXChanged);
+        mouseSensitivityYSlider.onValueChanged.RemoveListener(OnSensitivityYChanged);
     }
 }
