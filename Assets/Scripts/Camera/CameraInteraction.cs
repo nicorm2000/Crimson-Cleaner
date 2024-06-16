@@ -65,7 +65,7 @@ public class CameraInteraction : MonoBehaviour
             //    AppendCleanableSprites(cleanableObject, ref activeSprites);
             //}
 
-            if (cleanableToolObject != null && cleaningManager.GetToolSelector().CurrentToolIndex != cleaningManager.GetToolSelector().ToolsLength - 1)
+            if (cleanableToolObject != null && cleaningManager.GetToolSelector().CurrentToolIndex != cleaningManager.GetToolSelector().ToolsLength - 1 && hit.collider.GetComponent<WaterBucket>().GetWaterState())
             {
                 AppendCleanableSprites(cleanableToolObject, ref activeSprites);
             }
