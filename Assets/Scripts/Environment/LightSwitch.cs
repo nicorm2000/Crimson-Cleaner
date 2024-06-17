@@ -1,39 +1,56 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class LightSwitch : MonoBehaviour
+public class LightSwitch : MonoBehaviour, IToggable
 {
     [Header("Switch Config")]
     [SerializeField] private InputManager inputManager;
+    [SerializeField] private LayerMask layerMask;
+    [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private GameObject lightOn = null;
     [SerializeField] private GameObject lightOff = null;
     [SerializeField] private GameObject[] lightsObject = null;
 
-    private bool _lightsAreOn;
+    [Header("UI Config")]
+    [SerializeField] private Sprite toggleOnOffMessage;
 
-    //private void OnEnable()
-    //{
-    //    inputManager.InteractEvent += ToggleLights;
-    //}
-    //
-    //private void OnDisable()
-    //{
-    //    inputManager.InteractEvent -= ToggleLights;
-    //}
-    //
-    //private void Start()
-    //{
-    //    lightOn.SetActive(false);
-    //    lightOff.SetActive(true);
-    //    _lightsAreOn = lightOn.activeSelf;
-    //}
+    [Header("Audio Config")]
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string lampToolEvent = null;
+
+    public Sprite ToggleOnOffMessage => toggleOnOffMessage;
+
+    private bool _lightsAreOn = true;
+
+    private void OnEnable()
+    {
+        inputManager.InteractEvent += ToggleLights;
+    }
+
+    private void OnDisable()
+    {
+        inputManager.InteractEvent -= ToggleLights;
+    }
+
+    private void Start()
+    {
+        lightOn.SetActive(true);
+        lightOff.SetActive(false);
+        _lightsAreOn = lightOn.activeSelf;
+    }
 
     private void ToggleLights()
     {
-        _lightsAreOn = !_lightsAreOn;
-        SetLightsState(_lightsAreOn);
+        Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+
+        if (Physics.Raycast(ray, out RaycastHit hit, cleaningManager.GetInteractionDistance(), layerMask))
+        {
+            if (hit.transform != gameObject.transform) return;
+
+            audioManager.PlaySound(lampToolEvent);
+            _lightsAreOn = !_lightsAreOn;
+            SetLightsState(_lightsAreOn);
+        }
     }
 
     private void SetLightsState(bool lightsOn)

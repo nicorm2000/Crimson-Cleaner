@@ -38,6 +38,7 @@ public class CameraInteraction : MonoBehaviour
             //ICleanable cleanableObject = hit.collider.gameObject.GetComponent<Clean>() as ICleanable;
             ICleanable cleanableToolObject = hit.collider.gameObject.GetComponent<WaterBucket>() as ICleanable;
             IToggable toggableObject = hit.collider.gameObject.GetComponent<UVLight>() as IToggable;
+            IToggable switchObject = hit.collider.gameObject.GetComponent<LightSwitch>() as IToggable;
 
             if (pickableObject != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().ToolsLength - 1)
             {
@@ -73,6 +74,11 @@ public class CameraInteraction : MonoBehaviour
             if (toggableObject != null)
             {
                 AppendToggableSprites(toggableObject, ref activeSprites);
+            }
+
+            if (switchObject != null)
+            {
+                AppendToggableSprites(switchObject, ref activeSprites);
             }
 
             UpdateUI(activeSprites);
