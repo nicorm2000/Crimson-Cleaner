@@ -20,7 +20,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button resumeGameButton = null;
 
     [Header("Back To Lobby")]
-    [SerializeField] private MySceneManager mySceneManager = null;
     [SerializeField] private GameObject backToLobbyPanel = null;
     [SerializeField] private Button backToLobbyButton = null;
     [SerializeField] private Button yesBackToLobbyButton = null;
@@ -43,6 +42,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Slider mouseSensitivityXSlider = null;
     [SerializeField] private Slider mouseSensitivityYSlider = null;
 
+    [Header("Job Finished")]
+    [SerializeField] private Button backToLobbyJFButton = null;
+
+    [Header("Job Unfinished")]
+    [SerializeField] private Button backToLobbyJUButton = null;
+
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
     [SerializeField] private string clickEvent = null;
@@ -61,7 +66,7 @@ public class UIManager : MonoBehaviour
 
         resumeGameButton.onClick.AddListener(() => { gameStateManager.TogglePause(); ToggleCanvases(); audioManager.PlaySound(clickEvent); });
         backToLobbyButton.onClick.AddListener(() => { OpenTab(backToLobbyPanel, true); });
-        yesBackToLobbyButton.onClick.AddListener(() => { mySceneManager.LoadSceneByName(lobbySceneName); audioManager.PlaySound(clickEvent); });
+        yesBackToLobbyButton.onClick.AddListener(() => { MySceneManager.Instance.LoadSceneByName(lobbySceneName); audioManager.PlaySound(clickEvent); });
         noBackToLobbyButton.onClick.AddListener(() => { OpenTab(backToLobbyPanel, false); });
 
         //Settings
@@ -81,6 +86,11 @@ public class UIManager : MonoBehaviour
         mouseSensitivityXSlider.maxValue = sensitivitySettings.maxSensitivityX;
         mouseSensitivityYSlider.maxValue = sensitivitySettings.maxSensitivityY;
 
+        //Job Finished
+        backToLobbyJFButton.onClick.AddListener(() => { MySceneManager.Instance.LoadSceneByName(lobbySceneName); audioManager.PlaySound(clickEvent); });
+
+        //Job Unfinished
+        backToLobbyJUButton.onClick.AddListener(() => { MySceneManager.Instance.LoadSceneByName(lobbySceneName); audioManager.PlaySound(clickEvent); });
     }
 
     private void OnEnable()
