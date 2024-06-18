@@ -423,6 +423,27 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Body_Parts_Collision" ID="{B446A8E3-0B36-42C5-959D-9C4A7353CA3C}">
+					<ChildrenList>
+						<Action Name="" ID="{0A22DB3E-B180-43CC-9A30-F73F133F0980}" ShortID="260200388">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Body Parts Collision" ID="{F0D39317-9FCA-452C-829B-627BE63F6DF0}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{BFDEE92B-5C0C-4523-8C19-0DC6765F667D}" ShortID="896652990">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Body Parts Collision" ID="{F0D39317-9FCA-452C-829B-627BE63F6DF0}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
