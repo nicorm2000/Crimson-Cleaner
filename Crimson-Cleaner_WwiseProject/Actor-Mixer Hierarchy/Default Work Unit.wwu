@@ -599,7 +599,7 @@
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-4</Value>
+										<Value>-6</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -614,9 +614,10 @@
 							<ChildrenList>
 								<AudioFileSource Name="Water Tap" ID="{04F31A81-DCEC-41CD-BEF8-534547FD35E7}">
 									<PropertyList>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.396527934237452"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.207116892114141"/>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimEnd" Type="Real64" Value="0.4"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.0695372577785928"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.276654149892734"/>
 									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Water Tap.wav</AudioFile>
@@ -654,6 +655,41 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="Lights Switch" ID="{32D6F963-1B5B-4588-8301-876EF8E8D2A4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Water Flow" ID="{D4B46D54-1243-4A7E-BA5C-51485EAD5502}" ShortID="692668415">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Water Flow" ID="{4BAC8DA4-E109-4F7C-B444-5CF5FA0FAA63}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="2.13415349540008"/>
+										<Property Name="TrimEnd" Type="Real64" Value="8.09056903883184"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Water Flow.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="460527488"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Water Flow" ID="{4BAC8DA4-E109-4F7C-B444-5CF5FA0FAA63}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
