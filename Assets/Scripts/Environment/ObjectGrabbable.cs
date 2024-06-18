@@ -1,6 +1,4 @@
-using System.Collections;
 using UnityEngine;
-using static UnityEngine.UI.Button;
 
 public class ObjectGrabbable : MonoBehaviour, IPickable
 {

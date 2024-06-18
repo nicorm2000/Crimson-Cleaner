@@ -131,8 +131,8 @@ GameObject:
   - component: {fileID: 3700613063210608844}
   - component: {fileID: 8466522574613966750}
   - component: {fileID: 7259491775674364381}
-  - component: {fileID: 3893524254465804014}
   - component: {fileID: 3227463330357277393}
+  - component: {fileID: 6295501912247368877}
   m_Layer: 8
   m_Name: Lamp
   m_TagString: Untagged
@@ -164,7 +164,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4975878844396848819}
-  m_Mesh: {fileID: 3909233067320746374, guid: 16d4ac2e7eee9504591a605551e63d92, type: 3}
+  m_Mesh: {fileID: 3999027181095874054, guid: c333df68657127043a42484c0b083f46, type: 3}
 --- !u!23 &3700613063210608844
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -185,7 +185,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1508ba4993a37c04b9a1e601b02576d7, type: 2}
+  - {fileID: 2100000, guid: e03ce029dc2ec6d41a16d69e1f91e133, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -225,10 +225,10 @@ MonoBehaviour:
     m_Bits: 256
   cleaningManager: {fileID: 0}
   minCoverage: 0.7
-  audioManager: {fileID: 0}
-  lampToolEvent: Lamp
   _isOn: 0
   toggleOnOffMessage: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
+  audioManager: {fileID: 0}
+  lampToolEvent: Lamp
 --- !u!114 &7259491775674364381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,28 +248,7 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
---- !u!64 &3893524254465804014
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4975878844396848819}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3909233067320746374, guid: 16d4ac2e7eee9504591a605551e63d92, type: 3}
+  hasSoundAndParticles: 0
 --- !u!54 &3227463330357277393
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -297,6 +276,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &6295501912247368877
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975878844396848819}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3999027181095874054, guid: c333df68657127043a42484c0b083f46, type: 3}
 --- !u!1 &7020011129359549976
 GameObject:
   m_ObjectHideFlags: 0
