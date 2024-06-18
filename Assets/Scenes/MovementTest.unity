@@ -3336,6 +3336,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!64 &310552675
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5907,6 +5910,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!64 &460624621
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -8182,6 +8188,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!1 &667168591
 GameObject:
   m_ObjectHideFlags: 0
@@ -9158,6 +9167,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!1 &791232017
 GameObject:
   m_ObjectHideFlags: 0
@@ -11447,6 +11459,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!1 &1048352363
 GameObject:
   m_ObjectHideFlags: 0
@@ -12632,6 +12647,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!4 &1142297663 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 623037906984572657, guid: df7dde607af4a8641a4e04a689a6c970,
@@ -15352,6 +15370,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!64 &1375216000
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17940,6 +17961,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!64 &1560481736
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20063,6 +20087,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1177454737}
     m_Modifications:
+    - target: {fileID: 254160340311832902, guid: 610d70dc4084654458392c53d01ed329,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: 254160340311832902, guid: 610d70dc4084654458392c53d01ed329,
+        type: 3}
+      propertyPath: hitGroundEvent
+      value: Body_Parts_Collision
+      objectReference: {fileID: 0}
+    - target: {fileID: 254160340311832902, guid: 610d70dc4084654458392c53d01ed329,
+        type: 3}
+      propertyPath: hasSoundAndParticles
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 267977936272114176, guid: 610d70dc4084654458392c53d01ed329,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23036,6 +23075,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!1 &2115265643
 GameObject:
   m_ObjectHideFlags: 0
@@ -25008,8 +25050,8 @@ Transform:
   - {fileID: 1372655332566618898}
   - {fileID: 1416544587}
   - {fileID: 1224732039}
-  - {fileID: 1725167760}
   - {fileID: 314002703}
+  - {fileID: 1725167760}
   m_Father: {fileID: 1253562304}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &550135416321180379
@@ -34933,6 +34975,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!54 &4271510877497762318
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -36914,6 +36959,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!4 &5061785012435707415
 Transform:
   m_ObjectHideFlags: 0
@@ -43679,6 +43727,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!4 &7174907457799734605
 Transform:
   m_ObjectHideFlags: 0
@@ -44417,6 +44468,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!4 &7358966979811274862
 Transform:
   m_ObjectHideFlags: 0
@@ -44833,6 +44887,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!1 &7402689153019422288
 GameObject:
   m_ObjectHideFlags: 0
@@ -46231,6 +46288,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!1 &7726435218894776012
 GameObject:
   m_ObjectHideFlags: 0
@@ -46319,6 +46379,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!23 &7727023898815388883
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46865,6 +46928,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!4 &7871638174889192481
 Transform:
   m_ObjectHideFlags: 0
@@ -48359,6 +48425,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!4 &8231254489439997111
 Transform:
   m_ObjectHideFlags: 0
@@ -49303,6 +49372,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!1 &8462795316934623178
 GameObject:
   m_ObjectHideFlags: 0
@@ -50046,6 +50118,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!33 &8645361791744059247
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -50366,6 +50441,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!4 &8708112791345081092
 Transform:
   m_ObjectHideFlags: 0
@@ -51416,6 +51494,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!4 &8957844974771532544
 Transform:
   m_ObjectHideFlags: 0
@@ -51670,6 +51751,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  hitGroundEvent: 
+  hasSoundAndParticles: 0
 --- !u!54 &9017488247606693108
 Rigidbody:
   m_ObjectHideFlags: 0

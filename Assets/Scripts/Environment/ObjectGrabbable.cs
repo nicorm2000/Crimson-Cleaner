@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using static UnityEngine.UI.Button;
 
 public class ObjectGrabbable : MonoBehaviour, IPickable
 {
@@ -30,9 +32,35 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     public Sprite ThrowMessage => throwMessage;
     public Sprite RotateMessage => rotateMessage;
 
+    public bool hasSoundAndParticles = false;
+    
+    //private int playerLayer;
+    //private bool canPlaySound = true;
+    //private float soundCooldown = 0.25f;
+    //
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (hasSoundAndParticles)
+    //    {
+    //        if (collision.gameObject.layer != playerLayer && canPlaySound)
+    //        {
+    //            StartCoroutine(SoundCooldownCoroutine());
+    //        }
+    //    }
+    //}
+    //
+    //private IEnumerator SoundCooldownCoroutine()
+    //{
+    //    canPlaySound = false;
+    //    audioManager.PlaySound(hitGroundEvent);
+    //    yield return new WaitForSeconds(soundCooldown);
+    //    canPlaySound = true;
+    //}
+
     private void Awake()
     {
         objectRigidBody = GetComponent<Rigidbody>();
+        //playerLayer = LayerMask.NameToLayer("player");
     }
 
     //private void OnCollisionEnter(Collision collision)

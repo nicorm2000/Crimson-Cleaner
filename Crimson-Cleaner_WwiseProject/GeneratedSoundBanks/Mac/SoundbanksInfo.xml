@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{8CBEF6C0-3790-FA0A-6C0C-EC90449EFA55}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{ADCB929A-153B-1D9E-31A8-398C38821BFF}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -106,10 +106,6 @@
 					<ShortName>BodyPartCol2.wav</ShortName>
 					<CachePath>SFX/BodyPartCol2_4B4BCF20.wem</CachePath>
 				</File>
-				<File Id="1018427044" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>BodyPartCol1.wav</ShortName>
-					<CachePath>SFX/BodyPartCol1_3497D9B1.wem</CachePath>
-				</File>
 				<File Id="1071313097" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Sponge.wav</ShortName>
 					<CachePath>SFX/Sponge_B64E5B73.wem</CachePath>
@@ -129,7 +125,6 @@
 				<Event Id="2616152363" Name="Body_Parts_Collision" DurationType="OneShot" DurationMin="0.25" DurationMax="0.25">
 					<MediaRefs>
 						<MediaRef Id="1017371896"/>
-						<MediaRef Id="1018427044"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3514483227" Name="Bottle_Drop" DurationType="OneShot" DurationMin="0.3934709" DurationMax="0.3934709">
@@ -225,5 +220,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{90C64099-BEF4-F127-BB97-824566F771A9}</FileHash>
+	<FileHash>{0E15552A-1821-53F7-231A-10AC97A92832}</FileHash>
 </SoundBanksInfo>
