@@ -13,7 +13,8 @@ public class WaterBehaviour : MonoBehaviour
 
     void Update()
     {
-        CheckBucketRotation();
+        if (waterBucket.GetWaterState())
+            CheckBucketRotation();
     }
 
     private void CheckBucketRotation()
