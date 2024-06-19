@@ -14,17 +14,26 @@ public class DevUpdateManager : MonoBehaviour
     [SerializeField] private AudioManager audioManager = null;
     [SerializeField] private string buttonClickEvent = null;
 
+    private const string FirstTimeKey = "FirstTimeTurnOnDevlog";
+
     private void Awake()
     {
-        devUpdateGO.SetActive(false);
-        changeLogVersionText.text= Application.version;
+        TurnOffDevlog();
+        changeLogVersionText.text = Application.version;
 
         exitDevUpdate.onClick.AddListener(() => { TurnOffDevlog(); audioManager.PlaySound(buttonClickEvent); });
     }
 
     public void TurnOnDevlog()
     {
-        devUpdateGO.SetActive(true);
+        if (PlayerPrefs.GetInt(FirstTimeKey, 0) == 0)
+        {
+            PlayerPrefs.SetInt(FirstTimeKey, 1);
+            PlayerPrefs.Save();
+
+            Debug.Log("TurnOnDevlog called for the first time.");
+            devUpdateGO.SetActive(true);
+        }
     }
 
     public void TurnOffDevlog()

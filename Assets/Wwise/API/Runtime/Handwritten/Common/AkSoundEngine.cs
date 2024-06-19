@@ -16,6 +16,8 @@ in a written agreement between you and Audiokinetic Inc.
 Copyright (c) 2024 Audiokinetic Inc.
 *******************************************************************************/
 
+using System;
+using UnityEngine;
 /// @brief Contains C# functions exposed from the Wwise C++ API.
 /// 
 /// The AkSoundEngine class contains functions converted to C# from the following C++ namespaces: 
@@ -1207,8 +1209,8 @@ public partial class AkSoundEngine
 		{ return (AKRESULT)AkSoundEnginePINVOKE.CSharp_UnregisterSpatialAudioListener(in_gameObjectID_id); }
 	}
 
-	#endregion
+    #endregion
 
-	public const uint AK_PENDING_EVENT_LOAD_ID = uint.MaxValue;
+    public const uint AK_PENDING_EVENT_LOAD_ID = uint.MaxValue;
 }
 #endif // #if ! (UNITY_DASHBOARD_WIDGET || UNITY_WEBPLAYER || UNITY_WII || UNITY_WIIU || UNITY_NACL || UNITY_FLASH || UNITY_BLACKBERRY) // Disable under unsupported platforms.

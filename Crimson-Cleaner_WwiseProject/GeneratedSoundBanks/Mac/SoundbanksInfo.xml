@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{ADCB929A-153B-1D9E-31A8-398C38821BFF}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{81D4203E-295A-EF4C-2C4D-6A9E3F76C0F1}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -81,6 +81,10 @@
 				<File Id="647094345" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Mop.wav</ShortName>
 					<CachePath>SFX/Mop_818F3B66.wem</CachePath>
+				</File>
+				<File Id="701664573" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Weapong Swap.wav</ShortName>
+					<CachePath>SFX/Weapong Swap_E85816C2.wem</CachePath>
 				</File>
 				<File Id="706771327" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Bar Door.wav</ShortName>
@@ -217,8 +221,13 @@
 						<MediaRef Id="540584377"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2239924753" Name="Weapon_Swap" DurationType="OneShot" DurationMin="0.07889898" DurationMax="0.07889898">
+					<MediaRefs>
+						<MediaRef Id="701664573"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{0E15552A-1821-53F7-231A-10AC97A92832}</FileHash>
+	<FileHash>{15F30A3B-2012-A4F5-08A9-27FA7E61F3A2}</FileHash>
 </SoundBanksInfo>

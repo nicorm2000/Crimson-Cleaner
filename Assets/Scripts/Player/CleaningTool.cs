@@ -11,6 +11,12 @@ public class CleaningTool : MonoBehaviour
     [SerializeField] private Material dirtyMaterial;
     [SerializeField] private Material originalMaterial;
 
+    [Header("Audio Config")]
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string weaponSwapEvent = null;
+    
+    private bool isEventPlaying = false;
+
     public int DirtyIncrement {get; private set;}
     private int _currentToolIndex = 0;
 
@@ -61,6 +67,7 @@ public class CleaningTool : MonoBehaviour
 
     private void SwitchTool(int newIndex)
     {
+        audioManager.PlaySound(weaponSwapEvent);
         newIndex = Mathf.Clamp(newIndex, 0, tools.Length - 1);
         tools[_currentToolIndex].SetActive(false);
         tools[newIndex].SetActive(true);

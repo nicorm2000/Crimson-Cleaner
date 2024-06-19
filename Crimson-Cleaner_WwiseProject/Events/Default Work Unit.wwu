@@ -444,6 +444,27 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Weapon_Swap" ID="{B8690258-36BC-43BA-A4D4-C37833B05F56}">
+					<ChildrenList>
+						<Action Name="" ID="{46103AE2-FCC5-4A4B-8330-CE05264DFE42}" ShortID="202552658">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Weapong Swap" ID="{AEE3ADF0-92DF-44D5-972B-70C244839729}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{1DFCDA68-87E0-4C58-96D9-B70AC7751231}" ShortID="272812435">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Weapong Swap" ID="{AEE3ADF0-92DF-44D5-972B-70C244839729}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
