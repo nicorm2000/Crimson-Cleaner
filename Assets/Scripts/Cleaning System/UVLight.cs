@@ -12,6 +12,8 @@ public class UVLight : MonoBehaviour, IToggable
     public bool _isOn;
 
     [SerializeField] private Sprite toggleOnOffMessage;
+    [SerializeField] private Material onMaterial;
+    [SerializeField] private Material offMaterial;
 
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
@@ -20,6 +22,8 @@ public class UVLight : MonoBehaviour, IToggable
     private bool isOn = false;
     private Light uvLight;
     public Sprite ToggleOnOffMessage => toggleOnOffMessage;
+    private Renderer _renderer;
+
 
     private void OnEnable()
     {
@@ -29,6 +33,11 @@ public class UVLight : MonoBehaviour, IToggable
     private void OnDisable()
     {
         inputManager.InteractEvent -= ToggleLight;
+    }
+
+    private void Awake()
+    {
+        _renderer = GetComponent<Renderer>();
     }
 
     void Start()
@@ -48,8 +57,9 @@ public class UVLight : MonoBehaviour, IToggable
             {
                 if (hit.transform != gameObject.transform) return;
 
-                audioManager.PlaySound(lampToolEvent);
                 isOn = !isOn;
+                SwapMaterial(isOn);
+                audioManager.PlaySound(lampToolEvent);
                 uvLight.enabled = isOn;
             }
         }
@@ -86,5 +96,20 @@ public class UVLight : MonoBehaviour, IToggable
 
         float coverage = (float)pointsInside / samplePositions.Length;
         return coverage >= minCoverage;
+    }
+
+    private void SwapMaterial(bool state)
+    {
+        if (_renderer != null)
+        {
+            if (state)
+            {
+                _renderer.material = onMaterial;
+            }
+            else 
+            {
+                _renderer.material = offMaterial;
+            }
+        }
     }
 }
