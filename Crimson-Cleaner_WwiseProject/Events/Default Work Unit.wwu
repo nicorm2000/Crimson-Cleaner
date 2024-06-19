@@ -404,16 +404,6 @@
 				</Event>
 				<Event Name="Water_Flow" ID="{94F9C744-3F89-48E2-B1FF-4858D1CBA769}">
 					<ChildrenList>
-						<Action Name="" ID="{C6373B64-6DD4-4CA7-AFD0-7A437CAF6A0D}" ShortID="602851190">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="2"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Water Flow" ID="{D4B46D54-1243-4A7E-BA5C-51485EAD5502}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
 						<Action Name="" ID="{753444A9-5B6A-48A7-886B-416B6A253083}" ShortID="1048906685">
 							<ReferenceList>
 								<Reference Name="Target">
@@ -460,6 +450,20 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Weapong Swap" ID="{AEE3ADF0-92DF-44D5-972B-70C244839729}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Water_Flow_Stop" ID="{7C68A32D-8D07-412F-84EE-4CD816B586C5}">
+					<ChildrenList>
+						<Action Name="" ID="{45598AB8-FEFF-42C2-99E3-2660CD2D24CE}" ShortID="945439017">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Water Flow" ID="{D4B46D54-1243-4A7E-BA5C-51485EAD5502}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

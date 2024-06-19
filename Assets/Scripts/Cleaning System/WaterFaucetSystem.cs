@@ -1,27 +1,28 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Cart : MonoBehaviour, IOpenable
+public class WaterFaucetSystem : MonoBehaviour, IToggable
 {
-    [Header("Cart Config")]
+    [Header("Config")]
     [SerializeField] private InputManager inputManager;
     [SerializeField] private PlayerController playerController;
+    [SerializeField] private WaterBucket waterBucket = null;
     [SerializeField] private LayerMask interactableLayerMask = ~0;
     [SerializeField] private float raycastDistance = 3f;
+    [SerializeField] private ParticleSystem waterParticles;
+
+    [Header("UI")]
+    [SerializeField] private Sprite toggleOnOffMessage;
+    public Sprite ToggleOnOffMessage => toggleOnOffMessage;
 
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
-    [SerializeField] private string openEvent = null;
-    [SerializeField] private string closeEvent = null;
+    [SerializeField] private string interactFaucetEvent = null;
+    [SerializeField] private string waterFlowEvent = null;
+    [SerializeField] private string waterFlowStopEvent = null;
 
-    private Animator _openableAnimator;
+    private Animator animator;
     public bool _isOpen { get; private set; }
-
-    public string OpenCloseMessage => _isOpen ? "Press F to close" : "Press F to open";
-
-    [SerializeField] private Sprite interactMessage;
-    public Sprite InteractMessage => interactMessage;
-
     private readonly string _openableOpen = "Open";
 
     private void OnEnable()
@@ -34,10 +35,9 @@ public class Cart : MonoBehaviour, IOpenable
         inputManager.InteractEvent -= ToggleObjectState;
     }
 
-    private void Start()
+    private void Awake()
     {
-        _openableAnimator = GetComponentInParent<Animator>();
-        _isOpen = false;
+        animator = GetComponent<Animator>();
     }
 
     private void ToggleObjectState()
@@ -45,15 +45,18 @@ public class Cart : MonoBehaviour, IOpenable
         if (IsMouseLookingAtObject() && playerController.GetObjectGrabbable() == null)
         {
             _isOpen = !_isOpen;
+            audioManager.PlaySound(interactFaucetEvent);
             if (_isOpen)
             {
-                audioManager.PlaySound(openEvent);
+                audioManager.PlaySound(waterFlowEvent);
+                waterParticles.Play();
             }
             else
             {
-                audioManager.PlaySound(closeEvent);
+                audioManager.PlaySound(waterFlowStopEvent);
+                waterParticles.Stop();
             }
-            _openableAnimator.SetBool(_openableOpen, _isOpen);
+            animator.SetBool(_openableOpen, _isOpen);
         }
     }
 
@@ -64,7 +67,7 @@ public class Cart : MonoBehaviour, IOpenable
         {
             if (hit.transform != gameObject.transform) return false;
 
-            return hit.collider.gameObject.GetComponent<Cart>();
+            return hit.collider.gameObject.GetComponent<WaterFaucetSystem>();
         }
         return false;
     }

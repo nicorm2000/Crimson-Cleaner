@@ -33,6 +33,7 @@ namespace AK
         static const AkUniqueID WASH_TOOL = 3752733365U;
         static const AkUniqueID WATER_DROP = 2790747934U;
         static const AkUniqueID WATER_FLOW = 2869063429U;
+        static const AkUniqueID WATER_FLOW_STOP = 1430150536U;
         static const AkUniqueID WATER_TAP = 2864239532U;
         static const AkUniqueID WEAPON_SWAP = 2239924753U;
     } // namespace EVENTS
