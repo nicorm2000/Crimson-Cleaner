@@ -138,7 +138,7 @@ public class InputManager : MonoBehaviour
     public void ShowCursor()
     {
         Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     private void OnMove(InputAction.CallbackContext context)
