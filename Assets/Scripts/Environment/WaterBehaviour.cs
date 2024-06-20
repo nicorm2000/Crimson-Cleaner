@@ -6,6 +6,7 @@ public class WaterBehaviour : MonoBehaviour
     [SerializeField] private WaterBucket waterBucket;
     [SerializeField] private GameObject water;
     [SerializeField] private float spillThreshold;
+    [SerializeField] private ParticleSystem splashParticles;
 
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
@@ -35,6 +36,8 @@ public class WaterBehaviour : MonoBehaviour
     {
         if (water != null)
         {
+            splashParticles.transform.rotation = transform.rotation;
+            splashParticles.Play();
             audioManager.PlaySound(waterDropEvent);
             water.SetActive(false);
             waterBucket.SetWaterPercentage(0.0f);
