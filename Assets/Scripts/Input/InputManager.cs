@@ -33,11 +33,13 @@ public class InputManager : MonoBehaviour
     private InputAction selectThirdToolAction;
     private InputAction mouseScrollAction;
     private InputAction pauseAction;
+    private InputAction tutorialUIAction;
 
     public event Action PickUpEvent;
     public event Action InteractEvent;
     public event Action CleaningListEvent;
     public event Action DisplayControlsEvent;
+    public event Action DisplayTutorialEvent;
     public event Action SelectFirstToolEvent;
     public event Action SelectSecondToolEvent;
     public event Action SelectThirdToolEvent;
@@ -69,8 +71,9 @@ public class InputManager : MonoBehaviour
         selectSecondToolAction = gameplayMap.FindAction("SelectSecondTool");
         selectThirdToolAction = gameplayMap.FindAction("SelectThirdTool");
         mouseScrollAction = gameplayMap.FindAction("MouseScroll");
-
         pauseAction = playerInput.actions.FindAction("Pause");
+        tutorialUIAction = playerInput.actions.FindAction("Tutorial");
+
 
         moveAction.performed += OnMove;
         lookAction.performed += OnLook;
@@ -88,6 +91,7 @@ public class InputManager : MonoBehaviour
         selectThirdToolAction.performed += OnSelectThirdTool;
         mouseScrollAction.performed += OnMouseScroll;
         pauseAction.performed += OnPause;
+        tutorialUIAction.performed += OnDisplayTutorial;
 
         moveAction.canceled += OnMove;
         lookAction.canceled += OnLook;
@@ -220,6 +224,11 @@ public class InputManager : MonoBehaviour
     private void OnPause(InputAction.CallbackContext context)
     {
         PauseEvent?.Invoke();
+    }
+    
+    private void OnDisplayTutorial(InputAction.CallbackContext context)
+    {
+        DisplayTutorialEvent?.Invoke();
     }
 
     public void ToggleGameplayMap(bool active)

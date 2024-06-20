@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -47,10 +48,16 @@ public class UIManager : MonoBehaviour
 
     [Header("Job Unfinished")]
     [SerializeField] private Button backToLobbyJUButton = null;
+    
+    [Header("Tutorial")]
+    [SerializeField] private GameObject tutorialImage;
+    [SerializeField] private GameObject tutorialControlHint;
+    [SerializeField] private float tutorialHintDuration = 10f;
 
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
     [SerializeField] private string clickEvent = null;
+
 
     private void Awake()
     {
@@ -91,22 +98,28 @@ public class UIManager : MonoBehaviour
 
         //Job Unfinished
         backToLobbyJUButton.onClick.AddListener(() => { MySceneManager.Instance.LoadSceneByName(lobbySceneName); audioManager.PlaySound(clickEvent); });
+
+        //Tutorial
+        tutorialImage.SetActive(false);
     }
 
     private void OnEnable()
     {
         inputManager.PauseEvent += ToggleCanvases;
+        inputManager.DisplayTutorialEvent += TriggerTutorialUI;
     }
 
     private void OnDisable()
     {
         inputManager.PauseEvent -= ToggleCanvases;
+        inputManager.DisplayTutorialEvent -= TriggerTutorialUI;
     }
 
     private void Start()
     {
         gameplayCanvasGO.SetActive(true);
         pauseCanvasGO.SetActive(false);
+        StartCoroutine(WaitDisplayTutorialHint());
     }
 
     public void ToggleCanvases()
@@ -114,6 +127,7 @@ public class UIManager : MonoBehaviour
         bool active = gameplayCanvasGO.activeSelf;
         gameplayCanvasGO.SetActive(!active);
         pauseCanvasGO.SetActive(active);
+        
     }
 
     private void OpenTab(GameObject go, bool state)
@@ -130,6 +144,18 @@ public class UIManager : MonoBehaviour
     private void OnSensitivityYChanged(float value)
     {
         sensitivitySettings.sensitivityY = value;
+    }
+
+    private void TriggerTutorialUI()
+    {
+        tutorialImage.SetActive(!tutorialImage.activeSelf);
+    }
+
+    private IEnumerator WaitDisplayTutorialHint()
+    {
+        tutorialControlHint.SetActive(true);
+        yield return new WaitForSeconds(tutorialHintDuration);
+        tutorialControlHint.SetActive(false);
     }
 
     private void OnDestroy()

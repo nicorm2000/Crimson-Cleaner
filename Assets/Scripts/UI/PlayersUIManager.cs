@@ -17,6 +17,7 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private Transform disposableListParent;
     [SerializeField] private GameObject objectBackground;
 
+
     [Header("Tools UI")]
     [SerializeField] private GameObject reticle;
     [SerializeField] private GameObject toolHolder;
@@ -146,6 +147,8 @@ public class PlayersUIManager : MonoBehaviour
             StopCoroutine(toolDissapearCoroutine);
         }
         toolDissapearCoroutine = StartCoroutine(WaitToolDisappear());
+        
+        
     }
 
     private IEnumerator WaitToolDisappear()

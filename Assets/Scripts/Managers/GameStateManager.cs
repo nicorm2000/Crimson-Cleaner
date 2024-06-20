@@ -37,7 +37,7 @@ public class GameStateManager : MonoBehaviour
 
     private void OnDisable()
     {
-        
+        inputManager.PauseEvent -= TogglePause;
     }
 
     private void Start()

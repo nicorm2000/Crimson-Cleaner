@@ -161,6 +161,15 @@ public partial class @InputMaster: IInputActionCollection2
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Tutorial"",
+                    ""type"": ""Button"",
+                    ""id"": ""39be201b-d974-426d-b785-acb0ad45b002"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -537,6 +546,17 @@ public partial class @InputMaster: IInputActionCollection2
                     ""action"": ""Throw"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""902ee121-383d-4370-b137-b1ebe948d468"",
+                    ""path"": ""<Keyboard>/h"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Tutorial"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -621,6 +641,7 @@ public partial class @InputMaster: IInputActionCollection2
         m_Player_SelectSecondTool = m_Player.FindAction("SelectSecondTool", throwIfNotFound: true);
         m_Player_SelectThirdTool = m_Player.FindAction("SelectThirdTool", throwIfNotFound: true);
         m_Player_Throw = m_Player.FindAction("Throw", throwIfNotFound: true);
+        m_Player_Tutorial = m_Player.FindAction("Tutorial", throwIfNotFound: true);
         // Pause
         m_Pause = asset.FindActionMap("Pause", throwIfNotFound: true);
         m_Pause_Pause = m_Pause.FindAction("Pause", throwIfNotFound: true);
@@ -700,6 +721,7 @@ public partial class @InputMaster: IInputActionCollection2
     private readonly InputAction m_Player_SelectSecondTool;
     private readonly InputAction m_Player_SelectThirdTool;
     private readonly InputAction m_Player_Throw;
+    private readonly InputAction m_Player_Tutorial;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -719,6 +741,7 @@ public partial class @InputMaster: IInputActionCollection2
         public InputAction @SelectSecondTool => m_Wrapper.m_Player_SelectSecondTool;
         public InputAction @SelectThirdTool => m_Wrapper.m_Player_SelectThirdTool;
         public InputAction @Throw => m_Wrapper.m_Player_Throw;
+        public InputAction @Tutorial => m_Wrapper.m_Player_Tutorial;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -773,6 +796,9 @@ public partial class @InputMaster: IInputActionCollection2
             @Throw.started += instance.OnThrow;
             @Throw.performed += instance.OnThrow;
             @Throw.canceled += instance.OnThrow;
+            @Tutorial.started += instance.OnTutorial;
+            @Tutorial.performed += instance.OnTutorial;
+            @Tutorial.canceled += instance.OnTutorial;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -822,6 +848,9 @@ public partial class @InputMaster: IInputActionCollection2
             @Throw.started -= instance.OnThrow;
             @Throw.performed -= instance.OnThrow;
             @Throw.canceled -= instance.OnThrow;
+            @Tutorial.started -= instance.OnTutorial;
+            @Tutorial.performed -= instance.OnTutorial;
+            @Tutorial.canceled -= instance.OnTutorial;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -902,6 +931,7 @@ public partial class @InputMaster: IInputActionCollection2
         void OnSelectSecondTool(InputAction.CallbackContext context);
         void OnSelectThirdTool(InputAction.CallbackContext context);
         void OnThrow(InputAction.CallbackContext context);
+        void OnTutorial(InputAction.CallbackContext context);
     }
     public interface IPauseActions
     {
