@@ -56,6 +56,7 @@ public class PlayersUIManager : MonoBehaviour
         foreach (DisposableObject disposableObject in gameStateManager.DisposableObjects)
         {
             disposableObject.GetComponent<DisposableObject>().DisposedGO += UpdateDisposableList;
+            disposableObject.GetComponent<DisposableObject>().Broken += UpdateDisposableListMultiple;
         }
     }
 
@@ -75,7 +76,10 @@ public class PlayersUIManager : MonoBehaviour
         foreach (DisposableObject disposableObject in gameStateManager.DisposableObjects)
         {
             if (disposableObject != null)
+            {
                 disposableObject.GetComponent<DisposableObject>().DisposedGO -= UpdateDisposableList;
+                disposableObject.GetComponent<DisposableObject>().Broken -= UpdateDisposableListMultiple;
+            }
         }
     }
 
@@ -224,6 +228,33 @@ public class PlayersUIManager : MonoBehaviour
                 disposalTextElements.RemoveAt(i);
                 break;
             }
+        }
+    }
+
+    private void UpdateDisposableListMultiple(GameObject objectInList, List<GameObject> objectsToAdd)
+    {
+        for (int i = 0; i < disposalTextElements.Count; i++)
+        {
+            if (disposalTextElements[i].name == objectInList.name)
+            {
+                Destroy(disposalTextElements[i]);
+                disposalTextElements.RemoveAt(i);
+                break;
+            }
+        }
+
+        foreach (var disposableObject in objectsToAdd)
+        {
+            GameObject textElement = Instantiate(textElementPrefab, disposableListParent);
+            if (textElement.TryGetComponent<TextMeshProUGUI>(out var tmp))
+            {
+                tmp.text = disposableObject.name;
+
+                textElement.name = disposableObject.name;
+            }
+
+            disposalTextElements.Add(textElement);
+            disposableObject.GetComponent<DisposableObject>().DisposedGO += UpdateDisposableList;
         }
     }
 }

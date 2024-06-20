@@ -6,6 +6,9 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     [SerializeField] private float lerpSpeed = 10f;
     [SerializeField] private float rotationSpeed = 10f;
     [SerializeField] private float throwingForce = 10f;
+    [SerializeField] private float breakForceThreshold = 10f;
+    [SerializeField] private float collisionCooldown = 0.1f;
+    [SerializeField] private float fallHeightThreshold = 5f;
 
     [Header("UI Config")]
     [SerializeField] private Sprite pickUpMessage;
@@ -24,7 +27,12 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     private Vector3 newPosition;
     private Vector3 lastPosition;
 
+    private DisposableObject disposableObject;
+    private float lastCollisionTime = -Mathf.Infinity;
+    private float initialHeight;
+
     public bool isObjectPickedUp { get; private set; }
+    public bool isObjectBreakable = true;
     public Sprite PickUpMessage => pickUpMessage;
     public Sprite DropMessage => dropMessage;
     public Sprite ThrowMessage => throwMessage;
@@ -58,7 +66,7 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     private void Awake()
     {
         objectRigidBody = GetComponent<Rigidbody>();
-        //playerLayer = LayerMask.NameToLayer("player");
+        disposableObject = GetComponent<DisposableObject>();
     }
 
     //private void OnCollisionEnter(Collision collision)
@@ -76,6 +84,8 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
         initialLocalRight = transform.right;
 
         isObjectPickedUp = true;
+
+        initialHeight = transform.position.y;
     }
 
     public void Drop()
@@ -86,6 +96,8 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
         objectRigidBody.velocity = (newPosition - lastPosition) * throwingForce;
 
         isObjectPickedUp = false;
+
+        initialHeight = transform.position.y;
     }
 
     public void Throw(float throwingForce, Vector3 throwDirection)
@@ -97,6 +109,8 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
         objectRigidBody.AddForce(throwDirection * throwingForce, ForceMode.Impulse);
 
         isObjectPickedUp = false;
+
+        initialHeight = transform.position.y;
     }
 
     private void FixedUpdate()
@@ -113,5 +127,25 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     {
         transform.Rotate(initialLocalUp, mouseX * rotationSpeed * Time.deltaTime, Space.World);
         transform.Rotate(initialLocalRight, mouseY * rotationSpeed * Time.deltaTime, Space.World);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!isObjectBreakable)
+            return;
+
+        if (Time.time - lastCollisionTime < collisionCooldown) return;
+
+        float currentHeight = transform.position.y;
+        float heightDifference = initialHeight - currentHeight;
+
+        if (collision.relativeVelocity.magnitude > breakForceThreshold || heightDifference > fallHeightThreshold)
+        {
+            if (disposableObject != null)
+            {
+                disposableObject.TriggerBreaking();
+                lastCollisionTime = Time.time;
+            }
+        }
     }
 }

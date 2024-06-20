@@ -85,6 +85,16 @@ public class GameStateManager : MonoBehaviour
         disposedCount++;
     }
 
+    public void OnObjectBroken(GameObject brokenPiece, List<GameObject> brokenPieces)
+    {
+        disposableObjects.Remove(brokenPiece.GetComponent<DisposableObject>());
+
+        foreach (var piece in brokenPieces)
+        {
+            disposableObjects.Add(piece.GetComponent<DisposableObject>());
+        }
+    }
+
     public void OnTimerFinished()
     {
         isTimerCompleted = true;
@@ -120,6 +130,7 @@ public class InitializationState : IGameState
         foreach (var disposableObject in gameStateManager.DisposableObjects)
         {
             disposableObject.Disposed += gameStateManager.OnObjectDisposed;
+            disposableObject.Broken += gameStateManager.OnObjectBroken;
         }
 
         gameStateManager.cleanedCount = 0;
@@ -251,6 +262,7 @@ public class DeInitializationState : IGameState
         foreach (var disposableObject in gameStateManager.DisposableObjects)
         {
             disposableObject.Disposed -= gameStateManager.OnObjectDisposed;
+            disposableObject.Broken -= gameStateManager.OnObjectBroken;
         }
 
         gameStateManager.CleanableObjects.Clear();
