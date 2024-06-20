@@ -811,6 +811,63 @@
 								<ActiveSource Name="Weapong Swap" ID="{40621E4B-845B-4598-8757-63CE0EE523DF}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Bottle Breaking" ID="{C1C82A5C-9C3B-42B6-A1C4-579C3ABADD5C}" ShortID="395319783">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{680B4287-E3AA-4A10-8386-6A71FE250509}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="50"/>
+													<Property Name="Min" Type="Real64" Value="-50"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{3A51C2B8-4C11-4F49-88AF-A31DFB415F99}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-10"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Bottle Breaking" ID="{E3F05AEA-E0BA-4C86-ADC3-3AB4F6AE14E9}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.143433889602054"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.4"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Bottle Breaking.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="550167775"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Bottle Breaking" ID="{E3F05AEA-E0BA-4C86-ADC3-3AB4F6AE14E9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

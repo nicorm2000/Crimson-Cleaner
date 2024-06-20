@@ -469,6 +469,27 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Bottle_Breaking" ID="{BE38B267-A580-4B60-8299-2371B361CD28}">
+					<ChildrenList>
+						<Action Name="" ID="{76FB51B0-6DCC-4FB2-AF51-C362FDC43EE1}" ShortID="204002435">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bottle Breaking" ID="{C1C82A5C-9C3B-42B6-A1C4-579C3ABADD5C}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{5F2E7124-3244-40CB-AD88-A7FFBF962C6C}" ShortID="630018384">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bottle Breaking" ID="{C1C82A5C-9C3B-42B6-A1C4-579C3ABADD5C}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

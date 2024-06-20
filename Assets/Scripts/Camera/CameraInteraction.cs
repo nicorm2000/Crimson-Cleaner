@@ -47,7 +47,7 @@ public class CameraInteraction : MonoBehaviour
                 AppendPickUpSprites(pickableObject, ref activeSprites);
             }
 
-            if (objectRetrievable != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().ToolsLength - 1 && pickableObject == null)
+            if (objectRetrievable != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().ToolsLength - 1 && playerController.GetObjectGrabbable() == null)
             {
                 AppendRetrievableSprites(objectRetrievable, ref activeSprites);
             }

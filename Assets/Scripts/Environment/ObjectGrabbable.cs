@@ -16,9 +16,9 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     [SerializeField] private Sprite throwMessage;
     [SerializeField] private Sprite rotateMessage;
 
-    //[Header("Audio Config")]
-    //[SerializeField] private AudioManager audioManager = null;
-    //[SerializeField] private string hitGroundEvent = null;
+    [Header("Audio Config")]
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string breakBottleEvent = null;
 
     private Rigidbody objectRigidBody;
     private Transform objectGrabPointTransform;
@@ -39,40 +39,12 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     public Sprite RotateMessage => rotateMessage;
 
     public bool hasSoundAndParticles = false;
-    
-    //private int playerLayer;
-    //private bool canPlaySound = true;
-    //private float soundCooldown = 0.25f;
-    //
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (hasSoundAndParticles)
-    //    {
-    //        if (collision.gameObject.layer != playerLayer && canPlaySound)
-    //        {
-    //            StartCoroutine(SoundCooldownCoroutine());
-    //        }
-    //    }
-    //}
-    //
-    //private IEnumerator SoundCooldownCoroutine()
-    //{
-    //    canPlaySound = false;
-    //    audioManager.PlaySound(hitGroundEvent);
-    //    yield return new WaitForSeconds(soundCooldown);
-    //    canPlaySound = true;
-    //}
 
     private void Awake()
     {
         objectRigidBody = GetComponent<Rigidbody>();
         disposableObject = GetComponent<DisposableObject>();
     }
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    audioManager.PlaySound(hitGroundEvent);
-    //}
 
     public void Grab(Transform ObjectGrabPointTransform)
     {
@@ -143,6 +115,7 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
         {
             if (disposableObject != null)
             {
+                audioManager.PlaySound(breakBottleEvent);
                 disposableObject.TriggerBreaking();
                 lastCollisionTime = Time.time;
             }

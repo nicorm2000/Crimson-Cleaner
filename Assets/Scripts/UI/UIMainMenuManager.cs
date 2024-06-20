@@ -8,11 +8,10 @@ public class Job
 {
     public string jobName;
     public Sprite jobImage;
-    public string jobDescription;
+    public string jobAddress;
+    public string jobInformation;
     public int jobPayment;
-    public int jobCompletionTimeEasy;
-    public int jobCompletionTimeMedium;
-    public int jobCompletionTimeHard;
+    public int jobCompletionTime;
     public GameObject jobButton;
 }
 
@@ -23,7 +22,10 @@ public class UIMainMenuManager : MonoBehaviour
     [SerializeField] private Job[] jobAvailables = null;
     [SerializeField] private Image jobImage = null;
     [SerializeField] private TextMeshProUGUI jobNameText = null;
-    [SerializeField] private TextMeshProUGUI jobDescriptionText = null;
+    [SerializeField] private TextMeshProUGUI jobAddressText = null;
+    [SerializeField] private TextMeshProUGUI jobInformationText = null;
+    [SerializeField] private TextMeshProUGUI jobCompletionTimeText = null;
+    [SerializeField] private TextMeshProUGUI jobPaymentText = null;
 
     [Header("Navigation Buttons")]
     [SerializeField] private Button leftButton = null;
@@ -118,7 +120,10 @@ public class UIMainMenuManager : MonoBehaviour
 
         jobNameText.text = jobAvailables[currentIndex].jobName;
         jobImage.sprite = jobAvailables[currentIndex].jobImage;
-        jobDescriptionText.text = jobAvailables[currentIndex].jobDescription;
+        jobAddressText.text = jobAvailables[currentIndex].jobAddress;
+        jobInformationText.text = jobAvailables[currentIndex].jobInformation;
+        jobCompletionTimeText.text = jobAvailables[currentIndex].jobCompletionTime.ToString() + " minutes";
+        jobPaymentText.text = "$" + jobAvailables[currentIndex].jobPayment.ToString("N2");
 
         for (int i = 0; i < jobAvailables.Length; i++)
         {
