@@ -3177,11 +3177,6 @@ PrefabInstance:
       objectReference: {fileID: 1590090946}
     - target: {fileID: 4711356780880030120, guid: 3990ab5a6ce01cf4e921428949378625,
         type: 3}
-      propertyPath: pickUpDrop
-      value: 
-      objectReference: {fileID: 6982812146447357857}
-    - target: {fileID: 4711356780880030120, guid: 3990ab5a6ce01cf4e921428949378625,
-        type: 3}
       propertyPath: moneyAmount
       value: 48
       objectReference: {fileID: 0}
@@ -5262,11 +5257,6 @@ PrefabInstance:
       propertyPath: moneyPopUp
       value: 
       objectReference: {fileID: 1590090946}
-    - target: {fileID: 4711356780880030120, guid: 3990ab5a6ce01cf4e921428949378625,
-        type: 3}
-      propertyPath: pickUpDrop
-      value: 
-      objectReference: {fileID: 6982812146447357857}
     - target: {fileID: 4711356780880030120, guid: 3990ab5a6ce01cf4e921428949378625,
         type: 3}
       propertyPath: moneyAmount
@@ -10721,7 +10711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 50, y: 200}
+  m_AnchoredPosition: {x: 38, y: 200}
   m_SizeDelta: {x: 169, y: 73}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &964600004
@@ -10867,11 +10857,6 @@ PrefabInstance:
       objectReference: {fileID: 1590090946}
     - target: {fileID: 269256969762282661, guid: df7dde607af4a8641a4e04a689a6c970,
         type: 3}
-      propertyPath: pickUpDrop
-      value: 
-      objectReference: {fileID: 6982812146447357857}
-    - target: {fileID: 269256969762282661, guid: df7dde607af4a8641a4e04a689a6c970,
-        type: 3}
       propertyPath: moneyAmount
       value: 157
       objectReference: {fileID: 0}
@@ -10995,6 +10980,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1010726447}
+  - component: {fileID: 1010726448}
   m_Layer: 0
   m_Name: Cleaning Tool Holder
   m_TagString: Untagged
@@ -11020,6 +11006,34 @@ Transform:
   - {fileID: 1399425797}
   m_Father: {fileID: 1563147782}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1010726448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010726446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a16d6514e29ce45aa2853e517af972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 6982812146447357855}
+  sway: 1
+  step: 0.01
+  maxStepDistance: 0.06
+  swayRotation: 1
+  rotationStep: 2.5
+  maxRotationStep: 5
+  bobOffset: 1
+  travelLimit: {x: 0.035, y: 0.035, z: 0.035}
+  bobLimit: {x: 0.025, y: 0.025, z: 0.025}
+  bobSway: 1
+  multiplier: {x: 2, y: 2, z: 2}
+  smooth: 10
+  smoothRot: 12
+  bobReturnSmooth: 6
+  bobRotReturnSmooth: 6
 --- !u!1 &1014010618
 GameObject:
   m_ObjectHideFlags: 0
@@ -11584,11 +11598,6 @@ PrefabInstance:
       propertyPath: moneyPopUp
       value: 
       objectReference: {fileID: 1590090946}
-    - target: {fileID: 4711356780880030120, guid: 3990ab5a6ce01cf4e921428949378625,
-        type: 3}
-      propertyPath: pickUpDrop
-      value: 
-      objectReference: {fileID: 6982812146447357857}
     - target: {fileID: 4711356780880030120, guid: 3990ab5a6ce01cf4e921428949378625,
         type: 3}
       propertyPath: moneyAmount
@@ -13047,7 +13056,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 50, y: 50}
+  m_AnchoredPosition: {x: 38, y: 50}
   m_SizeDelta: {x: 169, y: 73}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1192007006
@@ -14225,11 +14234,6 @@ PrefabInstance:
       propertyPath: moneyPopUp
       value: 
       objectReference: {fileID: 1590090946}
-    - target: {fileID: 4711356780880030120, guid: 3990ab5a6ce01cf4e921428949378625,
-        type: 3}
-      propertyPath: pickUpDrop
-      value: 
-      objectReference: {fileID: 6982812146447357857}
     - target: {fileID: 4711356780880030120, guid: 3990ab5a6ce01cf4e921428949378625,
         type: 3}
       propertyPath: moneyAmount
@@ -15424,11 +15428,6 @@ PrefabInstance:
       propertyPath: moneyPopUp
       value: 
       objectReference: {fileID: 1590090946}
-    - target: {fileID: 4711356780880030120, guid: 3990ab5a6ce01cf4e921428949378625,
-        type: 3}
-      propertyPath: pickUpDrop
-      value: 
-      objectReference: {fileID: 6982812146447357857}
     - target: {fileID: 4711356780880030120, guid: 3990ab5a6ce01cf4e921428949378625,
         type: 3}
       propertyPath: moneyAmount
@@ -17216,7 +17215,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 50, y: 125}
+  m_AnchoredPosition: {x: 38, y: 125}
   m_SizeDelta: {x: 169, y: 73}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1516571166
@@ -21373,11 +21372,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1986035788}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -125}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 43, y: 197}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0, y: 1}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1883807543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21398,7 +21397,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d7e8f1edcec76af49be64d6621f55fe3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -26547,11 +26546,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5522222984248117449, guid: 690bb619e816f844c8007081d0dd5e00,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 504237bd16429084c83c7a782b09f832, type: 2}
     - target: {fileID: 7881962743490342031, guid: 690bb619e816f844c8007081d0dd5e00,
         type: 3}
       propertyPath: InitialModule.startLifetime.scalar
