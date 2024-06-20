@@ -36,7 +36,8 @@ public class WaterBehaviour : MonoBehaviour
         if (water != null)
         {
             audioManager.PlaySound(waterDropEvent);
-            Destroy(water);
+            water.SetActive(false);
+            waterBucket.SetWaterPercentage(0.0f);
             waterBucket.SetWaterState(false);
         }
     }

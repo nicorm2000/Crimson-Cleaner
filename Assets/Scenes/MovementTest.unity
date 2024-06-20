@@ -4504,6 +4504,12 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &388963863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3812619476261258022, guid: 6a294399905013b4e8c290a270152890,
+    type: 3}
+  m_PrefabInstance: {fileID: 2566576644996950420}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &393952990
 GameObject:
   m_ObjectHideFlags: 0
@@ -20931,6 +20937,12 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!198 &1864701326 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1314022556265712743, guid: 690bb619e816f844c8007081d0dd5e00,
+    type: 3}
+  m_PrefabInstance: {fileID: 894973522943723236}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1885226580
 GameObject:
   m_ObjectHideFlags: 0
@@ -25739,6 +25751,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1253562304}
     m_Modifications:
+    - target: {fileID: 1314022556265712743, guid: 690bb619e816f844c8007081d0dd5e00,
+        type: 3}
+      propertyPath: startDelay.scalar
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963981493630285165, guid: 690bb619e816f844c8007081d0dd5e00,
+        type: 3}
+      propertyPath: water
+      value: 
+      objectReference: {fileID: 388963863}
     - target: {fileID: 1963981493630285165, guid: 690bb619e816f844c8007081d0dd5e00,
         type: 3}
       propertyPath: waterBucket
@@ -25756,6 +25778,11 @@ PrefabInstance:
       objectReference: {fileID: 1560126}
     - target: {fileID: 1963981493630285165, guid: 690bb619e816f844c8007081d0dd5e00,
         type: 3}
+      propertyPath: splashOffset.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963981493630285165, guid: 690bb619e816f844c8007081d0dd5e00,
+        type: 3}
       propertyPath: waterFlowEvent
       value: Water_Flow
       objectReference: {fileID: 0}
@@ -25764,6 +25791,11 @@ PrefabInstance:
       propertyPath: waterParticles
       value: 
       objectReference: {fileID: 894973522943723237}
+    - target: {fileID: 1963981493630285165, guid: 690bb619e816f844c8007081d0dd5e00,
+        type: 3}
+      propertyPath: splashParticles
+      value: 
+      objectReference: {fileID: 1864701326}
     - target: {fileID: 1963981493630285165, guid: 690bb619e816f844c8007081d0dd5e00,
         type: 3}
       propertyPath: playerController
@@ -25848,7 +25880,7 @@ PrefabInstance:
     - target: {fileID: 5078980647725008064, guid: 690bb619e816f844c8007081d0dd5e00,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7881962743490342031, guid: 690bb619e816f844c8007081d0dd5e00,
         type: 3}
@@ -29871,6 +29903,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1253562304}
     m_Modifications:
+    - target: {fileID: 1001982321743339526, guid: 6a294399905013b4e8c290a270152890,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3763355843516972746, guid: 6a294399905013b4e8c290a270152890,
         type: 3}
       propertyPath: waterBucket

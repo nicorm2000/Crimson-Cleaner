@@ -9,7 +9,15 @@ public class WaterFaucetSystem : MonoBehaviour, IToggable
     [SerializeField] private WaterBucket waterBucket = null;
     [SerializeField] private LayerMask interactableLayerMask = ~0;
     [SerializeField] private float raycastDistance = 3f;
+
+    [Header("Water Config")]
     [SerializeField] private ParticleSystem waterParticles;
+    [SerializeField] private ParticleSystem splashParticles;
+    [SerializeField] private Transform rayOrigin;
+    [SerializeField] private Vector3 splashOffset;
+    [SerializeField] private GameObject water;
+    [SerializeField] private float spillThreshold;
+    [SerializeField] private float fillWaterSpeed;
 
     [Header("UI")]
     [SerializeField] private Sprite toggleOnOffMessage;
@@ -70,5 +78,52 @@ public class WaterFaucetSystem : MonoBehaviour, IToggable
             return hit.collider.gameObject.GetComponent<WaterFaucetSystem>();
         }
         return false;
+    }
+
+
+    private void Update()
+    {
+        IsWaterHittingSomething();
+    }
+
+    private bool IsWaterHittingSomething()
+    {
+        if (!_isOpen)
+            return false;
+
+        if (waterBucket.GetWaterState())
+            return false;
+
+        if (Physics.Raycast(rayOrigin.position, Vector3.down, out RaycastHit raycastHit, raycastDistance))
+        {
+            splashParticles.gameObject.transform.position = raycastHit.point + splashOffset;
+
+            if (raycastHit.transform == waterBucket.transform)
+            {
+                float rotationX = waterBucket.transform.eulerAngles.x;
+                float rotationZ = waterBucket.transform.eulerAngles.z;
+
+                rotationX = (rotationX > 180) ? rotationX - 360 : rotationX;
+                rotationZ = (rotationZ > 180) ? rotationZ - 360 : rotationZ;
+
+                if (Mathf.Abs(rotationX) < spillThreshold && Mathf.Abs(rotationZ) < spillThreshold)
+                {
+                    if (waterBucket.GetWaterPercentage() > 1)
+                    {
+                        waterBucket.SetWaterState(true);
+                        _isOpen = false;
+                        animator.SetBool(_openableOpen, _isOpen);
+                        audioManager.PlaySound(waterFlowStopEvent);
+                        waterParticles.Stop();
+                        return false;
+                    }
+
+                    Debug.Log(waterBucket.GetWaterPercentage());
+                    water.SetActive(true);
+                    waterBucket.WaterPercentageHandler(fillWaterSpeed);
+                }
+            }
+        }
+        return true;
     }
 }

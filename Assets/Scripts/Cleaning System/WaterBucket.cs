@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +10,11 @@ public class WaterBucket : MonoBehaviour, ICleanable
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private ParticleSystem washParticles;
     [SerializeField] private Sprite cleanMessage;
+    
+    [Header("Water Config")]
+    [SerializeField] private GameObject water;
+    [SerializeField] private Transform waterStartPoint;
+    [SerializeField] private Transform waterFinishPoint;
 
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
@@ -16,12 +22,14 @@ public class WaterBucket : MonoBehaviour, ICleanable
 
     public Sprite CleanMessage => cleanMessage;
     public bool HasWater { get; private set; }
+    public float WaterPercentage { get; private set; }
 
     public event Action Cleaned;
 
     private void Awake()
     {
         HasWater = true;
+        WaterPercentage = 1;
     }
 
     private void OnEnable()
@@ -62,4 +70,18 @@ public class WaterBucket : MonoBehaviour, ICleanable
     public bool GetWaterState() => HasWater;
 
     public void SetWaterState(bool state) => HasWater = state;
+    public float GetWaterPercentage() => WaterPercentage;
+
+    public void SetWaterPercentage(float value) => WaterPercentage = value;
+
+    public void WaterPercentageLerp(float value)
+    {
+        water.transform.position = Vector3.Lerp(waterStartPoint.position, waterFinishPoint.position, value);
+    }
+
+    public void WaterPercentageHandler(float value = 1)
+    {
+        SetWaterPercentage(GetWaterPercentage() + (Time.deltaTime / value));
+        WaterPercentageLerp(GetWaterPercentage());
+    }
 }
