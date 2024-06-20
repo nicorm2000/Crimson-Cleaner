@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     
     private float xRotation;
     private Vector2 currentVelocity;
+    private Vector2 mousePos;
 
     private ObjectGrabbable objectGrabbable;
 
@@ -86,22 +87,22 @@ public class PlayerController : MonoBehaviour
         //    sensitivity = controllerSensitivity;
         //}
 
-        var mouseX = inputManager.Look.x * playerSensitivitySettings.sensitivityX * Time.deltaTime;
-        var mouseY = inputManager.Look.y * playerSensitivitySettings.sensitivityY * Time.deltaTime;
+        mousePos.x = inputManager.Look.x * playerSensitivitySettings.sensitivityX * Time.deltaTime;
+        mousePos.y = inputManager.Look.y * playerSensitivitySettings.sensitivityY * Time.deltaTime;
 
         if (objectGrabbable != null && inputManager.RotateObject)
         {
-            RotateObject(mouseX, mouseY);
+            RotateObject(mousePos.x, mousePos.y);
         }
         else
         {            
             camera.position = cameraRoot.position;
 
-            xRotation -= mouseY;
+            xRotation -= mousePos.y;
             xRotation = Mathf.Clamp(xRotation, rotationUpperLimit, rotationBottomLimit);
 
             camera.localRotation = Quaternion.Euler(xRotation, 0, 0);
-            transform.Rotate(Vector3.up, mouseX);
+            transform.Rotate(Vector3.up, mousePos.x);
         }
     }
 
@@ -129,5 +130,25 @@ public class PlayerController : MonoBehaviour
     public void ClearObjectGrabbable()
     {
         objectGrabbable = null;
+    }
+
+    public Vector2 GetMousePos()
+    {
+        return mousePos;
+    }
+    
+    public bool GetCrouchState()
+    {
+        return inputManager.Crouch;
+    }
+    
+    public Rigidbody GetRigidbody()
+    {
+        return GetComponent<Rigidbody>();
+    }
+    
+    public Vector2 GetCurrentVelocity()
+    {
+        return currentVelocity;
     }
 }
