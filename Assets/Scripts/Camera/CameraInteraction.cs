@@ -47,7 +47,7 @@ public class CameraInteraction : MonoBehaviour
                 AppendPickUpSprites(pickableObject, ref activeSprites);
             }
 
-            if (objectRetrievable != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().ToolsLength - 1)
+            if (objectRetrievable != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().ToolsLength - 1 && pickableObject == null)
             {
                 AppendRetrievableSprites(objectRetrievable, ref activeSprites);
             }
@@ -61,11 +61,6 @@ public class CameraInteraction : MonoBehaviour
             {
                 AppendOpenableSprites(cartOpenableObject, ref activeSprites);
             }
-
-            //if (cleanableObject != null && cleaningManager.GetToolSelector().CurrentToolIndex != cleaningManager.GetToolSelector().ToolsLength - 1)
-            //{
-            //    AppendCleanableSprites(cleanableObject, ref activeSprites);
-            //}
 
             if (cleanableToolObject != null && cleaningManager.GetToolSelector().CurrentToolIndex != cleaningManager.GetToolSelector().ToolsLength - 1 && hit.collider.GetComponent<WaterBucket>().GetWaterState())
             {

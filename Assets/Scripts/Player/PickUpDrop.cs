@@ -19,7 +19,7 @@ public class PickUpDrop : MonoBehaviour
     [SerializeField] private string grabDropEvent = null;
     [SerializeField] private string throwEvent = null;
 
-    private ObjectGrabbable objectGrabbable;
+    private ObjectGrabbable ObjectGrabbable;
     private float currentThrowingForce;
     private bool isChargingThrow;
 
@@ -85,19 +85,19 @@ public class PickUpDrop : MonoBehaviour
 
     private void PickUpAndDropObject()
     {
-        if (objectGrabbable == null && cleaningManager.GetToolSelector().CurrentToolIndex == 2)
+        if (ObjectGrabbable == null && cleaningManager.GetToolSelector().CurrentToolIndex == 2)
         {
             if (Physics.Raycast(mainCamera.position, mainCamera.forward, out RaycastHit raycastHit, cleaningManager.GetInteractionDistance()))
             {
-                if (raycastHit.transform.TryGetComponent(out objectGrabbable))
+                if (raycastHit.transform.TryGetComponent(out ObjectGrabbable))
                 {
                     audioManager.PlaySound(grabDropEvent);
-                    objectGrabbable.Grab(objectGrabPointTransform);
-                    playerController.SetObjectGrabbable(objectGrabbable);
+                    ObjectGrabbable.Grab(objectGrabPointTransform);
+                    playerController.SetObjectGrabbable(ObjectGrabbable);
                 }
             }
         }
-        else if (objectGrabbable != null)
+        else if (ObjectGrabbable != null)
         {
             audioManager.PlaySound(grabDropEvent);
             DropObject();
@@ -106,10 +106,10 @@ public class PickUpDrop : MonoBehaviour
 
     private void DropObject()
     {
-        if (objectGrabbable != null)
+        if (ObjectGrabbable != null)
         {
-            objectGrabbable.Drop();
-            objectGrabbable = null;
+            ObjectGrabbable.Drop();
+            ObjectGrabbable = null;
         }
 
         playerController.ClearObjectGrabbable();
@@ -117,7 +117,7 @@ public class PickUpDrop : MonoBehaviour
 
     private void HandleToolSwitched(int newToolIndex)
     {
-        if (newToolIndex != 2 && objectGrabbable != null)
+        if (newToolIndex != 2 && ObjectGrabbable != null)
         {
             DropObject();
         }
@@ -125,7 +125,7 @@ public class PickUpDrop : MonoBehaviour
 
     private void StartChargingThrow()
     {
-        if (objectGrabbable != null)
+        if (ObjectGrabbable != null)
         {
             isChargingThrow = true;
             currentThrowingForce = 0f;
@@ -144,18 +144,18 @@ public class PickUpDrop : MonoBehaviour
 
     public ObjectGrabbable GetObjectGrabbable()
     {
-        return objectGrabbable;
+        return ObjectGrabbable;
     }
 
     private void ThrowObject()
     {
-        if (objectGrabbable != null)
+        if (ObjectGrabbable != null)
         {
             audioManager.PlaySound(throwEvent);
             Vector3 throwDirection = mainCamera.forward;
-            objectGrabbable.Throw(currentThrowingForce, throwDirection);
+            ObjectGrabbable.Throw(currentThrowingForce, throwDirection);
 
-            objectGrabbable = null;
+            ObjectGrabbable = null;
             isChargingThrow = false;
         }
 

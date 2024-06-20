@@ -5,6 +5,7 @@ public class StealableObject : MonoBehaviour, IRetrievable
 {
     [Header("Stealable Config")]
     [SerializeField] private InputManager inputManager;
+    [SerializeField] private PickUpDrop pickUpDrop;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private StealableManager stealableManager;
     [SerializeField] private float raycastDistance = 3f;
@@ -34,13 +35,18 @@ public class StealableObject : MonoBehaviour, IRetrievable
 
     private bool IsMouseLookingAtObject()
     {
+        if (pickUpDrop.GetObjectGrabbable() != null) return false;
+
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, interactableLayerMask))
         {
             if (hit.transform != gameObject.transform) return false;
 
-            stealableManager.PlayeMoneySFX();
-            return hit.collider.gameObject.GetComponent<StealableObject>() && hit.transform == transform;
+            if (hit.collider.gameObject.GetComponent<StealableObject>())
+            {
+                stealableManager.PlayeMoneySFX();
+                return true;
+            }
         }
         return false;
     }
