@@ -117,18 +117,6 @@ public class InputManager : MonoBehaviour
         pauseMap.Disable();
     }
 
-    private void Update()
-    {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
-        {
-            isCursorVisible = !isCursorVisible;
-            if (isCursorVisible)
-                ShowCursor();
-            else
-                HideCursor();
-        }
-    }
-
     public void HideCursor()
     {
         Cursor.visible = false;
