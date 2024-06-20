@@ -10,13 +10,13 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private InputManager inputManager;
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private GameStateManager gameStateManager;
-    [SerializeField] private GameObject cleaningList;
+    [SerializeField] private GameObject notebook;
+    [SerializeField] private string notebookAnimatorOpenHash;
+    [SerializeField] private Animator cleaningListAnimator;
     [SerializeField] private GameObject displayControls;
-    [SerializeField] private GameObject textElementPrefab;
-    [SerializeField] private Transform cleanableListParent;
-    [SerializeField] private Transform disposableListParent;
+    [SerializeField] private GameObject cleanableListText;
+    [SerializeField] private GameObject disposableListText;
     [SerializeField] private GameObject objectBackground;
-
 
     [Header("Tools UI")]
     [SerializeField] private GameObject reticle;
@@ -41,15 +41,16 @@ public class PlayersUIManager : MonoBehaviour
     private List<GameObject> disposalTextElements = new();
 
     private Coroutine toolDissapearCoroutine;
+    private bool isTogglingNotebook = false;
 
     private void OnEnable()
     {
-        inputManager.CleaningListEvent += CleaningListState;
+        inputManager.CleaningListEvent += OnCleaningListEvent;
         inputManager.DisplayControlsEvent += DisplayControlsState;
         gameStateManager.GameLost += TriggerLostUI;
         gameStateManager.GameWon += TriggerWinUI;
 
-        foreach (Clean cleanableObject  in gameStateManager.CleanableObjects)
+        foreach (Clean cleanableObject in gameStateManager.CleanableObjects)
         {
             cleanableObject.GetComponent<Clean>().CleanedGO += UpdateCleaningList;
         }
@@ -63,7 +64,7 @@ public class PlayersUIManager : MonoBehaviour
 
     private void OnDisable()
     {
-        inputManager.CleaningListEvent -= CleaningListState;
+        inputManager.CleaningListEvent -= OnCleaningListEvent;
         inputManager.DisplayControlsEvent -= DisplayControlsState;
         gameStateManager.GameLost -= TriggerLostUI;
         gameStateManager.GameWon -= TriggerWinUI;
@@ -102,10 +103,43 @@ public class PlayersUIManager : MonoBehaviour
         cleaningManager.GetToolSelector().OnToolSwitched -= UpdateToolImage;
     }
 
-    private void CleaningListState()
+    private void OnCleaningListEvent()
     {
-        _cleaningListState = !_cleaningListState;
-        cleaningList.SetActive(_cleaningListState);
+        if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().ToolsLength - 1 && !isTogglingNotebook)
+        {
+            _cleaningListState = !_cleaningListState;
+
+            if (!_cleaningListState) // If the list is closing
+            {
+                StartCoroutine(ToggleNotebookState());
+            }
+            else
+            {
+                notebook.SetActive(true);
+            }
+
+            if (cleaningListAnimator)
+            {
+                cleaningListAnimator.SetBool(notebookAnimatorOpenHash, _cleaningListState);
+            }
+        }
+    }
+
+    private IEnumerator ToggleNotebookState()
+    {
+        isTogglingNotebook = true;
+        if (cleaningListAnimator)
+        {
+            notebook.SetActive(true);
+            float closeDuration = cleaningListAnimator.GetCurrentAnimatorStateInfo(0).length;
+            if (closeDuration == 0f)
+            {
+                closeDuration = cleaningListAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+            }
+            yield return new WaitForSeconds(closeDuration);
+            notebook.SetActive(false);
+        }
+        isTogglingNotebook = false;
     }
 
     private void DisplayControlsState()
@@ -147,8 +181,6 @@ public class PlayersUIManager : MonoBehaviour
             StopCoroutine(toolDissapearCoroutine);
         }
         toolDissapearCoroutine = StartCoroutine(WaitToolDisappear());
-        
-        
     }
 
     private IEnumerator WaitToolDisappear()
@@ -162,6 +194,7 @@ public class PlayersUIManager : MonoBehaviour
     {
         jobUnfinished.SetActive(true);
     }
+
     private void TriggerWinUI()
     {
         jobFinished.SetActive(true);
@@ -169,95 +202,63 @@ public class PlayersUIManager : MonoBehaviour
 
     public void CreateCleaningList()
     {
-        foreach (var element in cleaningTextElements)
-        {
-            Destroy(element);
-        }
-
         cleaningTextElements.Clear();
+        disposalTextElements.Clear();
 
         foreach (var cleanableObject in gameStateManager.CleanableObjects)
         {
-            GameObject textElement = Instantiate(textElementPrefab, cleanableListParent);
-            if (textElement.TryGetComponent<TextMeshProUGUI>(out var tmp))
-            {
-                tmp.text = cleanableObject.name;
-
-                textElement.name = cleanableObject.name;
-            }
-            cleaningTextElements.Add(textElement);
+            cleaningTextElements.Add(cleanableObject.gameObject);
         }
-
-        foreach (var element in disposalTextElements)
-        {
-            Destroy(element);
-        }
-
-        disposalTextElements.Clear();
 
         foreach (var disposableObject in gameStateManager.DisposableObjects)
         {
-            GameObject textElement = Instantiate(textElementPrefab, disposableListParent);
-            if (textElement.TryGetComponent<TextMeshProUGUI>(out var tmp))
-            {
-                tmp.text = disposableObject.name;
+            disposalTextElements.Add(disposableObject.gameObject);
+        }
 
-                textElement.name = disposableObject.name;
-            }
-            disposalTextElements.Add(textElement);
+        UpdateCleanableListText();
+        UpdateDisposableListText();
+    }
+
+    private void UpdateCleanableListText()
+    {
+        cleanableListText.GetComponent<TextMeshPro>().text = "Cleaning List " + "\n";
+        foreach (var cleanableObject in cleaningTextElements)
+        {
+            cleanableListText.GetComponent<TextMeshPro>().text += cleanableObject.name + "\n";
+        }
+    }
+
+    private void UpdateDisposableListText()
+    {
+        disposableListText.GetComponent<TextMeshPro>().text = "Disposable List " + "\n";
+        foreach (var disposableObject in disposalTextElements)
+        {
+            disposableListText.GetComponent<TextMeshPro>().text += disposableObject.name + "\n";
         }
     }
 
     private void UpdateCleaningList(GameObject objectInList)
     {
-        for (int i = 0; i < cleaningTextElements.Count; i++)
-        {
-            if (cleaningTextElements[i].name == objectInList.name)
-            {
-                Destroy(cleaningTextElements[i]);
-                cleaningTextElements.RemoveAt(i);
-                break;
-            }
-        }
+        cleaningTextElements.Remove(objectInList);
+        UpdateCleanableListText();
     }
 
     private void UpdateDisposableList(GameObject objectInList)
     {
-        for (int i = 0; i < disposalTextElements.Count; i++)
-        {
-            if (disposalTextElements[i].name == objectInList.name)
-            {
-                Destroy(disposalTextElements[i]);
-                disposalTextElements.RemoveAt(i);
-                break;
-            }
-        }
+        disposalTextElements.Remove(objectInList);
+        UpdateDisposableListText();
     }
 
     private void UpdateDisposableListMultiple(GameObject objectInList, List<GameObject> objectsToAdd)
     {
-        for (int i = 0; i < disposalTextElements.Count; i++)
-        {
-            if (disposalTextElements[i].name == objectInList.name)
-            {
-                Destroy(disposalTextElements[i]);
-                disposalTextElements.RemoveAt(i);
-                break;
-            }
-        }
+        disposalTextElements.Remove(objectInList);
 
         foreach (var disposableObject in objectsToAdd)
         {
-            GameObject textElement = Instantiate(textElementPrefab, disposableListParent);
-            if (textElement.TryGetComponent<TextMeshProUGUI>(out var tmp))
-            {
-                tmp.text = disposableObject.name;
-
-                textElement.name = disposableObject.name;
-            }
-
-            disposalTextElements.Add(textElement);
+            disposalTextElements.Add(disposableObject);
             disposableObject.GetComponent<DisposableObject>().DisposedGO += UpdateDisposableList;
         }
+
+        UpdateDisposableListText();
     }
 }
