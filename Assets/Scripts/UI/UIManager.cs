@@ -73,7 +73,7 @@ public class UIManager : MonoBehaviour
 
         resumeGameButton.onClick.AddListener(() => { gameStateManager.TogglePause(); ToggleCanvases(); audioManager.PlaySound(clickEvent); });
         backToLobbyButton.onClick.AddListener(() => { OpenTab(backToLobbyPanel, true); });
-        yesBackToLobbyButton.onClick.AddListener(() => { MySceneManager.Instance.LoadSceneByName(lobbySceneName); audioManager.PlaySound(clickEvent); });
+        yesBackToLobbyButton.onClick.AddListener(() => { gameStateManager.TransitionToState("DeInit"); MySceneManager.Instance.LoadSceneByName(lobbySceneName); audioManager.PlaySound(clickEvent); });
         noBackToLobbyButton.onClick.AddListener(() => { OpenTab(backToLobbyPanel, false); });
 
         //Settings

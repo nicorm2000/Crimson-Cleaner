@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class StealableManager : MonoBehaviour
 {
+    [SerializeField] private PlayerStats playerStats;
+
     [Header("UI Config")]
     [SerializeField] private TextMeshProUGUI moneyText;
+    [SerializeField] private TextMeshProUGUI pauseMoneyText;
     [SerializeField] private float moneyPopUpDuration;
 
     [Header("Audio Config")]
@@ -13,12 +16,11 @@ public class StealableManager : MonoBehaviour
     [SerializeField] private string moneyEvent = null;
     
     public static Coroutine currentPopUpCoroutine = null;
-    public static float totalMoney = 0;
     private bool coroutineRunning = false;
 
     public void AddMoney(float amount)
     {
-        totalMoney += amount;
+        playerStats.currentMoney += amount;
 
         if (currentPopUpCoroutine != null)
         {
@@ -35,7 +37,8 @@ public class StealableManager : MonoBehaviour
 
         while (elapsedTime < moneyPopUpDuration)
         {
-            moneyText.text = "$" + totalMoney.ToString();
+            moneyText.text = "$" + playerStats.currentMoney.ToString();
+            pauseMoneyText.text = "$" + playerStats.currentMoney.ToString();
             moneyText.gameObject.SetActive(true);
 
             elapsedTime += Time.deltaTime;
@@ -43,7 +46,6 @@ public class StealableManager : MonoBehaviour
         }
 
         moneyText.gameObject.SetActive(false);
-        totalMoney = 0;
         coroutineRunning = false;
     }
 

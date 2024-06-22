@@ -83,6 +83,9 @@ public class UIMainMenuManager : MonoBehaviour
 
         yesExitButton.onClick.AddListener(() => { mySceneManager.Exit(); audioManager.PlaySound(clickEvent); });
         noExitButton.onClick.AddListener(() => { OpenTab(exitPanel, false); });
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     private void Start()

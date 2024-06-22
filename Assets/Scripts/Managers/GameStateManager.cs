@@ -19,6 +19,7 @@ public class GameStateManager : MonoBehaviour
 
     public InputManager inputManager;
     public SceneTimer sceneTimer;
+    public PlayerStats playerStats;
 
     private IGameState currentState;
     private Dictionary<string, IGameState> states;
@@ -26,6 +27,8 @@ public class GameStateManager : MonoBehaviour
     public bool isTimerCompleted;
     public int cleanedCount = 0;
     public int disposedCount = 0;
+
+    public string totalMoneyString = "TotalMoney";
 
     public event Action GameLost;
     public event Action GameWon;
@@ -140,6 +143,8 @@ public class InitializationState : IGameState
         gameStateManager.sceneTimer.StartTimer();
 
         gameStateManager.TransitionToState("GamePlay");
+
+        gameStateManager.playerStats.currentMoney = 0;
     }
 
     public void UpdateState(GameStateManager gameStateManager)
@@ -267,6 +272,11 @@ public class DeInitializationState : IGameState
 
         gameStateManager.CleanableObjects.Clear();
         gameStateManager.DisposableObjects.Clear();
+
+        gameStateManager.playerStats.totalMoney += gameStateManager.playerStats.currentMoney;
+        gameStateManager.playerStats.currentMoney = 0;
+        PlayerPrefs.SetFloat(gameStateManager.totalMoneyString, gameStateManager.playerStats.totalMoney);
+        PlayerPrefs.Save();
     }
 
     public void UpdateState(GameStateManager gameStateManager)
