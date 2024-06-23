@@ -105,10 +105,12 @@ public class Clean : MonoBehaviour, ICleanable
             if (cleaningManager.GetToolSelector().CurrentToolIndex == 0)
             {
                 audioManager.PlaySound(cleaningManager.GetMopEvent());
+                cleaningManager.GetMopParticles().Play();
             }
             else if (cleaningManager.GetToolSelector().CurrentToolIndex == 1)
             {
                 audioManager.PlaySound(cleaningManager.GetSpongeEvent());
+                cleaningManager.GetSpongeParticles().Play();
             }
 
             switch (_currentMaterialIndex)

@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
@@ -31,6 +30,8 @@ public class CleaningManager : MonoBehaviour
     [SerializeField] private LayerMask mopLayerMask;
     [SerializeField] private LayerMask spongeLayerMask;
     [SerializeField] private float interactionDistance;
+    [SerializeField] private ParticleSystem mopCleaningParticles;
+    [SerializeField] private ParticleSystem sponeCleaningParticles;
 
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
@@ -62,4 +63,6 @@ public class CleaningManager : MonoBehaviour
     public string GetMopEvent() => mopEvent;
     public string GetSpongeEvent() => spongeEvent;
     public string GetCleanedEvent() => cleanedEvent;
+    public ParticleSystem GetMopParticles() => mopCleaningParticles;
+    public ParticleSystem GetSpongeParticles() => sponeCleaningParticles;
 }
