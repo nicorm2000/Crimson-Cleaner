@@ -32,6 +32,31 @@
 								<ActiveSource Name="Mouse Click" ID="{1B0AD056-DD37-4582-86B2-CD989C78D7CE}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Game Click" ID="{0F013BDE-89A1-4A10-8A6F-D113E432D513}" ShortID="725477522">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Game Click" ID="{174B9EB7-75BF-479F-B4C0-2A9DC7B5C177}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Game Click.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1039951081"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Game Click" ID="{174B9EB7-75BF-479F-B4C0-2A9DC7B5C177}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Game Interactions" ID="{FA1E034F-6B57-4D1D-9457-7ED05686817E}" ShortID="946708407">
