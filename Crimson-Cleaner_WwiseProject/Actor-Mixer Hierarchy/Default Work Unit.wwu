@@ -868,6 +868,88 @@
 								<ActiveSource Name="Bottle Breaking" ID="{E3F05AEA-E0BA-4C86-ADC3-3AB4F6AE14E9}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Close Notebook" ID="{CD70E6FA-4900-47B0-BAE4-9BD5E3800529}" ShortID="260063845">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{33AA0431-C416-420C-AC44-A67C3494AF2E}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-2"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Close Notebook" ID="{020AA50B-020F-4949-B1D7-78A4FC98CDBF}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.181837433304515"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="2.59224061896903"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Close Notebook.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="524869861"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Close Notebook" ID="{020AA50B-020F-4949-B1D7-78A4FC98CDBF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Open Notebook" ID="{79DD7D6D-9CD2-4FCB-A1E0-958693178323}" ShortID="356510417">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{DC1CBFBC-89C8-4485-A662-C1E183D04EBE}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-2"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Open Notebook" ID="{9F075DBE-A4E1-4B35-9117-8AFD6ACCA79B}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.083040062409217"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.124227933364189"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Open Notebook.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="915260624"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Open Notebook" ID="{9F075DBE-A4E1-4B35-9117-8AFD6ACCA79B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

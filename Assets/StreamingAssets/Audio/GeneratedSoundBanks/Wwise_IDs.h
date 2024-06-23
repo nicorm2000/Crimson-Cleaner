@@ -20,8 +20,10 @@ namespace AK
         static const AkUniqueID BOTTLE_DROP = 3514483227U;
         static const AkUniqueID CART_CLOSE = 3697444650U;
         static const AkUniqueID CART_OPEN = 2037208526U;
+        static const AkUniqueID CLOSE_NOTEBOOK = 4085905093U;
         static const AkUniqueID CUBICLE_BATHROOM_DOOR = 3141789928U;
         static const AkUniqueID FIRE_CART = 1357891606U;
+        static const AkUniqueID GAME_CLICK = 2188449690U;
         static const AkUniqueID GRAB_DROP = 1219063113U;
         static const AkUniqueID LAMP = 657744959U;
         static const AkUniqueID LIGHT_SWITCH = 790135102U;
@@ -29,6 +31,7 @@ namespace AK
         static const AkUniqueID MOP = 1082004779U;
         static const AkUniqueID MOUSE_CLICK = 3695522715U;
         static const AkUniqueID OBJECT_CLEANED = 836873265U;
+        static const AkUniqueID OPEN_NOTEBOOK = 1673104519U;
         static const AkUniqueID SPONGE = 1165214467U;
         static const AkUniqueID THROW = 745179803U;
         static const AkUniqueID WASH_TOOL = 3752733365U;

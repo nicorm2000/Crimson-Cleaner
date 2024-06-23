@@ -32,6 +32,11 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private Sprite handSpriteOn;
     [SerializeField] private Sprite handSpriteOff;
 
+    [Header("Audio Config")]
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string openNotebookEvent = null;
+    [SerializeField] private string closeNotebookEvent = null;
+
     public GameObject jobFinished;
     public GameObject jobUnfinished;
 
@@ -111,10 +116,12 @@ public class PlayersUIManager : MonoBehaviour
 
             if (!_cleaningListState) // If the list is closing
             {
+                audioManager.PlaySound(closeNotebookEvent);
                 StartCoroutine(ToggleNotebookState());
             }
             else
             {
+                audioManager.PlaySound(openNotebookEvent);
                 notebook.SetActive(true);
             }
 

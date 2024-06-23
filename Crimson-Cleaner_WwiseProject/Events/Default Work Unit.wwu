@@ -490,6 +490,48 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Open_Notebook" ID="{D4BE0573-56D2-4372-ACB6-498DD9712594}">
+					<ChildrenList>
+						<Action Name="" ID="{07A0DBF2-9258-4B16-A964-1C220E6E44A4}" ShortID="347283367">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Open Notebook" ID="{79DD7D6D-9CD2-4FCB-A1E0-958693178323}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{1DEE9BEA-DAD7-4B6A-9749-A65D5DE32950}" ShortID="434814884">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Open Notebook" ID="{79DD7D6D-9CD2-4FCB-A1E0-958693178323}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Close_Notebook" ID="{D3B08527-084C-47C8-8F96-8DB70FECA3D6}">
+					<ChildrenList>
+						<Action Name="" ID="{A9335C29-FF27-4EF1-B656-A4F51F568FD8}" ShortID="463996329">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Close Notebook" ID="{CD70E6FA-4900-47B0-BAE4-9BD5E3800529}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{F97AD435-A711-4C88-8768-F5BDCFBF92C2}" ShortID="13810990">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Close Notebook" ID="{CD70E6FA-4900-47B0-BAE4-9BD5E3800529}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

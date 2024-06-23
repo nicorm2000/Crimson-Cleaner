@@ -16320,7 +16320,7 @@ MonoBehaviour:
   tutorialControlHint: {fileID: 1883807541}
   tutorialHintDuration: 10
   audioManager: {fileID: 1243886029}
-  clickEvent: Mouse_Click
+  clickEvent: Game_Click
 --- !u!1 &1514980734
 GameObject:
   m_ObjectHideFlags: 0
@@ -18452,6 +18452,9 @@ MonoBehaviour:
   spongeSpriteOff: {fileID: 21300000, guid: 44bb66a107b1eaa4aa4ad87a61bad537, type: 3}
   handSpriteOn: {fileID: 21300000, guid: 5e59e6ee92523d74c800c181bdc0e5f6, type: 3}
   handSpriteOff: {fileID: 21300000, guid: ef521672de25c6e48b167363da5a6840, type: 3}
+  audioManager: {fileID: 1243886029}
+  openNotebookEvent: Open_Notebook
+  closeNotebookEvent: Close_Notebook
   jobFinished: {fileID: 159655717}
   jobUnfinished: {fileID: 1692985559}
 --- !u!1 &1692985559
