@@ -27,7 +27,6 @@ public class InputManager : MonoBehaviour
     private InputAction pickUpAction;
     private InputAction throwAction;
     private InputAction cleaningListAction;
-    private InputAction displayControlsAction;
     private InputAction selectFirstToolAction;
     private InputAction selectSecondToolAction;
     private InputAction selectThirdToolAction;
@@ -66,14 +65,12 @@ public class InputManager : MonoBehaviour
         pickUpAction = gameplayMap.FindAction("PickUp");
         throwAction = gameplayMap.FindAction("Throw");
         cleaningListAction = gameplayMap.FindAction("CleaningList");
-        displayControlsAction = gameplayMap.FindAction("DisplayControls");
         selectFirstToolAction = gameplayMap.FindAction("SelectFirstTool");
         selectSecondToolAction = gameplayMap.FindAction("SelectSecondTool");
         selectThirdToolAction = gameplayMap.FindAction("SelectThirdTool");
         mouseScrollAction = gameplayMap.FindAction("MouseScroll");
         pauseAction = playerInput.actions.FindAction("Pause");
         tutorialUIAction = playerInput.actions.FindAction("Tutorial");
-
 
         moveAction.performed += OnMove;
         lookAction.performed += OnLook;
@@ -85,7 +82,6 @@ public class InputManager : MonoBehaviour
         throwAction.canceled += OnThrowEnd;
         cleanAction.started += ctx => OnClean(true);
         cleaningListAction.performed += OnCleaningList;
-        displayControlsAction.performed += OnDisplayControls;
         selectFirstToolAction.performed += OnSelectFirstTool;
         selectSecondToolAction.performed += OnSelectSecondTool;
         selectThirdToolAction.performed += OnSelectThirdTool;
@@ -182,11 +178,6 @@ public class InputManager : MonoBehaviour
     private void OnCleaningList(InputAction.CallbackContext context)
     {
         CleaningListEvent?.Invoke();
-    }
-
-    private void OnDisplayControls(InputAction.CallbackContext context)
-    {
-        DisplayControlsEvent?.Invoke();
     }
 
     private void OnSelectFirstTool(InputAction.CallbackContext context)

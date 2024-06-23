@@ -41,7 +41,6 @@ public class PlayersUIManager : MonoBehaviour
     public GameObject jobUnfinished;
 
     private bool _cleaningListState = false;
-    private bool _displayControlsState = false;
     private List<GameObject> cleaningTextElements = new();
     private List<GameObject> disposalTextElements = new();
 
@@ -51,7 +50,6 @@ public class PlayersUIManager : MonoBehaviour
     private void OnEnable()
     {
         inputManager.CleaningListEvent += OnCleaningListEvent;
-        inputManager.DisplayControlsEvent += DisplayControlsState;
         gameStateManager.GameLost += TriggerLostUI;
         gameStateManager.GameWon += TriggerWinUI;
 
@@ -70,7 +68,6 @@ public class PlayersUIManager : MonoBehaviour
     private void OnDisable()
     {
         inputManager.CleaningListEvent -= OnCleaningListEvent;
-        inputManager.DisplayControlsEvent -= DisplayControlsState;
         gameStateManager.GameLost -= TriggerLostUI;
         gameStateManager.GameWon -= TriggerWinUI;
 
@@ -147,12 +144,6 @@ public class PlayersUIManager : MonoBehaviour
             notebook.SetActive(false);
         }
         isTogglingNotebook = false;
-    }
-
-    private void DisplayControlsState()
-    {
-        _displayControlsState = !_displayControlsState;
-        displayControls.SetActive(_displayControlsState);
     }
 
     private void UpdateToolImage(int currentToolIndex)

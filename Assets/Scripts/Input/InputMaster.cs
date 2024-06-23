@@ -109,15 +109,6 @@ public partial class @InputMaster: IInputActionCollection2
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""DisplayControls"",
-                    ""type"": ""Button"",
-                    ""id"": ""5c0df730-ff71-4846-9a13-7ad64711bec2"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""MouseScroll"",
                     ""type"": ""PassThrough"",
                     ""id"": ""7ac387ae-d80d-4e3d-92c6-991a76e6260f"",
@@ -483,17 +474,6 @@ public partial class @InputMaster: IInputActionCollection2
                 },
                 {
                     ""name"": """",
-                    ""id"": ""50f83341-6fa0-48f0-910b-7f56ec411baf"",
-                    ""path"": ""<Keyboard>/0"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""DisplayControls"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""106b3306-160a-4176-b614-e41c848ffeb8"",
                     ""path"": ""<Mouse>/scroll/y"",
                     ""interactions"": """",
@@ -635,7 +615,6 @@ public partial class @InputMaster: IInputActionCollection2
         m_Player_PickUp = m_Player.FindAction("PickUp", throwIfNotFound: true);
         m_Player_RotateObejct = m_Player.FindAction("RotateObejct", throwIfNotFound: true);
         m_Player_CleaningList = m_Player.FindAction("CleaningList", throwIfNotFound: true);
-        m_Player_DisplayControls = m_Player.FindAction("DisplayControls", throwIfNotFound: true);
         m_Player_MouseScroll = m_Player.FindAction("MouseScroll", throwIfNotFound: true);
         m_Player_SelectFirstTool = m_Player.FindAction("SelectFirstTool", throwIfNotFound: true);
         m_Player_SelectSecondTool = m_Player.FindAction("SelectSecondTool", throwIfNotFound: true);
@@ -715,7 +694,6 @@ public partial class @InputMaster: IInputActionCollection2
     private readonly InputAction m_Player_PickUp;
     private readonly InputAction m_Player_RotateObejct;
     private readonly InputAction m_Player_CleaningList;
-    private readonly InputAction m_Player_DisplayControls;
     private readonly InputAction m_Player_MouseScroll;
     private readonly InputAction m_Player_SelectFirstTool;
     private readonly InputAction m_Player_SelectSecondTool;
@@ -735,7 +713,6 @@ public partial class @InputMaster: IInputActionCollection2
         public InputAction @PickUp => m_Wrapper.m_Player_PickUp;
         public InputAction @RotateObejct => m_Wrapper.m_Player_RotateObejct;
         public InputAction @CleaningList => m_Wrapper.m_Player_CleaningList;
-        public InputAction @DisplayControls => m_Wrapper.m_Player_DisplayControls;
         public InputAction @MouseScroll => m_Wrapper.m_Player_MouseScroll;
         public InputAction @SelectFirstTool => m_Wrapper.m_Player_SelectFirstTool;
         public InputAction @SelectSecondTool => m_Wrapper.m_Player_SelectSecondTool;
@@ -778,9 +755,6 @@ public partial class @InputMaster: IInputActionCollection2
             @CleaningList.started += instance.OnCleaningList;
             @CleaningList.performed += instance.OnCleaningList;
             @CleaningList.canceled += instance.OnCleaningList;
-            @DisplayControls.started += instance.OnDisplayControls;
-            @DisplayControls.performed += instance.OnDisplayControls;
-            @DisplayControls.canceled += instance.OnDisplayControls;
             @MouseScroll.started += instance.OnMouseScroll;
             @MouseScroll.performed += instance.OnMouseScroll;
             @MouseScroll.canceled += instance.OnMouseScroll;
@@ -830,9 +804,6 @@ public partial class @InputMaster: IInputActionCollection2
             @CleaningList.started -= instance.OnCleaningList;
             @CleaningList.performed -= instance.OnCleaningList;
             @CleaningList.canceled -= instance.OnCleaningList;
-            @DisplayControls.started -= instance.OnDisplayControls;
-            @DisplayControls.performed -= instance.OnDisplayControls;
-            @DisplayControls.canceled -= instance.OnDisplayControls;
             @MouseScroll.started -= instance.OnMouseScroll;
             @MouseScroll.performed -= instance.OnMouseScroll;
             @MouseScroll.canceled -= instance.OnMouseScroll;
@@ -925,7 +896,6 @@ public partial class @InputMaster: IInputActionCollection2
         void OnPickUp(InputAction.CallbackContext context);
         void OnRotateObejct(InputAction.CallbackContext context);
         void OnCleaningList(InputAction.CallbackContext context);
-        void OnDisplayControls(InputAction.CallbackContext context);
         void OnMouseScroll(InputAction.CallbackContext context);
         void OnSelectFirstTool(InputAction.CallbackContext context);
         void OnSelectSecondTool(InputAction.CallbackContext context);
