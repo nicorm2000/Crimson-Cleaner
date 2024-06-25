@@ -987,7 +987,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="FootS Wood 3" ID="{38BD5774-DD54-49A6-9300-F2B18B109062}" ShortID="829567951">
+										<Sound Name="FootS Wood 6" ID="{38BD5774-DD54-49A6-9300-F2B18B109062}" ShortID="829567951">
 											<PropertyList>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
@@ -1023,6 +1023,57 @@
 											</ChildrenList>
 											<ActiveSourceList>
 												<ActiveSource Name="FootS Wood 3" ID="{AF7926B9-9F16-4906-BF4B-C2001C79E1D5}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="FootS Wood 7" ID="{E183DEAB-6DEF-4006-B7D5-B16B63AAA4E7}" ShortID="68268744">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="FootS Wood 7" ID="{356A7EDE-2ED3-44F0-93D3-B59089D478E1}">
+													<Language>SFX</Language>
+													<AudioFile>FootS Wood 7.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="233327524"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="FootS Wood 7" ID="{356A7EDE-2ED3-44F0-93D3-B59089D478E1}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="FootS Wood 8" ID="{F78693EE-C81C-484C-BFDC-C9DD583CC3D0}" ShortID="858245547">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="FootS Wood 8" ID="{47028512-7FF8-40AC-9AD8-04017AED5241}">
+													<Language>SFX</Language>
+													<AudioFile>FootS Wood 8.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1062373882"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="FootS Wood 8" ID="{47028512-7FF8-40AC-9AD8-04017AED5241}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
