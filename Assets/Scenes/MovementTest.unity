@@ -42298,10 +42298,14 @@ MonoBehaviour:
   cameraRoot: {fileID: 393952991}
   camera: {fileID: 1563147782}
   walkSpeed: 3.5
+  footstepInterval: 0.5
   rotationUpperLimit: -40
   rotationBottomLimit: 70
   mouseSensitivity: 22
   controllerSensitivity: 240
+  audioManager: {fileID: 1243886029}
+  footStepsPlayEvent: Wood_Footstep_Play
+  footStepsStopEvent: Wood_Footstep_Stop
 --- !u!114 &6982812146447357856
 MonoBehaviour:
   m_ObjectHideFlags: 0

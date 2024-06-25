@@ -40,6 +40,8 @@ namespace AK
         static const AkUniqueID WATER_FLOW_STOP = 1430150536U;
         static const AkUniqueID WATER_TAP = 2864239532U;
         static const AkUniqueID WEAPON_SWAP = 2239924753U;
+        static const AkUniqueID WOOD_FOOTSTEP_PLAY = 1523901220U;
+        static const AkUniqueID WOOD_FOOTSTEP_STOP = 1381150U;
     } // namespace EVENTS
 
     namespace BANKS

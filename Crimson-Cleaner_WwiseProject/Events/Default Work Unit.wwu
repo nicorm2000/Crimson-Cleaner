@@ -553,6 +553,31 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Wood_Footstep_Play" ID="{5D6824D9-0F8A-45C9-8C32-62566D3C754F}">
+					<ChildrenList>
+						<Action Name="" ID="{B21E72F8-8D0B-4C26-926F-D587A1BBDB20}" ShortID="12630391">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Wood Foosteps" ID="{651F3EA8-A4F0-4989-A113-EFA5BB98F41D}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Wood_Footstep_Stop" ID="{0FFF6DAE-C95B-43F5-81EE-B87C0388B2D6}">
+					<ChildrenList>
+						<Action Name="" ID="{5D455AFB-8BD2-4D82-B1A3-53726BB4E136}" ShortID="303737218">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Wood Foosteps" ID="{651F3EA8-A4F0-4989-A113-EFA5BB98F41D}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
