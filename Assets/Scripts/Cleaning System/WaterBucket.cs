@@ -9,7 +9,8 @@ public class WaterBucket : MonoBehaviour, ICleanable
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private ParticleSystem washParticles;
     [SerializeField] private Sprite cleanMessage;
-    
+    [SerializeField] private Material[] bucketMaterials;
+
     [Header("Water Config")]
     [SerializeField] private GameObject water;
     [SerializeField] private Transform waterStartPoint;
@@ -25,8 +26,19 @@ public class WaterBucket : MonoBehaviour, ICleanable
 
     public event Action Cleaned;
 
+    private Renderer _renderer;
+    private Renderer _rendererWater;
+    private int _bucketDirtState;
+
     private void Awake()
     {
+        _bucketDirtState = 0;
+        _renderer = GetComponent<Renderer>();
+        if (water != null)
+            _rendererWater = water.GetComponent<Renderer>();
+        UpdateMaterial(_bucketDirtState, _renderer);
+        if (water != null)
+            UpdateMaterial(_bucketDirtState, _rendererWater);
         HasWater = true;
         WaterPercentage = 1;
     }
@@ -57,6 +69,13 @@ public class WaterBucket : MonoBehaviour, ICleanable
         {
             if (hit.transform != gameObject.transform) return;
 
+            if (_bucketDirtState < 4)
+            {
+                _bucketDirtState++;
+                UpdateMaterial(_bucketDirtState, _renderer);
+                if (water != null)
+                    UpdateMaterial(_bucketDirtState, _rendererWater);
+            }
             audioManager.PlaySound(washToolEvent);
             ActivateWashing();
             cleaningManager.GetToolSelector().ResetDirtyPercentage(currentToolIndex);
@@ -82,5 +101,21 @@ public class WaterBucket : MonoBehaviour, ICleanable
     {
         SetWaterPercentage(GetWaterPercentage() + (Time.deltaTime / value));
         WaterPercentageLerp(GetWaterPercentage());
+    }
+
+    private void UpdateMaterial(int materialIndex, Renderer renderer)
+    {
+        if (materialIndex >= 0 && materialIndex < bucketMaterials.Length)
+        {
+            renderer.material = bucketMaterials[materialIndex];
+        }
+    }
+
+    public void SetBucketMaterialDefault()
+    {
+        _bucketDirtState = 0;
+        UpdateMaterial(_bucketDirtState, _renderer);
+        if (water != null)
+            UpdateMaterial(_bucketDirtState, _rendererWater);
     }
 }

@@ -90,7 +90,6 @@ public class WaterFaucetSystem : MonoBehaviour, IToggable
     {
         if (!_isOpen)
             return false;
-
         if (waterBucket.GetWaterState())
             return false;
 
@@ -117,8 +116,7 @@ public class WaterFaucetSystem : MonoBehaviour, IToggable
                         waterParticles.Stop();
                         return false;
                     }
-
-                    Debug.Log(waterBucket.GetWaterPercentage());
+                    waterBucket.SetBucketMaterialDefault();
                     water.SetActive(true);
                     waterBucket.WaterPercentageHandler(fillWaterSpeed);
                 }
