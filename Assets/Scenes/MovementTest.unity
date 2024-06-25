@@ -18724,8 +18724,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4530130281559458635, guid: 610d70dc4084654458392c53d01ed329,
         type: 3}
+      propertyPath: m_Interpolate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4530130281559458635, guid: 610d70dc4084654458392c53d01ed329,
+        type: 3}
       propertyPath: m_CollisionDetection
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7844726954495662737, guid: 610d70dc4084654458392c53d01ed329,
         type: 3}
@@ -45410,7 +45415,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 710577698747620682, guid: ac16da3f94cddaa4784a87e5392df292, type: 3}
 --- !u!1 &7703173320536079011

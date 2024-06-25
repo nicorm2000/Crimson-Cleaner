@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3681028433311605454}
   - component: {fileID: 770185720203007061}
   - component: {fileID: 5509471769834359877}
+  - component: {fileID: 7911524754993580882}
   m_Layer: 8
   m_Name: Calf
   m_TagString: Trash
@@ -102,10 +103,17 @@ MonoBehaviour:
   lerpSpeed: 10
   rotationSpeed: 100
   throwingForce: 50
+  breakForceThreshold: 10
+  collisionCooldown: 0.1
+  fallHeightThreshold: 5
   pickUpMessage: {fileID: 21300000, guid: 85de318ad256b904b85cbc2b4984eab4, type: 3}
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  breakBottleEvent: 
+  isObjectBreakable: 0
+  hasSoundAndParticles: 0
 --- !u!64 &3681028433311605454
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -152,7 +160,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!114 &5509471769834359877
@@ -167,3 +175,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b1c6b7bdcbaa74fa6fb0dcb9c46e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  breakablePieces: []
+--- !u!114 &7911524754993580882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8064079753335796359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0828d82c92dc7c47bc0bec0b8902e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloodSplashParticles: {fileID: 5938967398190086501, guid: 0e0c33aeaccaf8c4cad215e0fc6badc3,
+    type: 3}
+  bloodStainPrefab: {fileID: 3586089935655823832, guid: aeb19bb2a7a873f48bcc8f7ad758d05d,
+    type: 3}
+  stainLifetime: 3.5
+  stainOffset: 0.01

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4046291150370720789}
   - component: {fileID: 2908792459009737359}
   - component: {fileID: -7929900432753685339}
+  - component: {fileID: 685508605059352656}
   m_Layer: 8
   m_Name: Hand
   m_TagString: Trash
@@ -109,7 +110,10 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
-  isObjectBreakable: 1
+  audioManager: {fileID: 0}
+  breakBottleEvent: 
+  isObjectBreakable: 0
+  hasSoundAndParticles: 0
 --- !u!64 &4046291150370720789
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -156,7 +160,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!114 &-7929900432753685339
@@ -172,3 +176,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakablePieces: []
+--- !u!114 &685508605059352656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2621607679293510920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0828d82c92dc7c47bc0bec0b8902e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloodSplashParticles: {fileID: 5938967398190086501, guid: 0e0c33aeaccaf8c4cad215e0fc6badc3,
+    type: 3}
+  bloodStainPrefab: {fileID: 3586089935655823832, guid: aeb19bb2a7a873f48bcc8f7ad758d05d,
+    type: 3}
+  stainLifetime: 3.5
+  stainOffset: 0.01
