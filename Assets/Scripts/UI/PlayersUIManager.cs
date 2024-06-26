@@ -13,10 +13,8 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private GameObject notebook;
     [SerializeField] private string notebookAnimatorOpenHash;
     [SerializeField] private Animator cleaningListAnimator;
-    [SerializeField] private GameObject displayControls;
     [SerializeField] private GameObject cleanableListText;
     [SerializeField] private GameObject disposableListText;
-    [SerializeField] private GameObject objectBackground;
 
     [Header("Tools UI")]
     [SerializeField] private GameObject reticle;

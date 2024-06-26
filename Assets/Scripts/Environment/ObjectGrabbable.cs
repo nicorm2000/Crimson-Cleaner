@@ -38,8 +38,6 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     public Sprite ThrowMessage => throwMessage;
     public Sprite RotateMessage => rotateMessage;
 
-    public bool hasSoundAndParticles = false;
-
     private void Awake()
     {
         objectRigidBody = GetComponent<Rigidbody>();
