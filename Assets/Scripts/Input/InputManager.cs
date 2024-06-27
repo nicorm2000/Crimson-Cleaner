@@ -37,7 +37,6 @@ public class InputManager : MonoBehaviour
     public event Action PickUpEvent;
     public event Action InteractEvent;
     public event Action CleaningListEvent;
-    public event Action DisplayControlsEvent;
     public event Action DisplayTutorialEvent;
     public event Action SelectFirstToolEvent;
     public event Action SelectSecondToolEvent;
