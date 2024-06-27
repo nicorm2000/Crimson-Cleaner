@@ -50,6 +50,7 @@ public class PlayersUIManager : MonoBehaviour
         inputManager.CleaningListEvent += OnCleaningListEvent;
         gameStateManager.GameLost += TriggerLostUI;
         gameStateManager.GameWon += TriggerWinUI;
+        cleaningManager.GetToolSelector().OnToolSwitched += HandleToolSwitched;
 
         foreach (Clean cleanableObject in gameStateManager.CleanableObjects)
         {
@@ -68,6 +69,7 @@ public class PlayersUIManager : MonoBehaviour
         inputManager.CleaningListEvent -= OnCleaningListEvent;
         gameStateManager.GameLost -= TriggerLostUI;
         gameStateManager.GameWon -= TriggerWinUI;
+        cleaningManager.GetToolSelector().OnToolSwitched -= HandleToolSwitched;
 
         foreach (Clean cleanableObject in gameStateManager.CleanableObjects)
         {
@@ -101,6 +103,14 @@ public class PlayersUIManager : MonoBehaviour
     private void OnDestroy()
     {
         cleaningManager.GetToolSelector().OnToolSwitched -= UpdateToolImage;
+    }
+
+    private void HandleToolSwitched(int newToolIndex)
+    {
+        if (newToolIndex != 2)
+        {
+            //Agregar logica de que se salga el notebook
+        }
     }
 
     private void OnCleaningListEvent()

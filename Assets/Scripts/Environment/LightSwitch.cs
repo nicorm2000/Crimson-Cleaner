@@ -10,6 +10,7 @@ public class LightSwitch : MonoBehaviour, IToggable
     [SerializeField] private GameObject lightOn = null;
     [SerializeField] private GameObject lightOff = null;
     [SerializeField] private GameObject[] lightsObject = null;
+    [SerializeField] private bool lightsAreOn = true;
 
     [Header("UI Config")]
     [SerializeField] private Sprite toggleOnOffMessage;
@@ -20,7 +21,6 @@ public class LightSwitch : MonoBehaviour, IToggable
 
     public Sprite ToggleOnOffMessage => toggleOnOffMessage;
 
-    private bool _lightsAreOn = true;
 
     private void OnEnable()
     {
@@ -34,9 +34,9 @@ public class LightSwitch : MonoBehaviour, IToggable
 
     private void Start()
     {
-        lightOn.SetActive(true);
-        lightOff.SetActive(false);
-        _lightsAreOn = lightOn.activeSelf;
+        SetLightsState(lightsAreOn);
+        lightOn.SetActive(lightsAreOn);
+        lightOff.SetActive(!lightsAreOn);
     }
 
     private void ToggleLights()
@@ -48,8 +48,8 @@ public class LightSwitch : MonoBehaviour, IToggable
             if (hit.transform != gameObject.transform) return;
 
             audioManager.PlaySound(lampToolEvent);
-            _lightsAreOn = !_lightsAreOn;
-            SetLightsState(_lightsAreOn);
+            lightsAreOn = !lightsAreOn;
+            SetLightsState(lightsAreOn);
         }
     }
 
