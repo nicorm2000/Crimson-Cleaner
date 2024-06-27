@@ -77,15 +77,37 @@ public class Clean : MonoBehaviour, ICleanable
     private void StartCleaning()
     {
         _isCleaning = true;
+        SetToolAnimator(true);
     }
 
     private void StopCleaning()
     {
         _isCleaning = false;
+        SetToolAnimator(false);
         if (_coroutine != null)
         {
             StopCoroutine(_coroutine);
             _coroutine = null;
+        }
+    }
+
+    private void SetToolAnimator(bool isCleaning)
+    {
+        int toolIndex = cleaningManager.GetToolSelector().CurrentToolIndex;
+        Animator toolAnimator = null;
+
+        if (toolIndex == 0)
+        {
+            toolAnimator = cleaningManager.GetMopAnimator();
+        }
+        else if (toolIndex == 1)
+        {
+            toolAnimator = cleaningManager.GetSpongeAnimator();
+        }
+
+        if (toolAnimator != null)
+        {
+            toolAnimator.SetBool("Cleaning", isCleaning);
         }
     }
 

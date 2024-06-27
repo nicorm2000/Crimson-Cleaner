@@ -48,6 +48,7 @@ public class InputManager : MonoBehaviour
     public event Action PauseEvent;
 
     private bool isCursorVisible = true;
+    private bool isCleaning = false;
 
     private void Awake()
     {
@@ -81,6 +82,7 @@ public class InputManager : MonoBehaviour
         throwAction.started += OnThrowStart; // New throw action started
         throwAction.canceled += OnThrowEnd;
         cleanAction.started += ctx => OnClean(true);
+        cleanAction.canceled += ctx => OnClean(false);
         cleaningListAction.performed += OnCleaningList;
         selectFirstToolAction.performed += OnSelectFirstTool;
         selectSecondToolAction.performed += OnSelectSecondTool;
