@@ -36,7 +36,9 @@ public class CleaningManager : MonoBehaviour
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
     [SerializeField] private string mopEvent = null;
+    [SerializeField] private string mopWooshEvent = null;
     [SerializeField] private string spongeEvent = null;
+    [SerializeField] private string spongeWooshEvent = null;
     [SerializeField] private string cleanedEvent = null;
 
     public int DirtyMaxValue { get; private set; }
@@ -61,7 +63,9 @@ public class CleaningManager : MonoBehaviour
     public LayerMask GetSpongeLayerMask() => spongeLayerMask;
     public float GetInteractionDistance() => interactionDistance;
     public string GetMopEvent() => mopEvent;
+    public string GetMopWooshEvent() => mopWooshEvent;
     public string GetSpongeEvent() => spongeEvent;
+    public string GetSpongeWooshEvent() => spongeWooshEvent;
     public string GetCleanedEvent() => cleanedEvent;
     public ParticleSystem GetMopParticles() => mopCleaningParticles;
     public ParticleSystem GetSpongeParticles() => sponeCleaningParticles;

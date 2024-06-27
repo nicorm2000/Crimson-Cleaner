@@ -17841,7 +17841,9 @@ MonoBehaviour:
   sponeCleaningParticles: {fileID: 942497221}
   audioManager: {fileID: 1243886029}
   mopEvent: Mop
+  mopWooshEvent: Mop_Woosh
   spongeEvent: Sponge
+  spongeWooshEvent: Sponge_Woosh
   cleanedEvent: Object_Cleaned
 --- !u!1 &1732605573
 GameObject:
@@ -24636,6 +24638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 543450652525029090}
   - component: {fileID: 919132148047625305}
+  - component: {fileID: 919132148047625306}
   m_Layer: 12
   m_Name: Mop
   m_TagString: Untagged
@@ -24664,6 +24667,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &919132148047625306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148047625304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c84b375e0e2669647916cb421142ed8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cleaningManager: {fileID: 1727464070}
+  audioManager: {fileID: 1243886029}
 --- !u!1 &919132148513039354
 GameObject:
   m_ObjectHideFlags: 0
@@ -24674,6 +24691,7 @@ GameObject:
   m_Component:
   - component: {fileID: 543450652235446592}
   - component: {fileID: 919132148513039355}
+  - component: {fileID: 919132148513039356}
   m_Layer: 12
   m_Name: Sponge
   m_TagString: Untagged
@@ -24702,6 +24720,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &919132148513039356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148513039354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c84b375e0e2669647916cb421142ed8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cleaningManager: {fileID: 1727464070}
+  audioManager: {fileID: 1243886029}
 --- !u!1 &919132149337744920
 GameObject:
   m_ObjectHideFlags: 0

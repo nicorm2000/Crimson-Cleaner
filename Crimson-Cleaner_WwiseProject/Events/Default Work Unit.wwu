@@ -578,6 +578,48 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Mop_Woosh" ID="{9F48A5C7-B27A-4DC4-B360-54F29CA1C624}">
+					<ChildrenList>
+						<Action Name="" ID="{E0178FF5-2122-41F6-8615-B38703C1FBEA}" ShortID="619883098">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Mop Woosh" ID="{F5A4E895-AB3F-4CAF-83A9-91A5A066694C}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{B36A0DE2-91C6-497D-B6BA-C6E5826504BC}" ShortID="929426671">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Mop Woosh" ID="{F5A4E895-AB3F-4CAF-83A9-91A5A066694C}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Sponge_Woosh" ID="{91CFED86-996F-4FFB-825F-DB97CE59ADF7}">
+					<ChildrenList>
+						<Action Name="" ID="{681584CD-99E4-41FF-86B4-C6336CC79BAF}" ShortID="110241994">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Sponge Woosh" ID="{DA5E9F50-1F30-4A15-A5BF-BA5B1A7A3A55}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{74F89049-A3BE-4B2B-9FF6-56219EB765CD}" ShortID="696251208">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Sponge Woosh" ID="{DA5E9F50-1F30-4A15-A5BF-BA5B1A7A3A55}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

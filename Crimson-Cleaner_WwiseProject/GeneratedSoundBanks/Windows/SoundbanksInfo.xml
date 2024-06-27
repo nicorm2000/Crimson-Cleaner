@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{B1099CBA-4554-E0C5-8C9F-0AA2DF34790C}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{A48DD1D6-DAEB-ECB6-1986-FAC9574C5B4B}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -34,9 +34,17 @@
 					<ShortName>Money.wav</ShortName>
 					<CachePath>SFX/Money_5C80BC33.wem</CachePath>
 				</File>
+				<File Id="139344711" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Sponge Woosh.wav</ShortName>
+					<CachePath>SFX/Sponge Woosh_818F3B66.wem</CachePath>
+				</File>
 				<File Id="146996785" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Bottle Drop.wav</ShortName>
 					<CachePath>SFX/Bottle Drop_E8BD70C4.wem</CachePath>
+				</File>
+				<File Id="163807742" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Mop Woosh.wav</ShortName>
+					<CachePath>SFX/Mop Woosh_818F3B66.wem</CachePath>
 				</File>
 				<File Id="208633118" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Wash Bubbles.wav</ShortName>
@@ -224,6 +232,11 @@
 						<MediaRef Id="647094345"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="525424570" Name="Mop_Woosh" DurationType="OneShot" DurationMin="0.1279375" DurationMax="0.1279375">
+					<MediaRefs>
+						<MediaRef Id="163807742"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3695522715" Name="Mouse_Click" DurationType="OneShot" DurationMin="0.12" DurationMax="0.12">
 					<MediaRefs>
 						<MediaRef Id="307614010"/>
@@ -242,6 +255,11 @@
 				<Event Id="1165214467" Name="Sponge" DurationType="OneShot" DurationMin="0.52072406" DurationMax="0.52072406">
 					<MediaRefs>
 						<MediaRef Id="1071313097"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2179797042" Name="Sponge_Woosh" DurationType="OneShot" DurationMin="0.09501134" DurationMax="0.09501134">
+					<MediaRefs>
+						<MediaRef Id="139344711"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="745179803" Name="Throw" DurationType="OneShot" DurationMin="0.28820464" DurationMax="0.32349876">
@@ -286,5 +304,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{4C52E71C-E46F-1718-07CE-324CE619E39A}</FileHash>
+	<FileHash>{F2E01079-AF79-F300-1ABB-CD85B98A2B70}</FileHash>
 </SoundBanksInfo>
