@@ -17,7 +17,7 @@ public class CleaningToolReceiver : MonoBehaviour
             audioManager.PlaySound(cleaningManager.GetSpongeWooshEvent());
         }
     }
-    public static void CleaningEvent()
+    public void CleaningEvent()
     {
         Debug.Log("Clean Object");
     }
