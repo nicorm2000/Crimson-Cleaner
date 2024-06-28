@@ -31,7 +31,7 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     private float lastCollisionTime = -Mathf.Infinity;
     private float initialHeight;
 
-    public bool isObjectPickedUp { get; private set; }
+    public bool IsObjectPickedUp { get; private set; }
     public bool isObjectBreakable = true;
     public Sprite PickUpMessage => pickUpMessage;
     public Sprite DropMessage => dropMessage;
@@ -53,7 +53,7 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
         initialLocalUp = transform.up;
         initialLocalRight = transform.right;
 
-        isObjectPickedUp = true;
+        IsObjectPickedUp = true;
 
         initialHeight = transform.position.y;
     }
@@ -65,7 +65,7 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
         objectRigidBody.useGravity = true;
         objectRigidBody.velocity = (newPosition - lastPosition) * throwingForce;
 
-        isObjectPickedUp = false;
+        IsObjectPickedUp = false;
 
         initialHeight = transform.position.y;
     }
@@ -78,7 +78,7 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
 
         objectRigidBody.AddForce(throwDirection * throwingForce, ForceMode.Impulse);
 
-        isObjectPickedUp = false;
+        IsObjectPickedUp = false;
 
         initialHeight = transform.position.y;
     }

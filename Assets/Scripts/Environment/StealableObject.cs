@@ -1,55 +1,38 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class StealableObject : MonoBehaviour, IRetrievable
+public class StealableObject : Interactable, IRetrievable
 {
     [Header("Stealable Config")]
-    [SerializeField] private InputManager inputManager;
-    [SerializeField] private PlayerController playerController;
+    [SerializeField] private Sprite interactMessage;
     [SerializeField] private StealableManager stealableManager;
-    [SerializeField] private float raycastDistance = 3f;
-    [SerializeField] private LayerMask interactableLayerMask = ~0;
-    [SerializeField] private Sprite pickUpMessage;
-    [SerializeField] private float moneyAmount;
+    [SerializeField] private float moneyAmount = 10f; // Example money amount
 
-    public Sprite PickUpMessage => pickUpMessage;
+    public Sprite InteractMessage => interactMessage;
 
-    private void OnEnable()
+    private readonly string stealableTrigger = "Retrieve";
+
+    public void Interact(PlayerController playerController)
     {
-        inputManager.InteractEvent += OnRetrieveObject;
+        ToggleObjectState(playerController);
     }
 
-    private void OnDisable()
+    protected override void PerformInteraction(PlayerController playerController)
     {
-        inputManager.InteractEvent -= OnRetrieveObject;
+        Interact(playerController);
     }
 
-    private void OnRetrieveObject()
+    private void ToggleObjectState(PlayerController playerController)
     {
-        if (IsMouseLookingAtObject() && playerController.GetObjectGrabbable() == null)
+        if (playerController.GetObjectGrabbable() == null)
         {
-            RetrieveObject();
+            Debug.Log("Retrieve Object: " + name);
+
+            // Perform additional logic (e.g., play sound, add money)
+            stealableManager.PlayMoneySFX();
+            stealableManager.AddMoney(moneyAmount);
+
+            Destroy(gameObject); // Example: Destroy the object after retrieval
         }
-    }
-
-    private bool IsMouseLookingAtObject()
-    {
-        if (playerController.GetObjectGrabbable() != null) return false;
-
-        Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-        if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, interactableLayerMask))
-        {
-            if (hit.transform != gameObject.transform) return false;
-
-            if (hit.collider.gameObject.GetComponent<StealableObject>()) return true;
-        }
-        return false;
-    }
-
-    private void RetrieveObject()
-    {
-        stealableManager.PlayeMoneySFX();
-        stealableManager.AddMoney(moneyAmount);
-        Destroy(gameObject);
     }
 }

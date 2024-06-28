@@ -2475,6 +2475,112 @@ MonoBehaviour:
   audioManager: {fileID: 1243886029}
   breakBottleEvent: 
   isObjectBreakable: 0
+--- !u!1 &129384390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 129384391}
+  - component: {fileID: 129384394}
+  - component: {fileID: 129384393}
+  - component: {fileID: 129384392}
+  m_Layer: 0
+  m_Name: Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &129384391
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129384390}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -76.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5653154697451720753}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &129384392
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129384390}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &129384393
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129384390}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 2e38394a554fd754783b2ae4198e2adf, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &129384394
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129384390}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &144750260
 GameObject:
   m_ObjectHideFlags: 0
@@ -6924,6 +7030,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 1560126}
+  raycastDistance: 3
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  audioManager: {fileID: 1243886029}
+  soundEvent: 
   layerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -6946,8 +7058,6 @@ MonoBehaviour:
   - {fileID: 629563703}
   lightsAreOn: 1
   toggleOnOffMessage: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
-  audioManager: {fileID: 1243886029}
-  lampToolEvent: Light_Switch
 --- !u!1 &487656027
 GameObject:
   m_ObjectHideFlags: 0
@@ -8025,14 +8135,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 1560126}
-  playerController: {fileID: 6982812146447357855}
   raycastDistance: 3
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  _openableAnimator: {fileID: 732064159}
   audioManager: {fileID: 1243886029}
-  doorOpenCloseEvents: Cubicle_Bathroom_Door
+  soundEvent: 
+  openableAnimator: {fileID: 732064159}
   interactMessage: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
 --- !u!65 &573549662
 BoxCollider:
@@ -10337,6 +10446,33 @@ MonoBehaviour:
   audioManager: {fileID: 1243886029}
   breakBottleEvent: 
   isObjectBreakable: 0
+--- !u!1 &774125576 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 200113842056861164, guid: 690bb619e816f844c8007081d0dd5e00,
+    type: 3}
+  m_PrefabInstance: {fileID: 894973522943723236}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &774125582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774125576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1ab3a29567f3a419a37cdaffffb189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputManager: {fileID: 1560126}
+  raycastDistance: 3
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  audioManager: {fileID: 1243886029}
+  soundEvent: 
+  openableAnimator: {fileID: 543450651914598547}
+  interactMessage: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
 --- !u!1 &791006469
 GameObject:
   m_ObjectHideFlags: 0
@@ -10748,6 +10884,112 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &821928554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 821928555}
+  - component: {fileID: 821928558}
+  - component: {fileID: 821928557}
+  - component: {fileID: 821928556}
+  m_Layer: 0
+  m_Name: Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &821928555
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821928554}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.4, y: -96.6, z: 6.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &821928556
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821928554}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &821928557
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821928554}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 967578261f8e13142b10ed604e91b64b, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &821928558
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821928554}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &831696264
 GameObject:
   m_ObjectHideFlags: 0
@@ -13521,6 +13763,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 1560126}
+  raycastDistance: 3
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  audioManager: {fileID: 1243886029}
+  soundEvent: 
   layerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -13532,8 +13780,6 @@ MonoBehaviour:
   - {fileID: 455964729}
   lightsAreOn: 0
   toggleOnOffMessage: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
-  audioManager: {fileID: 1243886029}
-  lampToolEvent: Light_Switch
 --- !u!1 &1035608695
 GameObject:
   m_ObjectHideFlags: 0
@@ -15591,6 +15837,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 1560126}
+  raycastDistance: 3
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  audioManager: {fileID: 1243886029}
+  soundEvent: 
   layerMask:
     serializedVersion: 2
     m_Bits: 256
@@ -15602,8 +15854,6 @@ MonoBehaviour:
   - {fileID: 692765615}
   lightsAreOn: 0
   toggleOnOffMessage: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
-  audioManager: {fileID: 1243886029}
-  lampToolEvent: Light_Switch
 --- !u!1 &1243886028
 GameObject:
   m_ObjectHideFlags: 0
@@ -16365,6 +16615,12 @@ PrefabInstance:
     - target: {fileID: 4711356780880030120, guid: 3990ab5a6ce01cf4e921428949378625,
         type: 3}
       propertyPath: pickUpMessage
+      value: 
+      objectReference: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53,
+        type: 3}
+    - target: {fileID: 4711356780880030120, guid: 3990ab5a6ce01cf4e921428949378625,
+        type: 3}
+      propertyPath: interactMessage
       value: 
       objectReference: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53,
         type: 3}
@@ -17938,14 +18194,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 1560126}
-  playerController: {fileID: 6982812146447357855}
   raycastDistance: 3
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  _openableAnimator: {fileID: 820167777}
   audioManager: {fileID: 1243886029}
-  doorOpenCloseEvents: Cubicle_Bathroom_Door
+  soundEvent: 
+  openableAnimator: {fileID: 820167777}
   interactMessage: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
 --- !u!65 &1383890599
 BoxCollider:
@@ -19350,7 +19605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableLayers:
     serializedVersion: 2
-    m_Bits: 1792
+    m_Bits: 256
   interactionImages:
   - {fileID: 441037814}
   - {fileID: 964600004}
@@ -21977,6 +22232,112 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638937695}
   m_CullTransparentMesh: 1
+--- !u!1 &1652080727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1652080728}
+  - component: {fileID: 1652080731}
+  - component: {fileID: 1652080730}
+  - component: {fileID: 1652080729}
+  m_Layer: 0
+  m_Name: Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1652080728
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652080727}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.4, y: -104.1, z: 4.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9143560043622421815}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &1652080729
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652080727}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1652080730
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652080727}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 2e38394a554fd754783b2ae4198e2adf, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1652080731
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652080727}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1659608036
 GameObject:
   m_ObjectHideFlags: 0
@@ -23655,14 +24016,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 1560126}
-  playerController: {fileID: 6982812146447357855}
   raycastDistance: 3
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  _openableAnimator: {fileID: 2008422}
   audioManager: {fileID: 1243886029}
-  doorOpenCloseEvents: Cubicle_Bathroom_Door
+  soundEvent: 
+  openableAnimator: {fileID: 2008422}
   interactMessage: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
 --- !u!65 &1793014155
 BoxCollider:
@@ -26985,6 +27345,112 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2032997592}
   m_CullTransparentMesh: 1
+--- !u!1 &2047097669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2047097670}
+  - component: {fileID: 2047097673}
+  - component: {fileID: 2047097672}
+  - component: {fileID: 2047097671}
+  m_Layer: 0
+  m_Name: Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2047097670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047097669}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 24.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &2047097671
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047097669}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &2047097672
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047097669}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 967578261f8e13142b10ed604e91b64b, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &2047097673
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047097669}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2050043420
 GameObject:
   m_ObjectHideFlags: 0
@@ -27773,14 +28239,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 1560126}
-  playerController: {fileID: 6982812146447357855}
   raycastDistance: 3
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  _openableAnimator: {fileID: 355284926}
   audioManager: {fileID: 1243886029}
-  doorOpenCloseEvents: Cubicle_Bathroom_Door
+  soundEvent: 
+  openableAnimator: {fileID: 355284926}
   interactMessage: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
 --- !u!65 &2114987194
 BoxCollider:
@@ -29489,6 +29954,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 894973522943723236}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &543450651914598547 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1175836090472060397, guid: 690bb619e816f844c8007081d0dd5e00,
+    type: 3}
+  m_PrefabInstance: {fileID: 894973522943723236}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &543450652235446592
 Transform:
   m_ObjectHideFlags: 0
@@ -30512,10 +30983,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1243886029}
     m_RemovedComponents:
-    - {fileID: 491835731835163177, guid: 690bb619e816f844c8007081d0dd5e00, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 200113842056861164, guid: 690bb619e816f844c8007081d0dd5e00,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 774125582}
   m_SourcePrefab: {fileID: 100100000, guid: 690bb619e816f844c8007081d0dd5e00, type: 3}
 --- !u!198 &894973522943723237 stripped
 ParticleSystem:
@@ -41075,14 +41550,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 1560126}
-  playerController: {fileID: 6982812146447357855}
   raycastDistance: 3
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  _openableAnimator: {fileID: 8710439}
   audioManager: {fileID: 1243886029}
-  doorOpenCloseEvents: Bar_Door
+  soundEvent: 
+  openableAnimator: {fileID: 8710439}
   interactMessage: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
 --- !u!137 &5597113867013627567
 SkinnedMeshRenderer:
@@ -41376,7 +41850,8 @@ Transform:
   m_LocalPosition: {x: 1.1601601, y: 1.3730428, z: 12.905261}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 129384391}
   m_Father: {fileID: 1569976102}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5653482252178648777
@@ -42534,7 +43009,9 @@ GameObject:
   - component: {fileID: 6725352015280244569}
   - component: {fileID: 8318473013305562676}
   - component: {fileID: 8318473013305562677}
-  m_Layer: 0
+  - component: {fileID: 8318473013305562679}
+  - component: {fileID: 8318473013305562678}
+  m_Layer: 8
   m_Name: SM_Urinario_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46771,7 +47248,9 @@ GameObject:
   - component: {fileID: 5903808028121124650}
   - component: {fileID: 8291811821026060846}
   - component: {fileID: 9143560043622421816}
-  m_Layer: 0
+  - component: {fileID: 9143560043622421817}
+  - component: {fileID: 9143560043622421818}
+  m_Layer: 8
   m_Name: SM_inodoro_low3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49120,14 +49599,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 1560126}
-  playerController: {fileID: 6982812146447357855}
   raycastDistance: 3
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  _openableAnimator: {fileID: 1358028211}
   audioManager: {fileID: 1243886029}
-  doorOpenCloseEvents: Cubicle_Bathroom_Door
+  soundEvent: 
+  openableAnimator: {fileID: 1358028211}
   interactMessage: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
 --- !u!23 &7885447794802977646
 MeshRenderer:
@@ -51248,6 +51726,49 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3761480537475362972, guid: 817969c59cf752645b6b413713f0d444, type: 3}
+--- !u!95 &8318473013305562678
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6022109438389490317}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: c0ef824abbac10a459de98dbbc7d3373, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8318473013305562679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6022109438389490317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 405c7f1e9786ee446ae4ad70ae74f094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputManager: {fileID: 1560126}
+  raycastDistance: 3
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  audioManager: {fileID: 1243886029}
+  soundEvent: 
+  animator: {fileID: 8318473013305562678}
+  animatorTriggerName: Trigger
+  interactMessage: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
 --- !u!1 &8318780016493429030
 GameObject:
   m_ObjectHideFlags: 0
@@ -53307,14 +53828,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 1560126}
-  playerController: {fileID: 6982812146447357855}
   raycastDistance: 3
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  _openableAnimator: {fileID: 1732605575}
   audioManager: {fileID: 1243886029}
-  doorOpenCloseEvents: Bathroom_Door
+  soundEvent: 
+  openableAnimator: {fileID: 1732605575}
   interactMessage: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
 --- !u!4 &8873489174396282895
 Transform:
@@ -53479,14 +53999,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 1560126}
-  playerController: {fileID: 6982812146447357855}
   raycastDistance: 3
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  _openableAnimator: {fileID: 353093758}
   audioManager: {fileID: 1243886029}
-  doorOpenCloseEvents: Bathroom_Door
+  soundEvent: 
+  openableAnimator: {fileID: 353093758}
   interactMessage: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
 --- !u!65 &8913601940787414069
 BoxCollider:
@@ -54336,7 +54855,8 @@ Transform:
   m_LocalPosition: {x: 1.010304, y: 1.3491987, z: 11.227881}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1652080728}
   m_Father: {fileID: 1569976102}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &9143560043622421816
@@ -54361,6 +54881,49 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -818905675250227146, guid: 817969c59cf752645b6b413713f0d444, type: 3}
+--- !u!95 &9143560043622421817
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7378685365874452612}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: f856e928cc0b9b9498099f850fed95cb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9143560043622421818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7378685365874452612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 405c7f1e9786ee446ae4ad70ae74f094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputManager: {fileID: 1560126}
+  raycastDistance: 3
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  audioManager: {fileID: 1243886029}
+  soundEvent: 
+  animator: {fileID: 9143560043622421817}
+  animatorTriggerName: Trigger
+  interactMessage: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
 --- !u!1 &9171549736535373863
 GameObject:
   m_ObjectHideFlags: 0
@@ -54513,3 +55076,5 @@ SceneRoots:
   - {fileID: 1084020801}
   - {fileID: 1741662180}
   - {fileID: 591006926}
+  - {fileID: 821928555}
+  - {fileID: 2047097670}

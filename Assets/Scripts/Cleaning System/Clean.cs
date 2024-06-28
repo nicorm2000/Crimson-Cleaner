@@ -26,7 +26,7 @@ public class Clean : MonoBehaviour, ICleanable
     public bool IsCleaned => isCleaned;
 
     private Sprite cleanMessage;
-    public Sprite CleanMessage => cleanMessage;
+    public Sprite InteractMessage => cleanMessage;
 
     private bool isCleaned = false;
 
@@ -235,5 +235,10 @@ public class Clean : MonoBehaviour, ICleanable
     public float GetCleanUIIndex()
     {
         return _currentUIIndex;
+    }
+
+    public void Interact(PlayerController playerController)
+    {
+        throw new NotImplementedException();
     }
 }

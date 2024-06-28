@@ -2,10 +2,9 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class WaterBucket : MonoBehaviour, ICleanable
+public class WaterBucket : Interactable, ICleanable
 {
     [Header("Config")]
-    [SerializeField] private InputManager inputManager;
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private ParticleSystem washParticles;
     [SerializeField] private Sprite cleanMessage;
@@ -16,11 +15,8 @@ public class WaterBucket : MonoBehaviour, ICleanable
     [SerializeField] private Transform waterStartPoint;
     [SerializeField] private Transform waterFinishPoint;
 
-    [Header("Audio Config")]
-    [SerializeField] private AudioManager audioManager = null;
-    [SerializeField] private string washToolEvent = null;
+    public Sprite InteractMessage => cleanMessage;
 
-    public Sprite CleanMessage => cleanMessage;
     public bool HasWater { get; private set; }
     public float WaterPercentage { get; private set; }
 
@@ -43,14 +39,14 @@ public class WaterBucket : MonoBehaviour, ICleanable
         WaterPercentage = 1;
     }
 
-    private void OnEnable()
+    public void Interact(PlayerController playerController)
     {
-        inputManager.InteractEvent += CleanTool;
+        CleanTool();
     }
 
-    private void OnDisable()
+    protected override void PerformInteraction(PlayerController playerController)
     {
-        inputManager.InteractEvent -= CleanTool;
+        Interact(playerController);
     }
 
     private void CleanTool()
@@ -76,7 +72,7 @@ public class WaterBucket : MonoBehaviour, ICleanable
                 if (water != null)
                     UpdateMaterial(_bucketDirtState, _rendererWater);
             }
-            audioManager.PlaySound(washToolEvent);
+            audioManager.PlaySound(soundEvent);
             ActivateWashing();
             cleaningManager.GetToolSelector().ResetDirtyPercentage(currentToolIndex);
             cleaningManager.GetToolSelector().ChangeToolMaterial(currentToolIndex, cleaningManager.GetToolSelector().GetOriginalMaterial());

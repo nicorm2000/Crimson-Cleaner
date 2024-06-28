@@ -34,12 +34,12 @@ public class CameraInteraction : MonoBehaviour
             IPickable pickableObject = hit.collider.gameObject.GetComponent<ObjectGrabbable>() as IPickable;
             IRetrievable objectRetrievable = hit.collider.gameObject.GetComponent<StealableObject>() as IRetrievable;
             IOpenable openableObject = hit.collider.gameObject.GetComponent<Openable>() as IOpenable;
-            IOpenable cartOpenableObject = hit.collider.gameObject.GetComponent<Cart>() as IOpenable;
             //ICleanable cleanableObject = hit.collider.gameObject.GetComponent<Clean>() as ICleanable;
             ICleanable cleanableToolObject = hit.collider.gameObject.GetComponent<WaterBucket>() as ICleanable;
             IToggable toggableObject = hit.collider.gameObject.GetComponent<UVLight>() as IToggable;
             IToggable toggableObject2 = hit.collider.gameObject.GetComponent<WaterFaucetSystem>() as IToggable;
             IToggable switchObject = hit.collider.gameObject.GetComponent<LightSwitch>() as IToggable;
+            IInteractable inmersiveObject = hit.collider.gameObject.GetComponent<InmersiveObject>() as IInteractable;
 
             if (pickableObject != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().ToolsLength - 1)
             {
@@ -55,11 +55,6 @@ public class CameraInteraction : MonoBehaviour
             if (openableObject != null && playerController.GetObjectGrabbable() == null)
             {
                 AppendOpenableSprites(openableObject, ref activeSprites);
-            }
-
-            if (cartOpenableObject != null && playerController.GetObjectGrabbable() == null)
-            {
-                AppendOpenableSprites(cartOpenableObject, ref activeSprites);
             }
 
             if (cleanableToolObject != null && cleaningManager.GetToolSelector().CurrentToolIndex != cleaningManager.GetToolSelector().ToolsLength - 1 && hit.collider.GetComponent<WaterBucket>().GetWaterState())
@@ -82,9 +77,14 @@ public class CameraInteraction : MonoBehaviour
                 AppendToggableSprites(switchObject, ref activeSprites);
             }
 
+            if (inmersiveObject != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().ToolsLength - 1)
+            {
+                AppendInteractableSprites(inmersiveObject, ref activeSprites);
+            }
+
             UpdateUI(activeSprites);
         }
-        else if (currentPickableObject != null && currentPickableObject.isObjectPickedUp)
+        else if (currentPickableObject != null && currentPickableObject.IsObjectPickedUp)
         {
             // Keep showing the pick-up sprites if the object is still picked up
             var activeSprites = new Sprite[interactionImages.Length];
@@ -109,7 +109,7 @@ public class CameraInteraction : MonoBehaviour
     {
         SetImageState(true);
         int index = GetNextAvailableSlot(activeSprites);
-        if (pickableObject.isObjectPickedUp)
+        if (pickableObject.IsObjectPickedUp)
         {
             activeSprites[1] = pickableObject.ThrowMessage;
             activeSprites[2] = pickableObject.RotateMessage;
@@ -125,7 +125,7 @@ public class CameraInteraction : MonoBehaviour
     {
         SetImageState(true);
         int index = GetNextAvailableSlot(activeSprites);
-        activeSprites[index] = openableObject.PickUpMessage;
+        activeSprites[index] = openableObject.InteractMessage;
     }
 
     private void AppendOpenableSprites(IOpenable openableObject, ref Sprite[] activeSprites)
@@ -139,14 +139,21 @@ public class CameraInteraction : MonoBehaviour
     {
         SetImageState(true);
         int index = GetNextAvailableSlot(activeSprites);
-        activeSprites[index] = cleanableObject.CleanMessage;
+        activeSprites[index] = cleanableObject.InteractMessage;
     }
 
     private void AppendToggableSprites(IToggable toggableObject, ref Sprite[] activeSprites)
     {
         SetImageState(true);
         int index = GetNextAvailableSlot(activeSprites);
-        activeSprites[index] = toggableObject.ToggleOnOffMessage;
+        activeSprites[index] = toggableObject.InteractMessage;
+    }
+
+    private void AppendInteractableSprites(IInteractable inmersiveObject, ref Sprite[] activeSprites)
+    {
+        SetImageState(true);
+        int index = GetNextAvailableSlot(activeSprites);
+        activeSprites[index] = inmersiveObject.InteractMessage;
     }
 
     private int GetNextAvailableSlot(Sprite[] activeSprites)

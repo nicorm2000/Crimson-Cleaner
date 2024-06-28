@@ -1,42 +1,45 @@
-using System;
 using UnityEngine;
-using UnityEngine.UI;
+
+public interface IInteractable
+{
+    Sprite InteractMessage { get; }
+    void Interact(PlayerController playerController);
+}
+
+public interface IInmersible : IInteractable
+{
+
+}
 
 public interface IPickable
 {
-    bool isObjectPickedUp { get; }
-
+    bool IsObjectPickedUp { get; }
     Sprite PickUpMessage { get; }
     Sprite DropMessage { get; }
     Sprite ThrowMessage { get; }
     Sprite RotateMessage { get; }
 }
 
-public interface IRetrievable
+public interface IRetrievable : IInteractable
 {
-    Sprite PickUpMessage { get; }
 }
 
-public interface IOpenable
+public interface IOpenable : IInteractable
 {
-    bool _isOpen { get; }
-
-    Sprite InteractMessage { get; }
+    bool IsOpen { get; }
 }
 
-public interface ICleanable
+public interface ICleanable : IInteractable
 {
-    event Action Cleaned;
-
-    Sprite CleanMessage { get; }
+    event System.Action Cleaned;
 }
 
-public interface IToggable
+public interface IToggable : IInteractable
 {
-    Sprite ToggleOnOffMessage { get; }
+    
 }
 
 public interface IDisposable
 {
-    event Action Disposed;
+    event System.Action Disposed;
 }

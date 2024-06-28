@@ -49,5 +49,5 @@ public class StealableManager : MonoBehaviour
         coroutineRunning = false;
     }
 
-    public void PlayeMoneySFX() => audioManager.PlaySound(moneyEvent);
+    public void PlayMoneySFX() => audioManager.PlaySound(moneyEvent);
 }

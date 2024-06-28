@@ -1,38 +1,40 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class UVLight : MonoBehaviour, IToggable
+public class UVLight : Interactable, IToggable
 {
-    [Header("Config")]
-    [SerializeField] private InputManager inputManager;
-    [SerializeField] private LayerMask layerMask;
+    [Header("UV Light Config")]
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private float minCoverage = 0.7f;
-
-    public bool _isOn;
 
     [SerializeField] private Sprite toggleOnOffMessage;
     [SerializeField] private Material onMaterial;
     [SerializeField] private Material offMaterial;
 
-    [Header("Audio Config")]
-    [SerializeField] private AudioManager audioManager = null;
-    [SerializeField] private string lampToolEvent = null;
-
     private bool isOn = false;
     private Light uvLight;
-    public Sprite ToggleOnOffMessage => toggleOnOffMessage;
     private Renderer _renderer;
 
+    public Sprite InteractMessage => toggleOnOffMessage;
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
-        inputManager.InteractEvent += ToggleLight;
+        base.OnEnable();
     }
 
-    private void OnDisable()
+    protected override void OnDisable()
     {
-        inputManager.InteractEvent -= ToggleLight;
+        base.OnDisable();
+    }
+
+    public void Interact(PlayerController playerController)
+    {
+        ToggleLight();
+    }
+
+    protected override void PerformInteraction(PlayerController playerController)
+    {
+        Interact(playerController);
     }
 
     private void Awake()
@@ -48,21 +50,10 @@ public class UVLight : MonoBehaviour, IToggable
 
     public void ToggleLight()
     {
-        Vector3 mousePosition = Mouse.current.position.ReadValue();
-        Ray ray = cleaningManager.GetCamera().ScreenPointToRay(mousePosition);
-
-        if (Physics.Raycast(ray, out RaycastHit hit, cleaningManager.GetInteractionDistance()))
-        {
-            if (hit.distance <= cleaningManager.GetInteractionDistance())
-            {
-                if (hit.transform != gameObject.transform) return;
-
-                isOn = !isOn;
-                SwapMaterial(isOn);
-                audioManager.PlaySound(lampToolEvent);
-                uvLight.enabled = isOn;
-            }
-        }
+        isOn = !isOn;
+        SwapMaterial(isOn);
+        audioManager.PlaySound(soundEvent);
+        uvLight.enabled = isOn;
     }
 
     public bool IsObjectInLightRadius(GameObject obj, int samplePoints = 5)
@@ -106,7 +97,7 @@ public class UVLight : MonoBehaviour, IToggable
             {
                 _renderer.material = onMaterial;
             }
-            else 
+            else
             {
                 _renderer.material = offMaterial;
             }

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6292833318462100220}
   - component: {fileID: 5675512457481672714}
   - component: {fileID: 8668676187585676311}
-  - component: {fileID: 3800166998495188693}
   m_Layer: 8
   m_Name: SM_Door01
   m_TagString: Untagged
@@ -107,28 +106,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4917860291985523750, guid: 7ee084868260fa94dac8af74ac69a78b, type: 3}
---- !u!114 &3800166998495188693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 200113842056861164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaf4fe9d98051354ab8f684a47ff1f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputManager: {fileID: 0}
-  playerController: {fileID: 0}
-  interactableLayerMask:
-    serializedVersion: 2
-    m_Bits: 256
-  raycastDistance: 3
-  audioManager: {fileID: 0}
-  openEvent: Cart_Open
-  closeEvent: Cart_Close
-  interactMessage: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
 --- !u!1 &378685924119076572
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,12 +706,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 0}
-  playerController: {fileID: 0}
-  waterBucket: {fileID: 0}
+  raycastDistance: 3
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  raycastDistance: 3
+  audioManager: {fileID: 0}
+  soundEvent: 
+  waterBucket: {fileID: 0}
   waterParticles: {fileID: 7881962743490342031}
   splashParticles: {fileID: 1314022556265712743}
   rayOrigin: {fileID: 7886285668854610685}
@@ -743,7 +721,6 @@ MonoBehaviour:
   spillThreshold: 30
   fillWaterSpeed: 1
   toggleOnOffMessage: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
-  audioManager: {fileID: 0}
   interactFaucetEvent: Water_Tap
   waterFlowEvent: Water_Flow
   waterFlowStopEvent: Water_Flow_Stop

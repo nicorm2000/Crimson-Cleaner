@@ -1,10 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class LightSwitch : MonoBehaviour, IToggable
+public class LightSwitch : Interactable, IToggable
 {
     [Header("Switch Config")]
-    [SerializeField] private InputManager inputManager;
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private GameObject lightOn = null;
@@ -15,21 +14,18 @@ public class LightSwitch : MonoBehaviour, IToggable
     [Header("UI Config")]
     [SerializeField] private Sprite toggleOnOffMessage;
 
-    [Header("Audio Config")]
-    [SerializeField] private AudioManager audioManager = null;
-    [SerializeField] private string lampToolEvent = null;
+    public Sprite InteractMessage => toggleOnOffMessage;
 
-    public Sprite ToggleOnOffMessage => toggleOnOffMessage;
+    private bool _lightsAreOn = true;
 
-
-    private void OnEnable()
+    public void Interact(PlayerController playerController)
     {
-        inputManager.InteractEvent += ToggleLights;
+        ToggleLights();
     }
 
-    private void OnDisable()
+    protected override void PerformInteraction(PlayerController playerController)
     {
-        inputManager.InteractEvent -= ToggleLights;
+        Interact(playerController);
     }
 
     private void Start()
@@ -41,16 +37,9 @@ public class LightSwitch : MonoBehaviour, IToggable
 
     private void ToggleLights()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-
-        if (Physics.Raycast(ray, out RaycastHit hit, cleaningManager.GetInteractionDistance(), layerMask))
-        {
-            if (hit.transform != gameObject.transform) return;
-
-            audioManager.PlaySound(lampToolEvent);
-            lightsAreOn = !lightsAreOn;
-            SetLightsState(lightsAreOn);
-        }
+        audioManager.PlaySound(soundEvent);
+        _lightsAreOn = !_lightsAreOn;
+        SetLightsState(_lightsAreOn);
     }
 
     private void SetLightsState(bool lightsOn)
