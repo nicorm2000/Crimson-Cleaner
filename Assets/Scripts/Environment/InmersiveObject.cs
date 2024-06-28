@@ -13,6 +13,7 @@ public class InmersiveObject : Interactable, IInmersible
         if (playerController.GetObjectGrabbable() == null)
         {
             animator.SetTrigger(animatorTriggerName);
+            audioManager.PlaySound(soundEvent);
         }
     }
 

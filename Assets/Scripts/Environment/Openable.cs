@@ -31,7 +31,21 @@ public class Openable : Interactable, IOpenable
 
             if (!string.IsNullOrEmpty(soundEvent))
             {
-                audioManager.PlaySound(soundEvent);
+                if (!string.IsNullOrEmpty(soundEvent2))
+                {
+                    if (!IsOpen)
+                    {
+                        audioManager.PlaySound(soundEvent);
+                    }
+                    else
+                    {
+                        audioManager.PlaySound(soundEvent2);
+                    }
+                }
+                else
+                {
+                    audioManager.PlaySound(soundEvent);
+                }
             }
         }
     }

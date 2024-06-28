@@ -620,6 +620,48 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Toilet_Push" ID="{5DA11487-64DA-49C9-8E4E-0C6ED9720660}">
+					<ChildrenList>
+						<Action Name="" ID="{F92AA739-863B-4144-BAB5-62697299F6ED}" ShortID="806132820">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Toilet" ID="{5D9E3EB1-F7BC-4C02-9827-15EF206FD8C0}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{A3D7A917-4129-4F14-8966-4540F0BB5D36}" ShortID="453272768">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Toilet" ID="{5D9E3EB1-F7BC-4C02-9827-15EF206FD8C0}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Urinal_Push" ID="{CC46CAD6-9DC3-4A72-9E67-B98287D02E89}">
+					<ChildrenList>
+						<Action Name="" ID="{C70100EB-5B0F-4695-A14E-50CCA9FB61F3}" ShortID="110639339">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Urinal" ID="{728AC290-8689-47DB-A1B9-092757D85336}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{5AA93834-B436-425D-A854-96DF6C2978D5}" ShortID="494459652">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Urinal" ID="{728AC290-8689-47DB-A1B9-092757D85336}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

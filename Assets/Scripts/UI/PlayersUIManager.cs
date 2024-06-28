@@ -107,9 +107,11 @@ public class PlayersUIManager : MonoBehaviour
 
     private void HandleToolSwitched(int newToolIndex)
     {
-        if (newToolIndex != 2)
+        if (newToolIndex != 2 && notebook.activeSelf)
         {
-            //Agregar logica de que se salga el notebook
+            _cleaningListState = false;
+            StartCoroutine(ToggleNotebookState());
+            cleaningListAnimator.SetBool(notebookAnimatorOpenHash, _cleaningListState);
         }
     }
 

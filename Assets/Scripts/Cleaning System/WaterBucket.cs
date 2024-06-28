@@ -57,6 +57,8 @@ public class WaterBucket : Interactable, ICleanable
         int currentToolIndex = cleaningManager.GetToolSelector().CurrentToolIndex;
         int dirtyPercentage = cleaningManager.GetToolSelector().GetDirtyPercentage(currentToolIndex);
 
+        if (cleaningManager.GetToolSelector().CurrentToolIndex == 2) return;
+
         if (dirtyPercentage == 0) return;
 
         if (!HasWater) return;

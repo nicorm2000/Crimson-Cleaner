@@ -1155,6 +1155,78 @@
 								<ActiveSource Name="Sponge Woosh" ID="{CCB209F1-06D7-4BDD-9F17-A0C454B28FF4}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Toilet" ID="{5D9E3EB1-F7BC-4C02-9827-15EF206FD8C0}" ShortID="911792653">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Toilet" ID="{BFAF0172-B1EA-4D12-AE0F-2FBD15DA2A04}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.483722500802311"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="1.92830359435173"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.85"/>
+										<Property Name="TrimEnd" Type="Real64" Value="2.77830359435173"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Toilet.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="508666165"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Toilet" ID="{BFAF0172-B1EA-4D12-AE0F-2FBD15DA2A04}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Urinal" ID="{728AC290-8689-47DB-A1B9-092757D85336}" ShortID="605476673">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Urinal" ID="{369C9EFF-A4F7-43B6-B0F7-F474F308E053}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.531772357723577"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="2.37120325203252"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.25"/>
+										<Property Name="TrimEnd" Type="Real64" Value="2.62120325203252"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Urinal.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="557033713"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Urinal" ID="{369C9EFF-A4F7-43B6-B0F7-F474F308E053}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

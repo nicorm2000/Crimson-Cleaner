@@ -11,6 +11,7 @@ public abstract class Interactable : MonoBehaviour
     [Header("Audio Config")]
     [SerializeField] protected AudioManager audioManager;
     [SerializeField] protected string soundEvent;
+    [SerializeField] protected string soundEvent2;
 
     protected virtual void OnEnable()
     {
@@ -29,10 +30,6 @@ public abstract class Interactable : MonoBehaviour
             PlayerController playerController = GetPlayerController();
 
             PerformInteraction(playerController);
-            if (!string.IsNullOrEmpty(soundEvent))
-            {
-                audioManager.PlaySound(soundEvent);
-            }
         }
     }
 

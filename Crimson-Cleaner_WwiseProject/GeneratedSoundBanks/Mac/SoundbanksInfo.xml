@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{A48DD1D6-DAEB-ECB6-1986-FAC9574C5B4B}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{4418849E-7214-DAB6-2C26-0E30BB9EA4F5}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -78,6 +78,10 @@
 					<ShortName>Water Flow.wav</ShortName>
 					<CachePath>SFX/Water Flow_37358B8B.wem</CachePath>
 				</File>
+				<File Id="508666165" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Toilet.wav</ShortName>
+					<CachePath>SFX/Toilet_D06961A7.wem</CachePath>
+				</File>
 				<File Id="524869861" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Close Notebook.wav</ShortName>
 					<CachePath>SFX/Close Notebook_B04760EB.wem</CachePath>
@@ -89,6 +93,10 @@
 				<File Id="550167775" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Bottle Breaking.wav</ShortName>
 					<CachePath>SFX/Bottle Breaking_07A27A05.wem</CachePath>
+				</File>
+				<File Id="557033713" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Urinal.wav</ShortName>
+					<CachePath>SFX/Urinal_E4C20546.wem</CachePath>
 				</File>
 				<File Id="592302926" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cart Close.wav</ShortName>
@@ -267,6 +275,16 @@
 						<MediaRef Id="1662537"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="560187437" Name="Toilet_Push" DurationType="OneShot" DurationMin="1.9283036" DurationMax="1.9283036">
+					<MediaRefs>
+						<MediaRef Id="508666165"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2110685349" Name="Urinal_Push" DurationType="OneShot" DurationMin="2.3712032" DurationMax="2.3712032">
+					<MediaRefs>
+						<MediaRef Id="557033713"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3752733365" Name="Wash_Tool" DurationType="OneShot" DurationMin="0.8" DurationMax="0.8">
 					<MediaRefs>
 						<MediaRef Id="208633118"/>
@@ -304,5 +322,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{6EC9FA8D-050B-DB3C-C17B-8A63CF137FEF}</FileHash>
+	<FileHash>{24606B7D-A0C8-2FC6-DE6A-63422E7CA46D}</FileHash>
 </SoundBanksInfo>

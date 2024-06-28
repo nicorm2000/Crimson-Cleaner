@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class LightSwitch : Interactable, IToggable
 {
@@ -15,9 +14,6 @@ public class LightSwitch : Interactable, IToggable
     [SerializeField] private Sprite toggleOnOffMessage;
 
     public Sprite InteractMessage => toggleOnOffMessage;
-
-    private bool _lightsAreOn = true;
-
     public void Interact(PlayerController playerController)
     {
         ToggleLights();
@@ -38,8 +34,8 @@ public class LightSwitch : Interactable, IToggable
     private void ToggleLights()
     {
         audioManager.PlaySound(soundEvent);
-        _lightsAreOn = !_lightsAreOn;
-        SetLightsState(_lightsAreOn);
+        lightsAreOn = !lightsAreOn;
+        SetLightsState(lightsAreOn);
     }
 
     private void SetLightsState(bool lightsOn)
