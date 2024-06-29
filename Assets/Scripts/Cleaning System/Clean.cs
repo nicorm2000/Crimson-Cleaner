@@ -224,7 +224,10 @@ public class Clean : MonoBehaviour, ICleanable
                 }
                 else if (currentToolIndex == 2)
                 {
-                    WrongTool?.Invoke();
+                    if ((mopLayer.value & (1 << hit.transform.gameObject.layer)) != 0)
+                        WrongToolMop?.Invoke();
+                    else if ((spongeLayer.value & (1 << hit.transform.gameObject.layer)) != 0)
+                        WrongToolSponge?.Invoke();
                 }
                 else
                 {
