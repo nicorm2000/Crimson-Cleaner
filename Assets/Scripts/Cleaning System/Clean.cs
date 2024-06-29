@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Clean : MonoBehaviour, ICleanable
 {
@@ -22,6 +23,9 @@ public class Clean : MonoBehaviour, ICleanable
     private Coroutine _coroutine = null;
 
     public event Action Cleaned;
+    public event Action WrongTool;
+    public event Action WrongToolMop;
+    public event Action WrongToolSponge;
     public event Action<GameObject> CleanedGO;
     public bool IsCleaned => isCleaned;
 
@@ -203,17 +207,28 @@ public class Clean : MonoBehaviour, ICleanable
                 LayerMask mopLayer = cleaningManager.GetMopLayerMask();
                 LayerMask spongeLayer = cleaningManager.GetSpongeLayerMask();
 
-                if (currentToolIndex == 0 && (mopLayer.value & (1 << hit.transform.gameObject.layer)) != 0) // Mop
+                if (currentToolIndex == 0) // Mop
                 {
-                    _coroutine ??= StartCoroutine(CleaningCoroutine(currentToolIndex));
+                    if ((mopLayer.value & (1 << hit.transform.gameObject.layer)) != 0)
+                        _coroutine ??= StartCoroutine(CleaningCoroutine(currentToolIndex));
+                    else
+                        WrongToolSponge?.Invoke();
+                    
                 }
-                else if (currentToolIndex == 1 && (spongeLayer.value & (1 << hit.transform.gameObject.layer)) != 0) // Sponge
+                else if (currentToolIndex == 1) // Sponge
                 {
-                    _coroutine ??= StartCoroutine(CleaningCoroutine(currentToolIndex));
+                    if ((spongeLayer.value & (1 << hit.transform.gameObject.layer)) != 0)
+                        _coroutine ??= StartCoroutine(CleaningCoroutine(currentToolIndex));
+                    else
+                        WrongToolMop?.Invoke();
+                }
+                else if (currentToolIndex == 2)
+                {
+                    WrongTool?.Invoke();
                 }
                 else
                 {
-                    Debug.Log("Tool is too dirty to clean or wrong tool for this surface!");
+                    Debug.Log("Tool is too dirty to clean");
                 }
             }
         }

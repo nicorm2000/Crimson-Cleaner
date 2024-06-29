@@ -20,6 +20,7 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private float togglingNotebookErrorDuration;
     [SerializeField] private float togglingWaterBucketErrorDuration;
     [SerializeField] private float pickUpErrorDuration;
+    [SerializeField] private float wrongToolErrorDuration;
 
     [Header("Tools UI")]
     [SerializeField] private GameObject reticle;
@@ -54,6 +55,9 @@ public class PlayersUIManager : MonoBehaviour
     private Coroutine notebookWarningCoroutine;
     private Coroutine waterBucketWarningCoroutine;
     private Coroutine pickUpWarningCoroutine;
+    private Coroutine wrongToolCleaningWarningCoroutine;
+    private Coroutine wrongToolMopCleaningWarningCoroutine;
+    private Coroutine wrongToolSpongeCleaningWarningCoroutine;
     private bool isTogglingNotebook = false;
 
     private void OnEnable()
@@ -68,6 +72,9 @@ public class PlayersUIManager : MonoBehaviour
         foreach (Clean cleanableObject in gameStateManager.CleanableObjects)
         {
             cleanableObject.GetComponent<Clean>().CleanedGO += UpdateCleaningList;
+            cleanableObject.GetComponent<Clean>().WrongTool += () => OnWrongToolWarning(ref wrongToolCleaningWarningCoroutine, new[] { mopImageWarning, spongeImageWarning }, wrongToolErrorDuration);
+            cleanableObject.GetComponent<Clean>().WrongToolMop += () => OnWrongToolWarning(ref wrongToolMopCleaningWarningCoroutine, mopImageWarning, wrongToolErrorDuration);
+            cleanableObject.GetComponent<Clean>().WrongToolSponge += () => OnWrongToolWarning(ref wrongToolSpongeCleaningWarningCoroutine, spongeImageWarning, wrongToolErrorDuration);
         }
 
         foreach (DisposableObject disposableObject in gameStateManager.DisposableObjects)
@@ -89,7 +96,12 @@ public class PlayersUIManager : MonoBehaviour
         foreach (Clean cleanableObject in gameStateManager.CleanableObjects)
         {
             if (cleanableObject != null)
+            {
                 cleanableObject.GetComponent<Clean>().CleanedGO -= UpdateCleaningList;
+                cleanableObject.GetComponent<Clean>().WrongTool -= () => OnWrongToolWarning(ref wrongToolCleaningWarningCoroutine, new[] { mopImageWarning, spongeImageWarning }, wrongToolErrorDuration);
+                cleanableObject.GetComponent<Clean>().WrongToolMop -= () => OnWrongToolWarning(ref wrongToolMopCleaningWarningCoroutine, mopImageWarning, wrongToolErrorDuration);
+                cleanableObject.GetComponent<Clean>().WrongToolSponge -= () => OnWrongToolWarning(ref wrongToolSpongeCleaningWarningCoroutine, spongeImageWarning, wrongToolErrorDuration);
+            }
         }
 
         foreach (DisposableObject disposableObject in gameStateManager.DisposableObjects)
@@ -198,6 +210,24 @@ public class PlayersUIManager : MonoBehaviour
             StopCoroutine(pickUpWarningCoroutine);
         }
         pickUpWarningCoroutine = StartCoroutine(ShowWarning(handImageWarning, pickUpErrorDuration));
+    }
+
+    private void OnWrongToolWarning(ref Coroutine warningCoroutine, Image toolImageWarning, float warningDuration)
+    {
+        if (warningCoroutine != null)
+        {
+            StopCoroutine(warningCoroutine);
+        }
+        warningCoroutine = StartCoroutine(ShowWarning(toolImageWarning, warningDuration));
+    }
+    
+    private void OnWrongToolWarning(ref Coroutine warningCoroutine, Image[] toolImageWarning, float warningDuration)
+    {
+        if (warningCoroutine != null)
+        {
+            StopCoroutine(warningCoroutine);
+        }
+        warningCoroutine = StartCoroutine(ShowWarning(toolImageWarning, warningDuration));
     }
 
     private IEnumerator ShowWarning(Image warningImage, float duration)
