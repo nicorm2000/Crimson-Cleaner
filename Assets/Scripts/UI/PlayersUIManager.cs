@@ -15,6 +15,7 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private Animator cleaningListAnimator;
     [SerializeField] private GameObject cleanableListText;
     [SerializeField] private GameObject disposableListText;
+    [SerializeField] private float togglingNotebookErrorDuration;
 
     [Header("Tools UI")]
     [SerializeField] private GameObject reticle;
@@ -29,6 +30,9 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private Sprite spongeSpriteOff;
     [SerializeField] private Sprite handSpriteOn;
     [SerializeField] private Sprite handSpriteOff;
+    [SerializeField] private Image mopImageWarning;
+    [SerializeField] private Image spongeImageWarning;
+    [SerializeField] private Image handImageWarning;
 
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
@@ -44,6 +48,7 @@ public class PlayersUIManager : MonoBehaviour
 
     private Coroutine toolDissapearCoroutine;
     private bool isTogglingNotebook = false;
+    private bool isTogglingNotebookErrorActive = false;
 
     private void OnEnable()
     {
@@ -117,25 +122,33 @@ public class PlayersUIManager : MonoBehaviour
 
     private void OnCleaningListEvent()
     {
-        if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().ToolsLength - 1 && !isTogglingNotebook)
+        if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().ToolsLength - 1)
         {
-            _cleaningListState = !_cleaningListState;
+            if (!isTogglingNotebook)
+            {
+                _cleaningListState = !_cleaningListState;
 
-            if (!_cleaningListState) // If the list is closing
-            {
-                audioManager.PlaySound(closeNotebookEvent);
-                StartCoroutine(ToggleNotebookState());
-            }
-            else
-            {
-                audioManager.PlaySound(openNotebookEvent);
-                notebook.SetActive(true);
-            }
+                if (!_cleaningListState) // If the list is closing
+                {
+                    audioManager.PlaySound(closeNotebookEvent);
+                    StartCoroutine(ToggleNotebookState());
+                }
+                else
+                {
+                    audioManager.PlaySound(openNotebookEvent);
+                    notebook.SetActive(true);
+                }
 
-            if (cleaningListAnimator)
-            {
-                cleaningListAnimator.SetBool(notebookAnimatorOpenHash, _cleaningListState);
+                if (cleaningListAnimator)
+                {
+                    cleaningListAnimator.SetBool(notebookAnimatorOpenHash, _cleaningListState);
+                }
             }
+        }
+        else
+        {
+            if (!isTogglingNotebookErrorActive)
+                StartCoroutine(ToggleNotebookNotAvailiable());
         }
     }
 
@@ -154,6 +167,15 @@ public class PlayersUIManager : MonoBehaviour
             notebook.SetActive(false);
         }
         isTogglingNotebook = false;
+    }
+
+    private IEnumerator ToggleNotebookNotAvailiable()
+    {
+        isTogglingNotebookErrorActive = true;
+        handImageWarning.gameObject.SetActive(true);
+        yield return new WaitForSeconds(togglingNotebookErrorDuration);
+        handImageWarning.gameObject.SetActive(false);
+        isTogglingNotebookErrorActive = false;
     }
 
     private void UpdateToolImage(int currentToolIndex)
