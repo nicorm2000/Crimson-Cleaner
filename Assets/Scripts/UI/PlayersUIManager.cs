@@ -9,6 +9,7 @@ public class PlayersUIManager : MonoBehaviour
     [Header("Config")]
     [SerializeField] private InputManager inputManager;
     [SerializeField] private CleaningManager cleaningManager;
+    [SerializeField] private WaterBucket waterBucket;
     [SerializeField] private GameStateManager gameStateManager;
     [SerializeField] private GameObject notebook;
     [SerializeField] private string notebookAnimatorOpenHash;
@@ -16,6 +17,7 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private GameObject cleanableListText;
     [SerializeField] private GameObject disposableListText;
     [SerializeField] private float togglingNotebookErrorDuration;
+    [SerializeField] private float togglingWaterBucketErrorDuration;
 
     [Header("Tools UI")]
     [SerializeField] private GameObject reticle;
@@ -49,6 +51,7 @@ public class PlayersUIManager : MonoBehaviour
     private Coroutine toolDissapearCoroutine;
     private bool isTogglingNotebook = false;
     private bool isTogglingNotebookErrorActive = false;
+    private bool isTogglingWaterBucketErrorActive = false;
 
     private void OnEnable()
     {
@@ -56,6 +59,7 @@ public class PlayersUIManager : MonoBehaviour
         gameStateManager.GameLost += TriggerLostUI;
         gameStateManager.GameWon += TriggerWinUI;
         cleaningManager.GetToolSelector().OnToolSwitched += HandleToolSwitched;
+        waterBucket.WaterBucketUnavailable += OnToggleWaterbucketNotAvailiable;
 
         foreach (Clean cleanableObject in gameStateManager.CleanableObjects)
         {
@@ -75,6 +79,7 @@ public class PlayersUIManager : MonoBehaviour
         gameStateManager.GameLost -= TriggerLostUI;
         gameStateManager.GameWon -= TriggerWinUI;
         cleaningManager.GetToolSelector().OnToolSwitched -= HandleToolSwitched;
+        waterBucket.WaterBucketUnavailable -= OnToggleWaterbucketNotAvailiable;
 
         foreach (Clean cleanableObject in gameStateManager.CleanableObjects)
         {
@@ -148,7 +153,7 @@ public class PlayersUIManager : MonoBehaviour
         else
         {
             if (!isTogglingNotebookErrorActive)
-                StartCoroutine(ToggleNotebookNotAvailiable());
+                StartCoroutine(ShowWarning(handImageWarning, togglingNotebookErrorDuration));
         }
     }
 
@@ -169,13 +174,24 @@ public class PlayersUIManager : MonoBehaviour
         isTogglingNotebook = false;
     }
 
-    private IEnumerator ToggleNotebookNotAvailiable()
+    private void OnToggleWaterbucketNotAvailiable()
     {
-        isTogglingNotebookErrorActive = true;
-        handImageWarning.gameObject.SetActive(true);
-        yield return new WaitForSeconds(togglingNotebookErrorDuration);
-        handImageWarning.gameObject.SetActive(false);
-        isTogglingNotebookErrorActive = false;
+        if (!isTogglingWaterBucketErrorActive)
+            StartCoroutine(ShowWarning(new[] {mopImageWarning, spongeImageWarning}, togglingWaterBucketErrorDuration));
+    }
+
+    private IEnumerator ShowWarning(Image warningImage, float duration)
+    {
+        warningImage.gameObject.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        warningImage.gameObject.SetActive(false);
+    }
+
+    private IEnumerator ShowWarning(Image[] warningImage, float duration)
+    {
+        foreach (Image warningImageItem in warningImage) warningImageItem.gameObject.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        foreach (Image warningImageItem in warningImage) warningImageItem.gameObject.SetActive(false);
     }
 
     private void UpdateToolImage(int currentToolIndex)

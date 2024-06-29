@@ -21,6 +21,7 @@ public class WaterBucket : Interactable, ICleanable
     public float WaterPercentage { get; private set; }
 
     public event Action Cleaned;
+    public event Action WaterBucketUnavailable;
 
     private Renderer _renderer;
     private Renderer _rendererWater;
@@ -57,7 +58,11 @@ public class WaterBucket : Interactable, ICleanable
         int currentToolIndex = cleaningManager.GetToolSelector().CurrentToolIndex;
         int dirtyPercentage = cleaningManager.GetToolSelector().GetDirtyPercentage(currentToolIndex);
 
-        if (cleaningManager.GetToolSelector().CurrentToolIndex == 2) return;
+        if (cleaningManager.GetToolSelector().CurrentToolIndex == 2)
+        {
+            WaterBucketUnavailable?.Invoke();
+            return;
+        }
 
         if (dirtyPercentage == 0) return;
 
