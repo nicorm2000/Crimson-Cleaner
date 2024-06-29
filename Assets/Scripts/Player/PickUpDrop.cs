@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PickUpDrop : MonoBehaviour
@@ -21,6 +22,8 @@ public class PickUpDrop : MonoBehaviour
     private ObjectGrabbable ObjectGrabbable;
     private float currentThrowingForce;
     private bool isChargingThrow;
+
+    public event Action PickUpUnavailableEvent;
 
     private void OnEnable()
     {
@@ -65,6 +68,10 @@ public class PickUpDrop : MonoBehaviour
         {
             audioManager.PlaySound(grabDropEvent);
             DropObject();
+        }
+        else
+        {
+            PickUpUnavailableEvent?.Invoke();
         }
     }
 

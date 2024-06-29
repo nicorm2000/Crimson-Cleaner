@@ -10,6 +10,7 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private InputManager inputManager;
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private WaterBucket waterBucket;
+    [SerializeField] private PickUpDrop pickUpDrop;
     [SerializeField] private GameStateManager gameStateManager;
     [SerializeField] private GameObject notebook;
     [SerializeField] private string notebookAnimatorOpenHash;
@@ -18,6 +19,7 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private GameObject disposableListText;
     [SerializeField] private float togglingNotebookErrorDuration;
     [SerializeField] private float togglingWaterBucketErrorDuration;
+    [SerializeField] private float pickUpErrorDuration;
 
     [Header("Tools UI")]
     [SerializeField] private GameObject reticle;
@@ -49,9 +51,10 @@ public class PlayersUIManager : MonoBehaviour
     private List<GameObject> disposalTextElements = new();
 
     private Coroutine toolDissapearCoroutine;
+    private Coroutine notebookWarningCoroutine;
+    private Coroutine waterBucketWarningCoroutine;
+    private Coroutine pickUpWarningCoroutine;
     private bool isTogglingNotebook = false;
-    private bool isTogglingNotebookErrorActive = false;
-    private bool isTogglingWaterBucketErrorActive = false;
 
     private void OnEnable()
     {
@@ -59,7 +62,8 @@ public class PlayersUIManager : MonoBehaviour
         gameStateManager.GameLost += TriggerLostUI;
         gameStateManager.GameWon += TriggerWinUI;
         cleaningManager.GetToolSelector().OnToolSwitched += HandleToolSwitched;
-        waterBucket.WaterBucketUnavailable += OnToggleWaterbucketNotAvailiable;
+        waterBucket.WaterBucketUnavailable += OnToggleWaterbucketUnavailiable;
+        pickUpDrop.PickUpUnavailableEvent += OnPickUpUnavailable;
 
         foreach (Clean cleanableObject in gameStateManager.CleanableObjects)
         {
@@ -79,7 +83,8 @@ public class PlayersUIManager : MonoBehaviour
         gameStateManager.GameLost -= TriggerLostUI;
         gameStateManager.GameWon -= TriggerWinUI;
         cleaningManager.GetToolSelector().OnToolSwitched -= HandleToolSwitched;
-        waterBucket.WaterBucketUnavailable -= OnToggleWaterbucketNotAvailiable;
+        waterBucket.WaterBucketUnavailable -= OnToggleWaterbucketUnavailiable;
+        pickUpDrop.PickUpUnavailableEvent -= OnPickUpUnavailable;
 
         foreach (Clean cleanableObject in gameStateManager.CleanableObjects)
         {
@@ -152,8 +157,11 @@ public class PlayersUIManager : MonoBehaviour
         }
         else
         {
-            if (!isTogglingNotebookErrorActive)
-                StartCoroutine(ShowWarning(handImageWarning, togglingNotebookErrorDuration));
+            if (notebookWarningCoroutine != null)
+            {
+                StopCoroutine(notebookWarningCoroutine);
+            }
+            notebookWarningCoroutine = StartCoroutine(ShowWarning(handImageWarning, togglingNotebookErrorDuration));
         }
     }
 
@@ -174,10 +182,22 @@ public class PlayersUIManager : MonoBehaviour
         isTogglingNotebook = false;
     }
 
-    private void OnToggleWaterbucketNotAvailiable()
+    private void OnToggleWaterbucketUnavailiable()
     {
-        if (!isTogglingWaterBucketErrorActive)
-            StartCoroutine(ShowWarning(new[] {mopImageWarning, spongeImageWarning}, togglingWaterBucketErrorDuration));
+        if (waterBucketWarningCoroutine != null)
+        {
+            StopCoroutine(waterBucketWarningCoroutine);
+        }
+        waterBucketWarningCoroutine = StartCoroutine(ShowWarning(new[] { mopImageWarning, spongeImageWarning }, togglingWaterBucketErrorDuration));
+    }
+    
+    private void OnPickUpUnavailable()
+    {
+        if (pickUpWarningCoroutine != null)
+        {
+            StopCoroutine(pickUpWarningCoroutine);
+        }
+        pickUpWarningCoroutine = StartCoroutine(ShowWarning(handImageWarning, pickUpErrorDuration));
     }
 
     private IEnumerator ShowWarning(Image warningImage, float duration)
