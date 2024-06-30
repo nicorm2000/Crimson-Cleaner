@@ -42,12 +42,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject controlsTabPanel = null;
     [SerializeField] private Slider mouseSensitivityXSlider = null;
     [SerializeField] private Slider mouseSensitivityYSlider = null;
-
-    [Header("Job Finished")]
-    [SerializeField] private Button backToLobbyJFButton = null;
-
-    [Header("Job Unfinished")]
-    [SerializeField] private Button backToLobbyJUButton = null;
     
     [Header("Tutorial")]
     [SerializeField] private GameObject tutorialImage;
@@ -92,12 +86,6 @@ public class UIManager : MonoBehaviour
         mouseSensitivityYSlider.value = sensitivitySettings.sensitivityY;
         mouseSensitivityXSlider.maxValue = sensitivitySettings.maxSensitivityX;
         mouseSensitivityYSlider.maxValue = sensitivitySettings.maxSensitivityY;
-
-        //Job Finished
-        backToLobbyJFButton.onClick.AddListener(() => { MySceneManager.Instance.LoadSceneByName(lobbySceneName); audioManager.PlaySound(clickEvent); });
-
-        //Job Unfinished
-        backToLobbyJUButton.onClick.AddListener(() => { MySceneManager.Instance.LoadSceneByName(lobbySceneName); audioManager.PlaySound(clickEvent); });
 
         //Tutorial
         tutorialImage.SetActive(false);

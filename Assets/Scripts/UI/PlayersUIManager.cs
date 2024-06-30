@@ -39,13 +39,23 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private Image spongeImageWarning;
     [SerializeField] private Image handImageWarning;
 
+    [Header("Back To Lobby")]
+    [SerializeField] private GameObject backToLobbyPanel = null;
+    [SerializeField] private Button backToLobbyFinishedButton = null;
+    [SerializeField] private Button backToLobbyUnfinishedButton = null;
+    [SerializeField] private Button yesBackToLobbyButton = null;
+    [SerializeField] private Button noBackToLobbyButton = null;
+    [SerializeField] private string lobbySceneName = null;
+
+    [Header("Job State")]
+    [SerializeField] GameObject jobFinished;
+    [SerializeField] GameObject jobUnfinished;
+
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
     [SerializeField] private string openNotebookEvent = null;
     [SerializeField] private string closeNotebookEvent = null;
-
-    public GameObject jobFinished;
-    public GameObject jobUnfinished;
+    [SerializeField] private string clickEvent = null;
 
     private bool _cleaningListState = false;
     private List<GameObject> cleaningTextElements = new();
@@ -62,12 +72,20 @@ public class PlayersUIManager : MonoBehaviour
 
     private void OnEnable()
     {
+        backToLobbyPanel.SetActive(false);
+
         inputManager.CleaningListEvent += OnCleaningListEvent;
         gameStateManager.GameLost += TriggerLostUI;
         gameStateManager.GameWon += TriggerWinUI;
         cleaningManager.GetToolSelector().OnToolSwitched += HandleToolSwitched;
         waterBucket.WaterBucketUnavailable += OnToggleWaterbucketUnavailiable;
         pickUpDrop.PickUpUnavailableEvent += OnPickUpUnavailable;
+
+        backToLobbyFinishedButton.onClick.AddListener(() => { OpenTab(backToLobbyPanel, true); });
+        backToLobbyUnfinishedButton.onClick.AddListener(() => { OpenTab(backToLobbyPanel, true); });
+        yesBackToLobbyButton.onClick.AddListener(() => { gameStateManager.TransitionToState("DeInit"); MySceneManager.Instance.LoadSceneByName(lobbySceneName); });
+        noBackToLobbyButton.onClick.AddListener(() => { OpenTab(backToLobbyPanel, false); });
+
 
         foreach (Clean cleanableObject in gameStateManager.CleanableObjects)
         {
@@ -140,6 +158,12 @@ public class PlayersUIManager : MonoBehaviour
             StartCoroutine(ToggleNotebookState());
             cleaningListAnimator.SetBool(notebookAnimatorOpenHash, _cleaningListState);
         }
+    }
+
+    private void OpenTab(GameObject go, bool state)
+    {
+        go.SetActive(state);
+        audioManager.PlaySound(clickEvent);
     }
 
     private void OnCleaningListEvent()
