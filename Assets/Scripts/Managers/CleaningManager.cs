@@ -31,7 +31,9 @@ public class CleaningManager : MonoBehaviour
     [SerializeField] private LayerMask spongeLayerMask;
     [SerializeField] private float interactionDistance;
     [SerializeField] private ParticleSystem mopCleaningParticles;
-    [SerializeField] private ParticleSystem sponeCleaningParticles;
+    [SerializeField] private ParticleSystem spongeCleaningParticles;
+    [SerializeField] private CleaningToolReceiver mopToolReceiver;
+    [SerializeField] private CleaningToolReceiver spongeToolReceiver;
 
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
@@ -68,5 +70,7 @@ public class CleaningManager : MonoBehaviour
     public string GetSpongeWooshEvent() => spongeWooshEvent;
     public string GetCleanedEvent() => cleanedEvent;
     public ParticleSystem GetMopParticles() => mopCleaningParticles;
-    public ParticleSystem GetSpongeParticles() => sponeCleaningParticles;
+    public ParticleSystem GetSpongeParticles() => spongeCleaningParticles;
+    public CleaningToolReceiver GetMopToolReceiver() => mopToolReceiver;
+    public CleaningToolReceiver GetSpongeToolReceiver() => spongeToolReceiver;
 }

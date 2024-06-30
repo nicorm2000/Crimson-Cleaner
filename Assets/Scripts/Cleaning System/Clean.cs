@@ -1,8 +1,6 @@
 using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 public class Clean : MonoBehaviour, ICleanable
 {
@@ -56,14 +54,6 @@ public class Clean : MonoBehaviour, ICleanable
         StopCleaning();
     }
 
-    private void Update()
-    {
-        if (_isCleaning && !isCleaned)
-        {
-            CleanSurface();
-        }
-    }
-
     private void HandleCleanEvent(bool startCleaning)
     {
         if (startCleaning)
@@ -93,6 +83,20 @@ public class Clean : MonoBehaviour, ICleanable
             StopCoroutine(_coroutine);
             _coroutine = null;
         }
+        ResetCurrentCleanableObject();
+    }
+
+    private void ResetCurrentCleanableObject()
+    {
+        int currentToolIndex = cleaningManager.GetToolSelector().CurrentToolIndex;
+        if (currentToolIndex == 0)
+        {
+            cleaningManager.GetMopToolReceiver().SetCurrentCleanableObject(null);
+        }
+        else if (currentToolIndex == 1)
+        {
+            cleaningManager.GetSpongeToolReceiver().SetCurrentCleanableObject(null);
+        }
     }
 
     private void SetToolAnimator(bool isCleaning)
@@ -115,56 +119,46 @@ public class Clean : MonoBehaviour, ICleanable
         }
     }
 
-    private IEnumerator CleaningCoroutine(int toolIndex)
+    public void PerformCleaning()
     {
-        Debug.Log("Cleaning.");
-        while (_isCleaning)
+        if (!_isCleaning || isCleaned) return;
+
+        if (!CanContinueCleaning())
         {
-            if (!CanContinueCleaning())
-            {
-                StopCleaning();
-                yield break;
-            }
+            StopCleaning();
+            return;
+        }
 
-            UpdateMaterialAndDirtyPercentage(toolIndex);
+        UpdateMaterialAndDirtyPercentage(cleaningManager.GetToolSelector().CurrentToolIndex);
 
-            if (cleaningManager.GetToolSelector().CurrentToolIndex == 0)
-            {
-                audioManager.PlaySound(cleaningManager.GetMopEvent());
-                cleaningManager.GetMopParticles().Play();
-            }
-            else if (cleaningManager.GetToolSelector().CurrentToolIndex == 1)
-            {
-                audioManager.PlaySound(cleaningManager.GetSpongeEvent());
-                cleaningManager.GetSpongeParticles().Play();
-            }
+        if (cleaningManager.GetToolSelector().CurrentToolIndex == 0)
+        {
+            audioManager.PlaySound(cleaningManager.GetMopEvent());
+            cleaningManager.GetMopParticles().Play();
+        }
+        else if (cleaningManager.GetToolSelector().CurrentToolIndex == 1)
+        {
+            audioManager.PlaySound(cleaningManager.GetSpongeEvent());
+            cleaningManager.GetSpongeParticles().Play();
+        }
 
-            switch (_currentMaterialIndex)
-            {
-                case 0:
-                    _currentMaterialIndex = 1;
-                    _currentUIIndex = 0.75f;
-                    break;
-                case 1:
-                    _currentMaterialIndex = 2;
-                    _currentUIIndex = 0.5f;
-                    break;
-                case 2:
-                    _currentMaterialIndex = 3;
-                    _currentUIIndex = 0.25f;
-                    break;
-                case 3:
-                    FinishCleaning();
-                    yield break;
-            }
-
-            yield return new WaitForSeconds(_cleaningInterval);
-
-            if (!CanContinueCleaning())
-            {
-                StopCleaning();
-                yield break;
-            }
+        switch (_currentMaterialIndex)
+        {
+            case 0:
+                _currentMaterialIndex = 1;
+                _currentUIIndex = 0.75f;
+                break;
+            case 1:
+                _currentMaterialIndex = 2;
+                _currentUIIndex = 0.5f;
+                break;
+            case 2:
+                _currentMaterialIndex = 3;
+                _currentUIIndex = 0.25f;
+                break;
+            case 3:
+                FinishCleaning();
+                return;
         }
     }
 
@@ -175,7 +169,6 @@ public class Clean : MonoBehaviour, ICleanable
 
     private void UpdateMaterialAndDirtyPercentage(int toolIndex)
     {
-        Debug.Log("Updating Material");
         UpdateMaterial(_currentMaterialIndex);
         cleaningManager.GetToolSelector().IncrementDirtyPercentage(toolIndex, cleaningManager.DirtyIncrementAmount);
     }
@@ -183,7 +176,6 @@ public class Clean : MonoBehaviour, ICleanable
     private void FinishCleaning()
     {
         audioManager.PlaySound(cleaningManager.GetCleanedEvent());
-        Debug.Log("Cleaned");
         _currentUIIndex = 0.0f;
         isCleaned = true;
         Cleaned?.Invoke();
@@ -191,49 +183,52 @@ public class Clean : MonoBehaviour, ICleanable
         StopCleaning();
     }
 
-    private void CleanSurface()
+    public void CleanSurface()
     {
-        Vector3 mousePosition = Mouse.current.position.ReadValue();
-        Ray ray = cleaningManager.GetCamera().ScreenPointToRay(mousePosition);
+        AssignCleanableObject();
+    }
 
-        if (Physics.Raycast(ray, out RaycastHit hit, cleaningManager.GetInteractionDistance()))
+    private void AssignCleanableObject()
+    {
+        int currentToolIndex = cleaningManager.GetToolSelector().CurrentToolIndex;
+
+        LayerMask mopLayer = cleaningManager.GetMopLayerMask();
+        LayerMask spongeLayer = cleaningManager.GetSpongeLayerMask();
+
+        if (currentToolIndex == 0) // Mop
         {
-            if (hit.transform != gameObject.transform) return;
-
-            int currentToolIndex = cleaningManager.GetToolSelector().CurrentToolIndex;
-
-            if (cleaningManager.GetToolSelector().GetDirtyPercentage(currentToolIndex) < cleaningManager.DirtyMaxValue)
+            if ((mopLayer.value & (1 << gameObject.layer)) != 0)
             {
-                LayerMask mopLayer = cleaningManager.GetMopLayerMask();
-                LayerMask spongeLayer = cleaningManager.GetSpongeLayerMask();
-
-                if (currentToolIndex == 0) // Mop
-                {
-                    if ((mopLayer.value & (1 << hit.transform.gameObject.layer)) != 0)
-                        _coroutine ??= StartCoroutine(CleaningCoroutine(currentToolIndex));
-                    else
-                        WrongToolSponge?.Invoke();
-                    
-                }
-                else if (currentToolIndex == 1) // Sponge
-                {
-                    if ((spongeLayer.value & (1 << hit.transform.gameObject.layer)) != 0)
-                        _coroutine ??= StartCoroutine(CleaningCoroutine(currentToolIndex));
-                    else
-                        WrongToolMop?.Invoke();
-                }
-                else if (currentToolIndex == 2)
-                {
-                    if ((mopLayer.value & (1 << hit.transform.gameObject.layer)) != 0)
-                        WrongToolMop?.Invoke();
-                    else if ((spongeLayer.value & (1 << hit.transform.gameObject.layer)) != 0)
-                        WrongToolSponge?.Invoke();
-                }
-                else
-                {
-                    Debug.Log("Tool is too dirty to clean");
-                }
+                PerformCleaning();
             }
+            else
+            {
+                WrongToolSponge?.Invoke();
+                ResetCurrentCleanableObject();
+            }
+        }
+        else if (currentToolIndex == 1) // Sponge
+        {
+            if ((spongeLayer.value & (1 << gameObject.layer)) != 0)
+            {
+                PerformCleaning();
+            }
+            else
+            {
+                WrongToolMop?.Invoke();
+                ResetCurrentCleanableObject();
+            }
+        }
+        else if (currentToolIndex == 2)
+        {
+            if ((mopLayer.value & (1 << gameObject.layer)) != 0)
+                WrongToolMop?.Invoke();
+            else if ((spongeLayer.value & (1 << gameObject.layer)) != 0)
+                WrongToolSponge?.Invoke();
+        }
+        else
+        {
+            Debug.Log("Tool is too dirty to clean");
         }
     }
 
