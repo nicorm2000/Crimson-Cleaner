@@ -14,11 +14,6 @@ public class CleaningToolReceiver : MonoBehaviour
         currentCleanableObject = cleanableObject;
     }
 
-    private void Update()
-    {
-        Debug.Log(currentCleanableObject);
-    }
-
     public void MoveToolEvent()
     {
         int currentToolIndex = cleaningManager.GetToolSelector().CurrentToolIndex;
