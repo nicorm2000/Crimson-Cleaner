@@ -1,23 +1,8 @@
 using UnityEngine;
 using System.Collections;
 
-public class BloodSplashManager : MonoBehaviour
+public class BloodSplashManager : MonoBehaviourSingleton<BloodSplashManager>
 {
-    public static BloodSplashManager Instance;
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     public void CreateBloodSplash(Vector3 position, Quaternion rotation, ParticleSystem bloodSplashParticles, GameObject bloodStainPrefab, float stainLifetime, float stainOffset)
     {
         ParticleSystem splash = Instantiate(bloodSplashParticles, position, rotation);
