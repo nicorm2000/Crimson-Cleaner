@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public interface IGameState
@@ -192,6 +193,7 @@ public class WinState : IGameState
     public void EnterState(GameStateManager gameStateManager)
     {
         gameStateManager.inputManager.ShowCursor();
+        gameStateManager.inputManager.ToggleGameplayMap(false);
 
         Debug.Log("Player won the game");
         gameStateManager.TriggerWinEvent();
@@ -218,6 +220,7 @@ public class LoseState : IGameState
 
         Debug.Log("Player lost the game");
         gameStateManager.TriggerLoseEvent();
+        gameStateManager.inputManager.ToggleGameplayMap(false);
 
         gameStateManager.TransitionToState("DeInit");
     }
