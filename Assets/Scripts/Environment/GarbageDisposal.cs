@@ -17,19 +17,21 @@ public class GarbageDisposal : MonoBehaviour
 
     public void DestroyBoxContents()
     {
-        RaycastHit[] trash = Physics.BoxCastAll(coll.transform.position,
-                                                coll.size,
-                                                Vector3.forward);
+        Vector3 boxCenter = coll.transform.position;
+        Vector3 boxHalfExtents = coll.size * 0.5f;
 
-        if (trash.Length > 0)
+        Debug.Log("Box Center: " + boxCenter);
+        Debug.Log("Box Half Extents: " + boxHalfExtents);
+
+        Collider[] hitColliders = Physics.OverlapBox(boxCenter, boxHalfExtents);
+
+        foreach (Collider hitCollider in hitColliders)
         {
-            foreach (RaycastHit raycastHits in trash)
+            DisposableObject disposableObject = hitCollider.GetComponent<DisposableObject>();
+            if (disposableObject)
             {
-                DisposableObject disposableObject = raycastHits.transform.GetComponent<DisposableObject>();
-                if (disposableObject)
-                {
-                    disposableObject.TriggerDisposal();
-                }
+                Debug.Log("Hit Object: " + disposableObject.gameObject.name);
+                disposableObject.TriggerDisposal();
             }
         }
     }
