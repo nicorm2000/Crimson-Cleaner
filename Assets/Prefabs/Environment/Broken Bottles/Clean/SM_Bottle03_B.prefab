@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -1127989039036493581}
   - component: {fileID: 90688765981457509}
   - component: {fileID: 4420048831417127548}
+  - component: {fileID: -3096918380426389389}
   m_Layer: 8
   m_Name: SM_Bottle03_B
   m_TagString: Trash
@@ -105,7 +106,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1267267884192113011, guid: 73cb23c31c65d2847baf06237e392407, type: 3}
 --- !u!54 &90688765981457509
@@ -159,4 +160,17 @@ MonoBehaviour:
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
   audioManager: {fileID: 0}
   breakBottleEvent: Bottle_Breaking
-  isObjectBreakable: 1
+  isObjectBreakable: 0
+--- !u!114 &-3096918380426389389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318072246120280093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b1c6b7bdcbaa74fa6fb0dcb9c46e7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  breakablePieces: []

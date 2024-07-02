@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4406087637826110916}
   - component: {fileID: 1986584094181320127}
   - component: {fileID: 5759686495242103964}
-  - component: {fileID: 7664984997479493288}
   - component: {fileID: 1552265171496330943}
   m_Layer: 8
   m_Name: Clean Bottle 3
@@ -133,22 +132,9 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -52885452023907196, guid: 089b4149fc09abb469a4a30302672551, type: 3}
---- !u!114 &7664984997479493288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1232310466909924436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82b1c6b7bdcbaa74fa6fb0dcb9c46e7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  breakablePieces: []
 --- !u!114 &1552265171496330943
 MonoBehaviour:
   m_ObjectHideFlags: 0

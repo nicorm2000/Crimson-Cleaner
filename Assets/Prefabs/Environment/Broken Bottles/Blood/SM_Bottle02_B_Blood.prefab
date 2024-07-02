@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -8524758947738893682}
   - component: {fileID: 8704830018018379101}
   - component: {fileID: 7593127501036669284}
+  - component: {fileID: -3131551408461584674}
   m_Layer: 8
   m_Name: SM_Bottle02_B_Blood
   m_TagString: Trash
@@ -105,7 +106,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6380067371244566821, guid: 18a7d06dcf6836844b72e12ecf1be363, type: 3}
 --- !u!54 &8704830018018379101
@@ -159,4 +160,17 @@ MonoBehaviour:
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
   audioManager: {fileID: 0}
   breakBottleEvent: Bottle_Breaking
-  isObjectBreakable: 1
+  isObjectBreakable: 0
+--- !u!114 &-3131551408461584674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999723496010205143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b1c6b7bdcbaa74fa6fb0dcb9c46e7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  breakablePieces: []
