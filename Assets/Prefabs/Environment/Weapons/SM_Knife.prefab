@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5504213195659556211}
   - component: {fileID: 1129222973256754744}
   - component: {fileID: 7652103592450649652}
+  - component: {fileID: 5442449589857942129}
   m_Layer: 8
   m_Name: SM_Knife
   m_TagString: Trash
@@ -160,3 +161,16 @@ MonoBehaviour:
   audioManager: {fileID: 0}
   breakBottleEvent: 
   isObjectBreakable: 0
+--- !u!114 &5442449589857942129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7391136648523354882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b1c6b7bdcbaa74fa6fb0dcb9c46e7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  breakablePieces: []

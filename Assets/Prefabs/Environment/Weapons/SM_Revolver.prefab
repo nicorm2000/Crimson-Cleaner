@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5563517052864645923}
   - component: {fileID: 4396350821286994380}
   - component: {fileID: 1418815338224905742}
+  - component: {fileID: 7146852976283646305}
   m_Layer: 8
   m_Name: SM_Revolver
   m_TagString: Trash
@@ -160,3 +161,16 @@ MonoBehaviour:
   audioManager: {fileID: 0}
   breakBottleEvent: 
   isObjectBreakable: 0
+--- !u!114 &7146852976283646305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237711086050227984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b1c6b7bdcbaa74fa6fb0dcb9c46e7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  breakablePieces: []
