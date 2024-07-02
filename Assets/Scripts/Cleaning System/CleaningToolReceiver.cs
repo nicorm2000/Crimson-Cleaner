@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,9 @@ public class CleaningToolReceiver : MonoBehaviour
     [SerializeField] private AudioManager audioManager = null;
 
     private Clean currentCleanableObject;
+
+    public event Action ToolDirty;
+
 
     public void SetCurrentCleanableObject(Clean cleanableObject)
     {
@@ -51,6 +55,10 @@ public class CleaningToolReceiver : MonoBehaviour
                     }
                     currentCleanableObject.CleanSurface();
                 }
+            }
+            else
+            {
+                ToolDirty?.Invoke();
             }
         }
         else

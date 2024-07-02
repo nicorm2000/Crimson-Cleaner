@@ -226,10 +226,6 @@ public class Clean : MonoBehaviour, ICleanable
             else if ((spongeLayer.value & (1 << gameObject.layer)) != 0)
                 WrongToolSponge?.Invoke();
         }
-        else
-        {
-            Debug.Log("Tool is too dirty to clean");
-        }
     }
 
     private void UpdateMaterial(int materialIndex)

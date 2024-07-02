@@ -21,6 +21,10 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private float togglingWaterBucketErrorDuration;
     [SerializeField] private float pickUpErrorDuration;
     [SerializeField] private float wrongToolErrorDuration;
+    [SerializeField] private float dirtyToolErrorDuration;
+
+    [Header("Tools")]
+    [SerializeField] private CleaningToolReceiver[] cleaningToolReceivers;
 
     [Header("Tools UI")]
     [SerializeField] private GameObject reticle;
@@ -38,6 +42,7 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private Image mopImageWarning;
     [SerializeField] private Image spongeImageWarning;
     [SerializeField] private Image handImageWarning;
+    [SerializeField] private Image bucketImageWarning;
 
     [Header("Back To Lobby")]
     [SerializeField] private GameObject backToLobbyPanel = null;
@@ -68,6 +73,7 @@ public class PlayersUIManager : MonoBehaviour
     private Coroutine wrongToolCleaningWarningCoroutine;
     private Coroutine wrongToolMopCleaningWarningCoroutine;
     private Coroutine wrongToolSpongeCleaningWarningCoroutine;
+    private Coroutine toolDirtyWarningCoroutine;
     private bool isTogglingNotebook = false;
 
     private void OnEnable()
@@ -91,14 +97,19 @@ public class PlayersUIManager : MonoBehaviour
         {
             cleanableObject.GetComponent<Clean>().CleanedGO += UpdateCleaningList;
             cleanableObject.GetComponent<Clean>().WrongTool += () => OnWrongToolWarning(ref wrongToolCleaningWarningCoroutine, new[] { mopImageWarning, spongeImageWarning }, wrongToolErrorDuration);
-            cleanableObject.GetComponent<Clean>().WrongToolMop += () => OnWrongToolWarning(ref wrongToolMopCleaningWarningCoroutine, mopImageWarning, wrongToolErrorDuration);
-            cleanableObject.GetComponent<Clean>().WrongToolSponge += () => OnWrongToolWarning(ref wrongToolSpongeCleaningWarningCoroutine, spongeImageWarning, wrongToolErrorDuration);
+            cleanableObject.GetComponent<Clean>().WrongToolMop += () => OnToolWarning(ref wrongToolMopCleaningWarningCoroutine, mopImageWarning, wrongToolErrorDuration);
+            cleanableObject.GetComponent<Clean>().WrongToolSponge += () => OnToolWarning(ref wrongToolSpongeCleaningWarningCoroutine, spongeImageWarning, wrongToolErrorDuration);
         }
 
         foreach (DisposableObject disposableObject in gameStateManager.DisposableObjects)
         {
             disposableObject.GetComponent<DisposableObject>().DisposedGO += UpdateDisposableList;
             disposableObject.GetComponent<DisposableObject>().Broken += UpdateDisposableListMultiple;
+        }
+
+        foreach (var tool in cleaningToolReceivers)
+        {
+            tool.ToolDirty += () => OnToolWarning(ref toolDirtyWarningCoroutine, bucketImageWarning, dirtyToolErrorDuration);
         }
     }
 
@@ -117,8 +128,8 @@ public class PlayersUIManager : MonoBehaviour
             {
                 cleanableObject.GetComponent<Clean>().CleanedGO -= UpdateCleaningList;
                 cleanableObject.GetComponent<Clean>().WrongTool -= () => OnWrongToolWarning(ref wrongToolCleaningWarningCoroutine, new[] { mopImageWarning, spongeImageWarning }, wrongToolErrorDuration);
-                cleanableObject.GetComponent<Clean>().WrongToolMop -= () => OnWrongToolWarning(ref wrongToolMopCleaningWarningCoroutine, mopImageWarning, wrongToolErrorDuration);
-                cleanableObject.GetComponent<Clean>().WrongToolSponge -= () => OnWrongToolWarning(ref wrongToolSpongeCleaningWarningCoroutine, spongeImageWarning, wrongToolErrorDuration);
+                cleanableObject.GetComponent<Clean>().WrongToolMop -= () => OnToolWarning(ref wrongToolMopCleaningWarningCoroutine, mopImageWarning, wrongToolErrorDuration);
+                cleanableObject.GetComponent<Clean>().WrongToolSponge -= () => OnToolWarning(ref wrongToolSpongeCleaningWarningCoroutine, spongeImageWarning, wrongToolErrorDuration);
             }
         }
 
@@ -129,6 +140,11 @@ public class PlayersUIManager : MonoBehaviour
                 disposableObject.GetComponent<DisposableObject>().DisposedGO -= UpdateDisposableList;
                 disposableObject.GetComponent<DisposableObject>().Broken -= UpdateDisposableListMultiple;
             }
+        }
+
+        foreach (var tool in cleaningToolReceivers)
+        {
+            tool.ToolDirty -= () => OnToolWarning(ref toolDirtyWarningCoroutine, bucketImageWarning, dirtyToolErrorDuration);
         }
     }
 
@@ -236,7 +252,7 @@ public class PlayersUIManager : MonoBehaviour
         pickUpWarningCoroutine = StartCoroutine(ShowWarning(handImageWarning, pickUpErrorDuration));
     }
 
-    private void OnWrongToolWarning(ref Coroutine warningCoroutine, Image toolImageWarning, float warningDuration)
+    private void OnToolWarning(ref Coroutine warningCoroutine, Image toolImageWarning, float warningDuration)
     {
         if (warningCoroutine != null)
         {
