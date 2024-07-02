@@ -8966,8 +8966,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 255585706}
   m_HandleRect: {fileID: 255585705}
   m_Direction: 2
-  m_Value: 0.9999977
-  m_Size: 0.05
+  m_Value: 0.9999998
+  m_Size: 0.03
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9277,7 +9277,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415518361}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9285,8 +9285,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.02358156}
-  m_SizeDelta: {x: 0, y: 12000}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 20000}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1415518363
 MonoBehaviour:
@@ -9308,7 +9308,66 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "Programming\r\n-UI\r\n--Tutorial (Explaining how to play) \r\n--Intro
+    pop up tutorial\r\n--New Pause Menu\r\n--Money Pop up\r\n--Loading Screen UI\r\n--UI
+    feedback when \r\n---using wrong tools/ hands free while cleaning\r\n---using
+    water bucket with empty hands\r\n---using notebook with tools selected\r\n-New
+    Systems\r\n--Light Switches\r\n--Water Fill\r\n--Water that spills water based
+    on rotation\r\n--Money\r\n--Some disposable items can break\r\n--Tool sway\r\n--Tool
+    Bobbing\r\n--Footstep\r\n--Immersive interactable environment\r\n---Toilets and
+    Urinals\r\n--UV Light swap material logic\r\n--Water bucket gets dirty\r\n--Loading
+    Screen\r\n--Base Settings Menu\r\n---Settings tab modify mouse sensitivity X\r\n---Settings
+    tab modify mouse sensitivity Y\r\n---In Game:\r\n----Confirmation for Quitting
+    game or Back to Lobby\r\n--Cleaning tools animations\r\n--Progressive dirtiness
+    in tools\r\n--Post Process effects\r\n--Audio\r\n---Integrate Wwise\r\n---Audio
+    Manager to handle Wwise in Unity\r\n-Audio\r\n-Design and Integrate VFX\r\n--Blood\r\n--Blood
+    splat\r\n--Flles\r\n--Water Splash\r\n--Bubbles\r\n--Smoke\r\n--Mop Bubbles\r\n--Sponge
+    Bubbles\r\n-Integrate Wwise SFX\r\n--Mop Clean\r\n--Sponge Clean\r\n--Open Cart\r\n--Close
+    Cart\r\n--Bathroom Door\r\n--Fire\r\n--Bubbles\r\n--Throw\r\n--UV Lamp\r\n--Bathroom
+    Cubicle Door\r\n--Bar Door\r\n--Money\r\n--Object Cleaned\r\n--Swap Tool\r\n--Water
+    Flow\r\n--Water Tap\r\n--Bottle Breaking\r\n--Open Notebook\r\n--Close Notebook\r\n--Footsteps\r\n--Toilet\r\n--Urinal\r\n-Reworked
+    & Replaced\r\n--Rework Throw System\r\n--Game icon\r\n--Cleaning List\r\n-Removed\r\n--Old
+    Display Controls\r\n-Bug Fixes\r\n--Fix interaction distance UI not being the
+    same\r\n--Fix Idle animation\r\n--Fix UI pause have references in Editor (make
+    them all by code)\r\n--Fix UI main menu have references in Editor (make them
+    all by code)\r\n--Fix UI settings have references in Editor (make them all by
+    code)\r\n--Fix UI screen have references in Editor (make them all by code)\r\n--Fix
+    UI credits have references in Editor (make them all by code)\r\n--Fix UI deep
+    web have references in Editor (make them all by code)\r\n--Fix Main Menu double
+    input bug\r\n--Fix Money picked up visual bug and UI bug\r\n--Fix Changelog to
+    only show once\r\n--Fix Money Pick Up\r\n--Fix Wrong Textures\r\n--Fix Cameras
+    wrongfully set up\r\n--Fix smoke particles\r\n--Fix Forearm bizarre render bug\r\n--Fix
+    interactions bug\r\n--Fix collisions and rigidbodies\r\n--Fix clean mechanic\r\n-Environment
+    Implementation\r\n--Updated Bar\r\n---Implemented all new visuals\r\n---Added
+    collisions\r\n---Added animations\r\n---Added interactions\r\n\r\nArt\r\n--Models\r\n--Corpses
+    modeling\r\n---Torso w/arms\r\n---Torso w/legs and head\r\n--Character modeling\r\n---Clothes/body\r\n---Gloves\r\n---Boots\r\n---Watch\r\n--Finished
+    bar environment props modeling\r\n--Pool\r\n--Pool furniture\r\n--Balls pool\r\n--Triangle
+    pool\r\n--Toilet paper\r\n--Coat Rack\r\n--Sticks pool\r\n--Beer barrel\r\n--Six
+    packs beer\r\n--Men\xFA\r\n--Bar\r\n--Bar high\r\n--Lamps\r\n--Three different
+    bottles\r\n---Wine\r\n---Whiskey\r\n---Beer\r\n--Walls bathroom\r\n--Bench high\r\n--Bench
+    low\r\n--Mirror\r\n--Doors bathroom\r\n--Light switch\r\n--Round tables\r\n--Three
+    different glasses \r\n--Ashtray\r\n--Cash register\r\n--Armchairs\r\n--Lamps\r\n--Tables\r\n--Toilets\r\n--Washbasin\r\n--Chairs\r\n--Fan\r\n--Notebook\r\n--Planes
+    Blood\r\n--Planes fingerprints\r\n-Modular assets for bar environment\r\n--Walls\r\n--Floor\r\n--Roof\r\n-Improve
+    main tools models\r\n--Cart\r\n--Mop\r\n--Bucket\r\n--Drum\r\n--Lamp UV\r\n--Sponge\r\n-Pickable
+    props modeling\r\n--Money\r\n--Broken bottles\r\n--Broken glasses\r\n--Revolver\r\n--Bullets\r\n--Knife\r\n--Machete\r\n--Torso
+    w/ arms\r\n--Torso w/ legs and head\r\n-Character modeling\r\n--Clothes/body\r\n--Gloves\r\n--Boots\r\n--Watch\r\n-UVs
+    and Textures\r\n--Props\r\n---Pool\r\n---Pool furniture\r\n---Balls pool\r\n---Triangle
+    pool\r\n---Toilet paper\r\n---Coat Rack\r\n---Sticks pool\r\n---Beer barrel\r\n---Six
+    packs beer\r\n---Men\xFA\r\n---Bar\r\n---Bar high\r\n---Lamps\r\n---Three different
+    bottles\r\n----Wine\r\n----Whiskey\r\n----Beer\r\n---Walls bathroom\r\n---Bench
+    high\r\n---Bench low\r\n---Mirror\r\n---Doors bathroom\r\n---Light switch\r\n---Round
+    tables\r\n---Three different glasses \r\n---Ashtray\r\n---Cash register\r\n---Armchairs\r\n---Lamps\r\n---Tables\r\n---Toilets\r\n---Washbasin\r\n---Chairs\r\n---Fan\r\n---Notebook\r\n---Planes
+    Blood\r\n---Planes fingerprints\r\n---Walls\r\n---Floor\r\n---Roof\r\n---Cart\r\n---Mop\r\n---Bucket\r\n---Drum\r\n---Lamp
+    UV\r\n---Sponge\r\n---Money\r\n---Broken bottles\r\n---Broken glasses\r\n---Revolver\r\n---Bullets\r\n---Knife\r\n---Machete\r\n---Torso
+    w/ arms\r\n---Torso w/ legs and head\r\n---Clothes/body\r\n---Gloves\r\n---Boots\r\n---Watch\r\n-UI/UX\r\n--Game
+    Logo\r\n--Game Icon\r\n--Character\u2019s visor lens\r\n--Pause\r\n---Menu\r\n---Settings\r\n--Loading
+    level\r\n--Settings\r\n--Tutorial\r\n--Tasks\r\n--Main menu \r\n--Web\r\n-VFX\r\n--Particle
+    System\r\n--Blood Particle System\r\n--Flies Particle System\r\n--Water \r\n---Water
+    Tap System\r\n---Spilled Water Particle System\r\n--Bubbles Particle System\r\n-Audio\r\n--SFX\r\n---Mop
+    Clean\r\n---Sponge Clean\r\n---Open Cart\r\n---Close Cart\r\n---Bathroom Door\r\n---Fire\r\n---Bubbles\r\n---Throw\r\n---UV
+    Lamp\r\n---Bathroom Cubicle Door\r\n---Bar Door\r\n---Money\r\n---Object Cleaned\r\n---Swap
+    Tool\r\n---Water Flow\r\n---Water Tap\r\n---Bottle Breaking\r\n---Open Notebook\r\n---Close
+    Notebook\r\n---Footsteps\r\n---Toilet\r\n---Urinal"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
