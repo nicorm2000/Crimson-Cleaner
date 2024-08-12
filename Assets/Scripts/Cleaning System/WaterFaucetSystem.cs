@@ -94,6 +94,7 @@ public class WaterFaucetSystem : Interactable, IToggable
                         waterBucket.SetWaterState(true);
                         _isOpen = false;
                         animator.SetBool(_openableOpen, _isOpen);
+                        //Add way to stop water when changing scene
                         audioManager.PlaySound(waterFlowStopEvent);
                         waterParticles.Stop();
                         return false;
