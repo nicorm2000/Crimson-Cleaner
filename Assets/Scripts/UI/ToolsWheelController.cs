@@ -17,7 +17,7 @@ public class ToolsWheelController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F1))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             _toolsWheelSelected = !_toolsWheelSelected;
             Cursor.visible = _toolsWheelSelected;
