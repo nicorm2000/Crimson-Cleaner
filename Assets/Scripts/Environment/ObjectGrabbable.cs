@@ -22,6 +22,7 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
 
     private Rigidbody objectRigidBody;
     private Transform objectGrabPointTransform;
+    private Transform playerTransform;
     private Vector3 initialLocalUp;
     private Vector3 initialLocalRight;
     private Vector3 newPosition;
@@ -30,6 +31,9 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     private DisposableObject disposableObject;
     private float lastCollisionTime = -Mathf.Infinity;
     private float initialHeight;
+
+    private int currentAxisIndex = 0; // 0 -> X, 1 -> Y, 2 -> Z
+    private Vector3[] rotationAxes;
 
     public bool IsObjectPickedUp { get; private set; }
     public bool isObjectBreakable = true;
@@ -44,11 +48,17 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
         disposableObject = GetComponent<DisposableObject>();
     }
 
-    public void Grab(Transform ObjectGrabPointTransform)
+    private void Start()
+    {
+        rotationAxes = new Vector3[] { Vector3.right, Vector3.up, Vector3.forward };
+    }
+
+    public void Grab(Transform ObjectGrabPointTransform, Transform playerTransform)
     {
         this.objectGrabPointTransform = ObjectGrabPointTransform;
         objectRigidBody.useGravity = false;
         objectRigidBody.freezeRotation = true;
+        this.playerTransform = playerTransform;
 
         initialLocalUp = transform.up;
         initialLocalRight = transform.right;
@@ -62,6 +72,7 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     {
         objectRigidBody.freezeRotation = false;
         this.objectGrabPointTransform = null;
+        this.playerTransform = null;
         objectRigidBody.useGravity = true;
         objectRigidBody.velocity = (newPosition - lastPosition) * throwingForce;
 
@@ -74,6 +85,7 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     {
         objectRigidBody.freezeRotation = false;
         this.objectGrabPointTransform = null;
+        this.playerTransform = null;
         objectRigidBody.useGravity = true;
 
         objectRigidBody.AddForce(throwDirection * throwingForce, ForceMode.Impulse);
@@ -93,10 +105,48 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
         }
     }
 
-    public void RotateObject(float mouseX, float mouseY)
+    public void RotateObject(float sign)
     {
-        transform.Rotate(initialLocalUp, mouseX * rotationSpeed * Time.deltaTime, Space.World);
-        transform.Rotate(initialLocalRight, mouseY * rotationSpeed * Time.deltaTime, Space.World);
+        //Vector3 rotationAxis = rotationAxes[currentAxisIndex];
+        //float rotationAmount = sign * rotationSpeed * Time.deltaTime;
+        //Quaternion rotation = Quaternion.AngleAxis(rotationAmount, rotationAxis);
+        //transform.rotation = rotation * transform.rotation;
+
+        if (playerTransform == null)
+            return;
+
+        // Obtén los ejes locales del jugador
+        Vector3 playerRight = playerTransform.right;
+        Vector3 playerUp = playerTransform.up;
+        Vector3 playerForward = playerTransform.forward;
+
+        // Elige el eje de rotación basado en el índice actual
+        Vector3 rotationAxis;
+        switch (currentAxisIndex)
+        {
+            case 0: // Eje X
+                rotationAxis = playerRight;
+                break;
+            case 1: // Eje Y
+                rotationAxis = playerUp;
+                break;
+            case 2: // Eje Z
+                rotationAxis = playerForward;
+                break;
+            default:
+                rotationAxis = playerUp;
+                break;
+        }
+
+        // Aplica la rotación en el eje calculado
+        float rotationAmount = sign * rotationSpeed * Time.deltaTime;
+        Quaternion rotation = Quaternion.AngleAxis(rotationAmount, rotationAxis);
+        transform.rotation = rotation * transform.rotation;
+    }
+
+    public void ChangeRotationAxis()
+    {
+        currentAxisIndex = (currentAxisIndex + 1) % 3;
     }
 
     private void OnCollisionEnter(Collision collision)

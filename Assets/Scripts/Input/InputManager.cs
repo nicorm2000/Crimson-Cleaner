@@ -15,7 +15,9 @@ public class InputManager : MonoBehaviour
     public Vector2 Look { get; private set; }
     public bool IsLookInputMouse { get; private set; }
     public bool Crouch { get; private set; }
-    public bool RotateObject { get; private set; }
+    public bool RotatePos { get; private set; }
+    public bool RotateNeg { get; private set; }
+    public bool ChangeRotationAxis;
     public float Scroll { get; private set; }
 
     private InputAction moveAction;
@@ -31,6 +33,9 @@ public class InputManager : MonoBehaviour
     private InputAction selectSecondToolAction;
     private InputAction selectThirdToolAction;
     private InputAction mouseScrollAction;
+    private InputAction changeRotationAxisAction;
+    private InputAction rotatePosAction;
+    private InputAction rotateNegAction;
     private InputAction pauseAction;
     private InputAction tutorialUIAction;
 
@@ -45,6 +50,7 @@ public class InputManager : MonoBehaviour
     public event Action ThrowStartEvent;
     public event Action ThrowEndEvent;
     public event Action PauseEvent;
+    public event Action ChangeRotationAxisEvent;
 
     private bool isCursorVisible = true;
     private bool isCleaning = false;
@@ -69,13 +75,15 @@ public class InputManager : MonoBehaviour
         selectSecondToolAction = gameplayMap.FindAction("SelectSecondTool");
         selectThirdToolAction = gameplayMap.FindAction("SelectThirdTool");
         mouseScrollAction = gameplayMap.FindAction("MouseScroll");
+        rotatePosAction = gameplayMap.FindAction("RotatePos");
+        rotateNegAction = gameplayMap.FindAction("RotateNeg");
+        changeRotationAxisAction = gameplayMap.FindAction("ChangeRotationAxis");
         pauseAction = playerInput.actions.FindAction("Pause");
         tutorialUIAction = playerInput.actions.FindAction("Tutorial");
 
         moveAction.performed += OnMove;
         lookAction.performed += OnLook;
         crouchAction.performed += OnCrouch;
-        rotateObejctAction.performed += OnRotateObject;
         interactAction.performed += OnInteract;
         pickUpAction.performed += OnPickUp;
         throwAction.started += OnThrowStart; // New throw action started
@@ -87,17 +95,22 @@ public class InputManager : MonoBehaviour
         selectSecondToolAction.performed += OnSelectSecondTool;
         selectThirdToolAction.performed += OnSelectThirdTool;
         mouseScrollAction.performed += OnMouseScroll;
+        rotatePosAction.started += ctx => OnRotatePos(true);
+        rotateNegAction.started += ctx => OnRotateNeg(true);
+        changeRotationAxisAction.performed += OnChangeRotationAxis;
         pauseAction.performed += OnPause;
         tutorialUIAction.performed += OnDisplayTutorial;
 
         moveAction.canceled += OnMove;
         lookAction.canceled += OnLook;
         crouchAction.canceled += OnCrouch;
-        rotateObejctAction.canceled += OnRotateObject;
         //lightSwitchAction.canceled += OnToggleLights;
         //openAction.canceled += OnOpen;
         cleanAction.canceled += ctx => OnClean(false);
         //lightSwitchAction.canceled += ctx => OnToggleLights(ctx);
+
+        rotatePosAction.canceled += ctx => OnRotatePos(false);
+        rotateNegAction.canceled += ctx => OnRotateNeg(false);
 
         if (shouldHideCursor) HideCursor();
     }
@@ -140,11 +153,6 @@ public class InputManager : MonoBehaviour
     private void OnCrouch(InputAction.CallbackContext context)
     {
         Crouch = context.ReadValueAsButton();
-    }
-
-    private void OnRotateObject(InputAction.CallbackContext context)
-    {
-        RotateObject = context.ReadValueAsButton();
     }
 
     private void OnInteract(InputAction.CallbackContext context)
@@ -201,6 +209,21 @@ public class InputManager : MonoBehaviour
         Scroll = context.ReadValue<float>();
     }
 
+    private void OnChangeRotationAxis(InputAction.CallbackContext context)
+    {
+        ChangeRotationAxisEvent?.Invoke();
+    }
+
+    private void OnRotatePos(bool active)
+    {
+        RotatePos = active;
+    }
+    
+    private void OnRotateNeg(bool active)
+    {
+        RotateNeg = active;
+    }
+    
     private void OnPause(InputAction.CallbackContext context)
     {
         PauseEvent?.Invoke();

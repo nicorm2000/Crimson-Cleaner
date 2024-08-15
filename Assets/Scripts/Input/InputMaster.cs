@@ -161,6 +161,33 @@ public partial class @InputMaster: IInputActionCollection2
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeRotationAxis"",
+                    ""type"": ""Button"",
+                    ""id"": ""a3ad6d32-55bf-4f56-a0bc-342454fae1ef"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RotatePos"",
+                    ""type"": ""Button"",
+                    ""id"": ""212d4de4-849e-4101-8f1a-7885171c4560"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RotateNeg"",
+                    ""type"": ""Button"",
+                    ""id"": ""c1c0d7e3-9ba9-4251-9131-12a46a15e96c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -537,6 +564,39 @@ public partial class @InputMaster: IInputActionCollection2
                     ""action"": ""Tutorial"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""08164b85-5d0f-4aa4-8ef3-56251c70e577"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeRotationAxis"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f59cf138-2e1e-4849-8502-2b7d46c4b0ed"",
+                    ""path"": ""<Keyboard>/comma"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotatePos"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5d3b1988-9b5c-441e-8e44-d79584e0d851"",
+                    ""path"": ""<Keyboard>/period"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateNeg"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -621,6 +681,9 @@ public partial class @InputMaster: IInputActionCollection2
         m_Player_SelectThirdTool = m_Player.FindAction("SelectThirdTool", throwIfNotFound: true);
         m_Player_Throw = m_Player.FindAction("Throw", throwIfNotFound: true);
         m_Player_Tutorial = m_Player.FindAction("Tutorial", throwIfNotFound: true);
+        m_Player_ChangeRotationAxis = m_Player.FindAction("ChangeRotationAxis", throwIfNotFound: true);
+        m_Player_RotatePos = m_Player.FindAction("RotatePos", throwIfNotFound: true);
+        m_Player_RotateNeg = m_Player.FindAction("RotateNeg", throwIfNotFound: true);
         // Pause
         m_Pause = asset.FindActionMap("Pause", throwIfNotFound: true);
         m_Pause_Pause = m_Pause.FindAction("Pause", throwIfNotFound: true);
@@ -700,6 +763,9 @@ public partial class @InputMaster: IInputActionCollection2
     private readonly InputAction m_Player_SelectThirdTool;
     private readonly InputAction m_Player_Throw;
     private readonly InputAction m_Player_Tutorial;
+    private readonly InputAction m_Player_ChangeRotationAxis;
+    private readonly InputAction m_Player_RotatePos;
+    private readonly InputAction m_Player_RotateNeg;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -719,6 +785,9 @@ public partial class @InputMaster: IInputActionCollection2
         public InputAction @SelectThirdTool => m_Wrapper.m_Player_SelectThirdTool;
         public InputAction @Throw => m_Wrapper.m_Player_Throw;
         public InputAction @Tutorial => m_Wrapper.m_Player_Tutorial;
+        public InputAction @ChangeRotationAxis => m_Wrapper.m_Player_ChangeRotationAxis;
+        public InputAction @RotatePos => m_Wrapper.m_Player_RotatePos;
+        public InputAction @RotateNeg => m_Wrapper.m_Player_RotateNeg;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -773,6 +842,15 @@ public partial class @InputMaster: IInputActionCollection2
             @Tutorial.started += instance.OnTutorial;
             @Tutorial.performed += instance.OnTutorial;
             @Tutorial.canceled += instance.OnTutorial;
+            @ChangeRotationAxis.started += instance.OnChangeRotationAxis;
+            @ChangeRotationAxis.performed += instance.OnChangeRotationAxis;
+            @ChangeRotationAxis.canceled += instance.OnChangeRotationAxis;
+            @RotatePos.started += instance.OnRotatePos;
+            @RotatePos.performed += instance.OnRotatePos;
+            @RotatePos.canceled += instance.OnRotatePos;
+            @RotateNeg.started += instance.OnRotateNeg;
+            @RotateNeg.performed += instance.OnRotateNeg;
+            @RotateNeg.canceled += instance.OnRotateNeg;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -822,6 +900,15 @@ public partial class @InputMaster: IInputActionCollection2
             @Tutorial.started -= instance.OnTutorial;
             @Tutorial.performed -= instance.OnTutorial;
             @Tutorial.canceled -= instance.OnTutorial;
+            @ChangeRotationAxis.started -= instance.OnChangeRotationAxis;
+            @ChangeRotationAxis.performed -= instance.OnChangeRotationAxis;
+            @ChangeRotationAxis.canceled -= instance.OnChangeRotationAxis;
+            @RotatePos.started -= instance.OnRotatePos;
+            @RotatePos.performed -= instance.OnRotatePos;
+            @RotatePos.canceled -= instance.OnRotatePos;
+            @RotateNeg.started -= instance.OnRotateNeg;
+            @RotateNeg.performed -= instance.OnRotateNeg;
+            @RotateNeg.canceled -= instance.OnRotateNeg;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -902,6 +989,9 @@ public partial class @InputMaster: IInputActionCollection2
         void OnSelectThirdTool(InputAction.CallbackContext context);
         void OnThrow(InputAction.CallbackContext context);
         void OnTutorial(InputAction.CallbackContext context);
+        void OnChangeRotationAxis(InputAction.CallbackContext context);
+        void OnRotatePos(InputAction.CallbackContext context);
+        void OnRotateNeg(InputAction.CallbackContext context);
     }
     public interface IPauseActions
     {

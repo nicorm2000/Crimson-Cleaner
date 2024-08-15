@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lerpSpeed: 10
-  rotationSpeed: 100
+  rotationSpeed: 300
   throwingForce: 50
   breakForceThreshold: 10
   collisionCooldown: 0.1
@@ -131,8 +131,9 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  audioManager: {fileID: 0}
+  breakBottleEvent: 
   isObjectBreakable: 0
-  hasSoundAndParticles: 0
 --- !u!54 &2488693173759807932
 Rigidbody:
   m_ObjectHideFlags: 0

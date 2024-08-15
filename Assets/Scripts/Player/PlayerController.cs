@@ -39,6 +39,16 @@ public class PlayerController : MonoBehaviour
 
     private ObjectGrabbable objectGrabbable;
 
+    private void OnEnable()
+    {
+        inputManager.ChangeRotationAxisEvent += OnChangeRotationAxis;
+    }
+
+    private void OnDisable()
+    {
+        inputManager.ChangeRotationAxisEvent -= OnChangeRotationAxis;
+    }
+
     private void Start()
     {
         hasAnimator = TryGetComponent(out animator);
@@ -61,6 +71,15 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         CameraMovements();
+
+        if (objectGrabbable != null)
+        {
+            if (inputManager.RotatePos)
+                objectGrabbable.RotateObject(1);
+
+            if (inputManager.RotateNeg)
+                objectGrabbable.RotateObject(-1);
+        }
     }
 
     private void Move()
@@ -112,32 +131,19 @@ public class PlayerController : MonoBehaviour
 
         mousePos.x = inputManager.Look.x * playerSensitivitySettings.sensitivityX * Time.deltaTime;
         mousePos.y = inputManager.Look.y * playerSensitivitySettings.sensitivityY * Time.deltaTime;
+        camera.position = cameraRoot.position;
 
-        if (objectGrabbable != null && inputManager.RotateObject)
-        {
-            RotateObject(mousePos.x, mousePos.y);
-        }
-        else
-        {            
-            camera.position = cameraRoot.position;
+        xRotation -= mousePos.y;
+        xRotation = Mathf.Clamp(xRotation, rotationUpperLimit, rotationBottomLimit);
 
-            xRotation -= mousePos.y;
-            xRotation = Mathf.Clamp(xRotation, rotationUpperLimit, rotationBottomLimit);
-
-            camera.localRotation = Quaternion.Euler(xRotation, 0, 0);
-            transform.Rotate(Vector3.up, mousePos.x);
-        }
+        camera.localRotation = Quaternion.Euler(xRotation, 0, 0);
+        transform.Rotate(Vector3.up, mousePos.x);
     }
 
-    private void RotateObject(float mouseX, float mouseY)
+    private void OnChangeRotationAxis()
     {
         if (objectGrabbable != null)
-        {
-            if (mouseX != 0 || mouseY != 0)
-            {
-                objectGrabbable.RotateObject(mouseX, mouseY);
-            }
-        }
+            objectGrabbable.ChangeRotationAxis();
     }
 
     public void SetObjectGrabbable(ObjectGrabbable grabbable)

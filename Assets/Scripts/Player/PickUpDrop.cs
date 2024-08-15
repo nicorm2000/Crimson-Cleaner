@@ -59,7 +59,7 @@ public class PickUpDrop : MonoBehaviour
                 if (raycastHit.transform.TryGetComponent(out ObjectGrabbable))
                 {
                     audioManager.PlaySound(grabDropEvent);
-                    ObjectGrabbable.Grab(objectGrabPointTransform);
+                    ObjectGrabbable.Grab(objectGrabPointTransform, this.transform);
                     playerController.SetObjectGrabbable(ObjectGrabbable);
                 }
             }
