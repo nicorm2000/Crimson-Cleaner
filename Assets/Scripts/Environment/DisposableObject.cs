@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DisposableObject : MonoBehaviour, IDisposable
+public class DisposableObject : MonoBehaviour, IDisposableInterface
 {
     public List<GameObject> breakablePieces;
 

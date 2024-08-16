@@ -39,7 +39,7 @@ public interface IToggable : IInteractable
     
 }
 
-public interface IDisposable
+public interface IDisposableInterface
 {
     event System.Action Disposed;
 }
