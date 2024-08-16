@@ -91,15 +91,21 @@ public class PlayerController : MonoBehaviour
 
         if (inputManager.Move == Vector2.zero) targetSpeed = 0.1f;
 
-
+        // Update current velocity based on input
         currentVelocity.x = Mathf.Lerp(currentVelocity.x, inputManager.Move.x * targetSpeed, animationBlendSpeed * Time.fixedDeltaTime);
         currentVelocity.y = Mathf.Lerp(currentVelocity.y, inputManager.Move.y * targetSpeed, animationBlendSpeed * Time.fixedDeltaTime);
 
-        var xVelDifference = currentVelocity.x - playerRigidBody.velocity.x;
-        var yVelDifference = currentVelocity.y - playerRigidBody.velocity.y;
+        // Create a movement vector using the correct axes
+        Vector3 movement = new Vector3(currentVelocity.x, 0, currentVelocity.y); // X for horizontal (left/right), Z for forward/backward
 
-        playerRigidBody.AddForce(transform.TransformVector(new Vector3(xVelDifference, 0, yVelDifference)), ForceMode.VelocityChange);
+        // Apply the movement relative to the player's forward direction
+        Vector3 targetVelocity = transform.TransformDirection(movement);
+        Vector3 velocityDifference = targetVelocity - playerRigidBody.velocity;
 
+        // Apply force to the Rigidbody
+        playerRigidBody.AddForce(velocityDifference, ForceMode.VelocityChange);
+
+        // Update animator with movement values
         animator.SetFloat(xVelHash, currentVelocity.x);
         animator.SetFloat(yVelHash, currentVelocity.y);
 
