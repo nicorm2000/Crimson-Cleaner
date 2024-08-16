@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
 
     private int xVelHash;
     private int yVelHash;
-    private int crouchlHash;
     
     private float xRotation;
     private Vector2 currentVelocity;
@@ -56,7 +55,6 @@ public class PlayerController : MonoBehaviour
 
         xVelHash = Animator.StringToHash("X_Velocity");
         yVelHash = Animator.StringToHash("Y_Velocity");
-        crouchlHash = Animator.StringToHash("Crouch");
 
         footstepTimer = footstepInterval;
     }
@@ -64,7 +62,6 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        HandleCrouch();
         HandleFootsteps();
     }
 
@@ -87,7 +84,6 @@ public class PlayerController : MonoBehaviour
         if (!hasAnimator) return;
 
         float targetSpeed = walkSpeed;
-        if (inputManager.Crouch) targetSpeed = 1.5f;
 
         if (inputManager.Move == Vector2.zero) targetSpeed = 0.1f;
 
@@ -105,8 +101,6 @@ public class PlayerController : MonoBehaviour
 
         isMoving = inputManager.Move != Vector2.zero;
     }
-
-    private void HandleCrouch() => animator.SetBool(crouchlHash, inputManager.Crouch);
 
     private void HandleFootsteps()
     {
@@ -164,11 +158,6 @@ public class PlayerController : MonoBehaviour
     public Vector2 GetMousePos()
     {
         return mousePos;
-    }
-    
-    public bool GetCrouchState()
-    {
-        return inputManager.Crouch;
     }
     
     public Rigidbody GetRigidbody()

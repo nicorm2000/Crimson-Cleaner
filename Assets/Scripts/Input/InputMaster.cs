@@ -73,27 +73,9 @@ public partial class @InputMaster: IInputActionCollection2
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Crouch"",
-                    ""type"": ""Button"",
-                    ""id"": ""531017f7-60b1-4e26-bb2c-058bd34f3c85"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""PickUp"",
                     ""type"": ""Button"",
                     ""id"": ""5a6fb3b5-35f2-42bc-8666-75611a9b5800"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""RotateObejct"",
-                    ""type"": ""Button"",
-                    ""id"": ""ddffdbd6-542f-43db-a56d-60847eaf0923"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -358,39 +340,6 @@ public partial class @InputMaster: IInputActionCollection2
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4cd328de-070c-4af0-8b31-18b7def8d3ea"",
-                    ""path"": ""<Keyboard>/ctrl"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Crouch"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""eb44f123-6e4f-4ba8-9d45-59cb7dc993e9"",
-                    ""path"": ""<Gamepad>/leftStickPress"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Crouch"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""30102cea-6725-467a-8417-15ea47cb6dbc"",
-                    ""path"": ""<DualShockGamepad>/leftStickPress"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Crouch"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""8df82dce-2103-4ef2-9416-79eb6a507395"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
@@ -452,39 +401,6 @@ public partial class @InputMaster: IInputActionCollection2
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""PickUp"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""3087eb84-8a46-4413-9d3c-dc1608335cfb"",
-                    ""path"": ""<Keyboard>/r"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RotateObejct"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""db6f9974-8061-4110-bb82-70fab12568ea"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RotateObejct"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e5de29e4-b0da-4cc6-ad23-5d4377563e38"",
-                    ""path"": ""<DualShockGamepad>/leftShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RotateObejct"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -671,9 +587,7 @@ public partial class @InputMaster: IInputActionCollection2
         m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
         m_Player_Clean = m_Player.FindAction("Clean", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
-        m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_PickUp = m_Player.FindAction("PickUp", throwIfNotFound: true);
-        m_Player_RotateObejct = m_Player.FindAction("RotateObejct", throwIfNotFound: true);
         m_Player_CleaningList = m_Player.FindAction("CleaningList", throwIfNotFound: true);
         m_Player_MouseScroll = m_Player.FindAction("MouseScroll", throwIfNotFound: true);
         m_Player_SelectFirstTool = m_Player.FindAction("SelectFirstTool", throwIfNotFound: true);
@@ -753,9 +667,7 @@ public partial class @InputMaster: IInputActionCollection2
     private readonly InputAction m_Player_Run;
     private readonly InputAction m_Player_Clean;
     private readonly InputAction m_Player_Interact;
-    private readonly InputAction m_Player_Crouch;
     private readonly InputAction m_Player_PickUp;
-    private readonly InputAction m_Player_RotateObejct;
     private readonly InputAction m_Player_CleaningList;
     private readonly InputAction m_Player_MouseScroll;
     private readonly InputAction m_Player_SelectFirstTool;
@@ -775,9 +687,7 @@ public partial class @InputMaster: IInputActionCollection2
         public InputAction @Run => m_Wrapper.m_Player_Run;
         public InputAction @Clean => m_Wrapper.m_Player_Clean;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
-        public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
         public InputAction @PickUp => m_Wrapper.m_Player_PickUp;
-        public InputAction @RotateObejct => m_Wrapper.m_Player_RotateObejct;
         public InputAction @CleaningList => m_Wrapper.m_Player_CleaningList;
         public InputAction @MouseScroll => m_Wrapper.m_Player_MouseScroll;
         public InputAction @SelectFirstTool => m_Wrapper.m_Player_SelectFirstTool;
@@ -812,15 +722,9 @@ public partial class @InputMaster: IInputActionCollection2
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
-            @Crouch.started += instance.OnCrouch;
-            @Crouch.performed += instance.OnCrouch;
-            @Crouch.canceled += instance.OnCrouch;
             @PickUp.started += instance.OnPickUp;
             @PickUp.performed += instance.OnPickUp;
             @PickUp.canceled += instance.OnPickUp;
-            @RotateObejct.started += instance.OnRotateObejct;
-            @RotateObejct.performed += instance.OnRotateObejct;
-            @RotateObejct.canceled += instance.OnRotateObejct;
             @CleaningList.started += instance.OnCleaningList;
             @CleaningList.performed += instance.OnCleaningList;
             @CleaningList.canceled += instance.OnCleaningList;
@@ -870,15 +774,9 @@ public partial class @InputMaster: IInputActionCollection2
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
-            @Crouch.started -= instance.OnCrouch;
-            @Crouch.performed -= instance.OnCrouch;
-            @Crouch.canceled -= instance.OnCrouch;
             @PickUp.started -= instance.OnPickUp;
             @PickUp.performed -= instance.OnPickUp;
             @PickUp.canceled -= instance.OnPickUp;
-            @RotateObejct.started -= instance.OnRotateObejct;
-            @RotateObejct.performed -= instance.OnRotateObejct;
-            @RotateObejct.canceled -= instance.OnRotateObejct;
             @CleaningList.started -= instance.OnCleaningList;
             @CleaningList.performed -= instance.OnCleaningList;
             @CleaningList.canceled -= instance.OnCleaningList;
@@ -979,9 +877,7 @@ public partial class @InputMaster: IInputActionCollection2
         void OnRun(InputAction.CallbackContext context);
         void OnClean(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
-        void OnCrouch(InputAction.CallbackContext context);
         void OnPickUp(InputAction.CallbackContext context);
-        void OnRotateObejct(InputAction.CallbackContext context);
         void OnCleaningList(InputAction.CallbackContext context);
         void OnMouseScroll(InputAction.CallbackContext context);
         void OnSelectFirstTool(InputAction.CallbackContext context);
