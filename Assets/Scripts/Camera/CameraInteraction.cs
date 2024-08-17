@@ -41,13 +41,13 @@ public class CameraInteraction : MonoBehaviour
             IToggable switchObject = hit.collider.gameObject.GetComponent<LightSwitch>() as IToggable;
             IInteractable inmersiveObject = hit.collider.gameObject.GetComponent<InmersiveObject>() as IInteractable;
 
-            if (pickableObject != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().ToolsLength - 1)
+            if (pickableObject != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().CleaningToolsLength - 1)
             {
                 currentPickableObject = pickableObject;
                 AppendPickUpSprites(pickableObject, ref activeSprites);
             }
 
-            if (objectRetrievable != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().ToolsLength - 1 && playerController.GetObjectGrabbable() == null)
+            if (objectRetrievable != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().CleaningToolsLength - 1 && playerController.GetObjectGrabbable() == null)
             {
                 AppendRetrievableSprites(objectRetrievable, ref activeSprites);
             }
@@ -57,7 +57,7 @@ public class CameraInteraction : MonoBehaviour
                 AppendOpenableSprites(openableObject, ref activeSprites);
             }
 
-            if (cleanableToolObject != null && cleaningManager.GetToolSelector().CurrentToolIndex != cleaningManager.GetToolSelector().ToolsLength - 1 && cleaningManager.GetToolSelector().GetDirtyPercentage(cleaningManager.GetToolSelector().CurrentToolIndex) > 0 && hit.collider.GetComponent<WaterBucket>().GetWaterState())
+            if (cleanableToolObject != null && cleaningManager.GetToolSelector().CurrentToolIndex != cleaningManager.GetToolSelector().CleaningToolsLength - 1 && cleaningManager.GetToolSelector().GetDirtyPercentage(cleaningManager.GetToolSelector().CurrentToolIndex) > 0 && hit.collider.GetComponent<WaterBucket>().GetWaterState())
             {
                 AppendCleanableSprites(cleanableToolObject, ref activeSprites);
             }
@@ -77,7 +77,7 @@ public class CameraInteraction : MonoBehaviour
                 AppendToggableSprites(switchObject, ref activeSprites);
             }
 
-            if (inmersiveObject != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().ToolsLength - 1)
+            if (inmersiveObject != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().CleaningToolsLength - 1)
             {
                 AppendInteractableSprites(inmersiveObject, ref activeSprites);
             }

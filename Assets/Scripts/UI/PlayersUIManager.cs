@@ -75,15 +75,16 @@ public class PlayersUIManager : MonoBehaviour
     private Coroutine wrongToolSpongeCleaningWarningCoroutine;
     private Coroutine toolDirtyWarningCoroutine;
     private bool isTogglingNotebook = false;
+    private bool isNotebookOpen = false;
 
     private void OnEnable()
     {
         backToLobbyPanel.SetActive(false);
 
-        inputManager.CleaningListEvent += OnCleaningListEvent;
         gameStateManager.GameLost += TriggerLostUI;
         gameStateManager.GameWon += TriggerWinUI;
-        cleaningManager.GetToolSelector().OnToolSwitched += HandleToolSwitched;
+        cleaningManager.GetToolSelector().OnToolSwitched += OnToolSwitched;
+        cleaningManager.GetToolSelector().CleaningListEvent += OnCleaningListEvent;
         waterBucket.WaterBucketUnavailable += OnToggleWaterbucketUnavailiable;
         pickUpDrop.PickUpUnavailableEvent += OnPickUpUnavailable;
 
@@ -115,10 +116,11 @@ public class PlayersUIManager : MonoBehaviour
 
     private void OnDisable()
     {
-        inputManager.CleaningListEvent -= OnCleaningListEvent;
+        //inputManager.CleaningListEvent -= OnCleaningListEvent;
         gameStateManager.GameLost -= TriggerLostUI;
         gameStateManager.GameWon -= TriggerWinUI;
-        cleaningManager.GetToolSelector().OnToolSwitched -= HandleToolSwitched;
+        cleaningManager.GetToolSelector().OnToolSwitched -= OnToolSwitched;
+        cleaningManager.GetToolSelector().CleaningListEvent -= OnCleaningListEvent;
         waterBucket.WaterBucketUnavailable -= OnToggleWaterbucketUnavailiable;
         pickUpDrop.PickUpUnavailableEvent -= OnPickUpUnavailable;
 
@@ -158,16 +160,6 @@ public class PlayersUIManager : MonoBehaviour
         CreateCleaningList();
     }
 
-    private void HandleToolSwitched(int newToolIndex)
-    {
-        if (newToolIndex != 2 && notebook.activeSelf)
-        {
-            _cleaningListState = false;
-            StartCoroutine(ToggleNotebookState());
-            cleaningListAnimator.SetBool(notebookAnimatorOpenHash, _cleaningListState);
-        }
-    }
-
     private void OpenTab(GameObject go, bool state)
     {
         go.SetActive(state);
@@ -176,54 +168,42 @@ public class PlayersUIManager : MonoBehaviour
 
     private void OnCleaningListEvent()
     {
-        if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().ToolsLength - 1)
+        if (isTogglingNotebook) return;
+
+        _cleaningListState = !_cleaningListState;
+        isNotebookOpen = _cleaningListState;
+
+        if (!_cleaningListState)
         {
-            if (!isTogglingNotebook)
-            {
-                _cleaningListState = !_cleaningListState;
-
-                if (!_cleaningListState) // If the list is closing
-                {
-                    audioManager.PlaySound(closeNotebookEvent);
-                    StartCoroutine(ToggleNotebookState());
-                }
-                else
-                {
-                    audioManager.PlaySound(openNotebookEvent);
-                    notebook.SetActive(true);
-                }
-
-                if (cleaningListAnimator)
-                {
-                    cleaningListAnimator.SetBool(notebookAnimatorOpenHash, _cleaningListState);
-                }
-            }
+            audioManager.PlaySound(closeNotebookEvent);
         }
         else
         {
-            if (notebookWarningCoroutine != null)
+            audioManager.PlaySound(openNotebookEvent);
+            ToggleNotebookState(true);
+
+            if (cleaningListAnimator)
             {
-                StopCoroutine(notebookWarningCoroutine);
+                cleaningListAnimator.SetBool(notebookAnimatorOpenHash, _cleaningListState);
             }
-            notebookWarningCoroutine = StartCoroutine(ShowWarning(handImageWarning, togglingNotebookErrorDuration));
         }
     }
 
-    private IEnumerator ToggleNotebookState()
+    private void ToggleNotebookState(bool active)
     {
-        isTogglingNotebook = true;
-        if (cleaningListAnimator)
+        isNotebookOpen = active;
+        isTogglingNotebook = active;
+    }
+
+    private void OnToolSwitched(int newIndex)
+    {
+        if (cleaningManager.GetToolSelector().Tools[newIndex] != notebook)
         {
-            notebook.SetActive(true);
-            float closeDuration = cleaningListAnimator.GetCurrentAnimatorStateInfo(0).length;
-            if (closeDuration == 0f)
+            if (isNotebookOpen)
             {
-                closeDuration = cleaningListAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+                ToggleNotebookState(false);
             }
-            yield return new WaitForSeconds(closeDuration);
-            notebook.SetActive(false);
         }
-        isTogglingNotebook = false;
     }
 
     private void OnToggleWaterbucketUnavailiable()

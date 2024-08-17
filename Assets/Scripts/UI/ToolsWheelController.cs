@@ -6,6 +6,7 @@ public class ToolsWheelController : MonoBehaviour
 {
     [Header("Config")]
     public int toolID;
+    public int previousToolID;
     public InputManager inputManager;
     public GameStateManager gameStateManager;
     public CleaningTool cleaningTool;

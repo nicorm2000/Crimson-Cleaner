@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -5,24 +6,31 @@ public class CleaningTool : MonoBehaviour
 {
     [Header("Config")]
     [SerializeField] private GameObject[] tools;
+    [SerializeField] private GameObject[] cleaningTools;
     [SerializeField] private int[] dirtyPercentages;
     [SerializeField] private int dirtyIncrementAmount;
     [SerializeField] private Material mopCleanMaterial;
     [SerializeField] private Material spongeCleanMaterial;
     [SerializeField] private Material[] mopDirtyMaterial;
     [SerializeField] private Material[] spongeDirtyMaterial;
+    [SerializeField] private string notebookName;
 
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
     [SerializeField] private string weaponSwapEvent = null;
 
     private bool isEventPlaying = false;
+    private bool isNotebookOpen = false;
 
     public int DirtyIncrement { get; private set; }
     private int _currentToolIndex = 0;
+    private int _previousToolIndex = 0;
 
     public event UnityAction<int> OnToolSwitched;
+    public event Action CleaningListEvent;
+    public GameObject[] CleaningTools => cleaningTools;
     public GameObject[] Tools => tools;
+    public int CleaningToolsLength => cleaningTools.Length;
     public int ToolsLength => tools.Length;
     public int CurrentToolIndex => _currentToolIndex;
 
@@ -33,22 +41,46 @@ public class CleaningTool : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < tools.Length; i++)
+        for (int i = 0; i < cleaningTools.Length; i++)
         {
-            tools[i].SetActive(i == _currentToolIndex);
+            cleaningTools[i].SetActive(i == _currentToolIndex);
             dirtyPercentages[i] = 0;
         }
     }
 
     public void SwitchTool(int newIndex)
     {
-        audioManager.PlaySound(weaponSwapEvent);
         newIndex = Mathf.Clamp(newIndex, 0, tools.Length - 1);
+
+        if (Tools[newIndex].name == notebookName && isNotebookOpen)
+        {
+            return;
+        }
+
+        audioManager.PlaySound(weaponSwapEvent);
         tools[_currentToolIndex].SetActive(false);
         tools[newIndex].SetActive(true);
+
+        _previousToolIndex = _currentToolIndex;
         _currentToolIndex = newIndex;
+
         OnToolSwitched?.Invoke(_currentToolIndex);
+
+        if (Tools[newIndex].name == notebookName)
+        {
+            isNotebookOpen = true;
+            CleaningListEvent?.Invoke();
+        }
+        else
+        {
+            if (isNotebookOpen)
+            {
+                isNotebookOpen = false;
+                CleaningListEvent?.Invoke();
+            }
+        }
     }
+    
 
     public void IncrementDirtyPercentage(int toolIndex, int amount)
     {
@@ -116,9 +148,9 @@ public class CleaningTool : MonoBehaviour
 
     public void ChangeToolMaterial(int toolIndex, Material newMaterial)
     {
-        for (int i = 0; i < tools[_currentToolIndex].transform.childCount; i++)
+        for (int i = 0; i < cleaningTools[_currentToolIndex].transform.childCount; i++)
         {
-            Renderer toolRenderer = tools[_currentToolIndex].transform.GetChild(i).GetComponentInChildren<Renderer>();
+            Renderer toolRenderer = cleaningTools[_currentToolIndex].transform.GetChild(i).GetComponentInChildren<Renderer>();
             if (toolRenderer != null)
             {
                 toolRenderer.material = newMaterial;

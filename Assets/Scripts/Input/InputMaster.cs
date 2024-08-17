@@ -82,15 +82,6 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""CleaningList"",
-                    ""type"": ""Button"",
-                    ""id"": ""c6f6e0dc-9a90-4b88-a07d-70b2d6e75f71"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""MouseScroll"",
                     ""type"": ""PassThrough"",
                     ""id"": ""7ac387ae-d80d-4e3d-92c6-991a76e6260f"",
@@ -388,17 +379,6 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""c455bb73-a97c-400c-b55b-c9ac2d5e1700"",
-                    ""path"": ""<Keyboard>/tab"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""CleaningList"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""106b3306-160a-4176-b614-e41c848ffeb8"",
                     ""path"": ""<Mouse>/scroll/y"",
                     ""interactions"": """",
@@ -548,7 +528,6 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         m_Player_Clean = m_Player.FindAction("Clean", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_PickUp = m_Player.FindAction("PickUp", throwIfNotFound: true);
-        m_Player_CleaningList = m_Player.FindAction("CleaningList", throwIfNotFound: true);
         m_Player_MouseScroll = m_Player.FindAction("MouseScroll", throwIfNotFound: true);
         m_Player_Throw = m_Player.FindAction("Throw", throwIfNotFound: true);
         m_Player_Tutorial = m_Player.FindAction("Tutorial", throwIfNotFound: true);
@@ -626,7 +605,6 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Clean;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_PickUp;
-    private readonly InputAction m_Player_CleaningList;
     private readonly InputAction m_Player_MouseScroll;
     private readonly InputAction m_Player_Throw;
     private readonly InputAction m_Player_Tutorial;
@@ -644,7 +622,6 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         public InputAction @Clean => m_Wrapper.m_Player_Clean;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @PickUp => m_Wrapper.m_Player_PickUp;
-        public InputAction @CleaningList => m_Wrapper.m_Player_CleaningList;
         public InputAction @MouseScroll => m_Wrapper.m_Player_MouseScroll;
         public InputAction @Throw => m_Wrapper.m_Player_Throw;
         public InputAction @Tutorial => m_Wrapper.m_Player_Tutorial;
@@ -679,9 +656,6 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @PickUp.started += instance.OnPickUp;
             @PickUp.performed += instance.OnPickUp;
             @PickUp.canceled += instance.OnPickUp;
-            @CleaningList.started += instance.OnCleaningList;
-            @CleaningList.performed += instance.OnCleaningList;
-            @CleaningList.canceled += instance.OnCleaningList;
             @MouseScroll.started += instance.OnMouseScroll;
             @MouseScroll.performed += instance.OnMouseScroll;
             @MouseScroll.canceled += instance.OnMouseScroll;
@@ -725,9 +699,6 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @PickUp.started -= instance.OnPickUp;
             @PickUp.performed -= instance.OnPickUp;
             @PickUp.canceled -= instance.OnPickUp;
-            @CleaningList.started -= instance.OnCleaningList;
-            @CleaningList.performed -= instance.OnCleaningList;
-            @CleaningList.canceled -= instance.OnCleaningList;
             @MouseScroll.started -= instance.OnMouseScroll;
             @MouseScroll.performed -= instance.OnMouseScroll;
             @MouseScroll.canceled -= instance.OnMouseScroll;
@@ -820,7 +791,6 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         void OnClean(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnPickUp(InputAction.CallbackContext context);
-        void OnCleaningList(InputAction.CallbackContext context);
         void OnMouseScroll(InputAction.CallbackContext context);
         void OnThrow(InputAction.CallbackContext context);
         void OnTutorial(InputAction.CallbackContext context);

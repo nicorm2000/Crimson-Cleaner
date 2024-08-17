@@ -37,7 +37,6 @@ public class InputManager : MonoBehaviour
 
     public event Action PickUpEvent;
     public event Action InteractEvent;
-    public event Action CleaningListEvent;
     public event Action DisplayTutorialEvent;
     public event Action<bool> CleanEvent;
     public event Action ThrowStartEvent;
@@ -81,7 +80,6 @@ public class InputManager : MonoBehaviour
         throwAction.canceled += OnThrowEnd;
         cleanAction.started += ctx => OnClean(true);
         cleanAction.canceled += ctx => OnClean(false);
-        cleaningListAction.performed += OnCleaningList;
         mouseScrollAction.performed += OnMouseScroll;
         rotatePosAction.started += ctx => OnRotatePos(true);
         rotateNegAction.started += ctx => OnRotateNeg(true);
@@ -166,11 +164,6 @@ public class InputManager : MonoBehaviour
     public bool IsUsingController()
     {
         return Input.GetJoystickNames().Length > 0;
-    }
-
-    private void OnCleaningList(InputAction.CallbackContext context)
-    {
-        CleaningListEvent?.Invoke();
     }
 
     private void OnMouseScroll(InputAction.CallbackContext context)

@@ -23,13 +23,14 @@ public class ToolsWheel : MonoBehaviour
     {
         _animator.SetBool(hoverHash, true);
         toolsWheelController.toolID = ID;
+        toolsWheelController.previousToolID = ID;
         itemText.text = itemName;
     }
 
     public void HoverExit()
     {
         _animator.SetBool(hoverHash, false);
-        toolsWheelController.toolID = 0;
+        toolsWheelController.toolID = toolsWheelController.previousToolID;
         itemText.text = "";
     }
 }
