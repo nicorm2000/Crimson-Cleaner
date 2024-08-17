@@ -27,26 +27,23 @@ public class InputManager : MonoBehaviour
     private InputAction pickUpAction;
     private InputAction throwAction;
     private InputAction cleaningListAction;
-    private InputAction selectFirstToolAction;
-    private InputAction selectSecondToolAction;
-    private InputAction selectThirdToolAction;
     private InputAction mouseScrollAction;
     private InputAction changeRotationAxisAction;
     private InputAction rotatePosAction;
     private InputAction rotateNegAction;
     private InputAction pauseAction;
     private InputAction tutorialUIAction;
+    private InputAction toogleToolWheelAction;
 
     public event Action PickUpEvent;
     public event Action InteractEvent;
     public event Action CleaningListEvent;
     public event Action DisplayTutorialEvent;
-    public event Action SelectFirstToolEvent;
-    public event Action SelectSecondToolEvent;
-    public event Action SelectThirdToolEvent;
     public event Action<bool> CleanEvent;
     public event Action ThrowStartEvent;
     public event Action ThrowEndEvent;
+    public event Action ToggleToolWheelStartEvent;
+    public event Action ToggleToolWheelEndEvent;
     public event Action PauseEvent;
     public event Action ChangeRotationAxisEvent;
 
@@ -68,15 +65,13 @@ public class InputManager : MonoBehaviour
         pickUpAction = gameplayMap.FindAction("PickUp");
         throwAction = gameplayMap.FindAction("Throw");
         cleaningListAction = gameplayMap.FindAction("CleaningList");
-        selectFirstToolAction = gameplayMap.FindAction("SelectFirstTool");
-        selectSecondToolAction = gameplayMap.FindAction("SelectSecondTool");
-        selectThirdToolAction = gameplayMap.FindAction("SelectThirdTool");
         mouseScrollAction = gameplayMap.FindAction("MouseScroll");
         rotatePosAction = gameplayMap.FindAction("RotatePos");
         rotateNegAction = gameplayMap.FindAction("RotateNeg");
         changeRotationAxisAction = gameplayMap.FindAction("ChangeRotationAxis");
         pauseAction = playerInput.actions.FindAction("Pause");
         tutorialUIAction = playerInput.actions.FindAction("Tutorial");
+        toogleToolWheelAction = playerInput.actions.FindAction("ToolWheel");
 
         moveAction.performed += OnMove;
         lookAction.performed += OnLook;
@@ -87,15 +82,14 @@ public class InputManager : MonoBehaviour
         cleanAction.started += ctx => OnClean(true);
         cleanAction.canceled += ctx => OnClean(false);
         cleaningListAction.performed += OnCleaningList;
-        selectFirstToolAction.performed += OnSelectFirstTool;
-        selectSecondToolAction.performed += OnSelectSecondTool;
-        selectThirdToolAction.performed += OnSelectThirdTool;
         mouseScrollAction.performed += OnMouseScroll;
         rotatePosAction.started += ctx => OnRotatePos(true);
         rotateNegAction.started += ctx => OnRotateNeg(true);
         changeRotationAxisAction.performed += OnChangeRotationAxis;
         pauseAction.performed += OnPause;
         tutorialUIAction.performed += OnDisplayTutorial;
+        toogleToolWheelAction.started += OnToggleToolWheelStart;
+        toogleToolWheelAction.canceled += OnToggleToolWheelEnd;
 
         moveAction.canceled += OnMove;
         lookAction.canceled += OnLook;
@@ -179,21 +173,6 @@ public class InputManager : MonoBehaviour
         CleaningListEvent?.Invoke();
     }
 
-    private void OnSelectFirstTool(InputAction.CallbackContext context)
-    {
-        SelectFirstToolEvent?.Invoke();
-    }
-
-    private void OnSelectSecondTool(InputAction.CallbackContext context)
-    {
-        SelectSecondToolEvent?.Invoke();
-    }
-
-    private void OnSelectThirdTool(InputAction.CallbackContext context)
-    {
-        SelectThirdToolEvent?.Invoke();
-    }
-
     private void OnMouseScroll(InputAction.CallbackContext context)
     {
         Scroll = context.ReadValue<float>();
@@ -222,6 +201,16 @@ public class InputManager : MonoBehaviour
     private void OnDisplayTutorial(InputAction.CallbackContext context)
     {
         DisplayTutorialEvent?.Invoke();
+    }
+
+    private void OnToggleToolWheelStart(InputAction.CallbackContext context)
+    {
+        ToggleToolWheelStartEvent?.Invoke();
+    } 
+    
+    private void OnToggleToolWheelEnd(InputAction.CallbackContext context)
+    {
+        ToggleToolWheelEndEvent?.Invoke();
     }
 
     public void ToggleGameplayMap(bool active)

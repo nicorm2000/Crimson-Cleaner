@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -21,6 +22,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioManager audioManager = null;
     [SerializeField] private string footStepsPlayEvent = null;
     [SerializeField] private string footStepsStopEvent = null;
+
+    [NonSerialized] public bool isCameraMovable = true;
 
     private Rigidbody playerRigidBody;
     private Animator animator;
@@ -67,7 +70,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        CameraMovements();
+        if (isCameraMovable)
+            CameraMovements();
 
         if (objectGrabbable != null)
         {

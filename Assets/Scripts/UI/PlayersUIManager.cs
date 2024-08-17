@@ -150,20 +150,12 @@ public class PlayersUIManager : MonoBehaviour
 
     private void Start()
     {
-        cleaningManager.GetToolSelector().OnToolSwitched += UpdateToolImage;
-        UpdateToolImage(cleaningManager.GetToolSelector().CurrentToolIndex);
-
         reticle.SetActive(true);
         toolHolder.SetActive(false);
         jobFinished.SetActive(false);
         jobUnfinished.SetActive(false);
 
         CreateCleaningList();
-    }
-
-    private void OnDestroy()
-    {
-        cleaningManager.GetToolSelector().OnToolSwitched -= UpdateToolImage;
     }
 
     private void HandleToolSwitched(int newToolIndex)
@@ -282,48 +274,6 @@ public class PlayersUIManager : MonoBehaviour
         foreach (Image warningImageItem in warningImage) warningImageItem.gameObject.SetActive(true);
         yield return new WaitForSeconds(duration);
         foreach (Image warningImageItem in warningImage) warningImageItem.gameObject.SetActive(false);
-    }
-
-    private void UpdateToolImage(int currentToolIndex)
-    {
-        reticle.SetActive(false);
-        toolHolder.SetActive(true);
-        switch (cleaningManager.GetToolSelector().CurrentToolIndex)
-        {
-            case 0:
-                mopImage.sprite = mopSpriteOn;
-                spongeImage.sprite = spongeSpriteOff;
-                handImage.sprite = handSpriteOff;
-                break;
-            case 1:
-                mopImage.sprite = mopSpriteOff;
-                spongeImage.sprite = spongeSpriteOn;
-                handImage.sprite = handSpriteOff;
-                break;
-            case 2:
-                mopImage.sprite = mopSpriteOff;
-                spongeImage.sprite = spongeSpriteOff;
-                handImage.sprite = handSpriteOn;
-                break;
-            default:
-                mopImage.sprite = mopSpriteOff;
-                spongeImage.sprite = spongeSpriteOff;
-                handImage.sprite = handSpriteOff;
-                break;
-        }
-
-        if (toolDissapearCoroutine != null)
-        {
-            StopCoroutine(toolDissapearCoroutine);
-        }
-        toolDissapearCoroutine = StartCoroutine(WaitToolDisappear());
-    }
-
-    private IEnumerator WaitToolDisappear()
-    {
-        yield return new WaitForSeconds(toolHolderLifetime);
-        toolHolder.SetActive(false);
-        reticle.SetActive(true);
     }
 
     private void TriggerLostUI()

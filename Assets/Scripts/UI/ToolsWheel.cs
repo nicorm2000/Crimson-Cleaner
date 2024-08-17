@@ -1,51 +1,35 @@
+using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ToolsWheel : MonoBehaviour
 {
     [Header("Config")]
-    [SerializeField] private int ID;
-    [SerializeField] private string itemName;
     [SerializeField] private TextMeshProUGUI itemText;
-    
+    [SerializeField] private ToolsWheelController toolsWheelController;
+    [SerializeField] private string hoverHash;
+
+    [NonSerialized] public string itemName;
+    [NonSerialized] public int ID;
+
     private Animator _animator;
-    private bool _selected = false;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
     }
 
-    private void Update()
-    {
-        if (_selected)
-        {
-            itemText.text = itemName;
-        }
-    }
-
-    public void Selected()
-    {
-        _selected = true;
-        ToolsWheelController.toolID = ID;
-    }
-
-    public void Deselected()
-    {
-        _selected = false;
-        ToolsWheelController.toolID = 0;
-    }
-
     public void HoverEnter()
     {
-        _animator.SetBool("Hover", true);
+        _animator.SetBool(hoverHash, true);
+        toolsWheelController.toolID = ID;
         itemText.text = itemName;
     }
 
     public void HoverExit()
     {
-        _animator.SetBool("Hover", false);
-        itemText.text = itemName;
+        _animator.SetBool(hoverHash, false);
+        toolsWheelController.toolID = 0;
+        itemText.text = "";
     }
 }
