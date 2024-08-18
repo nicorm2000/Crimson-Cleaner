@@ -9,12 +9,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-public partial class @InputMaster: IInputActionCollection2
+public partial class @InputMaster: IInputActionCollection2, IDisposable
 {
     public InputActionAsset asset { get; }
     public @InputMaster()
