@@ -278,26 +278,6 @@ public class PauseState : IGameState
     }
 }
 
-public class ToolWheelState : IGameState
-{
-    public void EnterState(GameStateManager gameStateManager)
-    {
-        gameStateManager.inputManager.ShowCursor();
-        gameStateManager.playerController.isCameraMovable = false;
-    }
-
-    public void UpdateState(GameStateManager gameStateManager)
-    {
-        
-    }
-
-    public void ExitState(GameStateManager gameStateManager)
-    {
-        gameStateManager.inputManager.HideCursor();
-        gameStateManager.playerController.isCameraMovable = true;
-    }
-}
-
 public class DeInitializationState : IGameState
 {
     public void EnterState(GameStateManager gameStateManager)
