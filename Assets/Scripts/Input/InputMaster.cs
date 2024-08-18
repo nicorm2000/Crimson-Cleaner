@@ -72,15 +72,6 @@ public partial class @InputMaster: IInputActionCollection2
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Crouch"",
-                    ""type"": ""Button"",
-                    ""id"": ""531017f7-60b1-4e26-bb2c-058bd34f3c85"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""PickUp"",
                     ""type"": ""Button"",
                     ""id"": ""5a6fb3b5-35f2-42bc-8666-75611a9b5800"",
@@ -352,39 +343,6 @@ public partial class @InputMaster: IInputActionCollection2
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Interact"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""4cd328de-070c-4af0-8b31-18b7def8d3ea"",
-                    ""path"": ""<Keyboard>/ctrl"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Crouch"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""eb44f123-6e4f-4ba8-9d45-59cb7dc993e9"",
-                    ""path"": ""<Gamepad>/leftStickPress"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Crouch"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""30102cea-6725-467a-8417-15ea47cb6dbc"",
-                    ""path"": ""<DualShockGamepad>/leftStickPress"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Crouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -670,7 +628,6 @@ public partial class @InputMaster: IInputActionCollection2
         m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
         m_Player_Clean = m_Player.FindAction("Clean", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
-        m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_PickUp = m_Player.FindAction("PickUp", throwIfNotFound: true);
         m_Player_RotateObejct = m_Player.FindAction("RotateObejct", throwIfNotFound: true);
         m_Player_CleaningList = m_Player.FindAction("CleaningList", throwIfNotFound: true);
@@ -752,7 +709,6 @@ public partial class @InputMaster: IInputActionCollection2
     private readonly InputAction m_Player_Run;
     private readonly InputAction m_Player_Clean;
     private readonly InputAction m_Player_Interact;
-    private readonly InputAction m_Player_Crouch;
     private readonly InputAction m_Player_PickUp;
     private readonly InputAction m_Player_RotateObejct;
     private readonly InputAction m_Player_CleaningList;
@@ -774,7 +730,6 @@ public partial class @InputMaster: IInputActionCollection2
         public InputAction @Run => m_Wrapper.m_Player_Run;
         public InputAction @Clean => m_Wrapper.m_Player_Clean;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
-        public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
         public InputAction @PickUp => m_Wrapper.m_Player_PickUp;
         public InputAction @RotateObejct => m_Wrapper.m_Player_RotateObejct;
         public InputAction @CleaningList => m_Wrapper.m_Player_CleaningList;
@@ -811,9 +766,6 @@ public partial class @InputMaster: IInputActionCollection2
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
-            @Crouch.started += instance.OnCrouch;
-            @Crouch.performed += instance.OnCrouch;
-            @Crouch.canceled += instance.OnCrouch;
             @PickUp.started += instance.OnPickUp;
             @PickUp.performed += instance.OnPickUp;
             @PickUp.canceled += instance.OnPickUp;
@@ -869,9 +821,6 @@ public partial class @InputMaster: IInputActionCollection2
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
-            @Crouch.started -= instance.OnCrouch;
-            @Crouch.performed -= instance.OnCrouch;
-            @Crouch.canceled -= instance.OnCrouch;
             @PickUp.started -= instance.OnPickUp;
             @PickUp.performed -= instance.OnPickUp;
             @PickUp.canceled -= instance.OnPickUp;
@@ -978,7 +927,6 @@ public partial class @InputMaster: IInputActionCollection2
         void OnRun(InputAction.CallbackContext context);
         void OnClean(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
-        void OnCrouch(InputAction.CallbackContext context);
         void OnPickUp(InputAction.CallbackContext context);
         void OnRotateObejct(InputAction.CallbackContext context);
         void OnCleaningList(InputAction.CallbackContext context);

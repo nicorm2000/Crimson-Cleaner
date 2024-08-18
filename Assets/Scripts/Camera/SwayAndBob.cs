@@ -86,13 +86,11 @@ public class SwayAndBob : MonoBehaviour
                 returnToIdleCoroutine = null;
             }
 
-            speedCurve += Time.deltaTime * (playerController.GetCrouchState() ? playerController.GetRigidbody().velocity.magnitude : 1f) + 0.01f;
+            speedCurve += Time.deltaTime * playerController.GetRigidbody().velocity.magnitude + 0.01f;
 
-            bobPos.x = (curveCos * bobLimit.x * (playerController.GetCrouchState() ? 1 : 0))
-                        - (playerController.GetCurrentVelocity().x * travelLimit.x);
+            bobPos.x = (curveCos * bobLimit.x) - (playerController.GetCurrentVelocity().x * travelLimit.x);
 
-            bobPos.y = (curveSin * bobLimit.y)
-                        - (playerController.GetRigidbody().velocity.y * travelLimit.y);
+            bobPos.y = (curveSin * bobLimit.y) - (playerController.GetRigidbody().velocity.y * travelLimit.y);
 
             bobPos.z = -(playerController.GetCurrentVelocity().y * travelLimit.z);
         }

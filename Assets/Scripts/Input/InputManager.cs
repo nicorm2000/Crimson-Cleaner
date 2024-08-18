@@ -14,7 +14,6 @@ public class InputManager : MonoBehaviour
     public Vector2 Move { get; private set; }
     public Vector2 Look { get; private set; }
     public bool IsLookInputMouse { get; private set; }
-    public bool Crouch { get; private set; }
     public bool RotatePos { get; private set; }
     public bool RotateNeg { get; private set; }
     public bool ChangeRotationAxis;
@@ -24,7 +23,6 @@ public class InputManager : MonoBehaviour
     private InputAction lookAction;
     private InputAction interactAction;
     private InputAction cleanAction;
-    private InputAction crouchAction;
     private InputAction rotateObejctAction;
     private InputAction pickUpAction;
     private InputAction throwAction;
@@ -66,7 +64,6 @@ public class InputManager : MonoBehaviour
         lookAction = gameplayMap.FindAction("Look");
         interactAction = gameplayMap.FindAction("Interact");
         cleanAction = gameplayMap.FindAction("Clean");
-        crouchAction = gameplayMap.FindAction("Crouch");
         rotateObejctAction = gameplayMap.FindAction("RotateObejct");
         pickUpAction = gameplayMap.FindAction("PickUp");
         throwAction = gameplayMap.FindAction("Throw");
@@ -83,7 +80,6 @@ public class InputManager : MonoBehaviour
 
         moveAction.performed += OnMove;
         lookAction.performed += OnLook;
-        crouchAction.performed += OnCrouch;
         interactAction.performed += OnInteract;
         pickUpAction.performed += OnPickUp;
         throwAction.started += OnThrowStart; // New throw action started
@@ -103,7 +99,6 @@ public class InputManager : MonoBehaviour
 
         moveAction.canceled += OnMove;
         lookAction.canceled += OnLook;
-        crouchAction.canceled += OnCrouch;
         //lightSwitchAction.canceled += OnToggleLights;
         //openAction.canceled += OnOpen;
         cleanAction.canceled += ctx => OnClean(false);
@@ -148,11 +143,6 @@ public class InputManager : MonoBehaviour
     {
         Look = context.ReadValue<Vector2>();
         IsLookInputMouse = context.control.device is Mouse;
-    }
-
-    private void OnCrouch(InputAction.CallbackContext context)
-    {
-        Crouch = context.ReadValueAsButton();
     }
 
     private void OnInteract(InputAction.CallbackContext context)
