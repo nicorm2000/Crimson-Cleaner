@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class CameraInteraction : MonoBehaviour
 {
+    [Header("Config")]
     [SerializeField] private LayerMask interactableLayers;
     [SerializeField] private Image[] interactionImages; // Changed from TextMeshProUGUI to Image
     [SerializeField] private CleaningManager cleaningManager;

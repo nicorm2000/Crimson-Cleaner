@@ -13,18 +13,18 @@ public class CleaningTool : MonoBehaviour
     [SerializeField] private Material spongeCleanMaterial;
     [SerializeField] private Material[] mopDirtyMaterial;
     [SerializeField] private Material[] spongeDirtyMaterial;
-    [SerializeField] private string notebookName;
+    [SerializeField] private string tabletName;
 
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
     [SerializeField] private string weaponSwapEvent = null;
 
     private bool isEventPlaying = false;
-    private bool isNotebookOpen = false;
-
+    private bool isTabletOpen = false;
+    private int _previousToolIndex = 0;
+    
     public int DirtyIncrement { get; private set; }
     private int _currentToolIndex = 0;
-    private int _previousToolIndex = 0;
 
     public event UnityAction<int> OnToolSwitched;
     public event Action CleaningListEvent;
@@ -52,7 +52,7 @@ public class CleaningTool : MonoBehaviour
     {
         newIndex = Mathf.Clamp(newIndex, 0, tools.Length - 1);
 
-        if (Tools[newIndex].name == notebookName && isNotebookOpen)
+        if (Tools[newIndex].name == tabletName && isTabletOpen)
         {
             return;
         }
@@ -66,21 +66,20 @@ public class CleaningTool : MonoBehaviour
 
         OnToolSwitched?.Invoke(_currentToolIndex);
 
-        if (Tools[newIndex].name == notebookName)
+        if (Tools[newIndex].name == tabletName)
         {
-            isNotebookOpen = true;
+            isTabletOpen = true;
             CleaningListEvent?.Invoke();
         }
         else
         {
-            if (isNotebookOpen)
+            if (isTabletOpen)
             {
-                isNotebookOpen = false;
+                isTabletOpen = false;
                 CleaningListEvent?.Invoke();
             }
         }
     }
-    
 
     public void IncrementDirtyPercentage(int toolIndex, int amount)
     {

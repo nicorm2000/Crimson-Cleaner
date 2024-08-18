@@ -23,7 +23,6 @@ public class InputManager : MonoBehaviour
     private InputAction lookAction;
     private InputAction interactAction;
     private InputAction cleanAction;
-    private InputAction rotateObejctAction;
     private InputAction pickUpAction;
     private InputAction throwAction;
     private InputAction cleaningListAction;
@@ -38,13 +37,16 @@ public class InputManager : MonoBehaviour
     public event Action PickUpEvent;
     public event Action InteractEvent;
     public event Action DisplayTutorialEvent;
+    public event Action SelectFirstToolEvent;
+    public event Action SelectSecondToolEvent;
+    public event Action SelectThirdToolEvent;
     public event Action<bool> CleanEvent;
     public event Action ThrowStartEvent;
     public event Action ThrowEndEvent;
-    public event Action ToggleToolWheelStartEvent;
-    public event Action ToggleToolWheelEndEvent;
     public event Action PauseEvent;
     public event Action ChangeRotationAxisEvent;
+    public event Action ToggleToolWheelStartEvent;
+    public event Action ToggleToolWheelEndEvent;
 
     private bool isCursorVisible = true;
     private bool isCleaning = false;
@@ -60,7 +62,6 @@ public class InputManager : MonoBehaviour
         lookAction = gameplayMap.FindAction("Look");
         interactAction = gameplayMap.FindAction("Interact");
         cleanAction = gameplayMap.FindAction("Clean");
-        rotateObejctAction = gameplayMap.FindAction("RotateObejct");
         pickUpAction = gameplayMap.FindAction("PickUp");
         throwAction = gameplayMap.FindAction("Throw");
         cleaningListAction = gameplayMap.FindAction("CleaningList");
@@ -196,21 +197,21 @@ public class InputManager : MonoBehaviour
         DisplayTutorialEvent?.Invoke();
     }
 
-    private void OnToggleToolWheelStart(InputAction.CallbackContext context)
-    {
-        ToggleToolWheelStartEvent?.Invoke();
-    } 
-    
-    private void OnToggleToolWheelEnd(InputAction.CallbackContext context)
-    {
-        ToggleToolWheelEndEvent?.Invoke();
-    }
-
     public void ToggleGameplayMap(bool active)
     {
         if (active)
             gameplayMap.Enable();
         else
             gameplayMap.Disable();
+    }
+
+    private void OnToggleToolWheelStart(InputAction.CallbackContext context)
+    {
+        ToggleToolWheelStartEvent?.Invoke();
+    }
+
+    private void OnToggleToolWheelEnd(InputAction.CallbackContext context)
+    {
+        ToggleToolWheelEndEvent?.Invoke();
     }
 }

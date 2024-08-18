@@ -66,7 +66,6 @@ public class PlayersUIManager : MonoBehaviour
     private List<GameObject> cleaningTextElements = new();
     private List<GameObject> disposalTextElements = new();
 
-    private Coroutine toolDissapearCoroutine;
     private Coroutine notebookWarningCoroutine;
     private Coroutine waterBucketWarningCoroutine;
     private Coroutine pickUpWarningCoroutine;
@@ -75,7 +74,7 @@ public class PlayersUIManager : MonoBehaviour
     private Coroutine wrongToolSpongeCleaningWarningCoroutine;
     private Coroutine toolDirtyWarningCoroutine;
     private bool isTogglingNotebook = false;
-    private bool isNotebookOpen = false;
+    private bool isTabletOpen = false;
 
     private void OnEnable()
     {
@@ -116,7 +115,6 @@ public class PlayersUIManager : MonoBehaviour
 
     private void OnDisable()
     {
-        //inputManager.CleaningListEvent -= OnCleaningListEvent;
         gameStateManager.GameLost -= TriggerLostUI;
         gameStateManager.GameWon -= TriggerWinUI;
         cleaningManager.GetToolSelector().OnToolSwitched -= OnToolSwitched;
@@ -171,7 +169,7 @@ public class PlayersUIManager : MonoBehaviour
         if (isTogglingNotebook) return;
 
         _cleaningListState = !_cleaningListState;
-        isNotebookOpen = _cleaningListState;
+        isTabletOpen = _cleaningListState;
 
         if (!_cleaningListState)
         {
@@ -180,7 +178,7 @@ public class PlayersUIManager : MonoBehaviour
         else
         {
             audioManager.PlaySound(openNotebookEvent);
-            ToggleNotebookState(true);
+            ToggleTabletState(true);
 
             if (cleaningListAnimator)
             {
@@ -189,9 +187,9 @@ public class PlayersUIManager : MonoBehaviour
         }
     }
 
-    private void ToggleNotebookState(bool active)
+    private void ToggleTabletState(bool active)
     {
-        isNotebookOpen = active;
+        isTabletOpen = active;
         isTogglingNotebook = active;
     }
 
@@ -199,9 +197,9 @@ public class PlayersUIManager : MonoBehaviour
     {
         if (cleaningManager.GetToolSelector().Tools[newIndex] != notebook)
         {
-            if (isNotebookOpen)
+            if (isTabletOpen)
             {
-                ToggleNotebookState(false);
+                ToggleTabletState(false);
             }
         }
     }

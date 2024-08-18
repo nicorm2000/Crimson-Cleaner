@@ -90,8 +90,7 @@ public class SwayAndBob : MonoBehaviour
 
             bobPos.x = (curveCos * bobLimit.x) - (playerController.GetCurrentVelocity().x * travelLimit.x);
 
-            bobPos.y = (curveSin * bobLimit.y)
-                        - (playerController.GetRigidbody().velocity.y * travelLimit.y);
+            bobPos.y = (curveSin * bobLimit.y) - (playerController.GetRigidbody().velocity.y * travelLimit.y);
 
             bobPos.z = -(playerController.GetCurrentVelocity().y * travelLimit.z);
         }

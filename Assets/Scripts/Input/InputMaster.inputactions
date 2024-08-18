@@ -60,6 +60,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "CleaningList",
+                    "type": "Button",
+                    "id": "c6f6e0dc-9a90-4b88-a07d-70b2d6e75f71",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "MouseScroll",
                     "type": "PassThrough",
                     "id": "7ac387ae-d80d-4e3d-92c6-991a76e6260f",
@@ -116,7 +125,7 @@
                 {
                     "name": "ToolWheel",
                     "type": "Button",
-                    "id": "9f1a5858-79c0-411a-92bc-2023346c4d2d",
+                    "id": "0e29cc62-c2ca-40ea-be0d-e5a5605c15ea",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -357,6 +366,17 @@
                 },
                 {
                     "name": "",
+                    "id": "c455bb73-a97c-400c-b55b-c9ac2d5e1700",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CleaningList",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "106b3306-160a-4176-b614-e41c848ffeb8",
                     "path": "<Mouse>/scroll/y",
                     "interactions": "",
@@ -423,7 +443,7 @@
                 },
                 {
                     "name": "",
-                    "id": "ad3705bc-94ad-485c-aef9-67326d20ac86",
+                    "id": "0a6ffae4-5c79-453e-a65d-40445ae16c97",
                     "path": "<Keyboard>/t",
                     "interactions": "",
                     "processors": "",
