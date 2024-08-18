@@ -82,15 +82,6 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""RotateObejct"",
-                    ""type"": ""Button"",
-                    ""id"": ""ddffdbd6-542f-43db-a56d-60847eaf0923"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""CleaningList"",
                     ""type"": ""Button"",
                     ""id"": ""c6f6e0dc-9a90-4b88-a07d-70b2d6e75f71"",
@@ -104,33 +95,6 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""type"": ""PassThrough"",
                     ""id"": ""7ac387ae-d80d-4e3d-92c6-991a76e6260f"",
                     ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""SelectFirstTool"",
-                    ""type"": ""Button"",
-                    ""id"": ""9853615b-d67f-467a-aef9-18d29c2c2eb8"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""SelectSecondTool"",
-                    ""type"": ""Button"",
-                    ""id"": ""69d77823-c5df-4d7c-aa0d-03c46f44aec4"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""SelectThirdTool"",
-                    ""type"": ""Button"",
-                    ""id"": ""196f10cd-b841-4eea-a9fb-6909d66577a4"",
-                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -175,6 +139,15 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""name"": ""RotateNeg"",
                     ""type"": ""Button"",
                     ""id"": ""c1c0d7e3-9ba9-4251-9131-12a46a15e96c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToolWheel"",
+                    ""type"": ""Button"",
+                    ""id"": ""0e29cc62-c2ca-40ea-be0d-e5a5605c15ea"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -415,39 +388,6 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""3087eb84-8a46-4413-9d3c-dc1608335cfb"",
-                    ""path"": ""<Keyboard>/r"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RotateObejct"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""db6f9974-8061-4110-bb82-70fab12568ea"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RotateObejct"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e5de29e4-b0da-4cc6-ad23-5d4377563e38"",
-                    ""path"": ""<DualShockGamepad>/leftShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RotateObejct"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""c455bb73-a97c-400c-b55b-c9ac2d5e1700"",
                     ""path"": ""<Keyboard>/tab"",
                     ""interactions"": """",
@@ -465,39 +405,6 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""MouseScroll"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8a1b33d1-0a45-472e-8800-3f73b73c1f81"",
-                    ""path"": ""<Keyboard>/1"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SelectFirstTool"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""dd593baf-ee30-4c0c-b4f5-6f595a8d728e"",
-                    ""path"": ""<Keyboard>/2"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SelectSecondTool"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e526462e-1b20-4858-b3c7-de02ad0b30c0"",
-                    ""path"": ""<Keyboard>/3"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SelectThirdTool"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -553,6 +460,17 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""RotateNeg"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0a6ffae4-5c79-453e-a65d-40445ae16c97"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToolWheel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -630,17 +548,14 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         m_Player_Clean = m_Player.FindAction("Clean", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_PickUp = m_Player.FindAction("PickUp", throwIfNotFound: true);
-        m_Player_RotateObejct = m_Player.FindAction("RotateObejct", throwIfNotFound: true);
         m_Player_CleaningList = m_Player.FindAction("CleaningList", throwIfNotFound: true);
         m_Player_MouseScroll = m_Player.FindAction("MouseScroll", throwIfNotFound: true);
-        m_Player_SelectFirstTool = m_Player.FindAction("SelectFirstTool", throwIfNotFound: true);
-        m_Player_SelectSecondTool = m_Player.FindAction("SelectSecondTool", throwIfNotFound: true);
-        m_Player_SelectThirdTool = m_Player.FindAction("SelectThirdTool", throwIfNotFound: true);
         m_Player_Throw = m_Player.FindAction("Throw", throwIfNotFound: true);
         m_Player_Tutorial = m_Player.FindAction("Tutorial", throwIfNotFound: true);
         m_Player_ChangeRotationAxis = m_Player.FindAction("ChangeRotationAxis", throwIfNotFound: true);
         m_Player_RotatePos = m_Player.FindAction("RotatePos", throwIfNotFound: true);
         m_Player_RotateNeg = m_Player.FindAction("RotateNeg", throwIfNotFound: true);
+        m_Player_ToolWheel = m_Player.FindAction("ToolWheel", throwIfNotFound: true);
         // Pause
         m_Pause = asset.FindActionMap("Pause", throwIfNotFound: true);
         m_Pause_Pause = m_Pause.FindAction("Pause", throwIfNotFound: true);
@@ -711,17 +626,14 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Clean;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_PickUp;
-    private readonly InputAction m_Player_RotateObejct;
     private readonly InputAction m_Player_CleaningList;
     private readonly InputAction m_Player_MouseScroll;
-    private readonly InputAction m_Player_SelectFirstTool;
-    private readonly InputAction m_Player_SelectSecondTool;
-    private readonly InputAction m_Player_SelectThirdTool;
     private readonly InputAction m_Player_Throw;
     private readonly InputAction m_Player_Tutorial;
     private readonly InputAction m_Player_ChangeRotationAxis;
     private readonly InputAction m_Player_RotatePos;
     private readonly InputAction m_Player_RotateNeg;
+    private readonly InputAction m_Player_ToolWheel;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -732,17 +644,14 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         public InputAction @Clean => m_Wrapper.m_Player_Clean;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @PickUp => m_Wrapper.m_Player_PickUp;
-        public InputAction @RotateObejct => m_Wrapper.m_Player_RotateObejct;
         public InputAction @CleaningList => m_Wrapper.m_Player_CleaningList;
         public InputAction @MouseScroll => m_Wrapper.m_Player_MouseScroll;
-        public InputAction @SelectFirstTool => m_Wrapper.m_Player_SelectFirstTool;
-        public InputAction @SelectSecondTool => m_Wrapper.m_Player_SelectSecondTool;
-        public InputAction @SelectThirdTool => m_Wrapper.m_Player_SelectThirdTool;
         public InputAction @Throw => m_Wrapper.m_Player_Throw;
         public InputAction @Tutorial => m_Wrapper.m_Player_Tutorial;
         public InputAction @ChangeRotationAxis => m_Wrapper.m_Player_ChangeRotationAxis;
         public InputAction @RotatePos => m_Wrapper.m_Player_RotatePos;
         public InputAction @RotateNeg => m_Wrapper.m_Player_RotateNeg;
+        public InputAction @ToolWheel => m_Wrapper.m_Player_ToolWheel;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -770,24 +679,12 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @PickUp.started += instance.OnPickUp;
             @PickUp.performed += instance.OnPickUp;
             @PickUp.canceled += instance.OnPickUp;
-            @RotateObejct.started += instance.OnRotateObejct;
-            @RotateObejct.performed += instance.OnRotateObejct;
-            @RotateObejct.canceled += instance.OnRotateObejct;
             @CleaningList.started += instance.OnCleaningList;
             @CleaningList.performed += instance.OnCleaningList;
             @CleaningList.canceled += instance.OnCleaningList;
             @MouseScroll.started += instance.OnMouseScroll;
             @MouseScroll.performed += instance.OnMouseScroll;
             @MouseScroll.canceled += instance.OnMouseScroll;
-            @SelectFirstTool.started += instance.OnSelectFirstTool;
-            @SelectFirstTool.performed += instance.OnSelectFirstTool;
-            @SelectFirstTool.canceled += instance.OnSelectFirstTool;
-            @SelectSecondTool.started += instance.OnSelectSecondTool;
-            @SelectSecondTool.performed += instance.OnSelectSecondTool;
-            @SelectSecondTool.canceled += instance.OnSelectSecondTool;
-            @SelectThirdTool.started += instance.OnSelectThirdTool;
-            @SelectThirdTool.performed += instance.OnSelectThirdTool;
-            @SelectThirdTool.canceled += instance.OnSelectThirdTool;
             @Throw.started += instance.OnThrow;
             @Throw.performed += instance.OnThrow;
             @Throw.canceled += instance.OnThrow;
@@ -803,6 +700,9 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @RotateNeg.started += instance.OnRotateNeg;
             @RotateNeg.performed += instance.OnRotateNeg;
             @RotateNeg.canceled += instance.OnRotateNeg;
+            @ToolWheel.started += instance.OnToolWheel;
+            @ToolWheel.performed += instance.OnToolWheel;
+            @ToolWheel.canceled += instance.OnToolWheel;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -825,24 +725,12 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @PickUp.started -= instance.OnPickUp;
             @PickUp.performed -= instance.OnPickUp;
             @PickUp.canceled -= instance.OnPickUp;
-            @RotateObejct.started -= instance.OnRotateObejct;
-            @RotateObejct.performed -= instance.OnRotateObejct;
-            @RotateObejct.canceled -= instance.OnRotateObejct;
             @CleaningList.started -= instance.OnCleaningList;
             @CleaningList.performed -= instance.OnCleaningList;
             @CleaningList.canceled -= instance.OnCleaningList;
             @MouseScroll.started -= instance.OnMouseScroll;
             @MouseScroll.performed -= instance.OnMouseScroll;
             @MouseScroll.canceled -= instance.OnMouseScroll;
-            @SelectFirstTool.started -= instance.OnSelectFirstTool;
-            @SelectFirstTool.performed -= instance.OnSelectFirstTool;
-            @SelectFirstTool.canceled -= instance.OnSelectFirstTool;
-            @SelectSecondTool.started -= instance.OnSelectSecondTool;
-            @SelectSecondTool.performed -= instance.OnSelectSecondTool;
-            @SelectSecondTool.canceled -= instance.OnSelectSecondTool;
-            @SelectThirdTool.started -= instance.OnSelectThirdTool;
-            @SelectThirdTool.performed -= instance.OnSelectThirdTool;
-            @SelectThirdTool.canceled -= instance.OnSelectThirdTool;
             @Throw.started -= instance.OnThrow;
             @Throw.performed -= instance.OnThrow;
             @Throw.canceled -= instance.OnThrow;
@@ -858,6 +746,9 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @RotateNeg.started -= instance.OnRotateNeg;
             @RotateNeg.performed -= instance.OnRotateNeg;
             @RotateNeg.canceled -= instance.OnRotateNeg;
+            @ToolWheel.started -= instance.OnToolWheel;
+            @ToolWheel.performed -= instance.OnToolWheel;
+            @ToolWheel.canceled -= instance.OnToolWheel;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -929,17 +820,14 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         void OnClean(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnPickUp(InputAction.CallbackContext context);
-        void OnRotateObejct(InputAction.CallbackContext context);
         void OnCleaningList(InputAction.CallbackContext context);
         void OnMouseScroll(InputAction.CallbackContext context);
-        void OnSelectFirstTool(InputAction.CallbackContext context);
-        void OnSelectSecondTool(InputAction.CallbackContext context);
-        void OnSelectThirdTool(InputAction.CallbackContext context);
         void OnThrow(InputAction.CallbackContext context);
         void OnTutorial(InputAction.CallbackContext context);
         void OnChangeRotationAxis(InputAction.CallbackContext context);
         void OnRotatePos(InputAction.CallbackContext context);
         void OnRotateNeg(InputAction.CallbackContext context);
+        void OnToolWheel(InputAction.CallbackContext context);
     }
     public interface IPauseActions
     {

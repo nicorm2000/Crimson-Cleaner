@@ -1,59 +1,69 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ToolsWheelController : MonoBehaviour
 {
     [Header("Config")]
-    public static int toolID;
+    public int toolID;
+    public int previousToolID;
+    public InputManager inputManager;
+    public GameStateManager gameStateManager;
+    public CleaningTool cleaningTool;
 
     private Animator _animator;
-    private bool _toolsWheelSelected = false;
+
+    private void OnEnable()
+    {
+        inputManager.ToggleToolWheelStartEvent += OnToolWheelStart;
+        inputManager.ToggleToolWheelEndEvent += OnToolWheelEnd;
+    }
+
+    private void OnDisable()
+    {
+        inputManager.ToggleToolWheelStartEvent -= OnToolWheelStart;
+        inputManager.ToggleToolWheelEndEvent -= OnToolWheelEnd;
+    }
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
+        AssignToolIDs();
     }
 
-    private void Update()
+    private void OnToolWheelStart()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            _toolsWheelSelected = !_toolsWheelSelected;
-            Cursor.visible = _toolsWheelSelected;
+        gameStateManager.TransitionToState("ToolWheel");
+        _animator.SetBool("OpenToolWheel", true);
+    }
 
-            if (_toolsWheelSelected)
-                Cursor.lockState = CursorLockMode.None;
-            else
-                Cursor.lockState = CursorLockMode.Confined;
+    private void OnToolWheelEnd()
+    {
+        gameStateManager.TransitionToState("GamePlay");
+        _animator.SetBool("OpenToolWheel", false);
+        SelectTool();
+    }
+
+    private void AssignToolIDs()
+    {
+        ToolsWheel[] toolWheels = GetComponentsInChildren<ToolsWheel>();
+        for (int i = 0; i < toolWheels.Length; i++)
+        {
+            if (i < cleaningTool.ToolsLength)
+            {
+                toolWheels[i].ID = i;
+                toolWheels[i].itemName = cleaningTool.Tools[i].name;
+            }
         }
+    }
 
-        if (_toolsWheelSelected)
+    private void SelectTool()
+    {
+        if (toolID >= 0 && toolID < cleaningTool.ToolsLength)
         {
-            _animator.SetBool("OpenToolWheel", true);
+            cleaningTool.SwitchTool(toolID);
         }
         else
         {
-            _animator.SetBool("OpenToolWheel", false);
-        }
-
-        switch(toolID)
-        {
-            case 0:
-                Debug.Log("No Selection");
-                break;
-            case 1:
-                Debug.Log("Mop");
-                break;
-            case 2:
-                Debug.Log("Sponge");
-                break;
-            case 3:
-                Debug.Log("Trash Bin");
-                break;
-            case 4:
-                Debug.Log("Hands");
-                break;
+            Debug.LogWarning($"ToolID {toolID} is out of range.");
         }
     }
 }

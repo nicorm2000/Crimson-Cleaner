@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public interface IGameState
@@ -20,6 +19,7 @@ public class GameStateManager : MonoBehaviour
 
     public InputManager inputManager;
     public SceneTimer sceneTimer;
+    public PlayerController playerController;
     public PlayerStats playerStats;
 
     private IGameState currentState;
@@ -53,6 +53,7 @@ public class GameStateManager : MonoBehaviour
             { "Win", new WinState() },
             { "Lose", new LoseState() },
             { "Pause", new PauseState() },
+            { "ToolWheel", new ToolWheelState() },
             { "DeInit", new DeInitializationState() }
         };
 
@@ -121,6 +122,25 @@ public class GameStateManager : MonoBehaviour
     }
 }
 
+public class ToolWheelState : IGameState
+{
+    public void EnterState(GameStateManager gameStateManager)
+    {
+        gameStateManager.inputManager.ShowCursor();
+        gameStateManager.playerController.isCameraMovable = false;
+    }
+
+    public void UpdateState(GameStateManager gameStateManager)
+    {
+
+    }
+
+    public void ExitState(GameStateManager gameStateManager)
+    {
+        gameStateManager.inputManager.HideCursor();
+        gameStateManager.playerController.isCameraMovable = true;
+    }
+}
 
 public class InitializationState : IGameState
 {

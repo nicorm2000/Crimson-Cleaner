@@ -66,7 +66,6 @@ public class PlayersUIManager : MonoBehaviour
     private List<GameObject> cleaningTextElements = new();
     private List<GameObject> disposalTextElements = new();
 
-    private Coroutine toolDissapearCoroutine;
     private Coroutine notebookWarningCoroutine;
     private Coroutine waterBucketWarningCoroutine;
     private Coroutine pickUpWarningCoroutine;
@@ -75,15 +74,16 @@ public class PlayersUIManager : MonoBehaviour
     private Coroutine wrongToolSpongeCleaningWarningCoroutine;
     private Coroutine toolDirtyWarningCoroutine;
     private bool isTogglingNotebook = false;
+    private bool isTabletOpen = false;
 
     private void OnEnable()
     {
         backToLobbyPanel.SetActive(false);
 
-        inputManager.CleaningListEvent += OnCleaningListEvent;
         gameStateManager.GameLost += TriggerLostUI;
         gameStateManager.GameWon += TriggerWinUI;
-        cleaningManager.GetToolSelector().OnToolSwitched += HandleToolSwitched;
+        cleaningManager.GetToolSelector().OnToolSwitched += OnToolSwitched;
+        cleaningManager.GetToolSelector().CleaningListEvent += OnCleaningListEvent;
         waterBucket.WaterBucketUnavailable += OnToggleWaterbucketUnavailiable;
         pickUpDrop.PickUpUnavailableEvent += OnPickUpUnavailable;
 
@@ -115,10 +115,10 @@ public class PlayersUIManager : MonoBehaviour
 
     private void OnDisable()
     {
-        inputManager.CleaningListEvent -= OnCleaningListEvent;
         gameStateManager.GameLost -= TriggerLostUI;
         gameStateManager.GameWon -= TriggerWinUI;
-        cleaningManager.GetToolSelector().OnToolSwitched -= HandleToolSwitched;
+        cleaningManager.GetToolSelector().OnToolSwitched -= OnToolSwitched;
+        cleaningManager.GetToolSelector().CleaningListEvent -= OnCleaningListEvent;
         waterBucket.WaterBucketUnavailable -= OnToggleWaterbucketUnavailiable;
         pickUpDrop.PickUpUnavailableEvent -= OnPickUpUnavailable;
 
@@ -150,30 +150,12 @@ public class PlayersUIManager : MonoBehaviour
 
     private void Start()
     {
-        cleaningManager.GetToolSelector().OnToolSwitched += UpdateToolImage;
-        UpdateToolImage(cleaningManager.GetToolSelector().CurrentToolIndex);
-
         reticle.SetActive(true);
         toolHolder.SetActive(false);
         jobFinished.SetActive(false);
         jobUnfinished.SetActive(false);
 
         CreateCleaningList();
-    }
-
-    private void OnDestroy()
-    {
-        cleaningManager.GetToolSelector().OnToolSwitched -= UpdateToolImage;
-    }
-
-    private void HandleToolSwitched(int newToolIndex)
-    {
-        if (newToolIndex != 2 && notebook.activeSelf)
-        {
-            _cleaningListState = false;
-            StartCoroutine(ToggleNotebookState());
-            cleaningListAnimator.SetBool(notebookAnimatorOpenHash, _cleaningListState);
-        }
     }
 
     private void OpenTab(GameObject go, bool state)
@@ -184,54 +166,42 @@ public class PlayersUIManager : MonoBehaviour
 
     private void OnCleaningListEvent()
     {
-        if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().ToolsLength - 1)
+        if (isTogglingNotebook) return;
+
+        _cleaningListState = !_cleaningListState;
+        isTabletOpen = _cleaningListState;
+
+        if (!_cleaningListState)
         {
-            if (!isTogglingNotebook)
-            {
-                _cleaningListState = !_cleaningListState;
-
-                if (!_cleaningListState) // If the list is closing
-                {
-                    audioManager.PlaySound(closeNotebookEvent);
-                    StartCoroutine(ToggleNotebookState());
-                }
-                else
-                {
-                    audioManager.PlaySound(openNotebookEvent);
-                    notebook.SetActive(true);
-                }
-
-                if (cleaningListAnimator)
-                {
-                    cleaningListAnimator.SetBool(notebookAnimatorOpenHash, _cleaningListState);
-                }
-            }
+            audioManager.PlaySound(closeNotebookEvent);
         }
         else
         {
-            if (notebookWarningCoroutine != null)
+            audioManager.PlaySound(openNotebookEvent);
+            ToggleTabletState(true);
+
+            if (cleaningListAnimator)
             {
-                StopCoroutine(notebookWarningCoroutine);
+                cleaningListAnimator.SetBool(notebookAnimatorOpenHash, _cleaningListState);
             }
-            notebookWarningCoroutine = StartCoroutine(ShowWarning(handImageWarning, togglingNotebookErrorDuration));
         }
     }
 
-    private IEnumerator ToggleNotebookState()
+    private void ToggleTabletState(bool active)
     {
-        isTogglingNotebook = true;
-        if (cleaningListAnimator)
+        isTabletOpen = active;
+        isTogglingNotebook = active;
+    }
+
+    private void OnToolSwitched(int newIndex)
+    {
+        if (cleaningManager.GetToolSelector().Tools[newIndex] != notebook)
         {
-            notebook.SetActive(true);
-            float closeDuration = cleaningListAnimator.GetCurrentAnimatorStateInfo(0).length;
-            if (closeDuration == 0f)
+            if (isTabletOpen)
             {
-                closeDuration = cleaningListAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+                ToggleTabletState(false);
             }
-            yield return new WaitForSeconds(closeDuration);
-            notebook.SetActive(false);
         }
-        isTogglingNotebook = false;
     }
 
     private void OnToggleWaterbucketUnavailiable()
@@ -282,48 +252,6 @@ public class PlayersUIManager : MonoBehaviour
         foreach (Image warningImageItem in warningImage) warningImageItem.gameObject.SetActive(true);
         yield return new WaitForSeconds(duration);
         foreach (Image warningImageItem in warningImage) warningImageItem.gameObject.SetActive(false);
-    }
-
-    private void UpdateToolImage(int currentToolIndex)
-    {
-        reticle.SetActive(false);
-        toolHolder.SetActive(true);
-        switch (cleaningManager.GetToolSelector().CurrentToolIndex)
-        {
-            case 0:
-                mopImage.sprite = mopSpriteOn;
-                spongeImage.sprite = spongeSpriteOff;
-                handImage.sprite = handSpriteOff;
-                break;
-            case 1:
-                mopImage.sprite = mopSpriteOff;
-                spongeImage.sprite = spongeSpriteOn;
-                handImage.sprite = handSpriteOff;
-                break;
-            case 2:
-                mopImage.sprite = mopSpriteOff;
-                spongeImage.sprite = spongeSpriteOff;
-                handImage.sprite = handSpriteOn;
-                break;
-            default:
-                mopImage.sprite = mopSpriteOff;
-                spongeImage.sprite = spongeSpriteOff;
-                handImage.sprite = handSpriteOff;
-                break;
-        }
-
-        if (toolDissapearCoroutine != null)
-        {
-            StopCoroutine(toolDissapearCoroutine);
-        }
-        toolDissapearCoroutine = StartCoroutine(WaitToolDisappear());
-    }
-
-    private IEnumerator WaitToolDisappear()
-    {
-        yield return new WaitForSeconds(toolHolderLifetime);
-        toolHolder.SetActive(false);
-        reticle.SetActive(true);
     }
 
     private void TriggerLostUI()

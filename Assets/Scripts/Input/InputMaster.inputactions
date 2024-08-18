@@ -60,15 +60,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "RotateObejct",
-                    "type": "Button",
-                    "id": "ddffdbd6-542f-43db-a56d-60847eaf0923",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "CleaningList",
                     "type": "Button",
                     "id": "c6f6e0dc-9a90-4b88-a07d-70b2d6e75f71",
@@ -82,33 +73,6 @@
                     "type": "PassThrough",
                     "id": "7ac387ae-d80d-4e3d-92c6-991a76e6260f",
                     "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "SelectFirstTool",
-                    "type": "Button",
-                    "id": "9853615b-d67f-467a-aef9-18d29c2c2eb8",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "SelectSecondTool",
-                    "type": "Button",
-                    "id": "69d77823-c5df-4d7c-aa0d-03c46f44aec4",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "SelectThirdTool",
-                    "type": "Button",
-                    "id": "196f10cd-b841-4eea-a9fb-6909d66577a4",
-                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -153,6 +117,15 @@
                     "name": "RotateNeg",
                     "type": "Button",
                     "id": "c1c0d7e3-9ba9-4251-9131-12a46a15e96c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ToolWheel",
+                    "type": "Button",
+                    "id": "0e29cc62-c2ca-40ea-be0d-e5a5605c15ea",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -393,39 +366,6 @@
                 },
                 {
                     "name": "",
-                    "id": "3087eb84-8a46-4413-9d3c-dc1608335cfb",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RotateObejct",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "db6f9974-8061-4110-bb82-70fab12568ea",
-                    "path": "<Gamepad>/leftShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RotateObejct",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e5de29e4-b0da-4cc6-ad23-5d4377563e38",
-                    "path": "<DualShockGamepad>/leftShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RotateObejct",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "c455bb73-a97c-400c-b55b-c9ac2d5e1700",
                     "path": "<Keyboard>/tab",
                     "interactions": "",
@@ -443,39 +383,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "MouseScroll",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8a1b33d1-0a45-472e-8800-3f73b73c1f81",
-                    "path": "<Keyboard>/1",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SelectFirstTool",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "dd593baf-ee30-4c0c-b4f5-6f595a8d728e",
-                    "path": "<Keyboard>/2",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SelectSecondTool",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e526462e-1b20-4858-b3c7-de02ad0b30c0",
-                    "path": "<Keyboard>/3",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SelectThirdTool",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -531,6 +438,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "RotateNeg",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0a6ffae4-5c79-453e-a65d-40445ae16c97",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToolWheel",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
