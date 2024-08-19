@@ -64,6 +64,8 @@ public class WaterBucket : Interactable, ICleanable
             return;
         }
 
+        if (_bucketDirtState >= 4) return;
+
         if (dirtyPercentage == 0) return;
 
         if (!HasWater) return;

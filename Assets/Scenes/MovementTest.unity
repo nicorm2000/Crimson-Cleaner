@@ -79946,6 +79946,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1253562304}
     m_Modifications:
+    - target: {fileID: 58284640915349974, guid: 6a294399905013b4e8c290a270152890,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0491051b82b09be4eaa3b2224971acc7, type: 2}
     - target: {fileID: 1001982321743339526, guid: 6a294399905013b4e8c290a270152890,
         type: 3}
       propertyPath: m_Convex
@@ -95664,15 +95669,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7907338759621976367, guid: a909ab75a9a202248af2865a62e8889b,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 40755138696053180, guid: a909ab75a9a202248af2865a62e8889b,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a909ab75a9a202248af2865a62e8889b, type: 3}
 --- !u!33 &9126550436697678844
 MeshFilter:
