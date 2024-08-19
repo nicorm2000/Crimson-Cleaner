@@ -75572,7 +75572,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cb70d79123701444c997f8b1f09c98b5, type: 2}
+  - {fileID: 2100000, guid: 9aaf478264b0c814595cd9cdd1aae395, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86944,7 +86944,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cb70d79123701444c997f8b1f09c98b5, type: 2}
+  - {fileID: 2100000, guid: 9aaf478264b0c814595cd9cdd1aae395, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -89016,10 +89016,10 @@ MonoBehaviour:
   mopCleanMaterial: {fileID: 2100000, guid: cb70d79123701444c997f8b1f09c98b5, type: 2}
   spongeCleanMaterial: {fileID: 2100000, guid: f754425cdc2126e4481e26f0e137e6a8, type: 2}
   mopDirtyMaterial:
-  - {fileID: 2100000, guid: 5a2420186e8cb5843971df7c22fc1fce, type: 2}
-  - {fileID: 2100000, guid: ed827e3f0ab79fc4db0ed87e33037a18, type: 2}
-  - {fileID: 2100000, guid: 5839c6b5cc50f22469a3a5d54f78eca7, type: 2}
-  - {fileID: 2100000, guid: fbdce65ed39ed45428dda3cb80ca4d54, type: 2}
+  - {fileID: 2100000, guid: 9eb3e7a19606c374e8c244ddcd7492f1, type: 2}
+  - {fileID: 2100000, guid: b8cdfbdac8be26947aebde513da5ad3f, type: 2}
+  - {fileID: 2100000, guid: 17438eecf0b79464eb360bcdb2e11322, type: 2}
+  - {fileID: 2100000, guid: c8750638373d17a48bf10e0bf9fabd8d, type: 2}
   spongeDirtyMaterial:
   - {fileID: 2100000, guid: 6c8ae7303089ae84381352f52297fc33, type: 2}
   - {fileID: 2100000, guid: 3942bf6ea25801442affdad42d5f7cde, type: 2}
@@ -95619,22 +95619,22 @@ PrefabInstance:
     - target: {fileID: 6613405302159054587, guid: a909ab75a9a202248af2865a62e8889b,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.82499564
+      value: 0.82629985
       objectReference: {fileID: 0}
     - target: {fileID: 6613405302159054587, guid: a909ab75a9a202248af2865a62e8889b,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.5640634
+      value: -0.56323045
       objectReference: {fileID: 0}
     - target: {fileID: 6613405302159054587, guid: a909ab75a9a202248af2865a62e8889b,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0013254964
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6613405302159054587, guid: a909ab75a9a202248af2865a62e8889b,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.03482902
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6613405302159054587, guid: a909ab75a9a202248af2865a62e8889b,
         type: 3}
@@ -95644,13 +95644,18 @@ PrefabInstance:
     - target: {fileID: 6613405302159054587, guid: a909ab75a9a202248af2865a62e8889b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 5.826
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6613405302159054587, guid: a909ab75a9a202248af2865a62e8889b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -8.808
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7142180457813930681, guid: a909ab75a9a202248af2865a62e8889b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e1549cf5e92ef54488f48b079736e4c4, type: 2}
     - target: {fileID: 8173263614640885851, guid: a909ab75a9a202248af2865a62e8889b,
         type: 3}
       propertyPath: m_fontStyle
@@ -95659,7 +95664,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7907338759621976367, guid: a909ab75a9a202248af2865a62e8889b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 40755138696053180, guid: a909ab75a9a202248af2865a62e8889b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: a909ab75a9a202248af2865a62e8889b, type: 3}
 --- !u!33 &9126550436697678844
 MeshFilter:

@@ -219,7 +219,7 @@ public class Clean : MonoBehaviour, ICleanable
                 ResetCurrentCleanableObject();
             }
         }
-        else if (currentToolIndex == 2)
+        else if (currentToolIndex >= 2)//CHECK
         {
             if ((mopLayer.value & (1 << gameObject.layer)) != 0)
                 WrongToolMop?.Invoke();
