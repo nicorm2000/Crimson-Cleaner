@@ -18,7 +18,6 @@ public class GameStateManager : MonoBehaviour
     public List<DisposableObject> DisposableObjects => disposableObjects;
 
     public InputManager inputManager;
-    public SceneTimer sceneTimer;
     public PlayerController playerController;
     public PlayerStats playerStats;
 
@@ -160,9 +159,6 @@ public class InitializationState : IGameState
         gameStateManager.cleanedCount = 0;
         gameStateManager.disposedCount = 0;
 
-        gameStateManager.isTimerCompleted = false;
-        gameStateManager.sceneTimer.StartTimer();
-
         gameStateManager.TransitionToState("GamePlay");
 
         gameStateManager.playerStats.currentMoney = 0;
@@ -195,7 +191,7 @@ public class GamePlayState : IGameState
             return;
         }
 
-        if (gameStateManager.isTimerCompleted)
+        if (gameStateManager.isTimerCompleted) //Update in the future
         {
             gameStateManager.TransitionToState("Lose");
             return;
@@ -261,7 +257,6 @@ public class PauseState : IGameState
     public void EnterState(GameStateManager gameStateManager)
     {
         gameStateManager.inputManager.ShowCursor();
-        gameStateManager.sceneTimer.TooglePauseTimer(true);
         Debug.Log("Game Paused");
     }
 
@@ -273,7 +268,6 @@ public class PauseState : IGameState
     public void ExitState(GameStateManager gameStateManager)
     {
         gameStateManager.inputManager.HideCursor();
-        gameStateManager.sceneTimer.TooglePauseTimer(false);
         Debug.Log("Game Resumed");
     }
 }

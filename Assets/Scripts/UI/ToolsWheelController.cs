@@ -1,13 +1,16 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ToolsWheelController : MonoBehaviour
 {
     [Header("Config")]
+    [SerializeField] private InputManager inputManager;
+    [SerializeField] private GameStateManager gameStateManager;
+    [SerializeField] private CleaningTool cleaningTool;
+    [SerializeField] private Image reticle;
+    
     public int toolID;
     public int previousToolID;
-    public InputManager inputManager;
-    public GameStateManager gameStateManager;
-    public CleaningTool cleaningTool;
 
     private Animator _animator;
 
@@ -31,12 +34,14 @@ public class ToolsWheelController : MonoBehaviour
 
     private void OnToolWheelStart()
     {
+        reticle.gameObject.SetActive(false);
         gameStateManager.TransitionToState("ToolWheel");
         _animator.SetBool("OpenToolWheel", true);
     }
 
     private void OnToolWheelEnd()
     {
+        reticle.gameObject.SetActive(true);
         gameStateManager.TransitionToState("GamePlay");
         _animator.SetBool("OpenToolWheel", false);
         SelectTool();
