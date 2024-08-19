@@ -16,7 +16,7 @@ public class ToolsWheel : MonoBehaviour
 
     private void Start()
     {
-        _animator = GetComponent<Animator>();
+        _animator = GetComponentInParent<Animator>();
     }
 
     public void HoverEnter()
