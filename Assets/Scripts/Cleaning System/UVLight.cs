@@ -10,9 +10,9 @@ public class UVLight : Interactable, IToggable
     [SerializeField] private Sprite toggleOnOffMessage;
     [SerializeField] private Material onMaterial;
     [SerializeField] private Material offMaterial;
+    [SerializeField] private Light[] uvLight;
 
     private bool isOn = false;
-    private Light uvLight;
     private Renderer _renderer;
 
     public Sprite InteractMessage => toggleOnOffMessage;
@@ -44,8 +44,10 @@ public class UVLight : Interactable, IToggable
 
     void Start()
     {
-        uvLight = GetComponentInChildren<Light>();
-        uvLight.enabled = isOn;
+        for (int i = 0; i < uvLight.Length; i++)
+        {
+            uvLight[i].enabled = isOn;
+        }
     }
 
     public void ToggleLight()
@@ -53,7 +55,10 @@ public class UVLight : Interactable, IToggable
         isOn = !isOn;
         SwapMaterial(isOn);
         audioManager.PlaySound(soundEvent);
-        uvLight.enabled = isOn;
+        for (int i = 0; i < uvLight.Length; i++)
+        {
+            uvLight[i].enabled = isOn;
+        }
     }
 
     public bool IsObjectInLightRadius(GameObject obj, int samplePoints = 5)
@@ -79,7 +84,7 @@ public class UVLight : Interactable, IToggable
         int pointsInside = 0;
         foreach (var pos in samplePositions)
         {
-            if (Vector3.Distance(transform.position, pos) <= uvLight.range)
+            if (Vector3.Distance(transform.position, pos) <= uvLight[0].range)
             {
                 pointsInside++;
             }
