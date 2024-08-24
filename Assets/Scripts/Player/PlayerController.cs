@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float rotationBottomLimit = 70f;
     [SerializeField] private float mouseSensitivity = 22f;
     [SerializeField] private float controllerSensitivity = 22f;
+    [SerializeField] private float distanceToGroundRaycast = 2f;
 
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
@@ -64,6 +65,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        HandleGravity();
         Move();
         HandleFootsteps();
     }
@@ -142,6 +144,28 @@ public class PlayerController : MonoBehaviour
 
         camera.localRotation = Quaternion.Euler(xRotation, 0, 0);
         transform.Rotate(Vector3.up, mousePos.x);
+    }
+
+    private void HandleGravity()
+    {
+        distanceToGroundRaycast = 2.0f;
+
+        // Crea un raycast desde el centro del jugador hacia abajo
+        RaycastHit hit;
+        if (!Physics.Raycast(transform.position, Vector3.down, out hit, distanceToGroundRaycast))
+        {
+            // Si el jugador está en el aire (el raycast no toca el suelo)
+            Vector3 gravityForce = new Vector3(0, -9.81f, 0);
+            playerRigidBody.AddForce(gravityForce, ForceMode.Acceleration);
+        }
+        else
+        {
+            if (hit.point.y < transform.position.y)
+            {
+                Vector3 targetPosition = new Vector3(transform.position.x, hit.point.y + 0.1f, transform.position.z);
+                transform.position = Vector3.Lerp(transform.position, targetPosition, 0.1f);
+            }
+        }
     }
 
     private void OnChangeRotationAxis()
