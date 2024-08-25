@@ -22,7 +22,7 @@ public class WaterFaucetSystem : Interactable, IToggable
     [Header("Audio Config")]
     [SerializeField] private string interactFaucetEvent = null;
     [SerializeField] private string waterFlowEvent = null;
-    [SerializeField] private string waterFlowStopEvent = null;
+    public string waterFlowStopEvent = null;
 
     private Animator animator;
     public bool _isOpen { get; private set; }
