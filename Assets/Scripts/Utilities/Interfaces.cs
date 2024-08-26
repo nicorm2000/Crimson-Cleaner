@@ -14,6 +14,7 @@ public interface IInmersible : IInteractable
 public interface IPickable
 {
     bool IsObjectPickedUp { get; }
+    bool IsObjectSnapped { get; }
     Sprite PickUpMessage { get; }
     Sprite DropMessage { get; }
     Sprite ThrowMessage { get; }

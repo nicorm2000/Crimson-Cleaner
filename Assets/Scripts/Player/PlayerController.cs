@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -63,17 +64,11 @@ public class PlayerController : MonoBehaviour
         footstepTimer = footstepInterval;
     }
 
-    private void FixedUpdate()
-    {
-        HandleGravity();
-        Move();
-        HandleFootsteps();
-    }
 
     private void Update()
     {
-        if (isCameraMovable)
-            CameraMovements();
+        Move();
+        HandleFootsteps();
 
         if (objectGrabbable != null)
         {
@@ -85,6 +80,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (isCameraMovable)
+            CameraMovements();
+    }
+
     private void Move()
     {
         if (!hasAnimator) return;
@@ -93,21 +94,23 @@ public class PlayerController : MonoBehaviour
 
         if (inputManager.Move == Vector2.zero) targetSpeed = 0.1f;
 
-        // Update current velocity based on input
+        Vector3 forward = camera.forward;
+        Vector3 right = camera.right;
+
+        forward.y = 0f;
+        right.y = 0f;
+
+        forward.Normalize();
+        right.Normalize();
+
+        Vector3 desiredMoveDirection = forward * inputManager.Move.y + right * inputManager.Move.x;
+
+        playerRigidBody.MovePosition(transform.position + desiredMoveDirection * targetSpeed * Time.fixedDeltaTime);
+
+        // Actualizar el animator con los valores de movimiento
         currentVelocity.x = Mathf.Lerp(currentVelocity.x, inputManager.Move.x * targetSpeed, animationBlendSpeed * Time.fixedDeltaTime);
         currentVelocity.y = Mathf.Lerp(currentVelocity.y, inputManager.Move.y * targetSpeed, animationBlendSpeed * Time.fixedDeltaTime);
 
-        // Create a movement vector using the correct axes
-        Vector3 movement = new Vector3(currentVelocity.x, 0, currentVelocity.y); // X for horizontal (left/right), Z for forward/backward
-
-        // Apply the movement relative to the player's forward direction
-        Vector3 targetVelocity = transform.TransformDirection(movement);
-        Vector3 velocityDifference = targetVelocity - playerRigidBody.velocity;
-
-        // Apply force to the Rigidbody
-        playerRigidBody.AddForce(velocityDifference, ForceMode.VelocityChange);
-
-        // Update animator with movement values
         animator.SetFloat(xVelHash, currentVelocity.x);
         animator.SetFloat(yVelHash, currentVelocity.y);
 
@@ -144,28 +147,6 @@ public class PlayerController : MonoBehaviour
 
         camera.localRotation = Quaternion.Euler(xRotation, 0, 0);
         transform.Rotate(Vector3.up, mousePos.x);
-    }
-
-    private void HandleGravity()
-    {
-        distanceToGroundRaycast = 2.0f;
-
-        // Crea un raycast desde el centro del jugador hacia abajo
-        RaycastHit hit;
-        if (!Physics.Raycast(transform.position, Vector3.down, out hit, distanceToGroundRaycast))
-        {
-            // Si el jugador está en el aire (el raycast no toca el suelo)
-            Vector3 gravityForce = new Vector3(0, -9.81f, 0);
-            playerRigidBody.AddForce(gravityForce, ForceMode.Acceleration);
-        }
-        else
-        {
-            if (hit.point.y < transform.position.y)
-            {
-                Vector3 targetPosition = new Vector3(transform.position.x, hit.point.y + 0.1f, transform.position.z);
-                transform.position = Vector3.Lerp(transform.position, targetPosition, 0.1f);
-            }
-        }
     }
 
     private void OnChangeRotationAxis()

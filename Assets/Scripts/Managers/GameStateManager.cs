@@ -17,8 +17,12 @@ public class GameStateManager : MonoBehaviour
     [SerializeField] private List<DisposableObject> disposableObjects;
     public List<DisposableObject> DisposableObjects => disposableObjects;
 
+    [SerializeField] private List<SnappableObject> snappableObjects;
+    public List<SnappableObject> SnappableObjects => snappableObjects;
+
     public InputManager inputManager;
     public PlayerController playerController;
+    public PickUpDrop pickUpDrop;
     public PlayerStats playerStats;
 
     private IGameState currentState;
@@ -89,6 +93,12 @@ public class GameStateManager : MonoBehaviour
         disposedCount++;
     }
 
+    public void OnSnapObject()
+    {
+        pickUpDrop.GetObjectGrabbable().ToggleHologram(false);
+        pickUpDrop.DropObject();
+    }
+
     public void OnObjectBroken(GameObject brokenPiece, List<GameObject> brokenPieces)
     {
         disposableObjects.Remove(brokenPiece.GetComponent<DisposableObject>());
@@ -154,6 +164,11 @@ public class InitializationState : IGameState
         {
             disposableObject.Disposed += gameStateManager.OnObjectDisposed;
             disposableObject.Broken += gameStateManager.OnObjectBroken;
+        }
+
+        foreach (var snappableObject in gameStateManager.SnappableObjects)
+        {
+            snappableObject.Snapped += gameStateManager.OnSnapObject;
         }
 
         gameStateManager.cleanedCount = 0;
@@ -285,6 +300,11 @@ public class DeInitializationState : IGameState
         {
             disposableObject.Disposed -= gameStateManager.OnObjectDisposed;
             disposableObject.Broken -= gameStateManager.OnObjectBroken;
+        }
+
+        foreach (var snappableObject in gameStateManager.SnappableObjects)
+        {
+            snappableObject.Snapped -= gameStateManager.OnSnapObject;
         }
 
         gameStateManager.CleanableObjects.Clear();

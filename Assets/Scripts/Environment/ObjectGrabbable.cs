@@ -16,6 +16,10 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     [SerializeField] private Sprite throwMessage;
     [SerializeField] private Sprite rotateMessage;
 
+
+    [Header("Object Placement")]
+    [SerializeField] private GameObject hologramObject;
+
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
     [SerializeField] private string breakBottleEvent = null;
@@ -27,6 +31,8 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     private Vector3 initialLocalRight;
     private Vector3 newPosition;
     private Vector3 lastPosition;
+    private bool isObjectSnapped;
+    
 
     private DisposableObject disposableObject;
     private float lastCollisionTime = -Mathf.Infinity;
@@ -37,6 +43,7 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
 
     public bool IsObjectPickedUp { get; private set; }
     public bool isObjectBreakable = true;
+    public bool IsObjectSnapped => isObjectSnapped;
     public Sprite PickUpMessage => pickUpMessage;
     public Sprite DropMessage => dropMessage;
     public Sprite ThrowMessage => throwMessage;
@@ -51,6 +58,7 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     private void Start()
     {
         rotationAxes = new Vector3[] { Vector3.right, Vector3.up, Vector3.forward };
+        isObjectSnapped = false;
     }
 
     public void Grab(Transform ObjectGrabPointTransform, Transform playerTransform)
@@ -66,6 +74,8 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
         IsObjectPickedUp = true;
 
         initialHeight = transform.position.y;
+
+        ToggleHologram(true);
     }
 
     public void Drop()
@@ -79,6 +89,8 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
         IsObjectPickedUp = false;
 
         initialHeight = transform.position.y;
+
+        ToggleHologram(false);
     }
 
     public void Throw(float throwingForce, Vector3 throwDirection)
@@ -93,6 +105,8 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
         IsObjectPickedUp = false;
 
         initialHeight = transform.position.y;
+
+        ToggleHologram(false);
     }
 
     private void FixedUpdate()
@@ -147,6 +161,17 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     public void ChangeRotationAxis()
     {
         currentAxisIndex = (currentAxisIndex + 1) % 3;
+    }
+
+    public void SetObjectSnapped(bool active)
+    {
+        isObjectSnapped = active;
+    }
+
+    public void ToggleHologram(bool active)
+    {
+        if (hologramObject)
+            hologramObject.SetActive(active);
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -42,7 +42,7 @@ public class CameraInteraction : MonoBehaviour
             IToggable switchObject = hit.collider.gameObject.GetComponent<LightSwitch>() as IToggable;
             IInteractable inmersiveObject = hit.collider.gameObject.GetComponent<InmersiveObject>() as IInteractable;
 
-            if (pickableObject != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().CleaningToolsLength - 1)
+            if (pickableObject != null && !pickableObject.IsObjectSnapped && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().CleaningToolsLength - 1)
             {
                 currentPickableObject = pickableObject;
                 AppendPickUpSprites(pickableObject, ref activeSprites);

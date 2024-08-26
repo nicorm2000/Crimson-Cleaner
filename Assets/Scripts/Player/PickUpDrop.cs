@@ -14,6 +14,7 @@ public class PickUpDrop : MonoBehaviour
 
     public InputManager inputManager;
 
+
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
     [SerializeField] private string grabDropEvent = null;
@@ -56,11 +57,18 @@ public class PickUpDrop : MonoBehaviour
         {
             if (Physics.Raycast(mainCamera.position, mainCamera.forward, out RaycastHit raycastHit, cleaningManager.GetInteractionDistance()))
             {
-                if (raycastHit.transform.TryGetComponent(out ObjectGrabbable))
+                ObjectGrabbable newObjectGrabbable;
+
+                if (raycastHit.transform.TryGetComponent(out newObjectGrabbable))
                 {
-                    audioManager.PlaySound(grabDropEvent);
-                    ObjectGrabbable.Grab(objectGrabPointTransform, this.transform);
-                    playerController.SetObjectGrabbable(ObjectGrabbable);
+                    if (!newObjectGrabbable.IsObjectSnapped)
+                    {
+                        audioManager.PlaySound(grabDropEvent);
+                        newObjectGrabbable.Grab(objectGrabPointTransform, this.transform);
+                        playerController.SetObjectGrabbable(newObjectGrabbable);
+                        SetObjectGrabbable(newObjectGrabbable);
+
+                    }
                 }
             }
         }
@@ -75,7 +83,7 @@ public class PickUpDrop : MonoBehaviour
         }
     }
 
-    private void DropObject()
+    public void DropObject()
     {
         if (ObjectGrabbable != null)
         {
@@ -116,6 +124,11 @@ public class PickUpDrop : MonoBehaviour
     public ObjectGrabbable GetObjectGrabbable()
     {
         return ObjectGrabbable;
+    }
+
+    public void SetObjectGrabbable(ObjectGrabbable objectGrabbable)
+    {
+        ObjectGrabbable = objectGrabbable;
     }
 
     private void ThrowObject()
