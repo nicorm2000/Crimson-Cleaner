@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.HighDefinition;
 using UnityEngine.UI;
 
 public class PlayersUIManager : MonoBehaviour
@@ -12,7 +14,7 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private WaterBucket waterBucket;
     [SerializeField] private PickUpDrop pickUpDrop;
     [SerializeField] private GameStateManager gameStateManager;
-    [SerializeField] private GameObject notebook;
+    [SerializeField] private GameObject tablet;
     [SerializeField] private string notebookAnimatorOpenHash;
     [SerializeField] private Animator cleaningListAnimator;
     [SerializeField] private GameObject cleanableListText;
@@ -61,6 +63,9 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private string openNotebookEvent = null;
     [SerializeField] private string closeNotebookEvent = null;
     [SerializeField] private string clickEvent = null;
+
+    [Header("Post Process Config")]
+    [SerializeField] private Volume playerVolume = null;
 
     private bool _cleaningListState = false;
     private List<GameObject> cleaningTextElements = new();
@@ -177,6 +182,9 @@ public class PlayersUIManager : MonoBehaviour
         }
         else
         {
+            reticle.SetActive(false);
+            if (playerVolume.profile.TryGet(out Exposure exposure))
+                exposure.active = false;
             audioManager.PlaySound(openNotebookEvent);
             ToggleTabletState(true);
 
@@ -195,8 +203,11 @@ public class PlayersUIManager : MonoBehaviour
 
     private void OnToolSwitched(int newIndex)
     {
-        if (cleaningManager.GetToolSelector().Tools[newIndex] != notebook)
+        if (cleaningManager.GetToolSelector().Tools[newIndex] != tablet)
         {
+            reticle.SetActive(true);
+            if (playerVolume.profile.TryGet(out Exposure exposure))
+                exposure.active = true;
             if (isTabletOpen)
             {
                 ToggleTabletState(false);
