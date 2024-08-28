@@ -57,6 +57,7 @@ public class GameStateManager : MonoBehaviour
             { "Lose", new LoseState() },
             { "Pause", new PauseState() },
             { "ToolWheel", new ToolWheelState() },
+            { "Tablet", new TabletState() },
             { "DeInit", new DeInitializationState() }
         };
 
@@ -148,6 +149,28 @@ public class ToolWheelState : IGameState
     {
         gameStateManager.inputManager.HideCursor();
         gameStateManager.playerController.isCameraMovable = true;
+    }
+}
+
+public class TabletState : IGameState
+{
+    public void EnterState(GameStateManager gameStateManager)
+    {
+        gameStateManager.inputManager.ShowCursor();
+        gameStateManager.playerController.isCameraMovable = false;
+        gameStateManager.playerController.isMovable = false;
+    }
+
+    public void UpdateState(GameStateManager gameStateManager)
+    {
+
+    }
+
+    public void ExitState(GameStateManager gameStateManager)
+    {
+        gameStateManager.inputManager.HideCursor();
+        gameStateManager.playerController.isCameraMovable = true;
+        gameStateManager.playerController.isMovable = true;
     }
 }
 

@@ -182,6 +182,7 @@ public class PlayersUIManager : MonoBehaviour
         }
         else
         {
+            gameStateManager.TransitionToState("Tablet");
             reticle.SetActive(false);
             if (playerVolume.profile.TryGet(out Exposure exposure))
                 exposure.active = false;
@@ -192,6 +193,7 @@ public class PlayersUIManager : MonoBehaviour
             {
                 cleaningListAnimator.SetBool(notebookAnimatorOpenHash, _cleaningListState);
             }
+
         }
     }
 
@@ -205,6 +207,7 @@ public class PlayersUIManager : MonoBehaviour
     {
         if (cleaningManager.GetToolSelector().Tools[newIndex] != tablet)
         {
+            gameStateManager.TransitionToState("GamePlayState");
             reticle.SetActive(true);
             if (playerVolume.profile.TryGet(out Exposure exposure))
                 exposure.active = true;

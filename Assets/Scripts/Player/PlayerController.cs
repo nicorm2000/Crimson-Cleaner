@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private string footStepsStopEvent = null;
 
     [NonSerialized] public bool isCameraMovable = true;
+    [NonSerialized] public bool isMovable = true;
 
     private Rigidbody playerRigidBody;
     private Animator animator;
@@ -89,6 +90,8 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         if (!hasAnimator) return;
+
+        if (!isMovable) return;
 
         float targetSpeed = walkSpeed;
 

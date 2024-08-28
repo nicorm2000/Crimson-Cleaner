@@ -7,6 +7,7 @@ public class ToolsWheelController : MonoBehaviour
     [SerializeField] private InputManager inputManager;
     [SerializeField] private GameStateManager gameStateManager;
     [SerializeField] private CleaningTool cleaningTool;
+    [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private Image reticle;
     
     public int toolID;
@@ -35,7 +36,12 @@ public class ToolsWheelController : MonoBehaviour
     private void OnToolWheelStart()
     {
         reticle.gameObject.SetActive(false);
-        gameStateManager.TransitionToState("ToolWheel");
+
+        if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetTablet())
+            gameStateManager.TransitionToState("Tablet");
+        else
+            gameStateManager.TransitionToState("ToolWheel");
+        
         _animator.SetBool("OpenToolWheel", true);
     }
 

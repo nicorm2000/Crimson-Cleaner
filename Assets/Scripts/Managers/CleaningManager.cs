@@ -17,6 +17,15 @@ public class CleanableObjectState
     }
 }
 
+public enum Tools
+{
+    Mop = 0,
+    Sponge,
+    Hands,
+    Tablet,
+    Bin
+}
+
 public class CleaningManager : MonoBehaviour
 {
     [Header("Config")]
@@ -59,6 +68,11 @@ public class CleaningManager : MonoBehaviour
     public Animator GetHandsAnimator() => handsAnimator;
     public InputManager GetInputManager() => inputManager;
     public CleaningTool GetToolSelector() => cleaningTool;
+    public int GetMop() => (int)Tools.Mop;
+    public int GetSponge() => (int)Tools.Sponge;
+    public int GetHands() => (int)Tools.Hands;
+    public int GetTablet() => (int)Tools.Tablet;
+    public int GetBin() => (int)Tools.Bin;
     public int GetDirtyMaxValue() => DirtyMaxValue;
     public int GetDirtyIncrementAmount() => cleaningTool.DirtyIncrement;
     public LayerMask GetMopLayerMask() => mopLayerMask;
