@@ -10,6 +10,8 @@ public class StealableObject : Interactable, IRetrievable
 
     public Sprite InteractMessage => interactMessage;
 
+    public bool IsObjectPickedUp => throw new System.NotImplementedException();
+
     private readonly string stealableTrigger = "Retrieve";
 
     public void Interact(PlayerController playerController)

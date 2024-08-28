@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public interface IGameState
 {
@@ -20,6 +22,20 @@ public class GameStateManager : MonoBehaviour
     [SerializeField] private List<SnappableObject> snappableObjects;
     public List<SnappableObject> SnappableObjects => snappableObjects;
 
+    [SerializeField] private List<RetrievableObject> documents;
+    public List<RetrievableObject> Documents => documents;
+
+    [SerializeField] private List<RetrievableObject> clothes;
+    public List<RetrievableObject> Clothes => clothes;
+
+    [SerializeField] private List<RetrievableObject> miscellaneous;
+    public List<RetrievableObject> Miscellaneous => miscellaneous;
+
+    [SerializeField] private List<RetrievableObject> weapons;
+    public List<RetrievableObject> Weapons => weapons;
+
+    [SerializeField] private TextMeshProUGUI text;
+
     public InputManager inputManager;
     public PlayerController playerController;
     public PickUpDrop pickUpDrop;
@@ -31,6 +47,11 @@ public class GameStateManager : MonoBehaviour
     public bool isTimerCompleted;
     public int cleanedCount = 0;
     public int disposedCount = 0;
+
+    public int retrievedDocumetsCount = 0;
+    public int retrievedClothesCount = 0;
+    public int retrievedMiscellaneousCount = 0;
+    public int retrievedWeaponsCount = 0;
 
     public string totalMoneyString = "TotalMoney";
 
@@ -92,6 +113,26 @@ public class GameStateManager : MonoBehaviour
     public void OnObjectDisposed()
     {
         disposedCount++;
+    } 
+    
+    public void OnDocumentRetrieved()
+    {
+        retrievedDocumetsCount++;
+    }
+    
+    public void OnClothesRetrieved()
+    {
+        retrievedClothesCount++;
+    }
+    
+    public void OnMiscellaneousRetrieved()
+    {
+        retrievedMiscellaneousCount++;
+    }
+    
+    public void OnWeaponsRetrieved()
+    {
+        retrievedWeaponsCount++;
     }
 
     public void OnSnapObject()
@@ -193,6 +234,30 @@ public class InitializationState : IGameState
         {
             snappableObject.Snapped += gameStateManager.OnSnapObject;
         }
+        
+        foreach (var retrievableObject in gameStateManager.Documents)
+        {
+            retrievableObject.ObjectRetrievedEvent += gameStateManager.OnDocumentRetrieved;
+        }
+        
+        foreach (var retrievableObject in gameStateManager.Clothes)
+        {
+            retrievableObject.ObjectRetrievedEvent += gameStateManager.OnClothesRetrieved;
+        }
+        
+        foreach (var retrievableObject in gameStateManager.Miscellaneous)
+        {
+            retrievableObject.ObjectRetrievedEvent += gameStateManager.OnMiscellaneousRetrieved;
+        }
+        
+        foreach (var retrievableObject in gameStateManager.Weapons)
+        {
+            retrievableObject.ObjectRetrievedEvent += gameStateManager.OnWeaponsRetrieved;
+        }
+
+
+
+
 
         gameStateManager.cleanedCount = 0;
         gameStateManager.disposedCount = 0;
@@ -223,7 +288,12 @@ public class GamePlayState : IGameState
 
     public void UpdateState(GameStateManager gameStateManager)
     {
-        if (gameStateManager.cleanedCount == gameStateManager.CleanableObjects.Count && gameStateManager.disposedCount == gameStateManager.DisposableObjects.Count)
+        if (gameStateManager.cleanedCount == gameStateManager.CleanableObjects.Count && 
+            gameStateManager.disposedCount == gameStateManager.DisposableObjects.Count &&
+            gameStateManager.retrievedDocumetsCount == gameStateManager.Documents.Count &&
+            gameStateManager.retrievedClothesCount == gameStateManager.Clothes.Count &&
+            gameStateManager.retrievedMiscellaneousCount == gameStateManager.Miscellaneous.Count &&
+            gameStateManager.retrievedWeaponsCount == gameStateManager.Weapons.Count)
         {
             gameStateManager.TransitionToState("Win");
             return;
@@ -328,6 +398,26 @@ public class DeInitializationState : IGameState
         foreach (var snappableObject in gameStateManager.SnappableObjects)
         {
             snappableObject.Snapped -= gameStateManager.OnSnapObject;
+        }
+
+        foreach (var retrievableObject in gameStateManager.Documents)
+        {
+            retrievableObject.ObjectRetrievedEvent -= gameStateManager.OnDocumentRetrieved;
+        }
+
+        foreach (var retrievableObject in gameStateManager.Clothes)
+        {
+            retrievableObject.ObjectRetrievedEvent -= gameStateManager.OnClothesRetrieved;
+        }
+
+        foreach (var retrievableObject in gameStateManager.Miscellaneous)
+        {
+            retrievableObject.ObjectRetrievedEvent -= gameStateManager.OnMiscellaneousRetrieved;
+        }
+
+        foreach (var retrievableObject in gameStateManager.Weapons)
+        {
+            retrievableObject.ObjectRetrievedEvent -= gameStateManager.OnWeaponsRetrieved;
         }
 
         gameStateManager.CleanableObjects.Clear();

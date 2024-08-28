@@ -23,6 +23,7 @@ public interface IPickable
 
 public interface IRetrievable : IInteractable
 {
+    bool IsObjectPickedUp { get; }
 }
 
 public interface IOpenable : IInteractable

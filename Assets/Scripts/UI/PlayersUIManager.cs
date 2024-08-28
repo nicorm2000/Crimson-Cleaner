@@ -46,6 +46,12 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private Image handImageWarning;
     [SerializeField] private Image bucketImageWarning;
 
+    [Header("Retrievable Objects")]
+    [SerializeField] private TextMeshProUGUI[] documentsTexts;
+    [SerializeField] private TextMeshProUGUI[] clothesTexts;
+    [SerializeField] private TextMeshProUGUI[] miscellaneousTexts;
+    [SerializeField] private TextMeshProUGUI[] weaponsTexts;
+
     [Header("Back To Lobby")]
     [SerializeField] private GameObject backToLobbyPanel = null;
     [SerializeField] private Button backToLobbyFinishedButton = null;
@@ -116,6 +122,41 @@ public class PlayersUIManager : MonoBehaviour
         {
             tool.ToolDirty += () => OnToolWarning(ref toolDirtyWarningCoroutine, bucketImageWarning, dirtyToolErrorDuration);
         }
+
+        foreach (RetrievableObject retrievableObject in gameStateManager.Documents)
+        {
+            if (retrievableObject != null)
+            {
+                retrievableObject.GetComponent<RetrievableObject>().ObjectRetrievedEvent += UpdateRetrievableTexts;
+            }
+        }
+
+        foreach (RetrievableObject retrievableObject in gameStateManager.Clothes)
+        {
+            if (retrievableObject != null)
+            {
+                retrievableObject.GetComponent<RetrievableObject>().ObjectRetrievedEvent += UpdateRetrievableTexts;
+            }
+        }
+
+        foreach (RetrievableObject retrievableObject in gameStateManager.Miscellaneous)
+        {
+            if (retrievableObject != null)
+            {
+                retrievableObject.GetComponent<RetrievableObject>().ObjectRetrievedEvent += UpdateRetrievableTexts;
+            }
+        }
+
+        foreach (RetrievableObject retrievableObject in gameStateManager.Weapons)
+        {
+            if (retrievableObject != null)
+            {
+                retrievableObject.GetComponent<RetrievableObject>().ObjectRetrievedEvent += UpdateRetrievableTexts;
+            }
+        }
+
+       
+
     }
 
     private void OnDisable()
@@ -151,6 +192,38 @@ public class PlayersUIManager : MonoBehaviour
         {
             tool.ToolDirty -= () => OnToolWarning(ref toolDirtyWarningCoroutine, bucketImageWarning, dirtyToolErrorDuration);
         }
+
+        foreach (RetrievableObject retrievableObject in gameStateManager.Documents)
+        {
+            if (retrievableObject != null)
+            {
+                retrievableObject.GetComponent<RetrievableObject>().ObjectRetrievedEvent -= UpdateRetrievableTexts;
+            }
+        }
+
+        foreach (RetrievableObject retrievableObject in gameStateManager.Clothes)
+        {
+            if (retrievableObject != null)
+            {
+                retrievableObject.GetComponent<RetrievableObject>().ObjectRetrievedEvent -= UpdateRetrievableTexts;
+            }
+        }
+
+        foreach (RetrievableObject retrievableObject in gameStateManager.Miscellaneous)
+        {
+            if (retrievableObject != null)
+            {
+                retrievableObject.GetComponent<RetrievableObject>().ObjectRetrievedEvent -= UpdateRetrievableTexts;
+            }
+        }
+
+        foreach (RetrievableObject retrievableObject in gameStateManager.Weapons)
+        {
+            if (retrievableObject != null)
+            {
+                retrievableObject.GetComponent<RetrievableObject>().ObjectRetrievedEvent -= UpdateRetrievableTexts;
+            }
+        }
     }
 
     private void Start()
@@ -161,6 +234,7 @@ public class PlayersUIManager : MonoBehaviour
         jobUnfinished.SetActive(false);
 
         CreateCleaningList();
+        UpdateRetrievableTexts();
     }
 
     private void OpenTab(GameObject go, bool state)
@@ -338,5 +412,23 @@ public class PlayersUIManager : MonoBehaviour
         }
 
         UpdateDisposableListText();
+    }
+
+    private void UpdateRetrievableTexts()
+    {
+        // UPDATE WITH RETRIEVABLE PROPS -----------------------------------------------
+
+        //UpdateRetrievableTexts(documentsTexts, gameStateManager.Documents);
+        //UpdateRetrievableTexts(clothesTexts, gameStateManager.Clothes);
+        //UpdateRetrievableTexts(miscellaneousTexts, gameStateManager.Miscellaneous);
+        UpdateRetrievableTexts(weaponsTexts, gameStateManager.Weapons);
+    }
+
+    private void UpdateRetrievableTexts(TextMeshProUGUI[] texts, List<RetrievableObject> retrievableObjects)
+    {
+        for (int i = 0; i < texts.Length; i++)
+        {
+            texts[i].text = retrievableObjects[i].name + (retrievableObjects[i].IsObjectPickedUp ? " picked up" : " not picked up");
+        }
     }
 }

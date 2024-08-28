@@ -42,6 +42,8 @@ public class CameraInteraction : MonoBehaviour
             IToggable switchObject = hit.collider.gameObject.GetComponent<LightSwitch>() as IToggable;
             IInteractable inmersiveObject = hit.collider.gameObject.GetComponent<InmersiveObject>() as IInteractable;
 
+            IRetrievable objectRetrievable2 = hit.collider.gameObject.GetComponent<RetrievableObject>() as IRetrievable;
+
             if (pickableObject != null && !pickableObject.IsObjectSnapped && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().CleaningToolsLength - 1)
             {
                 currentPickableObject = pickableObject;
@@ -83,6 +85,11 @@ public class CameraInteraction : MonoBehaviour
                 AppendInteractableSprites(inmersiveObject, ref activeSprites);
             }
 
+            if (objectRetrievable2 != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().CleaningToolsLength - 1 && playerController.GetObjectGrabbable() == null)
+            {
+                AppendRetrievableSprites(objectRetrievable2, ref activeSprites);
+            }
+
             UpdateUI(activeSprites);
         }
         else if (currentPickableObject != null && currentPickableObject.IsObjectPickedUp)
@@ -122,11 +129,11 @@ public class CameraInteraction : MonoBehaviour
         }
     }
 
-    private void AppendRetrievableSprites(IRetrievable openableObject, ref Sprite[] activeSprites)
+    private void AppendRetrievableSprites(IRetrievable retrievableObject, ref Sprite[] activeSprites)
     {
         SetImageState(true);
         int index = GetNextAvailableSlot(activeSprites);
-        activeSprites[index] = openableObject.InteractMessage;
+        activeSprites[index] = retrievableObject.InteractMessage;
     }
 
     private void AppendOpenableSprites(IOpenable openableObject, ref Sprite[] activeSprites)
