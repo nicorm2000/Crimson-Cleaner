@@ -10,8 +10,8 @@ public class ToolsWheelController : MonoBehaviour
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private Image reticle;
     
-    public int toolID;
     public int previousToolID;
+    public int currentToolID;
 
     private Animator _animator;
 
@@ -35,6 +35,9 @@ public class ToolsWheelController : MonoBehaviour
 
     private void OnToolWheelStart()
     {
+        previousToolID = currentToolID;
+        currentToolID = -1;
+
         reticle.gameObject.SetActive(false);
 
         if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetTablet())
@@ -47,8 +50,17 @@ public class ToolsWheelController : MonoBehaviour
 
     private void OnToolWheelEnd()
     {
-        reticle.gameObject.SetActive(true);
-        gameStateManager.TransitionToState("GamePlay");
+        if (currentToolID == -1)
+            currentToolID = previousToolID;
+
+        if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetTablet())
+            gameStateManager.TransitionToState("Tablet");
+        else
+        {
+            gameStateManager.TransitionToState("GamePlay");
+            reticle.gameObject.SetActive(true);
+        }
+
         _animator.SetBool("OpenToolWheel", false);
         SelectTool();
     }
@@ -68,13 +80,13 @@ public class ToolsWheelController : MonoBehaviour
 
     private void SelectTool()
     {
-        if (toolID >= 0 && toolID < cleaningTool.ToolsLength)
+        if (currentToolID >= 0 && currentToolID < cleaningTool.ToolsLength)
         {
-            cleaningTool.SwitchTool(toolID);
+            cleaningTool.SwitchTool(currentToolID);
         }
         else
         {
-            Debug.LogWarning($"ToolID {toolID} is out of range.");
+            Debug.LogWarning($"ToolID {currentToolID} is out of range.");
         }
     }
 }

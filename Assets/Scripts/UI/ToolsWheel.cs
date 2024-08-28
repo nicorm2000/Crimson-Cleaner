@@ -22,15 +22,14 @@ public class ToolsWheel : MonoBehaviour
     public void HoverEnter()
     {
         _animator.SetBool(hoverHash, true);
-        toolsWheelController.toolID = ID;
-        toolsWheelController.previousToolID = ID;
+        toolsWheelController.currentToolID = ID;
         itemText.text = itemName;
     }
 
     public void HoverExit()
     {
         _animator.SetBool(hoverHash, false);
-        toolsWheelController.toolID = toolsWheelController.previousToolID;
+        toolsWheelController.currentToolID = -1;
         itemText.text = "";
     }
 }
