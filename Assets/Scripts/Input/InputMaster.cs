@@ -453,7 +453,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f59cf138-2e1e-4849-8502-2b7d46c4b0ed"",
-                    ""path"": ""<Keyboard>/comma"",
+                    ""path"": ""<Keyboard>/1"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -464,7 +464,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""5d3b1988-9b5c-441e-8e44-d79584e0d851"",
-                    ""path"": ""<Keyboard>/period"",
+                    ""path"": ""<Keyboard>/2"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
