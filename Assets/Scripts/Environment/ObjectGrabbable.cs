@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ObjectGrabbable : MonoBehaviour, IPickable
+public class ObjectGrabbable : MonoBehaviour, IPickable, IStorable
 {
     [Header("Config")]
     [SerializeField] private float lerpSpeed = 10f;
@@ -15,6 +15,7 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     [SerializeField] private Sprite dropMessage;
     [SerializeField] private Sprite throwMessage;
     [SerializeField] private Sprite rotateMessage;
+    [SerializeField] private Sprite storeMessage;
 
 
     [Header("Object Placement")]
@@ -48,6 +49,7 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     public Sprite DropMessage => dropMessage;
     public Sprite ThrowMessage => throwMessage;
     public Sprite RotateMessage => rotateMessage;
+    public Sprite StoreMessage => storeMessage;
 
     private void Awake()
     {
@@ -193,5 +195,10 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
                 lastCollisionTime = Time.time;
             }
         }
+    }
+
+    public void Interact(PlayerController playerController)
+    {
+        throw new System.NotImplementedException();
     }
 }

@@ -20,13 +20,13 @@ public class TrashBinController : MonoBehaviour
 
     private void OnEnable()
     {
-        inputManager.InteractEvent += OnInteractEvent;
+        inputManager.StoreObjectEvent += OnPickUp;
         inputManager.DispatchBagEvent += OnDispatchBag;
     }
 
     private void OnDisable()
     {
-        inputManager.InteractEvent -= OnInteractEvent;
+        inputManager.StoreObjectEvent -= OnPickUp;
         inputManager.DispatchBagEvent -= OnDispatchBag;
     }
 
@@ -36,7 +36,7 @@ public class TrashBinController : MonoBehaviour
         isBagDispached = true;
     }
 
-    private void OnInteractEvent()
+    private void OnPickUp()
     {
         if (isBagDispached)
             CheckForInteraction();

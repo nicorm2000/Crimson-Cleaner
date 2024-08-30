@@ -34,6 +34,7 @@ public class InputManager : MonoBehaviour
     private InputAction tutorialUIAction;
     private InputAction toogleToolWheelAction;
     private InputAction DispatchBagAction;
+    private InputAction StoreObjectAction;
 
     public event Action PickUpEvent;
     public event Action InteractEvent;
@@ -48,6 +49,7 @@ public class InputManager : MonoBehaviour
     public event Action ChangeRotationAxisEvent;
     public event Action ToggleToolWheelStartEvent;
     public event Action ToggleToolWheelEndEvent;
+    public event Action StoreObjectEvent;
     public event Action DispatchBagEvent;
 
     private bool isCursorVisible = true;
@@ -75,6 +77,7 @@ public class InputManager : MonoBehaviour
         tutorialUIAction = playerInput.actions.FindAction("Tutorial");
         toogleToolWheelAction = playerInput.actions.FindAction("ToolWheel");
         DispatchBagAction = playerInput.actions.FindAction("DispatchBag");
+        StoreObjectAction = playerInput.actions.FindAction("StoreObject");
 
         moveAction.performed += OnMove;
         lookAction.performed += OnLook;
@@ -93,6 +96,7 @@ public class InputManager : MonoBehaviour
         DispatchBagAction.performed += OnDispatchBag;
         toogleToolWheelAction.started += OnToggleToolWheelStart;
         toogleToolWheelAction.canceled += OnToggleToolWheelEnd;
+        StoreObjectAction.performed += OnStoreObject;
 
         moveAction.canceled += OnMove;
         lookAction.canceled += OnLook;
@@ -204,6 +208,11 @@ public class InputManager : MonoBehaviour
     private void OnDispatchBag(InputAction.CallbackContext context)
     {
         DispatchBagEvent?.Invoke();
+    }
+    
+    private void OnStoreObject(InputAction.CallbackContext context)
+    {
+        StoreObjectEvent?.Invoke();
     }
 
     public void ToggleGameplayMap(bool active)
