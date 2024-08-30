@@ -130,6 +130,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "DispatchBag",
+                    "type": "Button",
+                    "id": "bb7a5d49-df3a-44e0-9bd8-5f930a33b607",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -449,6 +458,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ToolWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ea866c35-a420-4cfa-a0b3-56eac4b4fc16",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DispatchBag",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

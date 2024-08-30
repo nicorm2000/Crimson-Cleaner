@@ -33,6 +33,7 @@ public class InputManager : MonoBehaviour
     private InputAction pauseAction;
     private InputAction tutorialUIAction;
     private InputAction toogleToolWheelAction;
+    private InputAction DispatchBagAction;
 
     public event Action PickUpEvent;
     public event Action InteractEvent;
@@ -47,6 +48,7 @@ public class InputManager : MonoBehaviour
     public event Action ChangeRotationAxisEvent;
     public event Action ToggleToolWheelStartEvent;
     public event Action ToggleToolWheelEndEvent;
+    public event Action DispatchBagEvent;
 
     private bool isCursorVisible = true;
     private bool isCleaning = false;
@@ -72,6 +74,7 @@ public class InputManager : MonoBehaviour
         pauseAction = playerInput.actions.FindAction("Pause");
         tutorialUIAction = playerInput.actions.FindAction("Tutorial");
         toogleToolWheelAction = playerInput.actions.FindAction("ToolWheel");
+        DispatchBagAction = playerInput.actions.FindAction("DispatchBag");
 
         moveAction.performed += OnMove;
         lookAction.performed += OnLook;
@@ -87,6 +90,7 @@ public class InputManager : MonoBehaviour
         changeRotationAxisAction.performed += OnChangeRotationAxis;
         pauseAction.performed += OnPause;
         tutorialUIAction.performed += OnDisplayTutorial;
+        DispatchBagAction.performed += OnDispatchBag;
         toogleToolWheelAction.started += OnToggleToolWheelStart;
         toogleToolWheelAction.canceled += OnToggleToolWheelEnd;
 
@@ -195,6 +199,11 @@ public class InputManager : MonoBehaviour
     private void OnDisplayTutorial(InputAction.CallbackContext context)
     {
         DisplayTutorialEvent?.Invoke();
+    }
+    
+    private void OnDispatchBag(InputAction.CallbackContext context)
+    {
+        DispatchBagEvent?.Invoke();
     }
 
     public void ToggleGameplayMap(bool active)

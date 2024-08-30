@@ -152,6 +152,15 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DispatchBag"",
+                    ""type"": ""Button"",
+                    ""id"": ""bb7a5d49-df3a-44e0-9bd8-5f930a33b607"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -473,6 +482,17 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""action"": ""ToolWheel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ea866c35-a420-4cfa-a0b3-56eac4b4fc16"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DispatchBag"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -556,6 +576,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         m_Player_RotatePos = m_Player.FindAction("RotatePos", throwIfNotFound: true);
         m_Player_RotateNeg = m_Player.FindAction("RotateNeg", throwIfNotFound: true);
         m_Player_ToolWheel = m_Player.FindAction("ToolWheel", throwIfNotFound: true);
+        m_Player_DispatchBag = m_Player.FindAction("DispatchBag", throwIfNotFound: true);
         // Pause
         m_Pause = asset.FindActionMap("Pause", throwIfNotFound: true);
         m_Pause_Pause = m_Pause.FindAction("Pause", throwIfNotFound: true);
@@ -634,6 +655,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_RotatePos;
     private readonly InputAction m_Player_RotateNeg;
     private readonly InputAction m_Player_ToolWheel;
+    private readonly InputAction m_Player_DispatchBag;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -652,6 +674,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         public InputAction @RotatePos => m_Wrapper.m_Player_RotatePos;
         public InputAction @RotateNeg => m_Wrapper.m_Player_RotateNeg;
         public InputAction @ToolWheel => m_Wrapper.m_Player_ToolWheel;
+        public InputAction @DispatchBag => m_Wrapper.m_Player_DispatchBag;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -703,6 +726,9 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @ToolWheel.started += instance.OnToolWheel;
             @ToolWheel.performed += instance.OnToolWheel;
             @ToolWheel.canceled += instance.OnToolWheel;
+            @DispatchBag.started += instance.OnDispatchBag;
+            @DispatchBag.performed += instance.OnDispatchBag;
+            @DispatchBag.canceled += instance.OnDispatchBag;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -749,6 +775,9 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @ToolWheel.started -= instance.OnToolWheel;
             @ToolWheel.performed -= instance.OnToolWheel;
             @ToolWheel.canceled -= instance.OnToolWheel;
+            @DispatchBag.started -= instance.OnDispatchBag;
+            @DispatchBag.performed -= instance.OnDispatchBag;
+            @DispatchBag.canceled -= instance.OnDispatchBag;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -828,6 +857,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         void OnRotatePos(InputAction.CallbackContext context);
         void OnRotateNeg(InputAction.CallbackContext context);
         void OnToolWheel(InputAction.CallbackContext context);
+        void OnDispatchBag(InputAction.CallbackContext context);
     }
     public interface IPauseActions
     {
