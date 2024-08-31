@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{E2F3CD4F-3888-EF36-A63D-B84238A0F913}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{789775CB-40FB-00C4-57E9-085B35436CAC}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -61,6 +61,10 @@
 				<File Id="307614010" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Mouse Click.wav</ShortName>
 					<CachePath>SFX/Mouse Click_5FEEB765.wem</CachePath>
+				</File>
+				<File Id="323016438" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Bucket Collision.wav</ShortName>
+					<CachePath>SFX/Bucket Collision_134F7B10.wem</CachePath>
 				</File>
 				<File Id="360440042" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Urinal Flush.wav</ShortName>
@@ -196,6 +200,11 @@
 				<Event Id="3514483227" Name="Bottle_Drop" DurationType="OneShot" DurationMin="0.3934709" DurationMax="0.3934709">
 					<MediaRefs>
 						<MediaRef Id="146996785"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1692852178" Name="Bucket_Collision" DurationType="OneShot" DurationMin="0.3381777" DurationMax="0.3401367">
+					<MediaRefs>
+						<MediaRef Id="323016438"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3697444650" Name="Cart_Close" DurationType="OneShot" DurationMin="0.49855804" DurationMax="0.5014461">
@@ -340,5 +349,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{36B394EF-C316-1491-3B1A-387C0CDD2AE7}</FileHash>
+	<FileHash>{3FA93C28-BCCD-DA8E-BC0E-1895F564C3E0}</FileHash>
 </SoundBanksInfo>

@@ -19,6 +19,7 @@ namespace AK
         static const AkUniqueID BODY_PARTS_COLLISION = 2616152363U;
         static const AkUniqueID BOTTLE_BREAKING = 3569692999U;
         static const AkUniqueID BOTTLE_DROP = 3514483227U;
+        static const AkUniqueID BUCKET_COLLISION = 1692852178U;
         static const AkUniqueID CART_CLOSE = 3697444650U;
         static const AkUniqueID CART_OPEN = 2037208526U;
         static const AkUniqueID CLOSE_NOTEBOOK = 4085905093U;

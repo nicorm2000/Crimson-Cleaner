@@ -704,6 +704,27 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Bucket_Collision" ID="{CD34E478-A826-4106-82A8-B4521E0E5A5A}">
+					<ChildrenList>
+						<Action Name="" ID="{A20FBBB6-3DE7-46BC-85F9-D74C9818A0D3}" ShortID="350666743">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bucket Collision" ID="{8CF47880-0E93-4F98-9816-0FEDE2BBF739}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{957B1924-5548-4671-A4BD-58F586E3D11F}" ShortID="1015864430">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bucket Collision" ID="{8CF47880-0E93-4F98-9816-0FEDE2BBF739}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
