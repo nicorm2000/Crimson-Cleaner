@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID BAR_DOOR = 2533397739U;
         static const AkUniqueID BATHROOM_DOOR = 1431659638U;
+        static const AkUniqueID BILLIARD_BALL_COLLISION = 3830648271U;
         static const AkUniqueID BODY_PARTS_COLLISION = 2616152363U;
         static const AkUniqueID BOTTLE_BREAKING = 3569692999U;
         static const AkUniqueID BOTTLE_DROP = 3514483227U;

@@ -1275,6 +1275,28 @@
 								<ActiveSource Name="Urinal Flush" ID="{8D86C258-91A3-41CE-9E31-423DEBB782E6}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Billiard Ball Collision" ID="{D82F1DF1-9332-4F48-8C7E-10DAF3964868}" ShortID="513280763">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Billiard Ball Collision" ID="{E4E0A110-6DE6-49DF-A75D-6F016041897F}">
+									<Language>SFX</Language>
+									<AudioFile>Billiard Ball Collision.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="782901985"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Billiard Ball Collision" ID="{E4E0A110-6DE6-49DF-A75D-6F016041897F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

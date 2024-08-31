@@ -683,6 +683,27 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Billiard_Ball_Collision" ID="{69947E7D-3F5C-4CE0-BC9F-23F486D24E46}">
+					<ChildrenList>
+						<Action Name="" ID="{B2B0B569-0AAC-45F6-8B0B-9005C9820D17}" ShortID="722454642">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Billiard Ball Collision" ID="{D82F1DF1-9332-4F48-8C7E-10DAF3964868}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{49CC51E1-9CFD-49C8-AAEB-93A1681E7CFF}" ShortID="446086283">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Billiard Ball Collision" ID="{D82F1DF1-9332-4F48-8C7E-10DAF3964868}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

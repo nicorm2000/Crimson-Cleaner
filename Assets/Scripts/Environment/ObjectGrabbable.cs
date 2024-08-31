@@ -33,7 +33,7 @@ public class ObjectGrabbable : MonoBehaviour, IPickable, IStorable
     private Vector3 newPosition;
     private Vector3 lastPosition;
     private bool isObjectSnapped;
-    
+
 
     private DisposableObject disposableObject;
     private float lastCollisionTime = -Mathf.Infinity;
@@ -185,14 +185,14 @@ public class ObjectGrabbable : MonoBehaviour, IPickable, IStorable
 
         if (collision.relativeVelocity.magnitude > breakForceThreshold || heightDifference > fallHeightThreshold)
         {
+            if (breakBottleEvent != null)
+                audioManager.PlaySound(breakBottleEvent);
+            lastCollisionTime = Time.time;
+            if (!isObjectBreakable)
+                return;
+
             if (disposableObject != null)
             {
-                if (breakBottleEvent != null)
-                    audioManager.PlaySound(breakBottleEvent);
-                lastCollisionTime = Time.time;
-                if (!isObjectBreakable)
-                    return;
-
                 disposableObject.TriggerBreaking();
             }
         }
