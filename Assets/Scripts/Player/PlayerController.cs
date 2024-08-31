@@ -108,11 +108,11 @@ public class PlayerController : MonoBehaviour
 
         Vector3 desiredMoveDirection = forward * inputManager.Move.y + right * inputManager.Move.x;
 
-        playerRigidBody.MovePosition(transform.position + desiredMoveDirection * targetSpeed * Time.fixedDeltaTime);
+        playerRigidBody.MovePosition(transform.position + desiredMoveDirection * targetSpeed * Time.deltaTime);
 
         // Actualizar el animator con los valores de movimiento
-        currentVelocity.x = Mathf.Lerp(currentVelocity.x, inputManager.Move.x * targetSpeed, animationBlendSpeed * Time.fixedDeltaTime);
-        currentVelocity.y = Mathf.Lerp(currentVelocity.y, inputManager.Move.y * targetSpeed, animationBlendSpeed * Time.fixedDeltaTime);
+        currentVelocity.x = Mathf.Lerp(currentVelocity.x, inputManager.Move.x * targetSpeed, animationBlendSpeed * Time.deltaTime);
+        currentVelocity.y = Mathf.Lerp(currentVelocity.y, inputManager.Move.y * targetSpeed, animationBlendSpeed * Time.deltaTime);
 
         animator.SetFloat(xVelHash, currentVelocity.x);
         animator.SetFloat(yVelHash, currentVelocity.y);
