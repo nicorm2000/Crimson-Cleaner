@@ -12,11 +12,12 @@ public class GarbageDisposal : MonoBehaviour
 
     private void Start()
     {
-        coll.enabled = true;
+        coll.enabled = false;
     }
 
     public void DestroyBoxContents()
     {
+        coll.enabled = true;
         Vector3 boxCenter = coll.transform.position;
         Vector3 boxHalfExtents = coll.size * 0.5f;
 
@@ -34,6 +35,7 @@ public class GarbageDisposal : MonoBehaviour
                 disposableObject.TriggerDisposal();
             }
         }
+        coll.enabled = false;
     }
 
     public void ActivateBurning()
