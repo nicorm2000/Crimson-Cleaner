@@ -37,6 +37,7 @@ namespace AK
         static const AkUniqueID SPONGE_WOOSH = 2179797042U;
         static const AkUniqueID THROW = 745179803U;
         static const AkUniqueID TOILET_PUSH = 560187437U;
+        static const AkUniqueID TRASH_BAG_COLLISION = 2629743283U;
         static const AkUniqueID URINAL_PUSH = 2110685349U;
         static const AkUniqueID WASH_TOOL = 3752733365U;
         static const AkUniqueID WATER_DROP = 2790747934U;

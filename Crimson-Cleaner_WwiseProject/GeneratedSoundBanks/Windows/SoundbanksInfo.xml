@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{4418849E-7214-DAB6-2C26-0E30BB9EA4F5}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{7BE8D2B9-236B-B30A-E59D-1BC0C58BF350}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -62,6 +62,10 @@
 					<ShortName>Mouse Click.wav</ShortName>
 					<CachePath>SFX/Mouse Click_5FEEB765.wem</CachePath>
 				</File>
+				<File Id="360440042" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Urinal Flush.wav</ShortName>
+					<CachePath>SFX/Urinal Flush_653A75EA.wem</CachePath>
+				</File>
 				<File Id="420430069" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Bathroom Door.wav</ShortName>
 					<CachePath>SFX/Bathroom Door_7B14B400.wem</CachePath>
@@ -94,10 +98,6 @@
 					<ShortName>Bottle Breaking.wav</ShortName>
 					<CachePath>SFX/Bottle Breaking_07A27A05.wem</CachePath>
 				</File>
-				<File Id="557033713" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Urinal.wav</ShortName>
-					<CachePath>SFX/Urinal_E4C20546.wem</CachePath>
-				</File>
 				<File Id="592302926" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cart Close.wav</ShortName>
 					<CachePath>SFX/Cart Close_52E0F012.wem</CachePath>
@@ -121,6 +121,10 @@
 				<File Id="746969751" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Water Drop.wav</ShortName>
 					<CachePath>SFX/Water Drop_E5CCF18B.wem</CachePath>
+				</File>
+				<File Id="892225877" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>TirarBolsaBasura_1.wav</ShortName>
+					<CachePath>SFX/TirarBolsaBasura_1_795E599E.wem</CachePath>
 				</File>
 				<File Id="915260624" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Open Notebook.wav</ShortName>
@@ -280,9 +284,14 @@
 						<MediaRef Id="508666165"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2110685349" Name="Urinal_Push" DurationType="OneShot" DurationMin="2.3712032" DurationMax="2.3712032">
+				<Event Id="2629743283" Name="Trash_Bag_Collision" DurationType="OneShot" DurationMin="1.3775823" DurationMax="1.3839626">
 					<MediaRefs>
-						<MediaRef Id="557033713"/>
+						<MediaRef Id="892225877"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2110685349" Name="Urinal_Push" DurationType="OneShot" DurationMin="3" DurationMax="3">
+					<MediaRefs>
+						<MediaRef Id="360440042"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3752733365" Name="Wash_Tool" DurationType="OneShot" DurationMin="0.8" DurationMax="0.8">
@@ -322,5 +331,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{58CC8FE5-0CA7-DE20-2FEC-F08E24F7CCE5}</FileHash>
+	<FileHash>{BEF1DC4B-D95B-2D50-950F-6C1E1912A370}</FileHash>
 </SoundBanksInfo>

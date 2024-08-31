@@ -178,9 +178,6 @@ public class ObjectGrabbable : MonoBehaviour, IPickable, IStorable
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!isObjectBreakable)
-            return;
-
         if (Time.time - lastCollisionTime < collisionCooldown) return;
 
         float currentHeight = transform.position.y;
@@ -190,9 +187,13 @@ public class ObjectGrabbable : MonoBehaviour, IPickable, IStorable
         {
             if (disposableObject != null)
             {
-                audioManager.PlaySound(breakBottleEvent);
-                disposableObject.TriggerBreaking();
+                if (breakBottleEvent != null)
+                    audioManager.PlaySound(breakBottleEvent);
                 lastCollisionTime = Time.time;
+                if (!isObjectBreakable)
+                    return;
+
+                disposableObject.TriggerBreaking();
             }
         }
     }

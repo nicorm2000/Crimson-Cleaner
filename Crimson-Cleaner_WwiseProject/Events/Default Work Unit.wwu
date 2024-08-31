@@ -649,14 +649,35 @@
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Urinal" ID="{728AC290-8689-47DB-A1B9-092757D85336}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+									<ObjectRef Name="Urinal Flush" ID="{C18884B3-00F5-475E-A01F-03178CB3C325}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 						<Action Name="" ID="{5AA93834-B436-425D-A854-96DF6C2978D5}" ShortID="494459652">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Urinal" ID="{728AC290-8689-47DB-A1B9-092757D85336}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+									<ObjectRef Name="Urinal Flush" ID="{C18884B3-00F5-475E-A01F-03178CB3C325}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Trash_Bag_Collision" ID="{20BA3C23-E166-43D0-A474-D43691FF5375}">
+					<ChildrenList>
+						<Action Name="" ID="{551E2EF0-68EC-4490-9FE9-D45320C6A08D}" ShortID="728202682">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Trash Bag Collision" ID="{07DF43B8-8696-4A77-9D1F-BBE1D6014DF0}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{53679AD9-F99D-4DEE-828A-1F5DF98E7A9B}" ShortID="271978261">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Trash Bag Collision" ID="{07DF43B8-8696-4A77-9D1F-BBE1D6014DF0}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
