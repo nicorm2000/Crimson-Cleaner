@@ -207,6 +207,15 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Cubicle Bathroom Door" ID="{38123E1E-F522-4203-868C-E6BB1BCCE307}" ShortID="724980100">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{0C089813-658E-47D0-9057-66B371FD8545}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
@@ -492,109 +501,6 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="Object Cleaned" ID="{F2E11FF5-E091-486D-B98B-987756AE4635}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Cart Open" ID="{BDF32B3E-CE98-4D12-9022-B307627C5E77}" ShortID="488603766">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-4</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Cart Open" ID="{97E28A36-374B-469A-9D81-300AFF9A25C4}">
-									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="1"/>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="0.7"/>
-										<Property Name="TrimEnd" Type="Real64" Value="1.7"/>
-									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>Cart Open.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="296468143"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Cart Open" ID="{97E28A36-374B-469A-9D81-300AFF9A25C4}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Cart Close" ID="{BAC1D488-82B5-4309-AD2F-E5F2719CD089}" ShortID="987364221">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-2</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Cart Close" ID="{1A93DF0A-11EE-44B7-B063-707607F3B3C5}">
-									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="1"/>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="0.6"/>
-										<Property Name="TrimEnd" Type="Real64" Value="1.6"/>
-									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>Cart Close.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="592302926"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Cart Close" ID="{1A93DF0A-11EE-44B7-B063-707607F3B3C5}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Fire Cart" ID="{3CC42E03-5277-4B73-BEE4-005C7F6FD775}" ShortID="517502641">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-6</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Fire Cart" ID="{643ED68D-1FD2-48DB-80C0-21CD519742C0}">
-									<PropertyList>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.631578947368421"/>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>Fire Cart.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="996095744"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Fire Cart" ID="{643ED68D-1FD2-48DB-80C0-21CD519742C0}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Bottle Drop" ID="{D866559C-4213-4973-92B5-2F13BE14065F}" ShortID="443001550">
@@ -1276,6 +1182,33 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Billiard Ball Collision" ID="{D82F1DF1-9332-4F48-8C7E-10DAF3964868}" ShortID="513280763">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{FFE05604-39BD-4FFE-8E8B-8A5DF07067C6}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="4"/>
+													<Property Name="Min" Type="Real64" Value="-4"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{4D66D585-7240-4BE6-A3DE-546F003356E2}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-4"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
@@ -1295,6 +1228,153 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="Billiard Ball Collision" ID="{E4E0A110-6DE6-49DF-A75D-6F016041897F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Cart Close" ID="{4B242AEA-988D-4119-A7EC-6F6F635FAA59}" ShortID="132481340">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{97BF2823-1123-440C-BF2A-42B8B0A0CAA2}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="5"/>
+													<Property Name="Min" Type="Real64" Value="-5"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{1F575CC6-7F80-41B4-AEE9-B4B625F7D8D0}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-4"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Cart Close" ID="{1B1882D7-7A35-40E8-826B-FC3BE5B60BDE}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.215707634358836"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.0696108302114171"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.2"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.7"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Cart Close.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="592302926"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Cart Close" ID="{1B1882D7-7A35-40E8-826B-FC3BE5B60BDE}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Cart Open" ID="{BA052EE7-389C-4A50-97B2-5CC87C6E14B1}" ShortID="51602045">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{912E375D-56AA-446D-8C7C-892116C1D192}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="5"/>
+													<Property Name="Min" Type="Real64" Value="-5"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{C5EB7048-6799-4F42-BFDE-98FB88AAFFAB}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-4"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Cart Open" ID="{78DD5B13-AC6B-4692-9F20-20A492C42A2A}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.177110706499117"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.177110706499117"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.3"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.8"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Cart Open.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="296468143"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Cart Open" ID="{78DD5B13-AC6B-4692-9F20-20A492C42A2A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Fire Cart" ID="{497A5207-4358-4E9E-8CEE-1C8387DCAA48}" ShortID="747896798">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Fire Cart" ID="{8AC6BDF5-F330-45B5-839D-5204CBCD9550}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.211379668683905"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.826302341218901"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.5"/>
+										<Property Name="TrimEnd" Type="Real64" Value="3.5"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Fire Cart.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="996095744"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Fire Cart" ID="{8AC6BDF5-F330-45B5-839D-5204CBCD9550}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

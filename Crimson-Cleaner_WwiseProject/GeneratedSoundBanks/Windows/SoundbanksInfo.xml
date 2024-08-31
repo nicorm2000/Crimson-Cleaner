@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{F0EFD8A5-2C11-ABD8-A159-D1BD7E9B22D9}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{E2F3CD4F-3888-EF36-A63D-B84238A0F913}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -56,7 +56,7 @@
 				</File>
 				<File Id="296468143" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cart Open.wav</ShortName>
-					<CachePath>SFX/Cart Open_F42CD46C.wem</CachePath>
+					<CachePath>SFX/Cart Open_1652D2AD.wem</CachePath>
 				</File>
 				<File Id="307614010" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Mouse Click.wav</ShortName>
@@ -100,7 +100,7 @@
 				</File>
 				<File Id="592302926" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cart Close.wav</ShortName>
-					<CachePath>SFX/Cart Close_52E0F012.wem</CachePath>
+					<CachePath>SFX/Cart Close_D654C653.wem</CachePath>
 				</File>
 				<File Id="618405621" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Object Cleaned.wav</ShortName>
@@ -144,7 +144,7 @@
 				</File>
 				<File Id="996095744" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Fire Cart.wav</ShortName>
-					<CachePath>SFX/Fire Cart_ACCEC0E4.wem</CachePath>
+					<CachePath>SFX/Fire Cart_553ADDD8.wem</CachePath>
 				</File>
 				<File Id="1017371896" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>BodyPartCol2.wav</ShortName>
@@ -198,12 +198,12 @@
 						<MediaRef Id="146996785"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3697444650" Name="Cart_Close" DurationType="OneShot" DurationMin="1" DurationMax="1">
+				<Event Id="3697444650" Name="Cart_Close" DurationType="OneShot" DurationMin="0.49855804" DurationMax="0.5014461">
 					<MediaRefs>
 						<MediaRef Id="592302926"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2037208526" Name="Cart_Open" DurationType="OneShot" DurationMin="1" DurationMax="1">
+				<Event Id="2037208526" Name="Cart_Open" DurationType="OneShot" DurationMin="0.49855804" DurationMax="0.5014461">
 					<MediaRefs>
 						<MediaRef Id="296468143"/>
 					</MediaRefs>
@@ -218,7 +218,7 @@
 						<MediaRef Id="988003584"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1357891606" Name="Fire_Cart" DurationType="OneShot" DurationMin="1" DurationMax="1">
+				<Event Id="1357891606" Name="Fire_Cart" DurationType="OneShot" DurationMin="3" DurationMax="3">
 					<MediaRefs>
 						<MediaRef Id="996095744"/>
 					</MediaRefs>
@@ -340,5 +340,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{B617AF03-AAD9-5424-20F5-07A6D0C129BE}</FileHash>
+	<FileHash>{8FFF0CDB-1BF5-D61A-948C-990549C20322}</FileHash>
 </SoundBanksInfo>
