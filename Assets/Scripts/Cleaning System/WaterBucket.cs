@@ -7,7 +7,6 @@ public class WaterBucket : Interactable, ICleanable
     [Header("Config")]
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private ParticleSystem washParticles;
-    [SerializeField] private Sprite cleanMessage;
     [SerializeField] private Material[] bucketMaterials;
 
     [Header("Water Config")]
@@ -15,7 +14,7 @@ public class WaterBucket : Interactable, ICleanable
     [SerializeField] private Transform waterStartPoint;
     [SerializeField] private Transform waterFinishPoint;
 
-    public Sprite InteractMessage => cleanMessage;
+    public Sprite InteractMessage => CleaningManager.Instance.GetInteractMessage();
 
     public bool HasWater { get; private set; }
     public float WaterPercentage { get; private set; }

@@ -4,11 +4,10 @@ using UnityEngine.InputSystem;
 public class StealableObject : Interactable, IRetrievable
 {
     [Header("Stealable Config")]
-    [SerializeField] private Sprite interactMessage;
     [SerializeField] private StealableManager stealableManager;
     [SerializeField] private float moneyAmount = 10f; // Example money amount
 
-    public Sprite InteractMessage => interactMessage;
+    public Sprite InteractMessage => CleaningManager.Instance.GetInteractMessage();
 
     public bool IsObjectPickedUp => throw new System.NotImplementedException();
 

@@ -28,7 +28,7 @@ public class Clean : MonoBehaviour, ICleanable
     public bool IsCleaned => isCleaned;
 
     private Sprite cleanMessage;
-    public Sprite InteractMessage => cleanMessage;
+    public Sprite InteractMessage => CleaningManager.Instance.GetInteractMessage();
 
     private bool isCleaned = false;
 

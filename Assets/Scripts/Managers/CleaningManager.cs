@@ -52,8 +52,33 @@ public class CleaningManager : MonoBehaviour
     [SerializeField] private string spongeWooshEvent = null;
     [SerializeField] private string cleanedEvent = null;
 
+    [Header("UI Config")]
+    [SerializeField] private Sprite pickUpMessage;
+    [SerializeField] private Sprite dropMessage;
+    [SerializeField] private Sprite throwMessage;
+    [SerializeField] private Sprite rotateMessage;
+    [SerializeField] private Sprite storeMessage;
+    [SerializeField] private Sprite interactMessage;
+
+    public static CleaningManager Instance { get; private set; }
+
     public int DirtyMaxValue { get; private set; }
     public int DirtyIncrementAmount { get; private set; }
+
+    
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
     private void Start()
     {
@@ -87,4 +112,10 @@ public class CleaningManager : MonoBehaviour
     public ParticleSystem GetSpongeParticles() => spongeCleaningParticles;
     public CleaningToolReceiver GetMopToolReceiver() => mopToolReceiver;
     public CleaningToolReceiver GetSpongeToolReceiver() => spongeToolReceiver;
+    public Sprite GetPickUpMessage() => pickUpMessage;
+    public Sprite GetDropMessage() => dropMessage;
+    public Sprite GetThrowMessage() => throwMessage;
+    public Sprite GetRotateMessage() => rotateMessage;
+    public Sprite GetStoreMessage() => storeMessage;
+    public Sprite GetInteractMessage() => interactMessage;
 }

@@ -4,9 +4,8 @@ public class InmersiveObject : Interactable, IInmersible
 {
     [SerializeField] private Animator animator;
     [SerializeField] private string animatorTriggerName;
-    [SerializeField] private Sprite interactMessage;
 
-    public Sprite InteractMessage => interactMessage;
+    public Sprite InteractMessage => CleaningManager.Instance.GetInteractMessage();
 
     public void Interact(PlayerController playerController)
     {

@@ -45,8 +45,3 @@ public interface IDisposableCustom
 {
     event System.Action Disposed;
 }
-
-public interface IStorable
-{
-    Sprite StoreMessage { get; }
-}

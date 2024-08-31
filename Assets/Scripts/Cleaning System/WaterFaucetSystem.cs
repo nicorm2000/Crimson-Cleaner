@@ -15,9 +15,7 @@ public class WaterFaucetSystem : Interactable, IToggable
     [SerializeField] private float spillThreshold;
     [SerializeField] private float fillWaterSpeed;
 
-    [Header("UI")]
-    [SerializeField] private Sprite toggleOnOffMessage;
-    public Sprite InteractMessage => toggleOnOffMessage;
+    public Sprite InteractMessage => CleaningManager.Instance.GetInteractMessage();
 
     [Header("Audio Config")]
     [SerializeField] private string interactFaucetEvent = null;

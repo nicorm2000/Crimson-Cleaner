@@ -4,13 +4,12 @@ public class Openable : Interactable, IOpenable
 {
     [Header("Openable Config")]
     [SerializeField] private Animator openableAnimator;
-    [SerializeField] private Sprite interactMessage;
     [SerializeField] private float cooldown = 0f;
 
     private float lastInteractionTime = -Mathf.Infinity;
 
     public bool IsOpen { get; private set; } = false;
-    public Sprite InteractMessage => interactMessage;
+    public Sprite InteractMessage => CleaningManager.Instance.GetInteractMessage();
     public bool IsInteractable => IsOpen || (Time.time - lastInteractionTime >= cooldown);
 
     private readonly string openableOpen = "Open";

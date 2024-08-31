@@ -33,14 +33,12 @@ public class CameraInteraction : MonoBehaviour
             var activeSprites = new Sprite[interactionImages.Length];
 
             IPickable pickableObject = hit.collider.gameObject.GetComponent<ObjectGrabbable>() as IPickable;
-            IStorable storableObject = hit.collider.gameObject.GetComponent<ObjectGrabbable>() as IStorable;
             IRetrievable objectRetrievable = hit.collider.gameObject.GetComponent<StealableObject>() as IRetrievable;
             IOpenable openableObject = hit.collider.gameObject.GetComponent<Openable>() as IOpenable;
             //ICleanable cleanableObject = hit.collider.gameObject.GetComponent<Clean>() as ICleanable;
             ICleanable cleanableToolObject = hit.collider.gameObject.GetComponent<WaterBucket>() as ICleanable;
             IToggable toggableObject = hit.collider.gameObject.GetComponent<UVLight>() as IToggable;
             IToggable toggableObject2 = hit.collider.gameObject.GetComponent<WaterFaucetSystem>() as IToggable;
-            IToggable switchObject = hit.collider.gameObject.GetComponent<LightSwitch>() as IToggable;
             IInteractable inmersiveObject = hit.collider.gameObject.GetComponent<InmersiveObject>() as IInteractable;
 
             IRetrievable objectRetrievable2 = hit.collider.gameObject.GetComponent<RetrievableObject>() as IRetrievable;
@@ -51,10 +49,6 @@ public class CameraInteraction : MonoBehaviour
                 if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().CleaningToolsLength - 1)
                 {
                     AppendPickUpSprites(pickableObject, ref activeSprites);
-                }
-                else if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetBin())
-                {
-                    AppendPickUpInteractableSprites(storableObject, ref activeSprites);
                 }
             }
 
@@ -81,11 +75,6 @@ public class CameraInteraction : MonoBehaviour
             if (toggableObject2 != null)
             {
                 AppendToggableSprites(toggableObject2, ref activeSprites);
-            }
-
-            if (switchObject != null)
-            {
-                AppendToggableSprites(switchObject, ref activeSprites);
             }
 
             if (inmersiveObject != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().CleaningToolsLength - 1)
@@ -135,13 +124,6 @@ public class CameraInteraction : MonoBehaviour
         {
             activeSprites[index] = pickableObject.PickUpMessage;
         }
-    }
-
-    private void AppendPickUpInteractableSprites(IStorable pickUpObject, ref Sprite[] activeSprites)
-    {
-        SetImageState(true);
-        int index = GetNextAvailableSlot(activeSprites);
-        activeSprites[index] = pickUpObject.StoreMessage;
     }
 
     private void AppendRetrievableSprites(IRetrievable retrievableObject, ref Sprite[] activeSprites)

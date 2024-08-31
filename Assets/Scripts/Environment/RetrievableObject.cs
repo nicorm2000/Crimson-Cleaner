@@ -5,16 +5,12 @@ using UnityEngine;
 
 public class RetrievableObject : Interactable, IRetrievable
 {
-
     private bool isObjectPickedUp = false;
     public bool IsObjectPickedUp => isObjectPickedUp;
 
-    [SerializeField] Sprite interactMessage;
-    public Sprite InteractMessage => interactMessage;
-
+    public Sprite InteractMessage => CleaningManager.Instance.GetInteractMessage();
 
     public event Action ObjectRetrievedEvent;
-
 
     public void Interact(PlayerController playerController)
     {

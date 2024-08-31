@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ObjectGrabbable : MonoBehaviour, IPickable, IStorable
+public class ObjectGrabbable : MonoBehaviour, IPickable
 {
     [Header("Config")]
     [SerializeField] private float lerpSpeed = 10f;
@@ -9,14 +9,6 @@ public class ObjectGrabbable : MonoBehaviour, IPickable, IStorable
     [SerializeField] private float breakForceThreshold = 10f;
     [SerializeField] private float collisionCooldown = 0.1f;
     [SerializeField] private float fallHeightThreshold = 5f;
-
-    [Header("UI Config")]
-    [SerializeField] private Sprite pickUpMessage;
-    [SerializeField] private Sprite dropMessage;
-    [SerializeField] private Sprite throwMessage;
-    [SerializeField] private Sprite rotateMessage;
-    [SerializeField] private Sprite storeMessage;
-
 
     [Header("Object Placement")]
     [SerializeField] private GameObject hologramObject;
@@ -34,7 +26,6 @@ public class ObjectGrabbable : MonoBehaviour, IPickable, IStorable
     private Vector3 lastPosition;
     private bool isObjectSnapped;
 
-
     private DisposableObject disposableObject;
     private float lastCollisionTime = -Mathf.Infinity;
     private float initialHeight;
@@ -45,11 +36,11 @@ public class ObjectGrabbable : MonoBehaviour, IPickable, IStorable
     public bool IsObjectPickedUp { get; private set; }
     public bool isObjectBreakable = true;
     public bool IsObjectSnapped => isObjectSnapped;
-    public Sprite PickUpMessage => pickUpMessage;
-    public Sprite DropMessage => dropMessage;
-    public Sprite ThrowMessage => throwMessage;
-    public Sprite RotateMessage => rotateMessage;
-    public Sprite StoreMessage => storeMessage;
+    public Sprite PickUpMessage => CleaningManager.Instance.GetPickUpMessage();
+    public Sprite DropMessage => CleaningManager.Instance.GetDropMessage();
+    public Sprite ThrowMessage => CleaningManager.Instance.GetThrowMessage();
+    public Sprite RotateMessage => CleaningManager.Instance.GetRotateMessage();
+    public Sprite StoreMessage => CleaningManager.Instance.GetStoreMessage();
 
     private void Awake()
     {

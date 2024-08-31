@@ -4,10 +4,8 @@ using UnityEngine.InputSystem;
 public class UVLight : Interactable, IToggable
 {
     [Header("UV Light Config")]
-    [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private float minCoverage = 0.7f;
 
-    [SerializeField] private Sprite toggleOnOffMessage;
     [SerializeField] private Material onMaterial;
     [SerializeField] private Material offMaterial;
     [SerializeField] private Light[] uvLight;
@@ -15,7 +13,7 @@ public class UVLight : Interactable, IToggable
     private bool isOn = false;
     private Renderer _renderer;
 
-    public Sprite InteractMessage => toggleOnOffMessage;
+    public Sprite InteractMessage => CleaningManager.Instance.GetInteractMessage();
 
     protected override void OnEnable()
     {
