@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5618194470619907575}
   - component: {fileID: 2246370881195452356}
   - component: {fileID: 2120019208241623160}
+  - component: {fileID: 6520998350927654122}
   m_Layer: 8
   m_Name: SM_Machete
   m_TagString: Trash
@@ -158,6 +159,8 @@ MonoBehaviour:
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
   rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  storeMessage: {fileID: 0}
+  hologramObject: {fileID: 0}
   audioManager: {fileID: 0}
   breakBottleEvent: 
   isObjectBreakable: 0
@@ -174,3 +177,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakablePieces: []
+--- !u!114 &6520998350927654122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154259635182957365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d762f5069bbb6842adf03e9eb481b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputManager: {fileID: 0}
+  raycastDistance: 3
+  interactableLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  audioManager: {fileID: 0}
+  soundEvent: 
+  soundEvent2: 
+  interactMessage: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
