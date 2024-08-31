@@ -9,6 +9,10 @@ public class ToolsWheelController : MonoBehaviour
     [SerializeField] private CleaningTool cleaningTool;
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private Image reticle;
+    [SerializeField] private float minRadius;
+    [SerializeField] private float maxRadius;
+
+    [SerializeField] private ToolsWheel[] tools;
     
     public int previousToolID;
     public int currentToolID;
@@ -31,6 +35,55 @@ public class ToolsWheelController : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         AssignToolIDs();
+    }
+
+    private void Update()
+    {
+        Vector2 moveInput = new Vector2();
+
+        moveInput.x = Input.mousePosition.x - (Screen.width / 2f);
+        moveInput.y = Input.mousePosition.y - (Screen.height / 2f);
+
+        float distance = moveInput.magnitude;
+
+        if (distance < minRadius)
+        {
+            tools[tools.Length - 1].SetHighlight(true);
+            tools[tools.Length - 1].HoverEnter();
+
+            for (int i = 0; i < tools.Length - 1; i++)
+            {
+                tools[i].SetHighlight(false);
+            }
+        }
+        else if (distance < maxRadius)
+        {
+            tools[tools.Length - 1].SetHighlight(false);
+            moveInput.Normalize();
+
+            if (moveInput != Vector2.zero)
+            {
+                float angle = Mathf.Atan2(moveInput.y, -moveInput.x) * Mathf.Rad2Deg + 90f;
+                if (angle < 0) angle += 360f;
+
+                for (int i = 0; i < tools.Length - 1; i++)
+                {
+                    float startAngle = (i * (360f / 4) + 45f);
+                    float endAngle = ((i + 1) * (360f / 4) + 45f);
+
+                    if ((angle > startAngle && angle <= endAngle) ||
+                        (endAngle > 360f && (angle > startAngle || angle <= endAngle - 360f)))
+                    {
+                        tools[i].HoverEnter();
+                        tools[i].SetHighlight(true);
+                    }
+                    else
+                    {
+                        tools[i].SetHighlight(false);
+                    }
+                }
+            }
+        }
     }
 
     private void OnToolWheelStart()
@@ -73,7 +126,6 @@ public class ToolsWheelController : MonoBehaviour
             if (i < cleaningTool.ToolsLength)
             {
                 toolWheels[i].ID = i;
-                toolWheels[i].itemName = cleaningTool.Tools[i].name;
             }
         }
     }

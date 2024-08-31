@@ -6429,7 +6429,7 @@ GameObject:
   - component: {fileID: 176869510}
   - component: {fileID: 176869512}
   - component: {fileID: 176869511}
-  - component: {fileID: 176869513}
+  - component: {fileID: 176869514}
   m_Layer: 5
   m_Name: Sponge
   m_TagString: Untagged
@@ -6444,18 +6444,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 176869509}
-  m_LocalRotation: {x: -0, y: -0, z: -0.5858461, w: 0.81042236}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1811987865}
   m_Father: {fileID: 1015329156}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -71.726}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -172.8, y: -50.1}
-  m_SizeDelta: {x: 295, y: 140}
+  m_AnchoredPosition: {x: -172.5, y: 0}
+  m_SizeDelta: {x: 355, y: 155}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &176869511
 MonoBehaviour:
@@ -6477,7 +6477,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bff424f883b9cb44c91dba8d742b395f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2ed42a1e3ce4f6d4fa83d71382c7b0f3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6495,27 +6495,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 176869509}
   m_CullTransparentMesh: 1
---- !u!95 &176869513
-Animator:
-  serializedVersion: 5
+--- !u!114 &176869514
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 176869509}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c16105eb9bc6f0941854dfd966332301, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b4c16f62c71d5b42aed5afa2ed41703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolsWheelController: {fileID: 1015329157}
+  hoverHash: Hover
+  enterSprite: {fileID: 21300000, guid: 4418f09927c69f74fb68506c037581fb, type: 3}
+  exitSprite: {fileID: 21300000, guid: 2ed42a1e3ce4f6d4fa83d71382c7b0f3, type: 3}
 --- !u!1 &177885180
 GameObject:
   m_ObjectHideFlags: 0
@@ -9224,7 +9219,7 @@ GameObject:
   - component: {fileID: 279449533}
   - component: {fileID: 279449535}
   - component: {fileID: 279449534}
-  - component: {fileID: 279449536}
+  - component: {fileID: 279449537}
   m_Layer: 5
   m_Name: Trash Bin
   m_TagString: Untagged
@@ -9239,18 +9234,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279449532}
-  m_LocalRotation: {x: -0, y: -0, z: 0.5902964, w: 0.80718666}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1524197640}
   m_Father: {fileID: 1015329156}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 72.356}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 170, y: -49.5}
-  m_SizeDelta: {x: 295, y: 140}
+  m_AnchoredPosition: {x: 172.5, y: 0}
+  m_SizeDelta: {x: 355, y: 155}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &279449534
 MonoBehaviour:
@@ -9272,7 +9267,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bff424f883b9cb44c91dba8d742b395f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2ed42a1e3ce4f6d4fa83d71382c7b0f3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9290,27 +9285,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279449532}
   m_CullTransparentMesh: 1
---- !u!95 &279449536
-Animator:
-  serializedVersion: 5
+--- !u!114 &279449537
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279449532}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c16105eb9bc6f0941854dfd966332301, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b4c16f62c71d5b42aed5afa2ed41703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolsWheelController: {fileID: 1015329157}
+  hoverHash: Hover
+  enterSprite: {fileID: 21300000, guid: 4418f09927c69f74fb68506c037581fb, type: 3}
+  exitSprite: {fileID: 21300000, guid: 2ed42a1e3ce4f6d4fa83d71382c7b0f3, type: 3}
 --- !u!1001 &280461402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14959,7 +14949,7 @@ GameObject:
   - component: {fileID: 454325922}
   - component: {fileID: 454325924}
   - component: {fileID: 454325923}
-  - component: {fileID: 454325925}
+  - component: {fileID: 454325926}
   m_Layer: 5
   m_Name: Hands
   m_TagString: Untagged
@@ -14974,18 +14964,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454325921}
-  m_LocalRotation: {x: -0, y: -0, z: 0.95105654, w: 0.309017}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 837476557}
   m_Father: {fileID: 1015329156}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 144}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 103.5, y: 151.1}
-  m_SizeDelta: {x: 295, y: 140}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 211, y: 212}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &454325923
 MonoBehaviour:
@@ -15007,7 +14997,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bff424f883b9cb44c91dba8d742b395f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2ca7f106748d21f4eb80715054fd5462, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15025,27 +15015,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454325921}
   m_CullTransparentMesh: 1
---- !u!95 &454325925
-Animator:
-  serializedVersion: 5
+--- !u!114 &454325926
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454325921}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c16105eb9bc6f0941854dfd966332301, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b4c16f62c71d5b42aed5afa2ed41703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolsWheelController: {fileID: 1015329157}
+  hoverHash: Hover
+  enterSprite: {fileID: 21300000, guid: 198b432220ebe604dae0afd8979bf829, type: 3}
+  exitSprite: {fileID: 21300000, guid: 2ca7f106748d21f4eb80715054fd5462, type: 3}
 --- !u!1 &457584312
 GameObject:
   m_ObjectHideFlags: 0
@@ -24058,7 +24043,7 @@ GameObject:
   - component: {fileID: 718292186}
   - component: {fileID: 718292188}
   - component: {fileID: 718292187}
-  - component: {fileID: 718292189}
+  - component: {fileID: 718292190}
   m_Layer: 5
   m_Name: Mop
   m_TagString: Untagged
@@ -24073,18 +24058,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718292185}
-  m_LocalRotation: {x: -0, y: -0, z: -0.9527102, w: 0.30388048}
+  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1785460053}
   m_Father: {fileID: 1015329156}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -144.618}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -107.1, y: 151.2}
-  m_SizeDelta: {x: 295, y: 140}
+  m_AnchoredPosition: {x: 0, y: 172.5}
+  m_SizeDelta: {x: 355, y: 155}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &718292187
 MonoBehaviour:
@@ -24106,7 +24091,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bff424f883b9cb44c91dba8d742b395f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2ed42a1e3ce4f6d4fa83d71382c7b0f3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24124,27 +24109,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718292185}
   m_CullTransparentMesh: 1
---- !u!95 &718292189
-Animator:
-  serializedVersion: 5
+--- !u!114 &718292190
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718292185}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c16105eb9bc6f0941854dfd966332301, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b4c16f62c71d5b42aed5afa2ed41703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolsWheelController: {fileID: 1015329157}
+  hoverHash: Hover
+  enterSprite: {fileID: 21300000, guid: 4418f09927c69f74fb68506c037581fb, type: 3}
+  exitSprite: {fileID: 21300000, guid: 2ed42a1e3ce4f6d4fa83d71382c7b0f3, type: 3}
 --- !u!1 &725550748
 GameObject:
   m_ObjectHideFlags: 0
@@ -28429,9 +28409,6 @@ GameObject:
   - component: {fileID: 837476557}
   - component: {fileID: 837476563}
   - component: {fileID: 837476562}
-  - component: {fileID: 837476561}
-  - component: {fileID: 837476559}
-  - component: {fileID: 837476558}
   m_Layer: 5
   m_Name: Hands
   m_TagString: Untagged
@@ -28446,122 +28423,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 837476556}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 454325922}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.1, y: -11.9}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 85, y: 86}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &837476558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 837476556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 837476559}
-          m_TargetAssemblyTypeName: ToolsWheel, Assembly-CSharp
-          m_MethodName: HoverEnter
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 837476559}
-          m_TargetAssemblyTypeName: ToolsWheel, Assembly-CSharp
-          m_MethodName: HoverExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &837476559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 837476556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b4c16f62c71d5b42aed5afa2ed41703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemText: {fileID: 35946953}
-  toolsWheelController: {fileID: 1015329157}
-  hoverHash: Hover
---- !u!114 &837476561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 837476556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 837476562}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &837476562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28807,9 +28680,6 @@ GameObject:
   - component: {fileID: 848501001}
   - component: {fileID: 848501007}
   - component: {fileID: 848501006}
-  - component: {fileID: 848501005}
-  - component: {fileID: 848501003}
-  - component: {fileID: 848501002}
   m_Layer: 5
   m_Name: Tablet
   m_TagString: Untagged
@@ -28833,113 +28703,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -11.6}
+  m_AnchoredPosition: {x: 0, y: -20}
   m_SizeDelta: {x: 85, y: 86}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &848501002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848501000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 848501003}
-          m_TargetAssemblyTypeName: ToolsWheel, Assembly-CSharp
-          m_MethodName: HoverEnter
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 848501003}
-          m_TargetAssemblyTypeName: ToolsWheel, Assembly-CSharp
-          m_MethodName: HoverExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &848501003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848501000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b4c16f62c71d5b42aed5afa2ed41703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemText: {fileID: 35946953}
-  toolsWheelController: {fileID: 1015329157}
-  hoverHash: Hover
---- !u!114 &848501005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 848501000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 848501006}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &848501006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35878,7 +35644,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 275, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1015329157
 MonoBehaviour:
@@ -35897,6 +35663,14 @@ MonoBehaviour:
   cleaningTool: {fileID: 6982812146447357856}
   cleaningManager: {fileID: 1727464070}
   reticle: {fileID: 737030908}
+  minRadius: 150
+  maxRadius: 270
+  tools:
+  - {fileID: 176869514}
+  - {fileID: 718292190}
+  - {fileID: 279449537}
+  - {fileID: 1972293444}
+  - {fileID: 454325926}
   previousToolID: 0
   currentToolID: 0
 --- !u!95 &1015329158
@@ -53404,9 +53178,6 @@ GameObject:
   - component: {fileID: 1524197640}
   - component: {fileID: 1524197646}
   - component: {fileID: 1524197645}
-  - component: {fileID: 1524197644}
-  - component: {fileID: 1524197642}
-  - component: {fileID: 1524197641}
   m_Layer: 5
   m_Name: Trash Bin
   m_TagString: Untagged
@@ -53430,113 +53201,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -92.452}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.2, y: -9.9}
+  m_AnchoredPosition: {x: 0, y: -20}
   m_SizeDelta: {x: 85, y: 86}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1524197641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524197639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1524197642}
-          m_TargetAssemblyTypeName: ToolsWheel, Assembly-CSharp
-          m_MethodName: HoverEnter
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1524197642}
-          m_TargetAssemblyTypeName: ToolsWheel, Assembly-CSharp
-          m_MethodName: HoverExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1524197642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524197639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b4c16f62c71d5b42aed5afa2ed41703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemText: {fileID: 35946953}
-  toolsWheelController: {fileID: 1015329157}
-  hoverHash: Hover
---- !u!114 &1524197644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524197639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1524197645}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1524197645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62454,9 +62121,6 @@ GameObject:
   - component: {fileID: 1785460053}
   - component: {fileID: 1785460056}
   - component: {fileID: 1785460055}
-  - component: {fileID: 1785460054}
-  - component: {fileID: 1785460058}
-  - component: {fileID: 1785460059}
   m_Layer: 5
   m_Name: Mop
   m_TagString: Untagged
@@ -62480,53 +62144,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.5, y: -10.9}
+  m_AnchoredPosition: {x: 0, y: -20}
   m_SizeDelta: {x: 85, y: 86}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1785460054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785460052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1785460055}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1785460055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62565,66 +62185,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785460052}
   m_CullTransparentMesh: 1
---- !u!114 &1785460058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785460052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b4c16f62c71d5b42aed5afa2ed41703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemText: {fileID: 35946953}
-  toolsWheelController: {fileID: 1015329157}
-  hoverHash: Hover
---- !u!114 &1785460059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1785460052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1785460058}
-          m_TargetAssemblyTypeName: ToolsWheel, Assembly-CSharp
-          m_MethodName: HoverEnter
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1785460058}
-          m_TargetAssemblyTypeName: ToolsWheel, Assembly-CSharp
-          m_MethodName: HoverExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &1788615930
 GameObject:
   m_ObjectHideFlags: 0
@@ -63926,9 +63486,6 @@ GameObject:
   - component: {fileID: 1811987865}
   - component: {fileID: 1811987871}
   - component: {fileID: 1811987870}
-  - component: {fileID: 1811987869}
-  - component: {fileID: 1811987867}
-  - component: {fileID: 1811987866}
   m_Layer: 5
   m_Name: Sponge
   m_TagString: Untagged
@@ -63952,113 +63509,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 92.452}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.7, y: -11.4}
+  m_AnchoredPosition: {x: 0, y: -20}
   m_SizeDelta: {x: 85, y: 86}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1811987866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1811987864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1811987867}
-          m_TargetAssemblyTypeName: ToolsWheel, Assembly-CSharp
-          m_MethodName: HoverEnter
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 1
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1811987867}
-          m_TargetAssemblyTypeName: ToolsWheel, Assembly-CSharp
-          m_MethodName: HoverExit
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &1811987867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1811987864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b4c16f62c71d5b42aed5afa2ed41703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemText: {fileID: 35946953}
-  toolsWheelController: {fileID: 1015329157}
-  hoverHash: Hover
---- !u!114 &1811987869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1811987864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1811987870}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1811987870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68883,7 +68336,7 @@ GameObject:
   - component: {fileID: 1972293440}
   - component: {fileID: 1972293442}
   - component: {fileID: 1972293441}
-  - component: {fileID: 1972293443}
+  - component: {fileID: 1972293444}
   m_Layer: 5
   m_Name: Tablet
   m_TagString: Untagged
@@ -68908,8 +68361,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -174.90002}
-  m_SizeDelta: {x: 295, y: 140}
+  m_AnchoredPosition: {x: 0, y: -172.5}
+  m_SizeDelta: {x: 355, y: 155}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1972293441
 MonoBehaviour:
@@ -68931,7 +68384,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bff424f883b9cb44c91dba8d742b395f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2ed42a1e3ce4f6d4fa83d71382c7b0f3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -68949,27 +68402,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972293439}
   m_CullTransparentMesh: 1
---- !u!95 &1972293443
-Animator:
-  serializedVersion: 5
+--- !u!114 &1972293444
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972293439}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c16105eb9bc6f0941854dfd966332301, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b4c16f62c71d5b42aed5afa2ed41703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolsWheelController: {fileID: 1015329157}
+  hoverHash: Hover
+  enterSprite: {fileID: 21300000, guid: 4418f09927c69f74fb68506c037581fb, type: 3}
+  exitSprite: {fileID: 21300000, guid: 2ed42a1e3ce4f6d4fa83d71382c7b0f3, type: 3}
 --- !u!1 &1984496434
 GameObject:
   m_ObjectHideFlags: 0
@@ -77028,7 +76476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &919132148047625305
 Animator:
   serializedVersion: 5
@@ -90462,7 +89910,7 @@ MonoBehaviour:
   - {fileID: 1399425796}
   dirtyPercentages: 000000000000000000000000
   dirtyIncrementAmount: 5
-  mopCleanMaterial: {fileID: 2100000, guid: cb70d79123701444c997f8b1f09c98b5, type: 2}
+  mopCleanMaterial: {fileID: 2100000, guid: 9aaf478264b0c814595cd9cdd1aae395, type: 2}
   spongeCleanMaterial: {fileID: 2100000, guid: f754425cdc2126e4481e26f0e137e6a8, type: 2}
   mopDirtyMaterial:
   - {fileID: 2100000, guid: 9eb3e7a19606c374e8c244ddcd7492f1, type: 2}

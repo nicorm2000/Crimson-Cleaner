@@ -1,35 +1,41 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ToolsWheel : MonoBehaviour
 {
     [Header("Config")]
-    [SerializeField] private TextMeshProUGUI itemText;
     [SerializeField] private ToolsWheelController toolsWheelController;
     [SerializeField] private string hoverHash;
 
-    [NonSerialized] public string itemName;
-    [NonSerialized] public int ID;
+    private Image image;
+    [SerializeField] private Sprite enterSprite;
+    [SerializeField] private Sprite exitSprite;
 
-    private Animator _animator;
+    [NonSerialized] public int ID;
 
     private void Start()
     {
-        _animator = GetComponentInParent<Animator>();
+        image = GetComponent<Image>();
     }
 
     public void HoverEnter()
     {
-        _animator.SetBool(hoverHash, true);
         toolsWheelController.currentToolID = ID;
-        itemText.text = itemName;
     }
 
-    public void HoverExit()
+    public void SetHighlight(bool active)
     {
-        _animator.SetBool(hoverHash, false);
-        toolsWheelController.currentToolID = -1;
-        itemText.text = "";
+        if (active)
+        {
+            image.sprite = enterSprite;
+            gameObject.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
+        }
+        else
+        {
+            image.sprite = exitSprite;
+            gameObject.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        }
     }
 }
