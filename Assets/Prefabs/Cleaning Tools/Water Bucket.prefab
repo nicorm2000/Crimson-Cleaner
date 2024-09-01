@@ -372,7 +372,6 @@ MonoBehaviour:
   soundEvent2: 
   cleaningManager: {fileID: 0}
   washParticles: {fileID: 3952263067807703347}
-  cleanMessage: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
   bucketMaterials:
   - {fileID: 2100000, guid: 05859d6ae758f2a4293d7ace3e454625, type: 2}
   - {fileID: 2100000, guid: 953b613f566b1ce429bc9727a5d047f2, type: 2}
@@ -400,11 +399,6 @@ MonoBehaviour:
   breakForceThreshold: 10
   collisionCooldown: 0.1
   fallHeightThreshold: 1
-  pickUpMessage: {fileID: 21300000, guid: 85de318ad256b904b85cbc2b4984eab4, type: 3}
-  dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
-  throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
-  rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
-  storeMessage: {fileID: 0}
   hologramObject: {fileID: 0}
   audioManager: {fileID: 0}
   breakBottleEvent: Bucket_Collision
@@ -601,7 +595,7 @@ PrefabInstance:
     - target: {fileID: 3969249009830622155, guid: ca40208ea5a3eb842bb3568098d59277,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.18688217
+      value: 0.149
       objectReference: {fileID: 0}
     - target: {fileID: 3969249009830622155, guid: ca40208ea5a3eb842bb3568098d59277,
         type: 3}

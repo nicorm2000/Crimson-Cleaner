@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 2441813480151800861}
   - component: {fileID: 6228346458183547754}
   - component: {fileID: 8921264950303120868}
-  - component: {fileID: 4607384835244394599}
   - component: {fileID: 5628044094169885330}
   - component: {fileID: 5706478907703547236}
   - component: {fileID: 814583931806297988}
+  - component: {fileID: 57121809810637599}
+  - component: {fileID: 7209741687690871600}
   m_Layer: 8
   m_Name: Blood Bottle 4
   m_TagString: Trash
@@ -87,28 +88,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4607384835244394599
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6028134164950652264}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3962318795360572375, guid: 689bba732b316574bb2f0ecd8620855a, type: 3}
 --- !u!54 &5628044094169885330
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -154,10 +133,7 @@ MonoBehaviour:
   breakForceThreshold: 10
   collisionCooldown: 0.1
   fallHeightThreshold: 1
-  pickUpMessage: {fileID: 21300000, guid: 85de318ad256b904b85cbc2b4984eab4, type: 3}
-  dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
-  throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
-  rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  hologramObject: {fileID: 0}
   audioManager: {fileID: 0}
   breakBottleEvent: Bottle_Breaking
   isObjectBreakable: 1
@@ -177,3 +153,47 @@ MonoBehaviour:
   - {fileID: 8005449241889107222, guid: ddb294b389474b94facb877138ce463f, type: 3}
   - {fileID: 2058921266446630716, guid: 75f0465220cb9b9439fbd2b40506da1d, type: 3}
   - {fileID: 530402395587042531, guid: 532678736efaaa048846a80bcc4cf4e2, type: 3}
+--- !u!65 &57121809810637599
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6028134164950652264}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.17344573, y: 0.32832432, z: 0.17344576}
+  m_Center: {x: 0, y: -0.09733391, z: 0}
+--- !u!136 &7209741687690871600
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6028134164950652264}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.045
+  m_Height: 0.25
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.15, z: 0}

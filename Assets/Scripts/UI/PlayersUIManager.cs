@@ -154,9 +154,6 @@ public class PlayersUIManager : MonoBehaviour
                 retrievableObject.GetComponent<RetrievableObject>().ObjectRetrievedEvent += UpdateRetrievableTexts;
             }
         }
-
-       
-
     }
 
     private void OnDisable()
