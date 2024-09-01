@@ -725,6 +725,90 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Pool_Stick_Collision" ID="{5C7F9D15-B3BD-41D6-B670-FF049EC2E0F9}">
+					<ChildrenList>
+						<Action Name="" ID="{4C549F2E-52C3-425D-96A1-CF314ECC747E}" ShortID="402539836">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pool Stick Collision" ID="{677DA597-091E-4FA8-B253-035A8E29CA1A}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{16DC9C62-3F42-4F0D-BA1C-1D59EB7F5215}" ShortID="1023516473">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pool Stick Collision" ID="{677DA597-091E-4FA8-B253-035A8E29CA1A}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Gun_Collision" ID="{323E9AEB-692A-4D9C-9BBF-BA8C376BABF2}">
+					<ChildrenList>
+						<Action Name="" ID="{69768F0C-ED96-4536-AB27-9CC6D55D3A34}" ShortID="257719493">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Gun Collision" ID="{FC652FCA-7A3E-42BC-8714-DCDE991D9D40}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{3ED97A28-FB16-4369-B5AB-CEF885DEC3C0}" ShortID="213223647">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Gun Collision" ID="{FC652FCA-7A3E-42BC-8714-DCDE991D9D40}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Machete_Collision" ID="{1428FF24-CD6F-48CC-B937-DBC6742674EC}">
+					<ChildrenList>
+						<Action Name="" ID="{5A8F6E86-D062-446B-BA28-81360C6872D5}" ShortID="913001184">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Machete Collision" ID="{9C58712C-A45C-4134-A649-D40D1B411C93}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{DBCF52A8-1122-4762-8DDE-AC346CFA47F1}" ShortID="713486462">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Machete Collision" ID="{9C58712C-A45C-4134-A649-D40D1B411C93}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Knife_Collision" ID="{704D5C5B-5BB6-4A4A-90EF-9BEB4820B91F}">
+					<ChildrenList>
+						<Action Name="" ID="{E1A67C95-BA29-4478-B752-3CA0FF41149C}" ShortID="729163208">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Knife Collision" ID="{8B099DDF-256C-4F5C-8CD2-853CA135908F}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{68288AF5-5A38-4EF5-BA4E-630E8BFFC53B}" ShortID="902448376">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Knife Collision" ID="{8B099DDF-256C-4F5C-8CD2-853CA135908F}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

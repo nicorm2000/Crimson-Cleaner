@@ -13903,6 +13903,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3612550729400093301, guid: 0aa4809329b897b44a0fc779151ac059,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: 3612550729400093301, guid: 0aa4809329b897b44a0fc779151ac059,
+        type: 3}
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 1560126}
@@ -13961,6 +13966,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knife
       objectReference: {fileID: 0}
+    - target: {fileID: 7652103592450649652, guid: 0aa4809329b897b44a0fc779151ac059,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
     - target: {fileID: 7652103592450649652, guid: 0aa4809329b897b44a0fc779151ac059,
         type: 3}
       propertyPath: storeMessage
@@ -16312,10 +16322,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7646713234214141246, guid: af78a631897ed574ea850cc8c5e6508f,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: 7646713234214141246, guid: af78a631897ed574ea850cc8c5e6508f,
+        type: 3}
       propertyPath: storeMessage
       value: 
       objectReference: {fileID: 21300000, guid: 511c449931fc9ea4b844135f6f488148,
         type: 3}
+    - target: {fileID: 7646713234214141246, guid: af78a631897ed574ea850cc8c5e6508f,
+        type: 3}
+      propertyPath: breakBottleEvent
+      value: Body_Parts_Collision
+      objectReference: {fileID: 0}
     - target: {fileID: 7646713234214141246, guid: af78a631897ed574ea850cc8c5e6508f,
         type: 3}
       propertyPath: isObjectBreakable
@@ -16357,6 +16377,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Revolver
       objectReference: {fileID: 0}
+    - target: {fileID: 1418815338224905742, guid: 7a48d5f87a238d94fb54b4af04e2b7c0,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
     - target: {fileID: 1418815338224905742, guid: 7a48d5f87a238d94fb54b4af04e2b7c0,
         type: 3}
       propertyPath: storeMessage
@@ -16418,6 +16443,11 @@ PrefabInstance:
       propertyPath: m_Interpolate
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7287031722556399084, guid: 7a48d5f87a238d94fb54b4af04e2b7c0,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
     - target: {fileID: 7287031722556399084, guid: 7a48d5f87a238d94fb54b4af04e2b7c0,
         type: 3}
       propertyPath: inputManager
@@ -19950,6 +19980,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3612550729400093301, guid: 0aa4809329b897b44a0fc779151ac059,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: 3612550729400093301, guid: 0aa4809329b897b44a0fc779151ac059,
+        type: 3}
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 1560126}
@@ -20008,6 +20043,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knife
       objectReference: {fileID: 0}
+    - target: {fileID: 7652103592450649652, guid: 0aa4809329b897b44a0fc779151ac059,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
     - target: {fileID: 7652103592450649652, guid: 0aa4809329b897b44a0fc779151ac059,
         type: 3}
       propertyPath: storeMessage
@@ -25474,10 +25514,10 @@ MonoBehaviour:
   throwingForce: 50
   breakForceThreshold: 10
   collisionCooldown: 0.1
-  fallHeightThreshold: 5
+  fallHeightThreshold: 1
   hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: 
+  audioManager: {fileID: 1243886029}
+  breakBottleEvent: Pool_Stick_Collision
   isObjectBreakable: 0
 --- !u!23 &760705142
 MeshRenderer:
@@ -34603,10 +34643,10 @@ MonoBehaviour:
   throwingForce: 50
   breakForceThreshold: 10
   collisionCooldown: 0.1
-  fallHeightThreshold: 5
+  fallHeightThreshold: 1
   hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: 
+  audioManager: {fileID: 1243886029}
+  breakBottleEvent: Pool_Stick_Collision
   isObjectBreakable: 0
 --- !u!23 &987708361
 MeshRenderer:
@@ -34971,10 +35011,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6666625317298951870, guid: 8545fce65651ce749b1f7ed15c922c11,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: 6666625317298951870, guid: 8545fce65651ce749b1f7ed15c922c11,
+        type: 3}
       propertyPath: storeMessage
       value: 
       objectReference: {fileID: 21300000, guid: 511c449931fc9ea4b844135f6f488148,
         type: 3}
+    - target: {fileID: 6666625317298951870, guid: 8545fce65651ce749b1f7ed15c922c11,
+        type: 3}
+      propertyPath: breakBottleEvent
+      value: Body_Parts_Collision
+      objectReference: {fileID: 0}
     - target: {fileID: 6666625317298951870, guid: 8545fce65651ce749b1f7ed15c922c11,
         type: 3}
       propertyPath: isObjectBreakable
@@ -37629,6 +37679,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2246370881195452356, guid: 161f261f55424c8469fabd8a0aa2e160,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: 2246370881195452356, guid: 161f261f55424c8469fabd8a0aa2e160,
+        type: 3}
       propertyPath: storeMessage
       value: 
       objectReference: {fileID: 21300000, guid: 511c449931fc9ea4b844135f6f488148,
@@ -37693,6 +37748,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Machete
       objectReference: {fileID: 0}
+    - target: {fileID: 6520998350927654122, guid: 161f261f55424c8469fabd8a0aa2e160,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
     - target: {fileID: 6520998350927654122, guid: 161f261f55424c8469fabd8a0aa2e160,
         type: 3}
       propertyPath: inputManager
@@ -38178,10 +38238,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7010512704500314361, guid: 3f3418708421f554eb08fd8a3f4e2d15,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: -7010512704500314361, guid: 3f3418708421f554eb08fd8a3f4e2d15,
+        type: 3}
       propertyPath: storeMessage
       value: 
       objectReference: {fileID: 21300000, guid: 511c449931fc9ea4b844135f6f488148,
         type: 3}
+    - target: {fileID: -7010512704500314361, guid: 3f3418708421f554eb08fd8a3f4e2d15,
+        type: 3}
+      propertyPath: breakBottleEvent
+      value: Body_Parts_Collision
+      objectReference: {fileID: 0}
     - target: {fileID: -7010512704500314361, guid: 3f3418708421f554eb08fd8a3f4e2d15,
         type: 3}
       propertyPath: isObjectBreakable
@@ -41632,10 +41702,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7010512704500314361, guid: 3f3418708421f554eb08fd8a3f4e2d15,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: -7010512704500314361, guid: 3f3418708421f554eb08fd8a3f4e2d15,
+        type: 3}
       propertyPath: storeMessage
       value: 
       objectReference: {fileID: 21300000, guid: 511c449931fc9ea4b844135f6f488148,
         type: 3}
+    - target: {fileID: -7010512704500314361, guid: 3f3418708421f554eb08fd8a3f4e2d15,
+        type: 3}
+      propertyPath: breakBottleEvent
+      value: Body_Parts_Collision
+      objectReference: {fileID: 0}
     - target: {fileID: -7010512704500314361, guid: 3f3418708421f554eb08fd8a3f4e2d15,
         type: 3}
       propertyPath: isObjectBreakable
@@ -50750,10 +50830,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2069236180116189167, guid: 985303918a9f1af47937d214e89f8d86,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: 2069236180116189167, guid: 985303918a9f1af47937d214e89f8d86,
+        type: 3}
       propertyPath: storeMessage
       value: 
       objectReference: {fileID: 21300000, guid: 511c449931fc9ea4b844135f6f488148,
         type: 3}
+    - target: {fileID: 2069236180116189167, guid: 985303918a9f1af47937d214e89f8d86,
+        type: 3}
+      propertyPath: breakBottleEvent
+      value: Body_Parts_Collision
+      objectReference: {fileID: 0}
     - target: {fileID: 2069236180116189167, guid: 985303918a9f1af47937d214e89f8d86,
         type: 3}
       propertyPath: isObjectBreakable
@@ -58759,10 +58849,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3844617187449943408, guid: 09ffaa8b03d454f478c4957f658a565f,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: 3844617187449943408, guid: 09ffaa8b03d454f478c4957f658a565f,
+        type: 3}
       propertyPath: storeMessage
       value: 
       objectReference: {fileID: 21300000, guid: 511c449931fc9ea4b844135f6f488148,
         type: 3}
+    - target: {fileID: 3844617187449943408, guid: 09ffaa8b03d454f478c4957f658a565f,
+        type: 3}
+      propertyPath: breakBottleEvent
+      value: Body_Parts_Collision
+      objectReference: {fileID: 0}
     - target: {fileID: 3844617187449943408, guid: 09ffaa8b03d454f478c4957f658a565f,
         type: 3}
       propertyPath: isObjectBreakable
@@ -59121,6 +59221,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3844617187449943408, guid: 09ffaa8b03d454f478c4957f658a565f,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: 3844617187449943408, guid: 09ffaa8b03d454f478c4957f658a565f,
+        type: 3}
       propertyPath: storeMessage
       value: 
       objectReference: {fileID: 21300000, guid: 511c449931fc9ea4b844135f6f488148,
@@ -59129,6 +59234,11 @@ PrefabInstance:
         type: 3}
       propertyPath: rotationSpeed
       value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 3844617187449943408, guid: 09ffaa8b03d454f478c4957f658a565f,
+        type: 3}
+      propertyPath: breakBottleEvent
+      value: Body_Parts_Collision
       objectReference: {fileID: 0}
     - target: {fileID: 3844617187449943408, guid: 09ffaa8b03d454f478c4957f658a565f,
         type: 3}
@@ -66933,10 +67043,10 @@ MonoBehaviour:
   throwingForce: 50
   breakForceThreshold: 10
   collisionCooldown: 0.1
-  fallHeightThreshold: 5
+  fallHeightThreshold: 1
   hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: 
+  audioManager: {fileID: 1243886029}
+  breakBottleEvent: Pool_Stick_Collision
   isObjectBreakable: 0
 --- !u!23 &1934799238
 MeshRenderer:
@@ -67803,10 +67913,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2303762039111555610, guid: 8ac9017a37543824cbf8a9c8bb0fabdf,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: 2303762039111555610, guid: 8ac9017a37543824cbf8a9c8bb0fabdf,
+        type: 3}
       propertyPath: storeMessage
       value: 
       objectReference: {fileID: 21300000, guid: 511c449931fc9ea4b844135f6f488148,
         type: 3}
+    - target: {fileID: 2303762039111555610, guid: 8ac9017a37543824cbf8a9c8bb0fabdf,
+        type: 3}
+      propertyPath: breakBottleEvent
+      value: Body_Parts_Collision
+      objectReference: {fileID: 0}
     - target: {fileID: 2303762039111555610, guid: 8ac9017a37543824cbf8a9c8bb0fabdf,
         type: 3}
       propertyPath: isObjectBreakable
@@ -70424,10 +70544,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3844617187449943408, guid: 09ffaa8b03d454f478c4957f658a565f,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: 3844617187449943408, guid: 09ffaa8b03d454f478c4957f658a565f,
+        type: 3}
       propertyPath: storeMessage
       value: 
       objectReference: {fileID: 21300000, guid: 511c449931fc9ea4b844135f6f488148,
         type: 3}
+    - target: {fileID: 3844617187449943408, guid: 09ffaa8b03d454f478c4957f658a565f,
+        type: 3}
+      propertyPath: breakBottleEvent
+      value: Body_Parts_Collision
+      objectReference: {fileID: 0}
     - target: {fileID: 3844617187449943408, guid: 09ffaa8b03d454f478c4957f658a565f,
         type: 3}
       propertyPath: isObjectBreakable
@@ -71135,10 +71265,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3844617187449943408, guid: 09ffaa8b03d454f478c4957f658a565f,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: 3844617187449943408, guid: 09ffaa8b03d454f478c4957f658a565f,
+        type: 3}
       propertyPath: storeMessage
       value: 
       objectReference: {fileID: 21300000, guid: 511c449931fc9ea4b844135f6f488148,
         type: 3}
+    - target: {fileID: 3844617187449943408, guid: 09ffaa8b03d454f478c4957f658a565f,
+        type: 3}
+      propertyPath: breakBottleEvent
+      value: Body_Parts_Collision
+      objectReference: {fileID: 0}
     - target: {fileID: 3844617187449943408, guid: 09ffaa8b03d454f478c4957f658a565f,
         type: 3}
       propertyPath: isObjectBreakable
@@ -72419,10 +72559,10 @@ MonoBehaviour:
   throwingForce: 50
   breakForceThreshold: 10
   collisionCooldown: 0.1
-  fallHeightThreshold: 5
+  fallHeightThreshold: 1
   hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: 
+  audioManager: {fileID: 1243886029}
+  breakBottleEvent: Pool_Stick_Collision
   isObjectBreakable: 0
 --- !u!23 &2099573521
 MeshRenderer:
@@ -72539,6 +72679,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1418815338224905742, guid: 7a48d5f87a238d94fb54b4af04e2b7c0,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: 1418815338224905742, guid: 7a48d5f87a238d94fb54b4af04e2b7c0,
+        type: 3}
       propertyPath: storeMessage
       value: 
       objectReference: {fileID: 21300000, guid: 511c449931fc9ea4b844135f6f488148,
@@ -72598,6 +72743,11 @@ PrefabInstance:
       propertyPath: m_Interpolate
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7287031722556399084, guid: 7a48d5f87a238d94fb54b4af04e2b7c0,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
     - target: {fileID: 7287031722556399084, guid: 7a48d5f87a238d94fb54b4af04e2b7c0,
         type: 3}
       propertyPath: inputManager
@@ -82452,6 +82602,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3612550729400093301, guid: 0aa4809329b897b44a0fc779151ac059,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: 3612550729400093301, guid: 0aa4809329b897b44a0fc779151ac059,
+        type: 3}
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 1560126}
@@ -82515,6 +82670,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7652103592450649652, guid: 0aa4809329b897b44a0fc779151ac059,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
     - target: {fileID: 7652103592450649652, guid: 0aa4809329b897b44a0fc779151ac059,
         type: 3}
       propertyPath: storeMessage
@@ -83214,10 +83374,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6666625317298951870, guid: 8545fce65651ce749b1f7ed15c922c11,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: 6666625317298951870, guid: 8545fce65651ce749b1f7ed15c922c11,
+        type: 3}
       propertyPath: storeMessage
       value: 
       objectReference: {fileID: 21300000, guid: 511c449931fc9ea4b844135f6f488148,
         type: 3}
+    - target: {fileID: 6666625317298951870, guid: 8545fce65651ce749b1f7ed15c922c11,
+        type: 3}
+      propertyPath: breakBottleEvent
+      value: Body_Parts_Collision
+      objectReference: {fileID: 0}
     - target: {fileID: 6666625317298951870, guid: 8545fce65651ce749b1f7ed15c922c11,
         type: 3}
       propertyPath: isObjectBreakable
@@ -85315,10 +85485,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7646713234214141246, guid: af78a631897ed574ea850cc8c5e6508f,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: 7646713234214141246, guid: af78a631897ed574ea850cc8c5e6508f,
+        type: 3}
       propertyPath: storeMessage
       value: 
       objectReference: {fileID: 21300000, guid: 511c449931fc9ea4b844135f6f488148,
         type: 3}
+    - target: {fileID: 7646713234214141246, guid: af78a631897ed574ea850cc8c5e6508f,
+        type: 3}
+      propertyPath: breakBottleEvent
+      value: Body_Parts_Collision
+      objectReference: {fileID: 0}
     - target: {fileID: 7646713234214141246, guid: af78a631897ed574ea850cc8c5e6508f,
         type: 3}
       propertyPath: isObjectBreakable
@@ -85763,6 +85943,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2246370881195452356, guid: 161f261f55424c8469fabd8a0aa2e160,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: 2246370881195452356, guid: 161f261f55424c8469fabd8a0aa2e160,
+        type: 3}
       propertyPath: storeMessage
       value: 
       objectReference: {fileID: 21300000, guid: 511c449931fc9ea4b844135f6f488148,
@@ -85827,6 +86012,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Machete
       objectReference: {fileID: 0}
+    - target: {fileID: 6520998350927654122, guid: 161f261f55424c8469fabd8a0aa2e160,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
     - target: {fileID: 6520998350927654122, guid: 161f261f55424c8469fabd8a0aa2e160,
         type: 3}
       propertyPath: inputManager
@@ -90549,10 +90739,10 @@ MonoBehaviour:
   throwingForce: 50
   breakForceThreshold: 10
   collisionCooldown: 0.1
-  fallHeightThreshold: 5
+  fallHeightThreshold: 1
   hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: 
+  audioManager: {fileID: 1243886029}
+  breakBottleEvent: Pool_Stick_Collision
   isObjectBreakable: 0
 --- !u!136 &7370816838236919908
 CapsuleCollider:
@@ -91118,10 +91308,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2069236180116189167, guid: 985303918a9f1af47937d214e89f8d86,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: 2069236180116189167, guid: 985303918a9f1af47937d214e89f8d86,
+        type: 3}
       propertyPath: storeMessage
       value: 
       objectReference: {fileID: 21300000, guid: 511c449931fc9ea4b844135f6f488148,
         type: 3}
+    - target: {fileID: 2069236180116189167, guid: 985303918a9f1af47937d214e89f8d86,
+        type: 3}
+      propertyPath: breakBottleEvent
+      value: Body_Parts_Collision
+      objectReference: {fileID: 0}
     - target: {fileID: 2069236180116189167, guid: 985303918a9f1af47937d214e89f8d86,
         type: 3}
       propertyPath: isObjectBreakable
@@ -92398,6 +92598,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8764962491972091997, guid: 610d70dc4084654458392c53d01ed329,
         type: 3}
+      propertyPath: breakBottleEvent
+      value: Body_Parts_Collision
+      objectReference: {fileID: 0}
+    - target: {fileID: 8764962491972091997, guid: 610d70dc4084654458392c53d01ed329,
+        type: 3}
       propertyPath: hasSoundAndParticles
       value: 0
       objectReference: {fileID: 0}
@@ -93488,10 +93693,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2303762039111555610, guid: 8ac9017a37543824cbf8a9c8bb0fabdf,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: 2303762039111555610, guid: 8ac9017a37543824cbf8a9c8bb0fabdf,
+        type: 3}
       propertyPath: storeMessage
       value: 
       objectReference: {fileID: 21300000, guid: 511c449931fc9ea4b844135f6f488148,
         type: 3}
+    - target: {fileID: 2303762039111555610, guid: 8ac9017a37543824cbf8a9c8bb0fabdf,
+        type: 3}
+      propertyPath: breakBottleEvent
+      value: Body_Parts_Collision
+      objectReference: {fileID: 0}
     - target: {fileID: 2303762039111555610, guid: 8ac9017a37543824cbf8a9c8bb0fabdf,
         type: 3}
       propertyPath: isObjectBreakable
@@ -96649,10 +96864,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4119539174918019127, guid: 0c0983839f56f73468c6d06c320435e7,
         type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1243886029}
+    - target: {fileID: 4119539174918019127, guid: 0c0983839f56f73468c6d06c320435e7,
+        type: 3}
       propertyPath: storeMessage
       value: 
       objectReference: {fileID: 21300000, guid: 511c449931fc9ea4b844135f6f488148,
         type: 3}
+    - target: {fileID: 4119539174918019127, guid: 0c0983839f56f73468c6d06c320435e7,
+        type: 3}
+      propertyPath: breakBottleEvent
+      value: Body_Parts_Collision
+      objectReference: {fileID: 0}
     - target: {fileID: 4119539174918019127, guid: 0c0983839f56f73468c6d06c320435e7,
         type: 3}
       propertyPath: isObjectBreakable

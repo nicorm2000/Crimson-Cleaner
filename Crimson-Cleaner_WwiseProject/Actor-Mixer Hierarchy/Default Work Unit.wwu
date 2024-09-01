@@ -655,18 +655,31 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<Sound Name="BodyPartCol1" ID="{77BD3B90-8248-45D8-B293-BD930059A902}" ShortID="648811167">
+								<Sound Name="Body Part Collision" ID="{6071CEA8-437C-4EDD-BDC9-F0E3FDEC3723}" ShortID="1043586627">
 									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{8D2FDDDA-4A54-4DDC-8A49-0A1DAAFF011A}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="5"/>
+															<Property Name="Min" Type="Real64" Value="-5"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-6</Value>
+												<Value>-3</Value>
 											</ValueList>
 											<ModifierList>
 												<ModifierInfo>
-													<Modifier Name="" ID="{87AE2580-9161-4A33-94C5-49B35EBFB026}">
+													<Modifier Name="" ID="{EFBED19E-9A4A-4D1D-BA77-85C96F9A3EAE}">
 														<PropertyList>
 															<Property Name="Enabled" Type="bool" Value="True"/>
-															<Property Name="Min" Type="Real64" Value="-10"/>
+															<Property Name="Min" Type="Real64" Value="-6"/>
 														</PropertyList>
 													</Modifier>
 												</ModifierInfo>
@@ -682,21 +695,21 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="BodyPartCol2" ID="{517843B3-DFA6-4093-820D-7A714DB2DD11}">
+										<AudioFileSource Name="Body Part Collision" ID="{60F71199-B817-4577-A7CA-0A41FB951956}">
 											<PropertyList>
-												<Property Name="FadeOutDuration" Type="Real64" Value="0.243818570817287"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.245225750160462"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-												<Property Name="TrimEnd" Type="Real64" Value="0.25"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.331149811456996"/>
 											</PropertyList>
 											<Language>SFX</Language>
-											<AudioFile>BodyPartCol2.wav</AudioFile>
+											<AudioFile>Body Part Collision.wav</AudioFile>
 											<MediaIDList>
-												<MediaID ID="1017371896"/>
+												<MediaID ID="802040487"/>
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="BodyPartCol2" ID="{517843B3-DFA6-4093-820D-7A714DB2DD11}" Platform="Linked"/>
+										<ActiveSource Name="Body Part Collision" ID="{60F71199-B817-4577-A7CA-0A41FB951956}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
@@ -1434,6 +1447,231 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="Bucket Collision" ID="{8B8C5CCE-96C9-42AE-B48B-02FEBCC9AAFE}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Pool Stick Collision" ID="{677DA597-091E-4FA8-B253-035A8E29CA1A}" ShortID="169457954">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{C3CA1571-11F5-44D4-AAFA-7D3B762CCC26}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="5"/>
+													<Property Name="Min" Type="Real64" Value="-5"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{620B6AAD-41ED-41F9-84F8-0B75A67ED9ED}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="2"/>
+													<Property Name="Min" Type="Real64" Value="-2"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Pool Stick Collision" ID="{2AF67715-9B87-4999-AD75-5843AD574273}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.119401421672648"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.15"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Pool Stick Collision.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="571702833"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Pool Stick Collision" ID="{2AF67715-9B87-4999-AD75-5843AD574273}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Knife Collision" ID="{8B099DDF-256C-4F5C-8CD2-853CA135908F}" ShortID="775232084">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{CCFBB119-BF29-4E26-A523-62E36513E881}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="5"/>
+													<Property Name="Min" Type="Real64" Value="-5"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{5BB3A3E8-C992-4AD2-9142-A3A53AA383EA}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-2"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Knife Collision" ID="{A1DA93AC-562C-49DD-B4F4-3394DF2F62FF}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.245906931964056"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.358614275780916"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Knife Collision.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="951993581"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Knife Collision" ID="{A1DA93AC-562C-49DD-B4F4-3394DF2F62FF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Machete Collision" ID="{9C58712C-A45C-4134-A649-D40D1B411C93}" ShortID="707573852">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{79A17F03-F6F0-4811-98FC-7459051DBB2C}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="5"/>
+													<Property Name="Min" Type="Real64" Value="-5"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{75041B87-4C93-45B2-8954-BADB9512343C}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-4"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Machete Collision" ID="{69FA93B9-0645-4E8B-81EF-AFF911108142}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.223610696311045"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.0333084453293513"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Machete Collision.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="162453724"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Machete Collision" ID="{69FA93B9-0645-4E8B-81EF-AFF911108142}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Gun Collision" ID="{FC652FCA-7A3E-42BC-8714-DCDE991D9D40}" ShortID="824334244">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{BF811AF6-0550-4575-98C9-1DDD56016FCE}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="5"/>
+													<Property Name="Min" Type="Real64" Value="-5"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-1</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{82DDF14E-853D-4F17-9CC5-7FD71D938739}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-3"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Gun Collision" ID="{CAE04A39-1D50-4FD5-B364-7512BD7446E7}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.0313868003341688"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.293964178739532"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.202865904598896"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.584866230617193"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Gun Collision.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="75652571"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Gun Collision" ID="{CAE04A39-1D50-4FD5-B364-7512BD7446E7}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
