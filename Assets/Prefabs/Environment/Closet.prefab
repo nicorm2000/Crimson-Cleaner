@@ -463,7 +463,7 @@ GameObject:
   - component: {fileID: 1131326614033637189}
   - component: {fileID: 7526795290957550251}
   - component: {fileID: 2523214818071223955}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Closet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,9 +499,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 0}
-  openableRaycastLayerMask:
-    serializedVersion: 2
-    m_Bits: 64
+  raycastDistance: 3
+  audioManager: {fileID: 0}
+  soundEvent: 
+  soundEvent2: 
+  openableAnimator: {fileID: 0}
+  cooldown: 0
 --- !u!95 &7526795290957550251
 Animator:
   serializedVersion: 5

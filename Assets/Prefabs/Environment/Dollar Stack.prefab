@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 2367545733401028182}
   - component: {fileID: 1649688727521045953}
   - component: {fileID: 4711356780880030120}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Dollar Stack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,11 +231,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 0}
-  playerController: {fileID: 0}
-  stealableManager: {fileID: 0}
   raycastDistance: 3
-  interactableLayerMask:
-    serializedVersion: 2
-    m_Bits: 256
-  pickUpMessage: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
+  audioManager: {fileID: 0}
+  soundEvent: 
+  soundEvent2: 
+  stealableManager: {fileID: 0}
   moneyAmount: 0

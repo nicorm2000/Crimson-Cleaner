@@ -4,9 +4,7 @@ using UnityEngine.InputSystem;
 public abstract class Interactable : MonoBehaviour
 {
     [Header("Config")]
-    [SerializeField] protected InputManager inputManager;
-    [SerializeField] protected float raycastDistance = 3f;
-    [SerializeField] protected LayerMask interactableLayerMask = ~0;
+    [SerializeField] private EnvironmentRaycaster environmentRaycaster;
 
     [Header("Audio Config")]
     [SerializeField] protected AudioManager audioManager;
@@ -15,34 +13,22 @@ public abstract class Interactable : MonoBehaviour
 
     protected virtual void OnEnable()
     {
-        inputManager.InteractEvent += TriggerInteraction;
+        environmentRaycaster.InteractableObjectEvent += TriggerInteraction;
     }
 
     protected virtual void OnDisable()
     {
-        inputManager.InteractEvent -= TriggerInteraction;
+        environmentRaycaster.InteractableObjectEvent -= TriggerInteraction;
     }
 
-    protected virtual void TriggerInteraction()
+    protected virtual void TriggerInteraction(GameObject go)
     {
-        if (IsMouseLookingAtObject())
+        if (go == this.gameObject)
         {
             PlayerController playerController = GetPlayerController();
 
             PerformInteraction(playerController);
         }
-    }
-
-    protected bool IsMouseLookingAtObject()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-
-        if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, interactableLayerMask))
-        {
-            return hit.transform == transform;
-        }
-
-        return false;
     }
 
     protected abstract void PerformInteraction(PlayerController playerController);

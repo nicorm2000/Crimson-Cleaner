@@ -1,11 +1,12 @@
 using System;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CameraInteraction : MonoBehaviour
 {
     [Header("Config")]
-    [SerializeField] private LayerMask interactableLayers;
     [SerializeField] private Image[] interactionImages; // Changed from TextMeshProUGUI to Image
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private PlayerController playerController;
@@ -28,20 +29,20 @@ public class CameraInteraction : MonoBehaviour
     {
         Ray ray = new(mainCamera.transform.position, mainCamera.transform.forward);
 
-        if (Physics.Raycast(ray, out RaycastHit hit, cleaningManager.GetInteractionDistance(), interactableLayers))
+        if (Physics.Raycast(ray, out RaycastHit hit, cleaningManager.GetInteractionDistance()))
         {
             var activeSprites = new Sprite[interactionImages.Length];
 
-            IPickable pickableObject = hit.collider.gameObject.GetComponent<ObjectGrabbable>() as IPickable;
-            IRetrievable objectRetrievable = hit.collider.gameObject.GetComponent<StealableObject>() as IRetrievable;
-            IOpenable openableObject = hit.collider.gameObject.GetComponent<Openable>() as IOpenable;
+            ObjectGrabbable pickableObject = hit.collider.gameObject.GetComponent<ObjectGrabbable>();
+            StealableObject objectRetrievable = hit.collider.gameObject.GetComponent<StealableObject>();
+            Openable openableObject = hit.collider.gameObject.GetComponent<Openable>();
             //ICleanable cleanableObject = hit.collider.gameObject.GetComponent<Clean>() as ICleanable;
-            ICleanable cleanableToolObject = hit.collider.gameObject.GetComponent<WaterBucket>() as ICleanable;
-            IToggable toggableObject = hit.collider.gameObject.GetComponent<UVLight>() as IToggable;
-            IToggable toggableObject2 = hit.collider.gameObject.GetComponent<WaterFaucetSystem>() as IToggable;
-            IInteractable inmersiveObject = hit.collider.gameObject.GetComponent<InmersiveObject>() as IInteractable;
+            WaterBucket cleanableToolObject = hit.collider.gameObject.GetComponent<WaterBucket>();
+            UVLight toggableObject = hit.collider.gameObject.GetComponent<UVLight>();
+            WaterFaucetSystem toggableObject2 = hit.collider.gameObject.GetComponent<WaterFaucetSystem>();
+            InmersiveObject inmersiveObject = hit.collider.gameObject.GetComponent<InmersiveObject>();
 
-            IRetrievable objectRetrievable2 = hit.collider.gameObject.GetComponent<RetrievableObject>() as IRetrievable;
+            RetrievableObject objectRetrievable2 = hit.collider.gameObject.GetComponent<RetrievableObject>();
 
             if (pickableObject != null && !pickableObject.IsObjectSnapped)
             {

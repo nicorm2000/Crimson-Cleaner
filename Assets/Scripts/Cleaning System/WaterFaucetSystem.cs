@@ -5,6 +5,7 @@ public class WaterFaucetSystem : Interactable, IToggable
 {
     [Header("Config")]
     [SerializeField] private WaterBucket waterBucket = null;
+    [SerializeField] private float raycastDistance = 3f;
 
     [Header("Water Config")]
     [SerializeField] private ParticleSystem waterParticles;
