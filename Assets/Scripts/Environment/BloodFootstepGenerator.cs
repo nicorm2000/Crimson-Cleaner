@@ -18,7 +18,6 @@ public class BloodFootstepGenerator : MonoBehaviour
     [SerializeField] private Transform rightFootTransform;
 
     private bool isLeftFootNext = true;
-    private Coroutine bloodInstanceCoroutine = null;
     private bool canSpawnBloodPrint = true;
     private bool isSpawningActive = false;
 
@@ -50,7 +49,6 @@ public class BloodFootstepGenerator : MonoBehaviour
             {
                 StartCoroutine(InstanceBloodPrint(bloodPrintSpawnDelay));
             }
-
             elapsedTime += bloodPrintSpawnDelay;  
             yield return new WaitForSeconds(bloodPrintSpawnDelay);
         }
@@ -70,11 +68,8 @@ public class BloodFootstepGenerator : MonoBehaviour
         }
 
         isLeftFootNext = !isLeftFootNext;
-
         canSpawnBloodPrint = false;
-
         yield return new WaitForSeconds(coroutineDuration);
-
         canSpawnBloodPrint = true;
     }
 
@@ -82,9 +77,7 @@ public class BloodFootstepGenerator : MonoBehaviour
     {
         int randomIndex = Random.Range(0, footPrintPrefabs.Count);
         GameObject selectedFootPrint = footPrintPrefabs[randomIndex];
-
         GameObject newBloodPrint = Instantiate(selectedFootPrint, footTransform.position, Quaternion.LookRotation(Vector3.down));
-
         StartCoroutine(FadeOutPrint(newBloodPrint, bloodPrintLifeTime));
     }
 
@@ -99,10 +92,8 @@ public class BloodFootstepGenerator : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float alpha = Mathf.Lerp(1, 0, elapsedTime / printLifetime);
             stainMaterial.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
-            Debug.Log(stainMaterial.color);
             yield return null;
         }
-
         Destroy(print);
     }
 

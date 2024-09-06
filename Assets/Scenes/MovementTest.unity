@@ -13414,6 +13414,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59f833a402edc214e8f7c70da563e484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &349279507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 349279508}
+  m_Layer: 13
+  m_Name: LeftFoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &349279508
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349279507}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.21, y: 0.005, z: 0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3893294198156873185}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &350129706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26815,6 +26846,61 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 696208294}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &698212452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 698212453}
+  - component: {fileID: 698212454}
+  m_Layer: 0
+  m_Name: BloodFootstepGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &698212453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698212452}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &698212454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698212452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824e116f8de41f341af3f4a4b5ded784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloodPoolDetection: {fileID: 6982812146447357860}
+  inputManager: {fileID: 1560126}
+  bloodPrintSpawningDuration: 10
+  bloodPrintSpawnDelay: 0.25
+  bloodPrintLifeTime: 5
+  leftFootstepPrefabs:
+  - {fileID: 1874417126404681781, guid: a2b1efb3e12d6284aad21623549b9e10, type: 3}
+  rightFootstepPrefabs:
+  - {fileID: 1874417126404681781, guid: a2b1efb3e12d6284aad21623549b9e10, type: 3}
+  leftFootTransform: {fileID: 349279508}
+  rightFootTransform: {fileID: 774341641}
 --- !u!1 &699453358
 GameObject:
   m_ObjectHideFlags: 0
@@ -29315,6 +29401,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!1 &774341640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 774341641}
+  m_Layer: 13
+  m_Name: RightFoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &774341641
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774341640}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.17, y: 0.005, z: 0.09}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3893294198156873185}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &775880304
 GameObject:
   m_ObjectHideFlags: 0
@@ -95678,6 +95795,8 @@ Transform:
   - {fileID: 1563147782}
   - {fileID: 354992793}
   - {fileID: 2023219383}
+  - {fileID: 774341641}
+  - {fileID: 349279508}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3895836517894561378
@@ -97413,6 +97532,7 @@ GameObject:
   - component: {fileID: 6982812146447357857}
   - component: {fileID: 6982812146447357858}
   - component: {fileID: 6982812146447357859}
+  - component: {fileID: 6982812146447357860}
   m_Layer: 13
   m_Name: PlayerArmature
   m_TagString: Player
@@ -105895,6 +106015,22 @@ MonoBehaviour:
   inputManager: {fileID: 1560126}
   raycastDistance: 3
   cameraTransform: {fileID: 1563147782}
+--- !u!114 &6982812146447357860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081610323803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead5e01f2de0abd49ba4ed4c8836e926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raycastLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  raycastDistance: 0.3
 --- !u!4 &6983258931826274114
 Transform:
   m_ObjectHideFlags: 0
@@ -116140,6 +116276,7 @@ SceneRoots:
   - {fileID: 1610821865}
   - {fileID: 1788615933}
   - {fileID: 585603216}
+  - {fileID: 698212453}
   - {fileID: 1560125}
   - {fileID: 1727464069}
   - {fileID: 978816959}
