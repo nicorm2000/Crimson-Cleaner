@@ -91,7 +91,15 @@ public class PlayerController : MonoBehaviour
     {
         if (!hasAnimator) return;
 
-        if (!isMovable) return;
+        if (!isMovable)
+        {
+            animator.SetFloat(xVelHash, 0f);
+            animator.SetFloat(yVelHash, 0f);
+
+            isMoving = false;
+
+            return;
+        }
 
         float targetSpeed = walkSpeed;
 
