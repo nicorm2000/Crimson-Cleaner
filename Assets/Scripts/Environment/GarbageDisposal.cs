@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class GarbageDisposal : MonoBehaviour
@@ -5,6 +6,7 @@ public class GarbageDisposal : MonoBehaviour
     [Header("Config")]
     [SerializeField] private BoxCollider coll;
     [SerializeField] private ParticleSystem burnParticles;
+    [SerializeField] private Light burnLight;
 
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
