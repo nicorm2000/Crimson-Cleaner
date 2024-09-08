@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RetrievableObject : Interactable, IRetrievable
@@ -29,13 +27,13 @@ public class RetrievableObject : Interactable, IRetrievable
             Debug.Log("Retrieve Object: " + name);
 
             // Perform additional logic (e.g., play sound, add money)
-            //stealableManager.PlayMoneySFX();
+            // StealableManager.PlayMoneySFX();
 
             isObjectPickedUp = true;
             ObjectRetrievedEvent?.Invoke();
 
             gameObject.SetActive(false);
-            //Destroy(gameObject); // Example: Destroy the object after retrieval
+            // Destroy(gameObject); // Example: Destroy the object after retrieval
         }
     }
 

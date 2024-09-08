@@ -11,9 +11,14 @@ public class ToolsWheelController : MonoBehaviour
     [SerializeField] private Image reticle;
     [SerializeField] private float minRadius;
     [SerializeField] private float maxRadius;
-
     [SerializeField] private ToolsWheel[] tools;
-    
+
+    [Header("Audio Config")]
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string openToolWheelEvent = null;
+    [SerializeField] private string closeToolWheelEvent = null;
+    [SerializeField] private string hoverToolEvent = null;
+
     public int previousToolID;
     public int currentToolID;
 
@@ -48,6 +53,8 @@ public class ToolsWheelController : MonoBehaviour
 
         if (distance < minRadius)
         {
+            //if (!hoverSoundPlayed && hoverToolEvent != null)
+            //    audioManager.PlaySound(hoverToolEvent);
             tools[tools.Length - 1].SetHighlight(true);
             tools[tools.Length - 1].HoverEnter();
 
@@ -74,6 +81,8 @@ public class ToolsWheelController : MonoBehaviour
                     if ((angle > startAngle && angle <= endAngle) ||
                         (endAngle > 360f && (angle > startAngle || angle <= endAngle - 360f)))
                     {
+                        //if (hoverToolEvent != null)
+                        //    audioManager.PlaySound(hoverToolEvent);
                         tools[i].HoverEnter();
                         tools[i].SetHighlight(true);
                     }
@@ -97,7 +106,9 @@ public class ToolsWheelController : MonoBehaviour
             gameStateManager.TransitionToState("Tablet");
         else
             gameStateManager.TransitionToState("ToolWheel");
-        
+
+        if (openToolWheelEvent != null)
+            audioManager.PlaySound(openToolWheelEvent);
         _animator.SetBool("OpenToolWheel", true);
     }
 
@@ -114,6 +125,8 @@ public class ToolsWheelController : MonoBehaviour
             reticle.gameObject.SetActive(true);
         }
 
+        if (closeToolWheelEvent != null)
+            audioManager.PlaySound(closeToolWheelEvent);
         _animator.SetBool("OpenToolWheel", false);
         SelectTool();
     }

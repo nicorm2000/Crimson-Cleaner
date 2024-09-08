@@ -15,10 +15,6 @@ public class CleaningTool : MonoBehaviour
     [SerializeField] private Material[] spongeDirtyMaterial;
     [SerializeField] private string tabletName;
 
-    [Header("Audio Config")]
-    [SerializeField] private AudioManager audioManager = null;
-    [SerializeField] private string weaponSwapEvent = null;
-
     private bool isEventPlaying = false;
     private bool isTabletOpen = false;
     private int _previousToolIndex = 0;
@@ -57,7 +53,6 @@ public class CleaningTool : MonoBehaviour
             return;
         }
 
-        audioManager.PlaySound(weaponSwapEvent);
         tools[_currentToolIndex].SetActive(false);
         tools[newIndex].SetActive(true);
 

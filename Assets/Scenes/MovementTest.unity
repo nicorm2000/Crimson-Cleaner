@@ -2127,7 +2127,7 @@ PrefabInstance:
     - target: {fileID: 2441813480151800861, guid: 2ef4bf2b55b4f6b418c49c9ccc17fc57,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.8
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 2441813480151800861, guid: 2ef4bf2b55b4f6b418c49c9ccc17fc57,
         type: 3}
@@ -18164,6 +18164,8 @@ MonoBehaviour:
   distance: 0.2
   angle: 10
   completionShaderDuration: 1.5
+  audioManager: {fileID: 1243886029}
+  snapObjectEvent: Bottle_Drop
 --- !u!1 &468583824
 GameObject:
   m_ObjectHideFlags: 0
@@ -39903,6 +39905,10 @@ MonoBehaviour:
   - {fileID: 279449537}
   - {fileID: 1972293444}
   - {fileID: 454325926}
+  audioManager: {fileID: 1243886029}
+  openToolWheelEvent: Weapon_Swap
+  closeToolWheelEvent: Weapon_Swap
+  hoverToolEvent: 
   previousToolID: 0
   currentToolID: 0
 --- !u!95 &1015329158
@@ -106611,8 +106617,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: d3b23dcbbe172e246b6f72693b03d0b8, type: 2}
   - {fileID: 2100000, guid: 890328154fa28f0468b488238194d376, type: 2}
   tabletName: Tablet
-  audioManager: {fileID: 1243886029}
-  weaponSwapEvent: Weapon_Swap
 --- !u!114 &6982812146447357857
 MonoBehaviour:
   m_ObjectHideFlags: 0
