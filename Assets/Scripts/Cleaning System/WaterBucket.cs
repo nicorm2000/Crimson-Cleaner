@@ -16,6 +16,7 @@ public class WaterBucket : Interactable, ICleanable
 
     public Sprite InteractMessage => CleaningManager.Instance.GetInteractMessage();
 
+    public bool canModifySanity = true;
     public bool HasWater { get; private set; }
     public float WaterPercentage { get; private set; }
 
@@ -37,6 +38,15 @@ public class WaterBucket : Interactable, ICleanable
             UpdateMaterial(_bucketDirtState, _rendererWater);
         HasWater = true;
         WaterPercentage = 1;
+    }
+
+    private void Update()
+    {
+        if (_bucketDirtState >= 1 && !HasWater && canModifySanity)
+        {
+            SanityManager.Instance.ModifySanityScalars(SanityManager.Instance.DropBucketScalerMultiplier, SanityManager.Instance.DropBucketScaler);
+            canModifySanity = false;
+        }
     }
 
     public void Interact(PlayerController playerController)
@@ -84,6 +94,7 @@ public class WaterBucket : Interactable, ICleanable
             ActivateWashing();
             cleaningManager.GetToolSelector().ResetDirtyPercentage(currentToolIndex);
             cleaningManager.GetToolSelector().ChangeToolMaterial(currentToolIndex, cleaningManager.GetToolSelector().GetOriginalMaterial());
+            SanityManager.Instance.ModifySanityScalars(SanityManager.Instance.WashToolScalerMultiplier, SanityManager.Instance.WashToolScaler);
         }
     }
 

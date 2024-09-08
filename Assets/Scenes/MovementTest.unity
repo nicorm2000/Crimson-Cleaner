@@ -4441,6 +4441,16 @@ MonoBehaviour:
   mediumTierDurationMax: 25
   highTierDurationMin: 30
   highTierDurationMax: 60
+  cleanScalerMultiplier: 0
+  cleanScaler: 1
+  grabObjectScalerMultiplier: 0
+  grabObjectScaler: 0.1
+  dropBucketScalerMultiplier: 0
+  dropBucketScaler: -10
+  burnObjectScalerMultiplier: 0
+  burnObjectScaler: -10
+  washToolScalerMultiplier: 0
+  washToolScaler: -20
   lowTierOutcomes:
   - {fileID: 11400000, guid: db53184d635fbf04093f97aa81ef6233, type: 2}
   - {fileID: 11400000, guid: 3bf6ce5f091183f4c81e335de22ef1e2, type: 2}
@@ -29265,6 +29275,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 1243886029}
   breakBottleEvent: Pool_Stick_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!23 &760705142
 MeshRenderer:
@@ -38875,6 +38886,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 1243886029}
   breakBottleEvent: Pool_Stick_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!23 &987708361
 MeshRenderer:
@@ -40068,6 +40080,89 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59f833a402edc214e8f7c70da563e484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1019608823
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 608864507531395407, guid: 0c1485e1f78d64c43a9005a64a661a17,
+        type: 3}
+      propertyPath: Trigger.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 608864507531395407, guid: 0c1485e1f78d64c43a9005a64a661a17,
+        type: 3}
+      propertyPath: Trigger.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1005872263317232696, guid: 0c1485e1f78d64c43a9005a64a661a17,
+        type: 3}
+      propertyPath: m_Name
+      value: Base Trigger Zone
+      objectReference: {fileID: 0}
+    - target: {fileID: 1005872263317232696, guid: 0c1485e1f78d64c43a9005a64a661a17,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309990608936506321, guid: 0c1485e1f78d64c43a9005a64a661a17,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309990608936506321, guid: 0c1485e1f78d64c43a9005a64a661a17,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309990608936506321, guid: 0c1485e1f78d64c43a9005a64a661a17,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309990608936506321, guid: 0c1485e1f78d64c43a9005a64a661a17,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309990608936506321, guid: 0c1485e1f78d64c43a9005a64a661a17,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309990608936506321, guid: 0c1485e1f78d64c43a9005a64a661a17,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309990608936506321, guid: 0c1485e1f78d64c43a9005a64a661a17,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309990608936506321, guid: 0c1485e1f78d64c43a9005a64a661a17,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309990608936506321, guid: 0c1485e1f78d64c43a9005a64a661a17,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309990608936506321, guid: 0c1485e1f78d64c43a9005a64a661a17,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0c1485e1f78d64c43a9005a64a661a17, type: 3}
 --- !u!1 &1025536203
 GameObject:
   m_ObjectHideFlags: 0
@@ -51362,6 +51457,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 0}
   breakBottleEvent: 
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!23 &1324576401
 MeshRenderer:
@@ -73867,6 +73963,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 1243886029}
   breakBottleEvent: Pool_Stick_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!23 &1934799238
 MeshRenderer:
@@ -76843,6 +76940,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 0}
   breakBottleEvent: 
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!23 &2028207665
 MeshRenderer:
@@ -79630,6 +79728,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 1243886029}
   breakBottleEvent: Pool_Stick_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!23 &2099573521
 MeshRenderer:
@@ -97867,6 +97966,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 1243886029}
   breakBottleEvent: Billiard_Ball_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!4 &4274344443435219154
 Transform:
@@ -99378,6 +99478,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 1243886029}
   breakBottleEvent: Billiard_Ball_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!1001 &4737763576802032218
 PrefabInstance:
@@ -100827,6 +100928,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 1243886029}
   breakBottleEvent: Billiard_Ball_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!1 &5351354439640976833
 GameObject:
@@ -104959,6 +105061,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 1243886029}
   breakBottleEvent: Billiard_Ball_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!1 &6545445511867860145
 GameObject:
@@ -106863,6 +106966,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 1243886029}
   breakBottleEvent: Billiard_Ball_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!1 &6997226162949061389
 GameObject:
@@ -107763,6 +107867,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 1243886029}
   breakBottleEvent: Pool_Stick_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!136 &7370816838236919908
 CapsuleCollider:
@@ -109114,6 +109219,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 1243886029}
   breakBottleEvent: Billiard_Ball_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!1 &7620835090766021887
 GameObject:
@@ -109397,6 +109503,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 1243886029}
   breakBottleEvent: Billiard_Ball_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!23 &7670144082808573687
 MeshRenderer:
@@ -109744,6 +109851,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 1243886029}
   breakBottleEvent: Billiard_Ball_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!4 &7743021061508223444
 Transform:
@@ -110333,6 +110441,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 0}
   breakBottleEvent: 
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!54 &7855801681503160781
 Rigidbody:
@@ -111012,6 +111121,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 0}
   breakBottleEvent: 
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!54 &7967534648664845882
 Rigidbody:
@@ -111616,6 +111726,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 1243886029}
   breakBottleEvent: Billiard_Ball_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!4 &8074403229874855964 stripped
 Transform:
@@ -112124,6 +112235,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 1243886029}
   breakBottleEvent: Billiard_Ball_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!33 &8170058783542543139
 MeshFilter:
@@ -112765,6 +112877,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 1243886029}
   breakBottleEvent: Billiard_Ball_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!1 &8321055019602511211
 GameObject:
@@ -112808,6 +112921,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 0}
   breakBottleEvent: 
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!64 &8321055019602511213
 MeshCollider:
@@ -113744,6 +113858,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 1243886029}
   breakBottleEvent: Billiard_Ball_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!1 &8546981553520493932
 GameObject:
@@ -114451,6 +114566,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 1243886029}
   breakBottleEvent: Billiard_Ball_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!4 &8708112791345081092
 Transform:
@@ -114939,6 +115055,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 1243886029}
   breakBottleEvent: Billiard_Ball_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!4 &8818194238501807839
 Transform:
@@ -116050,6 +116167,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 1243886029}
   breakBottleEvent: Billiard_Ball_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!33 &9070693380533593776
 MeshFilter:
@@ -116708,6 +116826,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 1243886029}
   breakBottleEvent: Billiard_Ball_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!1 &9178065018639872932
 GameObject:
@@ -116953,3 +117072,4 @@ SceneRoots:
   - {fileID: 590711169}
   - {fileID: 267397782}
   - {fileID: 4575355345885678989}
+  - {fileID: 1019608823}

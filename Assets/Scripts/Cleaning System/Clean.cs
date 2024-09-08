@@ -11,6 +11,7 @@ public class Clean : MonoBehaviour, ICleanable
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
 
+
     private Renderer _renderer;
 
     private bool _isCleaning = false;
@@ -142,6 +143,7 @@ public class Clean : MonoBehaviour, ICleanable
             cleaningManager.GetSpongeParticles().Play();
         }
 
+
         switch (_currentMaterialIndex)
         {
             case 0:
@@ -160,6 +162,7 @@ public class Clean : MonoBehaviour, ICleanable
                 FinishCleaning();
                 return;
         }
+
     }
 
     private bool CanContinueCleaning()
@@ -171,6 +174,7 @@ public class Clean : MonoBehaviour, ICleanable
     {
         UpdateMaterial(_currentMaterialIndex);
         cleaningManager.GetToolSelector().IncrementDirtyPercentage(toolIndex, cleaningManager.DirtyIncrementAmount);
+        SanityManager.Instance.ModifySanityScalars(SanityManager.Instance.CleanScalerMultiplier, SanityManager.Instance.CleanScaler);
     }
 
     private void FinishCleaning()

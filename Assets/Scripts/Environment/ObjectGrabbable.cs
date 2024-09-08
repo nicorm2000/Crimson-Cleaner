@@ -33,6 +33,7 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     private int currentAxisIndex = 0; // 0 -> X, 1 -> Y, 2 -> Z
     private Vector3[] rotationAxes;
 
+    public bool isObjectSanityModifier;
     public bool IsObjectPickedUp { get; private set; }
     public bool isObjectBreakable = true;
     public bool IsObjectSnapped => isObjectSnapped;
@@ -52,6 +53,14 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     {
         rotationAxes = new Vector3[] { Vector3.right, Vector3.up, Vector3.forward };
         isObjectSnapped = false;
+    }
+
+    private void Update()
+    {
+        if (isObjectSanityModifier && IsObjectPickedUp)
+        {
+            SanityManager.Instance.ModifySanityScalars(SanityManager.Instance.GrabObjectScalerMultiplier, SanityManager.Instance.GrabObjectScaler);
+        }
     }
 
     public void Grab(Transform ObjectGrabPointTransform, Transform playerTransform)

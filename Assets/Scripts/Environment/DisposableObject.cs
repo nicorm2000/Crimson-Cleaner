@@ -21,6 +21,7 @@ public class DisposableObject : MonoBehaviour, IDisposableCustom
 
     public void TriggerDisposal()
     {
+        SanityManager.Instance.ModifySanityScalars(SanityManager.Instance.BurnObjectScalerMultiplier, SanityManager.Instance.BurnObjectScaler);
         Disposed?.Invoke();
         DisposedGO?.Invoke(gameObject);
         isObjectDisposed = true;

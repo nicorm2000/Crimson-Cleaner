@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TriggerZone : MonoBehaviour
 {
@@ -11,15 +12,21 @@ public class TriggerZone : MonoBehaviour
     [SerializeField] private LayerMask triggerMask;
     [SerializeField] private int movementRestrictionDuration;
     [SerializeField] private int cameraRestrictionDuration;
+    [SerializeField] private int sanityModifierDuration;
     [SerializeField] private int executionTimes;
 
     [Header("Events")]
     [SerializeField] private bool isMovementAvailable;
     [SerializeField] private bool isCameraAvailable;
+    [SerializeField] private bool isSanityModifierAvailable;
     [SerializeField] private int eventID;
 
     private int executionCounter = 0;
     private Collider collider;
+
+    public event System.Action<int> TriggerZoneEnter;
+
+    public UnityEvent Trigger; 
 
     private void Awake()
     {
@@ -37,6 +44,9 @@ public class TriggerZone : MonoBehaviour
             
             if (isCameraAvailable)
                 StartCoroutine(ToggleCamera(cameraRestrictionDuration));
+
+            if (isSanityModifierAvailable)
+                TriggerZoneEnter?.Invoke(eventID);
 
             //if (sanityAmmount > sanityThreshold)
             // ExecuteEvent(eventID);
@@ -64,6 +74,15 @@ public class TriggerZone : MonoBehaviour
     }
 
     private IEnumerator ToggleCamera(float duration)
+    {
+        playerController.isCameraMovable = false;
+
+        yield return new WaitForSeconds(duration);
+
+        playerController.isCameraMovable = true;
+    }
+    
+    private IEnumerator ExecuteSanityEvent(float duration)
     {
         playerController.isCameraMovable = false;
 

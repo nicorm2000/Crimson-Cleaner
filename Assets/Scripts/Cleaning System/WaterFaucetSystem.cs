@@ -99,6 +99,7 @@ public class WaterFaucetSystem : Interactable, IToggable
                         return false;
                     }
                     waterBucket.SetBucketMaterialDefault();
+                    waterBucket.canModifySanity = true;
                     water.SetActive(true);
                     waterBucket.WaterPercentageHandler(fillWaterSpeed);
                 }
