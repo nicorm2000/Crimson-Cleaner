@@ -67,7 +67,7 @@ public class WaterBucket : Interactable, ICleanable
         int currentToolIndex = cleaningManager.GetToolSelector().CurrentToolIndex;
         int dirtyPercentage = cleaningManager.GetToolSelector().GetDirtyPercentage(currentToolIndex);
 
-        if (cleaningManager.GetToolSelector().CurrentToolIndex == 2)
+        if (cleaningManager.GetToolSelector().CurrentToolIndex >= 2)
         {
             WaterBucketUnavailable?.Invoke();
             return;
@@ -95,6 +95,11 @@ public class WaterBucket : Interactable, ICleanable
             cleaningManager.GetToolSelector().ResetDirtyPercentage(currentToolIndex);
             cleaningManager.GetToolSelector().ChangeToolMaterial(currentToolIndex, cleaningManager.GetToolSelector().GetOriginalMaterial());
             SanityManager.Instance.ModifySanityScalar(SanityManager.Instance.WashToolScaler / 2f);
+            if (cleaningManager.GetToolSelector().CurrentToolIndex == 0)
+                cleaningManager.GetMopDrippingParticles().Play();
+            else if (cleaningManager.GetToolSelector().CurrentToolIndex == 1)
+                cleaningManager.GetSpongeDrippingParticles().Play();
+            SanityManager.Instance.ModifySanityScalar(SanityManager.Instance.WashToolScaler);
         }
     }
 

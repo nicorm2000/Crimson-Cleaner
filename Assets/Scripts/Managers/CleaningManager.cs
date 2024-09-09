@@ -30,25 +30,43 @@ public class CleaningManager : MonoBehaviour
 {
     [Header("Config")]
     [SerializeField] private Camera gameCamera = null;
+    [SerializeField] private InputManager inputManager = null;
+    [SerializeField] private CleaningTool cleaningTool = null;
+    [SerializeField] private CleaningToolReceiver mopToolReceiver;
+    [SerializeField] private CleaningToolReceiver spongeToolReceiver;
+    
+    [Header("Animators")]
     [SerializeField] private Animator playerAnimator = null;
     [SerializeField] private Animator mopAnimator = null;
     [SerializeField] private Animator spongeAnimator = null;
     [SerializeField] private Animator handsAnimator = null;
-    [SerializeField] private InputManager inputManager = null;
-    [SerializeField] private CleaningTool cleaningTool = null;
+    
+    [Header("Interaction")]
     [SerializeField] private LayerMask mopLayerMask;
     [SerializeField] private LayerMask spongeLayerMask;
     [SerializeField] private float interactionDistance;
+
+    [Header("Particle Systems")]
+    [Header("Mop")]
     [SerializeField] private ParticleSystem mopCleaningParticles;
+    [SerializeField] private ParticleSystem mopCleaningDirtyParticles;
+    [SerializeField] private ParticleSystem mopDrippingParticles;
+    [SerializeField] private ParticleSystem mopDrippingDirtyParticles;
+    [Header("Sponge")]
     [SerializeField] private ParticleSystem spongeCleaningParticles;
-    [SerializeField] private CleaningToolReceiver mopToolReceiver;
-    [SerializeField] private CleaningToolReceiver spongeToolReceiver;
+    [SerializeField] private ParticleSystem spongeCleaningDirtyParticles;
+    [SerializeField] private ParticleSystem spongeDrippingParticles;
+    [SerializeField] private ParticleSystem spongeDrippingDirtyParticles;
+    [Header("Trash Bin")]
+    [SerializeField] private ParticleSystem trashBinCleaningParticles;
 
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
     [SerializeField] private string mopEvent = null;
+    [SerializeField] private string mopDirtyEvent = null;
     [SerializeField] private string mopWooshEvent = null;
     [SerializeField] private string spongeEvent = null;
+    [SerializeField] private string spongeDirtyEvent = null;
     [SerializeField] private string spongeWooshEvent = null;
     [SerializeField] private string cleanedEvent = null;
 
@@ -104,12 +122,20 @@ public class CleaningManager : MonoBehaviour
     public LayerMask GetSpongeLayerMask() => spongeLayerMask;
     public float GetInteractionDistance() => interactionDistance;
     public string GetMopEvent() => mopEvent;
+    public string GetMopDirtyEvent() => mopDirtyEvent;
     public string GetMopWooshEvent() => mopWooshEvent;
     public string GetSpongeEvent() => spongeEvent;
+    public string GetSpongeDirtyEvent() => spongeDirtyEvent;
     public string GetSpongeWooshEvent() => spongeWooshEvent;
     public string GetCleanedEvent() => cleanedEvent;
-    public ParticleSystem GetMopParticles() => mopCleaningParticles;
-    public ParticleSystem GetSpongeParticles() => spongeCleaningParticles;
+    public ParticleSystem GetMopCleaningParticles() => mopCleaningParticles;
+    public ParticleSystem GetMopCleaningDirtyParticles() => mopCleaningDirtyParticles;
+    public ParticleSystem GetMopDrippingParticles() => mopDrippingParticles;
+    public ParticleSystem GetMopDrippingDirtyParticles() => mopDrippingDirtyParticles;
+    public ParticleSystem GetSpongeCleaningParticles() => spongeCleaningParticles;
+    public ParticleSystem GetSpongeCleaningDirtyParticles() => spongeCleaningDirtyParticles;
+    public ParticleSystem GetSpongeDrippingParticles() => spongeDrippingParticles;
+    public ParticleSystem GetSpongeDrippingDirtyParticles() => spongeDrippingDirtyParticles;
     public CleaningToolReceiver GetMopToolReceiver() => mopToolReceiver;
     public CleaningToolReceiver GetSpongeToolReceiver() => spongeToolReceiver;
     public Sprite GetPickUpMessage() => pickUpMessage;

@@ -12,7 +12,6 @@ public class CleaningToolReceiver : MonoBehaviour
 
     public event Action ToolDirty;
 
-
     public void SetCurrentCleanableObject(Clean cleanableObject)
     {
         currentCleanableObject = cleanableObject;
@@ -58,6 +57,16 @@ public class CleaningToolReceiver : MonoBehaviour
             }
             else
             {
+                if (cleaningManager.GetToolSelector().CurrentToolIndex == 0)
+                {
+                    audioManager.PlaySound(cleaningManager.GetMopDirtyEvent());
+                    cleaningManager.GetMopCleaningDirtyParticles().Play();
+                }
+                else if (cleaningManager.GetToolSelector().CurrentToolIndex == 1)
+                {
+                    audioManager.PlaySound(cleaningManager.GetSpongeDirtyEvent());
+                    cleaningManager.GetSpongeCleaningDirtyParticles().Play();
+                }
                 ToolDirty?.Invoke();
             }
         }
