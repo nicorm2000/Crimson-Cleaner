@@ -174,7 +174,7 @@ public class Clean : MonoBehaviour, ICleanable
     {
         UpdateMaterial(_currentMaterialIndex);
         cleaningManager.GetToolSelector().IncrementDirtyPercentage(toolIndex, cleaningManager.DirtyIncrementAmount);
-        SanityManager.Instance.ModifySanityScalars(SanityManager.Instance.CleanScalerMultiplier, SanityManager.Instance.CleanScaler);
+        SanityManager.Instance.ModifySanityScalar(SanityManager.Instance.CleanScaler);
     }
 
     private void FinishCleaning()

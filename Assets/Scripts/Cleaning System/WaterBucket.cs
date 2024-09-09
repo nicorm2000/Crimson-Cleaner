@@ -44,7 +44,7 @@ public class WaterBucket : Interactable, ICleanable
     {
         if (_bucketDirtState >= 1 && !HasWater && canModifySanity)
         {
-            SanityManager.Instance.ModifySanityScalars(SanityManager.Instance.DropBucketScalerMultiplier, SanityManager.Instance.DropBucketScaler);
+            SanityManager.Instance.ModifySanityScalar(SanityManager.Instance.DropBucketScaler);
             canModifySanity = false;
         }
     }
@@ -94,7 +94,7 @@ public class WaterBucket : Interactable, ICleanable
             ActivateWashing();
             cleaningManager.GetToolSelector().ResetDirtyPercentage(currentToolIndex);
             cleaningManager.GetToolSelector().ChangeToolMaterial(currentToolIndex, cleaningManager.GetToolSelector().GetOriginalMaterial());
-            SanityManager.Instance.ModifySanityScalars(SanityManager.Instance.WashToolScalerMultiplier, SanityManager.Instance.WashToolScaler);
+            SanityManager.Instance.ModifySanityScalar(SanityManager.Instance.WashToolScaler / 2f);
         }
     }
 
