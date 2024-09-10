@@ -3,22 +3,26 @@ using UnityEngine;
 public class MonoBehaviourSingleton<T> : MonoBehaviour where T : MonoBehaviourSingleton<T>
 {
     private static T instance = null;
+    private static readonly object lockObject = new object();
 
     public static T Instance
     {
         get
         {
-            if (instance == null)
+            lock (lockObject)
             {
-                instance = FindObjectOfType<T>();
                 if (instance == null)
                 {
-                    GameObject obj = new GameObject(typeof(T).Name);
-                    instance = obj.AddComponent<T>();
-                    DontDestroyOnLoad(obj);
+                    instance = FindObjectOfType<T>();
+                    if (instance == null)
+                    {
+                        GameObject obj = new GameObject(typeof(T).Name);
+                        instance = obj.AddComponent<T>();
+                        DontDestroyOnLoad(obj);
+                    }
                 }
+                return instance;
             }
-            return instance;
         }
     }
 
@@ -37,7 +41,6 @@ public class MonoBehaviourSingleton<T> : MonoBehaviour where T : MonoBehaviourSi
 
         instance = (T)this;
         DontDestroyOnLoad(gameObject);
-
         Initialize();
     }
 }
