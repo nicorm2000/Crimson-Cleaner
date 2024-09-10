@@ -135,12 +135,12 @@ public class Clean : MonoBehaviour, ICleanable
         if (cleaningManager.GetToolSelector().CurrentToolIndex == 0)
         {
             audioManager.PlaySound(cleaningManager.GetMopEvent());
-            cleaningManager.GetMopParticles().Play();
+            cleaningManager.GetMopCleaningParticles().Play();
         }
         else if (cleaningManager.GetToolSelector().CurrentToolIndex == 1)
         {
             audioManager.PlaySound(cleaningManager.GetSpongeEvent());
-            cleaningManager.GetSpongeParticles().Play();
+            cleaningManager.GetSpongeCleaningParticles().Play();
         }
 
 
@@ -174,7 +174,7 @@ public class Clean : MonoBehaviour, ICleanable
     {
         UpdateMaterial(_currentMaterialIndex);
         cleaningManager.GetToolSelector().IncrementDirtyPercentage(toolIndex, cleaningManager.DirtyIncrementAmount);
-        SanityManager.Instance.ModifySanityScalars(SanityManager.Instance.CleanScalerMultiplier, SanityManager.Instance.CleanScaler);
+        SanityManager.Instance.ModifySanityScalar(SanityManager.Instance.CleanScaler);
     }
 
     private void FinishCleaning()

@@ -59,7 +59,7 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     {
         if (isObjectSanityModifier && IsObjectPickedUp)
         {
-            SanityManager.Instance.ModifySanityScalars(SanityManager.Instance.GrabObjectScalerMultiplier, SanityManager.Instance.GrabObjectScaler);
+            SanityManager.Instance.ModifySanityScalar(SanityManager.Instance.GrabObjectScaler);
         }
     }
 

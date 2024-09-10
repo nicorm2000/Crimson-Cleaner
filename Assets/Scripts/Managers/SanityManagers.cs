@@ -17,37 +17,25 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
 
     [Header("Increment Sanity scalers")]
     [Header("Clean Action")]
-    [SerializeField] private float cleanScalerMultiplier = 0f;
-    public float CleanScalerMultiplier => cleanScalerMultiplier;
     [SerializeField] private float cleanScaler = 1f;
     public float CleanScaler => cleanScaler;
     
     [Header("Wash Tool")]
-    [SerializeField] private float grabObjectScalerMultiplier = 0f;
-    public float GrabObjectScalerMultiplier => grabObjectScalerMultiplier;
     [SerializeField] private float grabObjectScaler = 1f;
     public float GrabObjectScaler => grabObjectScaler;
 
     [Header("Decrement Sanity scalers")]
     [Header("Drop Dirty Bucket")]
-    [SerializeField] private float dropBucketScalerMultiplier = 0f;
-    public float DropBucketScalerMultiplier => dropBucketScalerMultiplier;
     [SerializeField] private float dropBucketScaler= 1f;
     public float DropBucketScaler => dropBucketScaler;
 
     [Header("Dispose Object")]
-    [SerializeField] private float burnObjectScalerMultiplier = 0f;
-    public float BurnObjectScalerMultiplier => burnObjectScalerMultiplier;
     [SerializeField] private float burnObjectScaler = 1f;
     public float BurnObjectScaler => burnObjectScaler;
 
     [Header("Wash Tool")]
-    [SerializeField] private float washToolScalerMultiplier = 0f;
-    public float WashToolScalerMultiplier => washToolScalerMultiplier;
     [SerializeField] private float washToolScaler = 1f;
     public float WashToolScaler => washToolScaler;
-
-
 
     [Header("Outcomes")]
     [SerializeField] private Outcome[] lowTierOutcomes;
@@ -66,7 +54,6 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
     private bool lowTierOutcomeActive = false;
     private bool mediumTierOutcomeActive = false;
 
-    public float scalarMultiplier = 1f;
     public float scalarAddition = 0f;
 
     private GameObject newVisualEffect;
@@ -97,13 +84,13 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
     private void IncreaseSanityBars()
     {
         if (!lowTierOutcomeActive && !isHighTierActive)
-            lowTierTimer += Time.deltaTime * scalarMultiplier + scalarAddition;
+            lowTierTimer += Time.deltaTime  + scalarAddition;
 
         if (!mediumTierOutcomeActive && !isHighTierActive)
-            mediumTierTimer += Time.deltaTime * scalarMultiplier + scalarAddition;
+            mediumTierTimer += Time.deltaTime  + scalarAddition;
 
         if (!isHighTierActive)
-            highTierTimer += Time.deltaTime * scalarMultiplier + scalarAddition;
+            highTierTimer += Time.deltaTime  + scalarAddition;
     }
 
     private void CheckAndTriggerOutcomes()
@@ -236,19 +223,22 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
         Debug.Log(outcome.tier + ": " + outcome.eventID + " : finished");
     }
 
-    public void ModifySanityScalars(float scalarMultiplier, float scalarAddition)
+    public void NewRoomSanityEvent(float scalarAddition)
     {
-        this.scalarMultiplier += scalarMultiplier;
-        this.scalarAddition += scalarAddition;
-
-        StartCoroutine(ResetScalars(scalarMultiplier, scalarAddition));
+        ModifySanityScalar(scalarAddition);
     }
 
-    private IEnumerator ResetScalars(float scalarMultiplier, float scalarAddition)
+    public void ModifySanityScalar(float scalarAddition)
     {
-        yield return null;
+        this.scalarAddition += scalarAddition;
 
-        this.scalarMultiplier -= scalarMultiplier;
+        StartCoroutine(ResetScalar(scalarAddition));
+    }
+
+    private IEnumerator ResetScalar(float scalarAddition)
+    {
+        yield return new WaitForSeconds(0.01f);
+
         this.scalarAddition -= scalarAddition;
     }
 }

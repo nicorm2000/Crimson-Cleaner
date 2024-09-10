@@ -44,7 +44,7 @@ public class WaterBucket : Interactable, ICleanable
     {
         if (_bucketDirtState >= 1 && !HasWater && canModifySanity)
         {
-            SanityManager.Instance.ModifySanityScalars(SanityManager.Instance.DropBucketScalerMultiplier, SanityManager.Instance.DropBucketScaler);
+            SanityManager.Instance.ModifySanityScalar(SanityManager.Instance.DropBucketScaler);
             canModifySanity = false;
         }
     }
@@ -67,7 +67,7 @@ public class WaterBucket : Interactable, ICleanable
         int currentToolIndex = cleaningManager.GetToolSelector().CurrentToolIndex;
         int dirtyPercentage = cleaningManager.GetToolSelector().GetDirtyPercentage(currentToolIndex);
 
-        if (cleaningManager.GetToolSelector().CurrentToolIndex == 2)
+        if (cleaningManager.GetToolSelector().CurrentToolIndex >= 2)
         {
             WaterBucketUnavailable?.Invoke();
             return;
@@ -94,7 +94,12 @@ public class WaterBucket : Interactable, ICleanable
             ActivateWashing();
             cleaningManager.GetToolSelector().ResetDirtyPercentage(currentToolIndex);
             cleaningManager.GetToolSelector().ChangeToolMaterial(currentToolIndex, cleaningManager.GetToolSelector().GetOriginalMaterial());
-            SanityManager.Instance.ModifySanityScalars(SanityManager.Instance.WashToolScalerMultiplier, SanityManager.Instance.WashToolScaler);
+            SanityManager.Instance.ModifySanityScalar(SanityManager.Instance.WashToolScaler / 2f);
+            if (cleaningManager.GetToolSelector().CurrentToolIndex == 0)
+                cleaningManager.GetMopDrippingParticles().Play();
+            else if (cleaningManager.GetToolSelector().CurrentToolIndex == 1)
+                cleaningManager.GetSpongeDrippingParticles().Play();
+            SanityManager.Instance.ModifySanityScalar(SanityManager.Instance.WashToolScaler);
         }
     }
 

@@ -5,10 +5,10 @@ public class UVLight : Interactable, IToggable
 {
     [Header("UV Light Config")]
     [SerializeField] private float minCoverage = 0.7f;
-
     [SerializeField] private Material onMaterial;
     [SerializeField] private Material offMaterial;
     [SerializeField] private Light[] uvLight;
+    [SerializeField] private GameObject dustParticles;
 
     private bool isOn = false;
     private Renderer _renderer;
@@ -52,6 +52,7 @@ public class UVLight : Interactable, IToggable
     {
         isOn = !isOn;
         SwapMaterial(isOn);
+        dustParticles.SetActive(isOn);
         audioManager.PlaySound(soundEvent);
         for (int i = 0; i < uvLight.Length; i++)
         {

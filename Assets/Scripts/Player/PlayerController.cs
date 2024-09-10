@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -158,6 +159,34 @@ public class PlayerController : MonoBehaviour
 
         camera.localRotation = Quaternion.Euler(xRotation, 0, 0);
         transform.Rotate(Vector3.up, mousePos.x);
+    }
+
+    public void BlockMovement(float duration)
+    {
+        StartCoroutine(ToggleMovement(duration));
+    }
+
+    private IEnumerator ToggleMovement(float duration)
+    {
+        isMovable = false;
+
+        yield return new WaitForSeconds(duration);
+
+        isMovable = true;
+    }
+
+    public void BlockCamera(float duration)
+    {
+        StartCoroutine(ToggleCameraMovement(duration));
+    }
+
+    private IEnumerator ToggleCameraMovement(float duration)
+    {
+        isCameraMovable = false;
+
+        yield return new WaitForSeconds(duration);
+
+        isCameraMovable = true;
     }
 
     private void OnChangeRotationAxis()

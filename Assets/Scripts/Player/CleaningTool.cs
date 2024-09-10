@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class CleaningTool : MonoBehaviour
 {
     [Header("Config")]
+    [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private GameObject[] tools;
     [SerializeField] private GameObject[] cleaningTools;
     [SerializeField] private int[] dirtyPercentages;
@@ -102,6 +103,7 @@ public class CleaningTool : MonoBehaviour
                     else if (dirtyPercentages[_currentToolIndex] == 100)
                     {
                         ChangeToolMaterial(toolIndex, mopDirtyMaterial[3]);
+                        cleaningManager.GetMopDrippingDirtyParticles().Play();
                     }
                 }
                 else if (_currentToolIndex == 1)
@@ -121,6 +123,7 @@ public class CleaningTool : MonoBehaviour
                     else if (dirtyPercentages[_currentToolIndex] == 100)
                     {
                         ChangeToolMaterial(toolIndex, spongeDirtyMaterial[3]);
+                        cleaningManager.GetSpongeDrippingDirtyParticles().Play();
                     }
                 }
                 else
