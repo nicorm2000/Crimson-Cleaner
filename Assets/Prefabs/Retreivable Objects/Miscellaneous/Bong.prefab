@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6158651416592060476}
   - component: {fileID: 3045057316900573523}
   - component: {fileID: 7235953164840748369}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_PipeBong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,8 @@ GameObject:
   - component: {fileID: 6588722442184671364}
   - component: {fileID: 7136263460185701539}
   - component: {fileID: 2932687232785466076}
-  m_Layer: 0
+  - component: {fileID: 2499633676556118006}
+  m_Layer: 8
   m_Name: SM_GlassBong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,6 +190,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4024253545067097069, guid: c9631abc23cb503438abab5a50e733c9, type: 3}
+--- !u!114 &2499633676556118006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3419547385376709364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d762f5069bbb6842adf03e9eb481b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  environmentRaycaster: {fileID: 0}
+  audioManager: {fileID: 0}
+  soundEvent: 
+  soundEvent2: 
 --- !u!1 &5410684327451194123
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,7 +215,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3637155470717229523}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bong
   m_TagString: Untagged
   m_Icon: {fileID: 0}

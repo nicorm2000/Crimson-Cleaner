@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8295678541559758666}
   - component: {fileID: 1948528938233337514}
   - component: {fileID: 1934852763916722627}
-  m_Layer: 0
+  - component: {fileID: 2334328190914485263}
+  m_Layer: 8
   m_Name: Photo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,3 +106,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.16903012, y: 0.0075507746, z: 0.25591186}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2334328190914485263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4101886456866022934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d762f5069bbb6842adf03e9eb481b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  environmentRaycaster: {fileID: 0}
+  audioManager: {fileID: 0}
+  soundEvent: 
+  soundEvent2: 

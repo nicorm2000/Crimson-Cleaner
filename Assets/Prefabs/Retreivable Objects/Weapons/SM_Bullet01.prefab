@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5048158600266313306}
   - component: {fileID: 2418184507460147398}
   - component: {fileID: 7742313378986188277}
+  - component: {fileID: 9037963757325020475}
   m_Layer: 8
   m_Name: SM_Bullet01
   m_TagString: Trash
@@ -152,10 +153,24 @@ MonoBehaviour:
   breakForceThreshold: 10
   collisionCooldown: 0.1
   fallHeightThreshold: 5
-  pickUpMessage: {fileID: 21300000, guid: 85de318ad256b904b85cbc2b4984eab4, type: 3}
-  dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
-  throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
-  rotateMessage: {fileID: 21300000, guid: 359ea2100a3ad554d8967c95433794ed, type: 3}
+  hologramObject: {fileID: 0}
   audioManager: {fileID: 0}
   breakBottleEvent: 
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
+--- !u!114 &9037963757325020475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4698589310565386428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d762f5069bbb6842adf03e9eb481b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  environmentRaycaster: {fileID: 0}
+  audioManager: {fileID: 0}
+  soundEvent: 
+  soundEvent2: 

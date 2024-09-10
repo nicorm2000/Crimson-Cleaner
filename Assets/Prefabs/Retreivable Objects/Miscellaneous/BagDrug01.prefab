@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3250090036091405917}
   - component: {fileID: 5520778607368754452}
   - component: {fileID: 4798176079474370895}
-  m_Layer: 0
+  - component: {fileID: 4599350084791984511}
+  m_Layer: 8
   m_Name: SM_Bag01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,6 +106,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.06291946, y: 0.013979026, z: 0.054225586}
   m_Center: {x: -0.000000018626451, y: -0.0008503194, z: -0.001003691}
+--- !u!114 &4599350084791984511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943542113456311768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d762f5069bbb6842adf03e9eb481b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  environmentRaycaster: {fileID: 0}
+  audioManager: {fileID: 0}
+  soundEvent: 
+  soundEvent2: 
 --- !u!1 &4610483244462188574
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,7 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5548016561298734912}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BagDrug01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +166,7 @@ GameObject:
   - component: {fileID: 5843441787820543642}
   - component: {fileID: 6241338051216840241}
   - component: {fileID: 2953183259046463580}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Drug01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

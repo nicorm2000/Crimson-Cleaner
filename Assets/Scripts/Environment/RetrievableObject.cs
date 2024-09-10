@@ -26,8 +26,8 @@ public class RetrievableObject : Interactable, IRetrievable
         {
             Debug.Log("Retrieve Object: " + name);
 
-            // Perform additional logic (e.g., play sound, add money)
-            // StealableManager.PlayMoneySFX();
+            if (soundEvent != null)
+                audioManager.PlaySound(soundEvent);
 
             isObjectPickedUp = true;
             ObjectRetrievedEvent?.Invoke();

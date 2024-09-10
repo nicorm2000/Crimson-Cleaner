@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5119017709317739598}
   - component: {fileID: 7144265480517663234}
   - component: {fileID: 5244082627218919802}
-  m_Layer: 0
+  - component: {fileID: 2479576185646578571}
+  m_Layer: 8
   m_Name: BlockDrug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,3 +107,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 168575425737154987, guid: 03c99045e18d7994187bae309128982e, type: 3}
+--- !u!114 &2479576185646578571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5295068810717439430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d762f5069bbb6842adf03e9eb481b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  environmentRaycaster: {fileID: 0}
+  audioManager: {fileID: 0}
+  soundEvent: 
+  soundEvent2: 
