@@ -137,11 +137,12 @@ public class PlayerController : MonoBehaviour
             if (footstepTimer <= 0)
             {
                 audioManager.PlaySound(footStepsPlayEvent);
-                footstepTimer = footstepInterval;
+                footstepTimer += footstepInterval;
             }
         }
         else
         {
+            footstepTimer = footstepInterval;
             audioManager.PlaySound(footStepsStopEvent);
         }
     }
