@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class BloodFootstepGenerator : MonoBehaviour
 {
+    [SerializeField] private GameObject player;
     [SerializeField] private BloodPoolDetection bloodPoolDetection;
     [SerializeField] private InputManager inputManager;
     [SerializeField] private float bloodPrintSpawningDuration;
@@ -77,7 +77,7 @@ public class BloodFootstepGenerator : MonoBehaviour
     {
         int randomIndex = Random.Range(0, footPrintPrefabs.Count);
         GameObject selectedFootPrint = footPrintPrefabs[randomIndex];
-        GameObject newBloodPrint = Instantiate(selectedFootPrint, footTransform.position, Quaternion.LookRotation(Vector3.down));
+        GameObject newBloodPrint = Instantiate(selectedFootPrint, footTransform.position, Quaternion.LookRotation(player.transform.forward));
         StartCoroutine(FadeOutPrint(newBloodPrint, bloodPrintLifeTime));
     }
 

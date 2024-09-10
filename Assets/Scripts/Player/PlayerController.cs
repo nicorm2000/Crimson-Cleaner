@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isMoving)
         {
-            footstepTimer -= Time.fixedDeltaTime;
+            footstepTimer -= Time.deltaTime;
             if (footstepTimer <= 0)
             {
                 audioManager.PlaySound(footStepsPlayEvent);
