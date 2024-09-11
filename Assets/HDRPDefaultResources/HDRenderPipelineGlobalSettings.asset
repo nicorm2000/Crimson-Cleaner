@@ -65,9 +65,54 @@ MonoBehaviour:
     type: 2}
   m_RenderPipelineRayTracingResources: {fileID: 0}
   beforeTransparentCustomPostProcesses: []
-  beforePostProcessCustomPostProcesses: []
+  beforePostProcessCustomPostProcesses:
+  - IE.RichFX.BloomStreak, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   afterPostProcessBlursCustomPostProcesses: []
-  afterPostProcessCustomPostProcesses: []
+  afterPostProcessCustomPostProcesses:
+  - IE.RichFX.ScreenGlitch, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.Distort, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.Wobble, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.RainbowFlow, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.SketchMotion, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.Slice, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.Pixelate, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.Zoom, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.EGAFilter, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.RGBSplit, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.Underwater, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.Recolor, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.GaussianBlur, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.Overlay, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.GrayScale, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.Scanlines, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.SimpleFrostedGlass, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  - IE.RichFX.EightColor, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.TextureDistortion, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  - IE.RichFX.RadialBlur, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.Oil, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.Posterize, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.SimpleGaussianBlur, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  - IE.RichFX.DisplaceView, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.Nightvision, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.HueSaturationInvert, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  - IE.RichFX.ScreenFuzz, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.DirectionalBlur, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  - IE.RichFX.Sharpen, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.RGBDistortion, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.EdgeDetection, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.PencilSketch, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.Glitch, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.CGAFilter, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.ColorEdges, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.LowLightCam, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.LetterBox, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.ChromaLines, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - IE.RichFX.SimpleOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   beforeTAACustomPostProcesses: []
   lightLayerName0: Light Layer default
   lightLayerName1: Light Layer 1
@@ -100,7 +145,7 @@ MonoBehaviour:
     serializedProfiles: []
     serializedBakeSettings: []
     serializedBakingSets: []
-    m_LightingScenario: 
+    m_LightingScenario: Default
   m_Version: 5
   m_ShaderVariantLogLevel: 0
   m_ExportShaderVariants: 1
