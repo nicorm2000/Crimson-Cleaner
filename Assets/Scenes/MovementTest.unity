@@ -60591,12 +60591,18 @@ MonoBehaviour:
   mopEvent: Mop
   mopDirtyEvent: Mop
   mopWooshEvent: Mop_Woosh
+  mopSwapEvent: 
   spongeEvent: Sponge
   spongeDirtyEvent: Sponge_Dirty
   spongeWooshEvent: Sponge_Woosh
+  spongeSwapEvent: 
   dropEvent: Drop
   pickUpEvent: Pick_Up
   throwEvent: Throw
+  handSwapEvent: 
+  openTWEvent: Weapon_Swap
+  closeTWEvent: Weapon_Swap
+  hoverEvent: 
   pickUpMessage: {fileID: 21300000, guid: 85de318ad256b904b85cbc2b4984eab4, type: 3}
   dropMessage: {fileID: 21300000, guid: 49737e21074e76647b0c73d3ae2b39f4, type: 3}
   throwMessage: {fileID: 21300000, guid: 0fe2fd3eaceebef4db6264a7230ea67c, type: 3}
@@ -69151,7 +69157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1986035785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78009,7 +78015,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cleaningManager: {fileID: 1727464070}
-  audioManager: {fileID: 1243886029}
 --- !u!1 &919132148295118242
 GameObject:
   m_ObjectHideFlags: 0
@@ -78082,7 +78087,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cleaningManager: {fileID: 1727464070}
-  audioManager: {fileID: 1243886029}
 --- !u!1 &919132148767894894
 GameObject:
   m_ObjectHideFlags: 0

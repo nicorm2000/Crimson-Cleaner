@@ -68,14 +68,26 @@ public class CleaningManager : MonoBehaviour
     [SerializeField] private string mopEvent = null;
     [SerializeField] private string mopDirtyEvent = null;
     [SerializeField] private string mopWooshEvent = null;
+    [SerializeField] private string mopSwapEvent = null;
     [Header("Sponge")]
     [SerializeField] private string spongeEvent = null;
     [SerializeField] private string spongeDirtyEvent = null;
     [SerializeField] private string spongeWooshEvent = null;
+    [SerializeField] private string spongeSwapEvent = null;
     [Header("Hands")]
     [SerializeField] private string dropEvent = null;
     [SerializeField] private string pickUpEvent = null;
     [SerializeField] private string throwEvent = null;
+    [SerializeField] private string handSwapEvent = null;
+    [Header("Trash Bin")]
+    [SerializeField] private string pickUpTrashEvent = null;
+    [SerializeField] private string addNewTrashBagEvent = null;
+    [SerializeField] private string zipBagEvent = null;
+    [SerializeField] private string trashBinSwapEvent = null;
+    [Header("Tool Wheel")]
+    [SerializeField] private string openTWEvent = null;
+    [SerializeField] private string closeTWEvent = null;
+    [SerializeField] private string hoverEvent = null;
 
     [Header("UI Config")]
     [SerializeField] private Sprite pickUpMessage;
@@ -138,6 +150,13 @@ public class CleaningManager : MonoBehaviour
     public string GetDropEvent() => dropEvent;
     public string GetPickUpEvent() => pickUpEvent;
     public string GetThrowEvent() => throwEvent;
+    public string GetPickUpTrashEvent() => pickUpTrashEvent;
+    public string GetAddNewTrashBagEvent() => addNewTrashBagEvent;
+    public string GetZipBagEvent() => zipBagEvent;
+    public string GetTrashBinSwapEvent() => trashBinSwapEvent;
+    public string GetOpenTWEvent() => openTWEvent;
+    public string GetCloseTWEvent() => closeTWEvent;
+    public string GetHoverEvent() => hoverEvent;
     public ParticleSystem GetMopCleaningParticles() => mopCleaningParticles;
     public ParticleSystem GetMopCleaningDirtyParticles() => mopCleaningDirtyParticles;
     public ParticleSystem GetMopDrippingParticles() => mopDrippingParticles;

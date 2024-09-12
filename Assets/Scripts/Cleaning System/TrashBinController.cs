@@ -2,18 +2,22 @@ using UnityEngine;
 
 public class TrashBinController : MonoBehaviour
 {
+    [Header("Scripts Config")]
     [SerializeField] private InputManager inputManager;
-    [SerializeField] private GameObject bagPrefab;
-    [SerializeField] private Transform newBagTransform;
+    [SerializeField] private CleaningManager cleaningManager;
+    [Header("Trash Bin Config")]
     [SerializeField] private GameObject emptyBagGO;
     [SerializeField] private GameObject fullBagGO;
     [SerializeField] private Transform mainCamera;
     [SerializeField] int raycastDistance;
     [SerializeField] int maxItemsPerBag;
     [SerializeField] string trashTag;
+    [Header("New bag Config")]
+    [SerializeField] private GameObject bagPrefab;
+    [SerializeField] private Transform newBagTransform;
 
-    public int counter;
-    private bool isBagDispached;
+    private int counter;
+    private bool isBagDispatched;
 
     private void OnEnable()
     {
@@ -30,12 +34,12 @@ public class TrashBinController : MonoBehaviour
     private void Start()
     {
         counter = 0;
-        isBagDispached = true;
+        isBagDispatched = true;
     }
 
     private void OnPickUp()
     {
-        if (isBagDispached)
+        if (isBagDispatched)
             CheckForInteraction();
     }
 
@@ -58,7 +62,7 @@ public class TrashBinController : MonoBehaviour
                     fullBagGO.SetActive(true);
 
                     counter = 0;
-                    isBagDispached = false;
+                    isBagDispatched = false;
                 }
             }
         }
@@ -66,9 +70,9 @@ public class TrashBinController : MonoBehaviour
 
     private void OnDispatchBag()
     {
-        if (!isBagDispached)
+        if (!isBagDispatched)
         {
-            isBagDispached = true;
+            isBagDispatched = true;
             emptyBagGO.SetActive(true);
             fullBagGO.SetActive(false);
 

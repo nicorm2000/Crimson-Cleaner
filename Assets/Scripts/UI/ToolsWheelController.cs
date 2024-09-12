@@ -13,12 +13,6 @@ public class ToolsWheelController : MonoBehaviour
     [SerializeField] private float maxRadius;
     [SerializeField] private ToolsWheel[] tools;
 
-    [Header("Audio Config")]
-    [SerializeField] private AudioManager audioManager = null;
-    [SerializeField] private string openToolWheelEvent = null;
-    [SerializeField] private string closeToolWheelEvent = null;
-    [SerializeField] private string hoverToolEvent = null;
-
     public int previousToolID;
     public int currentToolID;
 
@@ -53,8 +47,8 @@ public class ToolsWheelController : MonoBehaviour
 
         if (distance < minRadius)
         {
-            //if (!hoverSoundPlayed && hoverToolEvent != null)
-            //    audioManager.PlaySound(hoverToolEvent);
+            //if (!hoverSoundPlayed && cleaningManager.GetHoverEvent() != null)
+            //    cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetHoverEvent());
             tools[tools.Length - 1].SetHighlight(true);
             tools[tools.Length - 1].HoverEnter();
 
@@ -81,8 +75,8 @@ public class ToolsWheelController : MonoBehaviour
                     if ((angle > startAngle && angle <= endAngle) ||
                         (endAngle > 360f && (angle > startAngle || angle <= endAngle - 360f)))
                     {
-                        //if (hoverToolEvent != null)
-                        //    audioManager.PlaySound(hoverToolEvent);
+                        //if (cleaningManager.GetHoverEvent() != null)
+                        //    cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetHoverEvent());
                         tools[i].HoverEnter();
                         tools[i].SetHighlight(true);
                     }
@@ -107,8 +101,8 @@ public class ToolsWheelController : MonoBehaviour
         else
             gameStateManager.TransitionToState("ToolWheel");
 
-        if (openToolWheelEvent != null)
-            audioManager.PlaySound(openToolWheelEvent);
+        if (cleaningManager.GetOpenTWEvent() != null)
+            cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetOpenTWEvent());
         _animator.SetBool("OpenToolWheel", true);
     }
 
@@ -125,8 +119,8 @@ public class ToolsWheelController : MonoBehaviour
             reticle.gameObject.SetActive(true);
         }
 
-        if (closeToolWheelEvent != null)
-            audioManager.PlaySound(closeToolWheelEvent);
+        if (cleaningManager.GetCloseTWEvent() != null)
+            cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetCloseTWEvent());
         _animator.SetBool("OpenToolWheel", false);
         SelectTool();
     }
