@@ -39,6 +39,9 @@ namespace AK
         static const AkUniqueID OBJECT_CLEANED = 836873265U;
         static const AkUniqueID OPEN_NOTEBOOK = 1673104519U;
         static const AkUniqueID POOL_STICK_COLLISION = 3176396303U;
+        static const AkUniqueID RETRIEVE_CLOTHES = 2786157920U;
+        static const AkUniqueID RETRIEVE_DOCUMENTS = 2186617010U;
+        static const AkUniqueID RETRIEVE_ROPE = 362869116U;
         static const AkUniqueID SPONGE = 1165214467U;
         static const AkUniqueID SPONGE_WOOSH = 2179797042U;
         static const AkUniqueID THROW = 745179803U;

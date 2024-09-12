@@ -1674,6 +1674,165 @@
 								<ActiveSource Name="Gun Collision" ID="{CAE04A39-1D50-4FD5-B364-7512BD7446E7}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Retrieve_PickUp_DocumentsSFX_Audio" ID="{5BDFB6CF-F27F-4CEF-8C31-6231C02F7B7C}" ShortID="64355151">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{73263B2A-DED7-42B2-A855-7426416AEBAA}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="10"/>
+													<Property Name="Min" Type="Real64" Value="-10"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{DE9ACEE3-90C8-47E5-BE46-06B67E166914}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-5"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Retrieve_PickUp_DocumentsSFX_Audio" ID="{DE4C8085-9B8E-49A6-9A4F-1DD29659C6EB}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.294081728712024"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.403507488232777"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Retrieve_PickUp_DocumentsSFX_Audio.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="739600721"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Retrieve_PickUp_DocumentsSFX_Audio" ID="{DE4C8085-9B8E-49A6-9A4F-1DD29659C6EB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Retrieve_PickUp_RopeSFX_Audio" ID="{BD80ED0F-9542-4432-9909-ECF32B247985}" ShortID="392513824">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{96D5D53F-3224-4F7B-89F2-07919D71FD59}">
+												<PropertyList>
+													<Property Name="Max" Type="Real64" Value="5"/>
+													<Property Name="Min" Type="Real64" Value="-5"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{DF37010F-01A5-4C67-9DBB-C80F96A7B604}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-5"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Retrieve_PickUp_RopeSFX_Audio" ID="{F12D880D-B824-4197-A2B2-A58ACFDE06BE}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.216691554670649"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.165407886731929"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Retrieve_PickUp_RopeSFX_Audio.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="599171025"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Retrieve_PickUp_RopeSFX_Audio" ID="{F12D880D-B824-4197-A2B2-A58ACFDE06BE}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Retrieve_PickUp_ClothSFX_Audio" ID="{EECFE267-DB97-4578-AA8A-B42AE01B6C72}" ShortID="935799905">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{D9C3E1C7-9D1A-4D2D-9C9F-F784B1BAFAE2}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-5"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Retrieve_PickUp_ClothSFX_Audio" ID="{813863B3-0F8A-4449-82DD-59D5B39F1D18}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.276585365853658"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.487663671373556"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.4"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.7"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Retrieve_PickUp_ClothSFX_Audio.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="339714903"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Retrieve_PickUp_ClothSFX_Audio" ID="{813863B3-0F8A-4449-82DD-59D5B39F1D18}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

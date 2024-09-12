@@ -809,6 +809,69 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Retrieve_Documents" ID="{3005D8DE-E63D-4A22-B2A4-FA6DE8B90641}">
+					<ChildrenList>
+						<Action Name="" ID="{DE8DF0A2-A111-4F5C-86E2-BF45FEAC2DA8}" ShortID="524329624">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Retrieve_PickUp_DocumentsSFX_Audio" ID="{5BDFB6CF-F27F-4CEF-8C31-6231C02F7B7C}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{FC111038-AEAB-4230-9FE3-2FCEA78311B7}" ShortID="84671186">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Retrieve_PickUp_DocumentsSFX_Audio" ID="{5BDFB6CF-F27F-4CEF-8C31-6231C02F7B7C}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Retrieve_Rope" ID="{30BC4FAF-DC3E-43F3-AF7B-77CFC0BADB44}">
+					<ChildrenList>
+						<Action Name="" ID="{2E46E31F-2727-4EED-B442-846FCC8804B7}" ShortID="296519296">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Retrieve_PickUp_RopeSFX_Audio" ID="{BD80ED0F-9542-4432-9909-ECF32B247985}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{6DA8FBD7-D551-4CCE-A56D-6CF31A8C5B80}" ShortID="689483077">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Retrieve_PickUp_RopeSFX_Audio" ID="{BD80ED0F-9542-4432-9909-ECF32B247985}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Retrieve_Clothes" ID="{B7D90709-8D61-48B8-936A-C310DB220302}">
+					<ChildrenList>
+						<Action Name="" ID="{E8C96395-022B-40FB-B662-593361078B6A}" ShortID="793043010">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Retrieve_PickUp_ClothSFX_Audio" ID="{EECFE267-DB97-4578-AA8A-B42AE01B6C72}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{F31E1558-B19E-4939-9AB8-800CA259F72A}" ShortID="201627849">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Retrieve_PickUp_ClothSFX_Audio" ID="{EECFE267-DB97-4578-AA8A-B42AE01B6C72}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
