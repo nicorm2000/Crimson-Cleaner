@@ -60,6 +60,7 @@ public class CleaningTool : MonoBehaviour
         _currentToolIndex = newIndex;
 
         OnToolSwitched?.Invoke(_currentToolIndex);
+        PlayToolSwapSound(_currentToolIndex);
 
         if (Tools[newIndex].name == tabletName)
         {
@@ -73,6 +74,36 @@ public class CleaningTool : MonoBehaviour
                 isTabletOpen = false;
                 CleaningListEvent?.Invoke();
             }
+        }
+    }
+
+    private void PlayToolSwapSound(int toolIndex)
+    {
+        AudioManager audioManager = cleaningManager.GetAudioManager();
+
+        if (toolIndex == 0) // Mop
+        {
+            if (cleaningManager.GetMopSwapEvent() != null)
+                audioManager.PlaySound(cleaningManager.GetMopSwapEvent());
+        }
+        else if (toolIndex == 1) // Sponge
+        {
+            if (cleaningManager.GetSpongeSwapEvent() != null)
+                audioManager.PlaySound(cleaningManager.GetSpongeSwapEvent());
+        }
+        else if (toolIndex == 2) // Hands
+        {
+            if (cleaningManager.GetHandSwapEvent() != null)
+                audioManager.PlaySound(cleaningManager.GetHandSwapEvent());
+        }
+        else if (toolIndex == 4) // Bin
+        {
+            if (cleaningManager.GetTrashBinSwapEvent() != null)
+                audioManager.PlaySound(cleaningManager.GetTrashBinSwapEvent());
+        }
+        else
+        {
+            Debug.LogWarning("No sound assigned for this tool.");
         }
     }
 

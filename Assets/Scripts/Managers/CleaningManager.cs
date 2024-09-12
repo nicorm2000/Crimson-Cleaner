@@ -148,12 +148,15 @@ public class CleaningManager : MonoBehaviour
     public string GetMopEvent() => mopEvent;
     public string GetMopDirtyEvent() => mopDirtyEvent;
     public string GetMopWooshEvent() => mopWooshEvent;
+    public string GetMopSwapEvent() => mopSwapEvent;
     public string GetSpongeEvent() => spongeEvent;
     public string GetSpongeDirtyEvent() => spongeDirtyEvent;
     public string GetSpongeWooshEvent() => spongeWooshEvent;
+    public string GetSpongeSwapEvent() => spongeSwapEvent;
     public string GetDropEvent() => dropEvent;
     public string GetPickUpEvent() => pickUpEvent;
     public string GetThrowEvent() => throwEvent;
+    public string GetHandSwapEvent() => handSwapEvent;
     public string GetPickUpTrashEvent() => pickUpTrashEvent;
     public string GetAddNewTrashBagEvent() => addNewTrashBagEvent;
     public string GetZipBagEvent() => zipBagEvent;

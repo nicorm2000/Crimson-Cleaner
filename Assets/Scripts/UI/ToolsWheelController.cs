@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,8 +16,10 @@ public class ToolsWheelController : MonoBehaviour
 
     public int previousToolID;
     public int currentToolID;
-
     private Animator _animator;
+
+    private List<bool> hoverSoundPlayed;
+    private bool isToolWheelActive = false;
 
     private void OnEnable()
     {
@@ -34,10 +37,20 @@ public class ToolsWheelController : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         AssignToolIDs();
+
+        hoverSoundPlayed = new List<bool>();
+
+        for (int i = 0; i < tools.Length; i++)
+        {
+            bool newHoverSoundPlayed = false;
+            hoverSoundPlayed.Add(newHoverSoundPlayed);
+        }
     }
 
     private void Update()
     {
+        if (!isToolWheelActive) return;
+
         Vector2 moveInput = new Vector2();
 
         moveInput.x = Input.mousePosition.x - (Screen.width / 2f);
@@ -47,19 +60,25 @@ public class ToolsWheelController : MonoBehaviour
 
         if (distance < minRadius)
         {
-            //if (!hoverSoundPlayed && cleaningManager.GetHoverEvent() != null)
-            //    cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetHoverEvent());
+            if (!hoverSoundPlayed[tools.Length - 1] && cleaningManager.GetHoverEvent() != null)
+            {
+                cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetHoverEvent());
+                hoverSoundPlayed[tools.Length - 1] = true;
+            }
             tools[tools.Length - 1].SetHighlight(true);
             tools[tools.Length - 1].HoverEnter();
 
             for (int i = 0; i < tools.Length - 1; i++)
             {
                 tools[i].SetHighlight(false);
+                hoverSoundPlayed[i] = false;
             }
         }
         else if (distance < maxRadius)
         {
             tools[tools.Length - 1].SetHighlight(false);
+            hoverSoundPlayed[tools.Length - 1] = false;
+
             moveInput.Normalize();
 
             if (moveInput != Vector2.zero)
@@ -75,14 +94,18 @@ public class ToolsWheelController : MonoBehaviour
                     if ((angle > startAngle && angle <= endAngle) ||
                         (endAngle > 360f && (angle > startAngle || angle <= endAngle - 360f)))
                     {
-                        //if (cleaningManager.GetHoverEvent() != null)
-                        //    cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetHoverEvent());
+                        if (!hoverSoundPlayed[i] && cleaningManager.GetHoverEvent() != null)
+                        {
+                            cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetHoverEvent());
+                            hoverSoundPlayed[i] = true;
+                        }
                         tools[i].HoverEnter();
                         tools[i].SetHighlight(true);
                     }
                     else
                     {
                         tools[i].SetHighlight(false);
+                        hoverSoundPlayed[i] = false;
                     }
                 }
             }
@@ -91,6 +114,8 @@ public class ToolsWheelController : MonoBehaviour
 
     private void OnToolWheelStart()
     {
+        isToolWheelActive = true;
+
         previousToolID = currentToolID;
         currentToolID = -1;
 
@@ -123,6 +148,8 @@ public class ToolsWheelController : MonoBehaviour
             cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetCloseTWEvent());
         _animator.SetBool("OpenToolWheel", false);
         SelectTool();
+
+        isToolWheelActive = false;
     }
 
     private void AssignToolIDs()
