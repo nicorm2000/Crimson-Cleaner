@@ -91,11 +91,9 @@ public class WaterBucket : Interactable, ICleanable
                     UpdateMaterial(_bucketDirtState, _rendererWater);
             }
             if (cleaningManager.GetToolSelector().CurrentToolIndex == 0)
-                if (soundEvent != null)
-                    audioManager.PlaySound(soundEvent);
+                audioManager.PlaySound(soundEvent);
             else if (cleaningManager.GetToolSelector().CurrentToolIndex == 1)
-                if (soundEvent2 != null)
-                    audioManager.PlaySound(soundEvent2);
+                audioManager.PlaySound(soundEvent2);
             ActivateWashing();
             cleaningManager.GetToolSelector().ResetDirtyPercentage(currentToolIndex);
             cleaningManager.GetToolSelector().ChangeToolMaterial(currentToolIndex, cleaningManager.GetToolSelector().GetOriginalMaterial());

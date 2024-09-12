@@ -362,14 +362,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ca6b79cdf243214c92400a95636e966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputManager: {fileID: 0}
-  raycastDistance: 3
-  interactableLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
+  environmentRaycaster: {fileID: 0}
   audioManager: {fileID: 0}
-  soundEvent: Wash_Tool
-  soundEvent2: 
+  soundEvent: Wash_Mop
+  soundEvent2: Wash_Sponge
   cleaningManager: {fileID: 0}
   washParticles: {fileID: 3952263067807703347}
   bucketMaterials:
@@ -381,6 +377,7 @@ MonoBehaviour:
   water: {fileID: 3812619476261258022}
   waterStartPoint: {fileID: 3313524098750377119}
   waterFinishPoint: {fileID: 2072943175117889001}
+  canModifySanity: 1
 --- !u!114 &2477554787538987907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,6 +399,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 0}
   breakBottleEvent: Bucket_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!65 &5978755581075131631
 BoxCollider:

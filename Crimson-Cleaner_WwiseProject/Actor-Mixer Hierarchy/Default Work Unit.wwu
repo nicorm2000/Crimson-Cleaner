@@ -137,47 +137,6 @@
 								<ActiveSource Name="Throw" ID="{C8E181EE-5FF5-46A2-9051-1E23644749DB}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="Wash Bubbles" ID="{7B8AF494-090D-432F-8645-8BD18F1FCD8C}" ShortID="1015329465">
-							<PropertyList>
-								<Property Name="MakeUpGain" Type="Real64">
-									<ValueList>
-										<Value>-2</Value>
-									</ValueList>
-								</Property>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-2</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Wash Bubbles" ID="{E7634FCB-AB26-4466-AE87-EDD1D38E2326}">
-									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="0.67805419472025"/>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.68069616550086"/>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="0.5"/>
-										<Property Name="TrimEnd" Type="Real64" Value="1.3"/>
-									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>Wash Bubbles.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="208633118"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Wash Bubbles" ID="{E7634FCB-AB26-4466-AE87-EDD1D38E2326}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
 						<Sound Name="Lamp Switch" ID="{B966E7A6-FAB4-414E-9F2E-2C9A42C1DA5D}" ShortID="289277751">
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -368,35 +327,6 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="Money" ID="{E6370F2A-3B17-4AB6-9B23-86A29E6EC30B}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Sponge" ID="{950FDA1E-F510-4A4B-BE13-1A9B75AAF198}" ShortID="299955975">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Sponge" ID="{CBDCE17A-9FEC-4C77-8CC7-67A44644BAB6}">
-									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="0.0309592292468977"/>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.268990024604193"/>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="0.0461850796961917"/>
-										<Property Name="TrimEnd" Type="Real64" Value="0.566909165062045"/>
-									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>Sponge.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="1071313097"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Sponge" ID="{CBDCE17A-9FEC-4C77-8CC7-67A44644BAB6}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Water Drop" ID="{25723C80-4766-4DF4-A518-A26F072F1B94}" ShortID="278836685">
@@ -1831,6 +1761,229 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="Retrieve_PickUp_ClothSFX_Audio" ID="{813863B3-0F8A-4449-82DD-59D5B39F1D18}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Sponge _Cleaning SFX_Audio" ID="{A4B0AC28-E94C-44C5-941E-194E625EE901}" ShortID="528351746">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{06B742FC-602F-4DB3-82A6-63D9C8E69E78}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{B713E777-08B1-476C-BDC9-C5FEB38AE49A}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-6"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sponge _Cleaning SFX_Audio" ID="{39E38009-DFA3-47C9-AE6C-885CB4AEC844}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.150426561831408"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.398480958493795"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.4"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.95"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Sponge _Cleaning SFX_Audio.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="131550839"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sponge _Cleaning SFX_Audio" ID="{39E38009-DFA3-47C9-AE6C-885CB4AEC844}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Sponge _Cleaning Dirty SFX_Audio" ID="{8DB0A356-CB64-43BA-9378-167DC2EDA0E5}" ShortID="153360215">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{72FA707C-9D6F-4A3D-B3A6-27B78F10172B}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-6"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sponge _Cleaning Dirty SFX_Audio" ID="{7E71557B-054E-4638-AAEA-3DD19069DA13}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.113938743581515"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.317903161103979"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.8"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.3"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Sponge _Cleaning Dirty SFX_Audio.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="926498869"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sponge _Cleaning Dirty SFX_Audio" ID="{7E71557B-054E-4638-AAEA-3DD19069DA13}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Bucket_CleanMopSFX_Audio" ID="{D8C87909-4D43-4284-934B-3300B7656E20}" ShortID="971278366">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{DB981F4C-4DED-47EC-84F7-BFF033DE29AB}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-4"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Bucket_CleanMopSFX_Audio" ID="{B08328FF-CDF6-42D8-BFE4-0D05D29ECDA1}">
+									<Language>SFX</Language>
+									<AudioFile>Bucket_CleanMopSFX_Audio.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="190901790"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Bucket_CleanMopSFX_Audio" ID="{B08328FF-CDF6-42D8-BFE4-0D05D29ECDA1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Bucket_CleanSpongeSFX_Audio" ID="{CC3FE1AC-9CBA-4B03-95DC-641A2A39C6EB}" ShortID="275548514">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{DEC3D17D-7F10-4A9E-AC95-73830747980D}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-4"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Bucket_CleanSpongeSFX_Audio" ID="{3DAB31E2-0859-461A-8681-5A7150F9245A}">
+									<Language>SFX</Language>
+									<AudioFile>Bucket_CleanSpongeSFX_Audio.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="512802184"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Bucket_CleanSpongeSFX_Audio" ID="{3DAB31E2-0859-461A-8681-5A7150F9245A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Bucket_DumpWaterSFX_Audio" ID="{6ECCA858-D14F-45A5-A608-643D0E414788}" ShortID="185071588">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{71E146AA-C01F-4D4D-8F94-2FFC12F92E76}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-4"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Bucket_DumpWaterSFX_Audio" ID="{3CC1AB9C-C0C2-4F36-9607-707128CD1C57}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.182220795892169"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.458279845956354"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.15"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Bucket_DumpWaterSFX_Audio.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="902178105"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Bucket_DumpWaterSFX_Audio" ID="{3CC1AB9C-C0C2-4F36-9607-707128CD1C57}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

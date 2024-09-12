@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{04A02345-5036-C67F-F703-E4F44FFF3669}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{37D02A11-4209-796D-BA4D-C1CBBC2EF522}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -37,6 +37,10 @@
 				<File Id="75652571" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Gun Collision.wav</ShortName>
 					<CachePath>SFX/Gun Collision_83162486.wem</CachePath>
+				</File>
+				<File Id="131550839" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Sponge _Cleaning SFX_Audio.wav</ShortName>
+					<CachePath>SFX/Sponge _Cleaning SFX_Audio_40497222.wem</CachePath>
 				</File>
 				<File Id="139344711" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Sponge Woosh.wav</ShortName>
@@ -54,9 +58,9 @@
 					<ShortName>Mop Woosh.wav</ShortName>
 					<CachePath>SFX/Mop Woosh_818F3B66.wem</CachePath>
 				</File>
-				<File Id="208633118" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Wash Bubbles.wav</ShortName>
-					<CachePath>SFX/Wash Bubbles_29E8B72E.wem</CachePath>
+				<File Id="190901790" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Bucket_CleanMopSFX_Audio.wav</ShortName>
+					<CachePath>SFX/Bucket_CleanMopSFX_Audio_818F3B66.wem</CachePath>
 				</File>
 				<File Id="233327524" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootS Wood 7.wav</ShortName>
@@ -102,6 +106,10 @@
 					<ShortName>Toilet.wav</ShortName>
 					<CachePath>SFX/Toilet_D06961A7.wem</CachePath>
 				</File>
+				<File Id="512802184" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Bucket_CleanSpongeSFX_Audio.wav</ShortName>
+					<CachePath>SFX/Bucket_CleanSpongeSFX_Audio_818F3B66.wem</CachePath>
+				</File>
 				<File Id="524869861" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Close Notebook.wav</ShortName>
 					<CachePath>SFX/Close Notebook_B04760EB.wem</CachePath>
@@ -146,10 +154,6 @@
 					<ShortName>Retrieve_PickUp_DocumentsSFX_Audio.wav</ShortName>
 					<CachePath>SFX/Retrieve_PickUp_DocumentsSFX_Audio_EDEABCE2.wem</CachePath>
 				</File>
-				<File Id="746969751" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Water Drop.wav</ShortName>
-					<CachePath>SFX/Water Drop_E5CCF18B.wem</CachePath>
-				</File>
 				<File Id="782901985" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Billiard Ball Collision.wav</ShortName>
 					<CachePath>SFX/Billiard Ball Collision_818F3B66.wem</CachePath>
@@ -162,9 +166,17 @@
 					<ShortName>TirarBolsaBasura_1.wav</ShortName>
 					<CachePath>SFX/TirarBolsaBasura_1_F4D67A98.wem</CachePath>
 				</File>
+				<File Id="902178105" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Bucket_DumpWaterSFX_Audio.wav</ShortName>
+					<CachePath>SFX/Bucket_DumpWaterSFX_Audio_8A038170.wem</CachePath>
+				</File>
 				<File Id="915260624" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Open Notebook.wav</ShortName>
 					<CachePath>SFX/Open Notebook_F4A159F1.wem</CachePath>
+				</File>
+				<File Id="926498869" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Sponge _Cleaning Dirty SFX_Audio.wav</ShortName>
+					<CachePath>SFX/Sponge _Cleaning Dirty SFX_Audio_6C4225B7.wem</CachePath>
 				</File>
 				<File Id="951993581" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Knife Collision.wav</ShortName>
@@ -189,10 +201,6 @@
 				<File Id="1062373882" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootS Wood 8.wav</ShortName>
 					<CachePath>SFX/FootS Wood 8_818F3B66.wem</CachePath>
-				</File>
-				<File Id="1071313097" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Sponge.wav</ShortName>
-					<CachePath>SFX/Sponge_B64E5B73.wem</CachePath>
 				</File>
 				<File Id="1072273638" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootS Wood 3.wav</ShortName>
@@ -345,9 +353,14 @@
 						<MediaRef Id="599171025"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1165214467" Name="Sponge" DurationType="OneShot" DurationMin="0.52072406" DurationMax="0.52072406">
+				<Event Id="1165214467" Name="Sponge" DurationType="OneShot" DurationMin="0.55" DurationMax="0.55">
 					<MediaRefs>
-						<MediaRef Id="1071313097"/>
+						<MediaRef Id="131550839"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1222748174" Name="Sponge_Dirty" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+					<MediaRefs>
+						<MediaRef Id="926498869"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2179797042" Name="Sponge_Woosh" DurationType="OneShot" DurationMin="0.09501134" DurationMax="0.09501134">
@@ -375,14 +388,19 @@
 						<MediaRef Id="360440042"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3752733365" Name="Wash_Tool" DurationType="OneShot" DurationMin="0.8" DurationMax="0.8">
+				<Event Id="3676508413" Name="Wash_Mop" DurationType="OneShot" DurationMin="1.0766667" DurationMax="1.0766667">
 					<MediaRefs>
-						<MediaRef Id="208633118"/>
+						<MediaRef Id="190901790"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2790747934" Name="Water_Drop" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+				<Event Id="3299309797" Name="Wash_Sponge" DurationType="OneShot" DurationMin="1.1333333" DurationMax="1.1333333">
 					<MediaRefs>
-						<MediaRef Id="746969751"/>
+						<MediaRef Id="512802184"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2790747934" Name="Water_Drop" DurationType="OneShot" DurationMin="0.85" DurationMax="0.85">
+					<MediaRefs>
+						<MediaRef Id="902178105"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2869063429" Name="Water_Flow" DurationType="Infinite">
@@ -412,5 +430,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8E0A1E95-B8D8-83AD-978F-3B9B6FC2DFD5}</FileHash>
+	<FileHash>{372543F5-E0BB-85B2-E54E-D7168B40CCEC}</FileHash>
 </SoundBanksInfo>
