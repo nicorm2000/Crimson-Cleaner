@@ -1,16 +1,11 @@
 using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Clean : MonoBehaviour, ICleanable
 {
     [Header("Config")]
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private Material[] cleaningMaterials;
-
-    [Header("Audio Config")]
-    [SerializeField] private AudioManager audioManager = null;
-
 
     private Renderer _renderer;
 
@@ -134,12 +129,12 @@ public class Clean : MonoBehaviour, ICleanable
 
         if (cleaningManager.GetToolSelector().CurrentToolIndex == 0)
         {
-            audioManager.PlaySound(cleaningManager.GetMopEvent());
+            cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetMopEvent());
             cleaningManager.GetMopCleaningParticles().Play();
         }
         else if (cleaningManager.GetToolSelector().CurrentToolIndex == 1)
         {
-            audioManager.PlaySound(cleaningManager.GetSpongeEvent());
+            cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetSpongeEvent());
             cleaningManager.GetSpongeCleaningParticles().Play();
         }
 
@@ -179,7 +174,7 @@ public class Clean : MonoBehaviour, ICleanable
 
     private void FinishCleaning()
     {
-        audioManager.PlaySound(cleaningManager.GetCleanedEvent());
+        cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetCleanedEvent());
         _currentUIIndex = 0.0f;
         isCleaned = true;
         Cleaned?.Invoke();

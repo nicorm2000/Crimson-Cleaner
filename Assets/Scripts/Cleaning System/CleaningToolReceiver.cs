@@ -6,7 +6,6 @@ public class CleaningToolReceiver : MonoBehaviour
 {
     [Header("Audio Config")]
     [SerializeField] private CleaningManager cleaningManager = null;
-    [SerializeField] private AudioManager audioManager = null;
 
     private Clean currentCleanableObject;
 
@@ -22,11 +21,11 @@ public class CleaningToolReceiver : MonoBehaviour
         int currentToolIndex = cleaningManager.GetToolSelector().CurrentToolIndex;
         if (currentToolIndex == 0)
         {
-            audioManager.PlaySound(cleaningManager.GetMopWooshEvent());
+            cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetMopWooshEvent());
         }
         else if (currentToolIndex == 1)
         {
-            audioManager.PlaySound(cleaningManager.GetSpongeWooshEvent());
+            cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetSpongeWooshEvent());
         }
     }
 
@@ -59,12 +58,12 @@ public class CleaningToolReceiver : MonoBehaviour
             {
                 if (cleaningManager.GetToolSelector().CurrentToolIndex == 0)
                 {
-                    audioManager.PlaySound(cleaningManager.GetMopDirtyEvent());
+                    cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetMopDirtyEvent());
                     cleaningManager.GetMopCleaningDirtyParticles().Play();
                 }
                 else if (cleaningManager.GetToolSelector().CurrentToolIndex == 1)
                 {
-                    audioManager.PlaySound(cleaningManager.GetSpongeDirtyEvent());
+                    cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetSpongeDirtyEvent());
                     cleaningManager.GetSpongeCleaningDirtyParticles().Play();
                 }
                 ToolDirty?.Invoke();

@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{37D02A11-4209-796D-BA4D-C1CBBC2EF522}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{3E8383E6-5E45-D388-1FAC-7B9A4F9CA2F7}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -40,7 +40,7 @@
 				</File>
 				<File Id="131550839" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Sponge _Cleaning SFX_Audio.wav</ShortName>
-					<CachePath>SFX/Sponge _Cleaning SFX_Audio_40497222.wem</CachePath>
+					<CachePath>SFX/Sponge _Cleaning SFX_Audio_FB04DEF2.wem</CachePath>
 				</File>
 				<File Id="139344711" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Sponge Woosh.wav</ShortName>
@@ -80,7 +80,7 @@
 				</File>
 				<File Id="339714903" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Retrieve_PickUp_ClothSFX_Audio.wav</ShortName>
-					<CachePath>SFX/Retrieve_PickUp_ClothSFX_Audio_72573CFC.wem</CachePath>
+					<CachePath>SFX/Retrieve_PickUp_ClothSFX_Audio_6104D7BD.wem</CachePath>
 				</File>
 				<File Id="360440042" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Urinal Flush.wav</ShortName>
@@ -132,7 +132,7 @@
 				</File>
 				<File Id="599171025" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Retrieve_PickUp_RopeSFX_Audio.wav</ShortName>
-					<CachePath>SFX/Retrieve_PickUp_RopeSFX_Audio_82B532B0.wem</CachePath>
+					<CachePath>SFX/Retrieve_PickUp_RopeSFX_Audio_DA56BBFF.wem</CachePath>
 				</File>
 				<File Id="618405621" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Object Cleaned.wav</ShortName>
@@ -152,7 +152,7 @@
 				</File>
 				<File Id="739600721" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Retrieve_PickUp_DocumentsSFX_Audio.wav</ShortName>
-					<CachePath>SFX/Retrieve_PickUp_DocumentsSFX_Audio_EDEABCE2.wem</CachePath>
+					<CachePath>SFX/Retrieve_PickUp_DocumentsSFX_Audio_CF6C2245.wem</CachePath>
 				</File>
 				<File Id="782901985" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Billiard Ball Collision.wav</ShortName>
@@ -168,7 +168,7 @@
 				</File>
 				<File Id="902178105" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Bucket_DumpWaterSFX_Audio.wav</ShortName>
-					<CachePath>SFX/Bucket_DumpWaterSFX_Audio_8A038170.wem</CachePath>
+					<CachePath>SFX/Bucket_DumpWaterSFX_Audio_A3BAA9D4.wem</CachePath>
 				</File>
 				<File Id="915260624" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Open Notebook.wav</ShortName>
@@ -176,7 +176,7 @@
 				</File>
 				<File Id="926498869" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Sponge _Cleaning Dirty SFX_Audio.wav</ShortName>
-					<CachePath>SFX/Sponge _Cleaning Dirty SFX_Audio_6C4225B7.wem</CachePath>
+					<CachePath>SFX/Sponge _Cleaning Dirty SFX_Audio_184DB1B4.wem</CachePath>
 				</File>
 				<File Id="951993581" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Knife Collision.wav</ShortName>
@@ -263,6 +263,11 @@
 						<MediaRef Id="988003584"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1878686274" Name="Drop" DurationType="OneShot" DurationMin="0.19640088" DurationMax="0.19640088">
+					<MediaRefs>
+						<MediaRef Id="442455513"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1357891606" Name="Fire_Cart" DurationType="OneShot" DurationMin="3" DurationMax="3">
 					<MediaRefs>
 						<MediaRef Id="996095744"/>
@@ -271,11 +276,6 @@
 				<Event Id="2188449690" Name="Game_Click" DurationType="OneShot" DurationMin="0.04715625" DurationMax="0.04715625">
 					<MediaRefs>
 						<MediaRef Id="1039951081"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="1219063113" Name="Grab_Drop" DurationType="OneShot" DurationMin="0.19640088" DurationMax="0.19640088">
-					<MediaRefs>
-						<MediaRef Id="442455513"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1154053212" Name="Gun_Collision" DurationType="OneShot" DurationMin="0.38089868" DurationMax="0.38310516">
@@ -331,6 +331,11 @@
 				<Event Id="1673104519" Name="Open_Notebook" DurationType="OneShot" DurationMin="0.9107834" DurationMax="0.9107834">
 					<MediaRefs>
 						<MediaRef Id="915260624"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="467838998" Name="Pick_Up" DurationType="OneShot" DurationMin="0.19640088" DurationMax="0.19640088">
+					<MediaRefs>
+						<MediaRef Id="442455513"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3176396303" Name="Pool_Stick_Collision" DurationType="OneShot" DurationMin="0.14956743" DurationMax="0.15043384">
@@ -430,5 +435,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{372543F5-E0BB-85B2-E54E-D7168B40CCEC}</FileHash>
+	<FileHash>{A52C8F09-7061-C0C2-8547-A45534E4E483}</FileHash>
 </SoundBanksInfo>

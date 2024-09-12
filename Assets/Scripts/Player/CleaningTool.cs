@@ -16,7 +16,6 @@ public class CleaningTool : MonoBehaviour
     [SerializeField] private Material[] spongeDirtyMaterial;
     [SerializeField] private string tabletName;
 
-    private bool isEventPlaying = false;
     private bool isTabletOpen = false;
     private int _previousToolIndex = 0;
     

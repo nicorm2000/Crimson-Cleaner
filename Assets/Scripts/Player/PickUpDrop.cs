@@ -11,14 +11,7 @@ public class PickUpDrop : MonoBehaviour
     [SerializeField] private LayerMask pickupLayerMask;
     [SerializeField] private float maxThrowingForce = 20f;
     [SerializeField] private float forceChargeRate = 5f;
-
-    public InputManager inputManager;
-
-
-    [Header("Audio Config")]
-    [SerializeField] private AudioManager audioManager = null;
-    [SerializeField] private string grabDropEvent = null;
-    [SerializeField] private string throwEvent = null;
+    [SerializeField] private InputManager inputManager;
 
     private ObjectGrabbable ObjectGrabbable;
     private float currentThrowingForce;
@@ -63,7 +56,7 @@ public class PickUpDrop : MonoBehaviour
                 {
                     if (!newObjectGrabbable.IsObjectSnapped)
                     {
-                        audioManager.PlaySound(grabDropEvent);
+                        cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetPickUpEvent());
                         newObjectGrabbable.Grab(objectGrabPointTransform, this.transform);
                         playerController.SetObjectGrabbable(newObjectGrabbable);
                         SetObjectGrabbable(newObjectGrabbable);
@@ -74,7 +67,7 @@ public class PickUpDrop : MonoBehaviour
         }
         else if (ObjectGrabbable != null)
         {
-            audioManager.PlaySound(grabDropEvent);
+            cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetDropEvent());
             DropObject();
         }
         else
@@ -135,7 +128,7 @@ public class PickUpDrop : MonoBehaviour
     {
         if (ObjectGrabbable != null)
         {
-            audioManager.PlaySound(throwEvent);
+            cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetThrowEvent());
             Vector3 throwDirection = mainCamera.forward;
             ObjectGrabbable.Throw(currentThrowingForce, throwDirection);
 

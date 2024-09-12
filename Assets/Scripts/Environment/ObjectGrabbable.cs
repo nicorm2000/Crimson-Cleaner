@@ -131,12 +131,10 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
         if (playerTransform == null)
             return;
 
-        // Obtén los ejes locales del jugador
         Vector3 playerRight = playerTransform.right;
         Vector3 playerUp = playerTransform.up;
         Vector3 playerForward = playerTransform.forward;
 
-        // Elige el eje de rotación basado en el índice actual
         Vector3 rotationAxis;
         switch (currentAxisIndex)
         {
@@ -154,7 +152,6 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
                 break;
         }
 
-        // Aplica la rotación en el eje calculado
         float rotationAmount = sign * rotationSpeed * Time.deltaTime;
         Quaternion rotation = Quaternion.AngleAxis(rotationAmount, rotationAxis);
         transform.rotation = rotation * transform.rotation;

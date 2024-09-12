@@ -24,9 +24,9 @@ namespace AK
         static const AkUniqueID CART_OPEN = 2037208526U;
         static const AkUniqueID CLOSE_NOTEBOOK = 4085905093U;
         static const AkUniqueID CUBICLE_BATHROOM_DOOR = 3141789928U;
+        static const AkUniqueID DROP = 1878686274U;
         static const AkUniqueID FIRE_CART = 1357891606U;
         static const AkUniqueID GAME_CLICK = 2188449690U;
-        static const AkUniqueID GRAB_DROP = 1219063113U;
         static const AkUniqueID GUN_COLLISION = 1154053212U;
         static const AkUniqueID KNIFE_COLLISION = 1966534225U;
         static const AkUniqueID LAMP = 657744959U;
@@ -38,6 +38,7 @@ namespace AK
         static const AkUniqueID MOUSE_CLICK = 3695522715U;
         static const AkUniqueID OBJECT_CLEANED = 836873265U;
         static const AkUniqueID OPEN_NOTEBOOK = 1673104519U;
+        static const AkUniqueID PICK_UP = 467838998U;
         static const AkUniqueID POOL_STICK_COLLISION = 3176396303U;
         static const AkUniqueID RETRIEVE_CLOTHES = 2786157920U;
         static const AkUniqueID RETRIEVE_DOCUMENTS = 2186617010U;

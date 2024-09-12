@@ -1,18 +1,15 @@
-using System;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CameraInteraction : MonoBehaviour
 {
     [Header("Config")]
-    [SerializeField] private Image[] interactionImages; // Changed from TextMeshProUGUI to Image
+    [SerializeField] private Image[] interactionImages;
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private PlayerController playerController;
 
     private Camera mainCamera;
-    private IPickable currentPickableObject; // Track the currently picked up object
+    private IPickable currentPickableObject;
 
     private void Start()
     {
@@ -92,7 +89,6 @@ public class CameraInteraction : MonoBehaviour
         }
         else if (currentPickableObject != null && currentPickableObject.IsObjectPickedUp)
         {
-            // Keep showing the pick-up sprites if the object is still picked up
             var activeSprites = new Sprite[interactionImages.Length];
             AppendPickUpSprites(currentPickableObject, ref activeSprites);
             UpdateUI(activeSprites);
@@ -171,7 +167,7 @@ public class CameraInteraction : MonoBehaviour
                 return i;
             }
         }
-        return activeSprites.Length - 1; // Return last slot if no available slot is found
+        return activeSprites.Length - 1;
     }
 
     private void UpdateUI(Sprite[] activeSprites)
@@ -179,7 +175,7 @@ public class CameraInteraction : MonoBehaviour
         for (int i = 0; i < interactionImages.Length; i++)
         {
             interactionImages[i].sprite = activeSprites[i];
-            interactionImages[i].enabled = activeSprites[i] != null; // Enable image only if sprite is not null
+            interactionImages[i].enabled = activeSprites[i] != null;
         }
     }
 }

@@ -24,7 +24,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Grab_Drop" ID="{3AE6EC18-8939-4155-A816-86B42DF91D8A}">
+				<Event Name="Pick_Up" ID="{3AE6EC18-8939-4155-A816-86B42DF91D8A}">
 					<ChildrenList>
 						<Action Name="" ID="{E7978C9F-4328-4013-95B7-02EA45BBEB77}" ShortID="422358185">
 							<PropertyList>
@@ -909,6 +909,27 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Bucket_CleanSpongeSFX_Audio" ID="{CC3FE1AC-9CBA-4B03-95DC-641A2A39C6EB}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Drop" ID="{56B2F81C-1B3B-4121-B8F7-99B264813F20}">
+					<ChildrenList>
+						<Action Name="" ID="{8B7DC10F-F485-498D-BECA-926EAF818DE1}" ShortID="894438102">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Grab &amp; Drop" ID="{6ED4DE61-D98E-4AA6-93DA-49C1576D2ACB}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{954F3BF2-9E69-4F4A-AC10-4DDAD7C877CC}" ShortID="851274672">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Grab &amp; Drop" ID="{6ED4DE61-D98E-4AA6-93DA-49C1576D2ACB}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

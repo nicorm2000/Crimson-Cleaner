@@ -62,13 +62,20 @@ public class CleaningManager : MonoBehaviour
 
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
+    [Header("Clean General")]
+    [SerializeField] private string cleanedEvent = null;
+    [Header("Mop")]
     [SerializeField] private string mopEvent = null;
     [SerializeField] private string mopDirtyEvent = null;
     [SerializeField] private string mopWooshEvent = null;
+    [Header("Sponge")]
     [SerializeField] private string spongeEvent = null;
     [SerializeField] private string spongeDirtyEvent = null;
     [SerializeField] private string spongeWooshEvent = null;
-    [SerializeField] private string cleanedEvent = null;
+    [Header("Hands")]
+    [SerializeField] private string dropEvent = null;
+    [SerializeField] private string pickUpEvent = null;
+    [SerializeField] private string throwEvent = null;
 
     [Header("UI Config")]
     [SerializeField] private Sprite pickUpMessage;
@@ -97,7 +104,6 @@ public class CleaningManager : MonoBehaviour
         }
     }
 
-
     private void Start()
     {
         DirtyMaxValue = 100;
@@ -121,13 +127,17 @@ public class CleaningManager : MonoBehaviour
     public LayerMask GetMopLayerMask() => mopLayerMask;
     public LayerMask GetSpongeLayerMask() => spongeLayerMask;
     public float GetInteractionDistance() => interactionDistance;
+    public string GetCleanedEvent() => cleanedEvent;
+    public AudioManager GetAudioManager() => audioManager;
     public string GetMopEvent() => mopEvent;
     public string GetMopDirtyEvent() => mopDirtyEvent;
     public string GetMopWooshEvent() => mopWooshEvent;
     public string GetSpongeEvent() => spongeEvent;
     public string GetSpongeDirtyEvent() => spongeDirtyEvent;
     public string GetSpongeWooshEvent() => spongeWooshEvent;
-    public string GetCleanedEvent() => cleanedEvent;
+    public string GetDropEvent() => dropEvent;
+    public string GetPickUpEvent() => pickUpEvent;
+    public string GetThrowEvent() => throwEvent;
     public ParticleSystem GetMopCleaningParticles() => mopCleaningParticles;
     public ParticleSystem GetMopCleaningDirtyParticles() => mopCleaningDirtyParticles;
     public ParticleSystem GetMopDrippingParticles() => mopDrippingParticles;
