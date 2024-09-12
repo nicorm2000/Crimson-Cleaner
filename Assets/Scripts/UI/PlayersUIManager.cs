@@ -64,12 +64,6 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] GameObject jobFinished;
     [SerializeField] GameObject jobUnfinished;
 
-    [Header("Audio Config")]
-    [SerializeField] private AudioManager audioManager = null;
-    [SerializeField] private string openNotebookEvent = null;
-    [SerializeField] private string closeNotebookEvent = null;
-    [SerializeField] private string clickEvent = null;
-
     [Header("Post Process Config")]
     [SerializeField] private Volume playerVolume = null;
 
@@ -237,7 +231,7 @@ public class PlayersUIManager : MonoBehaviour
     private void OpenTab(GameObject go, bool state)
     {
         go.SetActive(state);
-        audioManager.PlaySound(clickEvent);
+        cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetClickTabletEvent());
     }
 
     private void OnCleaningListEvent()
@@ -249,7 +243,7 @@ public class PlayersUIManager : MonoBehaviour
 
         if (!_cleaningListState)
         {
-            audioManager.PlaySound(closeNotebookEvent);
+            cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetCloseTabletEvent());
         }
         else
         {
@@ -257,7 +251,7 @@ public class PlayersUIManager : MonoBehaviour
             reticle.SetActive(false);
             if (playerVolume.profile.TryGet(out Exposure exposure))
                 exposure.active = false;
-            audioManager.PlaySound(openNotebookEvent);
+            cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetOpenTabletEvent());
             ToggleTabletState(true);
 
             if (cleaningListAnimator)

@@ -84,6 +84,10 @@ public class CleaningManager : MonoBehaviour
     [SerializeField] private string addNewTrashBagEvent = null;
     [SerializeField] private string zipBagEvent = null;
     [SerializeField] private string trashBinSwapEvent = null;
+    [Header("Tablet")]
+    [SerializeField] private string openTabletEvent = null;
+    [SerializeField] private string closeTabletEvent = null;
+    [SerializeField] private string clickTabletEvent = null;
     [Header("Tool Wheel")]
     [SerializeField] private string openTWEvent = null;
     [SerializeField] private string closeTWEvent = null;
@@ -154,6 +158,9 @@ public class CleaningManager : MonoBehaviour
     public string GetAddNewTrashBagEvent() => addNewTrashBagEvent;
     public string GetZipBagEvent() => zipBagEvent;
     public string GetTrashBinSwapEvent() => trashBinSwapEvent;
+    public string GetOpenTabletEvent() => openTabletEvent;
+    public string GetCloseTabletEvent() => closeTabletEvent;
+    public string GetClickTabletEvent() => clickTabletEvent;
     public string GetOpenTWEvent() => openTWEvent;
     public string GetCloseTWEvent() => closeTWEvent;
     public string GetHoverEvent() => hoverEvent;

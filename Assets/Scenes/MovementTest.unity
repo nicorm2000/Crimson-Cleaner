@@ -35171,10 +35171,6 @@ MonoBehaviour:
   - {fileID: 279449537}
   - {fileID: 1972293444}
   - {fileID: 454325926}
-  audioManager: {fileID: 1243886029}
-  openToolWheelEvent: Weapon_Swap
-  closeToolWheelEvent: Weapon_Swap
-  hoverToolEvent: 
   previousToolID: 0
   currentToolID: 0
 --- !u!95 &1015329158
@@ -60600,6 +60596,13 @@ MonoBehaviour:
   pickUpEvent: Pick_Up
   throwEvent: Throw
   handSwapEvent: 
+  pickUpTrashEvent: 
+  addNewTrashBagEvent: 
+  zipBagEvent: 
+  trashBinSwapEvent: 
+  openTabletEvent: Open_Notebook
+  closeTabletEvent: Close_Notebook
+  clickTabletEvent: Game_Click
   openTWEvent: Weapon_Swap
   closeTWEvent: Weapon_Swap
   hoverEvent: 
@@ -104996,16 +104999,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 1560126}
-  bagPrefab: {fileID: 7690809669638452327, guid: 004a089b99b6d4844890c5a415705c34,
-    type: 3}
-  newBagTransform: {fileID: 493193073}
+  cleaningManager: {fileID: 1727464070}
   emptyBagGO: {fileID: 2406818381202492252}
   fullBagGO: {fileID: 190277334}
   mainCamera: {fileID: 1563147782}
   raycastDistance: 3
   maxItemsPerBag: 10
   trashTag: Trash
-  counter: 0
+  bagPrefab: {fileID: 7690809669638452327, guid: 004a089b99b6d4844890c5a415705c34,
+    type: 3}
+  newBagTransform: {fileID: 493193073}
 --- !u!1 &8777790869436385825
 GameObject:
   m_ObjectHideFlags: 0
