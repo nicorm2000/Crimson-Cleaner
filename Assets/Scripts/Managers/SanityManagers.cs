@@ -6,6 +6,7 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
 {
     [Header("Config")]
     [SerializeField] private AudioManager audioManager;
+    [SerializeField] private HighTierOutcome[] highTierOutcomes;
 
     [Header("Timers")]
     [SerializeField] private float lowTierDurationMin = 0f;
@@ -40,7 +41,11 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
     [Header("Outcomes")]
     [SerializeField] private Outcome[] lowTierOutcomes;
     [SerializeField] private Outcome[] mediumTierOutcomes;
-    [SerializeField] private Outcome[] highTierOutcomes;
+    //[SerializeField] private Outcome[] highTierOutcomes;
+
+    public bool isRageActive = false;
+    public bool shouldRageTrigger = false;
+    public float scalarAddition = 0f;
 
     private float lowTierDuration = 0f;
     private float mediumTierDuration = 0f;
@@ -54,7 +59,6 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
     private bool lowTierOutcomeActive = false;
     private bool mediumTierOutcomeActive = false;
 
-    public float scalarAddition = 0f;
 
     private GameObject newVisualEffect;
 
@@ -66,7 +70,7 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
 
         foreach (var lowTier in lowTierOutcomes) lowTier.isActiveNow = false;
         foreach (var mediumTier in mediumTierOutcomes) mediumTier.isActiveNow = false;
-        foreach (var highTier in highTierOutcomes) highTier.isActiveNow = false;
+        //foreach (var highTier in highTierOutcomes) highTier.isActiveNow = false;
     }
 
     private void Update()
@@ -77,6 +81,10 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
         }
 
         CheckAndTriggerOutcomes();
+
+        // Quick rage test
+        if (shouldRageTrigger && !isRageActive)
+            highTierOutcomes[0].gameObject.SetActive(true);
 
         Debug.Log("High tier: " + highTierTimer);
     }
@@ -109,7 +117,14 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
         {
             if (!lowTierOutcomeActive && !mediumTierOutcomeActive)
             {
-                TriggerOutcome(Tiers.High, highTierOutcomes, ref isHighTierActive);
+                // Proper high tier tests
+                //int randomIndex = Random.Range(0, highTierOutcomes.Length);
+                //highTierOutcomes[randomIndex].TriggerOutcome?.Invoke();
+
+                //Quick rage test
+                highTierOutcomes[0].gameObject.SetActive(true);
+
+                //TriggerOutcome(Tiers.High, highTierOutcomes, ref isHighTierActive);
             }
             else
             {
@@ -180,6 +195,7 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
                 break;
             case Tiers.High:
                 isHighTierActive = true;
+
                 break;
             default:
                 break;
@@ -240,6 +256,11 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
         yield return new WaitForSeconds(0.01f);
 
         this.scalarAddition -= scalarAddition;
+    }
+
+    public void TriggerRageState()
+    {
+        SanityManager.Instance.isRageActive = true;
     }
 }
 

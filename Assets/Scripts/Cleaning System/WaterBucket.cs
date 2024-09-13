@@ -20,6 +20,8 @@ public class WaterBucket : Interactable, ICleanable
     public bool HasWater { get; private set; }
     public float WaterPercentage { get; private set; }
 
+    public float forwardForce = 500f;
+
     public event Action Cleaned;
     public event Action WaterBucketUnavailable;
 
@@ -70,6 +72,12 @@ public class WaterBucket : Interactable, ICleanable
         if (cleaningManager.GetToolSelector().CurrentToolIndex >= 2)
         {
             WaterBucketUnavailable?.Invoke();
+            return;
+        }
+
+        if (SanityManager.Instance.isRageActive)
+        {
+            TriggerBucketEyection();
             return;
         }
 
@@ -140,5 +148,17 @@ public class WaterBucket : Interactable, ICleanable
         UpdateMaterial(_bucketDirtState, _renderer);
         if (water != null)
             UpdateMaterial(_bucketDirtState, _rendererWater);
+    }
+
+    private void TriggerBucketEyection()
+    {
+        Rigidbody bucketRigidbody = GetComponent<Rigidbody>();
+
+        Vector3 forwardDirection = cleaningManager.GetToolSelector().gameObject.transform.forward;
+        forwardDirection.y = 0;
+
+        forwardDirection.Normalize();
+
+        bucketRigidbody.AddForce(forwardDirection * forwardForce, ForceMode.Impulse);
     }
 }

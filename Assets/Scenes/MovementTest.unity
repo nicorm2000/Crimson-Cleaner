@@ -4347,6 +4347,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioManager: {fileID: 1243886029}
+  highTierOutcomes:
+  - {fileID: 1519260404}
+  - {fileID: 2126434378}
+  - {fileID: 1464179833}
   lowTierDurationMin: 5
   lowTierDurationMax: 10
   mediumTierDurationMin: 15
@@ -4364,9 +4368,8 @@ MonoBehaviour:
   mediumTierOutcomes:
   - {fileID: 11400000, guid: 0ac2a40b546f71c45a7c69606b4c0e74, type: 2}
   - {fileID: 11400000, guid: e0c899b25540d354b880e1ca669bb642, type: 2}
-  highTierOutcomes:
-  - {fileID: 11400000, guid: 30ff68549c1728e4e85ea1b99330973f, type: 2}
-  - {fileID: 11400000, guid: 1d416fb82304ef14c865489ef3f03cae, type: 2}
+  isRageActive: 0
+  shouldRageTrigger: 0
   scalarAddition: 0
 --- !u!1 &132848322
 GameObject:
@@ -37794,6 +37797,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d762f5069bbb6842adf03e9eb481b2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1071132498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1071132499}
+  m_Layer: 0
+  m_Name: Sanity Outcomes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1071132499
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071132498}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.3844893, y: 1.2926946, z: -3.4725735}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1519260403}
+  - {fileID: 2126434377}
+  - {fileID: 1464179832}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1073710416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51569,6 +51606,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59f833a402edc214e8f7c70da563e484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1464179831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1464179832}
+  - component: {fileID: 1464179833}
+  m_Layer: 0
+  m_Name: Concentration
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1464179832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464179831}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1071132499}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1464179833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464179831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6396ba388fdef1c48abaf17e0fa32ef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggerOutcome:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1468421311
 GameObject:
   m_ObjectHideFlags: 0
@@ -53026,6 +53110,113 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516571164}
   m_CullTransparentMesh: 1
+--- !u!1 &1519260402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1519260403}
+  - component: {fileID: 1519260404}
+  m_Layer: 0
+  m_Name: Rage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1519260403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519260402}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1071132499}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1519260404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519260402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6396ba388fdef1c48abaf17e0fa32ef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggerOutcome:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 131664109}
+        m_TargetAssemblyTypeName: SanityManager, Assembly-CSharp
+        m_MethodName: TriggerRageState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 6
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6982812146447357855}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: ModifyPlayerFootstepAudioSpeed
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6982812146447357856}
+        m_TargetAssemblyTypeName: CleaningTool, Assembly-CSharp
+        m_MethodName: ModifyCleanSpeed
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6982812146447357857}
+        m_TargetAssemblyTypeName: PickUpDrop, Assembly-CSharp
+        m_MethodName: AlterCurrentThrowingForce
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6982812146447357855}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: ModifyPlayerSpeed
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 6
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1521159826
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73971,6 +74162,53 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 1, z: 10}
   m_Center: {x: 0, y: -0.5, z: 0}
+--- !u!1 &2126434376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2126434377}
+  - component: {fileID: 2126434378}
+  m_Layer: 0
+  m_Name: Catatonia
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2126434377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126434376}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1071132499}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2126434378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126434376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6396ba388fdef1c48abaf17e0fa32ef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggerOutcome:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2126683134
 GameObject:
   m_ObjectHideFlags: 0
@@ -97875,6 +98113,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: d3b23dcbbe172e246b6f72693b03d0b8, type: 2}
   - {fileID: 2100000, guid: 890328154fa28f0468b488238194d376, type: 2}
   tabletName: Tablet
+  fastenAnimationSpeed: 0
 --- !u!114 &6982812146447357857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106994,6 +107233,7 @@ SceneRoots:
   - {fileID: 1788615933}
   - {fileID: 585603216}
   - {fileID: 131664108}
+  - {fileID: 1071132499}
   - {fileID: 698212453}
   - {fileID: 1560125}
   - {fileID: 1727464069}
