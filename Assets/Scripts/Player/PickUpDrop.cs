@@ -15,6 +15,7 @@ public class PickUpDrop : MonoBehaviour
 
     private ObjectGrabbable ObjectGrabbable;
     private float currentThrowingForce;
+    private float scalarThrowingForce = 1f;
     private bool isChargingThrow;
 
     public event Action PickUpUnavailableEvent;
@@ -40,7 +41,13 @@ public class PickUpDrop : MonoBehaviour
         if (isChargingThrow)
         {
             currentThrowingForce += forceChargeRate * Time.deltaTime;
-            currentThrowingForce = Mathf.Min(currentThrowingForce, maxThrowingForce);
+            currentThrowingForce = Mathf.Min(currentThrowingForce * scalarThrowingForce, maxThrowingForce);
+        }
+
+        if (ObjectGrabbable != null && SanityManager.Instance.isRageActive)
+        {
+            if (ObjectGrabbable.gameObject.GetComponent<SnappableObject>() != null)
+                DropObject();
         }
     }
 
@@ -56,6 +63,8 @@ public class PickUpDrop : MonoBehaviour
                 {
                     if (!newObjectGrabbable.IsObjectSnapped)
                     {
+                        if (newObjectGrabbable.gameObject.GetComponent<SnappableObject>() != null && SanityManager.Instance.isRageActive) return;
+
                         cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetPickUpEvent());
                         newObjectGrabbable.Grab(objectGrabPointTransform, this.transform);
                         playerController.SetObjectGrabbable(newObjectGrabbable);
@@ -137,5 +146,11 @@ public class PickUpDrop : MonoBehaviour
         }
 
         playerController.ClearObjectGrabbable();
+    }
+
+    public void AlterCurrentThrowingForce(float scalar)
+    {
+        scalarThrowingForce = scalar;
+        maxThrowingForce *= 2f;
     }
 }

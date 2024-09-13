@@ -27,7 +27,7 @@ public class Clean : MonoBehaviour, ICleanable
     public Sprite InteractMessage => CleaningManager.Instance.GetInteractMessage();
 
     private bool isCleaned = false;
-
+     
     private void Awake()
     {
         _renderer = GetComponent<Renderer>();
@@ -111,6 +111,11 @@ public class Clean : MonoBehaviour, ICleanable
 
         if (toolAnimator != null)
         {
+            if (SanityManager.Instance.isRageActive && isCleaning)
+                toolAnimator.speed = cleaningManager.GetToolSelector().fastenAnimationSpeed;
+            else
+                toolAnimator.speed = 1f;
+
             toolAnimator.SetBool("Cleaning", isCleaning);
         }
     }

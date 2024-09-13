@@ -129,6 +129,16 @@ public class PlayerController : MonoBehaviour
         isMoving = inputManager.Move != Vector2.zero;
     }
 
+    public void ModifyPlayerSpeed(float newSpeed)
+    {
+        walkSpeed = newSpeed;
+    }
+
+    public void ModifyPlayerFootstepAudioSpeed(float newSpeed)
+    {
+        footstepInterval = newSpeed;
+    }
+
     private void HandleFootsteps()
     {
         if (isMoving)

@@ -25,6 +25,8 @@ public class StealableObject : Interactable, IRetrievable
 
     private void ToggleObjectState(PlayerController playerController)
     {
+        if (SanityManager.Instance.isRageActive) return;
+
         if (playerController.GetObjectGrabbable() == null)
         {
             Debug.Log("Retrieve Object: " + name);

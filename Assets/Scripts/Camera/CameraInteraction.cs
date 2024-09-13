@@ -46,11 +46,17 @@ public class CameraInteraction : MonoBehaviour
                 currentPickableObject = pickableObject;
                 if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().CleaningToolsLength - 1)
                 {
-                    AppendPickUpSprites(pickableObject, ref activeSprites);
+                    if (SanityManager.Instance.isRageActive)
+                    {
+                        if (pickableObject.gameObject.GetComponent<SnappableObject>() == null)
+                            AppendPickUpSprites(pickableObject, ref activeSprites);
+                    }
+                    else
+                        AppendPickUpSprites(pickableObject, ref activeSprites);
                 }
             }
 
-            if (objectRetrievable != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().CleaningToolsLength - 1 && playerController.GetObjectGrabbable() == null)
+            if (objectRetrievable != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().CleaningToolsLength - 1 && playerController.GetObjectGrabbable() == null && !SanityManager.Instance.isRageActive)
             {
                 AppendRetrievableSprites(objectRetrievable, ref activeSprites);
             }
@@ -80,7 +86,7 @@ public class CameraInteraction : MonoBehaviour
                 AppendInteractableSprites(inmersiveObject, ref activeSprites);
             }
 
-            if (objectRetrievable2 != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().CleaningToolsLength - 1 && playerController.GetObjectGrabbable() == null)
+            if (objectRetrievable2 != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().CleaningToolsLength - 1 && playerController.GetObjectGrabbable() == null && !SanityManager.Instance.isRageActive)
             {
                 AppendRetrievableSprites(objectRetrievable2, ref activeSprites);
             }
