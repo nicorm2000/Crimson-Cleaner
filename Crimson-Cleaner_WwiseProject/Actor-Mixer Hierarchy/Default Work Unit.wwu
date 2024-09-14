@@ -401,7 +401,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-8</Value>
+										<Value>-12</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -472,7 +472,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-6</Value>
+										<Value>-7</Value>
 									</ValueList>
 									<ModifierList>
 										<ModifierInfo>
@@ -545,7 +545,7 @@
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-2</Value>
+										<Value>-4</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1984,6 +1984,196 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="Bucket_DumpWaterSFX_Audio" ID="{3CC1AB9C-C0C2-4F36-9607-707128CD1C57}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Drop_Boiling_Water" ID="{FE596E61-758D-4995-BAC2-A8A38EE7AF61}" ShortID="300747148">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-1</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{75168B92-E0CC-4303-B482-2BA41AB32F0F}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-3"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Drop_Boiling_Water" ID="{88339F18-62BE-4251-9C65-868BA5961EBF}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.042077580539119"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="1.05982905982906"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.95"/>
+										<Property Name="TrimEnd" Type="Real64" Value="2.45"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Drop_Boiling_Water.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="988590754"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Drop_Boiling_Water" ID="{88339F18-62BE-4251-9C65-868BA5961EBF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Gas_Stove_End" ID="{FFF728BA-1B77-4086-815B-2C30D4B92726}" ShortID="1051967436">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Gas_Stove_End" ID="{8A53FBDD-7DBC-4A33-944F-29EDD7F80069}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Gas_Stove_End.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="532460457"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Gas_Stove_End" ID="{8A53FBDD-7DBC-4A33-944F-29EDD7F80069}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Gas_Stove_Init" ID="{559BB7F8-535A-4E1F-8C48-C76DC116BE99}" ShortID="1015710207">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Gas_Stove_Init" ID="{DFF18C81-CCEF-4D42-84F4-AB7C2CD2F796}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Gas_Stove_Init.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="164498283"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Gas_Stove_Init" ID="{DFF18C81-CCEF-4D42-84F4-AB7C2CD2F796}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Gas_Stove_Loop" ID="{1B5C4B0E-C9AF-4C17-961B-48B15D086655}" ShortID="213858433">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Gas_Stove_Loop" ID="{F2FF1990-A0FF-48B3-945F-7363BDA4E7AC}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="0"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Gas_Stove_Loop.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="221652275"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Gas_Stove_Loop" ID="{F2FF1990-A0FF-48B3-945F-7363BDA4E7AC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Plate_Break" ID="{A7053F93-215F-43EF-B995-14265389BE4D}" ShortID="741558433">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>4</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{1E6F888D-6569-418E-BA1E-824CB650A37A}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="8"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Plate_Break" ID="{23461117-3AC8-4CD1-BEDC-177108049E51}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.24086396011396"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.315"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.85"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Plate_Break.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="369679358"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Plate_Break" ID="{23461117-3AC8-4CD1-BEDC-177108049E51}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

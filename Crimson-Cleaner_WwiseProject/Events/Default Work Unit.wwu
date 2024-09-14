@@ -935,6 +935,115 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Drop_Boiling_Water" ID="{7954E63F-FB4F-4AFA-9FC2-7E774B0B2D1A}">
+					<ChildrenList>
+						<Action Name="" ID="{4B70E276-D488-4CA8-8DBB-FF27F6E2DC9D}" ShortID="911510359">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Drop_Boiling_Water" ID="{FE596E61-758D-4995-BAC2-A8A38EE7AF61}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{311BACC5-2BFE-4A6A-BF8B-FF530083781D}" ShortID="126139540">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Drop_Boiling_Water" ID="{FE596E61-758D-4995-BAC2-A8A38EE7AF61}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Gas_Stove_Turn_On" ID="{F802B4AD-A4F8-48CF-8809-8A8FCC6B737F}">
+					<ChildrenList>
+						<Action Name="" ID="{DB1341A6-8588-45A5-B1FF-1CF5F1EBBB11}" ShortID="662662041">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Gas_Stove_Init" ID="{559BB7F8-535A-4E1F-8C48-C76DC116BE99}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{6ED3108F-0480-43DD-87E5-3A1F35F09361}" ShortID="833409735">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Gas_Stove_Init" ID="{559BB7F8-535A-4E1F-8C48-C76DC116BE99}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Gas_Stove_Turn_Off" ID="{D0CC7C8B-5738-4756-B980-7933237BB936}">
+					<ChildrenList>
+						<Action Name="" ID="{5DAED71D-C599-4F6C-9631-8C23CA5231F7}" ShortID="978141143">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Gas_Stove_End" ID="{FFF728BA-1B77-4086-815B-2C30D4B92726}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{FE4465C8-84C1-4357-92BA-57C8A378F3D6}" ShortID="1073675370">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Gas_Stove_End" ID="{FFF728BA-1B77-4086-815B-2C30D4B92726}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Gas_Stove_Gas_Loop" ID="{262BA0A7-590C-467D-B08C-3C5ED292C31E}">
+					<ChildrenList>
+						<Action Name="" ID="{85A54B6B-30A1-460C-A828-02B67F4B10F6}" ShortID="1037940400">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Gas_Stove_Loop" ID="{1B5C4B0E-C9AF-4C17-961B-48B15D086655}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Gas_Stove_Gas_Loop_Stop" ID="{4ADAAFA8-CC6D-45E3-BB57-1D94373FC1CE}">
+					<ChildrenList>
+						<Action Name="" ID="{0FDA64CC-8F17-4B56-B575-992354BFE905}" ShortID="724871982">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Gas_Stove_Loop" ID="{1B5C4B0E-C9AF-4C17-961B-48B15D086655}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Plate_Breaking" ID="{85536EAC-4F67-499E-80F4-47317DB178C1}">
+					<ChildrenList>
+						<Action Name="" ID="{7D132D83-EC39-4CF1-9034-BAABB3BC7F15}" ShortID="126364679">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Plate_Break" ID="{A7053F93-215F-43EF-B995-14265389BE4D}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{36E8426D-245D-4367-8D75-EBF95A57F632}" ShortID="673830271">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Plate_Break" ID="{A7053F93-215F-43EF-B995-14265389BE4D}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

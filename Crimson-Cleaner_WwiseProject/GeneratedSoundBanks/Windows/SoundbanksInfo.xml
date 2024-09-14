@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{0C384D82-D80A-088C-DFAD-9577BD80531B}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{CB68DC62-80C0-5B56-6B90-89D3372D4B4D}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -58,9 +58,17 @@
 					<ShortName>Mop Woosh.wav</ShortName>
 					<CachePath>SFX/Mop Woosh_818F3B66.wem</CachePath>
 				</File>
+				<File Id="164498283" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Gas_Stove_Init.wav</ShortName>
+					<CachePath>SFX/Gas_Stove_Init_818F3B66.wem</CachePath>
+				</File>
 				<File Id="190901790" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Bucket_CleanMopSFX_Audio.wav</ShortName>
 					<CachePath>SFX/Bucket_CleanMopSFX_Audio_818F3B66.wem</CachePath>
+				</File>
+				<File Id="221652275" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Gas_Stove_Loop.wav</ShortName>
+					<CachePath>SFX/Gas_Stove_Loop_66B93D96.wem</CachePath>
 				</File>
 				<File Id="233327524" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootS Wood 7.wav</ShortName>
@@ -85,6 +93,10 @@
 				<File Id="360440042" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Urinal Flush.wav</ShortName>
 					<CachePath>SFX/Urinal Flush_EB6D7970.wem</CachePath>
+				</File>
+				<File Id="369679358" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Plate_Break.wav</ShortName>
+					<CachePath>SFX/Plate_Break_60B2C8A5.wem</CachePath>
 				</File>
 				<File Id="420430069" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Bathroom Door.wav</ShortName>
@@ -113,6 +125,10 @@
 				<File Id="524869861" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Close Notebook.wav</ShortName>
 					<CachePath>SFX/Close Notebook_B04760EB.wem</CachePath>
+				</File>
+				<File Id="532460457" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Gas_Stove_End.wav</ShortName>
+					<CachePath>SFX/Gas_Stove_End_818F3B66.wem</CachePath>
 				</File>
 				<File Id="540584377" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Water Tap.wav</ShortName>
@@ -185,6 +201,10 @@
 				<File Id="988003584" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cubicle Bathroom Door.wav</ShortName>
 					<CachePath>SFX/Cubicle Bathroom Door_5E4AD11E.wem</CachePath>
+				</File>
+				<File Id="988590754" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Drop_Boiling_Water.wav</ShortName>
+					<CachePath>SFX/Drop_Boiling_Water_F4C9BF86.wem</CachePath>
 				</File>
 				<File Id="994448371" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Lights Switch.wav</ShortName>
@@ -268,6 +288,11 @@
 						<MediaRef Id="442455513"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1925664349" Name="Drop_Boiling_Water" DurationType="OneShot" DurationMin="1.5" DurationMax="1.5">
+					<MediaRefs>
+						<MediaRef Id="988590754"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1357891606" Name="Fire_Cart" DurationType="OneShot" DurationMin="3" DurationMax="3">
 					<MediaRefs>
 						<MediaRef Id="996095744"/>
@@ -276,6 +301,22 @@
 				<Event Id="2188449690" Name="Game_Click" DurationType="OneShot" DurationMin="0.04715625" DurationMax="0.04715625">
 					<MediaRefs>
 						<MediaRef Id="1039951081"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="382197601" Name="Gas_Stove_Gas_Loop" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="221652275"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="326450532" Name="Gas_Stove_Gas_Loop_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1218911394" Name="Gas_Stove_Turn_Off" DurationType="OneShot" DurationMin="1.325" DurationMax="1.325">
+					<MediaRefs>
+						<MediaRef Id="532460457"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2084731556" Name="Gas_Stove_Turn_On" DurationType="OneShot" DurationMin="0.8" DurationMax="0.8">
+					<MediaRefs>
+						<MediaRef Id="164498283"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1154053212" Name="Gun_Collision" DurationType="OneShot" DurationMin="0.38089868" DurationMax="0.38310516">
@@ -336,6 +377,11 @@
 				<Event Id="467838998" Name="Pick_Up" DurationType="OneShot" DurationMin="0.19640088" DurationMax="0.19640088">
 					<MediaRefs>
 						<MediaRef Id="442455513"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2970993869" Name="Plate_Breaking" DurationType="OneShot" DurationMin="0.535" DurationMax="0.535">
+					<MediaRefs>
+						<MediaRef Id="369679358"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3176396303" Name="Pool_Stick_Collision" DurationType="OneShot" DurationMin="0.14956743" DurationMax="0.15043384">
@@ -435,5 +481,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{6078F419-A3F7-D081-FF7D-4161A0D7AAAD}</FileHash>
+	<FileHash>{9685D7A3-01F0-C418-79BB-7FAA4EC2233E}</FileHash>
 </SoundBanksInfo>
