@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float animationBlendSpeed;
     [SerializeField] private Transform cameraRoot;
     [SerializeField] private Transform camera;
+    [SerializeField] private Catatonia catatonia;
 
     [Header("Controller Config")]
     [SerializeField] private float walkSpeed = 10f;
@@ -28,13 +29,18 @@ public class PlayerController : MonoBehaviour
     [NonSerialized] public bool isCameraMovable = true;
     [NonSerialized] public bool isMovable = true;
 
+    [SerializeField] private Transform[] spawnPoints;
+
+    private int previousRandom = 0;
+    private int newRandom = 0;
+
     private Rigidbody playerRigidBody;
     private Animator animator;
     private bool hasAnimator;
 
     private int xVelHash;
     private int yVelHash;
-    
+
     private float xRotation;
     private Vector2 currentVelocity;
     private Vector2 mousePos;
@@ -138,6 +144,24 @@ public class PlayerController : MonoBehaviour
         footstepInterval = newSpeed;
     }
 
+    public void TeleportPlayer(float teleportQueue)
+    {
+        Invoke("WaitForTeleportQueue", teleportQueue);
+    }
+
+    private void WaitForTeleportQueue()
+    {
+        while (newRandom == previousRandom)
+        {
+            newRandom = UnityEngine.Random.Range(0, spawnPoints.Length);
+        }
+        previousRandom = newRandom;
+        gameObject.transform.position = spawnPoints[newRandom].transform.position;
+        float newRotation = UnityEngine.Random.Range(0, 360);
+        gameObject.transform.rotation = Quaternion.Euler(spawnPoints[newRandom].transform.rotation.x, newRotation, spawnPoints[newRandom].transform.rotation.z);
+        Debug.Log("New Player position: " + gameObject.transform.position);
+    }
+
     private void HandleFootsteps()
     {
         if (isMoving)
@@ -171,32 +195,32 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(Vector3.up, mousePos.x);
     }
 
-    public void BlockMovement(float duration)
+    public void BlockMovementTimer(float duration)
     {
         StartCoroutine(ToggleMovement(duration));
     }
 
     private IEnumerator ToggleMovement(float duration)
     {
-        isMovable = false;
+        ToggleMovement(false);
 
         yield return new WaitForSeconds(duration);
 
-        isMovable = true;
+        ToggleMovement(true);
     }
 
-    public void BlockCamera(float duration)
+    public void BlockCameraTimer(float duration)
     {
         StartCoroutine(ToggleCameraMovement(duration));
     }
 
     private IEnumerator ToggleCameraMovement(float duration)
     {
-        isCameraMovable = false;
+        ToggleCameraMovement(false);
 
         yield return new WaitForSeconds(duration);
 
-        isCameraMovable = true;
+        ToggleCameraMovement(true);
     }
 
     private void OnChangeRotationAxis()
@@ -208,6 +232,16 @@ public class PlayerController : MonoBehaviour
     public void SetObjectGrabbable(ObjectGrabbable grabbable)
     {
         objectGrabbable = grabbable;
+    }
+
+    public void ToggleMovement(bool active)
+    {
+        isMovable = active;
+    } 
+
+    public void ToggleCameraMovement(bool active)
+    {
+        isCameraMovable = active;
     }
 
     public ObjectGrabbable GetObjectGrabbable()

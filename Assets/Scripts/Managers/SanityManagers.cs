@@ -44,7 +44,9 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
     //[SerializeField] private Outcome[] highTierOutcomes;
 
     public bool isRageActive = false;
+    public bool isCatatoniaActive = false;
     public bool shouldRageTrigger = false;
+    public bool shouldCatatoniaTrigger = false;
     public float scalarAddition = 0f;
 
     private float lowTierDuration = 0f;
@@ -83,10 +85,17 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
         CheckAndTriggerOutcomes();
 
         // Quick rage test
-        if (shouldRageTrigger && !isRageActive)
-            highTierOutcomes[0].gameObject.SetActive(true);
+        //if (shouldRageTrigger && !isRageActive)
+        //    highTierOutcomes[0].gameObject.SetActive(true);
 
-        Debug.Log("High tier: " + highTierTimer);
+        // Quick catatonia test
+        if (shouldCatatoniaTrigger && !isCatatoniaActive)
+            highTierOutcomes[1].gameObject.SetActive(true);
+
+        //if (Input.GetKeyDown(KeyCode.J))
+        //    highTierOutcomes[1].gameObject.SetActive(true);
+
+        //Debug.Log("High tier: " + highTierTimer);
     }
 
     private void IncreaseSanityBars()
@@ -122,7 +131,10 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
                 //highTierOutcomes[randomIndex].TriggerOutcome?.Invoke();
 
                 //Quick rage test
-                highTierOutcomes[0].gameObject.SetActive(true);
+                //highTierOutcomes[0].gameObject.SetActive(true);
+
+                //Quick catatonia test
+                //highTierOutcomes[1].gameObject.SetActive(true);
 
                 //TriggerOutcome(Tiers.High, highTierOutcomes, ref isHighTierActive);
             }
@@ -260,7 +272,12 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
 
     public void TriggerRageState()
     {
-        SanityManager.Instance.isRageActive = true;
+        isRageActive = true;
+    }
+    
+    public void TriggerCatatoniaState()
+    {
+        isCatatoniaActive = true;
     }
 }
 
