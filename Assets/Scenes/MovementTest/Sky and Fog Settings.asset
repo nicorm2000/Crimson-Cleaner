@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9140312966664360657
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f9608d0b7be709499c8576490633363, type: 3}
+  m_Name: SimpleGaussianBlur
+  m_EditorClassIdentifier: 
+  active: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0
 --- !u!114 &-9044614723822024808
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -421,6 +437,7 @@ MonoBehaviour:
   - {fileID: -9044614723822024808}
   - {fileID: 559769069416951140}
   - {fileID: 7462040431780338086}
+  - {fileID: -9140312966664360657}
 --- !u!114 &559769069416951140
 MonoBehaviour:
   m_ObjectHideFlags: 3

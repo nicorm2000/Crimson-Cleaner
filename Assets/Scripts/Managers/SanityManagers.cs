@@ -95,6 +95,9 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
         //if (Input.GetKeyDown(KeyCode.J))
         //    highTierOutcomes[1].gameObject.SetActive(true);
 
+        if (Input.GetKeyDown(KeyCode.J))
+            highTierOutcomes[2].gameObject.SetActive(true);
+
         //Debug.Log("High tier: " + highTierTimer);
     }
 
