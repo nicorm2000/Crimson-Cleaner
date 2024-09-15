@@ -13,15 +13,12 @@ MonoBehaviour:
   m_Name: Posterize
   m_EditorClassIdentifier: 
   active: 0
-  m_AdvancedMode: 0
   _Gamma:
     m_OverrideState: 1
     m_Value: 4
   _ColorCount:
     m_OverrideState: 1
     m_Value: 445
-    min: 0
-    max: 1024
 --- !u!114 &-7057392119771898790
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -35,12 +32,9 @@ MonoBehaviour:
   m_Name: Oil
   m_EditorClassIdentifier: 
   active: 0
-  m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 12.5
-    min: 0
-    max: 30
+    m_Value: 0
 --- !u!114 &-4420013990551524394
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -54,15 +48,12 @@ MonoBehaviour:
   m_Name: RainbowFlow
   m_EditorClassIdentifier: 
   active: 0
-  m_AdvancedMode: 0
   steps:
     m_OverrideState: 1
     m_Value: 4
   speed:
     m_OverrideState: 1
     m_Value: 9.7
-    min: 0
-    max: 50
   multiplier:
     m_OverrideState: 1
     m_Value: 1.47
@@ -82,15 +73,12 @@ MonoBehaviour:
   m_Name: PencilSketch
   m_EditorClassIdentifier: 
   active: 0
-  m_AdvancedMode: 0
   steps:
     m_OverrideState: 1
     m_Value: 11
   tolerance:
     m_OverrideState: 1
     m_Value: 0.132
-    min: 0
-    max: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,27 +110,21 @@ MonoBehaviour:
   m_Name: SketchMotion
   m_EditorClassIdentifier: 
   active: 0
-  m_AdvancedMode: 0
   sketchiness:
     m_OverrideState: 1
     m_Value: 0.128
-    min: 0
-    max: 1
   speed:
     m_OverrideState: 1
     m_Value: 100
-    min: 0
-    max: 500
   motionAmount:
     m_OverrideState: 1
     m_Value: 1
-    min: 0
-    max: 5
   baseModifier:
     m_OverrideState: 1
     m_Value: 0.9042
-    min: 0.9
-    max: 1
   invert:
     m_OverrideState: 1
     m_Value: 1
+  colored:
+    m_OverrideState: 0
+    m_Value: 0

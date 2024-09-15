@@ -13,12 +13,9 @@ MonoBehaviour:
   m_Name: GrayScale
   m_EditorClassIdentifier: 
   active: 0
-  m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
     m_Value: 1
-    min: 0
-    max: 1
 --- !u!114 &-4977823433955008816
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -32,70 +29,39 @@ MonoBehaviour:
   m_Name: EightColor
   m_EditorClassIdentifier: 
   active: 0
-  m_AdvancedMode: 0
   color1:
     m_OverrideState: 0
     m_Value: {r: 0, g: 0, b: 0, a: 0}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
   color2:
     m_OverrideState: 0
     m_Value: {r: 1, g: 0, b: 0, a: 0}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
   color3:
     m_OverrideState: 0
     m_Value: {r: 0, g: 1, b: 0, a: 0}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
   color4:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 0, a: 0}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
   color5:
     m_OverrideState: 0
     m_Value: {r: 0, g: 0, b: 1, a: 0}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
   color6:
     m_OverrideState: 0
     m_Value: {r: 1, g: 0, b: 1, a: 0}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
   color7:
     m_OverrideState: 0
     m_Value: {r: 0, g: 1, b: 1, a: 0}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
   color8:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 0}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
   dithering:
     m_OverrideState: 1
     m_Value: 0.05
-    min: 0
-    max: 0.5
   downsampling:
     m_OverrideState: 1
     m_Value: 6
-    min: 1
-    max: 32
   opacity:
     m_OverrideState: 1
     m_Value: 0.434
-    min: 0
-    max: 1
 --- !u!114 &-4770789356981373857
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -109,15 +75,12 @@ MonoBehaviour:
   m_Name: CGAFilter
   m_EditorClassIdentifier: 
   active: 0
-  m_AdvancedMode: 0
   enabled:
     m_OverrideState: 1
     m_Value: 1
   gamma:
     m_OverrideState: 1
     m_Value: 0.301
-    min: 0
-    max: 2.5
   colorPalette:
     m_OverrideState: 1
     m_Value: 2
@@ -134,22 +97,15 @@ MonoBehaviour:
   m_Name: HueSaturationInvert
   m_EditorClassIdentifier: 
   active: 0
-  m_AdvancedMode: 0
   hueShift:
     m_OverrideState: 1
     m_Value: 0.213
-    min: -1
-    max: 1
   saturation:
     m_OverrideState: 1
     m_Value: 1.38
-    min: 0
-    max: 2
   invert:
     m_OverrideState: 1
     m_Value: 0
-    min: 0
-    max: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,26 +139,18 @@ MonoBehaviour:
   m_Name: Recolor
   m_EditorClassIdentifier: 
   active: 0
-  m_AdvancedMode: 0
   edgeColor:
     m_OverrideState: 1
     m_Value: {r: 1, g: 0.86833215, b: 0, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
   edgeSource:
     m_OverrideState: 1
     m_Value: 2
   edgeThreshold:
     m_OverrideState: 1
     m_Value: 0.5
-    min: 0
-    max: 1
   edgeContrast:
     m_OverrideState: 1
     m_Value: 0.5
-    min: 0
-    max: 1
   fillGradient:
     m_OverrideState: 1
     m_Value:
@@ -232,21 +180,18 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
   fillOpacity:
     m_OverrideState: 1
     m_Value: 1
-    min: 0
-    max: 1
   ditherType:
     m_OverrideState: 1
     m_Value: 2
   ditherStrength:
     m_OverrideState: 1
     m_Value: 0.631
-    min: 0
-    max: 1
 --- !u!114 &3136725476462984627
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -260,12 +205,9 @@ MonoBehaviour:
   m_Name: EGAFilter
   m_EditorClassIdentifier: 
   active: 0
-  m_AdvancedMode: 0
   colorDetail:
     m_OverrideState: 1
     m_Value: 2.77
-    min: 0
-    max: 5
 --- !u!114 &4971449215008291894
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -279,7 +221,6 @@ MonoBehaviour:
   m_Name: Overlay
   m_EditorClassIdentifier: 
   active: 0
-  m_AdvancedMode: 0
   sourceType:
     m_OverrideState: 1
     m_Value: 1
@@ -289,14 +230,9 @@ MonoBehaviour:
   opacity:
     m_OverrideState: 1
     m_Value: 0.936
-    min: 0
-    max: 1
   color:
     m_OverrideState: 0
     m_Value: {r: 1, g: 0, b: 0, a: 1}
-    hdr: 0
-    showAlpha: 0
-    showEyeDropper: 1
   gradient:
     m_OverrideState: 1
     m_Value:
@@ -326,16 +262,16 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
   angle:
     m_OverrideState: 1
     m_Value: 0
-    min: -180
-    max: 180
   texture:
     m_OverrideState: 0
     m_Value: {fileID: 0}
+    dimension: 1
   sourceAlpha:
     m_OverrideState: 0
     m_Value: 1

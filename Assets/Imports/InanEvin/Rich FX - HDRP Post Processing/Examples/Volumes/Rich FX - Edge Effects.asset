@@ -29,23 +29,15 @@ MonoBehaviour:
   m_Name: ColorEdges
   m_EditorClassIdentifier: 
   active: 0
-  m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
     m_Value: 1
-    min: 0
-    max: 1
   edgeWidth:
     m_OverrideState: 1
     m_Value: 1.42
-    min: 0.5
-    max: 10
   edgeColor:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 0.9069271, b: 0, a: 1}
-    hdr: 0
-    showAlpha: 1
-    showEyeDropper: 1
+    m_Value: {r: 0.5283019, g: 0.16197936, b: 0.16197936, a: 1}
 --- !u!114 &7236921443803855736
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -59,17 +51,12 @@ MonoBehaviour:
   m_Name: SimpleOutline
   m_EditorClassIdentifier: 
   active: 0
-  m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
     m_Value: 0.304
-    min: 0
-    max: 1
   threshold:
     m_OverrideState: 1
     m_Value: 0.145
-    min: 0.01
-    max: 1
 --- !u!114 &8105103360558245205
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -83,9 +70,6 @@ MonoBehaviour:
   m_Name: EdgeDetection
   m_EditorClassIdentifier: 
   active: 0
-  m_AdvancedMode: 0
   threshold:
     m_OverrideState: 1
     m_Value: 0.139
-    min: 0
-    max: 1

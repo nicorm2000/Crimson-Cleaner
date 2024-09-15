@@ -30,12 +30,9 @@ MonoBehaviour:
   m_Name: GrayScale
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
     m_Value: 1
-    min: 0
-    max: 1
 --- !u!114 &1854900804858573621
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -49,20 +46,15 @@ MonoBehaviour:
   m_Name: Nightvision
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   enabled:
     m_OverrideState: 1
     m_Value: 1
   darkness:
     m_OverrideState: 1
     m_Value: 0.841
-    min: 0
-    max: 1
   greenPower:
     m_OverrideState: 1
     m_Value: 0.552
-    min: 0
-    max: 1
 --- !u!114 &3928607064861847808
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -76,32 +68,21 @@ MonoBehaviour:
   m_Name: Glitch
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   block:
     m_OverrideState: 1
     m_Value: 0.186
-    min: 0
-    max: 1
   drift:
     m_OverrideState: 0
     m_Value: 0
-    min: 0
-    max: 1
   jitter:
     m_OverrideState: 0
     m_Value: 0
-    min: 0
-    max: 1
   jump:
     m_OverrideState: 0
     m_Value: 0
-    min: 0
-    max: 1
   shake:
     m_OverrideState: 0
     m_Value: 0
-    min: 0
-    max: 1
 --- !u!114 &6606499090559350863
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -115,19 +96,12 @@ MonoBehaviour:
   m_Name: Scanlines
   m_EditorClassIdentifier: 
   active: 1
-  m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
     m_Value: 3.17
-    min: 0
-    max: 10
   noise:
     m_OverrideState: 1
     m_Value: 0.338
-    min: 0
-    max: 1
   count:
     m_OverrideState: 1
     m_Value: 2995
-    min: 0
-    max: 4096

@@ -13,12 +13,9 @@ MonoBehaviour:
   m_Name: GaussianBlur
   m_EditorClassIdentifier: 
   active: 0
-  m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
     m_Value: 0.978
-    min: 0
-    max: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49,22 +46,15 @@ MonoBehaviour:
   m_Name: DirectionalBlur
   m_EditorClassIdentifier: 
   active: 0
-  m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
     m_Value: 10.4
-    min: 0
-    max: 100
   angle:
     m_OverrideState: 1
     m_Value: 0.131
-    min: 0
-    max: 1
   sampleCount:
     m_OverrideState: 1
     m_Value: 15
-    min: 1
-    max: 30
 --- !u!114 &6081107342222712208
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -78,32 +68,21 @@ MonoBehaviour:
   m_Name: RadialBlur
   m_EditorClassIdentifier: 
   active: 0
-  m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.169
-    min: 0
-    max: 1
+    m_Value: 0.536
   centerX:
     m_OverrideState: 1
     m_Value: 0.5
-    min: 0
-    max: 1
   centerY:
     m_OverrideState: 1
     m_Value: 0.5
-    min: 0
-    max: 1
   radius:
     m_OverrideState: 1
     m_Value: 0.5
-    min: 0
-    max: 1
   samples:
     m_OverrideState: 1
     m_Value: 12
-    min: 4
-    max: 20
 --- !u!114 &8211197051403565543
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -117,9 +96,6 @@ MonoBehaviour:
   m_Name: SimpleGaussianBlur
   m_EditorClassIdentifier: 
   active: 0
-  m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
     m_Value: 0.395
-    min: 0
-    max: 1
