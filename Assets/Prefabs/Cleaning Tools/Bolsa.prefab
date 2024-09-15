@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2878734379370231607}
   - component: {fileID: 4375407386423342558}
   - component: {fileID: 4871064179463384940}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Bolsa
   m_TagString: Trash
   m_Icon: {fileID: 0}
@@ -108,6 +108,7 @@ MonoBehaviour:
   hologramObject: {fileID: 0}
   audioManager: {fileID: 0}
   breakBottleEvent: Trash_Bag_Collision
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!54 &2878734379370231607
 Rigidbody:
