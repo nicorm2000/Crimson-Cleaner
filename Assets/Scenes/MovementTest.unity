@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.33371288, g: 0.4997728, b: 0.83300793, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4552,7 +4552,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131664107}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e76c7efe804b214783da68b01e0c897, type: 3}
   m_Name: 
@@ -25139,24 +25139,30 @@ MonoBehaviour:
   fadeRadius: 0
   priority: 0
   customPasses:
-  - rid: 4541401100899844096
+  - rid: 1814693716461617152
   injectionPoint: 1
   m_TargetCamera: {fileID: 0}
   useTargetCamera: 0
   references:
     version: 2
     RefIds:
-    - rid: 4541401100899844096
-      type: {class: OutlineCustomPass, ns: , asm: Assembly-CSharp}
+    - rid: 1814693716461617152
+      type: {class: Outline, ns: , asm: Assembly-CSharp}
       data:
         m_Name: Custom Pass
         enabled: 1
-        targetColorBuffer: 0
+        targetColorBuffer: 1
         targetDepthBuffer: 0
-        clearFlags: 0
+        clearFlags: 1
         passFoldout: 0
         m_Version: 0
-        lastSelectedCamera: {fileID: 0}
+        outlineLayer:
+          serializedVersion: 2
+          m_Bits: 16640
+        outlineColor: {r: 2.2203631, g: 5.0941386, b: 6.113208, a: 1}
+        threshold: 0.5
+        outlineShader: {fileID: -6465566751694194690, guid: 80850997b896cdc4aa3b2697109d79e3,
+          type: 3}
 --- !u!4 &723093691
 Transform:
   m_ObjectHideFlags: 0
@@ -26389,7 +26395,7 @@ GameObject:
   - component: {fileID: 760705141}
   - component: {fileID: 760705140}
   - component: {fileID: 760705139}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SM_PoolStick5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31142,8 +31148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e125c80299df18b40847a95b484ed7ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStateManager: {fileID: 978816960}
   animator: {fileID: 223034923}
-  blinkingAmmount: 10
+  blinkingAmmount: 3
   minBlinkingInterval: 5
   maxBlinkingInterval: 10
   blinkDuration: 0.5
@@ -34117,6 +34124,8 @@ MonoBehaviour:
   - {fileID: 480406158}
   - {fileID: 2105076962}
   text: {fileID: 71387737}
+  defaultLayerName: Default
+  outlineLayerName: outline
   inputManager: {fileID: 1560126}
   playerController: {fileID: 6982812146447357855}
   pickUpDrop: {fileID: 6982812146447357857}
@@ -34620,7 +34629,7 @@ GameObject:
   - component: {fileID: 987708360}
   - component: {fileID: 987708359}
   - component: {fileID: 987708358}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SM_PoolStick4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52638,6 +52647,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 978816960}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
+        m_MethodName: SetOutlineLayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1468421311
 GameObject:
   m_ObjectHideFlags: 0
@@ -56054,7 +56075,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 8183
+    m_Bits: 24567
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -56164,7 +56185,7 @@ MonoBehaviour:
   xrRendering: 1
   fullscreenPassthrough: 0
   allowDynamicResolution: 0
-  customRenderingSettings: 0
+  customRenderingSettings: 1
   invertFaceCulling: 0
   probeLayerMask:
     serializedVersion: 2
@@ -56184,7 +56205,7 @@ MonoBehaviour:
   materialMipBias: 0
   m_RenderingPathCustomFrameSettings:
     bitDatas:
-      data1: 140666587840333
+      data1: 140666587840332
       data2: 13763000512783810584
     lodBias: 1
     lodBiasMode: 0
@@ -56199,7 +56220,7 @@ MonoBehaviour:
     materialQuality: 0
   renderingPathCustomFrameSettingsOverrideMask:
     mask:
-      data1: 0
+      data1: 1
       data2: 0
   defaultFrameSettings: 0
   m_Version: 9
@@ -68550,7 +68571,7 @@ GameObject:
   - component: {fileID: 1934799237}
   - component: {fileID: 1934799236}
   - component: {fileID: 1934799235}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SM_PoolStick3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74669,7 +74690,7 @@ GameObject:
   - component: {fileID: 2099573520}
   - component: {fileID: 2099573523}
   - component: {fileID: 2099573524}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SM_PoolStick2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80234,7 +80255,7 @@ GameObject:
   - component: {fileID: 7706761954967040576}
   - component: {fileID: 7706761954967040575}
   - component: {fileID: 7706761954967040577}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SM_PoolBall10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83787,7 +83808,7 @@ GameObject:
   - component: {fileID: 9065330983861810374}
   - component: {fileID: 9065330983861810373}
   - component: {fileID: 9065330983861810375}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SM_PoolBall14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84540,7 +84561,7 @@ GameObject:
   - component: {fileID: 8697776146982133928}
   - component: {fileID: 8697776146982133927}
   - component: {fileID: 8697776146982133929}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SM_PoolBall06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85033,7 +85054,7 @@ GameObject:
   - component: {fileID: 4269099210901375442}
   - component: {fileID: 4269099210901375441}
   - component: {fileID: 4269099210901375443}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SM_PoolBall12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85183,7 +85204,7 @@ GameObject:
   - component: {fileID: 7370816838236919907}
   - component: {fileID: 7370816838236919908}
   - component: {fileID: 7370816838236919909}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SM_PoolStick1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85834,7 +85855,7 @@ GameObject:
   - component: {fileID: 6994899186812323407}
   - component: {fileID: 6994899186812323406}
   - component: {fileID: 6994899186812323408}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SM_PoolBall07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87882,7 +87903,7 @@ GameObject:
   - component: {fileID: 5310835086106342166}
   - component: {fileID: 5310835086106342165}
   - component: {fileID: 5310835086106342167}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SM_PoolBall09
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89028,7 +89049,7 @@ GameObject:
   - component: {fileID: 8317232263014174344}
   - component: {fileID: 8317232263014174343}
   - component: {fileID: 8317232263014174345}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SM_PoolBall13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91952,7 +91973,7 @@ GameObject:
   - component: {fileID: 6515593911483501059}
   - component: {fileID: 6515593911483501058}
   - component: {fileID: 6515593911483501060}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SM_PoolBall15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91973,7 +91994,7 @@ GameObject:
   - component: {fileID: 4736257138152682716}
   - component: {fileID: 4736257138152682715}
   - component: {fileID: 4736257138152682717}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SM_PoolBall04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99933,7 +99954,7 @@ GameObject:
   - component: {fileID: 8069348465038287093}
   - component: {fileID: 8069348465038287092}
   - component: {fileID: 8069348465038287094}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SM_PoolBall03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100035,7 +100056,7 @@ GameObject:
   - component: {fileID: 7660602978498719830}
   - component: {fileID: 7660602978498719829}
   - component: {fileID: 7660602978498719831}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SM_PoolBall01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101532,7 +101553,7 @@ GameObject:
   - component: {fileID: 7615068765876677947}
   - component: {fileID: 7615068765876677946}
   - component: {fileID: 7615068765876677948}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SM_PoolBall02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102419,7 +102440,7 @@ GameObject:
   - component: {fileID: 8816745014176980851}
   - component: {fileID: 8816745014176980850}
   - component: {fileID: 8816745014176980852}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SM_PoolBall11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104304,7 +104325,7 @@ GameObject:
   - component: {fileID: 8164827769784813224}
   - component: {fileID: 8164827769784813223}
   - component: {fileID: 8164827769784813225}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SM_PoolBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105038,7 +105059,7 @@ GameObject:
   - component: {fileID: 8321055019602511212}
   - component: {fileID: 8321055019602511214}
   - component: {fileID: 8321055019602511213}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SM_PoolTriangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105819,7 +105840,7 @@ GameObject:
   - component: {fileID: 8535198015118685108}
   - component: {fileID: 8535198015118685107}
   - component: {fileID: 8535198015118685109}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SM_PoolBall08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108335,7 +108356,7 @@ GameObject:
   - component: {fileID: 9171549736535373865}
   - component: {fileID: 9171549736535373864}
   - component: {fileID: 9171549736535373866}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SM_PoolBall05
   m_TagString: Untagged
   m_Icon: {fileID: 0}

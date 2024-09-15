@@ -35,6 +35,8 @@ public class GameStateManager : MonoBehaviour
     public List<RetrievableObject> Weapons => weapons;
 
     [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private string defaultLayerName;
+    [SerializeField] private string outlineLayerName;
 
     public InputManager inputManager;
     public PlayerController playerController;
@@ -170,6 +172,33 @@ public class GameStateManager : MonoBehaviour
         bool isPauseState = currentState is PauseState;
         TransitionToState(isPauseState ? "GamePlay" : "Pause");
         inputManager.ToggleGameplayMap(isPauseState);
+    }
+
+    public void SetOutlineLayer()
+    {
+        SetLayer(outlineLayerName, Documents);
+        SetLayer(outlineLayerName, Clothes);
+        SetLayer(outlineLayerName, Weapons);
+        SetLayer(outlineLayerName, Weapons);
+    }
+
+    public void SetDefaultLayer()
+    {
+        SetLayer(defaultLayerName, Documents);
+        SetLayer(defaultLayerName, Clothes);
+        SetLayer(defaultLayerName, Weapons);
+        SetLayer(defaultLayerName, Weapons);
+    }
+
+    private void SetLayer(string layerName, List<RetrievableObject> retrievableObjects)
+    {
+        foreach(var retrievableObject in retrievableObjects)
+        {
+            if (retrievableObject == null) return;
+
+            if (retrievableObject.gameObject.layer != LayerMask.NameToLayer(layerName))
+                retrievableObject.gameObject.layer = LayerMask.NameToLayer(layerName);
+        }
     }
 }
 

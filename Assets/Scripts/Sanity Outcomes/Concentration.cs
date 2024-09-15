@@ -7,6 +7,7 @@ using UnityEngine.Rendering.HighDefinition;
 
 public class Concentration : MonoBehaviour
 {
+    [SerializeField] private GameStateManager gameStateManager;
     [SerializeField] private Animator animator;
     [SerializeField] private int blinkingAmmount;
     [SerializeField] private float minBlinkingInterval;
@@ -83,6 +84,10 @@ public class Concentration : MonoBehaviour
         if (counter < blinkingAmmount)
         {
             TriggerConstantBlinking();
+        }
+        else
+        {
+            gameStateManager.SetDefaultLayer();
         }
     }
 }
