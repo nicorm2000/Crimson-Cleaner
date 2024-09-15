@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 2453478180626803114}
   - component: {fileID: 7702907533563161010}
   - component: {fileID: 5618194470619907575}
-  - component: {fileID: 2246370881195452356}
-  - component: {fileID: 2120019208241623160}
   - component: {fileID: 6520998350927654122}
   m_Layer: 8
   m_Name: SM_Machete
@@ -137,41 +135,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &2246370881195452356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6154259635182957365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lerpSpeed: 10
-  rotationSpeed: 300
-  throwingForce: 50
-  breakForceThreshold: 10
-  collisionCooldown: 0.1
-  fallHeightThreshold: 1
-  hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: Machete_Collision
-  isObjectBreakable: 0
---- !u!114 &2120019208241623160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6154259635182957365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82b1c6b7bdcbaa74fa6fb0dcb9c46e7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  breakablePieces: []
 --- !u!114 &6520998350927654122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,11 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d762f5069bbb6842adf03e9eb481b2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputManager: {fileID: 0}
-  raycastDistance: 3
-  interactableLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
+  environmentRaycaster: {fileID: 0}
   audioManager: {fileID: 0}
   soundEvent: Machete_Collision
   soundEvent2: 

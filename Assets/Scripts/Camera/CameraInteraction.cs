@@ -7,9 +7,18 @@ public class CameraInteraction : MonoBehaviour
     [SerializeField] private Image[] interactionImages;
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private PlayerController playerController;
+    [SerializeField] private string defaultLayerName;
+    [SerializeField] private string outlineLayerName;
 
     private Camera mainCamera;
     private IPickable currentPickableObject;
+
+    //private ObjectGrabbable lastObjectGrabbableHighlighted = null;
+    //private StealableObject lastObjectStealableHighlighted = null;
+    //private Openable lastOpenableObjectHighlighted = null;
+    //private WaterFaucetSystem lastWaterFaucetSystemObjectHighlighted = null;
+    //private InmersiveObject lastInmersiveObjectHighlighted = null;
+    //private RetrievableObject lastRetrievableObjectHighlighted = null;
 
     private void Start()
     {
@@ -41,9 +50,16 @@ public class CameraInteraction : MonoBehaviour
 
             RetrievableObject objectRetrievable2 = hit.collider.gameObject.GetComponent<RetrievableObject>();
 
+            //ResetHighlightedObjects();
+
             if (pickableObject != null && !pickableObject.IsObjectSnapped)
             {
+                //if (pickableObject.gameObject.layer != LayerMask.NameToLayer(outlineLayerName))
+                //    pickableObject.gameObject.layer = LayerMask.NameToLayer(outlineLayerName);
+
                 currentPickableObject = pickableObject;
+                //lastObjectGrabbableHighlighted = pickableObject;
+
                 if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().CleaningToolsLength - 1)
                 {
                     if (SanityManager.Instance.isRageActive)
@@ -59,11 +75,21 @@ public class CameraInteraction : MonoBehaviour
             if (objectRetrievable != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().CleaningToolsLength - 1 && playerController.GetObjectGrabbable() == null && !SanityManager.Instance.isRageActive)
             {
                 AppendRetrievableSprites(objectRetrievable, ref activeSprites);
+                //lastObjectStealableHighlighted = objectRetrievable;
             }
 
             if (openableObject != null && playerController.GetObjectGrabbable() == null)
             {
+                //if (openableObject.transform.GetChild(0) != null)
+                //{
+                //    Transform childTransform = openableObject.transform.GetChild(0);
+
+                //    if (childTransform.gameObject.layer != LayerMask.NameToLayer(outlineLayerName))
+                //        childTransform.gameObject.layer = LayerMask.NameToLayer(outlineLayerName);
+                //}
+
                 AppendOpenableSprites(openableObject, ref activeSprites);
+                //lastOpenableObjectHighlighted = openableObject;
             }
 
             if (cleanableToolObject != null && cleaningManager.GetToolSelector().CurrentToolIndex != cleaningManager.GetToolSelector().CleaningToolsLength - 1 && cleaningManager.GetToolSelector().GetDirtyPercentage(cleaningManager.GetToolSelector().CurrentToolIndex) > 0 && hit.collider.GetComponent<WaterBucket>().GetWaterState())
@@ -78,18 +104,49 @@ public class CameraInteraction : MonoBehaviour
 
             if (toggableObject2 != null)
             {
+                //if (toggableObject2.gameObject.layer != LayerMask.NameToLayer(outlineLayerName))
+                //    toggableObject2.gameObject.layer = LayerMask.NameToLayer(outlineLayerName);
+
                 AppendToggableSprites(toggableObject2, ref activeSprites);
+                //lastWaterFaucetSystemObjectHighlighted = toggableObject2;
             }
 
             if (inmersiveObject != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().CleaningToolsLength - 1)
             {
+                //if (inmersiveObject.gameObject.layer != LayerMask.NameToLayer(outlineLayerName))
+                //    inmersiveObject.gameObject.layer = LayerMask.NameToLayer(outlineLayerName);
+
                 AppendInteractableSprites(inmersiveObject, ref activeSprites);
+                //lastInmersiveObjectHighlighted = inmersiveObject;
             }
 
             if (objectRetrievable2 != null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetToolSelector().CleaningToolsLength - 1 && playerController.GetObjectGrabbable() == null && !SanityManager.Instance.isRageActive)
             {
                 AppendRetrievableSprites(objectRetrievable2, ref activeSprites);
+                //lastRetrievableObjectHighlighted = objectRetrievable2;
             }
+
+            //if (pickableObject == null && lastObjectGrabbableHighlighted != null)
+            //    lastObjectGrabbableHighlighted.gameObject.layer = LayerMask.NameToLayer(defaultLayerName); 
+            //if (objectRetrievable == null && lastObjectStealableHighlighted != null)
+            //    lastObjectStealableHighlighted.gameObject.layer = LayerMask.NameToLayer(defaultLayerName);
+            //if (openableObject == null && lastOpenableObjectHighlighted != null)
+            //{
+            //    if (lastOpenableObjectHighlighted.transform.GetChild(0) != null)
+            //    {
+            //        Transform childTransform = lastOpenableObjectHighlighted.transform.GetChild(0);
+
+            //        if (childTransform.gameObject.layer != LayerMask.NameToLayer(defaultLayerName))
+            //            childTransform.gameObject.layer = LayerMask.NameToLayer(defaultLayerName);
+            //    }
+            //}
+                
+            //if (toggableObject2 == null && lastWaterFaucetSystemObjectHighlighted != null)
+            //    lastWaterFaucetSystemObjectHighlighted.gameObject.layer = LayerMask.NameToLayer(defaultLayerName);
+            //if (inmersiveObject == null && lastInmersiveObjectHighlighted != null)
+            //    lastInmersiveObjectHighlighted.gameObject.layer = LayerMask.NameToLayer(defaultLayerName);
+            //if (objectRetrievable2 == null && lastRetrievableObjectHighlighted != null)
+            //    lastRetrievableObjectHighlighted.gameObject.layer = LayerMask.NameToLayer(defaultLayerName);
 
             UpdateUI(activeSprites);
         }
@@ -163,6 +220,35 @@ public class CameraInteraction : MonoBehaviour
         int index = GetNextAvailableSlot(activeSprites);
         activeSprites[index] = inmersiveObject.InteractMessage;
     }
+
+    //private void ResetHighlightedObjects()
+    //{
+    //    if (lastObjectGrabbableHighlighted != null)
+    //    {
+    //        lastObjectGrabbableHighlighted.gameObject.layer = LayerMask.NameToLayer(defaultLayerName);
+    //        lastObjectGrabbableHighlighted = null;
+    //    }
+    //    if (lastObjectStealableHighlighted != null)
+    //    {
+    //        lastObjectStealableHighlighted.gameObject.layer = LayerMask.NameToLayer(defaultLayerName);
+    //        lastObjectStealableHighlighted = null;
+    //    }
+    //    if (lastWaterFaucetSystemObjectHighlighted != null)
+    //    {
+    //        lastWaterFaucetSystemObjectHighlighted.gameObject.layer = LayerMask.NameToLayer(defaultLayerName);
+    //        lastWaterFaucetSystemObjectHighlighted = null;
+    //    }
+    //    if (lastInmersiveObjectHighlighted != null)
+    //    {
+    //        lastInmersiveObjectHighlighted.gameObject.layer = LayerMask.NameToLayer(defaultLayerName);
+    //        lastInmersiveObjectHighlighted = null;
+    //    }
+    //    if (lastRetrievableObjectHighlighted != null)
+    //    {
+    //        lastRetrievableObjectHighlighted.gameObject.layer = LayerMask.NameToLayer(defaultLayerName);
+    //        lastRetrievableObjectHighlighted = null;
+    //    }
+    //}
 
     private int GetNextAvailableSlot(Sprite[] activeSprites)
     {
