@@ -211,7 +211,7 @@ public class CameraInteraction : MonoBehaviour
     {
         SetImageState(true);
         int index = GetNextAvailableSlot(activeSprites);
-        activeSprites[index] = toggableObject.InteractMessage;
+        activeSprites[2] = toggableObject.InteractMessage;
     }
 
     private void AppendInteractableSprites(IInteractable inmersiveObject, ref Sprite[] activeSprites)

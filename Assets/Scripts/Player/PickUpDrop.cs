@@ -81,7 +81,18 @@ public class PickUpDrop : MonoBehaviour
         }
         else
         {
-            PickUpUnavailableEvent?.Invoke();
+            if (cleaningManager.GetToolSelector().CurrentToolIndex != 2)
+            {
+                if (Physics.Raycast(mainCamera.position, mainCamera.forward, out RaycastHit raycastHit, cleaningManager.GetInteractionDistance()))
+                {
+                    ObjectGrabbable newObjectGrabbable;
+
+                    if (raycastHit.transform.TryGetComponent(out newObjectGrabbable))
+                    {
+                        PickUpUnavailableEvent?.Invoke();
+                    }
+                }
+            }
         }
     }
 

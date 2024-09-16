@@ -75,12 +75,6 @@ public class WaterBucket : Interactable, ICleanable
             return;
         }
 
-        if (SanityManager.Instance.isRageActive)
-        {
-            TriggerBucketEyection();
-            return;
-        }
-
         if (_bucketDirtState >= 4) return;
 
         if (dirtyPercentage == 0) return;
@@ -111,6 +105,12 @@ public class WaterBucket : Interactable, ICleanable
             else if (cleaningManager.GetToolSelector().CurrentToolIndex == 1)
                 cleaningManager.GetSpongeDrippingParticles().Play();
             SanityManager.Instance.ModifySanityScalar(SanityManager.Instance.WashToolScaler);
+
+            if (SanityManager.Instance.isRageActive)
+            {
+                TriggerBucketEyection();
+                return;
+            }
         }
     }
 
