@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class TabletUIManager : MonoBehaviour
 {
+    #region BAR VARIABLES
     [Header("Bar")]
     [SerializeField] private Button barButton = null;
     [SerializeField] private GameObject barPanel = null;
@@ -43,7 +44,8 @@ public class TabletUIManager : MonoBehaviour
     [SerializeField] private Image barMiscellaneousTickImage = null;
     [SerializeField] private Image barMiscellaneousCrossedOutImage = null;
     [SerializeField] private TextMeshProUGUI barMiscellaneousProgressText = null;
-
+    #endregion
+    #region MEN'S BATHROOM VARIABLES
     [Header("Men's Bathroom")]
     [SerializeField] private Button menBathroomButton = null;
     [SerializeField] private GameObject menBathroomPanel = null;
@@ -83,7 +85,8 @@ public class TabletUIManager : MonoBehaviour
     [SerializeField] private Image menBathroomMiscellaneousTickImage = null;
     [SerializeField] private Image menBathroomMiscellaneousCrossedOutImage = null;
     [SerializeField] private TextMeshProUGUI menBathroomMiscellaneousProgressText = null;
-    
+    #endregion
+    #region WOMEN'S BATHROOM VARIABLES
     [Header("Women's Bathroom")]
     [SerializeField] private Button womenBathroomButton = null;
     [SerializeField] private GameObject womenBathroomPanel = null;
@@ -123,7 +126,8 @@ public class TabletUIManager : MonoBehaviour
     [SerializeField] private Image womenBathroomMiscellaneousTickImage = null;
     [SerializeField] private Image womenBathroomMiscellaneousCrossedOutImage = null;
     [SerializeField] private TextMeshProUGUI womenBathroomMiscellaneousProgressText = null;
-    
+    #endregion
+    #region KITCHEN VARIABLES
     [Header("Kitchen")]
     [SerializeField] private Button kitchenButton = null;
     [SerializeField] private GameObject kitchenPanel = null;
@@ -163,7 +167,8 @@ public class TabletUIManager : MonoBehaviour
     [SerializeField] private Image kitchenMiscellaneousTickImage = null;
     [SerializeField] private Image kitchenMiscellaneousCrossedOutImage = null;
     [SerializeField] private TextMeshProUGUI kitchenMiscellaneousProgressText = null;
-    
+    #endregion
+    #region STORAGE ROOM VARIABLES
     [Header("Storage Room")]
     [SerializeField] private Button storageButton = null;
     [SerializeField] private GameObject storagePanel = null;
@@ -203,7 +208,8 @@ public class TabletUIManager : MonoBehaviour
     [SerializeField] private Image storageMiscellaneousTickImage = null;
     [SerializeField] private Image storageMiscellaneousCrossedOutImage = null;
     [SerializeField] private TextMeshProUGUI storageMiscellaneousProgressText = null;
-    
+    #endregion
+    #region VIP ROOM VARIABLES
     [Header("VIP Room")]
     [SerializeField] private Button vipRoomButton = null;
     [SerializeField] private GameObject vipRoomPanel = null;
@@ -243,7 +249,8 @@ public class TabletUIManager : MonoBehaviour
     [SerializeField] private Image vipRoomMiscellaneousTickImage = null;
     [SerializeField] private Image vipRoomMiscellaneousCrossedOutImage = null;
     [SerializeField] private TextMeshProUGUI vipRoomMiscellaneousProgressText = null;
-    
+    #endregion
+    #region BETTING ROOM VARIABLES
     [Header("Betting Room")]
     [SerializeField] private Button bettingRoomButton = null;
     [SerializeField] private GameObject bettingRoomPanel = null;
@@ -283,9 +290,100 @@ public class TabletUIManager : MonoBehaviour
     [SerializeField] private Image bettingRoomMiscellaneousTickImage = null;
     [SerializeField] private Image bettingRoomMiscellaneousCrossedOutImage = null;
     [SerializeField] private TextMeshProUGUI bettingRoomMiscellaneousProgressText = null;
+#endregion
 
     private void Awake()
     {
-        
+        #region BUTTONS
+        barButton.onClick.AddListener(() => { });
+        menBathroomButton.onClick.AddListener(() => { });
+        womenBathroomButton.onClick.AddListener(() => { });
+        kitchenButton.onClick.AddListener(() => { });
+        storageButton.onClick.AddListener(() => { });
+        vipRoomButton.onClick.AddListener(() => { });
+        bettingRoomButton.onClick.AddListener(() => { });
+        #endregion
+        #region BAR TICK IMAGE
+        SetImageState(barBloodTickImage, false);
+        SetImageState(barArrangablesTickImage, false);
+        SetImageState(barBloodyObjectsTickImage, false);
+        SetImageState(barClothesTickImage, false);
+        SetImageState(barCorpsesTickImage, false);
+        SetImageState(barDocumentsTickImage, false);
+        SetImageState(barMiscellaneousTickImage, false);
+        SetImageState(barUVCleanablesTickImage, false);
+        SetImageState(barWeaponsTickImage, false);
+        #endregion
+        #region MEN'S BATHROOM TICK IMAGE
+        SetImageState(menBathroomMiscellaneousTickImage, false);
+        SetImageState(menBathroomArrangablesTickImage, false);
+        SetImageState(menBathroomBloodTickImage, false);
+        SetImageState(menBathroomBloodyObjectsTickImage, false);
+        SetImageState(menBathroomClothesTickImage, false);
+        SetImageState(menBathroomCorpsesTickImage, false);
+        SetImageState(menBathroomDocumentsTickImage, false);
+        SetImageState(menBathroomUVCleanablesTickImage, false);
+        SetImageState(menBathroomWeaponsTickImage, false);
+        #endregion
+        #region WOMEN'S BATHROOM TICK IMAGE
+        SetImageState(womenBathroomArrangablesTickImage, false);
+        SetImageState(womenBathroomBloodTickImage, false);
+        SetImageState(womenBathroomBloodyObjectsTickImage, false);
+        SetImageState(womenBathroomClothesTickImage, false);
+        SetImageState(womenBathroomDocumentsTickImage, false);
+        SetImageState(womenBathroomMiscellaneousTickImage, false);
+        SetImageState(womenBathroomWeaponsTickImage, false);
+        SetImageState(womenBathroomUVCleanablesTickImage, false);
+        SetImageState(womenBathroomCorpsesTickImage, false);
+        #endregion
+        #region KITCHEN TICK IMAGE
+        SetImageState(kitchenArrangablesTickImage, false);
+        SetImageState(kitchenBloodTickImage, false);
+        SetImageState(kitchenBloodyObjectsTickImage, false);
+        SetImageState(kitchenClothesTickImage, false);
+        SetImageState(kitchenCorpsesTickImage, false);
+        SetImageState(kitchenDocumentsTickImage, false);
+        SetImageState(kitchenMiscellaneousTickImage, false);
+        SetImageState(kitchenWeaponsTickImage, false);
+        SetImageState(kitchenUVCleanablesTickImage, false);
+        #endregion
+        #region STORAGE ROOM TICK IMAGE
+        SetImageState(storageArrangablesTickImage, false);
+        SetImageState(storageBloodTickImage, false);
+        SetImageState(storageBloodyObjectsTickImage, false);
+        SetImageState(storageClothesTickImage, false);
+        SetImageState(storageCorpsesTickImage, false);
+        SetImageState(storageDocumentsTickImage, false);
+        SetImageState(storageMiscellaneousTickImage, false);
+        SetImageState(storageUVCleanablesTickImage, false);
+        SetImageState(storageWeaponsTickImage, false);
+        #endregion
+        #region VIP ROOM TICK IMAGE
+        SetImageState(vipRoomArrangablesTickImage, false);
+        SetImageState(vipRoomBloodTickImage, false);
+        SetImageState(vipRoomBloodyObjectsTickImage, false);
+        SetImageState(vipRoomClothesTickImage, false);
+        SetImageState(vipRoomCorpsesTickImage, false);
+        SetImageState(vipRoomDocumentsTickImage, false);
+        SetImageState(vipRoomMiscellaneousTickImage, false);
+        SetImageState(vipRoomUVCleanablesTickImage, false);
+        SetImageState(vipRoomWeaponsTickImage, false);
+        #endregion
+        #region BETTING ROOM TICK IMAGE
+        SetImageState(bettingRoomClothesTickImage, false);
+        SetImageState(bettingRoomMiscellaneousTickImage, false);
+        SetImageState(bettingRoomDocumentsTickImage, false);
+        SetImageState(bettingRoomArrangablesTickImage, false);
+        SetImageState(bettingRoomBloodTickImage, false);
+        SetImageState(bettingRoomBloodyObjectsTickImage, false);
+        SetImageState(bettingRoomCorpsesTickImage, false);
+        SetImageState(bettingRoomUVCleanablesTickImage, false);
+        SetImageState(bettingRoomWeaponsTickImage, false);
+        #endregion
+    }
+
+    private void SetImageState(Image image, bool state)
+    {
+        image.enabled = state;
     }
 }
