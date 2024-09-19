@@ -420,16 +420,29 @@ public class TabletUIManager : MonoBehaviour
     private int bettingRoomMiscellaneousCurrentAmount = 0;
     #endregion
     
+    private List<GameObject> tabs = null;
+
     private void Awake()
     {
+        tabs = new List<GameObject>()
+        {
+            barPanel,
+            menBathroomPanel,
+            womenBathroomPanel,
+            womenBathroomPanel,
+            storagePanel,
+            vipRoomPanel,
+            bettingRoomPanel
+        };
+
         #region BUTTONS
-        barButton.onClick.AddListener(() => { });
-        menBathroomButton.onClick.AddListener(() => { });
-        womenBathroomButton.onClick.AddListener(() => { });
-        kitchenButton.onClick.AddListener(() => { });
-        storageButton.onClick.AddListener(() => { });
-        vipRoomButton.onClick.AddListener(() => { });
-        bettingRoomButton.onClick.AddListener(() => { });
+        barButton.onClick.AddListener(() => { OpenTab(barPanel); });
+        menBathroomButton.onClick.AddListener(() => { OpenTab(menBathroomPanel); });
+        womenBathroomButton.onClick.AddListener(() => { OpenTab(womenBathroomPanel); });
+        kitchenButton.onClick.AddListener(() => { OpenTab(kitchenPanel); });
+        storageButton.onClick.AddListener(() => { OpenTab(storagePanel); });
+        vipRoomButton.onClick.AddListener(() => { OpenTab(vipRoomPanel); });
+        bettingRoomButton.onClick.AddListener(() => { OpenTab(bettingRoomPanel); });
         #endregion
         #region BAR TICK IMAGE
         SetImageState(barBloodTickImage);
@@ -586,7 +599,6 @@ public class TabletUIManager : MonoBehaviour
         SetImageFillValue(bettingRoomWeaponsCrossedOutImage);
         #endregion
 
-        //TODO: give functionality to each button (open their corresonding, if they open a tab the others must close)
         //TODO: current starts on 0
         //TODO: text format
         //TODO: set text to max (00/30 for example)
@@ -618,12 +630,11 @@ public class TabletUIManager : MonoBehaviour
         image.fillAmount = targetFillAmount;
     }
 
-    //[SerializeField] private List<GameObject> tabs = null;
-    //private void OpenTab(GameObject selectedTab)
-    //{
-    //    foreach (GameObject tab in tabs)
-    //    {
-    //        tab.SetActive(tab == selectedTab);
-    //    }
-    //}
+    private void OpenTab(GameObject selectedTab)
+    {
+        foreach (GameObject tab in tabs)
+        {
+            tab.SetActive(tab == selectedTab);
+        }
+    }
 }

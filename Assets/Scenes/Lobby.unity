@@ -9528,75 +9528,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Programming\r\nMajor Changes\r\nUpdated the game to use HDRP instead of
-    URP\r\nShaders\r\nSe desarroll\xF3 un Shader de holograma\r\nSe desarroll\xF3
-    un Shader de posicionamiento correcto\r\nSe desarroll\xF3 el sistema de posicionamiento
-    de objetos, utilizando ambos shaders\r\nNew Systems\r\nNueva herramienta de limpieza,
-    el tacho de basura\r\nSe desarroll\xF3 el sistema de pick up de objetos a recuperar
-    del contratista\r\nSe reworkearon/eliminaron sistemas obsoletos de pick up de
-    objetos\r\nSe reworked el sistema de rotaci\xF3n de objetos\r\nSe agreg\xF3 un
-    sistema para poder subir y bajar escaleras\r\nSe agreg\xF3 un sistema de cooldown
-    para que los objetos abribles puedan elegir si desean usar o no, dando tiempo
-    a que se terminen animaciones, etc\r\nSe desarroll\xF3 el sistema de objetos
-    a recuperar del contratista, las categor\xEDas desarrolladas son:\r\nDocumentos\r\nRopa\r\nArmas\r\nMiscel\xE1neos\r\nImplementation\r\nSe
-    agregaron nuevos modelos y UI\r\nSe agregaron nuevas animaciones a objetos de
-    la escena\r\nSe agreg\xF3 una nueva herramienta de limpieza\r\nSe agregaron nuevos
-    SFX de Wwise\r\nRemoved\r\nSe removi\xF3 la mec\xE1nica de los interruptores
-    de luces\r\nSe removi\xF3 la mec\xE1nica del timer(con todo lo que esta incluye,
-    la lose condition)\r\nOptimization\r\nSe hizo una limpieza de texturas innecesarias\r\nSe
-    hizo una limpieza de scripts innecesarios\r\nAudio\r\nSe agregaron nuevos SFX
-    a Wwise\r\nBug Fixes\r\nFix Bug: Se corrigi\xF3 el uso del balde, para que este
-    no sea usado cuando llega a su estado de suciedad m\xE1xima\r\nFix Bug: Las huellas
-    dactilares que se ven con la luz UV\r\nFix Bug: La ret\xEDcula del jugador se
-    interpone con la UI del Tool Selector, se cre\xF3 un sistema para que se prenda
-    y apague con el Tool Selector\r\nFix Bug: Se arreglaron materiales de limpieza
-    que no estaban actualizados a HDRP\r\nFix Bug: Se arreglaron materiales de ambiente
-    que no estaban actualizados a HDRP\r\nFix Bug: Se arreglaron los bugs visuales
-    ocasionados por las texturas del ba\xF1o\r\nFix Bug: Se corrigieron los errores
-    con la gravedad que afectan al player\r\nFix Bug: Se corrigi\xF3 el movimiento
-    y rotaci\xF3n del player cuando tiene la tablet en sus manos\r\nFix Bug: Se corrigi\xF3
-    la exposici\xF3n de la c\xE1mara a la hora de usar la tablet\r\nFix Bug: Se corrigieron
-    los materiales de las luces de los techos\r\nFix Bug: Se corrigieron los errores
-    que pasaban cuando el jugador intentaba seleccionar una tool con la Tool Wheel\r\nFix
-    Bug: Refactorizaci\xF3n de la Tool Wheel para que utilice \xE1ngulos a la hora
-    de calcular la distancia con el mouse y no haya colisiones\r\nArt\r\nModelos\r\nSe
-    modelaron las herramientas de limpieza:\r\n Carrito\r\nTablet\r\nTacho de basura\r\nBolsas
-    de basura\r\nSe modelaron los objetos a recuperar del contratista:\r\nDocumentos:\r\nCarta
-    de amenaza, orden de ejecuci\xF3n y lista de contactos\r\nRopa:\r\nFedora\r\nMiscel\xE1neos:\r\nLlave,
-    foto familiar, machete, rev\xF3lver, pedazo de sogas, celular, dinero, coca\xEDna
-    en bolsa, coca\xEDna en bloque y bong.\r\nSe model\xF3 los siguientes objetos
-    de las salas:\r\nSala VIP:\r\nBlocking, estante para apoyar pertenencias, perchero
-    para colgar ropa, marcos para cuadros, l\xE1mparas, mesa redonda, sillas, mesa
-    ratona, sillas para mesa ratona.\r\nBetting Room:\r\nBlocking, mesa de poker,
-    cuadros, dinero, cenicero, sill\xF3n de esquina, sillas, alfombra, vaso de whiskey,
-    cartas de poker, fichas de poker.\r\nUVs\r\nSe uvearon las herramientas de limpieza:\r\n
-    Carrito\r\nTablet\r\nTacho de basura\r\nBolsas de basura\r\nSe uvearon los objetos
-    a recuperar del contratista:\r\nDocumentos:\r\nCarta de amenaza, orden de ejecuci\xF3n
-    y lista de contactos\r\nRopa:\r\nFedora\r\nMiscel\xE1neos:\r\nLlave, foto familiar,
-    machete, rev\xF3lver, pedazo de sogas, celular, dinero, coca\xEDna en bolsa,
-    coca\xEDna en bloque y bong.\r\nSe uvearon los siguientes objetos de las salas:\r\nSala
-    VIP:\r\nEstante para apoyar pertenencias, perchero para colgar ropa, marcos para
-    cuadros, l\xE1mparas, mesa redonda, sillas, mesa ratona, sillas para mesa ratona.\r\nBetting
-    Room:\r\nMesa de poker, cuadros, dinero, cenicero, sill\xF3n de esquina, sillas,
-    mesa ratona, alfombra, vaso de whiskey, cartas de poker, fichas de poker.\r\nTexturas\r\nSe
-    texturizaron las herramientas de limpieza:\r\n Carrito\r\nTablet\r\nTacho de
-    basura\r\nBolsas de basura\r\nBalde\r\nMopa\r\nSe texturizaron los objetos a
-    recuperar del contratista:\r\nDocumentos:\r\nCarta de amenaza, Orden de ejecuci\xF3n,
-    Lista de contactos\r\nRopa:\r\nFedora\r\nMiscel\xE1neos:\r\nLlave, foto familiar,
-    machete, rev\xF3lver, pedazo de sogas, celular, dinero, coca\xEDna en bolsa,
-    coca\xEDna en bloque y bong.\r\nSe texturiz\xF3 los siguientes objetos de las
-    salas:\r\nSala VIP:\r\nEstante para apoyar pertenencias, perchero para colgar
-    ropa, marcos para cuadros, l\xE1mparas, mesa redonda, sillas, mesa ratona, sillas
-    para mesa ratona.\r\nBetting Room:\r\nMesa de poker, cuadros, dinero, cenicero,
-    sill\xF3n de esquina, sillas, mesa ratona, alfombra, vaso de whiskey, cartas
-    de poker, fichas de poker.\r\nShaders\r\nSe configuraron los shaders de la mec\xE1nica
-    de colocaci\xF3n de objetos.  \r\nAjuste de valores visuales del Shader de posicionamiento
-    correcto\r\n\r\nRigs\r\nSe cre\xF3 un Rig de:\r\nPersonaje principal\r\nBin\r\nMop\r\nSponge\r\nAnimaciones\r\nAnimaci\xF3n
-    de esponja:\r\nSacar herramienta\r\nLimpiar\r\nGuardar herramienta\r\nAnimaci\xF3n
-    de tacho de basura:\r\nSacar herramienta\r\nLimpiar\r\nGuardar herramienta\r\nRetirar
-    bolsa de basura\r\nAnimaci\xF3n de manos:\r\nTirar objeto\r\nSoltar objeto\r\nLevantar
-    objeto\r\nIdle \r\nAnimaci\xF3n de balde:\r\nLimpiar mopa\r\nLimpiar esponja\r\nUI/UX\r\nNueva
-    rueda de inventario \r\n"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
