@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -304,86 +305,183 @@ public class TabletUIManager : MonoBehaviour
         bettingRoomButton.onClick.AddListener(() => { });
         #endregion
         #region BAR TICK IMAGE
-        SetImageState(barBloodTickImage, false);
-        SetImageState(barArrangablesTickImage, false);
-        SetImageState(barBloodyObjectsTickImage, false);
-        SetImageState(barClothesTickImage, false);
-        SetImageState(barCorpsesTickImage, false);
-        SetImageState(barDocumentsTickImage, false);
-        SetImageState(barMiscellaneousTickImage, false);
-        SetImageState(barUVCleanablesTickImage, false);
-        SetImageState(barWeaponsTickImage, false);
+        SetImageState(barBloodTickImage);
+        SetImageState(barArrangablesTickImage);
+        SetImageState(barBloodyObjectsTickImage);
+        SetImageState(barClothesTickImage);
+        SetImageState(barCorpsesTickImage);
+        SetImageState(barDocumentsTickImage);
+        SetImageState(barMiscellaneousTickImage);
+        SetImageState(barUVCleanablesTickImage);
+        SetImageState(barWeaponsTickImage);
         #endregion
         #region MEN'S BATHROOM TICK IMAGE
-        SetImageState(menBathroomMiscellaneousTickImage, false);
-        SetImageState(menBathroomArrangablesTickImage, false);
-        SetImageState(menBathroomBloodTickImage, false);
-        SetImageState(menBathroomBloodyObjectsTickImage, false);
-        SetImageState(menBathroomClothesTickImage, false);
-        SetImageState(menBathroomCorpsesTickImage, false);
-        SetImageState(menBathroomDocumentsTickImage, false);
-        SetImageState(menBathroomUVCleanablesTickImage, false);
-        SetImageState(menBathroomWeaponsTickImage, false);
+        SetImageState(menBathroomMiscellaneousTickImage);
+        SetImageState(menBathroomArrangablesTickImage);
+        SetImageState(menBathroomBloodTickImage);
+        SetImageState(menBathroomBloodyObjectsTickImage);
+        SetImageState(menBathroomClothesTickImage);
+        SetImageState(menBathroomCorpsesTickImage);
+        SetImageState(menBathroomDocumentsTickImage);
+        SetImageState(menBathroomUVCleanablesTickImage);
+        SetImageState(menBathroomWeaponsTickImage);
         #endregion
         #region WOMEN'S BATHROOM TICK IMAGE
-        SetImageState(womenBathroomArrangablesTickImage, false);
-        SetImageState(womenBathroomBloodTickImage, false);
-        SetImageState(womenBathroomBloodyObjectsTickImage, false);
-        SetImageState(womenBathroomClothesTickImage, false);
-        SetImageState(womenBathroomDocumentsTickImage, false);
-        SetImageState(womenBathroomMiscellaneousTickImage, false);
-        SetImageState(womenBathroomWeaponsTickImage, false);
-        SetImageState(womenBathroomUVCleanablesTickImage, false);
-        SetImageState(womenBathroomCorpsesTickImage, false);
+        SetImageState(womenBathroomArrangablesTickImage);
+        SetImageState(womenBathroomBloodTickImage);
+        SetImageState(womenBathroomBloodyObjectsTickImage);
+        SetImageState(womenBathroomClothesTickImage);
+        SetImageState(womenBathroomDocumentsTickImage);
+        SetImageState(womenBathroomMiscellaneousTickImage);
+        SetImageState(womenBathroomWeaponsTickImage);
+        SetImageState(womenBathroomUVCleanablesTickImage);
+        SetImageState(womenBathroomCorpsesTickImage);
         #endregion
         #region KITCHEN TICK IMAGE
-        SetImageState(kitchenArrangablesTickImage, false);
-        SetImageState(kitchenBloodTickImage, false);
-        SetImageState(kitchenBloodyObjectsTickImage, false);
-        SetImageState(kitchenClothesTickImage, false);
-        SetImageState(kitchenCorpsesTickImage, false);
-        SetImageState(kitchenDocumentsTickImage, false);
-        SetImageState(kitchenMiscellaneousTickImage, false);
-        SetImageState(kitchenWeaponsTickImage, false);
-        SetImageState(kitchenUVCleanablesTickImage, false);
+        SetImageState(kitchenArrangablesTickImage);
+        SetImageState(kitchenBloodTickImage);
+        SetImageState(kitchenBloodyObjectsTickImage);
+        SetImageState(kitchenClothesTickImage);
+        SetImageState(kitchenCorpsesTickImage);
+        SetImageState(kitchenDocumentsTickImage);
+        SetImageState(kitchenMiscellaneousTickImage);
+        SetImageState(kitchenWeaponsTickImage);
+        SetImageState(kitchenUVCleanablesTickImage);
         #endregion
         #region STORAGE ROOM TICK IMAGE
-        SetImageState(storageArrangablesTickImage, false);
-        SetImageState(storageBloodTickImage, false);
-        SetImageState(storageBloodyObjectsTickImage, false);
-        SetImageState(storageClothesTickImage, false);
-        SetImageState(storageCorpsesTickImage, false);
-        SetImageState(storageDocumentsTickImage, false);
-        SetImageState(storageMiscellaneousTickImage, false);
-        SetImageState(storageUVCleanablesTickImage, false);
-        SetImageState(storageWeaponsTickImage, false);
+        SetImageState(storageArrangablesTickImage);
+        SetImageState(storageBloodTickImage);
+        SetImageState(storageBloodyObjectsTickImage);
+        SetImageState(storageClothesTickImage);
+        SetImageState(storageCorpsesTickImage);
+        SetImageState(storageDocumentsTickImage);
+        SetImageState(storageMiscellaneousTickImage);
+        SetImageState(storageUVCleanablesTickImage);
+        SetImageState(storageWeaponsTickImage);
         #endregion
         #region VIP ROOM TICK IMAGE
-        SetImageState(vipRoomArrangablesTickImage, false);
-        SetImageState(vipRoomBloodTickImage, false);
-        SetImageState(vipRoomBloodyObjectsTickImage, false);
-        SetImageState(vipRoomClothesTickImage, false);
-        SetImageState(vipRoomCorpsesTickImage, false);
-        SetImageState(vipRoomDocumentsTickImage, false);
-        SetImageState(vipRoomMiscellaneousTickImage, false);
-        SetImageState(vipRoomUVCleanablesTickImage, false);
-        SetImageState(vipRoomWeaponsTickImage, false);
+        SetImageState(vipRoomArrangablesTickImage);
+        SetImageState(vipRoomBloodTickImage);
+        SetImageState(vipRoomBloodyObjectsTickImage);
+        SetImageState(vipRoomClothesTickImage);
+        SetImageState(vipRoomCorpsesTickImage);
+        SetImageState(vipRoomDocumentsTickImage);
+        SetImageState(vipRoomMiscellaneousTickImage);
+        SetImageState(vipRoomUVCleanablesTickImage);
+        SetImageState(vipRoomWeaponsTickImage);
         #endregion
         #region BETTING ROOM TICK IMAGE
-        SetImageState(bettingRoomClothesTickImage, false);
-        SetImageState(bettingRoomMiscellaneousTickImage, false);
-        SetImageState(bettingRoomDocumentsTickImage, false);
-        SetImageState(bettingRoomArrangablesTickImage, false);
-        SetImageState(bettingRoomBloodTickImage, false);
-        SetImageState(bettingRoomBloodyObjectsTickImage, false);
-        SetImageState(bettingRoomCorpsesTickImage, false);
-        SetImageState(bettingRoomUVCleanablesTickImage, false);
-        SetImageState(bettingRoomWeaponsTickImage, false);
+        SetImageState(bettingRoomClothesTickImage);
+        SetImageState(bettingRoomMiscellaneousTickImage);
+        SetImageState(bettingRoomDocumentsTickImage);
+        SetImageState(bettingRoomArrangablesTickImage);
+        SetImageState(bettingRoomBloodTickImage);
+        SetImageState(bettingRoomBloodyObjectsTickImage);
+        SetImageState(bettingRoomCorpsesTickImage);
+        SetImageState(bettingRoomUVCleanablesTickImage);
+        SetImageState(bettingRoomWeaponsTickImage);
+        #endregion
+        #region BAR CROSSED OUT IMAGE
+        SetImageFillValue(barArrangablesCrossedOutImage);
+        SetImageFillValue(barBloodCrossedOutImage);
+        SetImageFillValue(barBloodyObjectsCrossedOutImage);
+        SetImageFillValue(barClothesCrossedOutImage);
+        SetImageFillValue(barCorpsesCrossedOutImage);
+        SetImageFillValue(barDocumentsCrossedOutImage);
+        SetImageFillValue(barMiscellaneousCrossedOutImage);
+        SetImageFillValue(barUVCleanablesCrossedOutImage);
+        SetImageFillValue(barWeaponsCrossedOutImage);
+        #endregion
+        #region MEN'S BATHROOM CROSSED OUT IMAGE
+        SetImageFillValue(menBathroomArrangablesCrossedOutImage);
+        SetImageFillValue(menBathroomBloodCrossedOutImage);
+        SetImageFillValue(menBathroomBloodyObjectsCrossedOutImage);
+        SetImageFillValue(menBathroomClothesCrossedOutImage);
+        SetImageFillValue(menBathroomCorpsesCrossedOutImage);
+        SetImageFillValue(menBathroomDocumentsCrossedOutImage);
+        SetImageFillValue(menBathroomMiscellaneousCrossedOutImage);
+        SetImageFillValue(menBathroomUVCleanablesCrossedOutImage);
+        SetImageFillValue(menBathroomWeaponsCrossedOutImage);
+        #endregion
+        #region WOMEN'S BATHROOM CROSSED OUT IMAGE
+        SetImageFillValue(womenBathroomArrangablesCrossedOutImage);
+        SetImageFillValue(womenBathroomBloodCrossedOutImage);
+        SetImageFillValue(womenBathroomBloodyObjectsCrossedOutImage);
+        SetImageFillValue(womenBathroomClothesCrossedOutImage);
+        SetImageFillValue(womenBathroomCorpsesCrossedOutImage);
+        SetImageFillValue(womenBathroomDocumentsCrossedOutImage);
+        SetImageFillValue(womenBathroomMiscellaneousCrossedOutImage);
+        SetImageFillValue(womenBathroomUVCleanablesCrossedOutImage);
+        SetImageFillValue(womenBathroomWeaponsCrossedOutImage);
+        #endregion
+        #region KITCHEN CROSSED OUT IMAGE
+        SetImageFillValue(kitchenArrangablesCrossedOutImage);
+        SetImageFillValue(kitchenBloodCrossedOutImage);
+        SetImageFillValue(kitchenBloodyObjectsCrossedOutImage);
+        SetImageFillValue(kitchenClothesCrossedOutImage);
+        SetImageFillValue(kitchenCorpsesCrossedOutImage);
+        SetImageFillValue(kitchenDocumentsCrossedOutImage);
+        SetImageFillValue(kitchenMiscellaneousCrossedOutImage);
+        SetImageFillValue(kitchenUVCleanablesCrossedOutImage);
+        SetImageFillValue(kitchenWeaponsCrossedOutImage);
+        #endregion
+        #region STORAGE ROOM CROSSED OUT IMAGE
+        SetImageFillValue(storageArrangablesCrossedOutImage);
+        SetImageFillValue(storageBloodCrossedOutImage);
+        SetImageFillValue(storageBloodyObjectsCrossedOutImage);
+        SetImageFillValue(storageClothesCrossedOutImage);
+        SetImageFillValue(storageCorpsesCrossedOutImage);
+        SetImageFillValue(storageDocumentsCrossedOutImage);
+        SetImageFillValue(storageMiscellaneousCrossedOutImage);
+        SetImageFillValue(storageUVCleanablesCrossedOutImage);
+        SetImageFillValue(storageWeaponsCrossedOutImage);
+        #endregion
+        #region VIP ROOM CROSSED OUT IMAGE
+        SetImageFillValue(vipRoomArrangablesCrossedOutImage);
+        SetImageFillValue(vipRoomBloodCrossedOutImage);
+        SetImageFillValue(vipRoomBloodyObjectsCrossedOutImage);
+        SetImageFillValue(vipRoomClothesCrossedOutImage);
+        SetImageFillValue(vipRoomCorpsesCrossedOutImage);
+        SetImageFillValue(vipRoomDocumentsCrossedOutImage);
+        SetImageFillValue(vipRoomMiscellaneousCrossedOutImage);
+        SetImageFillValue(vipRoomUVCleanablesCrossedOutImage);
+        SetImageFillValue(vipRoomWeaponsCrossedOutImage);
+        #endregion
+        #region BETTING ROOM CROSSED OUT IMAGE
+        SetImageFillValue(bettingRoomArrangablesCrossedOutImage);
+        SetImageFillValue(bettingRoomBloodCrossedOutImage);
+        SetImageFillValue(bettingRoomBloodyObjectsCrossedOutImage);
+        SetImageFillValue(bettingRoomClothesCrossedOutImage);
+        SetImageFillValue(bettingRoomCorpsesCrossedOutImage);
+        SetImageFillValue(bettingRoomDocumentsCrossedOutImage);
+        SetImageFillValue(bettingRoomMiscellaneousCrossedOutImage);
+        SetImageFillValue(bettingRoomUVCleanablesCrossedOutImage);
+        SetImageFillValue(bettingRoomWeaponsCrossedOutImage);
         #endregion
     }
 
-    private void SetImageState(Image image, bool state)
+    private void SetImageState(Image image, bool state = false)
     {
         image.enabled = state;
+    }
+
+    private void SetImageFillValue(Image image, float amount = 0)
+    {
+        image.fillAmount = amount;
+    }
+
+    private IEnumerator FillImageOverTime(Image image, float targetFillAmount = 1f, float duration = 1f)
+    {
+        float startFill = image.fillAmount;
+        float timeElapsed = 0f;
+
+        while (timeElapsed < duration)
+        {
+            timeElapsed += Time.deltaTime;
+            image.fillAmount = Mathf.Lerp(startFill, targetFillAmount, timeElapsed / duration);
+            yield return null;
+        }
+
+        image.fillAmount = targetFillAmount;
     }
 }
