@@ -419,7 +419,11 @@ public class TabletUIManager : MonoBehaviour
     [SerializeField] private int bettingRoomMiscellaneousMaxAmount = 0;
     private int bettingRoomMiscellaneousCurrentAmount = 0;
     #endregion
-    
+
+    [Header("Config")]
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string crossOutEvent = null;
+
     private List<GameObject> tabs = null;
 
     private void Awake()
@@ -435,6 +439,83 @@ public class TabletUIManager : MonoBehaviour
             bettingRoomPanel
         };
 
+        #region BAR CURRENT AMOUNT INIT
+        barArrangablesCurrentAmount = 0;
+        barBloodCurrentAmount = 0;
+        barBloodyObjectsCurrentAmount = 0;
+        barClothesCurrentAmount = 0;
+        barCorpsesCurrentAmount = 0;
+        barDocumentsCurrentAmount = 0;
+        barMiscellaneousCurrentAmount = 0;
+        barUVCleanablesCurrentAmount = 0;
+        barWeaponsCurrentAmount = 0;
+        #endregion
+        #region MEN'S BATHROOM CURRENT AMOUNT INIT
+        menBathroomArrangablesCurrentAmount = 0;
+        menBathroomBloodCurrentAmount = 0;
+        menBathroomBloodyObjectsCurrentAmount = 0;
+        menBathroomClothesCurrentAmount = 0;
+        menBathroomCorpsesCurrentAmount = 0;
+        menBathroomDocumentsCurrentAmount = 0;
+        menBathroomMiscellaneousCurrentAmount = 0;
+        menBathroomUVCleanablesCurrentAmount = 0;
+        menBathroomWeaponsCurrentAmount = 0;
+        #endregion
+        #region WOMEN'S BATHROOM CURRENT AMOUNT INIT
+        womenBathroomArrangablesCurrentAmount = 0;
+        womenBathroomBloodCurrentAmount = 0;
+        womenBathroomBloodyObjectsCurrentAmount = 0;
+        womenBathroomClothesCurrentAmount = 0;
+        womenBathroomCorpsesCurrentAmount = 0;
+        womenBathroomDocumentsCurrentAmount = 0;
+        womenBathroomMiscellaneousCurrentAmount = 0;
+        womenBathroomUVCleanablesCurrentAmount = 0;
+        womenBathroomWeaponsCurrentAmount = 0;
+        #endregion
+        #region KITCHEN CURRENT AMOUNT INIT
+        kitchenArrangablesCurrentAmount = 0;
+        kitchenBloodCurrentAmount = 0;
+        kitchenBloodyObjectsCurrentAmount = 0;
+        kitchenClothesCurrentAmount = 0;
+        kitchenCorpsesCurrentAmount = 0;
+        kitchenDocumentsCurrentAmount = 0;
+        kitchenMiscellaneousCurrentAmount = 0;
+        kitchenUVCleanablesCurrentAmount = 0;
+        kitchenWeaponsCurrentAmount = 0;
+        #endregion
+        #region STORAGE ROOM CURRENT AMOUNT INIT
+        storageArrangablesCurrentAmount = 0;
+        storageBloodCurrentAmount = 0;
+        storageBloodyObjectsCurrentAmount = 0;
+        storageClothesCurrentAmount = 0;
+        storageCorpsesCurrentAmount = 0;
+        storageDocumentsCurrentAmount = 0;
+        storageMiscellaneousCurrentAmount = 0;
+        storageUVCleanablesCurrentAmount = 0;
+        storageWeaponsCurrentAmount = 0;
+        #endregion
+        #region VIP ROOM CROSSED OUT IMAGE
+        vipRoomArrangablesCurrentAmount = 0;
+        vipRoomBloodCurrentAmount = 0;
+        vipRoomBloodyObjectsCurrentAmount = 0;
+        vipRoomClothesCurrentAmount = 0;
+        vipRoomCorpsesCurrentAmount = 0;
+        vipRoomDocumentsCurrentAmount = 0;
+        vipRoomMiscellaneousCurrentAmount = 0;
+        vipRoomUVCleanablesCurrentAmount = 0;
+        vipRoomWeaponsCurrentAmount = 0;
+        #endregion
+        #region BETTING ROOM CURRENT AMOUNT INIT
+        bettingRoomArrangablesCurrentAmount = 0;
+        bettingRoomBloodCurrentAmount = 0;
+        bettingRoomBloodyObjectsCurrentAmount = 0;
+        bettingRoomClothesCurrentAmount = 0;
+        bettingRoomCorpsesCurrentAmount = 0;
+        bettingRoomDocumentsCurrentAmount = 0;
+        bettingRoomMiscellaneousCurrentAmount = 0;
+        bettingRoomUVCleanablesCurrentAmount = 0;
+        bettingRoomWeaponsCurrentAmount = 0;
+        #endregion
         #region BUTTONS
         barButton.onClick.AddListener(() => { OpenTab(barPanel); });
         menBathroomButton.onClick.AddListener(() => { OpenTab(menBathroomPanel); });
@@ -598,10 +679,84 @@ public class TabletUIManager : MonoBehaviour
         SetImageFillValue(bettingRoomUVCleanablesCrossedOutImage);
         SetImageFillValue(bettingRoomWeaponsCrossedOutImage);
         #endregion
+        #region BAR TICK IMAGE
+        UpdateText(barArrangablesProgressText, barArrangablesCurrentAmount, barArrangablesMaxAmount);
+        UpdateText(barBloodProgressText, barBloodCurrentAmount, barBloodMaxAmount);
+        UpdateText(barBloodyObjectsProgressText, barBloodyObjectsCurrentAmount, barBloodyObjectsMaxAmount);
+        UpdateText(barClothesProgressText, barClothesCurrentAmount, barClothesMaxAmount);
+        UpdateText(barCorpsesProgressText, barCorpsesCurrentAmount, barCorpsesMaxAmount);
+        UpdateText(barDocumentsProgressText, barDocumentsCurrentAmount, barDocumentsMaxAmount);
+        UpdateText(barMiscellaneousProgressText, barMiscellaneousCurrentAmount, barMiscellaneousMaxAmount);
+        UpdateText(barUVCleanablesProgressText, barUVCleanablesCurrentAmount, barUVCleanablesMaxAmount);
+        UpdateText(barWeaponsProgressText, barWeaponsCurrentAmount, barWeaponsMaxAmount);
+        #endregion
+        #region MEN'S BATHROOM TICK IMAGE
+        UpdateText(menBathroomArrangablesProgressText, menBathroomArrangablesCurrentAmount, menBathroomArrangablesMaxAmount);
+        UpdateText(menBathroomBloodProgressText, menBathroomBloodCurrentAmount, menBathroomBloodMaxAmount);
+        UpdateText(menBathroomBloodyObjectsProgressText, menBathroomBloodyObjectsCurrentAmount, menBathroomBloodyObjectsMaxAmount);
+        UpdateText(menBathroomClothesProgressText, menBathroomClothesCurrentAmount, menBathroomClothesMaxAmount);
+        UpdateText(menBathroomCorpsesProgressText, menBathroomCorpsesCurrentAmount, menBathroomCorpsesMaxAmount);
+        UpdateText(menBathroomDocumentsProgressText, menBathroomDocumentsCurrentAmount, menBathroomDocumentsMaxAmount);
+        UpdateText(menBathroomMiscellaneousProgressText, menBathroomMiscellaneousCurrentAmount, menBathroomMiscellaneousMaxAmount);
+        UpdateText(menBathroomUVCleanablesProgressText, menBathroomUVCleanablesCurrentAmount, menBathroomUVCleanablesMaxAmount);
+        UpdateText(menBathroomWeaponsProgressText, menBathroomWeaponsCurrentAmount, menBathroomWeaponsMaxAmount);
+        #endregion
+        #region WOMEN'S BATHROOM TICK IMAGE
+        UpdateText(womenBathroomArrangablesProgressText, womenBathroomArrangablesCurrentAmount, womenBathroomArrangablesMaxAmount);
+        UpdateText(womenBathroomBloodProgressText, womenBathroomBloodCurrentAmount, womenBathroomBloodMaxAmount);
+        UpdateText(womenBathroomBloodyObjectsProgressText, womenBathroomBloodyObjectsCurrentAmount, womenBathroomBloodyObjectsMaxAmount);
+        UpdateText(womenBathroomClothesProgressText, womenBathroomClothesCurrentAmount, womenBathroomClothesMaxAmount);
+        UpdateText(womenBathroomCorpsesProgressText, womenBathroomCorpsesCurrentAmount, womenBathroomCorpsesMaxAmount);
+        UpdateText(womenBathroomDocumentsProgressText, womenBathroomDocumentsCurrentAmount, womenBathroomDocumentsMaxAmount);
+        UpdateText(womenBathroomMiscellaneousProgressText, womenBathroomMiscellaneousCurrentAmount, womenBathroomMiscellaneousMaxAmount);
+        UpdateText(womenBathroomUVCleanablesProgressText, womenBathroomUVCleanablesCurrentAmount, womenBathroomUVCleanablesMaxAmount);
+        UpdateText(womenBathroomWeaponsProgressText, womenBathroomWeaponsCurrentAmount, womenBathroomWeaponsMaxAmount);
+        #endregion
+        #region KITCHEN TICK IMAGE
+        UpdateText(kitchenArrangablesProgressText, kitchenArrangablesCurrentAmount, kitchenArrangablesMaxAmount);
+        UpdateText(kitchenBloodProgressText, kitchenBloodCurrentAmount, kitchenBloodMaxAmount);
+        UpdateText(kitchenBloodyObjectsProgressText, kitchenBloodyObjectsCurrentAmount, kitchenBloodyObjectsMaxAmount);
+        UpdateText(kitchenClothesProgressText, kitchenClothesCurrentAmount, kitchenClothesMaxAmount);
+        UpdateText(kitchenCorpsesProgressText, kitchenCorpsesCurrentAmount, kitchenCorpsesMaxAmount);
+        UpdateText(kitchenDocumentsProgressText, kitchenDocumentsCurrentAmount, kitchenDocumentsMaxAmount);
+        UpdateText(kitchenMiscellaneousProgressText, kitchenMiscellaneousCurrentAmount, kitchenMiscellaneousMaxAmount);
+        UpdateText(kitchenUVCleanablesProgressText, kitchenUVCleanablesCurrentAmount, kitchenUVCleanablesMaxAmount);
+        UpdateText(kitchenWeaponsProgressText, kitchenWeaponsCurrentAmount, kitchenWeaponsMaxAmount);
+        #endregion
+        #region STORAGE ROOM TICK IMAGE
+        UpdateText(storageArrangablesProgressText, storageArrangablesCurrentAmount, storageArrangablesMaxAmount);
+        UpdateText(storageBloodProgressText, storageBloodCurrentAmount, storageBloodMaxAmount);
+        UpdateText(storageBloodyObjectsProgressText, storageBloodyObjectsCurrentAmount, storageBloodyObjectsMaxAmount);
+        UpdateText(storageClothesProgressText, storageClothesCurrentAmount, storageClothesMaxAmount);
+        UpdateText(storageCorpsesProgressText, storageCorpsesCurrentAmount, storageCorpsesMaxAmount);
+        UpdateText(storageDocumentsProgressText, storageDocumentsCurrentAmount, storageDocumentsMaxAmount);
+        UpdateText(storageMiscellaneousProgressText, storageMiscellaneousCurrentAmount, storageMiscellaneousMaxAmount);
+        UpdateText(storageUVCleanablesProgressText, storageUVCleanablesCurrentAmount, storageUVCleanablesMaxAmount);
+        UpdateText(storageWeaponsProgressText, storageWeaponsCurrentAmount, storageWeaponsMaxAmount);
+        #endregion
+        #region VIP ROOM TICK IMAGE
+        UpdateText(vipRoomArrangablesProgressText, vipRoomArrangablesCurrentAmount, vipRoomArrangablesMaxAmount);
+        UpdateText(vipRoomBloodProgressText, vipRoomBloodCurrentAmount, vipRoomBloodMaxAmount);
+        UpdateText(vipRoomBloodyObjectsProgressText, vipRoomBloodyObjectsCurrentAmount, vipRoomBloodyObjectsMaxAmount);
+        UpdateText(vipRoomClothesProgressText, vipRoomClothesCurrentAmount, vipRoomClothesMaxAmount);
+        UpdateText(vipRoomCorpsesProgressText, vipRoomCorpsesCurrentAmount, vipRoomCorpsesMaxAmount);
+        UpdateText(vipRoomDocumentsProgressText, vipRoomDocumentsCurrentAmount, vipRoomDocumentsMaxAmount);
+        UpdateText(vipRoomMiscellaneousProgressText, vipRoomMiscellaneousCurrentAmount, vipRoomMiscellaneousMaxAmount);
+        UpdateText(vipRoomUVCleanablesProgressText, vipRoomUVCleanablesCurrentAmount, vipRoomUVCleanablesMaxAmount);
+        UpdateText(vipRoomWeaponsProgressText, vipRoomWeaponsCurrentAmount, vipRoomWeaponsMaxAmount);
+        #endregion
+        #region BETTING ROOM TICK IMAGE
+        UpdateText(bettingRoomArrangablesProgressText, bettingRoomArrangablesCurrentAmount, bettingRoomArrangablesMaxAmount);
+        UpdateText(bettingRoomBloodProgressText, bettingRoomBloodCurrentAmount, bettingRoomBloodMaxAmount);
+        UpdateText(bettingRoomBloodyObjectsProgressText, bettingRoomBloodyObjectsCurrentAmount, bettingRoomBloodyObjectsMaxAmount);
+        UpdateText(bettingRoomClothesProgressText, bettingRoomClothesCurrentAmount, bettingRoomClothesMaxAmount);
+        UpdateText(bettingRoomCorpsesProgressText, bettingRoomCorpsesCurrentAmount, bettingRoomCorpsesMaxAmount);
+        UpdateText(bettingRoomDocumentsProgressText, bettingRoomDocumentsCurrentAmount, bettingRoomDocumentsMaxAmount);
+        UpdateText(bettingRoomMiscellaneousProgressText, bettingRoomMiscellaneousCurrentAmount, bettingRoomMiscellaneousMaxAmount);
+        UpdateText(bettingRoomUVCleanablesProgressText, bettingRoomUVCleanablesCurrentAmount, bettingRoomUVCleanablesMaxAmount);
+        UpdateText(bettingRoomWeaponsProgressText, bettingRoomWeaponsCurrentAmount, bettingRoomWeaponsMaxAmount);
+        #endregion
 
-        //TODO: current starts on 0
-        //TODO: text format
-        //TODO: set text to max (00/30 for example)
         //TODO: make it work
     }
 
@@ -636,5 +791,10 @@ public class TabletUIManager : MonoBehaviour
         {
             tab.SetActive(tab == selectedTab);
         }
+    }
+
+    private void UpdateText(TextMeshProUGUI text, int currentAmount, int maxAmount)
+    {
+        text.text = $"{currentAmount:D2}/{maxAmount:D2}";
     }
 }

@@ -52,6 +52,7 @@ namespace AK
         static const AkUniqueID SPONGE = 1165214467U;
         static const AkUniqueID SPONGE_DIRTY = 1222748174U;
         static const AkUniqueID SPONGE_WOOSH = 2179797042U;
+        static const AkUniqueID TABLET_CROSS_OUT_TASK = 160599783U;
         static const AkUniqueID THROW = 745179803U;
         static const AkUniqueID TOILET_PUSH = 560187437U;
         static const AkUniqueID TRASH_BAG_COLLISION = 2629743283U;

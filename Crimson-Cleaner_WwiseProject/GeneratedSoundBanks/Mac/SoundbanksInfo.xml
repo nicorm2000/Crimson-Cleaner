@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{CB68DC62-80C0-5B56-6B90-89D3372D4B4D}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{7602AB01-9B6E-491E-F957-1F42F4D8069B}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -96,7 +96,7 @@
 				</File>
 				<File Id="369679358" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Plate_Break.wav</ShortName>
-					<CachePath>SFX/Plate_Break_60B2C8A5.wem</CachePath>
+					<CachePath>SFX/Plate_Break_01740FD9.wem</CachePath>
 				</File>
 				<File Id="420430069" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Bathroom Door.wav</ShortName>
@@ -194,6 +194,10 @@
 					<ShortName>Sponge _Cleaning Dirty SFX_Audio.wav</ShortName>
 					<CachePath>SFX/Sponge _Cleaning Dirty SFX_Audio_184DB1B4.wem</CachePath>
 				</File>
+				<File Id="928834380" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Tablet_Cross_Out_Task.wav</ShortName>
+					<CachePath>SFX/Tablet_Cross_Out_Task_59688096.wem</CachePath>
+				</File>
 				<File Id="951993581" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Knife Collision.wav</ShortName>
 					<CachePath>SFX/Knife Collision_E8289CD1.wem</CachePath>
@@ -204,7 +208,7 @@
 				</File>
 				<File Id="988590754" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Drop_Boiling_Water.wav</ShortName>
-					<CachePath>SFX/Drop_Boiling_Water_F4C9BF86.wem</CachePath>
+					<CachePath>SFX/Drop_Boiling_Water_07E613B0.wem</CachePath>
 				</File>
 				<File Id="994448371" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Lights Switch.wav</ShortName>
@@ -419,6 +423,11 @@
 						<MediaRef Id="139344711"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="160599783" Name="Tablet_Cross_Out_Task" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+					<MediaRefs>
+						<MediaRef Id="928834380"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="745179803" Name="Throw" DurationType="OneShot" DurationMin="0.28820464" DurationMax="0.32349876">
 					<MediaRefs>
 						<MediaRef Id="1662537"/>
@@ -481,5 +490,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{C7CDAD48-C6A7-3A8C-84E5-F627D17153BB}</FileHash>
+	<FileHash>{30BE4C4B-2410-B7AE-80C5-3C4D35811281}</FileHash>
 </SoundBanksInfo>
