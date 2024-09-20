@@ -1,11 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class HighTierOutcome : MonoBehaviour
 {
     public UnityEvent TriggerOutcome;
+    public float duration;
+    public bool isActiveNow = false;
 
     private void OnEnable()
     {
@@ -15,6 +16,12 @@ public class HighTierOutcome : MonoBehaviour
     private void Init()
     {
         TriggerOutcome?.Invoke();
+        StartCoroutine(SetHighTierActive());
+    }
+
+    private IEnumerator SetHighTierActive()
+    {
+        yield return new WaitForSeconds(duration);
         gameObject.SetActive(false);
     }
 }

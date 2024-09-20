@@ -1,9 +1,7 @@
 using IE.RichFX;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.Rendering.HighDefinition;
 
 public class Concentration : MonoBehaviour
 {
@@ -88,6 +86,7 @@ public class Concentration : MonoBehaviour
         else
         {
             gameStateManager.SetDefaultLayer();
+            SanityManager.Instance.isConcentrationActive = false;
         }
     }
 }

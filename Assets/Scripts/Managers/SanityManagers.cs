@@ -45,6 +45,7 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
 
     public bool isRageActive = false;
     public bool isCatatoniaActive = false;
+    public bool isConcentrationActive = false;
     public bool shouldRageTrigger = false;
     public bool shouldCatatoniaTrigger = false;
     public float scalarAddition = 0f;
@@ -57,7 +58,7 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
     private float mediumTierTimer = 0f;
     private float highTierTimer = 0f;
 
-    private bool isHighTierActive = false;
+    public bool isHighTierActive = false;
     private bool lowTierOutcomeActive = false;
     private bool mediumTierOutcomeActive = false;
 
@@ -89,14 +90,14 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
         //    highTierOutcomes[0].gameObject.SetActive(true);
 
         // Quick catatonia test
-        if (shouldCatatoniaTrigger && !isCatatoniaActive)
-            highTierOutcomes[1].gameObject.SetActive(true);
+        //if (shouldCatatoniaTrigger && !isCatatoniaActive)
+        //    highTierOutcomes[1].gameObject.SetActive(true);
 
         //if (Input.GetKeyDown(KeyCode.J))
         //    highTierOutcomes[1].gameObject.SetActive(true);
-
-        if (Input.GetKeyDown(KeyCode.J))
-            highTierOutcomes[2].gameObject.SetActive(true);
+        //
+        //if (Input.GetKeyDown(KeyCode.I))
+        //    highTierOutcomes[2].gameObject.SetActive(true);
 
         //Debug.Log("High tier: " + highTierTimer);
     }
@@ -130,22 +131,39 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
             if (!lowTierOutcomeActive && !mediumTierOutcomeActive)
             {
                 // Proper high tier tests
-                //int randomIndex = Random.Range(0, highTierOutcomes.Length);
-                //highTierOutcomes[randomIndex].TriggerOutcome?.Invoke();
-
-                //Quick rage test
-                //highTierOutcomes[0].gameObject.SetActive(true);
-
-                //Quick catatonia test
-                //highTierOutcomes[1].gameObject.SetActive(true);
-
-                //TriggerOutcome(Tiers.High, highTierOutcomes, ref isHighTierActive);
+                int randomIndex = Random.Range(0, highTierOutcomes.Length);
+                highTierOutcomes[randomIndex].gameObject.SetActive(true);
+                StartCoroutine(StartOutcome(highTierOutcomes[randomIndex]));
             }
             else
             {
                 Debug.LogWarning("Esperando a que los outcomes de los tiers bajo o medio terminen antes de iniciar el high tier (Brote).");
             }
         }
+    }
+
+    private IEnumerator StartOutcome(HighTierOutcome outcome)
+    {
+        outcome.isActiveNow = true;
+
+        isHighTierActive = true;
+
+        //Debug.Log(outcome.tier + ": " + outcome.eventID + " started");
+
+        yield return new WaitForSeconds(outcome.duration);
+
+        isHighTierActive = false;
+
+        lowTierDuration = Random.Range(lowTierDurationMin, lowTierDurationMax);
+        mediumTierDuration = Random.Range(mediumTierDurationMin, mediumTierDurationMax);
+        highTierDuration = Random.Range(highTierDurationMin, highTierDurationMax);
+
+        lowTierTimer = 0f;
+        mediumTierTimer = 0f;
+        highTierTimer = 0f;
+
+        outcome.isActiveNow = false;
+        //Debug.Log(outcome.tier + ": " + outcome.eventID + " : finished");
     }
 
     private void TriggerOutcome(Tiers tier, Outcome[] outcomes, ref bool outcomeActive)
@@ -282,5 +300,9 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
     {
         isCatatoniaActive = true;
     }
-}
 
+    public void TriggerConcentrationState()
+    {
+        isConcentrationActive = true;
+    }
+}

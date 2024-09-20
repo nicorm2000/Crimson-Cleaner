@@ -146,7 +146,7 @@ public class PlayerController : MonoBehaviour
 
     public void TeleportPlayer(float teleportQueue)
     {
-        Invoke("WaitForTeleportQueue", teleportQueue);
+        Invoke(nameof(WaitForTeleportQueue), teleportQueue);
     }
 
     private void WaitForTeleportQueue()
