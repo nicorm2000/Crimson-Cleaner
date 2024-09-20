@@ -71,7 +71,6 @@ public class PlayerController : MonoBehaviour
         footstepTimer = footstepInterval;
     }
 
-
     private void Update()
     {
         Move();
@@ -146,20 +145,25 @@ public class PlayerController : MonoBehaviour
 
     public void TeleportPlayer(float teleportQueue)
     {
-        Invoke(nameof(WaitForTeleportQueue), teleportQueue);
+        StartCoroutine(TeleportAfterDelay(teleportQueue));
     }
 
-    private void WaitForTeleportQueue()
+    private IEnumerator TeleportAfterDelay(float teleportQueue)
     {
+        yield return new WaitForSeconds(teleportQueue);
+
         while (newRandom == previousRandom)
         {
             newRandom = UnityEngine.Random.Range(0, spawnPoints.Length);
         }
+
         previousRandom = newRandom;
-        gameObject.transform.position = spawnPoints[newRandom].transform.position;
+
+        transform.position = spawnPoints[newRandom].position;
         float newRotation = UnityEngine.Random.Range(0, 360);
-        gameObject.transform.rotation = Quaternion.Euler(spawnPoints[newRandom].transform.rotation.x, newRotation, spawnPoints[newRandom].transform.rotation.z);
-        Debug.Log("New Player position: " + gameObject.transform.position);
+        transform.rotation = Quaternion.Euler(0, newRotation, 0);
+
+        Debug.Log("New Player position: " + transform.position);
     }
 
     private void HandleFootsteps()
