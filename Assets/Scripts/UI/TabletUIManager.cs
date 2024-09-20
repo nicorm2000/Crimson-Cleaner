@@ -6,6 +6,16 @@ using UnityEngine.UI;
 
 public class TabletUIManager : MonoBehaviour
 {
+    #region SCRIPTS
+    [Header("Config")]
+    [SerializeField] private GameStateManager gameStateManager = null;
+    #endregion
+    #region AUDIO
+    [Header("Audio")]
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string clickEvent = null;
+    [SerializeField] private string crossOutEvent = null;
+    #endregion
     #region BAR VARIABLES
     [Header("Bar")]
     [SerializeField] private Button barButton = null;
@@ -419,10 +429,6 @@ public class TabletUIManager : MonoBehaviour
     [SerializeField] private int bettingRoomMiscellaneousMaxAmount = 0;
     private int bettingRoomMiscellaneousCurrentAmount = 0;
     #endregion
-
-    [Header("Config")]
-    [SerializeField] private AudioManager audioManager = null;
-    [SerializeField] private string crossOutEvent = null;
 
     private List<GameObject> tabs = null;
 
