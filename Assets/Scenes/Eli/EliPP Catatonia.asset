@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 492e91124f4e4e1429fa62929626c71f, type: 3}
   m_Name: HueSaturationInvert
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   hueShift:
     m_OverrideState: 1
     m_Value: 0
   saturation:
     m_OverrideState: 1
-    m_Value: 0.3
+    m_Value: 0.41
   invert:
     m_OverrideState: 0
     m_Value: 0
@@ -34,7 +34,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c1be1b6c95cd2e41b27903b9270817f, type: 3}
   m_Name: Vignette
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   mode:
     m_OverrideState: 1
     m_Value: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: -0.46}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.046
+    m_Value: 0.092
   smoothness:
     m_OverrideState: 1
     m_Value: 1
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ba23c1b07b14b4f936aea1e9cc51e4, type: 3}
   m_Name: GaussianBlur
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.441
