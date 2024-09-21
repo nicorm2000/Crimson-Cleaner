@@ -42,6 +42,7 @@ public class CameraInteraction : MonoBehaviour
             ObjectGrabbable pickableObject = hit.collider.gameObject.GetComponent<ObjectGrabbable>();
             StealableObject objectRetrievable = hit.collider.gameObject.GetComponent<StealableObject>();
             Openable openableObject = hit.collider.gameObject.GetComponent<Openable>();
+            OpenableNoAnimator openableNoAnimatorObject = hit.collider.gameObject.GetComponent<OpenableNoAnimator>();
             //ICleanable cleanableObject = hit.collider.gameObject.GetComponent<Clean>() as ICleanable;
             WaterBucket cleanableToolObject = hit.collider.gameObject.GetComponent<WaterBucket>();
             UVLight toggableObject = hit.collider.gameObject.GetComponent<UVLight>();
@@ -89,6 +90,20 @@ public class CameraInteraction : MonoBehaviour
                 //}
 
                 AppendOpenableSprites(openableObject, ref activeSprites);
+                //lastOpenableObjectHighlighted = openableObject;
+            }
+
+            if (openableNoAnimatorObject != null && playerController.GetObjectGrabbable() == null)
+            {
+                //if (openableObject.transform.GetChild(0) != null)
+                //{
+                //    Transform childTransform = openableObject.transform.GetChild(0);
+
+                //    if (childTransform.gameObject.layer != LayerMask.NameToLayer(outlineLayerName))
+                //        childTransform.gameObject.layer = LayerMask.NameToLayer(outlineLayerName);
+                //}
+
+                AppendOpenableSprites(openableNoAnimatorObject, ref activeSprites);
                 //lastOpenableObjectHighlighted = openableObject;
             }
 

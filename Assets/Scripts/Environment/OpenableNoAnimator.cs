@@ -1,25 +1,29 @@
-using System.Collections;
 using UnityEngine;
 
 public class OpenableNoAnimator : Interactable, IOpenable
 {
     [Header("Openable Config")]
-    [SerializeField] private Transform openableTransform; // The transform that moves/rotates.
-    [SerializeField] private Vector3 openPosition; // Position when fully open.
-    [SerializeField] private Vector3 closedPosition; // Position when fully closed.
-    [SerializeField] private Vector3 openRotation; // Rotation when fully open.
-    [SerializeField] private Vector3 closedRotation; // Rotation when fully closed.
+    [SerializeField] private Transform startTransform;
+    [SerializeField] private Transform endTransform;
     [SerializeField] private float animationDuration = 1f;
     [SerializeField] private float cooldown = 0f;
 
     private float lastInteractionTime = -Mathf.Infinity;
     private bool isAnimating = false;
+    private float animationTime = 0f;
 
     public bool IsOpen { get; private set; } = false;
     public Sprite InteractMessage => CleaningManager.Instance.GetInteractMessage();
-    public bool IsInteractable => !isAnimating && (IsOpen || (Time.time - lastInteractionTime >= cooldown));
+    public bool IsInteractable => !isAnimating && (Time.time - lastInteractionTime >= cooldown);
 
-    private Coroutine animationCoroutine;
+    private Vector3 initialLocalPosition;
+    private Quaternion initialLocalRotation;
+
+    private void Start()
+    {
+        initialLocalPosition = transform.localPosition;
+        initialLocalRotation = transform.localRotation;
+    }
 
     public void Interact(PlayerController playerController)
     {
@@ -38,63 +42,57 @@ public class OpenableNoAnimator : Interactable, IOpenable
     {
         Interact(playerController);
     }
+
     private void ToggleObjectState(PlayerController playerController)
     {
-        if (playerController.GetObjectGrabbable() == null)
+        if (playerController.GetObjectGrabbable() == null && !isAnimating)
         {
             IsOpen = !IsOpen;
-            if (animationCoroutine != null)
-            {
-                StopCoroutine(animationCoroutine);
-            }
-            animationCoroutine = StartCoroutine(AnimateObject(IsOpen));
-
-            Debug.Log((IsOpen ? "Open" : "Close") + " Object: " + name);
+            StartCoroutine(AnimateObject(IsOpen));
 
             if (!string.IsNullOrEmpty(soundEvent))
             {
                 if (!string.IsNullOrEmpty(soundEvent2))
                 {
-                    if (!IsOpen)
-                    {
-                        audioManager.PlaySound(soundEvent);
-                    }
-                    else
-                    {
-                        audioManager.PlaySound(soundEvent2);
-                    }
+                    audioManager.PlaySound(IsOpen ? soundEvent2 : soundEvent);
                 }
                 else
                 {
                     audioManager.PlaySound(soundEvent);
                 }
             }
+
+            if (!IsOpen)
+            {
+                lastInteractionTime = Time.time;
+            }
         }
     }
 
-    private IEnumerator AnimateObject(bool open)
+    private System.Collections.IEnumerator AnimateObject(bool opening)
     {
         isAnimating = true;
+        animationTime = 0f;
 
-        Vector3 startPosition = openableTransform.localPosition;
-        Vector3 endPosition = open ? openPosition : closedPosition;
+        Vector3 startPos = opening ? initialLocalPosition : endTransform.localPosition;
+        Vector3 endPos = opening ? endTransform.localPosition : initialLocalPosition;
 
-        Quaternion startRotation = openableTransform.localRotation;
-        Quaternion endRotation = Quaternion.Euler(open ? openRotation : closedRotation);
+        Quaternion startRot = opening ? initialLocalRotation : endTransform.localRotation;
+        Quaternion endRot = opening ? endTransform.localRotation : initialLocalRotation;
 
-        float timeElapsed = 0f;
-
-        while (timeElapsed < animationDuration)
+        while (animationTime < animationDuration)
         {
-            openableTransform.localPosition = Vector3.Lerp(startPosition, endPosition, timeElapsed / animationDuration);
-            openableTransform.localRotation = Quaternion.Slerp(startRotation, endRotation, timeElapsed / animationDuration);
+            animationTime += Time.deltaTime;
+            float t = Mathf.Clamp01(animationTime / animationDuration);
 
-            timeElapsed += Time.deltaTime;
+            transform.localPosition = Vector3.Lerp(startPos, endPos, t);
+            transform.localRotation = Quaternion.Lerp(startRot, endRot, t);
+
             yield return null;
         }
 
-        openableTransform.localPosition = endPosition;
-        openableTransform.localRotation = endRotation;
+        transform.localPosition = endPos;
+        transform.localRotation = endRot;
 
         isAnimating = false;
     }
