@@ -50,16 +50,6 @@ public class PlayerController : MonoBehaviour
 
     private ObjectGrabbable objectGrabbable;
 
-    private void OnEnable()
-    {
-        inputManager.ChangeRotationAxisEvent += OnChangeRotationAxis;
-    }
-
-    private void OnDisable()
-    {
-        inputManager.ChangeRotationAxisEvent -= OnChangeRotationAxis;
-    }
-
     private void Start()
     {
         hasAnimator = TryGetComponent(out animator);
@@ -76,19 +66,15 @@ public class PlayerController : MonoBehaviour
         Move();
         HandleFootsteps();
 
-        if (objectGrabbable != null)
+        if (objectGrabbable != null && inputManager.RotateObject)
         {
-            if (inputManager.RotatePos)
-                objectGrabbable.RotateObject(1);
-
-            if (inputManager.RotateNeg)
-                objectGrabbable.RotateObject(-1);
+            objectGrabbable.RotateObject(inputManager.Look.x, inputManager.Look.y, camera);
         }
     }
 
     private void FixedUpdate()
     {
-        if (isCameraMovable)
+        if (isCameraMovable && !inputManager.RotateObject)
             CameraMovements();
     }
 
@@ -225,12 +211,6 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
         ToggleCameraMovement(true);
-    }
-
-    private void OnChangeRotationAxis()
-    {
-        if (objectGrabbable != null)
-            objectGrabbable.ChangeRotationAxis();
     }
 
     public void SetObjectGrabbable(ObjectGrabbable grabbable)

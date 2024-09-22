@@ -96,33 +96,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ChangeRotationAxis",
-                    "type": "Button",
-                    "id": "a3ad6d32-55bf-4f56-a0bc-342454fae1ef",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "RotatePos",
-                    "type": "Button",
-                    "id": "212d4de4-849e-4101-8f1a-7885171c4560",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "RotateNeg",
-                    "type": "Button",
-                    "id": "c1c0d7e3-9ba9-4251-9131-12a46a15e96c",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "ToolWheel",
                     "type": "Button",
                     "id": "0e29cc62-c2ca-40ea-be0d-e5a5605c15ea",
@@ -144,6 +117,15 @@
                     "name": "StoreObject",
                     "type": "Button",
                     "id": "d8dde6fd-c851-497d-89ac-6d996491db35",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RotateObejct",
+                    "type": "Button",
+                    "id": "498e49a2-97a1-490f-866a-db80bd098b35",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -428,39 +410,6 @@
                 },
                 {
                     "name": "",
-                    "id": "08164b85-5d0f-4aa4-8ef3-56251c70e577",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ChangeRotationAxis",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f59cf138-2e1e-4849-8502-2b7d46c4b0ed",
-                    "path": "<Keyboard>/1",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RotatePos",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5d3b1988-9b5c-441e-8e44-d79584e0d851",
-                    "path": "<Keyboard>/2",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RotateNeg",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "0a6ffae4-5c79-453e-a65d-40445ae16c97",
                     "path": "<Keyboard>/tab",
                     "interactions": "",
@@ -489,6 +438,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "StoreObject",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "81f15797-8a96-4f3e-8839-922523713945",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateObejct",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
