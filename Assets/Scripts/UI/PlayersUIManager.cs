@@ -14,6 +14,7 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private WaterBucket waterBucket;
     [SerializeField] private PickUpDrop pickUpDrop;
     [SerializeField] private GameStateManager gameStateManager;
+    [SerializeField] private Openable[] openables;
     [SerializeField] private GameObject tablet;
     [SerializeField] private string notebookAnimatorOpenHash;
     [SerializeField] private Animator cleaningListAnimator;
@@ -24,6 +25,7 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private float pickUpErrorDuration;
     [SerializeField] private float wrongToolErrorDuration;
     [SerializeField] private float dirtyToolErrorDuration;
+    [SerializeField] private float missingKeyErrorDuration;
 
     [Header("Tools")]
     [SerializeField] private CleaningToolReceiver[] cleaningToolReceivers;
@@ -45,6 +47,9 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private Image spongeImageWarning;
     [SerializeField] private Image handImageWarning;
     [SerializeField] private Image bucketImageWarning;
+
+    [Header("Keys UI")]
+    [SerializeField] private Image missingKeyImageWarning;
 
     [Header("Retrievable Objects")]
     [SerializeField] private TextMeshProUGUI[] documentsTexts;
@@ -78,6 +83,7 @@ public class PlayersUIManager : MonoBehaviour
     private Coroutine wrongToolMopCleaningWarningCoroutine;
     private Coroutine wrongToolSpongeCleaningWarningCoroutine;
     private Coroutine toolDirtyWarningCoroutine;
+    private Coroutine missingKeyWarningCoroutine;
     private bool isTogglingNotebook = false;
     private bool isTabletOpen = false;
 
@@ -148,6 +154,11 @@ public class PlayersUIManager : MonoBehaviour
                 retrievableObject.GetComponent<RetrievableObject>().ObjectRetrievedEvent += UpdateRetrievableTexts;
             }
         }
+
+        foreach (var openable in openables)
+        {
+            openable.ungrabbedKey += () => OnMissingKeyWarning(ref missingKeyWarningCoroutine, missingKeyImageWarning, missingKeyErrorDuration);
+        }
     }
 
     private void OnDisable()
@@ -214,6 +225,11 @@ public class PlayersUIManager : MonoBehaviour
             {
                 retrievableObject.GetComponent<RetrievableObject>().ObjectRetrievedEvent -= UpdateRetrievableTexts;
             }
+        }
+
+        foreach (var openable in openables)
+        {
+            openable.ungrabbedKey -= () => OnMissingKeyWarning(ref missingKeyWarningCoroutine, missingKeyImageWarning, missingKeyErrorDuration);
         }
     }
 
@@ -317,6 +333,15 @@ public class PlayersUIManager : MonoBehaviour
             StopCoroutine(warningCoroutine);
         }
         warningCoroutine = StartCoroutine(ShowWarning(toolImageWarning, warningDuration));
+    }
+
+    private void OnMissingKeyWarning(ref Coroutine warningCoroutine, Image missingKeyWarning, float warningDuration)
+    {
+        if (warningCoroutine != null)
+        {
+            StopCoroutine(warningCoroutine);
+        }
+        warningCoroutine = StartCoroutine(ShowWarning(missingKeyWarning, warningDuration));
     }
 
     private IEnumerator ShowWarning(Image warningImage, float duration)

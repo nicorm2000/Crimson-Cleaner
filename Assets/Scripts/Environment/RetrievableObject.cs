@@ -28,7 +28,7 @@ public class RetrievableObject : Interactable, IRetrievable
         {
             Debug.Log("Retrieve Object: " + name);
 
-            if (soundEvent != null)
+            if (soundEvent != null && audioManager != null)
                 audioManager.PlaySound(soundEvent);
 
             isObjectPickedUp = true;

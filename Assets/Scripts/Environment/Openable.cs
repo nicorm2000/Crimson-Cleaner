@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Openable : Interactable, IOpenable
@@ -5,6 +6,11 @@ public class Openable : Interactable, IOpenable
     [Header("Openable Config")]
     [SerializeField] private Animator openableAnimator;
     [SerializeField] private float cooldown = 0f;
+
+    [Header("Keys Config")]
+    [SerializeField] private KeysManager keysManager;
+    [SerializeField] private Key[] requiredKeys;
+    public event Action ungrabbedKey;
 
     private float lastInteractionTime = -Mathf.Infinity;
 
@@ -14,10 +20,28 @@ public class Openable : Interactable, IOpenable
 
     private readonly string openableOpen = "Open";
 
+    private bool isDoorOpenable = false;
+
     public void Interact(PlayerController playerController)
     {
         if (IsInteractable)
         {
+            if (requiredKeys.Length > 0)
+            {
+                if (CheckGrabbedKeys())
+                {
+                    ToggleObjectState(playerController);
+                    lastInteractionTime = Time.time;
+
+                    return;
+                }
+                else
+                {
+                    ungrabbedKey?.Invoke();
+                    return;
+                }
+            }
+
             ToggleObjectState(playerController);
             lastInteractionTime = Time.time;
         }
@@ -64,5 +88,38 @@ public class Openable : Interactable, IOpenable
                 lastInteractionTime = Time.time;
             }
         }
+    }
+
+    private bool CheckGrabbedKeys()
+    {
+        if (isDoorOpenable) return true;
+
+        int keysCounter = 0;
+
+        foreach (var key in keysManager.GetKeysList())
+        {
+            for (int i = 0; i < requiredKeys.Length; i++)
+            {
+                if (key == requiredKeys[i])
+                {
+                    if (key.isKeyPickedUp)
+                    {
+                        keysCounter++;
+                    }
+                    else
+                    {
+                        Debug.Log("Missing Key: " + key.name);
+                    }
+                }
+            }
+        }
+
+        if (keysCounter == requiredKeys.Length)
+        {
+            isDoorOpenable = true;
+            return true;
+        }
+
+        return false;
     }
 }
