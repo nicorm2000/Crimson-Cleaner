@@ -4,6 +4,7 @@ using UnityEngine;
 public class Catatonia : MonoBehaviour
 {
     [SerializeField] private PlayerController playerController;
+    [SerializeField] private VolumeController volumeController;
     [SerializeField] private Animator animator;
     [SerializeField] private string idleClosedName;
 
@@ -25,6 +26,8 @@ public class Catatonia : MonoBehaviour
 
         SanityManager.Instance.isCatatoniaActive = false;
         SanityManager.Instance.shouldCatatoniaTrigger = false;
+
+        volumeController.EndVolumeVFX();
 
         playerController.ToggleMovement(true);
         playerController.ToggleCameraMovement(true);

@@ -1,0 +1,43 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Rendering;
+
+public class VolumeController : MonoBehaviour
+{
+    [SerializeField] private Volume volume;
+
+    public float startRageTogglingDuration = 1f;
+    public float endRageTogglingDuration = 1f;
+
+    public void StartVolumeVFX()
+    {
+        volume.gameObject.SetActive(true);
+        StartCoroutine(ToggleVolumeVFX(0f, 1f, startRageTogglingDuration));
+    }
+
+    public void EndVolumeVFX()
+    {
+        StartCoroutine(ToggleVolumeVFX(1f, 0f, endRageTogglingDuration));
+        StartCoroutine(EndRageVFXCoroutine(endRageTogglingDuration));
+    }
+
+    private IEnumerator ToggleVolumeVFX(float min, float max, float duration)
+    {
+        float t = 0.0f;
+        while (t < duration) 
+        {
+            t += Time.deltaTime;
+            float normalizedTime = Mathf.Clamp01(t / duration);
+            volume.weight = Mathf.Lerp(min, max, normalizedTime);
+            yield return null;
+        }
+        volume.weight = max;
+    }
+
+    private IEnumerator EndRageVFXCoroutine(float endDuration)
+    {
+        yield return new WaitForSeconds(endDuration);
+        volume.gameObject.SetActive(false);
+    }
+}

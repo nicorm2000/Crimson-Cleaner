@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Rage : MonoBehaviour
 {
     public HighTierOutcome rageOutcome;
     public PlayerController playerController;
+
+    public VolumeController volumeController;
+
     public void StartRageDuration()
     {
         StartCoroutine((StartStartRageDurationCoroutine()));
@@ -16,6 +20,6 @@ public class Rage : MonoBehaviour
         yield return new WaitForSeconds(rageOutcome.duration);
         SanityManager.Instance.isRageActive = false;
         playerController.ModifyPlayerSpeed(3);
+        volumeController.EndVolumeVFX();
     }
-
 }
