@@ -129,14 +129,14 @@ public class PlayerController : MonoBehaviour
         footstepInterval = newSpeed;
     }
 
-    public void TeleportPlayer(float teleportQueue)
-    {
-        StartCoroutine(TeleportAfterDelay(teleportQueue));
-    }
+    //public void TeleportPlayer(float teleportQueue)
+    //{
+    //    StartCoroutine(TeleportAfterDelay(teleportQueue));
+    //}
 
-    private IEnumerator TeleportAfterDelay(float teleportQueue)
+    public void TeleportPlayer(/*float teleportQueue*/)
     {
-        yield return new WaitForSeconds(teleportQueue);
+        //yield return new WaitForSeconds(teleportQueue);
 
         while (newRandom == previousRandom)
         {
