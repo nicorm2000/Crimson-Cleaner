@@ -1,5 +1,5 @@
+using IE.RichFX;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -25,7 +25,7 @@ public class VolumeController : MonoBehaviour
     private IEnumerator ToggleVolumeVFX(float min, float max, float duration)
     {
         float t = 0.0f;
-        while (t < duration) 
+        while (t < duration)
         {
             t += Time.deltaTime;
             float normalizedTime = Mathf.Clamp01(t / duration);
@@ -35,9 +35,35 @@ public class VolumeController : MonoBehaviour
         volume.weight = max;
     }
 
+    private IEnumerator ToggleBlurVFX(float min, float max, float duration)
+    {
+        float t = 0.0f;
+        if (volume.profile.TryGet(out RadialBlur radialBlur))
+        {
+            while (t < duration)
+            {
+                t += Time.deltaTime;
+                float normalizedTime = Mathf.Clamp01(t / duration);
+                radialBlur.intensity.value = Mathf.Lerp(min, max, normalizedTime);
+                yield return null;
+            }
+            radialBlur.intensity.value = max;
+        }
+        else
+        {
+            Debug.Log("No radial blur!");
+        }
+    }
+
+
     private IEnumerator EndRageVFXCoroutine(float endDuration)
     {
         yield return new WaitForSeconds(endDuration);
         volume.gameObject.SetActive(false);
+    }
+
+    public void BlurVolume()
+    {
+        StartCoroutine(ToggleBlurVFX(0, 0.075f, startRageTogglingDuration));
     }
 }

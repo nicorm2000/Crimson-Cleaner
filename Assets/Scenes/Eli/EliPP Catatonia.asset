@@ -1,5 +1,33 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3072451396542249058
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d39411c5cccdf34d8f526da588f1ea3, type: 3}
+  m_Name: RadialBlur
+  m_EditorClassIdentifier: 
+  active: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.075
+  centerX:
+    m_OverrideState: 0
+    m_Value: 0.5
+  centerY:
+    m_OverrideState: 0
+    m_Value: 0.5
+  radius:
+    m_OverrideState: 0
+    m_Value: 0
+  samples:
+    m_OverrideState: 0
+    m_Value: 4
 --- !u!114 &-1774657356227245608
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -77,20 +105,4 @@ MonoBehaviour:
   components:
   - {fileID: -1356171944745430904}
   - {fileID: -1774657356227245608}
-  - {fileID: 8241310010961181852}
---- !u!114 &8241310010961181852
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9ba23c1b07b14b4f936aea1e9cc51e4, type: 3}
-  m_Name: GaussianBlur
-  m_EditorClassIdentifier: 
-  active: 1
-  intensity:
-    m_OverrideState: 1
-    m_Value: 0.441
+  - {fileID: -3072451396542249058}
