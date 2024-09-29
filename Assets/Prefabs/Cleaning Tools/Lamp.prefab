@@ -976,8 +976,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   environmentRaycaster: {fileID: 0}
   audioManager: {fileID: 0}
-  soundEvent: 
-  soundEvent2: 
+  soundEvent: Lamp_Switch_ON
+  soundEvent2: Lamp_Switch_OFF
   minCoverage: 0.7
   onMaterial: {fileID: 2100000, guid: ee8290a8f76b143418f70248bdd14fbc, type: 2}
   offMaterial: {fileID: 2100000, guid: e03ce029dc2ec6d41a16d69e1f91e133, type: 2}
@@ -988,6 +988,8 @@ MonoBehaviour:
   - {fileID: 1274849356388457565}
   - {fileID: 3938090654719934173}
   dustParticles: {fileID: 4167733171622047544}
+  loopSFXStart: Lamp_Switch_Loop
+  loopSFXEnd: Lamp_Switch_Loop_End
 --- !u!114 &7259491775674364381
 MonoBehaviour:
   m_ObjectHideFlags: 0

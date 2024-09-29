@@ -87,22 +87,22 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Lamp" ID="{5E0A10E0-F878-4D49-A432-B4DCC7CA53E7}">
+				<Event Name="Lamp_Switch_ON" ID="{5E0A10E0-F878-4D49-A432-B4DCC7CA53E7}">
 					<ChildrenList>
-						<Action Name="" ID="{C7DAD263-D62A-4DCB-BE81-F17B556B7AFD}" ShortID="672195491">
+						<Action Name="" ID="{C8302615-11E8-4E08-B3D1-F4274618A557}" ShortID="198027045">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Lamp Switch" ID="{B966E7A6-FAB4-414E-9F2E-2C9A42C1DA5D}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+									<ObjectRef Name="UV_Light_ON" ID="{7B945160-B2D3-4430-8DEE-E8598AF94019}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{8FF9C8C2-BF1E-4B9F-A15A-47D799B98633}" ShortID="819015551">
+						<Action Name="" ID="{6BC76299-77D8-4FF9-B256-985EFDEB9C6C}" ShortID="683049868">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Lamp Switch" ID="{B966E7A6-FAB4-414E-9F2E-2C9A42C1DA5D}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+									<ObjectRef Name="UV_Light_ON" ID="{7B945160-B2D3-4430-8DEE-E8598AF94019}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -1060,6 +1060,52 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Tablet_Cross_Out_Task" ID="{5D6F2C33-A592-477B-8EB7-8084062515EB}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Lamp_Switch_OFF" ID="{17DBFE97-B190-42BF-9C94-518B05324727}">
+					<ChildrenList>
+						<Action Name="" ID="{0C594E7B-10E8-40DB-A81C-527A9A3A00DF}" ShortID="721357521">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UV_Light_OFF" ID="{6087FDAC-8EEC-4C54-8E6A-4EC884D8E8B2}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{FA174AC3-3612-4516-8707-60699D735BEB}" ShortID="875234911">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UV_Light_OFF" ID="{6087FDAC-8EEC-4C54-8E6A-4EC884D8E8B2}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Lamp_Switch_Loop" ID="{A60E0681-BE89-480F-8542-FDF059ADD4C6}">
+					<ChildrenList>
+						<Action Name="" ID="{1A509BDB-1B7A-470E-B24B-3488496EA779}" ShortID="812628924">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UV_Light_Loop" ID="{558B9C6F-250C-4910-A6C1-4AB2BAECF39A}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Lamp_Switch_Loop_End" ID="{4D744E3B-014B-4188-8B6D-5FD56B15D410}">
+					<ChildrenList>
+						<Action Name="" ID="{B0FBE775-06E2-4341-8FFA-A181A3A772DE}" ShortID="852598742">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="UV_Light_Loop" ID="{558B9C6F-250C-4910-A6C1-4AB2BAECF39A}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

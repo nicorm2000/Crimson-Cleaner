@@ -178,34 +178,6 @@
 								<ActiveSource Name="Throw" ID="{C8E181EE-5FF5-46A2-9051-1E23644749DB}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="Lamp Switch" ID="{B966E7A6-FAB4-414E-9F2E-2C9A42C1DA5D}" ShortID="289277751">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Lamp Switch" ID="{FB452097-F851-4ABC-AC47-D31510A13903}">
-									<PropertyList>
-										<Property Name="FadeOutDuration" Type="Real64" Value="0.0461921353907417"/>
-										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimBegin" Type="Real64" Value="0.02"/>
-										<Property Name="TrimEnd" Type="Real64" Value="0.08"/>
-									</PropertyList>
-									<Language>SFX</Language>
-									<AudioFile>Lamp Switch.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="449118208"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Lamp Switch" ID="{FB452097-F851-4ABC-AC47-D31510A13903}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
 						<Sound Name="Cubicle Bathroom Door" ID="{38123E1E-F522-4203-868C-E6BB1BCCE307}" ShortID="724980100">
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
@@ -2215,6 +2187,107 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="Plate_Break" ID="{23461117-3AC8-4CD1-BEDC-177108049E51}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="UV_Light_Loop" ID="{558B9C6F-250C-4910-A6C1-4AB2BAECF39A}" ShortID="926579839">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="UV_Light_Loop" ID="{C89850BA-8A33-4E88-AF16-0A39059B2348}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="3.3951411687459"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>UV_Light_Loop.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="523957758"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="UV_Light_Loop" ID="{C89850BA-8A33-4E88-AF16-0A39059B2348}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="UV_Light_OFF" ID="{6087FDAC-8EEC-4C54-8E6A-4EC884D8E8B2}" ShortID="124606085">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="UV_Light_OFF" ID="{EB6AC6CD-9A04-40C8-9973-16391E3EB902}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.24376231122784"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.45"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>UV_Light_OFF.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="845704027"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="UV_Light_OFF" ID="{EB6AC6CD-9A04-40C8-9973-16391E3EB902}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="UV_Light_ON" ID="{7B945160-B2D3-4430-8DEE-E8598AF94019}" ShortID="18258949">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="UV_Light_ON" ID="{D5ECC1D0-44CD-41CB-A2D8-2B4E09618877}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.35"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>UV_Light_ON.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="279046986"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="UV_Light_ON" ID="{D5ECC1D0-44CD-41CB-A2D8-2B4E09618877}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

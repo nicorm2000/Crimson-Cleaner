@@ -8,6 +8,8 @@ public class UVLight : Interactable, IToggable
     [SerializeField] private Material offMaterial;
     [SerializeField] private Light[] uvLight;
     [SerializeField] private GameObject dustParticles;
+    [SerializeField] private string loopSFXStart;
+    [SerializeField] private string loopSFXEnd;
 
     private bool isOn = false;
     private Renderer _renderer;
@@ -52,7 +54,16 @@ public class UVLight : Interactable, IToggable
         isOn = !isOn;
         SwapMaterial(isOn);
         dustParticles.SetActive(isOn);
-        audioManager.PlaySound(soundEvent);
+        if (isOn)
+        {
+            audioManager.PlaySound(soundEvent);
+            audioManager.PlaySound(loopSFXStart);
+        }
+        else
+        {
+            audioManager.PlaySound(soundEvent2);
+            audioManager.PlaySound(loopSFXEnd);
+        }
         for (int i = 0; i < uvLight.Length; i++)
         {
             uvLight[i].enabled = isOn;
