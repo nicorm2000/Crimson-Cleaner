@@ -16,6 +16,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1165214467	Sponge			\Default Work Unit\Sponge	
 	1218911394	Gas_Stove_Turn_Off			\Default Work Unit\Gas_Stove_Turn_Off	
 	1222748174	Sponge_Dirty			\Default Work Unit\Sponge_Dirty	
+	1254856804	Select_Trash_Bin			\Default Work Unit\Select_Trash_Bin	
 	1332292784	Lamp_Switch_OFF			\Default Work Unit\Lamp_Switch_OFF	
 	1357891606	Fire_Cart			\Default Work Unit\Fire_Cart	
 	1430150536	Water_Flow_Stop			\Default Work Unit\Water_Flow_Stop	
@@ -36,6 +37,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2533397739	Bar_Door			\Default Work Unit\Bar_Door	
 	2616152363	Body_Parts_Collision			\Default Work Unit\Body_Parts_Collision	
 	2629743283	Trash_Bag_Collision			\Default Work Unit\Trash_Bag_Collision	
+	2748915226	Remove_Trash			\Default Work Unit\Remove_Trash	
 	2768174490	Lamp_Switch_ON			\Default Work Unit\Lamp_Switch_ON	
 	2786157920	Retrieve_Clothes			\Default Work Unit\Retrieve_Clothes	
 	2790747934	Water_Drop			\Default Work Unit\Water_Drop	
@@ -44,6 +46,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2970993869	Plate_Breaking			\Default Work Unit\Plate_Breaking	
 	2997531735	Machete_Collision			\Default Work Unit\Machete_Collision	
 	3141789928	Cubicle_Bathroom_Door			\Default Work Unit\Cubicle_Bathroom_Door	
+	3160723937	Pick_Up_Trash			\Default Work Unit\Pick_Up_Trash	
 	3176396303	Pool_Stick_Collision			\Default Work Unit\Pool_Stick_Collision	
 	3299309797	Wash_Sponge			\Default Work Unit\Wash_Sponge	
 	3514483227	Bottle_Drop			\Default Work Unit\Bottle_Drop	
@@ -53,6 +56,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3697444650	Cart_Close			\Default Work Unit\Cart_Close	
 	3815506779	Lamp_Switch_Loop			\Default Work Unit\Lamp_Switch_Loop	
 	3830648271	Billiard_Ball_Collision			\Default Work Unit\Billiard_Ball_Collision	
+	3910342553	Swap_Trash_Bin			\Default Work Unit\Swap_Trash_Bin	
 	3983889213	Lamp_Switch_Loop_End			\Default Work Unit\Lamp_Switch_Loop_End	
 	4085905093	Close_Notebook			\Default Work Unit\Close_Notebook	
 
@@ -75,10 +79,12 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	323016438	Bucket Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Bucket Collision_86FFB826.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Bucket Collision		59924
 	339714903	Retrieve_PickUp_ClothSFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Retrieve_PickUp_ClothSFX_Audio_6104D7BD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Retrieve_PickUp_ClothSFX_Audio		249696
 	360440042	Urinal Flush	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Urinal Flush_EB6D7970.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Urinal Flush		529296
+	368920920	SelectTrashBin	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\SelectTrashBin_ABC3CD71.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\SelectTrashBin		192096
 	369679358	Plate_Break	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Plate_Break_01740FD9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Plate_Break		51456
 	420430069	Bathroom Door	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Bathroom Door_7B14B400.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Bathroom Door		79108
 	442455513	Grab & Drop	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Grab_EA0BE89E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Grab & Drop		34740
 	460527488	Water Flow	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Water Flow_37358B8B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Water Flow		1143728
+	492649218	RemoveTrash	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\RemoveTrash_F3CEAA21.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\RemoveTrash		134496
 	508666165	Toilet	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Toilet_D06961A7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Toilet		185212
 	512802184	Bucket_CleanSpongeSFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Bucket_CleanSpongeSFX_Audio_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Bucket_CleanSpongeSFX_Audio		217696
 	523957758	UV_Light_Loop	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\UV_Light_Loop_572954B4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\UV_Light_Loop		776708
@@ -96,6 +102,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	739600721	Retrieve_PickUp_DocumentsSFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Retrieve_PickUp_DocumentsSFX_Audio_CF6C2245.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Retrieve_PickUp_DocumentsSFX_Audio		186080
 	782901985	Billiard Ball Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Billiard Ball Collision_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Billiard Ball Collision		21202
 	802040487	Body Part Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Body Part Collision_371AD4B1.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Body Parts Collision\Body Part Collision		63676
+	803740784	PickUpTrash	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\PickUpTrash_7AFFBEA8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\PickUpTrash		192096
 	845704027	UV_Light_OFF	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\UV_Light_OFF_3F45E323.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\UV_Light_OFF		39692
 	892225877	Trash Bag Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\TirarBolsaBasura_1_F4D67A98.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Trash Bag Collision		265204
 	902178105	Bucket_DumpWaterSFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Bucket_DumpWaterSFX_Audio_A3BAA9D4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Bucket_DumpWaterSFX_Audio		163296
@@ -108,6 +115,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	994448371	Lights Switch	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Lights Switch_00E265F8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Lights Switch		10092
 	996095744	Fire Cart	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Fire Cart_C411068A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Fire Cart		529296
 	1039951081	Game Click	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Game Click_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\Game Click		9148
+	1050266505	SwapTrashBin	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\SwapTrashBin_A57937B3.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\SwapTrashBin		102080
 	1062373882	FootS Wood 8	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\FootS Wood 8_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Footsteps\Wood Foosteps\FootS Wood 8		44128
 	1072273638	FootS Wood 6	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\FootS Wood 3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Footsteps\Wood Foosteps\FootS Wood 6		21600
 

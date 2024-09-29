@@ -15,6 +15,12 @@ public class TrashBinController : MonoBehaviour
     [Header("New bag Config")]
     [SerializeField] private GameObject bagPrefab;
     [SerializeField] private Transform newBagTransform;
+    [Header("Audio Config")]
+    [SerializeField] private AudioManager audioManager;
+    [SerializeField] private string pickUpTrashEvent;
+    [SerializeField] private string removeTrashEvent;
+    [SerializeField] private string selectTrashBinEvent;
+    [SerializeField] private string swapTrashBinEvent;
 
     private int counter;
     private bool isBagDispatched;

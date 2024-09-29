@@ -1111,6 +1111,90 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Remove_Trash" ID="{F4794800-5F72-44FB-9263-AEDCD47E7153}">
+					<ChildrenList>
+						<Action Name="" ID="{3A655AA1-4FB1-439F-B70A-0B829F18E031}" ShortID="760807131">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RemoveTrash" ID="{2B8F45D9-BD35-4E65-8F89-577AB0F764C8}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{D24ADB1D-B0EC-4F24-92E3-69BDF1EB996F}" ShortID="154526006">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RemoveTrash" ID="{2B8F45D9-BD35-4E65-8F89-577AB0F764C8}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Pick_Up_Trash" ID="{68BE5A19-AE2A-4CDA-8D8B-D67D816302D7}">
+					<ChildrenList>
+						<Action Name="" ID="{DAF3CDA4-5C67-4374-8E23-6808DA144B72}" ShortID="524558556">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PickUpTrash" ID="{B7C405D5-AFF8-4423-A69B-EADA500D789E}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{125250C8-33CD-40EE-B398-FF0BA9E8BE49}" ShortID="453955507">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PickUpTrash" ID="{B7C405D5-AFF8-4423-A69B-EADA500D789E}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Select_Trash_Bin" ID="{5746E494-6B15-4AD0-BA1A-CCDCE2D92B0A}">
+					<ChildrenList>
+						<Action Name="" ID="{6E06FDC7-1890-4F1F-AA84-86D9C006AD6D}" ShortID="988359817">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SelectTrashBin" ID="{1DDBFA77-9EAA-4F5B-8387-B94D2D07D97E}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{F461C196-42F3-4B3E-9AF5-020453AEE067}" ShortID="863706952">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SelectTrashBin" ID="{1DDBFA77-9EAA-4F5B-8387-B94D2D07D97E}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Swap_Trash_Bin" ID="{64866131-9C5D-436C-B362-A9D7F8E2E295}">
+					<ChildrenList>
+						<Action Name="" ID="{EA4DE657-2589-4820-A407-0EA7B0307C35}" ShortID="1066707588">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SwapTrashBin" ID="{222062B8-A942-46CD-B601-301A62ED97D0}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{D118F9E4-B1E0-451B-81EC-EAEEA2145EBC}" ShortID="5631818">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SwapTrashBin" ID="{222062B8-A942-46CD-B601-301A62ED97D0}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

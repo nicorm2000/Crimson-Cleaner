@@ -2290,6 +2290,190 @@
 								<ActiveSource Name="UV_Light_ON" ID="{D5ECC1D0-44CD-41CB-A2D8-2B4E09618877}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="PickUpTrash" ID="{B7C405D5-AFF8-4423-A69B-EADA500D789E}" ShortID="859246367">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{EB26ECE6-83BB-45D2-B966-76E55AFED866}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-6"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="PickUpTrash" ID="{17758DDA-A57E-448E-B2A3-E7894268E9AC}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.237702246115124"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.388842402604509"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.6"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.6"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>PickUpTrash.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="803740784"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="PickUpTrash" ID="{17758DDA-A57E-448E-B2A3-E7894268E9AC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="RemoveTrash" ID="{2B8F45D9-BD35-4E65-8F89-577AB0F764C8}" ShortID="386946433">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{EE4CCDF7-5C88-42F3-97E1-AFCBD1D5E8E7}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-6"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="RemoveTrash" ID="{807A7941-E1AB-44E1-938A-FB0BCE3103D9}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.0998030203545633"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.178594878529219"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.7"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.4"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>RemoveTrash.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="492649218"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="RemoveTrash" ID="{807A7941-E1AB-44E1-938A-FB0BCE3103D9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="SelectTrashBin" ID="{1DDBFA77-9EAA-4F5B-8387-B94D2D07D97E}" ShortID="466226875">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{13F0C28A-8F0F-4C67-831A-9BCDD596C013}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-4"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SelectTrashBin" ID="{4A65E031-1F0A-47DB-A96E-BD9F815D159B}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.154038082731451"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.203244692492887"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.5"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.5"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>SelectTrashBin.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="368920920"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="SelectTrashBin" ID="{4A65E031-1F0A-47DB-A96E-BD9F815D159B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="SwapTrashBin" ID="{222062B8-A942-46CD-B601-301A62ED97D0}" ShortID="430307114">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{1A4E74FD-1AD4-4D6B-8637-2F594FD51113}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-4"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SwapTrashBin" ID="{7FCA9965-9258-436A-BD08-68EEF3594A1D}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.0416502516962136"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.115106150142263"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.26883344276647"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.8"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>SwapTrashBin.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1050266505"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="SwapTrashBin" ID="{7FCA9965-9258-436A-BD08-68EEF3594A1D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

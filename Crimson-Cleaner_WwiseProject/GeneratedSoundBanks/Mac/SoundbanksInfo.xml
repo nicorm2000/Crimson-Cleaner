@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{4197CB10-EB08-3FD2-F16F-15067DC715D7}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{285AED95-2BF8-CA4F-F898-98411C4C9A7D}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -98,6 +98,10 @@
 					<ShortName>Urinal Flush.wav</ShortName>
 					<CachePath>SFX/Urinal Flush_EB6D7970.wem</CachePath>
 				</File>
+				<File Id="368920920" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SelectTrashBin.wav</ShortName>
+					<CachePath>SFX/SelectTrashBin_ABC3CD71.wem</CachePath>
+				</File>
 				<File Id="369679358" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Plate_Break.wav</ShortName>
 					<CachePath>SFX/Plate_Break_01740FD9.wem</CachePath>
@@ -113,6 +117,10 @@
 				<File Id="460527488" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Water Flow.wav</ShortName>
 					<CachePath>SFX/Water Flow_37358B8B.wem</CachePath>
+				</File>
+				<File Id="492649218" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>RemoveTrash.wav</ShortName>
+					<CachePath>SFX/RemoveTrash_F3CEAA21.wem</CachePath>
 				</File>
 				<File Id="508666165" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Toilet.wav</ShortName>
@@ -182,6 +190,10 @@
 					<ShortName>Body Part Collision.wav</ShortName>
 					<CachePath>SFX/Body Part Collision_371AD4B1.wem</CachePath>
 				</File>
+				<File Id="803740784" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PickUpTrash.wav</ShortName>
+					<CachePath>SFX/PickUpTrash_7AFFBEA8.wem</CachePath>
+				</File>
 				<File Id="845704027" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UV_Light_OFF.wav</ShortName>
 					<CachePath>SFX/UV_Light_OFF_3F45E323.wem</CachePath>
@@ -229,6 +241,10 @@
 				<File Id="1039951081" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Game Click.wav</ShortName>
 					<CachePath>SFX/Game Click_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1050266505" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SwapTrashBin.wav</ShortName>
+					<CachePath>SFX/SwapTrashBin_A57937B3.wem</CachePath>
 				</File>
 				<File Id="1062373882" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FootS Wood 8.wav</ShortName>
@@ -402,6 +418,11 @@
 						<MediaRef Id="442455513"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3160723937" Name="Pick_Up_Trash" DurationType="OneShot" DurationMin="1" DurationMax="1">
+					<MediaRefs>
+						<MediaRef Id="803740784"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2970993869" Name="Plate_Breaking" DurationType="OneShot" DurationMin="0.535" DurationMax="0.535">
 					<MediaRefs>
 						<MediaRef Id="369679358"/>
@@ -410,6 +431,11 @@
 				<Event Id="3176396303" Name="Pool_Stick_Collision" DurationType="OneShot" DurationMin="0.14956743" DurationMax="0.15043384">
 					<MediaRefs>
 						<MediaRef Id="571702833"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2748915226" Name="Remove_Trash" DurationType="OneShot" DurationMin="0.7" DurationMax="0.7">
+					<MediaRefs>
+						<MediaRef Id="492649218"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2786157920" Name="Retrieve_Clothes" DurationType="OneShot" DurationMin="1.3" DurationMax="1.3">
@@ -427,6 +453,11 @@
 						<MediaRef Id="599171025"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1254856804" Name="Select_Trash_Bin" DurationType="OneShot" DurationMin="1" DurationMax="1">
+					<MediaRefs>
+						<MediaRef Id="368920920"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1165214467" Name="Sponge" DurationType="OneShot" DurationMin="0.55" DurationMax="0.55">
 					<MediaRefs>
 						<MediaRef Id="131550839"/>
@@ -440,6 +471,11 @@
 				<Event Id="2179797042" Name="Sponge_Woosh" DurationType="OneShot" DurationMin="0.09501134" DurationMax="0.09501134">
 					<MediaRefs>
 						<MediaRef Id="139344711"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3910342553" Name="Swap_Trash_Bin" DurationType="OneShot" DurationMin="0.53116655" DurationMax="0.53116655">
+					<MediaRefs>
+						<MediaRef Id="1050266505"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="160599783" Name="Tablet_Cross_Out_Task" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
@@ -509,5 +545,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{1CD2ED6E-D014-B730-D754-7ED0C408D017}</FileHash>
+	<FileHash>{23144A11-7C61-DC21-F303-6EEB449388B5}</FileHash>
 </SoundBanksInfo>
