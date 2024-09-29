@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [Header("Config")]
     [SerializeField] private InputManager inputManager;
     [SerializeField] private PlayerSensitivitySettings playerSensitivitySettings;
+    [SerializeField] private BloodFootstepGenerator bloodFootstepGenerator;
     [SerializeField] private float animationBlendSpeed;
     [SerializeField] private Transform cameraRoot;
     [SerializeField] private Transform camera;
@@ -23,8 +24,12 @@ public class PlayerController : MonoBehaviour
 
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
-    [SerializeField] private string footStepsPlayEvent = null;
-    [SerializeField] private string footStepsStopEvent = null;
+    [SerializeField] private string normalFootStepsPlayEvent = null;
+    [SerializeField] private string normalFootStepsStopEvent = null;
+    [SerializeField] private string onBloodPoolFootStepsPlayEvent = null;
+    [SerializeField] private string onBloodPoolFootStopPlayEvent = null;
+    [SerializeField] private string afterBloodPoolFootStepsPlayEvent = null;
+    [SerializeField] private string afterBloodPoolFootStopPlayEvent = null;
 
     [NonSerialized] public bool isCameraMovable = true;
     [NonSerialized] public bool isMovable = true;
@@ -159,14 +164,33 @@ public class PlayerController : MonoBehaviour
             footstepTimer -= Time.deltaTime;
             if (footstepTimer <= 0)
             {
-                audioManager.PlaySound(footStepsPlayEvent);
-                footstepTimer += footstepInterval;
+                PlayFootstepSound(true); 
+                footstepTimer = footstepInterval;
             }
         }
         else
         {
+            PlayFootstepSound(false); 
             footstepTimer = footstepInterval;
-            audioManager.PlaySound(footStepsStopEvent);
+        }
+    }
+
+    private void PlayFootstepSound(bool isMoving)
+    {
+        if (bloodFootstepGenerator.isSpawningActive)
+        {
+            if (bloodFootstepGenerator.bloodPoolDetection.isPlayerOnBloodPool)
+            {
+                audioManager.PlaySound(isMoving ? onBloodPoolFootStepsPlayEvent : onBloodPoolFootStopPlayEvent);
+            }
+            else
+            {
+                audioManager.PlaySound(isMoving ? afterBloodPoolFootStepsPlayEvent : afterBloodPoolFootStopPlayEvent);
+            }
+        }
+        else
+        {
+            audioManager.PlaySound(isMoving ? normalFootStepsPlayEvent : normalFootStepsStopEvent);
         }
     }
 

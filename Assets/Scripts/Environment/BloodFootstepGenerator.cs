@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BloodFootstepGenerator : MonoBehaviour
 {
+    public BloodPoolDetection bloodPoolDetection;
     [SerializeField] private GameObject player;
-    [SerializeField] private BloodPoolDetection bloodPoolDetection;
     [SerializeField] private InputManager inputManager;
     [SerializeField] private float bloodPrintSpawningDuration;
     [SerializeField] private float bloodPrintSpawnDelay;
@@ -19,7 +19,8 @@ public class BloodFootstepGenerator : MonoBehaviour
 
     private bool isLeftFootNext = true;
     private bool canSpawnBloodPrint = true;
-    private bool isSpawningActive = false;
+
+    public bool isSpawningActive = false;
 
     private void OnEnable()
     {

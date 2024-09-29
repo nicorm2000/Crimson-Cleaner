@@ -8,13 +8,20 @@ public class BloodPoolDetection : MonoBehaviour
 
     public event Action poolDetected;
 
+    public bool isPlayerOnBloodPool = false;
+
     private void Update()
     {
         RaycastHit hit;
 
         if (Physics.Raycast(transform.position, -transform.up, out hit, raycastDistance, raycastLayer))
         {
+            isPlayerOnBloodPool = true;
             poolDetected?.Invoke();
+        }
+        else
+        {
+            isPlayerOnBloodPool = false;
         }
     }
 
