@@ -1216,6 +1216,77 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Object_Placement_Confirmation" ID="{D2153521-7BAD-42B0-9440-CC09032B37C9}">
+					<ChildrenList>
+						<Action Name="" ID="{38CB402E-C302-4E51-AB39-8652A6AF228A}" ShortID="1059069838">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Object_Placement_Confirmation" ID="{67B8EFAC-A90B-44AE-9829-033B31DAF45E}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{D0B4E053-3AD6-45C3-8208-335231E1C083}" ShortID="243625922">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Object_Placement_Confirmation" ID="{67B8EFAC-A90B-44AE-9829-033B31DAF45E}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Bloodpool_Footstep_Play" ID="{EF3FCAD0-2DA4-4515-88AB-6B82722485CC}">
+					<ChildrenList>
+						<Action Name="" ID="{06CEF999-1E4B-4D86-8535-1BBF4C092195}" ShortID="1033915591">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bloodpool Footsteps" ID="{024B19CD-A9EF-4BBE-B2E4-A54C25F29DEA}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Bloodpool_Footstep_Stop" ID="{7C68E360-D958-42BD-9DB3-14A783634DED}">
+					<ChildrenList>
+						<Action Name="" ID="{2DB9D09A-A0C4-4351-A9B6-8CB3EC68FC4A}" ShortID="4122311">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bloodpool Footsteps" ID="{024B19CD-A9EF-4BBE-B2E4-A54C25F29DEA}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Bloody_Footstep_Play" ID="{37FA4361-53F1-41F7-8D78-C84DA09737A1}">
+					<ChildrenList>
+						<Action Name="" ID="{CA9C06AD-BBF1-4897-9284-CE721908E492}" ShortID="287668049">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bloody Footsteps" ID="{0BB13573-C393-4B2E-B3AD-9323133F4AAD}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Bloody_Footstep_Stop" ID="{607C9D39-7D7F-49F7-AC56-B97A4BFC404F}">
+					<ChildrenList>
+						<Action Name="" ID="{37280869-2CD1-4513-BE8B-9B7BAAE45B6B}" ShortID="554771874">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bloody Footsteps" ID="{0BB13573-C393-4B2E-B3AD-9323133F4AAD}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

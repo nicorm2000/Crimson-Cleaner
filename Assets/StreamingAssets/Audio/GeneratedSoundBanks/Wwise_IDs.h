@@ -16,6 +16,10 @@ namespace AK
         static const AkUniqueID BAR_DOOR = 2533397739U;
         static const AkUniqueID BATHROOM_DOOR = 1431659638U;
         static const AkUniqueID BILLIARD_BALL_COLLISION = 3830648271U;
+        static const AkUniqueID BLOODPOOL_FOOTSTEP_PLAY = 3337018563U;
+        static const AkUniqueID BLOODPOOL_FOOTSTEP_STOP = 1357019017U;
+        static const AkUniqueID BLOODY_FOOTSTEP_PLAY = 4007099146U;
+        static const AkUniqueID BLOODY_FOOTSTEP_STOP = 1116333876U;
         static const AkUniqueID BODY_PARTS_COLLISION = 2616152363U;
         static const AkUniqueID BOTTLE_BREAKING = 3569692999U;
         static const AkUniqueID BOTTLE_DROP = 3514483227U;
@@ -46,6 +50,7 @@ namespace AK
         static const AkUniqueID MOP_WOOSH = 525424570U;
         static const AkUniqueID MOUSE_CLICK = 3695522715U;
         static const AkUniqueID OBJECT_CLEANED = 836873265U;
+        static const AkUniqueID OBJECT_PLACEMENT_CONFIRMATION = 1967001744U;
         static const AkUniqueID OPEN_NOTEBOOK = 1673104519U;
         static const AkUniqueID PICK_UP = 467838998U;
         static const AkUniqueID PICK_UP_TRASH = 3160723937U;
