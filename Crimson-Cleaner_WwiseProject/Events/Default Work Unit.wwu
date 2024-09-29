@@ -1195,6 +1195,27 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Lamp_Collision" ID="{609435BC-3785-49B1-B46A-D0A91EDDC07B}">
+					<ChildrenList>
+						<Action Name="" ID="{F3116B18-1720-4357-84D7-C7B26D8EC8F5}" ShortID="857929442">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Lamp_Collision" ID="{B02E3A12-226B-4C6A-86B8-0FB1E0E9E694}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{B5DD03F5-2C5F-4759-88D5-98BE8E180D28}" ShortID="789136238">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Lamp_Collision" ID="{B02E3A12-226B-4C6A-86B8-0FB1E0E9E694}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

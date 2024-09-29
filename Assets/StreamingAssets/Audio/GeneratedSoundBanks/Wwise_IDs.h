@@ -34,6 +34,7 @@ namespace AK
         static const AkUniqueID GAS_STOVE_TURN_ON = 2084731556U;
         static const AkUniqueID GUN_COLLISION = 1154053212U;
         static const AkUniqueID KNIFE_COLLISION = 1966534225U;
+        static const AkUniqueID LAMP_COLLISION = 2628227250U;
         static const AkUniqueID LAMP_SWITCH_LOOP = 3815506779U;
         static const AkUniqueID LAMP_SWITCH_LOOP_END = 3983889213U;
         static const AkUniqueID LAMP_SWITCH_OFF = 1332292784U;

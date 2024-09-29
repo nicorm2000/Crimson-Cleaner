@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{285AED95-2BF8-CA4F-F898-98411C4C9A7D}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{68A15BD4-7899-8361-12F7-24CACD460D51}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -105,6 +105,10 @@
 				<File Id="369679358" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Plate_Break.wav</ShortName>
 					<CachePath>SFX/Plate_Break_01740FD9.wem</CachePath>
+				</File>
+				<File Id="380028755" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Lamp_Collision.wav</ShortName>
+					<CachePath>SFX/Lamp_Collision_5A5793BE.wem</CachePath>
 				</File>
 				<File Id="420430069" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Bathroom Door.wav</ShortName>
@@ -357,6 +361,11 @@
 						<MediaRef Id="951993581"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2628227250" Name="Lamp_Collision" DurationType="OneShot" DurationMin="0.23719633" DurationMax="0.23719633">
+					<MediaRefs>
+						<MediaRef Id="380028755"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3815506779" Name="Lamp_Switch_Loop" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="523957758"/>
@@ -545,5 +554,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{23144A11-7C61-DC21-F303-6EEB449388B5}</FileHash>
+	<FileHash>{776D3D96-61D7-F7FD-4714-0DBE49E24117}</FileHash>
 </SoundBanksInfo>

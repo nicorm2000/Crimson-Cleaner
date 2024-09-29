@@ -2474,6 +2474,63 @@
 								<ActiveSource Name="SwapTrashBin" ID="{7FCA9965-9258-436A-BD08-68EEF3594A1D}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Lamp_Collision" ID="{B02E3A12-226B-4C6A-86B8-0FB1E0E9E694}" ShortID="1031457560">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{749B863D-EE86-48C7-B2A7-6EAF5E5289F6}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{5E2A0E4B-D4D1-450B-8F17-383775121A2B}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-4"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Lamp_Collision" ID="{4118F048-2DB7-4BDD-9CFE-CC046883BCE4}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.0164149704530532"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.11736703873933"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.174819435325016"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.412015758371635"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Lamp_Collision.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="380028755"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Lamp_Collision" ID="{4118F048-2DB7-4BDD-9CFE-CC046883BCE4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
