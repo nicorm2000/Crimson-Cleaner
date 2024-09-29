@@ -68,6 +68,11 @@ public class TrashBinController : MonoBehaviour
                     fullBagGO.SetActive(true);
 
                     // Implementar audio - bag full
+                    //if (audioManager != null && pickUpTrashEvent != null)
+                    //    audioManager.PlaySound(pickUpTrashEvent);
+
+                    if (audioManager != null && removeTrashEvent != null)
+                        audioManager.PlaySound(removeTrashEvent);
 
                     counter = 0;
                     isBagDispatched = false;
@@ -75,6 +80,8 @@ public class TrashBinController : MonoBehaviour
                 else
                 {
                     // Implementar audio - trash picked up
+                    if (audioManager != null && pickUpTrashEvent != null)
+                        audioManager.PlaySound(pickUpTrashEvent);
                     //if (cleaningManager.GetPickUpTrashEvent() != null)
                     //    cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetPickUpTrashEvent());
                 }
@@ -93,6 +100,8 @@ public class TrashBinController : MonoBehaviour
             // Implementar audio - new empty bag
             //if (cleaningManager.GetAddNewTrashBagEvent() != null)
             //    cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetAddNewTrashBagEvent());
+
+            
 
             Instantiate(bagPrefab, newBagTransform.position, newBagTransform.rotation);
         }
