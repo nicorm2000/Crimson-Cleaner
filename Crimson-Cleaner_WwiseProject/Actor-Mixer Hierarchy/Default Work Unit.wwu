@@ -376,35 +376,6 @@
 								<ActiveSource Name="Water Drop" ID="{BE345E47-85EB-4BC0-8901-2DB1333BB2A8}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="Mop" ID="{C22F577A-573C-4C60-B2BC-F43E2160F25B}" ShortID="631870315">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>6</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Mop" ID="{C9EA079C-95A3-405B-8AD1-8C73FC6C4D2B}">
-									<Language>SFX</Language>
-									<AudioFile>Mop.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="647094345"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Mop" ID="{C9EA079C-95A3-405B-8AD1-8C73FC6C4D2B}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
 						<Sound Name="Object Cleaned" ID="{CA6761DB-A665-4CB2-B2FD-53CEB2E4787F}" ShortID="928035572">
 							<PropertyList>
 								<Property Name="Pitch" Type="int32">
@@ -2893,6 +2864,60 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="Object_Placement_Confirmation" ID="{BA2EE9CD-2A40-4860-A1FB-08E0F2620B23}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Mop_CleaningDirtySFX_Audio" ID="{D2B84B3F-47D6-4563-9A59-69BAEA5E7817}" ShortID="653230254">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Mop_CleaningDirtySFX_Audio" ID="{6FFD97A9-C752-41E2-AB6B-597FFF94F863}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.06"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.56"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Mop_CleaningDirtySFX_Audio.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1044247357"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Mop_CleaningDirtySFX_Audio" ID="{6FFD97A9-C752-41E2-AB6B-597FFF94F863}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Mop_CleaningSFX_Audio" ID="{84E00511-0464-4BC8-AF74-22BB692B5C65}" ShortID="393551291">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Mop_CleaningSFX_Audio" ID="{9A91B4F9-9FD4-41B6-9575-3FDAF143266C}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.06"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.56"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Mop_CleaningSFX_Audio.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1003067013"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Mop_CleaningSFX_Audio" ID="{9A91B4F9-9FD4-41B6-9575-3FDAF143266C}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

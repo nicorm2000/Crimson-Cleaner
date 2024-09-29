@@ -215,20 +215,20 @@
 				</Event>
 				<Event Name="Mop" ID="{9AB909D5-18CD-4F27-BD5C-C94F22F20871}">
 					<ChildrenList>
-						<Action Name="" ID="{96755FE2-DBC5-4654-BB11-211342949008}" ShortID="416765632">
+						<Action Name="" ID="{7E9C2532-B711-4A88-A2B4-BA1A26C4EB0B}" ShortID="753719755">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Mop" ID="{C22F577A-573C-4C60-B2BC-F43E2160F25B}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+									<ObjectRef Name="Mop_CleaningSFX_Audio" ID="{84E00511-0464-4BC8-AF74-22BB692B5C65}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{75B5E17C-F847-4DF5-8399-363C2B9D324A}" ShortID="179303627">
+						<Action Name="" ID="{F1FFC4FB-CDD5-4C26-A89E-3B79B51EA898}" ShortID="704190719">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Mop" ID="{C22F577A-573C-4C60-B2BC-F43E2160F25B}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+									<ObjectRef Name="Mop_CleaningSFX_Audio" ID="{84E00511-0464-4BC8-AF74-22BB692B5C65}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -1282,6 +1282,27 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Bloody Footsteps" ID="{0BB13573-C393-4B2E-B3AD-9323133F4AAD}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Mop_Dirty" ID="{F20EE870-B17F-426A-A8DC-B346823BEE85}">
+					<ChildrenList>
+						<Action Name="" ID="{4D9F3E01-4AD1-4D76-90A8-F9ECFEDE2905}" ShortID="1001711797">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Mop_CleaningDirtySFX_Audio" ID="{D2B84B3F-47D6-4563-9A59-69BAEA5E7817}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{4B16EC56-49E9-4E1F-854B-047D8F0DF90A}" ShortID="814317784">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Mop_CleaningDirtySFX_Audio" ID="{D2B84B3F-47D6-4563-9A59-69BAEA5E7817}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

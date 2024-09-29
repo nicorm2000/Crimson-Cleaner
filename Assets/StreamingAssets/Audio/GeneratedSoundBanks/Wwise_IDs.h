@@ -47,6 +47,7 @@ namespace AK
         static const AkUniqueID MACHETE_COLLISION = 2997531735U;
         static const AkUniqueID MONEY = 758863303U;
         static const AkUniqueID MOP = 1082004779U;
+        static const AkUniqueID MOP_DIRTY = 68175526U;
         static const AkUniqueID MOP_WOOSH = 525424570U;
         static const AkUniqueID MOUSE_CLICK = 3695522715U;
         static const AkUniqueID OBJECT_CLEANED = 836873265U;

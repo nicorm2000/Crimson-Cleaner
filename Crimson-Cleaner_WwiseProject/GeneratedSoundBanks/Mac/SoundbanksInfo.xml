@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{85040C99-5118-BD48-C764-68521C3FB6E9}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{CFB2C05B-7C02-34B3-2ACD-F66444BC5B8C}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -190,10 +190,6 @@
 					<ShortName>Footsteps_BloodySFX_Audio-[AudioTrimmer.com] (3).wav</ShortName>
 					<CachePath>SFX/Footsteps_BloodySFX_Audio-[AudioTrimmer.com] (3)_A508DE09.wem</CachePath>
 				</File>
-				<File Id="647094345" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Mop.wav</ShortName>
-					<CachePath>SFX/Mop_818F3B66.wem</CachePath>
-				</File>
 				<File Id="701664573" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Weapong Swap.wav</ShortName>
 					<CachePath>SFX/Weapong Swap_BC49C360.wem</CachePath>
@@ -278,9 +274,17 @@
 					<ShortName>Fire Cart.wav</ShortName>
 					<CachePath>SFX/Fire Cart_C411068A.wem</CachePath>
 				</File>
+				<File Id="1003067013" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Mop_CleaningSFX_Audio.wav</ShortName>
+					<CachePath>SFX/Mop_CleaningSFX_Audio_2A971F85.wem</CachePath>
+				</File>
 				<File Id="1039951081" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Game Click.wav</ShortName>
 					<CachePath>SFX/Game Click_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1044247357" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Mop_CleaningDirtySFX_Audio.wav</ShortName>
+					<CachePath>SFX/Mop_CleaningDirtySFX_Audio_2A971F85.wem</CachePath>
 				</File>
 				<File Id="1050266505" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SwapTrashBin.wav</ShortName>
@@ -441,9 +445,14 @@
 						<MediaRef Id="48240237"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1082004779" Name="Mop" DurationType="OneShot" DurationMin="0.3414966" DurationMax="0.3414966">
+				<Event Id="1082004779" Name="Mop" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
 					<MediaRefs>
-						<MediaRef Id="647094345"/>
+						<MediaRef Id="1003067013"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="68175526" Name="Mop_Dirty" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+					<MediaRefs>
+						<MediaRef Id="1044247357"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="525424570" Name="Mop_Woosh" DurationType="OneShot" DurationMin="0.1279375" DurationMax="0.1279375">
@@ -603,5 +612,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A180DC64-52B9-CA9C-A83A-0A2A16B0807C}</FileHash>
+	<FileHash>{6FF29EE6-F101-A0B0-9234-A4188AE734F3}</FileHash>
 </SoundBanksInfo>
