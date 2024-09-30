@@ -7992,17 +7992,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Version: 3
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
 --- !u!108 &1151751392
 Light:
   m_ObjectHideFlags: 0
@@ -9186,8 +9175,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 255585706}
   m_HandleRect: {fileID: 255585705}
   m_Direction: 2
-  m_Value: 0.99999964
-  m_Size: 0.049586777
+  m_Value: 1
+  m_Size: 0.0631579
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9497,7 +9486,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415518361}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: -145}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9505,8 +9494,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 12100}
+  m_AnchoredPosition: {x: 0, y: -0.0026213906}
+  m_SizeDelta: {x: 0, y: 9500}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1415518363
 MonoBehaviour:
@@ -9528,7 +9517,71 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "Programming\r\nShaders\r\nSe desarroll\xF3 un shader que permite hacer
+    efectos en toda la pantalla\r\nSe desarroll\xF3 un shader de outline\r\nNew Systems\r\nSe
+    desarroll\xF3 un sistema de Trigger Zones, el cual permite a los designers crear
+    zonas que activen una l\xF3gica espec\xEDfica a su elecci\xF3n y que se pueda
+    ejecutar cuando quieran, las veces que quieran\r\nSe desarroll\xF3 un sistema
+    gen\xE9rico para que pueda ser utilizado por los game designers el cual permite
+    hacer zonas de trigger\r\nSe desarroll\xF3 un nuevo shader de outline, falta
+    implementarlo en el juego\r\nSe desarroll\xF3 un nuevo sistema que permite que
+    las texturas tileadas puedan ser animadas\r\nSe desarroll\xF3 el sistema de cordura
+    en su completitud\r\nEstructura de outcomes de sanidad\r\nL\xF3gica de cordura\r\nSistemas
+    aumentadores de cordura\r\nSistemas decrementadores de cordura\r\nSistemas centralizados
+    para los outcomes de mayor tier como lo son agresividad, catatonia y concentraci\xF3n\r\nSe
+    desarroll\xF3 un nuevo sistema que permite abrir puertas utilizando 1 o m\xE1s
+    llaves\r\nSe desarroll\xF3 un sistema para abrir y cerrar objetos sin necesidad
+    de un animator\r\nSe desarroll\xF3 un nuevo sistema de UI para la tablet, el
+    sistema incluye\r\nLos diferentes cuartos\r\nSangre del cuarto\r\nCuerpos  del
+    cuarto\r\nAcomodables del cuarto\r\nUVs del cuarto\r\nObjetos ensangrentados
+    del cuarto\r\nArmas  del cuarto\r\nDocumentos del cuarto\r\nRopa del cuarto\r\nMiscelaneos
+    del cuarto\r\nSe implement\xF3 un nuevo sistema que permite la f\xE1cil edici\xF3n
+    de efectos de postprocesado para el equipo de arte, permiti\xE9ndoles mezclarlos
+    y usarlos sin problemas\r\nSe desarroll\xF3 un sistema de detecci\xF3n de sangre\r\nSe
+    desarroll\xF3 un sistema de instanciaci\xF3n de pasos de sangre\r\nRework Systems\r\nSe
+    reworkeo la mec\xE1nica de que un objeto sea interactuable o limpiable, permitiendo
+    que ahora sean tanto interactuable como limpiable\r\nSe reworkeo un nuevo sistema
+    de rotaci\xF3n para los objetos\r\nImplementation\r\nSe implementaron nuevos
+    modelos de\r\nBetting Room\r\nKitchen\r\nStorage Room\r\nSe implementaron nuevas
+    texturas de\r\nBetting Room\r\nKitchen\r\nStorage Room\r\nSe implementation nuevos
+    VFX\r\nSe implementaron nuevas animaciones\r\nResearch\r\nSe investig\xF3 Occlusion
+    Culling m\xE1s en detalle\r\nOptimization\r\nSe centralizaron todas los factores
+    correspondientes a cada tool en el cleaning manager para poder tener mejor control
+    de las cosas\r\nAudio\r\nSe agregaron nuevos sonidos a Wwise\r\nSe agreg\xF3
+    la l\xF3gica para ejecutar los eventos de Wwise\r\nBug Fixes\r\nFix Bug: Se corrigieron
+    los problemas que ten\xEDa el Sanity Manager el cual no ejecutaba bien los efectos
+    de cordura\r\nFix Bug: Se corrigi\xF3 el spawneo de las huellas del sistema de
+    footprints\r\nFix Bug: Se corrigi\xF3 el desfase de sonido de pasos dependiendo
+    los frames\r\nFix Bug: Se corrigi\xF3 un error que afectaba a ciertos eventos
+    de cordura haciendo que sumen o resten dos veces la cordura\r\nFix Bug: Se corrigi\xF3
+    un error a la hora de seleccionar una tool siempre volv\xEDa al centro\r\nFix
+    Bug: Se corrigi\xF3 un error a la hora de hoverear sobre una tool en el menu
+    de seleccion de tool haciendo que esta se llame constantemente\r\nFix Bug: Se
+    arregl\xF3 un error que no permit\xEDa que los audios se ejecuten correctamente\r\nArt\r\nModelos\r\nSe
+    modelaron los siguientes objetos de las salas:\r\nStorage: Blocking, Boxes, Tools,
+    Fire extinguisher, Metal Chairs, Electric Box, Food Boxes, Shelves, Water drums,
+    Walls, Roof, Floor, Door Frame, Storage Door, Lamps, Rope\r\nKitchen: Fridge,
+    Stove\r\nBetting Room: Mini fridge, Safe box\r\nCad\xE1veres: variante masculina
+    y variante femenina.\r\nManos correspondientes al evento de Catatonia.\r\nUVs\r\nSe
+    usaron los siguientes objetos de las salas:\r\nStorage: Boxes, Tools, Fire extinguisher,
+    Metal Chairs, Electric Box, Food Boxes, Shelves, Water drums, Walls, Roof, Floor,
+    Door Frame, Storage Door, Lamps, Rope\r\nKitchen: Fridge, Stove\r\nBetting Room:
+    Mini fridge, Safe box\r\nCad\xE1veres: variante masculina y variante femenina.\r\nManos
+    correspondientes al evento de Catatonia.\r\nTexturas\r\nSe texturizaron los siguientes
+    objetos de las salas:\r\nStorage: Boxes, Tools, Fire extinguisher, Metal Chairs,
+    Electric Box, Food Boxes, Shelves, Water drums, Walls, Roof, Floor, Door Frame,
+    Storage Door, Lamps, Rope\r\nKitchen: Fridge, Stove\r\nBetting Room: Mini fridge,
+    Safe box\r\nCad\xE1veres: variante masculina y variante femenina.\r\nManos correspondientes
+    al evento de Catatonia.\r\nRigs\r\nCad\xE1veres: variante masculina y variante
+    femenina + configuraci\xF3n de ragdoll.\r\nManos correspondientes al evento de
+    Catatonia.\r\nPost Procesado\r\nSe configuraron los efectos de post procesado
+    correspondientes a los evento de Catatonia y Agresividad.\r\nAnimaciones\r\nSe
+    animaron las manos correspondientes al evento de Catatonia.\r\nUI/UX\r\nSe dise\xF1aron
+    las interfaces de usuario de la lista de tareas de la tablet\r\nSe cambiaron
+    los inputs de la ui ingame para interactuar, rotar, tirar, levantar\r\nSe redise\xF1\xF3
+    la interfaz de usuario del men\xFA de tutorial\r\nSe dise\xF1aron las pantallas
+    de inicio de juego de recomendaci\xF3n para usar auriculares, fotosensibilidad
+    y contenido sensible\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11842,38 +11895,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_AllowHDROutput: 1
-  m_UseScreenCoordOverride: 0
-  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
-  m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
 --- !u!95 &1848119282
 Animator:
   serializedVersion: 5
