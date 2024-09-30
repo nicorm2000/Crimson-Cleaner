@@ -439,7 +439,7 @@ public class TabletUIManager : MonoBehaviour
             barPanel,
             menBathroomPanel,
             womenBathroomPanel,
-            womenBathroomPanel,
+            kitchenPanel,
             storagePanel,
             vipRoomPanel,
             bettingRoomPanel
