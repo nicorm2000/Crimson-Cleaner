@@ -19,7 +19,6 @@ public class Catatonia : MonoBehaviour
 
     private IEnumerator TriggerHandsAnimation()
     {
-        handsGO.SetActive(true);
         yield return new WaitForSeconds(closeEyesDelayDuration);
         StartCoroutine(TriggerVolumeVFX());
     }
@@ -28,12 +27,13 @@ public class Catatonia : MonoBehaviour
     {
         volumeController.StartVolumeVFX();
         volumeController.BlurVolume();
-        yield return new WaitForSeconds(volumeController.startRageTogglingDuration);
+        yield return new WaitForSeconds(volumeController.startRageTogglingDurationVFX);
         StartCoroutine(TriggerOpenAnimation());
     }
 
     private IEnumerator TriggerOpenAnimation()
     {
+        handsGO.SetActive(true);
         playerController.ToggleMovement(false);
         playerController.ToggleCameraMovement(false);
        

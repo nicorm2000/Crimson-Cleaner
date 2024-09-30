@@ -8,6 +8,7 @@ public class VolumeController : MonoBehaviour
     [SerializeField] private Volume volume;
 
     public float startRageTogglingDuration = 1f;
+    public float startRageTogglingDurationVFX = 1f;
     public float endRageTogglingDuration = 1f;
 
     public void StartVolumeVFX()
