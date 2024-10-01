@@ -37,6 +37,7 @@ public class GameStateManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private string defaultLayerName;
     [SerializeField] private string outlineLayerName;
+    [SerializeField] private CleaningManager cleaningManager;
 
     public InputManager inputManager;
     public PlayerController playerController;
@@ -44,7 +45,9 @@ public class GameStateManager : MonoBehaviour
     public PlayerStats playerStats;
 
     private IGameState currentState;
+    private IGameState previousState;
     private Dictionary<string, IGameState> states;
+
 
     public bool isTimerCompleted;
     public int cleanedCount = 0;
@@ -63,11 +66,13 @@ public class GameStateManager : MonoBehaviour
     private void OnEnable()
     {
         inputManager.PauseEvent += TogglePause;
+        cleaningManager.GetToolSelector().OnToolSwitched += OnToolSwitchedState;
     }
 
     private void OnDisable()
     {
         inputManager.PauseEvent -= TogglePause;
+        cleaningManager.GetToolSelector().OnToolSwitched -= OnToolSwitchedState;
     }
 
     private void Start()
@@ -143,6 +148,17 @@ public class GameStateManager : MonoBehaviour
         pickUpDrop.DropObject();
     }
 
+    public void OnToolSwitchedState(int toolIndex)
+    {
+        if (toolIndex != cleaningManager.GetTablet())
+        {
+            if (currentState is not GamePlayState)
+            {
+                TransitionToState("GamePlay");
+            }
+        }
+    }
+
     public void OnObjectBroken(GameObject brokenPiece, List<GameObject> brokenPieces)
     {
         disposableObjects.Remove(brokenPiece.GetComponent<DisposableObject>());
@@ -170,8 +186,25 @@ public class GameStateManager : MonoBehaviour
     public void TogglePause()
     {
         bool isPauseState = currentState is PauseState;
-        TransitionToState(isPauseState ? "GamePlay" : "Pause");
-        inputManager.ToggleGameplayMap(isPauseState);
+
+        if (isPauseState)
+        {
+            if (previousState is TabletState)
+            {
+                TransitionToState("Tablet");
+            }
+            else
+            {
+                TransitionToState("GamePlay");
+            }
+
+            return;
+        }
+        else
+        {
+            previousState = currentState;
+            TransitionToState("Pause");
+        }
     }
 
     public void SetOutlineLayer()
@@ -312,7 +345,9 @@ public class GamePlayState : IGameState
 
     public void EnterState(GameStateManager gameStateManager)
     {
-
+        gameStateManager.inputManager.ToggleGameplayMap(true);
+        gameStateManager.playerController.isCameraMovable = true;
+        gameStateManager.playerController.isMovable = true;
     }
 
     public void UpdateState(GameStateManager gameStateManager)
@@ -393,6 +428,7 @@ public class PauseState : IGameState
 {
     public void EnterState(GameStateManager gameStateManager)
     {
+        gameStateManager.inputManager.ToggleGameplayMap(false);
         gameStateManager.inputManager.ShowCursor();
         Debug.Log("Game Paused");
     }
@@ -405,6 +441,7 @@ public class PauseState : IGameState
     public void ExitState(GameStateManager gameStateManager)
     {
         gameStateManager.inputManager.HideCursor();
+        gameStateManager.inputManager.ToggleGameplayMap(true);
         Debug.Log("Game Resumed");
     }
 }
