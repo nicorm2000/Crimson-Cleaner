@@ -37,6 +37,20 @@ public class CleaningTool : MonoBehaviour
         DirtyIncrement = dirtyIncrementAmount;
     }
 
+    private void OnEnable()
+    {
+        cleaningManager.GetInputManager().FirstToolEvent += OnSelectFirstTool;
+        cleaningManager.GetInputManager().SecondToolEvent += OnSelectSecondTool;
+        cleaningManager.GetInputManager().ThirdToolEvent += OnSelectThirdTool;
+        cleaningManager.GetInputManager().ForthToolEvent += OnSelectForthTool;
+    }
+    private void OnDisable()
+    {
+        cleaningManager.GetInputManager().FirstToolEvent -= OnSelectFirstTool;
+        cleaningManager.GetInputManager().SecondToolEvent -= OnSelectSecondTool;
+        cleaningManager.GetInputManager().ThirdToolEvent -= OnSelectThirdTool;
+        cleaningManager.GetInputManager().ForthToolEvent -= OnSelectForthTool;
+    }
     private void Start()
     {
         for (int i = 0; i < cleaningTools.Length; i++)
@@ -220,5 +234,26 @@ public class CleaningTool : MonoBehaviour
     public void ModifyCleanSpeed(float newSpeed)
     {
         fastenAnimationSpeed = newSpeed;
+    }
+
+    private void OnSelectFirstTool()
+    {
+        if (CurrentToolIndex != 0)
+            SwitchTool(0);
+    }
+    private void OnSelectSecondTool()
+    {
+        if (CurrentToolIndex != 1)
+            SwitchTool(1);
+    }
+    private void OnSelectThirdTool()
+    {
+        if (CurrentToolIndex != 2)
+            SwitchTool(2);
+    }
+    private void OnSelectForthTool()
+    {
+        if (CurrentToolIndex != 3)
+            SwitchTool(3);
     }
 }

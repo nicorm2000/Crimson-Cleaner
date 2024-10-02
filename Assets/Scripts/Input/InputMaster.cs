@@ -152,6 +152,42 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""FirstTool"",
+                    ""type"": ""Button"",
+                    ""id"": ""77d66e2c-2fdd-4f8a-adfa-035a6cc44e78"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SecondTool"",
+                    ""type"": ""Button"",
+                    ""id"": ""d14f25ca-7378-4fe9-a722-be3cd18a6ef2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ThirdTool"",
+                    ""type"": ""Button"",
+                    ""id"": ""82a04012-5237-489d-a7dc-f04188312e1f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ForthTool"",
+                    ""type"": ""Button"",
+                    ""id"": ""65f5bed8-c601-4970-b55c-961eeebea61c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -473,6 +509,50 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""action"": ""RotateObejct"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2c3690bc-fdab-4fbc-92a5-9dc65e58381b"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FirstTool"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2b6cfe2e-668e-47db-9691-85c27dcd7441"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SecondTool"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7e07222a-b22c-4857-bbf9-40f08e2abd42"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ThirdTool"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7dec0259-2496-41e4-9098-de87fd4ac84a"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ForthTool"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -556,6 +636,10 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         m_Player_DispatchBag = m_Player.FindAction("DispatchBag", throwIfNotFound: true);
         m_Player_StoreObject = m_Player.FindAction("StoreObject", throwIfNotFound: true);
         m_Player_RotateObejct = m_Player.FindAction("RotateObejct", throwIfNotFound: true);
+        m_Player_FirstTool = m_Player.FindAction("FirstTool", throwIfNotFound: true);
+        m_Player_SecondTool = m_Player.FindAction("SecondTool", throwIfNotFound: true);
+        m_Player_ThirdTool = m_Player.FindAction("ThirdTool", throwIfNotFound: true);
+        m_Player_ForthTool = m_Player.FindAction("ForthTool", throwIfNotFound: true);
         // Pause
         m_Pause = asset.FindActionMap("Pause", throwIfNotFound: true);
         m_Pause_Pause = m_Pause.FindAction("Pause", throwIfNotFound: true);
@@ -634,6 +718,10 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_DispatchBag;
     private readonly InputAction m_Player_StoreObject;
     private readonly InputAction m_Player_RotateObejct;
+    private readonly InputAction m_Player_FirstTool;
+    private readonly InputAction m_Player_SecondTool;
+    private readonly InputAction m_Player_ThirdTool;
+    private readonly InputAction m_Player_ForthTool;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -652,6 +740,10 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         public InputAction @DispatchBag => m_Wrapper.m_Player_DispatchBag;
         public InputAction @StoreObject => m_Wrapper.m_Player_StoreObject;
         public InputAction @RotateObejct => m_Wrapper.m_Player_RotateObejct;
+        public InputAction @FirstTool => m_Wrapper.m_Player_FirstTool;
+        public InputAction @SecondTool => m_Wrapper.m_Player_SecondTool;
+        public InputAction @ThirdTool => m_Wrapper.m_Player_ThirdTool;
+        public InputAction @ForthTool => m_Wrapper.m_Player_ForthTool;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -703,6 +795,18 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @RotateObejct.started += instance.OnRotateObejct;
             @RotateObejct.performed += instance.OnRotateObejct;
             @RotateObejct.canceled += instance.OnRotateObejct;
+            @FirstTool.started += instance.OnFirstTool;
+            @FirstTool.performed += instance.OnFirstTool;
+            @FirstTool.canceled += instance.OnFirstTool;
+            @SecondTool.started += instance.OnSecondTool;
+            @SecondTool.performed += instance.OnSecondTool;
+            @SecondTool.canceled += instance.OnSecondTool;
+            @ThirdTool.started += instance.OnThirdTool;
+            @ThirdTool.performed += instance.OnThirdTool;
+            @ThirdTool.canceled += instance.OnThirdTool;
+            @ForthTool.started += instance.OnForthTool;
+            @ForthTool.performed += instance.OnForthTool;
+            @ForthTool.canceled += instance.OnForthTool;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -749,6 +853,18 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @RotateObejct.started -= instance.OnRotateObejct;
             @RotateObejct.performed -= instance.OnRotateObejct;
             @RotateObejct.canceled -= instance.OnRotateObejct;
+            @FirstTool.started -= instance.OnFirstTool;
+            @FirstTool.performed -= instance.OnFirstTool;
+            @FirstTool.canceled -= instance.OnFirstTool;
+            @SecondTool.started -= instance.OnSecondTool;
+            @SecondTool.performed -= instance.OnSecondTool;
+            @SecondTool.canceled -= instance.OnSecondTool;
+            @ThirdTool.started -= instance.OnThirdTool;
+            @ThirdTool.performed -= instance.OnThirdTool;
+            @ThirdTool.canceled -= instance.OnThirdTool;
+            @ForthTool.started -= instance.OnForthTool;
+            @ForthTool.performed -= instance.OnForthTool;
+            @ForthTool.canceled -= instance.OnForthTool;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -828,6 +944,10 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         void OnDispatchBag(InputAction.CallbackContext context);
         void OnStoreObject(InputAction.CallbackContext context);
         void OnRotateObejct(InputAction.CallbackContext context);
+        void OnFirstTool(InputAction.CallbackContext context);
+        void OnSecondTool(InputAction.CallbackContext context);
+        void OnThirdTool(InputAction.CallbackContext context);
+        void OnForthTool(InputAction.CallbackContext context);
     }
     public interface IPauseActions
     {

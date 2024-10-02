@@ -33,6 +33,10 @@ public class InputManager : MonoBehaviour
     private InputAction toogleToolWheelAction;
     private InputAction DispatchBagAction;
     private InputAction StoreObjectAction;
+    private InputAction firstToolAction;
+    private InputAction secondToolAction;
+    private InputAction thirdToolAction;
+    private InputAction forthToolAction;
 
     public event Action PickUpEvent;
     public event Action InteractEvent;
@@ -48,6 +52,10 @@ public class InputManager : MonoBehaviour
     public event Action ToggleToolWheelEndEvent;
     public event Action StoreObjectEvent;
     public event Action DispatchBagEvent;
+    public event Action FirstToolEvent;
+    public event Action SecondToolEvent;
+    public event Action ThirdToolEvent;
+    public event Action ForthToolEvent;
 
     private bool isCursorVisible = true;
     private bool isCleaning = false;
@@ -73,6 +81,10 @@ public class InputManager : MonoBehaviour
         toogleToolWheelAction = playerInput.actions.FindAction("ToolWheel");
         DispatchBagAction = playerInput.actions.FindAction("DispatchBag");
         StoreObjectAction = playerInput.actions.FindAction("StoreObject");
+        firstToolAction = playerInput.actions.FindAction("FirstTool");
+        secondToolAction = playerInput.actions.FindAction("SecondTool");
+        thirdToolAction = playerInput.actions.FindAction("ThirdTool");
+        forthToolAction = playerInput.actions.FindAction("ForthTool");
 
         moveAction.performed += OnMove;
         lookAction.performed += OnLook;
@@ -90,6 +102,10 @@ public class InputManager : MonoBehaviour
         toogleToolWheelAction.started += OnToggleToolWheelStart;
         toogleToolWheelAction.canceled += OnToggleToolWheelEnd;
         StoreObjectAction.performed += OnStoreObject;
+        firstToolAction.performed += OnFirstToolSelected;
+        secondToolAction.performed += OnSecondToolSelected;
+        thirdToolAction.performed += OnThirdToolSelected;
+        forthToolAction.performed += OnForthToolSelected;
 
         moveAction.canceled += OnMove;
         lookAction.canceled += OnLook;
@@ -194,6 +210,22 @@ public class InputManager : MonoBehaviour
     private void OnStoreObject(InputAction.CallbackContext context)
     {
         StoreObjectEvent?.Invoke();
+    }
+    private void OnFirstToolSelected(InputAction.CallbackContext context)
+    {
+        FirstToolEvent?.Invoke();
+    }
+    private void OnSecondToolSelected(InputAction.CallbackContext context)
+    {
+        SecondToolEvent?.Invoke();
+    }
+    private void OnThirdToolSelected(InputAction.CallbackContext context)
+    {
+        ThirdToolEvent?.Invoke();
+    }
+    private void OnForthToolSelected(InputAction.CallbackContext context)
+    {
+        ForthToolEvent?.Invoke();
     }
 
     public void ToggleGameplayMap(bool active)
