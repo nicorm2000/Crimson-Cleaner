@@ -6,13 +6,10 @@ public class DeepWebUIManager : MonoBehaviour
 
     [Header("Config")]
     [SerializeField] private GameObject deepWebTab = null;
+    [SerializeField] private GameObject mainMenuCanvas = null;
     [SerializeField] private Button backToLobbyButton = null;
     [SerializeField] private Button level1Button = null;
     [SerializeField] private string level1Name = null;
-    [SerializeField] private Button level2Button = null;
-    [SerializeField] private string level2Name = null;
-    [SerializeField] private Button level3Button = null;
-    [SerializeField] private string level3Name = null;
 
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
@@ -28,10 +25,7 @@ public class DeepWebUIManager : MonoBehaviour
 
     private void Awake()
     {
-        level1Button.onClick.AddListener(() => { MySceneManager.Instance.LoadSceneByNameAsync(level1Name); audioManager.PlaySound(clickEvent); });
-        level2Button.onClick.AddListener(() => { MySceneManager.Instance.LoadSceneByNameAsync(level2Name); audioManager.PlaySound(clickEvent); });
-        level3Button.onClick.AddListener(() => { MySceneManager.Instance.LoadSceneByNameAsync(level3Name); audioManager.PlaySound(clickEvent); });
-
+        level1Button.onClick.AddListener(() => { MySceneManager.Instance.LoadSceneByNameAsync(level1Name); audioManager.PlaySound(clickEvent);mainMenuCanvas.SetActive(false); });
         backToLobbyButton.onClick.AddListener(() => { OpenTab(deepWebTab, false); });
     }
 

@@ -2,13 +2,15 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using static UnityEngine.Rendering.HDROutputUtils;
 
 public class MySceneManager : MonoBehaviourSingleton<MySceneManager>
 {
     [Header("Config")]
     [SerializeField] private GameObject loadingScreen = null;
     [SerializeField] private Slider loadingSlider = null;
-    
+    [SerializeField] private float minLoadingTime = 2f;
+
     private string _sceneName = null;
 
     private void LoadScene()
@@ -23,6 +25,7 @@ public class MySceneManager : MonoBehaviourSingleton<MySceneManager>
 
     public void LoadSceneByNameAsync(string name)
     {
+        loadingScreen.SetActive(true);
         StartCoroutine(LoadSceneAsync(name));
     }
 
@@ -51,13 +54,26 @@ public class MySceneManager : MonoBehaviourSingleton<MySceneManager>
     private IEnumerator LoadSceneAsync(string name)
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(name);
+        operation.allowSceneActivation = false;
 
-        loadingScreen.SetActive(true);
+        float elapsedTime = 0f;
+        float fakeProgress = 0f;
 
         while (!operation.isDone)
         {
-            float progressValue = Mathf.Clamp01(operation.progress / 0.9f);
-            loadingSlider.value = progressValue;
+            float realProgress = Mathf.Clamp01(operation.progress / 0.9f);
+
+            elapsedTime += Time.deltaTime;
+
+            fakeProgress = Mathf.Clamp01(elapsedTime / minLoadingTime);
+
+            loadingSlider.value = Mathf.Min(realProgress, fakeProgress);
+
+            if (realProgress >= 0.9f && elapsedTime >= minLoadingTime)
+            {
+                operation.allowSceneActivation = true;
+            }
+
             yield return null;
         }
 
