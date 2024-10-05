@@ -27,7 +27,9 @@ namespace AK
         static const AkUniqueID CABINET_OPEN = 2458915778U;
         static const AkUniqueID CART_CLOSE = 3697444650U;
         static const AkUniqueID CART_OPEN = 2037208526U;
+        static const AkUniqueID CHAIR_COLLISION = 3537521357U;
         static const AkUniqueID CLOSE_NOTEBOOK = 4085905093U;
+        static const AkUniqueID COUCH_CHAIR_COLLISION = 910731106U;
         static const AkUniqueID CUBICLE_BATHROOM_DOOR = 3141789928U;
         static const AkUniqueID DOBILLIARD_BALL_COLLISION = 636776174U;
         static const AkUniqueID DRAWER_CLOSE = 3753111523U;

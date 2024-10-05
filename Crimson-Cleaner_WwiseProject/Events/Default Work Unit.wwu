@@ -1413,8 +1413,90 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Cabinet_Open" ID="{E1710E2F-39B5-4B90-AFBD-2577D1E83AA1}"/>
-				<Event Name="Cabinet_Close" ID="{55B94B8D-9975-4492-9B8E-3281ECFE1181}"/>
+				<Event Name="Cabinet_Open" ID="{E1710E2F-39B5-4B90-AFBD-2577D1E83AA1}">
+					<ChildrenList>
+						<Action Name="" ID="{335498B3-5810-48B1-A5C8-F9F892C7C0A2}" ShortID="792388079">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Cabinet_Open" ID="{BDB585CE-62E4-4D74-BAC2-5E51394B9F65}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{693FA703-006E-47C5-9DC5-9A20784CCFF6}" ShortID="23547466">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Cabinet_Open" ID="{BDB585CE-62E4-4D74-BAC2-5E51394B9F65}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Cabinet_Close" ID="{55B94B8D-9975-4492-9B8E-3281ECFE1181}">
+					<ChildrenList>
+						<Action Name="" ID="{7416AA07-D149-47E7-9977-5175776E1B70}" ShortID="426055228">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Cabinet_Close" ID="{09F8AE10-31F0-4F86-8D2C-B74FB7B44530}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{89891F2A-A981-429B-9778-8D2DC7CD74EA}" ShortID="296996638">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Cabinet_Close" ID="{09F8AE10-31F0-4F86-8D2C-B74FB7B44530}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Chair_Collision" ID="{BCB853A7-B418-404E-80AF-C5C2A17C2CE8}">
+					<ChildrenList>
+						<Action Name="" ID="{12FC6258-1D83-4695-9512-4BB0B5D93B79}" ShortID="889669190">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Chair_Collision" ID="{D0FE66DE-0EF0-44E3-B410-4BB47A6EEA53}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{D548B947-3E1D-4CFB-A054-82D063DA1ED7}" ShortID="585415078">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Chair_Collision" ID="{D0FE66DE-0EF0-44E3-B410-4BB47A6EEA53}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Couch_Chair_Collision" ID="{3FA7F595-7D5B-4589-BD30-80C8B511C1DB}">
+					<ChildrenList>
+						<Action Name="" ID="{93C38544-8A19-441B-842D-0874DB4BFC85}" ShortID="275134434">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Couch_Chair_Collision" ID="{C63F7B2E-72B4-4287-848E-BFC5A2B4E274}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{730DF488-1185-47D9-8F9C-1C8604B3A479}" ShortID="444251058">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Couch_Chair_Collision" ID="{C63F7B2E-72B4-4287-848E-BFC5A2B4E274}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

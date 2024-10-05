@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{4106A124-6A0C-B364-407C-12BDAA13E900}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{3537A7D7-51E3-79C1-DA98-99A4779399B8}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -214,6 +214,10 @@
 					<ShortName>Footsteps_BloodySFX_Audio-[AudioTrimmer.com] (3).wav</ShortName>
 					<CachePath>SFX/Footsteps_BloodySFX_Audio-[AudioTrimmer.com] (3)_A508DE09.wem</CachePath>
 				</File>
+				<File Id="689012084" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Couch_Chair_Collision.wav</ShortName>
+					<CachePath>SFX/Couch_Chair_Collision_BA26ABA7.wem</CachePath>
+				</File>
 				<File Id="701664573" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Weapong Swap.wav</ShortName>
 					<CachePath>SFX/Weapong Swap_BC49C360.wem</CachePath>
@@ -249,6 +253,10 @@
 				<File Id="866195169" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Fridge_Ciose.wav</ShortName>
 					<CachePath>SFX/Fridge_Ciose_2FE91AA3.wem</CachePath>
+				</File>
+				<File Id="885125837" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Chair_Collision.wav</ShortName>
+					<CachePath>SFX/Chair_Collision_3D700DB3.wem</CachePath>
 				</File>
 				<File Id="890074073" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps_NormalSFX_Audio-[AudioTrimmer.com] (2).wav</ShortName>
@@ -386,9 +394,19 @@
 						<MediaRef Id="296468143"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3537521357" Name="Chair_Collision" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+					<MediaRefs>
+						<MediaRef Id="885125837"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="4085905093" Name="Close_Notebook" DurationType="OneShot" DurationMin="0.7019771" DurationMax="0.7019771">
 					<MediaRefs>
 						<MediaRef Id="524869861"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="910731106" Name="Couch_Chair_Collision" DurationType="OneShot" DurationMin="0.263437" DurationMax="0.263437">
+					<MediaRefs>
+						<MediaRef Id="689012084"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3141789928" Name="Cubicle_Bathroom_Door" DurationType="OneShot" DurationMin="0.25370133" DurationMax="0.25370133">
@@ -675,5 +693,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{6ED24F0A-6A20-46AF-2047-DFE4F573CD8E}</FileHash>
+	<FileHash>{ACB02A2E-4304-19A7-F35E-484104A9290D}</FileHash>
 </SoundBanksInfo>

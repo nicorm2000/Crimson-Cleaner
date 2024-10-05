@@ -3139,6 +3139,73 @@
 								<ActiveSource Name="Cabinet_Open" ID="{C533C107-DD6A-4C75-A179-6ABABB34A41E}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Chair_Collision" ID="{D0FE66DE-0EF0-44E3-B410-4BB47A6EEA53}" ShortID="617781654">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{1973FD0A-44C3-418B-A9FD-CD96BA66845B}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-6"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Chair_Collision" ID="{F3B17FA3-B78C-4CC9-AEAB-89A2435AB2AC}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.5"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.34"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.84"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Chair_Collision.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="885125837"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Chair_Collision" ID="{F3B17FA3-B78C-4CC9-AEAB-89A2435AB2AC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Couch_Chair_Collision" ID="{C63F7B2E-72B4-4287-848E-BFC5A2B4E274}" ShortID="27189891">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Couch_Chair_Collision" ID="{B260C6FA-1D53-4CAC-BED2-C2B9C90D98E7}">
+									<Language>SFX</Language>
+									<AudioFile>Couch_Chair_Collision.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="689012084"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Couch_Chair_Collision" ID="{B260C6FA-1D53-4CAC-BED2-C2B9C90D98E7}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
