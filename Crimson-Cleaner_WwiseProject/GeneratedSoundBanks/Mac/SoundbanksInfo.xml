@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{8F44ED3A-5B9A-3F12-328F-307C530EFB6F}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{4106A124-6A0C-B364-407C-12BDAA13E900}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -33,6 +33,10 @@
 				<File Id="48240237" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Money.wav</ShortName>
 					<CachePath>SFX/Money_5C80BC33.wem</CachePath>
+				</File>
+				<File Id="52850419" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cabinet_Open.wav</ShortName>
+					<CachePath>SFX/Cabinet_Open_818F3B66.wem</CachePath>
 				</File>
 				<File Id="56451287" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Object_Placement_Confirmation.wav</ShortName>
@@ -45,6 +49,10 @@
 				<File Id="81870092" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Fridge_Open.wav</ShortName>
 					<CachePath>SFX/Fridge_Open_27B1C2E9.wem</CachePath>
+				</File>
+				<File Id="102052292" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cabinet_Close.wav</ShortName>
+					<CachePath>SFX/Cabinet_Close_818F3B66.wem</CachePath>
 				</File>
 				<File Id="131550839" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Sponge _Cleaning SFX_Audio.wav</ShortName>
@@ -166,6 +174,10 @@
 					<ShortName>Gas_Stove_End.wav</ShortName>
 					<CachePath>SFX/Gas_Stove_End_818F3B66.wem</CachePath>
 				</File>
+				<File Id="536777255" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Drawer_Open.wav</ShortName>
+					<CachePath>SFX/Drawer_Open_07B4BC02.wem</CachePath>
+				</File>
 				<File Id="540584377" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Water Tap.wav</ShortName>
 					<CachePath>SFX/Water Tap_3A40A386.wem</CachePath>
@@ -181,6 +193,10 @@
 				<File Id="592302926" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cart Close.wav</ShortName>
 					<CachePath>SFX/Cart Close_EA1541EC.wem</CachePath>
+				</File>
+				<File Id="592962953" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Drawer_Close.wav</ShortName>
+					<CachePath>SFX/Drawer_Close_687299D0.wem</CachePath>
 				</File>
 				<File Id="593332922" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps_PoolOfBloodSFX_Audio-[AudioTrimmer.com] (3).wav</ShortName>
@@ -350,6 +366,16 @@
 						<MediaRef Id="323016438"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1948672150" Name="Cabinet_Close" DurationType="OneShot" DurationMin="0.512" DurationMax="0.512">
+					<MediaRefs>
+						<MediaRef Id="102052292"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2458915778" Name="Cabinet_Open" DurationType="OneShot" DurationMin="0.512" DurationMax="0.512">
+					<MediaRefs>
+						<MediaRef Id="52850419"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3697444650" Name="Cart_Close" DurationType="OneShot" DurationMin="0.49855804" DurationMax="0.5014461">
 					<MediaRefs>
 						<MediaRef Id="592302926"/>
@@ -373,6 +399,16 @@
 				<Event Id="636776174" Name="doBilliard_Ball_Collision" DurationType="OneShot" DurationMin="0.23874481" DurationMax="0.23985058">
 					<MediaRefs>
 						<MediaRef Id="782901985"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3753111523" Name="Drawer_Close" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+					<MediaRefs>
+						<MediaRef Id="592962953"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="850583253" Name="Drawer_Open" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+					<MediaRefs>
+						<MediaRef Id="536777255"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1878686274" Name="Drop" DurationType="OneShot" DurationMin="0.19640088" DurationMax="0.19640088">
@@ -639,5 +675,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{ABDACBEE-90C1-3662-835E-A1403D4E7D54}</FileHash>
+	<FileHash>{532B4A42-6261-951C-5812-5BA8FC0AB7F0}</FileHash>
 </SoundBanksInfo>

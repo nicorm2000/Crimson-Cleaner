@@ -1371,6 +1371,50 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Drawer_Open" ID="{4C47CA2C-6AE4-45B4-B27C-09D98AF39A49}">
+					<ChildrenList>
+						<Action Name="" ID="{AB080F97-F676-454A-A2EF-662D162165C4}" ShortID="517239883">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Drawer_Open" ID="{68CF1471-4E1C-421E-BC31-5E70AAFC0AFB}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{3498CA8E-091B-48CA-8AD6-061F40FCF200}" ShortID="824989226">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Drawer_Open" ID="{68CF1471-4E1C-421E-BC31-5E70AAFC0AFB}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Drawer_Close" ID="{CAFCFE0A-FAB2-4EB7-B1AF-FF30896B9044}">
+					<ChildrenList>
+						<Action Name="" ID="{57905D63-2F22-44C7-86EE-EC2F9C78A198}" ShortID="703894300">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Drawer_Close" ID="{55EB6A31-8637-4825-A537-F04A27320A6F}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{5C3508A6-9659-4AFD-B136-71B06AEDD5D6}" ShortID="848821552">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Drawer_Close" ID="{55EB6A31-8637-4825-A537-F04A27320A6F}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Cabinet_Open" ID="{E1710E2F-39B5-4B90-AFBD-2577D1E83AA1}"/>
+				<Event Name="Cabinet_Close" ID="{55B94B8D-9975-4492-9B8E-3281ECFE1181}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

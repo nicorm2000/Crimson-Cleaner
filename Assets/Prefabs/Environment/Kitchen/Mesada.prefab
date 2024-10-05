@@ -246,6 +246,8 @@ MonoBehaviour:
   soundEvent2: 
   openableAnimator: {fileID: 3366459727386470334}
   cooldown: 0
+  keysManager: {fileID: 0}
+  requiredKeys: []
 --- !u!1 &894935558321318778
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,12 +510,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   environmentRaycaster: {fileID: 0}
   audioManager: {fileID: 0}
-  soundEvent: 
-  soundEvent2: 
+  soundEvent: Drawer_Open
+  soundEvent2: Drawer_Close
   startTransform: {fileID: 7662514349600875071}
   endTransform: {fileID: 2348415575094513207}
-  animationDuration: 1
-  cooldown: 1
+  animationDuration: 0.5
+  cooldown: 0.5
+  keysManager: {fileID: 0}
+  requiredKeys: []
 --- !u!1 &1097524363557607641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,12 +1047,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   environmentRaycaster: {fileID: 0}
   audioManager: {fileID: 0}
-  soundEvent: 
-  soundEvent2: 
+  soundEvent: Drawer_Open
+  soundEvent2: Drawer_Close
   startTransform: {fileID: 6354464640215691978}
   endTransform: {fileID: 559396583368944455}
-  animationDuration: 1
-  cooldown: 1
+  animationDuration: 0.5
+  cooldown: 0.5
+  keysManager: {fileID: 0}
+  requiredKeys: []
 --- !u!1 &2274944690106029962
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,12 +1175,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   environmentRaycaster: {fileID: 0}
   audioManager: {fileID: 0}
-  soundEvent: 
-  soundEvent2: 
+  soundEvent: Cabinet_Open
+  soundEvent2: Cabinet_Close
   startTransform: {fileID: 1087824744994857806}
   endTransform: {fileID: 5748083917290191990}
-  animationDuration: 1
-  cooldown: 1
+  animationDuration: 0.5
+  cooldown: 0.5
+  keysManager: {fileID: 0}
+  requiredKeys: []
 --- !u!1 &2387794460050634592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,6 +1440,8 @@ MonoBehaviour:
   soundEvent2: 
   openableAnimator: {fileID: 8785705666273562582}
   cooldown: 0
+  keysManager: {fileID: 0}
+  requiredKeys: []
 --- !u!1 &2528852921767678444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1621,12 +1631,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   environmentRaycaster: {fileID: 0}
   audioManager: {fileID: 0}
-  soundEvent: 
-  soundEvent2: 
+  soundEvent: Drawer_Open
+  soundEvent2: Drawer_Close
   startTransform: {fileID: 5324267986745407228}
   endTransform: {fileID: 2418529963298935805}
-  animationDuration: 1
-  cooldown: 1
+  animationDuration: 0.5
+  cooldown: 0.5
+  keysManager: {fileID: 0}
+  requiredKeys: []
 --- !u!1 &3136113268794866290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1779,12 +1791,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   environmentRaycaster: {fileID: 0}
   audioManager: {fileID: 0}
-  soundEvent: 
-  soundEvent2: 
+  soundEvent: Drawer_Open
+  soundEvent2: Drawer_Close
   startTransform: {fileID: 2042099334242549500}
   endTransform: {fileID: 5499845725387714237}
-  animationDuration: 1
-  cooldown: 1
+  animationDuration: 0.5
+  cooldown: 0.5
+  keysManager: {fileID: 0}
+  requiredKeys: []
 --- !u!1 &3573636691552260286
 GameObject:
   m_ObjectHideFlags: 0
@@ -2195,12 +2209,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   environmentRaycaster: {fileID: 0}
   audioManager: {fileID: 0}
-  soundEvent: 
-  soundEvent2: 
-  startTransform: {fileID: 7775104096804672747}
-  endTransform: {fileID: 4433265937509927414}
-  animationDuration: 1
-  cooldown: 1
+  soundEvent: Drawer_Open
+  soundEvent2: Drawer_Close
+  startTransform: {fileID: 4433265937509927414}
+  endTransform: {fileID: 7775104096804672747}
+  animationDuration: 0.5
+  cooldown: 0.5
+  keysManager: {fileID: 0}
+  requiredKeys: []
 --- !u!1 &5276427559514013536
 GameObject:
   m_ObjectHideFlags: 0
@@ -2720,12 +2736,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   environmentRaycaster: {fileID: 0}
   audioManager: {fileID: 0}
-  soundEvent: 
-  soundEvent2: 
+  soundEvent: Drawer_Open
+  soundEvent2: Drawer_Close
   startTransform: {fileID: 8856739728051156504}
   endTransform: {fileID: 4267537560049491291}
-  animationDuration: 1
-  cooldown: 1
+  animationDuration: 0.5
+  cooldown: 0.5
+  keysManager: {fileID: 0}
+  requiredKeys: []
 --- !u!1 &6880321110353770267
 GameObject:
   m_ObjectHideFlags: 0
@@ -3047,12 +3065,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   environmentRaycaster: {fileID: 0}
   audioManager: {fileID: 0}
-  soundEvent: 
-  soundEvent2: 
+  soundEvent: Cabinet_Open
+  soundEvent2: Cabinet_Close
   startTransform: {fileID: 5587092896444243274}
   endTransform: {fileID: 6115694510604789326}
-  animationDuration: 1
-  cooldown: 1
+  animationDuration: 0.5
+  cooldown: 0.5
+  keysManager: {fileID: 0}
+  requiredKeys: []
 --- !u!1 &8394695325876322506
 GameObject:
   m_ObjectHideFlags: 0
@@ -3269,12 +3289,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   environmentRaycaster: {fileID: 0}
   audioManager: {fileID: 0}
-  soundEvent: 
-  soundEvent2: 
+  soundEvent: Cabinet_Open
+  soundEvent2: Cabinet_Close
   startTransform: {fileID: 6196127352807797490}
   endTransform: {fileID: 6866488087054270373}
-  animationDuration: 1
-  cooldown: 1
+  animationDuration: 0.5
+  cooldown: 0.5
+  keysManager: {fileID: 0}
+  requiredKeys: []
 --- !u!1001 &1430003251104592374
 PrefabInstance:
   m_ObjectHideFlags: 0

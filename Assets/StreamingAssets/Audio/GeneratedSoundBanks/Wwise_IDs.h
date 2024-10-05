@@ -23,11 +23,15 @@ namespace AK
         static const AkUniqueID BOTTLE_BREAKING = 3569692999U;
         static const AkUniqueID BOTTLE_DROP = 3514483227U;
         static const AkUniqueID BUCKET_COLLISION = 1692852178U;
+        static const AkUniqueID CABINET_CLOSE = 1948672150U;
+        static const AkUniqueID CABINET_OPEN = 2458915778U;
         static const AkUniqueID CART_CLOSE = 3697444650U;
         static const AkUniqueID CART_OPEN = 2037208526U;
         static const AkUniqueID CLOSE_NOTEBOOK = 4085905093U;
         static const AkUniqueID CUBICLE_BATHROOM_DOOR = 3141789928U;
         static const AkUniqueID DOBILLIARD_BALL_COLLISION = 636776174U;
+        static const AkUniqueID DRAWER_CLOSE = 3753111523U;
+        static const AkUniqueID DRAWER_OPEN = 850583253U;
         static const AkUniqueID DROP = 1878686274U;
         static const AkUniqueID DROP_BOILING_WATER = 1925664349U;
         static const AkUniqueID FIRE_CART = 1357891606U;

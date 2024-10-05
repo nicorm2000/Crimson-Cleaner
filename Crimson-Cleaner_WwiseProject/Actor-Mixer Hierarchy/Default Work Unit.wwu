@@ -3026,6 +3026,119 @@
 								<ActiveSource Name="Fridge_Ciose" ID="{7A6DE714-125F-4DD0-BEA4-CD9B13DBA1FF}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Drawer_Close" ID="{55EB6A31-8637-4825-A537-F04A27320A6F}" ShortID="634347901">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Drawer_Close" ID="{0BFA7EA6-E936-4B3A-B0F6-137050A993AA}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.104425476034143"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.135255854672795"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Drawer_Close.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="592962953"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Drawer_Close" ID="{0BFA7EA6-E936-4B3A-B0F6-137050A993AA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Drawer_Open" ID="{68CF1471-4E1C-421E-BC31-5E70AAFC0AFB}" ShortID="20132817">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Drawer_Open" ID="{C68D4593-80E7-46E5-8AEC-1FCE30879C5C}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.75"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.25"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Drawer_Open.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="536777255"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Drawer_Open" ID="{C68D4593-80E7-46E5-8AEC-1FCE30879C5C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Cabinet_Close" ID="{09F8AE10-31F0-4F86-8D2C-B74FB7B44530}" ShortID="363066136">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Cabinet_Close" ID="{8B6DD2F5-06D8-4688-8561-A6F70EABC4BF}">
+									<Language>SFX</Language>
+									<AudioFile>Cabinet_Close.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="102052292"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Cabinet_Close" ID="{8B6DD2F5-06D8-4688-8561-A6F70EABC4BF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Cabinet_Open" ID="{BDB585CE-62E4-4D74-BAC2-5E51394B9F65}" ShortID="911901882">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Cabinet_Open" ID="{C533C107-DD6A-4C75-A179-6ABABB34A41E}">
+									<Language>SFX</Language>
+									<AudioFile>Cabinet_Open.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="52850419"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Cabinet_Open" ID="{C533C107-DD6A-4C75-A179-6ABABB34A41E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
