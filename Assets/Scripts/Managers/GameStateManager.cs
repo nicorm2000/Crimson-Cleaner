@@ -233,6 +233,11 @@ public class GameStateManager : MonoBehaviour
                 retrievableObject.gameObject.layer = LayerMask.NameToLayer(layerName);
         }
     }
+
+    public IGameState GetCurrentState()
+    {
+        return currentState;
+    }
 }
 
 public class ToolWheelState : IGameState

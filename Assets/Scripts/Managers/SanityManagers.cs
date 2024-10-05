@@ -7,6 +7,7 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
     [Header("Config")]
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private HighTierOutcome[] highTierOutcomes;
+    [SerializeField] private GameStateManager gameStateManager;
 
     [Header("Timers")]
     [SerializeField] private float lowTierDurationMin = 0f;
@@ -78,7 +79,7 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
 
     private void Update()
     {
-        if (!isHighTierActive)
+        if (!isHighTierActive && gameStateManager.GetCurrentState() is not PauseState)
         {
             IncreaseSanityBars();
         }
