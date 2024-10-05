@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{CFB2C05B-7C02-34B3-2ACD-F66444BC5B8C}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{8F44ED3A-5B9A-3F12-328F-307C530EFB6F}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -41,6 +41,10 @@
 				<File Id="75652571" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Gun Collision.wav</ShortName>
 					<CachePath>SFX/Gun Collision_83162486.wem</CachePath>
+				</File>
+				<File Id="81870092" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Fridge_Open.wav</ShortName>
+					<CachePath>SFX/Fridge_Open_27B1C2E9.wem</CachePath>
 				</File>
 				<File Id="131550839" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Sponge _Cleaning SFX_Audio.wav</ShortName>
@@ -97,6 +101,10 @@
 				<File Id="360440042" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Urinal Flush.wav</ShortName>
 					<CachePath>SFX/Urinal Flush_EB6D7970.wem</CachePath>
+				</File>
+				<File Id="363758932" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Safe_Open_Close.wav</ShortName>
+					<CachePath>SFX/Safe_Open_Close_818F3B66.wem</CachePath>
 				</File>
 				<File Id="368920920" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SelectTrashBin.wav</ShortName>
@@ -222,6 +230,10 @@
 					<ShortName>UV_Light_OFF.wav</ShortName>
 					<CachePath>SFX/UV_Light_OFF_0C544E14.wem</CachePath>
 				</File>
+				<File Id="866195169" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Fridge_Ciose.wav</ShortName>
+					<CachePath>SFX/Fridge_Ciose_2FE91AA3.wem</CachePath>
+				</File>
 				<File Id="890074073" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps_NormalSFX_Audio-[AudioTrimmer.com] (2).wav</ShortName>
 					<CachePath>SFX/Footsteps_NormalSFX_Audio-[AudioTrimmer.com] (2)_EFA29E80.wem</CachePath>
@@ -302,11 +314,6 @@
 						<MediaRef Id="420430069"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3830648271" Name="Billiard_Ball_Collision" DurationType="OneShot" DurationMin="0.23874481" DurationMax="0.23985058">
-					<MediaRefs>
-						<MediaRef Id="782901985"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="3337018563" Name="Bloodpool_Footstep_Play" DurationType="OneShot" DurationMin="0.2" DurationMax="0.2">
 					<MediaRefs>
 						<MediaRef Id="480007017"/>
@@ -363,6 +370,11 @@
 						<MediaRef Id="988003584"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="636776174" Name="doBilliard_Ball_Collision" DurationType="OneShot" DurationMin="0.23874481" DurationMax="0.23985058">
+					<MediaRefs>
+						<MediaRef Id="782901985"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1878686274" Name="Drop" DurationType="OneShot" DurationMin="0.19640088" DurationMax="0.19640088">
 					<MediaRefs>
 						<MediaRef Id="442455513"/>
@@ -376,6 +388,16 @@
 				<Event Id="1357891606" Name="Fire_Cart" DurationType="OneShot" DurationMin="3" DurationMax="3">
 					<MediaRefs>
 						<MediaRef Id="996095744"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2736826332" Name="Fridge_Ciose" DurationType="OneShot" DurationMin="0.6" DurationMax="0.6">
+					<MediaRefs>
+						<MediaRef Id="866195169"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2916123785" Name="Fridge_Open" DurationType="OneShot" DurationMin="0.55" DurationMax="0.55">
+					<MediaRefs>
+						<MediaRef Id="81870092"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2188449690" Name="Game_Click" DurationType="OneShot" DurationMin="0.04715625" DurationMax="0.04715625">
@@ -520,6 +542,11 @@
 						<MediaRef Id="599171025"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2038894488" Name="Safe_Open_Close" DurationType="OneShot" DurationMin="0.5276875" DurationMax="0.5276875">
+					<MediaRefs>
+						<MediaRef Id="363758932"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1254856804" Name="Select_Trash_Bin" DurationType="OneShot" DurationMin="1" DurationMax="1">
 					<MediaRefs>
 						<MediaRef Id="368920920"/>
@@ -612,5 +639,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{6FF29EE6-F101-A0B0-9234-A4188AE734F3}</FileHash>
+	<FileHash>{ABDACBEE-90C1-3662-835E-A1403D4E7D54}</FileHash>
 </SoundBanksInfo>

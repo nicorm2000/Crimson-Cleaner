@@ -15,7 +15,6 @@ namespace AK
     {
         static const AkUniqueID BAR_DOOR = 2533397739U;
         static const AkUniqueID BATHROOM_DOOR = 1431659638U;
-        static const AkUniqueID BILLIARD_BALL_COLLISION = 3830648271U;
         static const AkUniqueID BLOODPOOL_FOOTSTEP_PLAY = 3337018563U;
         static const AkUniqueID BLOODPOOL_FOOTSTEP_STOP = 1357019017U;
         static const AkUniqueID BLOODY_FOOTSTEP_PLAY = 4007099146U;
@@ -28,9 +27,12 @@ namespace AK
         static const AkUniqueID CART_OPEN = 2037208526U;
         static const AkUniqueID CLOSE_NOTEBOOK = 4085905093U;
         static const AkUniqueID CUBICLE_BATHROOM_DOOR = 3141789928U;
+        static const AkUniqueID DOBILLIARD_BALL_COLLISION = 636776174U;
         static const AkUniqueID DROP = 1878686274U;
         static const AkUniqueID DROP_BOILING_WATER = 1925664349U;
         static const AkUniqueID FIRE_CART = 1357891606U;
+        static const AkUniqueID FRIDGE_CIOSE = 2736826332U;
+        static const AkUniqueID FRIDGE_OPEN = 2916123785U;
         static const AkUniqueID GAME_CLICK = 2188449690U;
         static const AkUniqueID GAS_STOVE_GAS_LOOP = 382197601U;
         static const AkUniqueID GAS_STOVE_GAS_LOOP_STOP = 326450532U;
@@ -61,6 +63,7 @@ namespace AK
         static const AkUniqueID RETRIEVE_CLOTHES = 2786157920U;
         static const AkUniqueID RETRIEVE_DOCUMENTS = 2186617010U;
         static const AkUniqueID RETRIEVE_ROPE = 362869116U;
+        static const AkUniqueID SAFE_OPEN_CLOSE = 2038894488U;
         static const AkUniqueID SELECT_TRASH_BIN = 1254856804U;
         static const AkUniqueID SPONGE = 1165214467U;
         static const AkUniqueID SPONGE_DIRTY = 1222748174U;

@@ -1308,6 +1308,69 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Safe_Open_Close" ID="{8B20915F-C6DB-48F6-BB05-A394FD0418A2}">
+					<ChildrenList>
+						<Action Name="" ID="{1B1A7AEE-3887-4079-AEDD-27095B560903}" ShortID="1049158715">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Safe_Open_Close" ID="{D2A6950B-1EC2-4D64-A023-9F146A65329D}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{9C74C48E-3236-4399-9894-ABCC4F552A49}" ShortID="459734095">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Safe_Open_Close" ID="{D2A6950B-1EC2-4D64-A023-9F146A65329D}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Fridge_Open" ID="{F5B71C6D-EE24-44B7-8CAB-F3452EC06D16}">
+					<ChildrenList>
+						<Action Name="" ID="{FBC79227-26AD-42EE-8111-B88A24461F7C}" ShortID="118129309">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Fridge_Open" ID="{E92F4F16-E140-4D6A-9B5D-B5D1597DFC00}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{EDD0B03F-E1C3-4CEA-BA06-91E9010F40FB}" ShortID="282293589">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Fridge_Open" ID="{E92F4F16-E140-4D6A-9B5D-B5D1597DFC00}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Fridge_Ciose" ID="{AE0648B3-09F7-4893-B854-28207B2FC54E}">
+					<ChildrenList>
+						<Action Name="" ID="{63E5F99E-67DC-428E-830B-E03B0FEF92C2}" ShortID="968239664">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Fridge_Ciose" ID="{70087D86-2C48-4C44-89F2-AE44A91FCF4F}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{A44AA1A8-2725-4A93-A958-3EA23DB93255}" ShortID="374161819">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Fridge_Ciose" ID="{70087D86-2C48-4C44-89F2-AE44A91FCF4F}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

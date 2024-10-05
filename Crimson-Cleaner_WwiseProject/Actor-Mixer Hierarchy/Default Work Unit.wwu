@@ -2920,6 +2920,112 @@
 								<ActiveSource Name="Mop_CleaningSFX_Audio" ID="{9A91B4F9-9FD4-41B6-9575-3FDAF143266C}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Safe_Open_Close" ID="{D2A6950B-1EC2-4D64-A023-9F146A65329D}" ShortID="482411362">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{7096CD6D-841B-4D7F-9FD5-696248B48074}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="3"/>
+													<Property Name="Min" Type="Real64" Value="-3"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Safe_Open_Close" ID="{9AA8AF8F-38C2-41C2-8F02-D3B73914C9AB}">
+									<Language>SFX</Language>
+									<AudioFile>Safe_Open_Close.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="363758932"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Safe_Open_Close" ID="{9AA8AF8F-38C2-41C2-8F02-D3B73914C9AB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Fridge_Open" ID="{E92F4F16-E140-4D6A-9B5D-B5D1597DFC00}" ShortID="474710141">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{36E71E83-727F-49A8-A74C-44164F4F9D6D}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Fridge_Open" ID="{7A592FEE-BF72-425A-9A6F-48C83C62D8DD}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.0630334865397242"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.0479317137229153"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.25"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.8"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Fridge_Open.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="81870092"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Fridge_Open" ID="{7A592FEE-BF72-425A-9A6F-48C83C62D8DD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Fridge_Ciose" ID="{70087D86-2C48-4C44-89F2-AE44A91FCF4F}" ShortID="796193582">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Fridge_Ciose" ID="{7A6DE714-125F-4DD0-BEA4-CD9B13DBA1FF}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.232720507769753"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.05"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.65"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Fridge_Ciose.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="866195169"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Fridge_Ciose" ID="{7A6DE714-125F-4DD0-BEA4-CD9B13DBA1FF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
