@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        Move();
+        //Move();
         HandleFootsteps();
 
         if (objectGrabbable != null && inputManager.RotateObject)
@@ -81,6 +81,8 @@ public class PlayerController : MonoBehaviour
     {
         if (isCameraMovable && !inputManager.RotateObject)
             CameraMovements();
+
+        Move();
     }
 
     private void Move()

@@ -9,6 +9,7 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     [SerializeField] private float breakForceThreshold = 10f;
     [SerializeField] private float collisionCooldown = 0.1f;
     [SerializeField] private float fallHeightThreshold = 5f;
+    [SerializeField] private bool isObjectMulitple = false;
 
     [Header("Object Placement")]
     [SerializeField] private GameObject hologramObject;
@@ -18,10 +19,13 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     [SerializeField] private string breakBottleEvent = null;
 
     private Rigidbody objectRigidBody;
+    private Transform[] objectTransforms;
     private Transform objectGrabPointTransform;
     private Transform playerTransform;
     private Vector3 newPosition;
     private Vector3 lastPosition;
+    private Vector3[] grabOffsets;
+    private Quaternion[] originalRotations;
     private bool isObjectSnapped;
 
     private DisposableObject disposableObject;
@@ -40,6 +44,17 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
 
     private void Awake()
     {
+        if (isObjectMulitple)
+        {
+            objectTransforms = GetComponentsInChildren<Transform>();
+            grabOffsets = new Vector3[objectTransforms.Length];
+            originalRotations = new Quaternion[objectTransforms.Length];
+
+            for (int i = 0; i < objectTransforms.Length; i++)
+            {
+                originalRotations[i] = objectTransforms[i].rotation;
+            }
+        }
         objectRigidBody = GetComponent<Rigidbody>();
         disposableObject = GetComponent<DisposableObject>();
     }
@@ -60,60 +75,137 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     public void Grab(Transform ObjectGrabPointTransform, Transform playerTransform)
     {
         this.objectGrabPointTransform = ObjectGrabPointTransform;
-        objectRigidBody.useGravity = false;
-        objectRigidBody.freezeRotation = true;
         this.playerTransform = playerTransform;
 
-        IsObjectPickedUp = true;
+        if (isObjectMulitple)
+        {
+            for (int i = 0; i < objectTransforms.Length; i++)
+            {
+                Rigidbody rb = objectTransforms[i].gameObject.GetComponent<Rigidbody>();
+
+                if (rb != null)
+                {
+                    rb.useGravity = false;
+                    rb.freezeRotation = true;
+                }
+            }
+        }
+        else
+        {
+            objectRigidBody.useGravity = false;
+            objectRigidBody.freezeRotation = true;
+        }
 
         initialHeight = transform.position.y;
 
+        IsObjectPickedUp = true;
         ToggleHologram(true);
     }
 
     public void Drop()
     {
-        objectRigidBody.freezeRotation = false;
         this.objectGrabPointTransform = null;
         this.playerTransform = null;
-        objectRigidBody.useGravity = true;
-        objectRigidBody.velocity = (newPosition - lastPosition) * throwingForce;
+
+        if (isObjectMulitple)
+        {
+            foreach (var item in objectTransforms)
+            {
+                Rigidbody rb = item.gameObject.GetComponent<Rigidbody>();
+
+                if (rb != null)
+                {
+                    rb.useGravity = true;
+                    rb.freezeRotation = false;
+                    rb.velocity = (newPosition - lastPosition) * throwingForce;
+                }
+            }
+        }
+        else
+        {
+            objectRigidBody.useGravity = true;
+            objectRigidBody.freezeRotation = false;
+            objectRigidBody.velocity = (newPosition - lastPosition) * throwingForce;
+        }
+
 
         IsObjectPickedUp = false;
 
         initialHeight = transform.position.y;
-
         ToggleHologram(false);
     }
 
     public void Throw(float throwingForce, Vector3 throwDirection)
     {
-        objectRigidBody.freezeRotation = false;
         this.objectGrabPointTransform = null;
         this.playerTransform = null;
-        objectRigidBody.useGravity = true;
 
-        objectRigidBody.AddForce(throwDirection * throwingForce, ForceMode.Impulse);
+        if (isObjectMulitple)
+        {
+            foreach (var item in objectTransforms)
+            {
+                Rigidbody rb = item.gameObject.GetComponent<Rigidbody>();
 
-        IsObjectPickedUp = false;
+                if (rb != null)
+                {
+                    rb.freezeRotation = false;
+                    rb.useGravity = true;
+                    rb.AddForce(throwDirection * throwingForce, ForceMode.Impulse);
+                }
+            }
+        }
+        else
+        {
+            objectRigidBody.freezeRotation = false;
+            objectRigidBody.useGravity = true;
+
+            objectRigidBody.AddForce(throwDirection * throwingForce, ForceMode.Impulse);
+        }
+
 
         initialHeight = transform.position.y;
 
+        IsObjectPickedUp = false;
         ToggleHologram(false);
     }
 
     private void FixedUpdate()
     {
+        if (isObjectSanityModifier && IsObjectPickedUp)
+        {
+            SanityManager.Instance.ModifySanityScalar(SanityManager.Instance.GrabObjectScaler);
+        }
+
         if (objectGrabPointTransform != null)
         {
-            lastPosition = newPosition;
-            newPosition = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.deltaTime * lerpSpeed);
-            objectRigidBody.MovePosition(newPosition);
+            if (isObjectMulitple)
+            {
+                for (int i = 0; i < objectTransforms.Length; i++)
+                {
+                    Rigidbody rb = objectTransforms[i].GetComponent<Rigidbody>();
+
+                    if (rb != null)
+                    {
+                        Vector3 targetPosition = objectGrabPointTransform.position + grabOffsets[i];
+                        rb.MovePosition(Vector3.Lerp(objectTransforms[i].position, targetPosition, Time.fixedDeltaTime * lerpSpeed));
+                    }
+                    else
+                    {
+                        transform.position = Vector3.MoveTowards(objectTransforms[i].position, objectGrabPointTransform.position, Time.fixedDeltaTime * lerpSpeed);
+                    }
+                }
+            }
+            else
+            {
+                lastPosition = newPosition;
+                newPosition = Vector3.Lerp(transform.position, objectGrabPointTransform.position, Time.fixedDeltaTime * lerpSpeed);
+                objectRigidBody.MovePosition(newPosition);
+            }
         }
     }
 
     public void RotateObject(float mouseX, float mouseY, Transform cameraTransform)
-    {     
+    {
         transform.Rotate(cameraTransform.up, mouseX * rotationSpeed * Time.deltaTime, Space.World);
         transform.Rotate(cameraTransform.right, -mouseY * rotationSpeed * Time.deltaTime, Space.World);
     }
@@ -138,7 +230,7 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
 
         if (collision.relativeVelocity.magnitude > breakForceThreshold || heightDifference > fallHeightThreshold)
         {
-            if (breakBottleEvent != null)
+            if (breakBottleEvent != null && audioManager != null)
                 audioManager.PlaySound(breakBottleEvent);
             lastCollisionTime = Time.time;
             if (!isObjectBreakable)
