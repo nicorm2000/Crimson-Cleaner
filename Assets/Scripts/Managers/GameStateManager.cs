@@ -34,10 +34,14 @@ public class GameStateManager : MonoBehaviour
     [SerializeField] private List<RetrievableObject> weapons;
     public List<RetrievableObject> Weapons => weapons;
 
+    [SerializeField] private List<Zone> zones;
+    public List<Zone> Zones => zones;
+
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private string defaultLayerName;
     [SerializeField] private string outlineLayerName;
     [SerializeField] private CleaningManager cleaningManager;
+    [SerializeField] private TabletUIManager tabletUIManager;
 
     public InputManager inputManager;
     public PlayerController playerController;
@@ -47,7 +51,6 @@ public class GameStateManager : MonoBehaviour
     private IGameState currentState;
     private IGameState previousState;
     private Dictionary<string, IGameState> states;
-
 
     public bool isTimerCompleted;
     public int cleanedCount = 0;
@@ -112,40 +115,171 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    public void OnObjectCleaned()
+    public void OnObjectCleaned(GameObject go)
     {
+        UpdateTabletUI(go);
         cleanedCount++;
     }
     
-    public void OnObjectDisposed()
+    public void OnObjectDisposed(GameObject go)
     {
+        UpdateTabletUI(go);
         disposedCount++;
     } 
     
-    public void OnDocumentRetrieved()
+    public void OnDocumentRetrieved(GameObject go)
     {
+        UpdateTabletUI(go);
         retrievedDocumetsCount++;
     }
     
-    public void OnClothesRetrieved()
+    public void OnClothesRetrieved(GameObject go)
     {
+        UpdateTabletUI(go);
         retrievedClothesCount++;
     }
     
-    public void OnMiscellaneousRetrieved()
+    public void OnMiscellaneousRetrieved(GameObject go)
     {
+        UpdateTabletUI(go);
         retrievedMiscellaneousCount++;
     }
     
-    public void OnWeaponsRetrieved()
+    public void OnWeaponsRetrieved(GameObject go)
     {
+        UpdateTabletUI(go);
         retrievedWeaponsCount++;
     }
 
-    public void OnSnapObject()
+    public void OnSnapObject(GameObject go)
     {
+        UpdateTabletUI(go);
         pickUpDrop.GetObjectGrabbable().ToggleHologram(false);
         pickUpDrop.DropObject();
+    }
+
+    public void UpdateTabletUI(GameObject go)
+    {
+        foreach (var zone in zones)
+        {
+            foreach (var item in zone.blood)
+            {
+                if (go == item.gameObject)
+                {
+                    if (zone.bloodCurrentAmmount < zone.blood.Count)
+                    {
+                        zone.bloodCurrentAmmount++;
+                        tabletUIManager.UpdateBloodText(zone);
+                    }
+                    return;
+                }
+            }
+            
+            foreach (var item in zone.corpses)
+            {
+                if (go == item.gameObject)
+                {
+                    if (zone.corpsesCurrentAmmount < zone.clothes.Count)
+                    {
+                        zone.corpsesCurrentAmmount++;
+                        tabletUIManager.UpdateCorpsesText(zone);
+                    }
+                    return;
+                }
+            }
+
+            foreach (var item in zone.uvCleanables)
+            {
+                if (go == item.gameObject)
+                {
+                    if (zone.uvCleanablesCurrentAmmount < zone.uvCleanables.Count)
+                    {
+                        zone.uvCleanablesCurrentAmmount++;
+                        tabletUIManager.UpdateUVCleanablesText(zone);
+                    }
+                    return;
+                }
+            }
+
+            foreach (var item in zone.bloodyObjects)
+            {
+                if (go == item.gameObject)
+                {
+                    if (zone.bloodyObjectsCurrentAmmount < zone.bloodyObjects.Count)
+                    {
+                        zone.bloodyObjectsCurrentAmmount++;
+                        tabletUIManager.UpdateBloodyObjectsText(zone);
+                    }
+                    return;
+                }
+            }
+
+            foreach (var item in zone.arrabgables)
+            {
+                if (go == item.gameObject)
+                {
+                    if (zone.arrabgablesCurrentAmmount < zone.arrabgables.Count)
+                    {
+                        zone.arrabgablesCurrentAmmount++;
+                        tabletUIManager.UpdateArrangablesText(zone);
+                    }
+                    return;
+                }
+            }
+
+            foreach (var item in zone.weapons)
+            {
+                if (go == item.gameObject)
+                {
+                    if (zone.weaponsCurrentAmmount < zone.weapons.Count)
+                    {
+                        zone.weaponsCurrentAmmount++;
+                        tabletUIManager.UpdateWeaponsText(zone);
+                    }
+                    return;
+                }
+            }
+
+            foreach (var item in zone.documents)
+            {
+                if (go == item.gameObject)
+                {
+                    if (zone.documentsCurrentAmmount < zone.documents.Count)
+                    {
+                        zone.documentsCurrentAmmount++;
+                        tabletUIManager.UpdateDocumentsText(zone);
+                    }
+                    return;
+                }
+            }
+
+            foreach (var item in zone.clothes)
+            {
+                if (go == item.gameObject)
+                {
+                    if (zone.clothesCurrentAmmount < zone.clothes.Count)
+                    {
+                        zone.clothesCurrentAmmount++;
+                        tabletUIManager.UpdateClothesText(zone);
+                    }
+                    return;
+                }
+            }
+
+            foreach (var item in zone.miscellaneous)
+            {
+                if (go == item.gameObject)
+                {
+                    if (zone.miscellaneousCurrentAmmount < zone.miscellaneous.Count)
+                    {
+                        zone.miscellaneousCurrentAmmount++;
+                        tabletUIManager.UpdateMiscellaneousText(zone);
+                    }
+                    return;
+                }
+            }
+
+        }
     }
 
     public void OnToolSwitchedState(int toolIndex)
@@ -286,44 +420,54 @@ public class InitializationState : IGameState
 {
     public void EnterState(GameStateManager gameStateManager)
     {
-        foreach (var cleanableObject in gameStateManager.CleanableObjects)
+        foreach(var zone in gameStateManager.Zones)
         {
-            cleanableObject.Cleaned += gameStateManager.OnObjectCleaned;
-        }
+            foreach (var item in zone.blood)
+            {
+                if (item != null) item.CleanedGO += gameStateManager.OnObjectCleaned;
+            }
 
-        foreach (var disposableObject in gameStateManager.DisposableObjects)
-        {
-            disposableObject.Disposed += gameStateManager.OnObjectDisposed;
-            disposableObject.Broken += gameStateManager.OnObjectBroken;
-        }
+            foreach (var item in zone.corpses)
+            {
+                if (item != null) item.DisposedGO += gameStateManager.OnObjectDisposed;
+                if (item != null) item.Broken += gameStateManager.OnObjectBroken;
+            }
 
-        foreach (var snappableObject in gameStateManager.SnappableObjects)
-        {
-            snappableObject.Snapped += gameStateManager.OnSnapObject;
-        }
-        
-        foreach (var retrievableObject in gameStateManager.Documents)
-        {
-            retrievableObject.ObjectRetrievedEvent += gameStateManager.OnDocumentRetrieved;
-        }
-        
-        foreach (var retrievableObject in gameStateManager.Clothes)
-        {
-            retrievableObject.ObjectRetrievedEvent += gameStateManager.OnClothesRetrieved;
-        }
-        
-        foreach (var retrievableObject in gameStateManager.Miscellaneous)
-        {
-            retrievableObject.ObjectRetrievedEvent += gameStateManager.OnMiscellaneousRetrieved;
-        }
-        
-        foreach (var retrievableObject in gameStateManager.Weapons)
-        {
-            retrievableObject.ObjectRetrievedEvent += gameStateManager.OnWeaponsRetrieved;
-        }
+            foreach (var item in zone.uvCleanables)
+            {
+                if (item != null) item.CleanedGO += gameStateManager.OnObjectCleaned;
+            }
 
+            foreach (var item in zone.bloodyObjects)
+            {
+                if (item != null) item.CleanedGO += gameStateManager.OnObjectCleaned;
+            }
 
+            foreach (var item in zone.arrabgables)
+            {
+                if (item != null) item.SnappedGO += gameStateManager.OnSnapObject;
+            }
 
+            foreach (var item in zone.weapons)
+            {
+                if (item != null) item.ObjectRetrievedEventGO += gameStateManager.OnWeaponsRetrieved;
+            }
+
+            foreach (var item in zone.documents)
+            {
+                if (item != null) item.ObjectRetrievedEventGO += gameStateManager.OnDocumentRetrieved;
+            }
+
+            foreach (var item in zone.clothes)
+            {
+                if (item != null) item.ObjectRetrievedEventGO += gameStateManager.OnClothesRetrieved;
+            }
+
+            foreach (var item in zone.miscellaneous)
+            {
+                if (item != null) item.ObjectRetrievedEventGO += gameStateManager.OnMiscellaneousRetrieved;
+            }
+        }
 
 
         gameStateManager.cleanedCount = 0;
@@ -455,40 +599,53 @@ public class DeInitializationState : IGameState
 {
     public void EnterState(GameStateManager gameStateManager)
     {
-        foreach (var cleanableObject in gameStateManager.CleanableObjects)
+        foreach (var zone in gameStateManager.Zones)
         {
-            cleanableObject.Cleaned -= gameStateManager.OnObjectCleaned;
-        }
+            foreach (var item in zone.blood)
+            {
+                if (item != null) item.CleanedGO -= gameStateManager.OnObjectCleaned;
+            }
 
-        foreach (var disposableObject in gameStateManager.DisposableObjects)
-        {
-            disposableObject.Disposed -= gameStateManager.OnObjectDisposed;
-            disposableObject.Broken -= gameStateManager.OnObjectBroken;
-        }
+            foreach (var item in zone.corpses)
+            {
+                if (item != null) item.DisposedGO -= gameStateManager.OnObjectDisposed;
+                if (item != null) item.Broken -= gameStateManager.OnObjectBroken;
+            }
 
-        foreach (var snappableObject in gameStateManager.SnappableObjects)
-        {
-            snappableObject.Snapped -= gameStateManager.OnSnapObject;
-        }
+            foreach (var item in zone.uvCleanables)
+            {
+                if (item != null) item.CleanedGO -= gameStateManager.OnObjectCleaned;
+            }
 
-        foreach (var retrievableObject in gameStateManager.Documents)
-        {
-            retrievableObject.ObjectRetrievedEvent -= gameStateManager.OnDocumentRetrieved;
-        }
+            foreach (var item in zone.bloodyObjects)
+            {
+                if (item != null) item.CleanedGO -= gameStateManager.OnObjectCleaned;
+            }
 
-        foreach (var retrievableObject in gameStateManager.Clothes)
-        {
-            retrievableObject.ObjectRetrievedEvent -= gameStateManager.OnClothesRetrieved;
-        }
+            foreach (var item in zone.arrabgables)
+            {
+                if (item != null) item.SnappedGO -= gameStateManager.OnSnapObject;
+            }
 
-        foreach (var retrievableObject in gameStateManager.Miscellaneous)
-        {
-            retrievableObject.ObjectRetrievedEvent -= gameStateManager.OnMiscellaneousRetrieved;
-        }
+            foreach (var item in zone.weapons)
+            {
+                if (item != null) item.ObjectRetrievedEventGO -= gameStateManager.OnWeaponsRetrieved;
+            }
 
-        foreach (var retrievableObject in gameStateManager.Weapons)
-        {
-            retrievableObject.ObjectRetrievedEvent -= gameStateManager.OnWeaponsRetrieved;
+            foreach (var item in zone.documents)
+            {
+                if (item != null) item.ObjectRetrievedEventGO -= gameStateManager.OnDocumentRetrieved;
+            }
+
+            foreach (var item in zone.clothes)
+            {
+                if (item != null) item.ObjectRetrievedEventGO -= gameStateManager.OnClothesRetrieved;
+            }
+
+            foreach (var item in zone.miscellaneous)
+            {
+                if (item != null) item.ObjectRetrievedEventGO -= gameStateManager.OnMiscellaneousRetrieved;
+            }
         }
 
         gameStateManager.CleanableObjects.Clear();

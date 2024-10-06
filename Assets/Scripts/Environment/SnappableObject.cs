@@ -19,6 +19,7 @@ public class SnappableObject : MonoBehaviour
     private ObjectGrabbable objectGrabbable;
 
     public event Action Snapped;
+    public event Action<GameObject> SnappedGO;
 
     private bool isObjectSnapped = false;
     private MeshRenderer meshRenderer;
@@ -60,6 +61,7 @@ public class SnappableObject : MonoBehaviour
         objectGrabbable.enabled = false;
         meshRenderer.material = completeSnapMaterial;
         Snapped?.Invoke();
+        SnappedGO?.Invoke(gameObject);
         if (snapObjectEvent != null)
             audioManager.PlaySound(snapObjectEvent);
         StartCoroutine(WaitToSwapMaterial(completionShaderDuration));
