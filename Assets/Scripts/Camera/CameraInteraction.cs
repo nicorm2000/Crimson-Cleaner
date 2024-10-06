@@ -261,7 +261,7 @@ public class CameraInteraction : MonoBehaviour
         //    lastInmersiveObjectHighlighted.gameObject.layer = LayerMask.NameToLayer(defaultLayerName);
         //    lastInmersiveObjectHighlighted = null;
         //}
-        if (lastRetrievableObjectHighlighted != null)
+        if (lastRetrievableObjectHighlighted != null && !SanityManager.Instance.isConcentrationActive)
         {
             lastRetrievableObjectHighlighted.gameObject.layer = LayerMask.NameToLayer(defaultLayerName);
             lastRetrievableObjectHighlighted = null;

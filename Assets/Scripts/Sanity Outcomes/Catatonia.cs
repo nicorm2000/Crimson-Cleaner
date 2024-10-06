@@ -27,7 +27,7 @@ public class Catatonia : MonoBehaviour
     {
         volumeController.StartVolumeVFX();
         volumeController.BlurVolume();
-        yield return new WaitForSeconds(volumeController.startRageTogglingDurationVFX);
+        yield return new WaitForSeconds(volumeController.startTogglingDurationVFX);
         StartCoroutine(TriggerOpenAnimation());
     }
 

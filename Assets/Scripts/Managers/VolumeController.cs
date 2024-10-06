@@ -7,23 +7,23 @@ public class VolumeController : MonoBehaviour
 {
     [SerializeField] private Volume volume;
 
-    public float startRageTogglingDuration = 1f;
-    public float startRageTogglingDurationVFX = 1f;
-    public float endRageTogglingDuration = 1f;
+    public float startTogglingDuration = 1f;
+    public float startTogglingDurationVFX = 1f;
+    public float endTogglingDuration = 1f;
 
     public void StartVolumeVFX()
     {
         volume.gameObject.SetActive(true);
-        StartCoroutine(ToggleVolumeVFX(0f, 1f, startRageTogglingDuration));
+        StartCoroutine(ToggleVolumeVFX(0f, 1f, startTogglingDuration));
     }
 
     public void EndVolumeVFX()
     {
-        StartCoroutine(ToggleVolumeVFX(1f, 0f, endRageTogglingDuration));
-        StartCoroutine(EndRageVFXCoroutine(endRageTogglingDuration));
+        StartCoroutine(ToggleVolumeVFX(1f, 0f, endTogglingDuration));
+        StartCoroutine(EndRageVFXCoroutine(endTogglingDuration));
     }
 
-    private IEnumerator ToggleVolumeVFX(float min, float max, float duration)
+    public IEnumerator ToggleVolumeVFX(float min, float max, float duration)
     {
         float t = 0.0f;
         while (t < duration)
@@ -56,7 +56,6 @@ public class VolumeController : MonoBehaviour
         }
     }
 
-
     private IEnumerator EndRageVFXCoroutine(float endDuration)
     {
         yield return new WaitForSeconds(endDuration);
@@ -65,6 +64,6 @@ public class VolumeController : MonoBehaviour
 
     public void BlurVolume()
     {
-        StartCoroutine(ToggleBlurVFX(0, 0.075f, startRageTogglingDuration));
+        StartCoroutine(ToggleBlurVFX(0, 0.075f, startTogglingDuration));
     }
 }

@@ -1,95 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-3072451396542249058
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d39411c5cccdf34d8f526da588f1ea3, type: 3}
-  m_Name: RadialBlur
-  m_EditorClassIdentifier: 
-  active: 1
-  intensity:
-    m_OverrideState: 1
-    m_Value: 0.075
-  centerX:
-    m_OverrideState: 0
-    m_Value: 0.5
-  centerY:
-    m_OverrideState: 0
-    m_Value: 0.5
-  radius:
-    m_OverrideState: 0
-    m_Value: 0
-  samples:
-    m_OverrideState: 0
-    m_Value: 4
---- !u!114 &-1774657356227245608
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 492e91124f4e4e1429fa62929626c71f, type: 3}
-  m_Name: HueSaturationInvert
-  m_EditorClassIdentifier: 
-  active: 1
-  hueShift:
-    m_OverrideState: 1
-    m_Value: 0
-  saturation:
-    m_OverrideState: 1
-    m_Value: 0.41
-  invert:
-    m_OverrideState: 0
-    m_Value: 0
---- !u!114 &-1356171944745430904
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c1be1b6c95cd2e41b27903b9270817f, type: 3}
-  m_Name: Vignette
-  m_EditorClassIdentifier: 
-  active: 1
-  mode:
-    m_OverrideState: 1
-    m_Value: 0
-  color:
-    m_OverrideState: 1
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
-  center:
-    m_OverrideState: 1
-    m_Value: {x: 0.5, y: -0.46}
-  intensity:
-    m_OverrideState: 1
-    m_Value: 0.092
-  smoothness:
-    m_OverrideState: 1
-    m_Value: 1
-  roundness:
-    m_OverrideState: 1
-    m_Value: 1
-  rounded:
-    m_OverrideState: 1
-    m_Value: 0
-  mask:
-    m_OverrideState: 1
-    m_Value: {fileID: 10916, guid: 0000000000000000f000000000000000, type: 0}
-  opacity:
-    m_OverrideState: 1
-    m_Value: 0.918
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,6 +13,20 @@ MonoBehaviour:
   m_Name: EliPP Catatonia
   m_EditorClassIdentifier: 
   components:
-  - {fileID: -1356171944745430904}
-  - {fileID: -1774657356227245608}
-  - {fileID: -3072451396542249058}
+  - {fileID: 7509024034682816425}
+--- !u!114 &7509024034682816425
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f9608d0b7be709499c8576490633363, type: 3}
+  m_Name: SimpleGaussianBlur
+  m_EditorClassIdentifier: 
+  active: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.15

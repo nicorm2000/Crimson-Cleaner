@@ -6,6 +6,7 @@ using UnityEngine.Rendering;
 public class Concentration : MonoBehaviour
 {
     [SerializeField] private GameStateManager gameStateManager;
+    [SerializeField] private VolumeController volumeController;
     [SerializeField] private Animator animator;
     [SerializeField] private int blinkingAmmount;
     [SerializeField] private float minBlinkingInterval;
@@ -28,6 +29,12 @@ public class Concentration : MonoBehaviour
             newSimpleGaussianBlur = simpleGaussianBlur;
 
         //TriggerConstantBlinking();
+    }
+
+    public void StartConcentration()
+    {
+        volumeController.StartVolumeVFX();
+        TriggerConstantBlinking();
     }
 
     public void TriggerConstantBlinking()
@@ -85,6 +92,7 @@ public class Concentration : MonoBehaviour
         }
         else
         {
+            volumeController.EndVolumeVFX();
             gameStateManager.SetDefaultLayer();
             SanityManager.Instance.isConcentrationActive = false;
         }
