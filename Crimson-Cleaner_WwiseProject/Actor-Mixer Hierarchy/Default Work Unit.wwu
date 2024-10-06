@@ -3185,6 +3185,28 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Couch_Chair_Collision" ID="{C63F7B2E-72B4-4287-848E-BFC5A2B4E274}" ShortID="27189891">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-220</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{C530E698-070B-44F1-917D-F46D1D48896A}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-8"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
@@ -3195,6 +3217,10 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="Couch_Chair_Collision" ID="{B260C6FA-1D53-4CAC-BED2-C2B9C90D98E7}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.149893630991464"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Couch_Chair_Collision.wav</AudioFile>
 									<MediaIDList>
@@ -3204,6 +3230,249 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="Couch_Chair_Collision" ID="{B260C6FA-1D53-4CAC-BED2-C2B9C90D98E7}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Bat_Collision" ID="{12D90936-B5AA-43C9-AFAF-51BB7A8B8CD1}" ShortID="230886959">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{B8F8A85A-75B1-4516-BA4C-7ACBD45CA807}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-4"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Bat_Collision" ID="{1B7A4767-5B63-4AC6-9995-0F6F30BFF21E}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.113968536856634"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.1"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.4"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Bat_Collision.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="803077529"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Bat_Collision" ID="{1B7A4767-5B63-4AC6-9995-0F6F30BFF21E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Tin_Collision" ID="{A564FD61-F310-4941-9D52-68DB30E96B5D}" ShortID="401448114">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Tin_Collision" ID="{C74B7724-9EA0-4890-B3B9-DD35EF7278BD}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.0834090729747798"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.15"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Tin_Collision.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="294791835"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Tin_Collision" ID="{C74B7724-9EA0-4890-B3B9-DD35EF7278BD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Heavy_Metal_Tool_Collision" ID="{43531322-90BE-4993-AD9F-2592A1980600}" ShortID="321034815">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{691B6AEB-48BD-40F6-9F0D-0D8F2E3B33F2}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{0AFA360A-4CD9-4A57-9C36-E9930DEF47EE}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-8"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Heavy_Metal_Tool_Collision" ID="{228B8185-653A-47A9-A2B6-A3329EE68710}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.130698242965385"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.025"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.3"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Heavy_Metal_Tool_Collision.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="577271348"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Heavy_Metal_Tool_Collision" ID="{228B8185-653A-47A9-A2B6-A3329EE68710}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Light_Metal_Tool_Collision" ID="{B746B9C5-1B75-4656-AB64-CB50ACC24C4A}" ShortID="174810573">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{D746E71F-6ADF-4891-8FD6-D2F89DE9B41C}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Light_Metal_Tool_Collision" ID="{1EA55FB6-6649-4E67-9118-C7FCD2E028E7}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.0720747927098176"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.0075"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.2"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Light_Metal_Tool_Collision.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="593550720"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Light_Metal_Tool_Collision" ID="{1EA55FB6-6649-4E67-9118-C7FCD2E028E7}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Medium_Metal_Tool_Collision" ID="{ABEEB88F-2135-4EDC-BBC0-DE53D34D7AC9}" ShortID="140394086">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{8F7CAD30-80E1-4100-AD56-C0FE5BE24A89}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-2"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Medium_Metal_Tool_Collision" ID="{140C7C1A-36B1-4E4D-BCA9-5A2B3A9494EF}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.1202598701989"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Medium_Metal_Tool_Collision.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="196769015"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Medium_Metal_Tool_Collision" ID="{140C7C1A-36B1-4E4D-BCA9-5A2B3A9494EF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Rope_Collision" ID="{DCD131E3-3F6E-4955-8376-C3E14E236521}" ShortID="423915112">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{52FC3A6B-B6F8-43D0-AC01-609F5B3508E6}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-3"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Rope_Collision" ID="{659DBD45-7FE9-4F26-8082-3FD9D7605317}">
+									<Language>SFX</Language>
+									<AudioFile>Rope_Collision.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="204238787"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Rope_Collision" ID="{659DBD45-7FE9-4F26-8082-3FD9D7605317}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

@@ -14,6 +14,7 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID BAR_DOOR = 2533397739U;
+        static const AkUniqueID BAT__COLLISION = 3932140208U;
         static const AkUniqueID BATHROOM_DOOR = 1431659638U;
         static const AkUniqueID BLOODPOOL_FOOTSTEP_PLAY = 3337018563U;
         static const AkUniqueID BLOODPOOL_FOOTSTEP_STOP = 1357019017U;
@@ -45,14 +46,17 @@ namespace AK
         static const AkUniqueID GAS_STOVE_TURN_OFF = 1218911394U;
         static const AkUniqueID GAS_STOVE_TURN_ON = 2084731556U;
         static const AkUniqueID GUN_COLLISION = 1154053212U;
+        static const AkUniqueID HEAVY_TOOL_COLLISION = 2015415870U;
         static const AkUniqueID KNIFE_COLLISION = 1966534225U;
         static const AkUniqueID LAMP_COLLISION = 2628227250U;
         static const AkUniqueID LAMP_SWITCH_LOOP = 3815506779U;
         static const AkUniqueID LAMP_SWITCH_LOOP_END = 3983889213U;
         static const AkUniqueID LAMP_SWITCH_OFF = 1332292784U;
         static const AkUniqueID LAMP_SWITCH_ON = 2768174490U;
+        static const AkUniqueID LIGHT_METAL_TOOL_COLLISION = 515677665U;
         static const AkUniqueID LIGHT_SWITCH = 790135102U;
         static const AkUniqueID MACHETE_COLLISION = 2997531735U;
+        static const AkUniqueID MEDIUM_METAL_TOOL_COLLISION = 579873924U;
         static const AkUniqueID MONEY = 758863303U;
         static const AkUniqueID MOP = 1082004779U;
         static const AkUniqueID MOP_DIRTY = 68175526U;
@@ -69,6 +73,7 @@ namespace AK
         static const AkUniqueID RETRIEVE_CLOTHES = 2786157920U;
         static const AkUniqueID RETRIEVE_DOCUMENTS = 2186617010U;
         static const AkUniqueID RETRIEVE_ROPE = 362869116U;
+        static const AkUniqueID ROPE_COLLISION = 3225123216U;
         static const AkUniqueID SAFE_OPEN_CLOSE = 2038894488U;
         static const AkUniqueID SELECT_TRASH_BIN = 1254856804U;
         static const AkUniqueID SPONGE = 1165214467U;
@@ -77,7 +82,9 @@ namespace AK
         static const AkUniqueID SWAP_TRASH_BIN = 3910342553U;
         static const AkUniqueID TABLET_CROSS_OUT_TASK = 160599783U;
         static const AkUniqueID THROW = 745179803U;
+        static const AkUniqueID TIN_COLLISION = 2233184339U;
         static const AkUniqueID TOILET_PUSH = 560187437U;
+        static const AkUniqueID TOOLBOX_COLLISION = 2196568223U;
         static const AkUniqueID TRASH_BAG_COLLISION = 2629743283U;
         static const AkUniqueID URINAL_PUSH = 2110685349U;
         static const AkUniqueID WASH_MOP = 3676508413U;

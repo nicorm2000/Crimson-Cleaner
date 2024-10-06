@@ -1497,6 +1497,132 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Tin_Collision" ID="{2D11A7CA-BA39-4D13-8828-55151619C7B7}">
+					<ChildrenList>
+						<Action Name="" ID="{2C8237E3-DCFA-4C73-989A-94BA098CA65E}" ShortID="347397572">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Tin_Collision" ID="{A564FD61-F310-4941-9D52-68DB30E96B5D}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{99B74D83-774B-4A70-94E1-6488C91AF445}" ShortID="11338065">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Tin_Collision" ID="{A564FD61-F310-4941-9D52-68DB30E96B5D}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Bat__Collision" ID="{C40C49E0-656B-4921-B302-A11BCAD5F405}">
+					<ChildrenList>
+						<Action Name="" ID="{2861C9D8-B64E-4A19-8979-A1F9128D1A7F}" ShortID="694733437">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bat_Collision" ID="{12D90936-B5AA-43C9-AFAF-51BB7A8B8CD1}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{989E6D41-693A-4A8A-879A-BF3E5AD08B98}" ShortID="192446777">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bat_Collision" ID="{12D90936-B5AA-43C9-AFAF-51BB7A8B8CD1}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Heavy_Tool_Collision" ID="{FF5154B0-737A-4586-82F0-8ECF79A8EFF9}">
+					<ChildrenList>
+						<Action Name="" ID="{D876CD6B-AC53-44D7-B75F-4DB3D5E02C85}" ShortID="706047909">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Heavy_Metal_Tool_Collision" ID="{43531322-90BE-4993-AD9F-2592A1980600}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{F5ABE248-047E-4521-849F-7553D65F5CD4}" ShortID="175207478">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Heavy_Metal_Tool_Collision" ID="{43531322-90BE-4993-AD9F-2592A1980600}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Medium_Metal_Tool_Collision" ID="{D4AAA6B3-A6C0-4728-8600-56823C18D3DC}">
+					<ChildrenList>
+						<Action Name="" ID="{FB1645A4-A775-4B65-A534-76372C668C8E}" ShortID="318785731">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Medium_Metal_Tool_Collision" ID="{ABEEB88F-2135-4EDC-BBC0-DE53D34D7AC9}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{767D3D28-9BAB-4C2F-8F43-513AF7DC1A42}" ShortID="1067621497">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Medium_Metal_Tool_Collision" ID="{ABEEB88F-2135-4EDC-BBC0-DE53D34D7AC9}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Light_Metal_Tool_Collision" ID="{D0BF2257-0789-488B-87FE-B1E7B41A9388}">
+					<ChildrenList>
+						<Action Name="" ID="{83929A9B-04FF-4298-9452-A7CD25804C12}" ShortID="536452035">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Light_Metal_Tool_Collision" ID="{B746B9C5-1B75-4656-AB64-CB50ACC24C4A}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{3C931B68-1ABE-4313-9BC3-40A2D38EC3EE}" ShortID="546585242">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Light_Metal_Tool_Collision" ID="{B746B9C5-1B75-4656-AB64-CB50ACC24C4A}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Rope_Collision" ID="{55DFB039-B4B3-4277-9D8F-68386EE6FA0D}">
+					<ChildrenList>
+						<Action Name="" ID="{FE878C2E-55DF-457D-806F-ECBD8F127BB7}" ShortID="586656248">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Rope_Collision" ID="{DCD131E3-3F6E-4955-8376-C3E14E236521}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{A497ADEA-ED8D-4ACB-AD27-755CE459AE1C}" ShortID="735841543">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Rope_Collision" ID="{DCD131E3-3F6E-4955-8376-C3E14E236521}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
