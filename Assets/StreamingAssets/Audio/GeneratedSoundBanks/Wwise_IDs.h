@@ -28,6 +28,7 @@ namespace AK
         static const AkUniqueID CABINET_OPEN = 2458915778U;
         static const AkUniqueID CART_CLOSE = 3697444650U;
         static const AkUniqueID CART_OPEN = 2037208526U;
+        static const AkUniqueID CERAMIC_COLLISION = 494474302U;
         static const AkUniqueID CHAIR_COLLISION = 3537521357U;
         static const AkUniqueID CLOSE_NOTEBOOK = 4085905093U;
         static const AkUniqueID COUCH_CHAIR_COLLISION = 910731106U;
@@ -38,6 +39,7 @@ namespace AK
         static const AkUniqueID DROP = 1878686274U;
         static const AkUniqueID DROP_BOILING_WATER = 1925664349U;
         static const AkUniqueID FIRE_CART = 1357891606U;
+        static const AkUniqueID FRAME_COLLISION = 3611395209U;
         static const AkUniqueID FRIDGE_CIOSE = 2736826332U;
         static const AkUniqueID FRIDGE_OPEN = 2916123785U;
         static const AkUniqueID GAME_CLICK = 2188449690U;
@@ -57,6 +59,7 @@ namespace AK
         static const AkUniqueID LIGHT_SWITCH = 790135102U;
         static const AkUniqueID MACHETE_COLLISION = 2997531735U;
         static const AkUniqueID MEDIUM_METAL_TOOL_COLLISION = 579873924U;
+        static const AkUniqueID MENU_COLLISION = 295281277U;
         static const AkUniqueID MONEY = 758863303U;
         static const AkUniqueID MOP = 1082004779U;
         static const AkUniqueID MOP_DIRTY = 68175526U;

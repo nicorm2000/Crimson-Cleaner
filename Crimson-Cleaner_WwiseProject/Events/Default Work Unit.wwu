@@ -1644,6 +1644,49 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Ceramic_Collision" ID="{7D9D6E24-693D-457A-A3E2-B5C619080D19}">
+					<ChildrenList>
+						<Action Name="" ID="{AD6520A6-A558-403D-95CC-9E04CCDBB2B0}" ShortID="2924512">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ceramic_Collision" ID="{322F43B4-F7BE-4BFF-BB7B-DF55AB57116E}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{31E6D48F-8372-4584-A748-93DB2006B7E8}" ShortID="928127036">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ceramic_Collision" ID="{322F43B4-F7BE-4BFF-BB7B-DF55AB57116E}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Menu_Collision" ID="{95B8ECF8-E6AB-4EC4-921C-3FBBC9DD0526}">
+					<ChildrenList>
+						<Action Name="" ID="{0B1A595C-100E-4838-B4B6-DFC45D2FA5EE}" ShortID="462138163">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Menu_Collision" ID="{5210CF3E-62D3-46CC-8203-8B7C99FBF03F}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{8CDFEED7-70D6-438C-A20E-AE7B36FE7591}" ShortID="128083663">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Menu_Collision" ID="{5210CF3E-62D3-46CC-8203-8B7C99FBF03F}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Frame_Collision" ID="{B530D203-A9B6-41AD-AAF5-24750A63E434}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
