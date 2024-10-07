@@ -1686,7 +1686,27 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Frame_Collision" ID="{B530D203-A9B6-41AD-AAF5-24750A63E434}"/>
+				<Event Name="Frame_Collision" ID="{B530D203-A9B6-41AD-AAF5-24750A63E434}">
+					<ChildrenList>
+						<Action Name="" ID="{A0E304EF-12B9-4100-A9D1-F75294A56488}" ShortID="554970208">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Frame_Collision" ID="{13CC1A4C-42EF-4E62-93B6-292F660726A0}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{DB302ED3-29D7-4BB9-823F-4740415F973A}" ShortID="791954573">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Frame_Collision" ID="{13CC1A4C-42EF-4E62-93B6-292F660726A0}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -3608,6 +3608,50 @@
 								<ActiveSource Name="Menu_Collision" ID="{F9606785-69C9-472E-90CB-A9F96B4245AD}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Frame_Collision" ID="{13CC1A4C-42EF-4E62-93B6-292F660726A0}" ShortID="52344451">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{B5FFE792-8862-4262-B08E-9DB99E81B436}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-4"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Frame_Collision" ID="{7168B971-93DC-4ED8-8498-A5C096FC5976}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="0.00348223079448457"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.06"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Frame_Collision.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="784004900"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Frame_Collision" ID="{7168B971-93DC-4ED8-8498-A5C096FC5976}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
