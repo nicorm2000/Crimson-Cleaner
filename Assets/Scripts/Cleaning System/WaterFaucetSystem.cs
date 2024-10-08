@@ -70,12 +70,13 @@ public class WaterFaucetSystem : Interactable, IToggable
     {
         if (!_isOpen)
             return false;
-        if (waterBucket.GetWaterState())
-            return false;
 
         if (Physics.Raycast(rayOrigin.position, Vector3.down, out RaycastHit raycastHit, raycastDistance))
         {
+            Debug.Log("Hit at: " + raycastHit.point);
             splashParticles.gameObject.transform.position = raycastHit.point + splashOffset;
+            if (waterBucket.GetWaterState())
+                return false;
 
             if (raycastHit.transform == waterBucket.transform)
             {
@@ -102,6 +103,10 @@ public class WaterFaucetSystem : Interactable, IToggable
                     water.SetActive(true);
                     waterBucket.WaterPercentageHandler(fillWaterSpeed);
                 }
+            }
+            else
+            {
+                Debug.Log("Raycast missed");
             }
         }
         return true;
