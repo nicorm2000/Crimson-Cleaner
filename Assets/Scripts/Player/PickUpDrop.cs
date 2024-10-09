@@ -164,4 +164,10 @@ public class PickUpDrop : MonoBehaviour
         scalarThrowingForce = scalar;
         maxThrowingForce *= 2f;
     }
+
+    public void ReduceCurrentThrowingForce(float scalar)
+    {
+        scalarThrowingForce = scalar;
+        maxThrowingForce *= 1f;
+    }
 }

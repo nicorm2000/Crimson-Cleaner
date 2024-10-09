@@ -126,6 +126,12 @@ public class CleaningManager : MonoBehaviour
         DirtyIncrementAmount = cleaningTool.DirtyIncrement;
     }
 
+    public void ModifyAnimationSpeed(int scalar)
+    {
+        mopAnimator.speed = scalar;
+        spongeAnimator.speed = scalar;
+    }
+
     public Camera GetCamera() => gameCamera;
     public Animator GetPlayerAnimator() => playerAnimator;
     public Animator GetMopAnimator() => mopAnimator;

@@ -22,8 +22,6 @@ public class CleaningTool : MonoBehaviour
     public int DirtyIncrement { get; private set; }
     private int _currentToolIndex = 0;
 
-    public float fastenAnimationSpeed = 0f;
-
     public event UnityAction<int> OnToolSwitched;
     public event Action CleaningListEvent;
     public GameObject[] CleaningTools => cleaningTools;
@@ -229,11 +227,6 @@ public class CleaningTool : MonoBehaviour
             dirtyPercentages[toolIndex] = 0;
             Debug.Log($"Tool {toolIndex} cleaned. Dirty percentage reset to {dirtyPercentages[toolIndex]}%.");
         }
-    }
-
-    public void ModifyCleanSpeed(float newSpeed)
-    {
-        fastenAnimationSpeed = newSpeed;
     }
 
     private void OnSelectFirstTool()

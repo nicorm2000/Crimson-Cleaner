@@ -111,11 +111,6 @@ public class Clean : MonoBehaviour, ICleanable
 
         if (toolAnimator != null)
         {
-            if (SanityManager.Instance.isRageActive && isCleaning)
-                toolAnimator.speed = cleaningManager.GetToolSelector().fastenAnimationSpeed;
-            else
-                toolAnimator.speed = 1f;
-
             toolAnimator.SetBool("Cleaning", isCleaning);
         }
     }
