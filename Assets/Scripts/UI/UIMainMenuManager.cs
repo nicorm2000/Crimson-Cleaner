@@ -18,7 +18,6 @@ public class Job
 public class UIMainMenuManager : MonoBehaviour
 {
     [Header("Config")]
-    [SerializeField] private TextMeshProUGUI gameTime = null;
     [SerializeField] private Job[] jobAvailables = null;
     [SerializeField] private Image jobImage = null;
     [SerializeField] private TextMeshProUGUI jobNameText = null;
@@ -91,18 +90,6 @@ public class UIMainMenuManager : MonoBehaviour
     private void Start()
     {
         UpdateJob();
-    }
-
-    private void Update()
-    {
-        LogCurrentTime();
-    }
-
-    private void LogCurrentTime()
-    {
-        DateTime now = DateTime.Now;
-        string formattedTime = now.ToString("hh:mm tt");
-        gameTime.text = formattedTime;
     }
 
     private void NavigateRight()
