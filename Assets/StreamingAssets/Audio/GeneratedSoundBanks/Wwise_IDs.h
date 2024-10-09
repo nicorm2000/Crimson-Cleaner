@@ -71,6 +71,7 @@ namespace AK
         static const AkUniqueID PICK_UP = 467838998U;
         static const AkUniqueID PICK_UP_TRASH = 3160723937U;
         static const AkUniqueID PLATE_BREAKING = 2970993869U;
+        static const AkUniqueID POKER_CHIP_COLLISION = 3961112132U;
         static const AkUniqueID POOL_STICK_COLLISION = 3176396303U;
         static const AkUniqueID REMOVE_TRASH = 2748915226U;
         static const AkUniqueID RETRIEVE_CLOTHES = 2786157920U;

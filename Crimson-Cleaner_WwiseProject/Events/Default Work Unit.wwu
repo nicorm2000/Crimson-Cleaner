@@ -1707,6 +1707,27 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Poker_Chip_Collision" ID="{196FA027-1DDE-486E-89DF-E197A55F9237}">
+					<ChildrenList>
+						<Action Name="" ID="{7C85F0F3-4E4B-48D0-9963-4ACBFD9F05EC}" ShortID="906589803">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Poker_Chip_Collision" ID="{A6E115BD-DA39-463A-B620-BF7F0D4CAC84}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{7742AB49-C401-48FF-95CF-ACAFD015C503}" ShortID="116078516">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Poker_Chip_Collision" ID="{A6E115BD-DA39-463A-B620-BF7F0D4CAC84}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

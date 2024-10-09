@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{C7FC59A2-42DF-73A4-B8C4-5129C4F17A0C}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{9D2F8ECC-0217-72DE-4B2F-8C1FC90F1A91}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -68,7 +68,7 @@
 				</File>
 				<File Id="161617688" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ceramic_Collision.wav</ShortName>
-					<CachePath>SFX/Ceramic_Collision_37EB2C87.wem</CachePath>
+					<CachePath>SFX/Ceramic_Collision_D3A7484C.wem</CachePath>
 				</File>
 				<File Id="162453724" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Machete Collision.wav</ShortName>
@@ -246,6 +246,10 @@
 					<ShortName>Couch_Chair_Collision.wav</ShortName>
 					<CachePath>SFX/Couch_Chair_Collision_983BA741.wem</CachePath>
 				</File>
+				<File Id="694379001" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Poker_Chip_Collision.wav</ShortName>
+					<CachePath>SFX/Poker_Chip_Collision_9AA05703.wem</CachePath>
+				</File>
 				<File Id="701664573" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Weapong Swap.wav</ShortName>
 					<CachePath>SFX/Weapong Swap_BC49C360.wem</CachePath>
@@ -268,7 +272,7 @@
 				</File>
 				<File Id="784004900" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Frame_Collision.wav</ShortName>
-					<CachePath>SFX/Frame_Collision_DB6706F8.wem</CachePath>
+					<CachePath>SFX/Frame_Collision_0BA265B7.wem</CachePath>
 				</File>
 				<File Id="802040487" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Body Part Collision.wav</ShortName>
@@ -332,7 +336,7 @@
 				</File>
 				<File Id="976852037" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Menu_Collision.wav</ShortName>
-					<CachePath>SFX/Menu_Collision_B2AE3BAD.wem</CachePath>
+					<CachePath>SFX/Menu_Collision_4E8BE7E6.wem</CachePath>
 				</File>
 				<File Id="988003584" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cubicle Bathroom Door.wav</ShortName>
@@ -646,6 +650,11 @@
 						<MediaRef Id="369679358"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3961112132" Name="Poker_Chip_Collision" DurationType="OneShot" DurationMin="0.1" DurationMax="0.1">
+					<MediaRefs>
+						<MediaRef Id="694379001"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3176396303" Name="Pool_Stick_Collision" DurationType="OneShot" DurationMin="0.14956743" DurationMax="0.15043384">
 					<MediaRefs>
 						<MediaRef Id="571702833"/>
@@ -783,5 +792,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{B1663B25-B29A-88F6-626A-D4B1E4A34EBE}</FileHash>
+	<FileHash>{2A1EBC97-4F90-D307-54B6-26B94210D575}</FileHash>
 </SoundBanksInfo>
