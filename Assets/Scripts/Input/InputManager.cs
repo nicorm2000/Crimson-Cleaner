@@ -25,6 +25,7 @@ public class InputManager : MonoBehaviour
     private InputAction cleanAction;
     private InputAction rotateObejctAction;
     private InputAction pickUpAction;
+    private InputAction retrieveAction;
     private InputAction throwAction;
     private InputAction cleaningListAction;
     private InputAction mouseScrollAction;
@@ -45,6 +46,7 @@ public class InputManager : MonoBehaviour
     public event Action SelectSecondToolEvent;
     public event Action SelectThirdToolEvent;
     public event Action<bool> CleanEvent;
+    public event Action<bool> RetrieveEvent;
     public event Action ThrowStartEvent;
     public event Action ThrowEndEvent;
     public event Action PauseEvent;
@@ -71,6 +73,7 @@ public class InputManager : MonoBehaviour
         lookAction = gameplayMap.FindAction("Look");
         interactAction = gameplayMap.FindAction("Interact");
         cleanAction = gameplayMap.FindAction("Clean");
+        retrieveAction = gameplayMap.FindAction("Retrieve");
         pickUpAction = gameplayMap.FindAction("PickUp");
         throwAction = gameplayMap.FindAction("Throw");
         cleaningListAction = gameplayMap.FindAction("CleaningList");
@@ -95,6 +98,8 @@ public class InputManager : MonoBehaviour
         throwAction.canceled += OnThrowEnd;
         cleanAction.started += ctx => OnClean(true);
         cleanAction.canceled += ctx => OnClean(false);
+        retrieveAction.started += ctx => OnRetrieve(true);
+        retrieveAction.canceled += ctx => OnRetrieve(false);
         mouseScrollAction.performed += OnMouseScroll;
         pauseAction.performed += OnPause;
         tutorialUIAction.performed += OnDisplayTutorial;
@@ -113,6 +118,7 @@ public class InputManager : MonoBehaviour
         //lightSwitchAction.canceled += OnToggleLights;
         //openAction.canceled += OnOpen;
         cleanAction.canceled += ctx => OnClean(false);
+        //retrieveAction.canceled += ctx => OnRetrieve(false);
         //lightSwitchAction.canceled += ctx => OnToggleLights(ctx);
 
         if (shouldHideCursor) HideCursor();
@@ -180,6 +186,11 @@ public class InputManager : MonoBehaviour
     private void OnClean(bool isCleaning)
     {
         CleanEvent?.Invoke(isCleaning);
+    }
+
+    private void OnRetrieve(bool isRetrieving)
+    {
+        RetrieveEvent?.Invoke(isRetrieving);
     }
 
     public bool IsUsingController()

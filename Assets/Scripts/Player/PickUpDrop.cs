@@ -10,8 +10,9 @@ public class PickUpDrop : MonoBehaviour
     [SerializeField] private Transform objectGrabPointTransform;
     [SerializeField] private LayerMask pickupLayerMask;
     [SerializeField] private float maxThrowingForce = 20f;
-    [SerializeField] private float forceChargeRate = 5f;
+    [SerializeField] private float forceChargeRateThrow = 5f;
     [SerializeField] private InputManager inputManager;
+    [SerializeField] private float holdTime = 1.5f;
 
     private ObjectGrabbable ObjectGrabbable;
     private float currentThrowingForce;
@@ -40,7 +41,7 @@ public class PickUpDrop : MonoBehaviour
     {
         if (isChargingThrow)
         {
-            currentThrowingForce += forceChargeRate * Time.deltaTime;
+            currentThrowingForce += forceChargeRateThrow * Time.deltaTime;
             currentThrowingForce = Mathf.Min(currentThrowingForce * scalarThrowingForce, maxThrowingForce);
         }
 
@@ -142,6 +143,11 @@ public class PickUpDrop : MonoBehaviour
     public void SetObjectGrabbable(ObjectGrabbable objectGrabbable)
     {
         ObjectGrabbable = objectGrabbable;
+    }
+    
+    public float GetHoldTime()
+    {
+        return holdTime;
     }
 
     private void ThrowObject()

@@ -166,6 +166,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Retrieve",
+                    "type": "Button",
+                    "id": "ad04a1c9-9e9b-43ad-821a-2802aa2f5f4b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -529,6 +538,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ForthTool",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dd57ab1f-5ef8-4ee0-91c7-645e3de85637",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Retrieve",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private Transform[] spawnPoints;
 
+    private bool isRetrieveingObject = false;
+    public bool IsRetrievingObject => isRetrieveingObject;
+
     private int previousRandom = 0;
     private int newRandom = 0;
 
@@ -242,6 +245,11 @@ public class PlayerController : MonoBehaviour
     public void SetObjectGrabbable(ObjectGrabbable grabbable)
     {
         objectGrabbable = grabbable;
+    }
+
+    public void SetIsRetrieveingObject(bool active)
+    {
+        isRetrieveingObject = active;
     }
 
     public void ToggleMovement(bool active)

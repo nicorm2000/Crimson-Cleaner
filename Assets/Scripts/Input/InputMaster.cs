@@ -188,6 +188,15 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Retrieve"",
+                    ""type"": ""Button"",
+                    ""id"": ""ad04a1c9-9e9b-43ad-821a-2802aa2f5f4b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -553,6 +562,17 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""action"": ""ForthTool"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dd57ab1f-5ef8-4ee0-91c7-645e3de85637"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Retrieve"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -640,6 +660,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         m_Player_SecondTool = m_Player.FindAction("SecondTool", throwIfNotFound: true);
         m_Player_ThirdTool = m_Player.FindAction("ThirdTool", throwIfNotFound: true);
         m_Player_ForthTool = m_Player.FindAction("ForthTool", throwIfNotFound: true);
+        m_Player_Retrieve = m_Player.FindAction("Retrieve", throwIfNotFound: true);
         // Pause
         m_Pause = asset.FindActionMap("Pause", throwIfNotFound: true);
         m_Pause_Pause = m_Pause.FindAction("Pause", throwIfNotFound: true);
@@ -722,6 +743,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SecondTool;
     private readonly InputAction m_Player_ThirdTool;
     private readonly InputAction m_Player_ForthTool;
+    private readonly InputAction m_Player_Retrieve;
     public struct PlayerActions
     {
         private @InputMaster m_Wrapper;
@@ -744,6 +766,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         public InputAction @SecondTool => m_Wrapper.m_Player_SecondTool;
         public InputAction @ThirdTool => m_Wrapper.m_Player_ThirdTool;
         public InputAction @ForthTool => m_Wrapper.m_Player_ForthTool;
+        public InputAction @Retrieve => m_Wrapper.m_Player_Retrieve;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -807,6 +830,9 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @ForthTool.started += instance.OnForthTool;
             @ForthTool.performed += instance.OnForthTool;
             @ForthTool.canceled += instance.OnForthTool;
+            @Retrieve.started += instance.OnRetrieve;
+            @Retrieve.performed += instance.OnRetrieve;
+            @Retrieve.canceled += instance.OnRetrieve;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -865,6 +891,9 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @ForthTool.started -= instance.OnForthTool;
             @ForthTool.performed -= instance.OnForthTool;
             @ForthTool.canceled -= instance.OnForthTool;
+            @Retrieve.started -= instance.OnRetrieve;
+            @Retrieve.performed -= instance.OnRetrieve;
+            @Retrieve.canceled -= instance.OnRetrieve;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -948,6 +977,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         void OnSecondTool(InputAction.CallbackContext context);
         void OnThirdTool(InputAction.CallbackContext context);
         void OnForthTool(InputAction.CallbackContext context);
+        void OnRetrieve(InputAction.CallbackContext context);
     }
     public interface IPauseActions
     {
