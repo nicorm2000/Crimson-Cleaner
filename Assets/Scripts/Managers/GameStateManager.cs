@@ -47,6 +47,7 @@ public class GameStateManager : MonoBehaviour
     public PlayerController playerController;
     public PickUpDrop pickUpDrop;
     public PlayerStats playerStats;
+    public UIManager uiManager;
 
     private IGameState currentState;
     private IGameState previousState;

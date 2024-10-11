@@ -101,7 +101,7 @@ public class PlayersUIManager : MonoBehaviour
 
         backToLobbyFinishedButton.onClick.AddListener(() => { OpenTab(backToLobbyPanel, true); });
         backToLobbyUnfinishedButton.onClick.AddListener(() => { OpenTab(backToLobbyPanel, true); });
-        yesBackToLobbyButton.onClick.AddListener(() => { gameStateManager.TransitionToState("DeInit"); MySceneManager.Instance.LoadSceneByName(lobbySceneName); });
+        yesBackToLobbyButton.onClick.AddListener(() => { gameStateManager.uiManager.TriggerEndGame(); });
         noBackToLobbyButton.onClick.AddListener(() => { OpenTab(backToLobbyPanel, false); });
 
 
@@ -372,11 +372,13 @@ public class PlayersUIManager : MonoBehaviour
     private void TriggerLostUI()
     {
         jobUnfinished.SetActive(true);
+        gameStateManager.uiManager.TriggerEndGame();
     }
 
     private void TriggerWinUI()
     {
         jobFinished.SetActive(true);
+        gameStateManager.uiManager.TriggerEndGame();
     }
 
     public void CreateCleaningList()

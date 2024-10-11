@@ -26,6 +26,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button yesBackToLobbyButton = null;
     [SerializeField] private Button noBackToLobbyButton = null;
     [SerializeField] private string lobbySceneName = null;
+    [SerializeField] private Animator endGameAnimator = null;
+    [SerializeField] private string endGameTriggername = null;
 
     [Header("Settings")]
     [SerializeField] private Button audioTabButton = null;
@@ -69,7 +71,7 @@ public class UIManager : MonoBehaviour
 
         resumeGameButton.onClick.AddListener(() => { gameStateManager.TogglePause(); ToggleCanvases(); audioManager.PlaySound(clickEvent); });
         backToLobbyButton.onClick.AddListener(() => { OpenTab(backToLobbyPanel, true); });
-        yesBackToLobbyButton.onClick.AddListener(() => { audioManager.PlaySound(waterFaucetSystem.waterFlowStopEvent); gameStateManager.TransitionToState("DeInit"); MySceneManager.Instance.LoadSceneByName(lobbySceneName); audioManager.PlaySound(clickEvent); });
+        yesBackToLobbyButton.onClick.AddListener(() => { audioManager.PlaySound(waterFaucetSystem.waterFlowStopEvent); audioManager.PlaySound(clickEvent); TriggerEndGame(); });
         noBackToLobbyButton.onClick.AddListener(() => { OpenTab(backToLobbyPanel, false); });
 
         //Settings
@@ -146,6 +148,24 @@ public class UIManager : MonoBehaviour
         tutorialControlHint.SetActive(true);
         yield return new WaitForSeconds(tutorialHintDuration);
         tutorialControlHint.SetActive(false);
+    }
+
+    public void TriggerEndGame()
+    {
+        ToggleCanvases();
+        endGameAnimator.SetTrigger(endGameTriggername);
+
+        AnimatorStateInfo stateInfo = endGameAnimator.GetCurrentAnimatorStateInfo(0);
+
+        float animationDuration = stateInfo.length;
+        float offset = 0.1f;
+
+        Invoke("TriggerDeInit", animationDuration - offset);
+    }
+
+    private void TriggerDeInit()
+    {
+        gameStateManager.TransitionToState("DeInit");
     }
 
     private void OnDestroy()
