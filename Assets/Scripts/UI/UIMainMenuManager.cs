@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -71,13 +70,9 @@ public class UIMainMenuManager : MonoBehaviour
         rightButton.onClick.AddListener(() => { NavigateRight(); audioManager.PlaySound(clickEvent); });
 
         deepWebButton.onClick.AddListener(() => { OpenTab(deepWebPanel, true); });
-
-        storeButton.onClick.AddListener(() => { OpenTab(storePanel, true); });
-        
-        creditsButton.onClick.AddListener(() => { OpenTab(creditsPanel, true); });
-        
+        storeButton.onClick.AddListener(() => { OpenTab(storePanel, true); });        
+        creditsButton.onClick.AddListener(() => { OpenTab(creditsPanel, true); });        
         settingsButton.onClick.AddListener(() => { OpenTab(settingsPanel, true); });
-        
         exitButton.onClick.AddListener(() => { OpenTab(exitPanel, true); });
 
         yesExitButton.onClick.AddListener(() => { mySceneManager.Exit(); audioManager.PlaySound(clickEvent); });
