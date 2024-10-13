@@ -746,132 +746,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Gun_Collision" ID="{323E9AEB-692A-4D9C-9BBF-BA8C376BABF2}">
-					<ChildrenList>
-						<Action Name="" ID="{69768F0C-ED96-4536-AB27-9CC6D55D3A34}" ShortID="257719493">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="2"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Gun Collision" ID="{FC652FCA-7A3E-42BC-8714-DCDE991D9D40}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{3ED97A28-FB16-4369-B5AB-CEF885DEC3C0}" ShortID="213223647">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Gun Collision" ID="{FC652FCA-7A3E-42BC-8714-DCDE991D9D40}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Machete_Collision" ID="{1428FF24-CD6F-48CC-B937-DBC6742674EC}">
-					<ChildrenList>
-						<Action Name="" ID="{5A8F6E86-D062-446B-BA28-81360C6872D5}" ShortID="913001184">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="2"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Machete Collision" ID="{9C58712C-A45C-4134-A649-D40D1B411C93}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{DBCF52A8-1122-4762-8DDE-AC346CFA47F1}" ShortID="713486462">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Machete Collision" ID="{9C58712C-A45C-4134-A649-D40D1B411C93}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Knife_Collision" ID="{704D5C5B-5BB6-4A4A-90EF-9BEB4820B91F}">
-					<ChildrenList>
-						<Action Name="" ID="{E1A67C95-BA29-4478-B752-3CA0FF41149C}" ShortID="729163208">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="2"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Knife Collision" ID="{8B099DDF-256C-4F5C-8CD2-853CA135908F}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{68288AF5-5A38-4EF5-BA4E-630E8BFFC53B}" ShortID="902448376">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Knife Collision" ID="{8B099DDF-256C-4F5C-8CD2-853CA135908F}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Retrieve_Documents" ID="{3005D8DE-E63D-4A22-B2A4-FA6DE8B90641}">
-					<ChildrenList>
-						<Action Name="" ID="{DE8DF0A2-A111-4F5C-86E2-BF45FEAC2DA8}" ShortID="524329624">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="2"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Retrieve_PickUp_DocumentsSFX_Audio" ID="{5BDFB6CF-F27F-4CEF-8C31-6231C02F7B7C}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{FC111038-AEAB-4230-9FE3-2FCEA78311B7}" ShortID="84671186">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Retrieve_PickUp_DocumentsSFX_Audio" ID="{5BDFB6CF-F27F-4CEF-8C31-6231C02F7B7C}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Retrieve_Rope" ID="{30BC4FAF-DC3E-43F3-AF7B-77CFC0BADB44}">
-					<ChildrenList>
-						<Action Name="" ID="{2E46E31F-2727-4EED-B442-846FCC8804B7}" ShortID="296519296">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="2"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Retrieve_PickUp_RopeSFX_Audio" ID="{BD80ED0F-9542-4432-9909-ECF32B247985}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{6DA8FBD7-D551-4CCE-A56D-6CF31A8C5B80}" ShortID="689483077">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Retrieve_PickUp_RopeSFX_Audio" ID="{BD80ED0F-9542-4432-9909-ECF32B247985}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Retrieve_Clothes" ID="{B7D90709-8D61-48B8-936A-C310DB220302}">
-					<ChildrenList>
-						<Action Name="" ID="{E8C96395-022B-40FB-B662-593361078B6A}" ShortID="793043010">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="2"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Retrieve_PickUp_ClothSFX_Audio" ID="{EECFE267-DB97-4578-AA8A-B42AE01B6C72}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{F31E1558-B19E-4939-9AB8-800CA259F72A}" ShortID="201627849">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Retrieve_PickUp_ClothSFX_Audio" ID="{EECFE267-DB97-4578-AA8A-B42AE01B6C72}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="Sponge_Dirty" ID="{8A26E1D0-D76F-4710-9B7D-5583DC96A265}">
 					<ChildrenList>
 						<Action Name="" ID="{76B4024E-D506-4E8D-9227-8B9AAB562667}" ShortID="320919369">
@@ -1914,6 +1788,241 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="WhispersSFX_Audio" ID="{CC80ED46-623A-40CA-BDE8-B74D2BEBA063}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Retrievables" ID="{5E3E8AA8-2759-49DE-9E69-CEF83EF27226}" ShortID="611592331">
+					<ChildrenList>
+						<Event Name="Retrieve_Rope" ID="{30BC4FAF-DC3E-43F3-AF7B-77CFC0BADB44}">
+							<ChildrenList>
+								<Action Name="" ID="{2E46E31F-2727-4EED-B442-846FCC8804B7}" ShortID="296519296">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Retrieve_PickUp_RopeSFX_Audio" ID="{BD80ED0F-9542-4432-9909-ECF32B247985}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{6DA8FBD7-D551-4CCE-A56D-6CF31A8C5B80}" ShortID="689483077">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Retrieve_PickUp_RopeSFX_Audio" ID="{BD80ED0F-9542-4432-9909-ECF32B247985}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Knife_Collision" ID="{704D5C5B-5BB6-4A4A-90EF-9BEB4820B91F}">
+							<ChildrenList>
+								<Action Name="" ID="{E1A67C95-BA29-4478-B752-3CA0FF41149C}" ShortID="729163208">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Knife Collision" ID="{8B099DDF-256C-4F5C-8CD2-853CA135908F}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{68288AF5-5A38-4EF5-BA4E-630E8BFFC53B}" ShortID="902448376">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Knife Collision" ID="{8B099DDF-256C-4F5C-8CD2-853CA135908F}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Gun_Collision" ID="{323E9AEB-692A-4D9C-9BBF-BA8C376BABF2}">
+							<ChildrenList>
+								<Action Name="" ID="{69768F0C-ED96-4536-AB27-9CC6D55D3A34}" ShortID="257719493">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Gun Collision" ID="{FC652FCA-7A3E-42BC-8714-DCDE991D9D40}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{3ED97A28-FB16-4369-B5AB-CEF885DEC3C0}" ShortID="213223647">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Gun Collision" ID="{FC652FCA-7A3E-42BC-8714-DCDE991D9D40}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Retrieve_Documents" ID="{3005D8DE-E63D-4A22-B2A4-FA6DE8B90641}">
+							<ChildrenList>
+								<Action Name="" ID="{DE8DF0A2-A111-4F5C-86E2-BF45FEAC2DA8}" ShortID="524329624">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Retrieve_PickUp_DocumentsSFX_Audio" ID="{5BDFB6CF-F27F-4CEF-8C31-6231C02F7B7C}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{FC111038-AEAB-4230-9FE3-2FCEA78311B7}" ShortID="84671186">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Retrieve_PickUp_DocumentsSFX_Audio" ID="{5BDFB6CF-F27F-4CEF-8C31-6231C02F7B7C}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Retrieve_Clothes" ID="{B7D90709-8D61-48B8-936A-C310DB220302}">
+							<ChildrenList>
+								<Action Name="" ID="{E8C96395-022B-40FB-B662-593361078B6A}" ShortID="793043010">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Retrieve_PickUp_ClothSFX_Audio" ID="{EECFE267-DB97-4578-AA8A-B42AE01B6C72}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{F31E1558-B19E-4939-9AB8-800CA259F72A}" ShortID="201627849">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Retrieve_PickUp_ClothSFX_Audio" ID="{EECFE267-DB97-4578-AA8A-B42AE01B6C72}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Machete_Collision" ID="{1428FF24-CD6F-48CC-B937-DBC6742674EC}">
+							<ChildrenList>
+								<Action Name="" ID="{5A8F6E86-D062-446B-BA28-81360C6872D5}" ShortID="913001184">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Machete Collision" ID="{9C58712C-A45C-4134-A649-D40D1B411C93}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{DBCF52A8-1122-4762-8DDE-AC346CFA47F1}" ShortID="713486462">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Machete Collision" ID="{9C58712C-A45C-4134-A649-D40D1B411C93}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Retrieve_Coke_Bag_1" ID="{208DD6C2-B0BC-4FE6-964C-51EA0637576A}">
+							<ChildrenList>
+								<Action Name="" ID="{D7708847-BF83-4A12-BCDA-C2B75CB26F92}" ShortID="24218260">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="CokeBag1SFX_Audio" ID="{25FB3147-91BE-4551-B6C9-CEFAD8F5927A}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{473D33EA-F853-4958-8CE5-C46CA1C08B6A}" ShortID="913619693">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="CokeBag1SFX_Audio" ID="{25FB3147-91BE-4551-B6C9-CEFAD8F5927A}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Retrieve_Coke_Bag_2" ID="{305F8E3E-8F8F-4E75-85C6-5A560411F8F4}">
+							<ChildrenList>
+								<Action Name="" ID="{E707FE32-811C-43A7-B431-96EADA9C1BD4}" ShortID="923849144">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="CokeBag2SFX_Audio" ID="{D1710B87-6256-4DAB-A5A4-8438C13E18DA}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{89E50819-6B3B-4688-9F2E-BFDD82F6B302}" ShortID="581862344">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="CokeBag2SFX_Audio" ID="{D1710B87-6256-4DAB-A5A4-8438C13E18DA}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Retrieve_Coke_Block" ID="{94DB8006-0558-4461-BC0D-9E8AB797FE9D}">
+							<ChildrenList>
+								<Action Name="" ID="{4946830E-EFAD-4E5D-BBB2-4FD45DCD5A75}" ShortID="154500814">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="CokeBlock SFX_Audio" ID="{C9A2F2F5-3BD7-42A2-8D32-6F06636E2BAC}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{E868A2CE-99EF-4923-AC2F-85F41C2D6834}" ShortID="652081493">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="CokeBlock SFX_Audio" ID="{C9A2F2F5-3BD7-42A2-8D32-6F06636E2BAC}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Retrieve_Family_Photo" ID="{920D15B2-61A5-45B5-98C3-53C9C59AA872}">
+							<ChildrenList>
+								<Action Name="" ID="{DC9528E2-E360-47AB-B2C9-7DA8F65AEB72}" ShortID="704132425">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="FamilyPhotoSFX_Audio" ID="{67119230-471B-47CB-AD95-DD7FC0DBD899}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{A6583046-564F-4DE4-9A77-A265C4BD657E}" ShortID="186065609">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="FamilyPhotoSFX_Audio" ID="{67119230-471B-47CB-AD95-DD7FC0DBD899}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Retrieve_Key" ID="{F05E1CBB-7652-487C-B35E-7C6778196C91}">
+							<ChildrenList>
+								<Action Name="" ID="{399368AD-8F35-4F51-80B3-4F79FB8540B8}" ShortID="747245605">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="KeySFX_Audio" ID="{2AE2E2D8-F22C-41D3-9570-7049DA908D37}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{2BE70FC1-6F34-4398-8570-70EB5FA10704}" ShortID="705828273">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="KeySFX_Audio" ID="{2AE2E2D8-F22C-41D3-9570-7049DA908D37}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

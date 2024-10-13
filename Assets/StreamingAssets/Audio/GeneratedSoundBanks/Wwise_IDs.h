@@ -82,7 +82,12 @@ namespace AK
         static const AkUniqueID POOL_STICK_COLLISION = 3176396303U;
         static const AkUniqueID REMOVE_TRASH = 2748915226U;
         static const AkUniqueID RETRIEVE_CLOTHES = 2786157920U;
+        static const AkUniqueID RETRIEVE_COKE_BAG_1 = 2214151081U;
+        static const AkUniqueID RETRIEVE_COKE_BAG_2 = 2214151082U;
+        static const AkUniqueID RETRIEVE_COKE_BLOCK = 3647128504U;
         static const AkUniqueID RETRIEVE_DOCUMENTS = 2186617010U;
+        static const AkUniqueID RETRIEVE_FAMILY_PHOTO = 1850201841U;
+        static const AkUniqueID RETRIEVE_KEY = 377417453U;
         static const AkUniqueID RETRIEVE_ROPE = 362869116U;
         static const AkUniqueID REVOLVER_COCK = 1351538419U;
         static const AkUniqueID ROPE_COLLISION = 3225123216U;

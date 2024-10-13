@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{5AD388EB-CD66-1725-6C1E-0F13B3720EEA}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{8FE5D052-2F5E-DE2A-F9E3-8A55330B18DC}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -58,6 +58,10 @@
 					<ShortName>Cabinet_Close.wav</ShortName>
 					<CachePath>SFX/Cabinet_Close_818F3B66.wem</CachePath>
 				</File>
+				<File Id="109720813" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>KeySFX_Audio.wav</ShortName>
+					<CachePath>SFX/KeySFX_Audio_818F3B66.wem</CachePath>
+				</File>
 				<File Id="131550839" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Sponge _Cleaning SFX_Audio.wav</ShortName>
 					<CachePath>SFX/Sponge _Cleaning SFX_Audio_FB04DEF2.wem</CachePath>
@@ -86,9 +90,17 @@
 					<ShortName>Gas_Stove_Init.wav</ShortName>
 					<CachePath>SFX/Gas_Stove_Init_818F3B66.wem</CachePath>
 				</File>
+				<File Id="188422071" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>FamilyPhotoSFX_Audio.wav</ShortName>
+					<CachePath>SFX/FamilyPhotoSFX_Audio_818F3B66.wem</CachePath>
+				</File>
 				<File Id="190901790" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Bucket_CleanMopSFX_Audio.wav</ShortName>
 					<CachePath>SFX/Bucket_CleanMopSFX_Audio_818F3B66.wem</CachePath>
+				</File>
+				<File Id="192252381" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CokeBlock SFX_Audio.wav</ShortName>
+					<CachePath>SFX/CokeBlock SFX_Audio_818F3B66.wem</CachePath>
 				</File>
 				<File Id="196769015" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Medium_Metal_Tool_Collision.wav</ShortName>
@@ -109,6 +121,10 @@
 				<File Id="231866133" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Baby_CryingSFX_Audio.wav</ShortName>
 					<CachePath>SFX/Baby_CryingSFX_Audio_818F3B66.wem</CachePath>
+				</File>
+				<File Id="246298671" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CokeBag1SFX_Audio.wav</ShortName>
+					<CachePath>SFX/CokeBag1SFX_Audio_818F3B66.wem</CachePath>
 				</File>
 				<File Id="279046986" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UV_Light_ON.wav</ShortName>
@@ -289,6 +305,10 @@
 				<File Id="749334406" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps_PoolOfBloodSFX_Audio-[AudioTrimmer.com].wav</ShortName>
 					<CachePath>SFX/Footsteps_PoolOfBloodSFX_Audio-[AudioTrimmer.com]_BAD6C07B.wem</CachePath>
+				</File>
+				<File Id="762487305" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CokeBag2SFX_Audio.wav</ShortName>
+					<CachePath>SFX/CokeBag2SFX_Audio_818F3B66.wem</CachePath>
 				</File>
 				<File Id="782901985" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Billiard Ball Collision.wav</ShortName>
@@ -741,9 +761,34 @@
 						<MediaRef Id="339714903"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2214151081" Name="Retrieve_Coke_Bag_1" DurationType="OneShot" DurationMin="0.39995834" DurationMax="0.39995834">
+					<MediaRefs>
+						<MediaRef Id="246298671"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2214151082" Name="Retrieve_Coke_Bag_2" DurationType="OneShot" DurationMin="0.39995834" DurationMax="0.39995834">
+					<MediaRefs>
+						<MediaRef Id="762487305"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3647128504" Name="Retrieve_Coke_Block" DurationType="OneShot" DurationMin="0.68" DurationMax="0.68">
+					<MediaRefs>
+						<MediaRef Id="192252381"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2186617010" Name="Retrieve_Documents" DurationType="OneShot" DurationMin="0.96308756" DurationMax="0.97427815">
 					<MediaRefs>
 						<MediaRef Id="739600721"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1850201841" Name="Retrieve_Family_Photo" DurationType="OneShot" DurationMin="0.79995835" DurationMax="0.79995835">
+					<MediaRefs>
+						<MediaRef Id="188422071"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="377417453" Name="Retrieve_Key" DurationType="OneShot" DurationMin="1.2999583" DurationMax="1.2999583">
+					<MediaRefs>
+						<MediaRef Id="109720813"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="362869116" Name="Retrieve_Rope" DurationType="OneShot" DurationMin="0.5626757" DurationMax="0.5626757">
@@ -873,5 +918,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{5E77BA51-A3AE-DB7D-BEE5-3380529294CC}</FileHash>
+	<FileHash>{1D609706-13AB-B584-8E72-E0107D58784A}</FileHash>
 </SoundBanksInfo>

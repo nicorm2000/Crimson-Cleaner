@@ -4,7 +4,8 @@ Event	ID	Name			Wwise Object Path	Notes
 	160599783	Tablet_Cross_Out_Task			\Default Work Unit\Tablet_Cross_Out_Task	
 	295281277	Menu_Collision			\Default Work Unit\Menu_Collision	
 	326450532	Gas_Stove_Gas_Loop_Stop			\Default Work Unit\Gas_Stove_Gas_Loop_Stop	
-	362869116	Retrieve_Rope			\Default Work Unit\Retrieve_Rope	
+	362869116	Retrieve_Rope			\Default Work Unit\Retrievables\Retrieve_Rope	
+	377417453	Retrieve_Key			\Default Work Unit\Retrievables\Retrieve_Key	
 	382197601	Gas_Stove_Gas_Loop			\Default Work Unit\Gas_Stove_Gas_Loop	
 	467838998	Pick_Up			\Default Work Unit\Pick_Up	
 	494474302	Ceramic_Collision			\Default Work Unit\Ceramic_Collision	
@@ -21,7 +22,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	910731106	Couch_Chair_Collision			\Default Work Unit\Couch_Chair_Collision	
 	1082004779	Mop			\Default Work Unit\Mop	
 	1116333876	Bloody_Footstep_Stop			\Default Work Unit\Bloody_Footstep_Stop	
-	1154053212	Gun_Collision			\Default Work Unit\Gun_Collision	
+	1154053212	Gun_Collision			\Default Work Unit\Retrievables\Gun_Collision	
 	1165214467	Sponge			\Default Work Unit\Sponge	
 	1218911394	Gas_Stove_Turn_Off			\Default Work Unit\Gas_Stove_Turn_Off	
 	1222748174	Sponge_Dirty			\Default Work Unit\Sponge_Dirty	
@@ -35,10 +36,11 @@ Event	ID	Name			Wwise Object Path	Notes
 	1523901220	Wood_Footstep_Play			\Default Work Unit\Wood_Footstep_Play	
 	1673104519	Open_Notebook			\Default Work Unit\Open_Notebook	
 	1692852178	Bucket_Collision			\Default Work Unit\Bucket_Collision	
+	1850201841	Retrieve_Family_Photo			\Default Work Unit\Retrievables\Retrieve_Family_Photo	
 	1878686274	Drop			\Default Work Unit\Drop	
 	1925664349	Drop_Boiling_Water			\Default Work Unit\Drop_Boiling_Water	
 	1948672150	Cabinet_Close			\Default Work Unit\Cabinet_Close	
-	1966534225	Knife_Collision			\Default Work Unit\Knife_Collision	
+	1966534225	Knife_Collision			\Default Work Unit\Retrievables\Knife_Collision	
 	1967001744	Object_Placement_Confirmation			\Default Work Unit\Object_Placement_Confirmation	
 	2015415870	Heavy_Tool_Collision			\Default Work Unit\Heavy_Tool_Collision	
 	2037208526	Cart_Open			\Default Work Unit\Cart_Open	
@@ -48,9 +50,11 @@ Event	ID	Name			Wwise Object Path	Notes
 	2110685349	Urinal_Push			\Default Work Unit\Urinal_Push	
 	2147733524	Baby_Crying			\Default Work Unit\Sanity\Baby_Crying	
 	2179797042	Sponge_Woosh			\Default Work Unit\Sponge_Woosh	
-	2186617010	Retrieve_Documents			\Default Work Unit\Retrieve_Documents	
+	2186617010	Retrieve_Documents			\Default Work Unit\Retrievables\Retrieve_Documents	
 	2188449690	Game_Click			\Default Work Unit\Game_Click	
 	2196568223	Toolbox_Collision			\Default Work Unit\Toolbox_Collision	
+	2214151081	Retrieve_Coke_Bag_1			\Default Work Unit\Retrievables\Retrieve_Coke_Bag_1	
+	2214151082	Retrieve_Coke_Bag_2			\Default Work Unit\Retrievables\Retrieve_Coke_Bag_2	
 	2233184339	Tin_Collision			\Default Work Unit\Tin_Collision	
 	2239924753	Weapon_Swap			\Default Work Unit\Weapon_Swap	
 	2458915778	Cabinet_Open			\Default Work Unit\Cabinet_Open	
@@ -63,13 +67,13 @@ Event	ID	Name			Wwise Object Path	Notes
 	2736826332	Fridge_Ciose			\Default Work Unit\Fridge_Ciose	
 	2748915226	Remove_Trash			\Default Work Unit\Remove_Trash	
 	2768174490	Lamp_Switch_ON			\Default Work Unit\Lamp_Switch_ON	
-	2786157920	Retrieve_Clothes			\Default Work Unit\Retrieve_Clothes	
+	2786157920	Retrieve_Clothes			\Default Work Unit\Retrievables\Retrieve_Clothes	
 	2790747934	Water_Drop			\Default Work Unit\Water_Drop	
 	2864239532	Water_Tap			\Default Work Unit\Water_Tap	
 	2869063429	Water_Flow			\Default Work Unit\Water_Flow	
 	2916123785	Fridge_Open			\Default Work Unit\Fridge_Open	
 	2970993869	Plate_Breaking			\Default Work Unit\Plate_Breaking	
-	2997531735	Machete_Collision			\Default Work Unit\Machete_Collision	
+	2997531735	Machete_Collision			\Default Work Unit\Retrievables\Machete_Collision	
 	3090986788	Message_Notification			\Default Work Unit\Sanity\Message_Notification	
 	3141789928	Cubicle_Bathroom_Door			\Default Work Unit\Cubicle_Bathroom_Door	
 	3160723937	Pick_Up_Trash			\Default Work Unit\Pick_Up_Trash	
@@ -83,6 +87,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3537521357	Chair_Collision			\Default Work Unit\Chair_Collision	
 	3569692999	Bottle_Breaking			\Default Work Unit\Bottle_Breaking	
 	3611395209	Frame_Collision			\Default Work Unit\Frame_Collision	
+	3647128504	Retrieve_Coke_Block			\Default Work Unit\Retrievables\Retrieve_Coke_Block	
 	3676508413	Wash_Mop			\Default Work Unit\Wash_Mop	
 	3695522715	Mouse_Click			\Default Work Unit\Mouse_Click	
 	3697444650	Cart_Close			\Default Work Unit\Cart_Close	
@@ -101,30 +106,34 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	48240237	Money	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Money_5C80BC33.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Money		93896
 	52850419	Cabinet_Open	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Cabinet_Open_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Cabinet_Open		98400
 	56451287	Object_Placement_Confirmation	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Object_Placement_Confirmation_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Object_Placement_Confirmation		26556
-	75652571	Gun Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Gun Collision_83162486.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Gun Collision		33790
+	75652571	Gun Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Gun Collision_83162486.wem		\Actor-Mixer Hierarchy\Default Work Unit\Retrievables\Gun Collision		33790
 	81870092	Fridge_Open	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Fridge_Open_DF50160A.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Fridge_Open		105696
 	96612494	Bar_FightSFZ_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Bar_FightSFZ_Audio_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sanity\Bar_FightSFZ_Audio		2304096
 	102052292	Cabinet_Close	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Cabinet_Close_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Cabinet_Close		98400
+	109720813	KeySFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\KeySFX_Audio_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Retrievables\KeySFX_Audio		249688
 	131550839	Sponge _Cleaning SFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Sponge _Cleaning SFX_Audio_FB04DEF2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Sponge _Cleaning SFX_Audio		105696
 	139344711	Sponge Woosh	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Sponge Woosh_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Sponge Woosh		8476
 	146996785	Bottle Drop	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Bottle Drop_E8BD70C4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Bottle Drop		37870
 	161617688	Ceramic_Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Ceramic_Collision_D3A7484C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Ceramic_Collision		53016
-	162453724	Machete Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Machete Collision_08A6F70B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Machete Collision		55248
+	162453724	Machete Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Machete Collision_08A6F70B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Retrievables\Machete Collision		55248
 	163807742	Mop Woosh	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Mop Woosh_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Mop Woosh		12378
 	164498283	Gas_Stove_Init	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Gas_Stove_Init_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Gas_Stove_Init		153696
+	188422071	FamilyPhotoSFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\FamilyPhotoSFX_Audio_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Retrievables\FamilyPhotoSFX_Audio		153688
 	190901790	Bucket_CleanMopSFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Bucket_CleanMopSFX_Audio_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Bucket_CleanMopSFX_Audio		206816
+	192252381	CokeBlock SFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\CokeBlock SFX_Audio_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Retrievables\CokeBlock SFX_Audio		130656
 	196769015	Medium_Metal_Tool_Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Medium_Metal_Tool_Collision_947DC9CB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Medium_Metal_Tool_Collision		17636
 	204238787	Rope_Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Rope_Collision_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Rope_Collision		22258
 	221652275	Gas_Stove_Loop	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Gas_Stove_Loop_66B93D96.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Gas_Stove_Loop		576096
 	227645673	Police_SirenSFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Police_SirenSFX_Audio_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sanity\Police_SirenSFX_Audio		960096
 	231866133	Baby_CryingSFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Baby_CryingSFX_Audio_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sanity\Baby_CryingSFX_Audio		1728096
+	246298671	CokeBag1SFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\CokeBag1SFX_Audio_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Retrievables\CokeBag1SFX_Audio		76888
 	279046986	UV_Light_ON	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\UV_Light_ON_6813D86D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\UV_Light_ON		76896
 	294791835	Tin_Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Tin_Collision_A8FF17C7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Tin_Collision		13326
 	296468143	Cart Open	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Cart Open_61AFE191.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Cart Open		88296
 	303229491	WhispersSFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\WhispersSFX_Audio_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sanity\WhispersSFX_Audio		1536096
 	307614010	Mouse Click	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Mouse Click_5FEEB765.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\Mouse Click		21264
 	323016438	Bucket Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Bucket Collision_86FFB826.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Bucket Collision		59924
-	339714903	Retrieve_PickUp_ClothSFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Retrieve_PickUp_ClothSFX_Audio_6104D7BD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Retrieve_PickUp_ClothSFX_Audio		249696
+	339714903	Retrieve_PickUp_ClothSFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Retrieve_PickUp_ClothSFX_Audio_6104D7BD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Retrievables\Retrieve_PickUp_ClothSFX_Audio		249696
 	360440042	Urinal Flush	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Urinal Flush_EB6D7970.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Urinal Flush		529296
 	363758932	Safe_Open_Close	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Safe_Open_Close_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Safe_Open_Close		50754
 	368920920	SelectTrashBin	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\SelectTrashBin_AA136D92.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\SelectTrashBin		192096
@@ -153,7 +162,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	592962953	Drawer_Close	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Drawer_Close_437688E8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Drawer_Close		96096
 	593332922	Footsteps_PoolOfBloodSFX_Audio-[AudioTrimmer_com] (3)	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Footsteps_PoolOfBloodSFX_Audio-[AudioTrimmer.com] (3)_FAAB21D0.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Footsteps\Bloodpool Footsteps\Footsteps_PoolOfBloodSFX_Audio-[AudioTrimmer_com] (3)		38496
 	593550720	Light_Metal_Tool_Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Light_Metal_Tool_Collision_C56F50D5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Light_Metal_Tool_Collision		17074
-	599171025	Retrieve_PickUp_RopeSFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Retrieve_PickUp_RopeSFX_Audio_DA56BBFF.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Retrieve_PickUp_RopeSFX_Audio		49724
+	599171025	Retrieve_PickUp_RopeSFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Retrieve_PickUp_RopeSFX_Audio_DA56BBFF.wem		\Actor-Mixer Hierarchy\Default Work Unit\Retrievables\Retrieve_PickUp_RopeSFX_Audio		49724
 	618405621	Object Cleaned	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Object Cleaned_DCD33505.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Object Cleaned		115792
 	623477863	Footsteps_BloodySFX_Audio-[AudioTrimmer_com] (3)	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Footsteps_BloodySFX_Audio-[AudioTrimmer.com] (3)_A508DE09.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Footsteps\Bloody Footsteps\Footsteps_BloodySFX_Audio-[AudioTrimmer_com] (3)		38496
 	676679731	Revolver_Cock	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Revolver_Cock_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sanity\Revolver_Cock		67352
@@ -161,8 +170,9 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	694379001	Poker_Chip_Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Poker_Chip_Collision_9AA05703.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Poker_Chip_Collision		8916
 	701664573	Tool Swap	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Weapong Swap_BC49C360.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Tool Swap		10344
 	706771327	Bar Door	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Bar Door_B6A4FDC7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Bar Door		44196
-	739600721	Retrieve_PickUp_DocumentsSFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Retrieve_PickUp_DocumentsSFX_Audio_CF6C2245.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Retrieve_PickUp_DocumentsSFX_Audio		186080
+	739600721	Retrieve_PickUp_DocumentsSFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Retrieve_PickUp_DocumentsSFX_Audio_CF6C2245.wem		\Actor-Mixer Hierarchy\Default Work Unit\Retrievables\Retrieve_PickUp_DocumentsSFX_Audio		186080
 	749334406	Footsteps_PoolOfBloodSFX_Audio-[AudioTrimmer_com]	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Footsteps_PoolOfBloodSFX_Audio-[AudioTrimmer.com]_BAD6C07B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Footsteps\Bloodpool Footsteps\Footsteps_PoolOfBloodSFX_Audio-[AudioTrimmer_com]		38496
+	762487305	CokeBag2SFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\CokeBag2SFX_Audio_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Retrievables\CokeBag2SFX_Audio		76888
 	782901985	Billiard Ball Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Billiard Ball Collision_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Billiard Ball Collision		21202
 	784004900	Frame_Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Frame_Collision_0BA265B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Frame_Collision		7570
 	800697441	Phone_Ring2SFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Phone_Ring2SFX_Audio_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sanity\Phone_Ring2SFX_Audio		1152096
@@ -180,7 +190,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	926498869	Sponge _Cleaning Dirty SFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Sponge _Cleaning Dirty SFX_Audio_184DB1B4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Sponge _Cleaning Dirty SFX_Audio		96096
 	928834380	Tablet_Cross_Out_Task	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Tablet_Cross_Out_Task_59688096.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\Tablet_Cross_Out_Task		96096
 	942760120	Footsteps_NormalSFX_Audio-[AudioTrimmer_com] (1)	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Footsteps_NormalSFX_Audio-[AudioTrimmer.com] (1)_96BE7550.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Footsteps\Wood Foosteps\Footsteps_NormalSFX_Audio-[AudioTrimmer_com] (1)		38496
-	951993581	Knife Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Knife Collision_E8289CD1.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Knife Collision		34522
+	951993581	Knife Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Knife Collision_E8289CD1.wem		\Actor-Mixer Hierarchy\Default Work Unit\Retrievables\Knife Collision		34522
 	953973620	Footsteps_BloodySFX_Audio-[AudioTrimmer_com] (4)	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Footsteps_BloodySFX_Audio-[AudioTrimmer.com] (4)_31C63D2C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Footsteps\Bloody Footsteps\Footsteps_BloodySFX_Audio-[AudioTrimmer_com] (4)		38496
 	976852037	Menu_Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Menu_Collision_4E8BE7E6.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Menu_Collision		17736
 	988003584	Cubicle Bathroom Door	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Cubicle Bathroom Door_5E4AD11E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Game Interactions\Cubicle Bathroom Door		44852

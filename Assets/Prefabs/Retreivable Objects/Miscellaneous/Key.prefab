@@ -120,10 +120,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d762f5069bbb6842adf03e9eb481b2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  environmentRaycaster: {fileID: 0}
+  inputManager: {fileID: 0}
+  playerController: {fileID: 0}
+  pickUpDrop: {fileID: 0}
   audioManager: {fileID: 0}
-  soundEvent: 
-  soundEvent2: 
+  cameraTransform: {fileID: 0}
+  soundEvent: Retrieve_Key
+  raycastDistance: 0
 --- !u!114 &8345051603533354121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,4 +142,3 @@ MonoBehaviour:
   ID: 0
   isKeyPickedUp: 0
   keyName: 
-  keySprite: {fileID: 0}
