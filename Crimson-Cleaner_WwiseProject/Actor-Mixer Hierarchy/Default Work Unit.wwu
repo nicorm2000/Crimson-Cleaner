@@ -3697,6 +3697,271 @@
 						</Sound>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Sanity" ID="{267B6CE0-0DCA-424D-B80A-F8AAC7F2077C}" ShortID="201213198">
+					<ChildrenList>
+						<Sound Name="Baby_CryingSFX_Audio" ID="{9A12A4BD-560A-45C5-80EF-4B4BC61CF1ED}" ShortID="362506982">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Baby_CryingSFX_Audio" ID="{CC7C77EF-C968-4DE9-BB3A-114B6D1BCC40}">
+									<Language>SFX</Language>
+									<AudioFile>Baby_CryingSFX_Audio.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="231866133"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Baby_CryingSFX_Audio" ID="{CC7C77EF-C968-4DE9-BB3A-114B6D1BCC40}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Bar_FightSFZ_Audio" ID="{1244A245-FCE4-460E-AEF9-5F6F7A15D1F9}" ShortID="1049644898">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Bar_FightSFZ_Audio" ID="{198BD58C-C744-4C74-BA2B-440D77C1D15B}">
+									<Language>SFX</Language>
+									<AudioFile>Bar_FightSFZ_Audio.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="96612494"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Bar_FightSFZ_Audio" ID="{198BD58C-C744-4C74-BA2B-440D77C1D15B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Message_Notification" ID="{A1966C90-5AFA-4A8E-94A2-A727A078B6B1}" ShortID="1056782190">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Message_Notification" ID="{64092BE1-9F0F-48DC-9D9A-4EE57C5BC917}">
+									<Language>SFX</Language>
+									<AudioFile>Message_Notification.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="874516579"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Message_Notification" ID="{64092BE1-9F0F-48DC-9D9A-4EE57C5BC917}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="PeleaParejaSFX_Audio" ID="{1EB92494-40C7-43CF-B640-82B7DA3EAF48}" ShortID="291964747">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="PeleaParejaSFX_Audio" ID="{BECE1442-F9D5-4A8A-9EAF-72F03812091D}">
+									<Language>SFX</Language>
+									<AudioFile>PeleaParejaSFX_Audio.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="491117853"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="PeleaParejaSFX_Audio" ID="{BECE1442-F9D5-4A8A-9EAF-72F03812091D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Phone_Ring2SFX_Audio" ID="{E867E0DE-C5CD-48C0-A94F-F030F059CCCE}" ShortID="913148193">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Phone_Ring2SFX_Audio" ID="{47BA5B0F-3ADB-412B-9F22-7661449A95DD}">
+									<Language>SFX</Language>
+									<AudioFile>Phone_Ring2SFX_Audio.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="800697441"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Phone_Ring2SFX_Audio" ID="{47BA5B0F-3ADB-412B-9F22-7661449A95DD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Police_SirenSFX_Audio" ID="{048EFC4A-DA86-4B29-B402-C55B261156A4}" ShortID="806494690">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Police_SirenSFX_Audio" ID="{D6673606-12A4-401B-BD76-34C51BED84EC}">
+									<Language>SFX</Language>
+									<AudioFile>Police_SirenSFX_Audio.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="227645673"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Police_SirenSFX_Audio" ID="{D6673606-12A4-401B-BD76-34C51BED84EC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="WhispersSFX_Audio" ID="{CC80ED46-623A-40CA-BDE8-B74D2BEBA063}" ShortID="346327989">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="WhispersSFX_Audio" ID="{9388811F-27AF-43B6-883E-33782151242D}">
+									<Language>SFX</Language>
+									<AudioFile>WhispersSFX_Audio.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="303229491"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="WhispersSFX_Audio" ID="{9388811F-27AF-43B6-883E-33782151242D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Footsteps_RunSFX_Audio" ID="{BD413F35-CC41-4162-B0C4-8FBD593BBC54}" ShortID="787262987">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Footsteps_RunSFX_Audio" ID="{B027C846-08BA-4917-9B42-A3F99A8765FF}">
+									<Language>SFX</Language>
+									<AudioFile>Footsteps_RunSFX_Audio.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1054048262"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Footsteps_RunSFX_Audio" ID="{B027C846-08BA-4917-9B42-A3F99A8765FF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Revolver_Cock" ID="{2FE23E8D-0F65-453C-A146-D069403D32B9}" ShortID="910077349">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Revolver_Cock" ID="{1D5802EF-35E3-45D1-A524-47B2704FDE48}">
+									<Language>SFX</Language>
+									<AudioFile>Revolver_Cock.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="676679731"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Revolver_Cock" ID="{1D5802EF-35E3-45D1-A524-47B2704FDE48}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
