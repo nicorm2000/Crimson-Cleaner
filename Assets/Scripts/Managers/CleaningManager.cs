@@ -69,21 +69,24 @@ public class CleaningManager : MonoBehaviour
     [SerializeField] private string mopDirtyEvent = null;
     [SerializeField] private string mopWooshEvent = null;
     [SerializeField] private string mopSwapEvent = null;
+    [SerializeField] private string mopSelectEvent = null;
     [Header("Sponge")]
     [SerializeField] private string spongeEvent = null;
     [SerializeField] private string spongeDirtyEvent = null;
     [SerializeField] private string spongeWooshEvent = null;
     [SerializeField] private string spongeSwapEvent = null;
+    [SerializeField] private string spongeSelectEvent = null;
     [Header("Hands")]
     [SerializeField] private string dropEvent = null;
     [SerializeField] private string pickUpEvent = null;
     [SerializeField] private string throwEvent = null;
     [SerializeField] private string handSwapEvent = null;
+    [SerializeField] private string handSelectEvent = null;
     [Header("Trash Bin")]
     [SerializeField] private string pickUpTrashEvent = null;
     [SerializeField] private string addNewTrashBagEvent = null;
-    [SerializeField] private string zipBagEvent = null;
     [SerializeField] private string trashBinSwapEvent = null;
+    [SerializeField] private string trashBinSelectEvent = null;
     [Header("Tablet")]
     [SerializeField] private string openTabletEvent = null;
     [SerializeField] private string closeTabletEvent = null;
@@ -156,18 +159,21 @@ public class CleaningManager : MonoBehaviour
     public string GetMopDirtyEvent() => mopDirtyEvent;
     public string GetMopWooshEvent() => mopWooshEvent;
     public string GetMopSwapEvent() => mopSwapEvent;
+    public string GetMopSelectEvent() => mopSelectEvent;
     public string GetSpongeEvent() => spongeEvent;
     public string GetSpongeDirtyEvent() => spongeDirtyEvent;
     public string GetSpongeWooshEvent() => spongeWooshEvent;
     public string GetSpongeSwapEvent() => spongeSwapEvent;
+    public string GetSpongeSelectEvent() => spongeSelectEvent;
     public string GetDropEvent() => dropEvent;
     public string GetPickUpEvent() => pickUpEvent;
     public string GetThrowEvent() => throwEvent;
     public string GetHandSwapEvent() => handSwapEvent;
+    public string GetHandSelectEvent() => handSelectEvent;
     public string GetPickUpTrashEvent() => pickUpTrashEvent;
     public string GetAddNewTrashBagEvent() => addNewTrashBagEvent;
-    public string GetZipBagEvent() => zipBagEvent;
     public string GetTrashBinSwapEvent() => trashBinSwapEvent;
+    public string GetTrashBinSelectEvent() => trashBinSelectEvent;
     public string GetOpenTabletEvent() => openTabletEvent;
     public string GetCloseTabletEvent() => closeTabletEvent;
     public string GetClickTabletEvent() => clickTabletEvent;

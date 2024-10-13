@@ -1576,14 +1576,14 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Mop_CleaningSFX_Audio" ID="{84E00511-0464-4BC8-AF74-22BB692B5C65}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+													<ObjectRef Name="LimpiarMopaSFX_Audio" ID="{F1EED15A-D188-4BB3-B2C9-04735185D759}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 										<Action Name="" ID="{F1FFC4FB-CDD5-4C26-A89E-3B79B51EA898}" ShortID="704190719">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Mop_CleaningSFX_Audio" ID="{84E00511-0464-4BC8-AF74-22BB692B5C65}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+													<ObjectRef Name="LimpiarMopaSFX_Audio" ID="{F1EED15A-D188-4BB3-B2C9-04735185D759}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -1857,6 +1857,90 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Grab &amp; Drop" ID="{6ED4DE61-D98E-4AA6-93DA-49C1576D2ACB}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Swap_Sponge" ID="{4CE941AC-7194-455C-A448-025D8F3D1ADB}">
+									<ChildrenList>
+										<Action Name="" ID="{843AF206-D43D-4D6F-9FB2-E6284FC3D51B}" ShortID="321895325">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="EsponjaGuardarSFX_Audio" ID="{D7C78ECC-77A2-4012-9839-7772CECA7A9F}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{A30C368A-084D-42D0-B3A8-496D05EA86DF}" ShortID="244665413">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="EsponjaGuardarSFX_Audio" ID="{D7C78ECC-77A2-4012-9839-7772CECA7A9F}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Select_Sponge" ID="{33D82C8B-6A00-4272-93B6-FBADF5436CF8}">
+									<ChildrenList>
+										<Action Name="" ID="{D935B8FB-6DCE-4B5D-92C6-5A6BFB79D792}" ShortID="212308214">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SacarEsponjaSFX_Audio" ID="{13BB82C8-495F-49AF-87B1-A6BFE6B02314}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{7789D295-7218-4C00-893B-C0CE7C78182B}" ShortID="491031848">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SacarEsponjaSFX_Audio" ID="{13BB82C8-495F-49AF-87B1-A6BFE6B02314}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Select_Mop" ID="{17FCC9E8-F6FD-4124-AA18-F91AA6060140}">
+									<ChildrenList>
+										<Action Name="" ID="{1F470016-49A9-4A70-B563-3A3EA11E61A9}" ShortID="809863485">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SacarMopaSFX_Audio" ID="{0F90CAE0-EA56-4694-A939-0F10F25AE7BB}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{B6E5B572-6579-4A2C-B65C-4D24A05BECDE}" ShortID="978646449">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SacarMopaSFX_Audio" ID="{0F90CAE0-EA56-4694-A939-0F10F25AE7BB}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Swap_Mop" ID="{AB6DFB6D-3128-485A-B78A-7214027C063A}">
+									<ChildrenList>
+										<Action Name="" ID="{BB6E030B-7254-4960-8DFB-5D7AEA5B4063}" ShortID="561697048">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MopaGuardarSFX_Audio" ID="{0E52199B-B056-4FDC-877E-DDF47BAF24A9}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{EA5EA39A-BA63-428C-B0BB-3EA825EF67DE}" ShortID="156549778">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MopaGuardarSFX_Audio" ID="{0E52199B-B056-4FDC-877E-DDF47BAF24A9}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

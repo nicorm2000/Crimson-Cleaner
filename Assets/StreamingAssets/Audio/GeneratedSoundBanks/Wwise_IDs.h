@@ -92,10 +92,14 @@ namespace AK
         static const AkUniqueID REVOLVER_COCK = 1351538419U;
         static const AkUniqueID ROPE_COLLISION = 3225123216U;
         static const AkUniqueID SAFE_OPEN_CLOSE = 2038894488U;
+        static const AkUniqueID SELECT_MOP = 1557923336U;
+        static const AkUniqueID SELECT_SPONGE = 2836144950U;
         static const AkUniqueID SELECT_TRASH_BIN = 1254856804U;
         static const AkUniqueID SPONGE = 1165214467U;
         static const AkUniqueID SPONGE_DIRTY = 1222748174U;
         static const AkUniqueID SPONGE_WOOSH = 2179797042U;
+        static const AkUniqueID SWAP_MOP = 3903016069U;
+        static const AkUniqueID SWAP_SPONGE = 87353021U;
         static const AkUniqueID SWAP_TRASH_BIN = 3910342553U;
         static const AkUniqueID TABLET_CROSS_OUT_TASK = 160599783U;
         static const AkUniqueID THROW = 745179803U;

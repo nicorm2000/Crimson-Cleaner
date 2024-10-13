@@ -3615,6 +3615,173 @@
 										<ActiveSource Name="Open Notebook" ID="{D3D261AE-D3BC-4524-B0E4-D1DAB98231A2}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<Sound Name="EsponjaGuardarSFX_Audio" ID="{D7C78ECC-77A2-4012-9839-7772CECA7A9F}" ShortID="406870786">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="EsponjaGuardarSFX_Audio" ID="{E3D8A05B-74A1-4F00-88E9-D8C5531CB35E}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.153503666010068"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.2"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.6"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>EsponjaGuardarSFX_Audio.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="496383856"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="EsponjaGuardarSFX_Audio" ID="{E3D8A05B-74A1-4F00-88E9-D8C5531CB35E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="LimpiarMopaSFX_Audio" ID="{F1EED15A-D188-4BB3-B2C9-04735185D759}" ShortID="322039089">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{9014383E-EAD4-4596-98D5-DF01EAC9D1F4}"/>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="LimpiarMopaSFX_Audio" ID="{C5C67586-CBC0-4279-A71E-AC3C2053478B}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.233211465856862"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="1.35"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.85"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>LimpiarMopaSFX_Audio.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="892690072"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="LimpiarMopaSFX_Audio" ID="{C5C67586-CBC0-4279-A71E-AC3C2053478B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MopaGuardarSFX_Audio" ID="{0E52199B-B056-4FDC-877E-DDF47BAF24A9}" ShortID="415351908">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MopaGuardarSFX_Audio" ID="{6EDC5F7D-66F9-4920-AFB9-153F65FE3A8C}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.4"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>MopaGuardarSFX_Audio.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="170904871"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MopaGuardarSFX_Audio" ID="{6EDC5F7D-66F9-4920-AFB9-153F65FE3A8C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SacarEsponjaSFX_Audio" ID="{13BB82C8-495F-49AF-87B1-A6BFE6B02314}" ShortID="252998973">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SacarEsponjaSFX_Audio" ID="{6EE2629E-2F99-47A2-8159-425B518E7062}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.25"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>SacarEsponjaSFX_Audio.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="993060090"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SacarEsponjaSFX_Audio" ID="{6EE2629E-2F99-47A2-8159-425B518E7062}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SacarMopaSFX_Audio" ID="{0F90CAE0-EA56-4694-A939-0F10F25AE7BB}" ShortID="18497380">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SacarMopaSFX_Audio" ID="{7F2FC635-1654-49D5-BB48-DDAE3E903B72}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.25"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>SacarMopaSFX_Audio.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="17593633"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SacarMopaSFX_Audio" ID="{7F2FC635-1654-49D5-BB48-DDAE3E903B72}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Game Tools" ID="{028EE0BE-6D11-48A5-8668-2DB5BF338DF4}" ShortID="77681449">

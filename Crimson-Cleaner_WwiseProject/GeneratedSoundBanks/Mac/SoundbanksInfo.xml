@@ -22,13 +22,17 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{E9B55958-9678-1B57-4AAB-31020245B195}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{2063764F-7232-ED81-9B15-1C117F9E741E}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
 				<File Id="1662537" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Throw.wav</ShortName>
 					<CachePath>SFX/Throw_7B6B57BA.wem</CachePath>
+				</File>
+				<File Id="17593633" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SacarMopaSFX_Audio.wav</ShortName>
+					<CachePath>SFX/SacarMopaSFX_Audio_DBE310A3.wem</CachePath>
 				</File>
 				<File Id="48240237" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Money.wav</ShortName>
@@ -89,6 +93,10 @@
 				<File Id="164498283" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Gas_Stove_Init.wav</ShortName>
 					<CachePath>SFX/Gas_Stove_Init_818F3B66.wem</CachePath>
+				</File>
+				<File Id="170904871" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MopaGuardarSFX_Audio.wav</ShortName>
+					<CachePath>SFX/MopaGuardarSFX_Audio_C9F07D07.wem</CachePath>
 				</File>
 				<File Id="188422071" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FamilyPhotoSFX_Audio.wav</ShortName>
@@ -201,6 +209,10 @@
 				<File Id="492649218" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>RemoveTrash.wav</ShortName>
 					<CachePath>SFX/RemoveTrash_49023965.wem</CachePath>
+				</File>
+				<File Id="496383856" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EsponjaGuardarSFX_Audio.wav</ShortName>
+					<CachePath>SFX/EsponjaGuardarSFX_Audio_F9549C3D.wem</CachePath>
 				</File>
 				<File Id="508666165" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Toilet.wav</ShortName>
@@ -358,6 +370,10 @@
 					<ShortName>TirarBolsaBasura_1.wav</ShortName>
 					<CachePath>SFX/TirarBolsaBasura_1_F4D67A98.wem</CachePath>
 				</File>
+				<File Id="892690072" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>LimpiarMopaSFX_Audio.wav</ShortName>
+					<CachePath>SFX/LimpiarMopaSFX_Audio_F069E064.wem</CachePath>
+				</File>
 				<File Id="902178105" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Bucket_DumpWaterSFX_Audio.wav</ShortName>
 					<CachePath>SFX/Bucket_DumpWaterSFX_Audio_A3BAA9D4.wem</CachePath>
@@ -398,6 +414,10 @@
 					<ShortName>Drop_Boiling_Water.wav</ShortName>
 					<CachePath>SFX/Drop_Boiling_Water_07E613B0.wem</CachePath>
 				</File>
+				<File Id="993060090" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SacarEsponjaSFX_Audio.wav</ShortName>
+					<CachePath>SFX/SacarEsponjaSFX_Audio_DBE310A3.wem</CachePath>
+				</File>
 				<File Id="994448371" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Lights Switch.wav</ShortName>
 					<CachePath>SFX/Lights Switch_00E265F8.wem</CachePath>
@@ -405,10 +425,6 @@
 				<File Id="996095744" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Fire Cart.wav</ShortName>
 					<CachePath>SFX/Fire Cart_C411068A.wem</CachePath>
-				</File>
-				<File Id="1003067013" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Mop_CleaningSFX_Audio.wav</ShortName>
-					<CachePath>SFX/Mop_CleaningSFX_Audio_2A971F85.wem</CachePath>
 				</File>
 				<File Id="1039951081" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Game Click.wav</ShortName>
@@ -683,7 +699,7 @@
 				</Event>
 				<Event Id="1082004779" Name="Mop" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
 					<MediaRefs>
-						<MediaRef Id="1003067013"/>
+						<MediaRef Id="892690072"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="68175526" Name="Mop_Dirty" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
@@ -811,6 +827,16 @@
 						<MediaRef Id="363758932"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1557923336" Name="Select_Mop" DurationType="OneShot" DurationMin="0.7415208" DurationMax="0.7415208">
+					<MediaRefs>
+						<MediaRef Id="17593633"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2836144950" Name="Select_Sponge" DurationType="OneShot" DurationMin="1.1886041" DurationMax="1.1886041">
+					<MediaRefs>
+						<MediaRef Id="993060090"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1254856804" Name="Select_Trash_Bin" DurationType="OneShot" DurationMin="1" DurationMax="1">
 					<MediaRefs>
 						<MediaRef Id="368920920"/>
@@ -829,6 +855,16 @@
 				<Event Id="2179797042" Name="Sponge_Woosh" DurationType="OneShot" DurationMin="0.09501134" DurationMax="0.09501134">
 					<MediaRefs>
 						<MediaRef Id="139344711"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3903016069" Name="Swap_Mop" DurationType="OneShot" DurationMin="0.8999583" DurationMax="0.8999583">
+					<MediaRefs>
+						<MediaRef Id="170904871"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="87353021" Name="Swap_Sponge" DurationType="OneShot" DurationMin="0.4" DurationMax="0.4">
+					<MediaRefs>
+						<MediaRef Id="496383856"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3910342553" Name="Swap_Trash_Bin" DurationType="OneShot" DurationMin="0.53116655" DurationMax="0.53116655">
@@ -918,5 +954,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{AC9B63AB-22AB-D432-DBC1-177D1C28AA21}</FileHash>
+	<FileHash>{11744CFC-7316-BFB1-C3DE-C793A445B4D6}</FileHash>
 </SoundBanksInfo>
