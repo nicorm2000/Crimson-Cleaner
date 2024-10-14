@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,12 +22,17 @@ public class CameraInteractionMenu : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, interactLayer))
         {
             IInteractable inmersiveObject = hit.collider.gameObject.GetComponent<PCCanvasController>();
+            IInteractable inmersiveObject2 = hit.collider.gameObject.GetComponent<Cat>();
 
             Sprite interactionSprite = interactionImage.sprite;
 
             if (inmersiveObject != null)
             {
                 AppendInteractableSprites(inmersiveObject, ref interactionSprite);
+            }
+            if (inmersiveObject2 != null)
+            {
+                AppendInteractableSprites(inmersiveObject2, ref interactionSprite);
             }
 
             UpdateUI(interactionSprite);

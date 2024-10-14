@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{3322CD54-09F8-5FF1-E0DD-FB618BE3D45C}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{4B841B26-0E13-257B-457D-FCAF4257D34F}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -210,6 +210,10 @@
 					<ShortName>Water Flow.wav</ShortName>
 					<CachePath>SFX/Water Flow_37358B8B.wem</CachePath>
 				</File>
+				<File Id="473443932" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cat_1.wav</ShortName>
+					<CachePath>SFX/Cat_1_818F3B66.wem</CachePath>
+				</File>
 				<File Id="480007017" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps_PoolOfBloodSFX_Audio-[AudioTrimmer.com] (2).wav</ShortName>
 					<CachePath>SFX/Footsteps_PoolOfBloodSFX_Audio-[AudioTrimmer.com] (2)_B9B293D1.wem</CachePath>
@@ -310,6 +314,10 @@
 					<ShortName>Revolver_Cock.wav</ShortName>
 					<CachePath>SFX/Revolver_Cock_818F3B66.wem</CachePath>
 				</File>
+				<File Id="678269811" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cat_3.wav</ShortName>
+					<CachePath>SFX/Cat_3_818F3B66.wem</CachePath>
+				</File>
 				<File Id="689012084" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Couch_Chair_Collision.wav</ShortName>
 					<CachePath>SFX/Couch_Chair_Collision_983BA741.wem</CachePath>
@@ -325,6 +333,10 @@
 				<File Id="706771327" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Bar Door.wav</ShortName>
 					<CachePath>SFX/Bar Door_B6A4FDC7.wem</CachePath>
+				</File>
+				<File Id="720422672" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cat_2.wav</ShortName>
+					<CachePath>SFX/Cat_2_818F3B66.wem</CachePath>
 				</File>
 				<File Id="739600721" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Retrieve_PickUp_DocumentsSFX_Audio.wav</ShortName>
@@ -539,6 +551,13 @@
 				<Event Id="2037208526" Name="Cart_Open" DurationType="OneShot" DurationMin="0.49855804" DurationMax="0.5014461">
 					<MediaRefs>
 						<MediaRef Id="296468143"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="717945726" Name="Cat_Interaction" DurationType="OneShot" DurationMin="0.36716554" DurationMax="0.7744375">
+					<MediaRefs>
+						<MediaRef Id="473443932"/>
+						<MediaRef Id="678269811"/>
+						<MediaRef Id="720422672"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="494474302" Name="Ceramic_Collision" DurationType="OneShot" DurationMin="0.3" DurationMax="0.3">
@@ -991,5 +1010,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{27A7841A-2D88-92EE-1BB6-C7255CE5A15B}</FileHash>
+	<FileHash>{587F1D14-6931-CBFF-0519-58CA40821B48}</FileHash>
 </SoundBanksInfo>

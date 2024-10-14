@@ -1390,6 +1390,27 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Cat_Interaction" ID="{C8C534E8-6ED3-4DDD-892D-BE4AB4D6BA9A}">
+							<ChildrenList>
+								<Action Name="" ID="{42628539-B254-4E87-9769-8152FD7D1B00}" ShortID="1011406454">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Cat_Interaction" ID="{6A9E8785-203D-4F68-97F1-736E13CE8049}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{A4526CCB-6F20-40A8-950F-F6B72997CA3B}" ShortID="129170658">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Cat_Interaction" ID="{6A9E8785-203D-4F68-97F1-736E13CE8049}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Player" ID="{C522BED6-6246-49B1-822C-2AD03AE35608}" ShortID="565143225">
