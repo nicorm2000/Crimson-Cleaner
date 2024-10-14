@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{2063764F-7232-ED81-9B15-1C117F9E741E}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{3322CD54-09F8-5FF1-E0DD-FB618BE3D45C}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -118,6 +118,10 @@
 					<ShortName>Rope_Collision.wav</ShortName>
 					<CachePath>SFX/Rope_Collision_818F3B66.wem</CachePath>
 				</File>
+				<File Id="213727799" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Van_Door_Open.wav</ShortName>
+					<CachePath>SFX/Van_Door_Open_00225573.wem</CachePath>
+				</File>
 				<File Id="221652275" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Gas_Stove_Loop.wav</ShortName>
 					<CachePath>SFX/Gas_Stove_Loop_66B93D96.wem</CachePath>
@@ -162,6 +166,10 @@
 					<ShortName>Retrieve_PickUp_ClothSFX_Audio.wav</ShortName>
 					<CachePath>SFX/Retrieve_PickUp_ClothSFX_Audio_6104D7BD.wem</CachePath>
 				</File>
+				<File Id="345707716" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Van_Engine_Loop.wav</ShortName>
+					<CachePath>SFX/Van_Engine_Loop_818F3B66.wem</CachePath>
+				</File>
 				<File Id="360440042" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Urinal Flush.wav</ShortName>
 					<CachePath>SFX/Urinal Flush_EB6D7970.wem</CachePath>
@@ -190,6 +198,10 @@
 					<ShortName>Bathroom Door.wav</ShortName>
 					<CachePath>SFX/Bathroom Door_7B14B400.wem</CachePath>
 				</File>
+				<File Id="435834974" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Van_Engine_Start.wav</ShortName>
+					<CachePath>SFX/Van_Engine_Start_818F3B66.wem</CachePath>
+				</File>
 				<File Id="442455513" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Grab.wav</ShortName>
 					<CachePath>SFX/Grab_EA0BE89E.wem</CachePath>
@@ -212,7 +224,7 @@
 				</File>
 				<File Id="496383856" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>EsponjaGuardarSFX_Audio.wav</ShortName>
-					<CachePath>SFX/EsponjaGuardarSFX_Audio_F9549C3D.wem</CachePath>
+					<CachePath>SFX/EsponjaGuardarSFX_Audio_7B5945AC.wem</CachePath>
 				</File>
 				<File Id="508666165" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Toilet.wav</ShortName>
@@ -237,6 +249,10 @@
 				<File Id="524869861" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Close Notebook.wav</ShortName>
 					<CachePath>SFX/Close Notebook_B04760EB.wem</CachePath>
+				</File>
+				<File Id="532137626" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Van_Door_Close.wav</ShortName>
+					<CachePath>SFX/Van_Door_Close_00225573.wem</CachePath>
 				</File>
 				<File Id="532460457" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Gas_Stove_End.wav</ShortName>
@@ -372,7 +388,7 @@
 				</File>
 				<File Id="892690072" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LimpiarMopaSFX_Audio.wav</ShortName>
-					<CachePath>SFX/LimpiarMopaSFX_Audio_F069E064.wem</CachePath>
+					<CachePath>SFX/LimpiarMopaSFX_Audio_A620CDF1.wem</CachePath>
 				</File>
 				<File Id="902178105" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Bucket_DumpWaterSFX_Audio.wav</ShortName>
@@ -380,7 +396,7 @@
 				</File>
 				<File Id="915260624" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Open Notebook.wav</ShortName>
-					<CachePath>SFX/Open Notebook_591054C4.wem</CachePath>
+					<CachePath>SFX/Open Notebook_5CC97F43.wem</CachePath>
 				</File>
 				<File Id="926498869" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Sponge _Cleaning Dirty SFX_Audio.wav</ShortName>
@@ -907,6 +923,27 @@
 						<MediaRef Id="360440042"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="815270946" Name="Van_Door_Close" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+					<MediaRefs>
+						<MediaRef Id="532137626"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="828966006" Name="Van_Door_Open" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+					<MediaRefs>
+						<MediaRef Id="213727799"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1042001518" Name="Van_Engine_Loop" DurationType="OneShot" DurationMin="4" DurationMax="4">
+					<MediaRefs>
+						<MediaRef Id="345707716"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1547370861" Name="Van_Engine_Loop_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3639749992" Name="Van_Engine_Start" DurationType="OneShot" DurationMin="4" DurationMax="4">
+					<MediaRefs>
+						<MediaRef Id="435834974"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3676508413" Name="Wash_Mop" DurationType="OneShot" DurationMin="1.0766667" DurationMax="1.0766667">
 					<MediaRefs>
 						<MediaRef Id="190901790"/>
@@ -954,5 +991,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{11744CFC-7316-BFB1-C3DE-C793A445B4D6}</FileHash>
+	<FileHash>{45F7C990-26E7-77A6-1B64-FC7719E36E48}</FileHash>
 </SoundBanksInfo>

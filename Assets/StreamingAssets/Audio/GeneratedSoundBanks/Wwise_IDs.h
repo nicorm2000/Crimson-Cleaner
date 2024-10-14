@@ -108,6 +108,11 @@ namespace AK
         static const AkUniqueID TOOLBOX_COLLISION = 2196568223U;
         static const AkUniqueID TRASH_BAG_COLLISION = 2629743283U;
         static const AkUniqueID URINAL_PUSH = 2110685349U;
+        static const AkUniqueID VAN_DOOR_CLOSE = 815270946U;
+        static const AkUniqueID VAN_DOOR_OPEN = 828966006U;
+        static const AkUniqueID VAN_ENGINE_LOOP = 1042001518U;
+        static const AkUniqueID VAN_ENGINE_LOOP_STOP = 1547370861U;
+        static const AkUniqueID VAN_ENGINE_START = 3639749992U;
         static const AkUniqueID WASH_MOP = 3676508413U;
         static const AkUniqueID WASH_SPONGE = 3299309797U;
         static const AkUniqueID WATER_DROP = 2790747934U;

@@ -1757,6 +1757,116 @@
 								<ActiveSource Name="Poker_Chip_Collision" ID="{11BD3B09-50EE-4D00-8645-E24A1C05D142}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Van_Door_Close" ID="{844A2482-826B-4971-83C9-D3828BE23F71}" ShortID="1043255426">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Van_Door_Close" ID="{03052FD7-52A3-4AD6-89D0-02A5840C90D8}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Van_Door_Close.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="532137626"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Van_Door_Close" ID="{03052FD7-52A3-4AD6-89D0-02A5840C90D8}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Van_Door_Open" ID="{7F808935-2C6F-4270-954E-B0E71D5A4491}" ShortID="475755859">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Van_Door_Open" ID="{6D6EF4F4-306C-48E7-ABA1-8E45C7B5B1A9}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.5"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Van_Door_Open.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="213727799"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Van_Door_Open" ID="{6D6EF4F4-306C-48E7-ABA1-8E45C7B5B1A9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Van_Engine_Loop" ID="{D8746E48-B67F-4AF8-929F-A39C6253A4AB}" ShortID="999592329">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Van_Engine_Loop" ID="{34F54256-66CF-4F38-86E4-05E5EB36D297}">
+									<Language>SFX</Language>
+									<AudioFile>Van_Engine_Loop.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="345707716"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Van_Engine_Loop" ID="{34F54256-66CF-4F38-86E4-05E5EB36D297}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Van_Engine_Start" ID="{8ED962F0-D023-42A2-AA26-33ABCB3224F5}" ShortID="136841935">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Van_Engine_Start" ID="{FAE179B0-00BC-4A90-A577-D0C0E8072B73}">
+									<Language>SFX</Language>
+									<AudioFile>Van_Engine_Start.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="435834974"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Van_Engine_Start" ID="{FAE179B0-00BC-4A90-A577-D0C0E8072B73}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Sanity" ID="{267B6CE0-0DCA-424D-B80A-F8AAC7F2077C}" ShortID="201213198">

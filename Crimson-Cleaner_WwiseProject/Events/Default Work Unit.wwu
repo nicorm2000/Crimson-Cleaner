@@ -1302,6 +1302,94 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Van_Door_Open" ID="{430B73BF-90E7-4461-98C2-8D3C3AFE6FEC}">
+							<ChildrenList>
+								<Action Name="" ID="{69C3DE33-8184-4195-B496-6758AF2C6D1B}" ShortID="71660047">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Van_Door_Open" ID="{7F808935-2C6F-4270-954E-B0E71D5A4491}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{726E5987-C255-4934-A79A-74C1FECEAE91}" ShortID="1031913590">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Van_Door_Open" ID="{7F808935-2C6F-4270-954E-B0E71D5A4491}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Van_Door_Close" ID="{387D63EB-6513-4A60-9945-A89EEC4E8585}">
+							<ChildrenList>
+								<Action Name="" ID="{295464E6-C155-472C-A19A-F336F5E2A643}" ShortID="351003168">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Van_Door_Close" ID="{844A2482-826B-4971-83C9-D3828BE23F71}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{E4E49335-2B92-4C84-9D66-1B79F3578E68}" ShortID="1064813564">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Van_Door_Close" ID="{844A2482-826B-4971-83C9-D3828BE23F71}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Van_Engine_Start" ID="{63598E51-D747-4B57-B95D-C1ADC1AA534E}">
+							<ChildrenList>
+								<Action Name="" ID="{14BE589F-C3D6-4463-857E-F74FCBF1F425}" ShortID="294483230">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Van_Engine_Start" ID="{8ED962F0-D023-42A2-AA26-33ABCB3224F5}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{5A681E30-52D0-445F-8356-E27BA62DE3C1}" ShortID="549602149">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Van_Engine_Start" ID="{8ED962F0-D023-42A2-AA26-33ABCB3224F5}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Van_Engine_Loop" ID="{899F963B-3C65-419D-A83B-8B8C8458C8B5}">
+							<ChildrenList>
+								<Action Name="" ID="{0E9663A7-8185-4FFA-835E-E50F54FD6E7A}" ShortID="273354037">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Van_Engine_Loop" ID="{D8746E48-B67F-4AF8-929F-A39C6253A4AB}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Van_Engine_Loop_Stop" ID="{B2D7D6F5-9119-4F14-9881-B0DD2C69AFDC}">
+							<ChildrenList>
+								<Action Name="" ID="{4581F80A-3399-41E8-9F3A-414379D8A626}" ShortID="460017413">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Van_Engine_Loop" ID="{D8746E48-B67F-4AF8-929F-A39C6253A4AB}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Player" ID="{C522BED6-6246-49B1-822C-2AD03AE35608}" ShortID="565143225">
