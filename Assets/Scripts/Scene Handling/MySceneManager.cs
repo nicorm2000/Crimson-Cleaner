@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using static UnityEngine.Rendering.HDROutputUtils;
 
 public class MySceneManager : MonoBehaviourSingleton<MySceneManager>
 {
