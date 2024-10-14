@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MySceneManager : MonoBehaviourSingleton<MySceneManager>
+public class MySceneManager : MonoBehaviour/*: MonoBehaviourSingleton<MySceneManager>*/
 {
     [Header("Config")]
     [SerializeField] private GameObject loadingScreen = null;

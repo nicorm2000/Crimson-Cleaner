@@ -4,6 +4,7 @@ using UnityEngine.Video;
 
 public class VideoHandler : MonoBehaviour
 {
+    [SerializeField] private PlayerController playerController;
     [SerializeField] private GameObject screen = null;
     [SerializeField] private GameObject loadingScreen = null;
     [SerializeField] private GameObject pcInfo = null;
@@ -17,6 +18,9 @@ public class VideoHandler : MonoBehaviour
         screen.SetActive(false);
         pcInfo.SetActive(false);
         loadingScreen.SetActive(true);
+        playerController.ToggleMovement(false);
+        playerController.ToggleCameraMovement(false);
+
     }
 
     private void OnEnable()
@@ -46,5 +50,7 @@ public class VideoHandler : MonoBehaviour
         screen.SetActive(true);
         pcInfo.SetActive(true);
         loadingScreen.SetActive(false);
+        playerController.ToggleMovement(true);
+        playerController.ToggleCameraMovement(true);
     }
 }

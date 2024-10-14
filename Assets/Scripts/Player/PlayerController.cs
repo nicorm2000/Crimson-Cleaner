@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float animationBlendSpeed;
     [SerializeField] private Transform cameraRoot;
     [SerializeField] private Transform camera;
-    [SerializeField] private Catatonia catatonia;
 
     [Header("Controller Config")]
     [SerializeField] private float walkSpeed = 10f;
@@ -182,7 +181,7 @@ public class PlayerController : MonoBehaviour
 
     private void PlayFootstepSound(bool isMoving)
     {
-        if (bloodFootstepGenerator.isSpawningActive)
+        if (bloodFootstepGenerator != null && bloodFootstepGenerator.isSpawningActive)
         {
             if (bloodFootstepGenerator.bloodPoolDetection.isPlayerOnBloodPool)
             {

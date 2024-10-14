@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class EndGameManager : MonoBehaviour
 {
+    [SerializeField] private MySceneManager m_SceneManager;
+
     public void TriggerSceneTransition(string sceneName)
     {
-        MySceneManager.Instance.LoadSceneByName(sceneName);
+        m_SceneManager.LoadSceneByName(sceneName);
     }
 }
