@@ -32,8 +32,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5946197370402209584}
-  m_Mesh: {fileID: -52885452023907196, guid: 089b4149fc09abb469a4a30302672551, type: 3}
+  m_Mesh: {fileID: -8382137825105653360, guid: bcd2bd3e3c0ef8b4e81aba7f53b6198a, type: 3}
 --- !u!23 &5276535316258864321
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9635105a582087b47af3c7e0ccd3b419, type: 2}
+  - {fileID: 2100000, guid: 9709065ed8956264bad1e7183b960e4f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,7 +108,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -52885452023907196, guid: 089b4149fc09abb469a4a30302672551, type: 3}
+  m_Mesh: {fileID: -8382137825105653360, guid: bcd2bd3e3c0ef8b4e81aba7f53b6198a, type: 3}
 --- !u!54 &6053832215038446293
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -154,9 +154,11 @@ MonoBehaviour:
   breakForceThreshold: 10
   collisionCooldown: 0.1
   fallHeightThreshold: 1
+  isObjectMulitple: 0
   hologramObject: {fileID: 0}
   audioManager: {fileID: 0}
   breakBottleEvent: Bottle_Breaking
+  isObjectSanityModifier: 0
   isObjectBreakable: 1
 --- !u!114 &9166461176850503093
 MonoBehaviour:
