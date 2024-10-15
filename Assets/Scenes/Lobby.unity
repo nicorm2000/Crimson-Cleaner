@@ -93579,7 +93579,8 @@ GameObject:
   - component: {fileID: 9142943191315361823}
   - component: {fileID: 9142943191315361825}
   - component: {fileID: 9142943191315361824}
-  m_Layer: 0
+  - component: {fileID: 9142943191315361826}
+  m_Layer: 8
   m_Name: New Monitor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96044,6 +96045,31 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 18.200901, y: 2.6983678, z: 36.34814}
   m_Center: {x: -0.000055134307, y: -29.405567, z: 0.21365437}
+--- !u!114 &9142943191315361826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8626710264278513152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 482f9488c83916448943fe892909bd8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  environmentRaycaster: {fileID: 1792020642}
+  audioManager: {fileID: 409798544}
+  soundEvent: 
+  soundEvent2: 
+  inputManager: {fileID: 911724632}
+  mainMenuUIManager: {fileID: 353204374}
+  playerController: {fileID: 1792020646}
+  mainCamera: {fileID: 679338708}
+  targetTransform: {fileID: 1848119280}
+  lerpDuration: 1
+  interactSprite: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
+  isPlayerOnPC: 0
+  isPlayerMoving: 0
 --- !u!33 &9145772670366901604
 MeshFilter:
   m_ObjectHideFlags: 0
