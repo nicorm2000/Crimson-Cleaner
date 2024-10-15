@@ -6,7 +6,7 @@ using UnityEngine.Rendering;
 
 public class MainMenuUIManager : MonoBehaviour
 {
-    public PCCanvasController pCCanvasController;
+    public PCCanvasController[] pCCanvasController;
     public InputManager inputManager;
 
     public GameObject pcCanvas;
@@ -35,8 +35,11 @@ public class MainMenuUIManager : MonoBehaviour
 
     private void OnPauseEvent()
     {
-        if (pCCanvasController.isPlayerOnPC)
-            pCCanvasController.ShutDownPC();
+        foreach (var controller in pCCanvasController)
+        {
+            if (controller.isPlayerOnPC)
+                controller.ShutDownPC();
+        }
     }
 
     public void StartSimpleGaussianBlurState()

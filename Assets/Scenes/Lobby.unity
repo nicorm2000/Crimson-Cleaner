@@ -10892,7 +10892,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3f8bac115a4eae49b6bb0571317b57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pCCanvasController: {fileID: 1592908366}
+  pCCanvasController:
+  - {fileID: 1592908366}
+  - {fileID: 9142943191315361826}
   inputManager: {fileID: 911724632}
   pcCanvas: {fileID: 1434769154}
   mainCanvas: {fileID: 344532827}
@@ -11497,7 +11499,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 847597011}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 1000
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -61005,7 +61007,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 531162296}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 1000
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:

@@ -22,13 +22,16 @@ public class ExitPanelManager : MonoBehaviour
 
     public void OnPauseEvent()
     {
-        if (!mainMenuUIManager.pCCanvasController.isPlayerOnPC && !mainMenuUIManager.pCCanvasController.isPlayerMoving)
+        foreach (var controller in mainMenuUIManager.pCCanvasController) 
         {
-            ToggleSimpleGaussianBlur();
-            ToggleExitGameCanvas();
-            TogglePlayerMovement();
-            ToggleCursor();
+            if (controller.isPlayerOnPC || controller.isPlayerMoving) return;
         }
+
+        mainMenuUIManager.StartSimpleGaussianBlurState();
+        //ToggleSimpleGaussianBlur();
+        ToggleExitGameCanvas();
+        TogglePlayerMovement();
+        ToggleCursor();
     }
 
     private void ToggleExitGameCanvas()
@@ -56,7 +59,7 @@ public class ExitPanelManager : MonoBehaviour
     private void ToggleSimpleGaussianBlur()
     {
         if (exitGamePanel.activeSelf)
-                mainMenuUIManager.StopSimpleGaussianBlurState();
+            mainMenuUIManager.StopSimpleGaussianBlurState();
         else
             mainMenuUIManager.StartSimpleGaussianBlurState();
     }
