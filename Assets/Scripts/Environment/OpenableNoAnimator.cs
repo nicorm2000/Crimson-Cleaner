@@ -36,13 +36,18 @@ public class OpenableNoAnimator : Interactable, IOpenable
 
     private Sprite InteractSelecter()
     {
-        if (CleaningManager.Instance.GetInteractMessage() != null)
+        if (interactable != null)
+        {
+            Debug.Log("a");
+            return interactable;
+        }
+        else if (CleaningManager.Instance.GetInteractMessage() != null)
         {
             return CleaningManager.Instance.GetInteractMessage();
         }
         else
         {
-            return interactable;
+            return null;
         }
     }
 

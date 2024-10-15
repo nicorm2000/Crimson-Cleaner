@@ -23,6 +23,7 @@ public class CameraInteractionMenu : MonoBehaviour
         {
             IInteractable inmersiveObject = hit.collider.gameObject.GetComponent<PCCanvasController>();
             IInteractable inmersiveObject2 = hit.collider.gameObject.GetComponent<Cat>();
+            IOpenable inmersiveObject3 = hit.collider.gameObject.GetComponent<OpenableNoAnimator>();
 
             Sprite interactionSprite = interactionImage.sprite;
 
@@ -33,6 +34,10 @@ public class CameraInteractionMenu : MonoBehaviour
             if (inmersiveObject2 != null)
             {
                 AppendInteractableSprites(inmersiveObject2, ref interactionSprite);
+            }
+            if (inmersiveObject3 != null)
+            {
+                AppendInteractableSprites(inmersiveObject3, ref interactionSprite);
             }
 
             UpdateUI(interactionSprite);
