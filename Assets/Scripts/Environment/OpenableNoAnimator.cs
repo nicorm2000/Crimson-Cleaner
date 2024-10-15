@@ -7,6 +7,7 @@ public class OpenableNoAnimator : Interactable, IOpenable
     [SerializeField] private Transform endTransform;
     [SerializeField] private float animationDuration = 1f;
     [SerializeField] private float cooldown = 0f;
+    [SerializeField] private Sprite interactable = null;
 
     [Header("Keys Config")]
     [SerializeField] private KeysManager keysManager;
@@ -19,7 +20,7 @@ public class OpenableNoAnimator : Interactable, IOpenable
     private float animationTime = 0f;
 
     public bool IsOpen { get; private set; } = false;
-    public Sprite InteractMessage => CleaningManager.Instance.GetInteractMessage();
+    public Sprite InteractMessage => InteractSelecter();
     public bool IsInteractable => !isAnimating && (Time.time - lastInteractionTime >= cooldown);
 
     private Vector3 initialLocalPosition;
@@ -31,6 +32,18 @@ public class OpenableNoAnimator : Interactable, IOpenable
     {
         initialLocalPosition = transform.localPosition;
         initialLocalRotation = transform.localRotation;
+    }
+
+    private Sprite InteractSelecter()
+    {
+        if (CleaningManager.Instance.GetInteractMessage() != null)
+        {
+            return CleaningManager.Instance.GetInteractMessage();
+        }
+        else
+        {
+            return interactable;
+        }
     }
 
     public void Interact(PlayerController playerController)
