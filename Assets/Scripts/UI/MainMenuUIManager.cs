@@ -35,6 +35,12 @@ public class MainMenuUIManager : MonoBehaviour
 
     private void OnPauseEvent()
     {
+        if (sceneVolume.profile.TryGet(out SimpleGaussianBlur simpleGaussianBlur))
+        {
+            if (simpleGaussianBlur.intensity.value != 0f)
+                StopSimpleGaussianBlurState();
+        }
+
         foreach (var controller in pCCanvasController)
         {
             if (controller.isPlayerOnPC)
