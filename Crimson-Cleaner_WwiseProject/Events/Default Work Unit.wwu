@@ -1425,6 +1425,27 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Van_Honk" ID="{D7477A14-B5B6-414C-94F9-CCB2E590AC96}">
+							<ChildrenList>
+								<Action Name="" ID="{AA6FE114-E31A-4BE0-B1BB-DC84331EB96E}" ShortID="714039967">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Van_Honk" ID="{B995E9ED-66F3-4521-8563-CB2E3BFDE0DE}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{CA843DC2-FB07-4830-90AB-E14CD6F6A2F3}" ShortID="498415235">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Van_Honk" ID="{B995E9ED-66F3-4521-8563-CB2E3BFDE0DE}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Player" ID="{C522BED6-6246-49B1-822C-2AD03AE35608}" ShortID="565143225">
