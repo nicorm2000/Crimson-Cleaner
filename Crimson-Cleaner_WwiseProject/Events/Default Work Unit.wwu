@@ -1411,6 +1411,20 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Van_Engine_Stop" ID="{2677AF9C-1213-493B-9686-BC02BAA94F9D}">
+							<ChildrenList>
+								<Action Name="" ID="{D77CF219-D37B-4873-84ED-E562BDF6297F}" ShortID="1028474318">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Van_Engine_Start" ID="{8ED962F0-D023-42A2-AA26-33ABCB3224F5}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Player" ID="{C522BED6-6246-49B1-822C-2AD03AE35608}" ShortID="565143225">

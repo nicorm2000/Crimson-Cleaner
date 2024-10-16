@@ -114,6 +114,7 @@ namespace AK
         static const AkUniqueID VAN_ENGINE_LOOP = 1042001518U;
         static const AkUniqueID VAN_ENGINE_LOOP_STOP = 1547370861U;
         static const AkUniqueID VAN_ENGINE_START = 3639749992U;
+        static const AkUniqueID VAN_ENGINE_STOP = 28102452U;
         static const AkUniqueID WASH_MOP = 3676508413U;
         static const AkUniqueID WASH_SPONGE = 3299309797U;
         static const AkUniqueID WATER_DROP = 2790747934U;
