@@ -4,26 +4,40 @@ using UnityEngine.UI;
 public class CameraInteractionMenu : MonoBehaviour
 {
     [SerializeField] private Camera mainCamera;
+    [SerializeField] private Van van;
 
     [SerializeField] private Image interactionImage;
 
     [SerializeField] private float raycastDistance = 2f;
     [SerializeField] private LayerMask interactLayer;
 
+    private void OnEnable()
+    {
+        van.SceneTransitioned += DisableImages;
+    }
+
+    private void OnDisable()
+    {
+        van.SceneTransitioned -= DisableImages;
+    }
+
     private void Start()
     {
-        SetImageState(false);
+        DisableImages();
     }
 
     private void Update()
     {
+        if (van.isSceneTransitioned) return;
+
         Ray ray = new(mainCamera.transform.position, mainCamera.transform.forward);
 
         if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, interactLayer))
         {
             IInteractable inmersiveObject = hit.collider.gameObject.GetComponent<PCCanvasController>();
             IInteractable inmersiveObject2 = hit.collider.gameObject.GetComponent<Cat>();
-            IOpenable inmersiveObject3 = hit.collider.gameObject.GetComponent<OpenableNoAnimator>();
+            IInteractable inmersiveObject3 = hit.collider.gameObject.GetComponent<Van>();
+            IOpenable openableObject = hit.collider.gameObject.GetComponent<OpenableNoAnimator>();
 
             Sprite interactionSprite = interactionImage.sprite;
 
@@ -39,6 +53,10 @@ public class CameraInteractionMenu : MonoBehaviour
             {
                 AppendInteractableSprites(inmersiveObject3, ref interactionSprite);
             }
+            if (openableObject != null)
+            {
+                AppendInteractableSprites(openableObject, ref interactionSprite);
+            }
 
             UpdateUI(interactionSprite);
         }
@@ -46,6 +64,11 @@ public class CameraInteractionMenu : MonoBehaviour
         {
             SetImageState(false);
         }
+    }
+
+    private void DisableImages()
+    {
+        SetImageState(false);
     }
 
     private void SetImageState(bool state)

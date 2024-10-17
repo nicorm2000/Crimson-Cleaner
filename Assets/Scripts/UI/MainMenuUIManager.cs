@@ -2,30 +2,41 @@ using IE.RichFX;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Rendering;
 
 public class MainMenuUIManager : MonoBehaviour
 {
+    [Header("Config")]
     public PCCanvasController[] pCCanvasController;
     public InputManager inputManager;
+    public Van van;
 
+    [Header("UI")]
     public GameObject pcCanvas;
     public GameObject mainCanvas;
+    [SerializeField] private Image missingKeyImageWarning;
+    [SerializeField] private float missingKeyErrorDuration;
 
+    [Header("Volume")]
     [SerializeField] private Volume sceneVolume = null;
     [SerializeField] private float durationON = 0.5f;
     [SerializeField] private float durationOFF = 0.5f;
     [SerializeField] private float startValueOFF = 0.0f;
     [SerializeField] private float endValueON = 0.3f;
 
+    private Coroutine missingKeyWarningCoroutine;
+
     private void OnEnable()
     {
         inputManager.PauseEvent += OnPauseEvent;
+        van.ungrabbedKey += () => OnMissingKeyWarning(ref missingKeyWarningCoroutine, missingKeyImageWarning, missingKeyErrorDuration);
     }
 
     private void OnDisable()
     {
         inputManager.PauseEvent -= OnPauseEvent;
+        van.ungrabbedKey -= () => OnMissingKeyWarning(ref missingKeyWarningCoroutine, missingKeyImageWarning, missingKeyErrorDuration);
     }
 
     public void ToggleCanvas(GameObject canvas, bool active)
@@ -77,5 +88,21 @@ public class MainMenuUIManager : MonoBehaviour
         }
 
         simpleGaussianBlur.intensity.value = endValue;
+    }
+
+    private void OnMissingKeyWarning(ref Coroutine warningCoroutine, Image missingKeyWarning, float warningDuration)
+    {
+        if (warningCoroutine != null)
+        {
+            StopCoroutine(warningCoroutine);
+        }
+        warningCoroutine = StartCoroutine(ShowWarning(missingKeyWarning, warningDuration));
+    }
+
+    private IEnumerator ShowWarning(Image warningImage, float duration)
+    {
+        warningImage.gameObject.SetActive(true);
+        yield return new WaitForSeconds(duration);
+        warningImage.gameObject.SetActive(false);
     }
 }

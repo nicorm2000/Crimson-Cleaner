@@ -17,12 +17,14 @@ public class Key : MonoBehaviour
 
     private void OnEnable()
     {
-        retrievableObject.ObjectRetrievedEvent += PickupKey;
+        if (retrievableObject)
+            retrievableObject.ObjectRetrievedEvent += PickupKey;
     }
 
     private void OnDisable()
     {
-        retrievableObject.ObjectRetrievedEvent -= PickupKey;
+        if (retrievableObject)
+            retrievableObject.ObjectRetrievedEvent -= PickupKey;
     }
 
     private void PickupKey()

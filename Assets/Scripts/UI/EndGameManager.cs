@@ -10,4 +10,9 @@ public class EndGameManager : MonoBehaviour
     {
         m_SceneManager.LoadSceneByName(sceneName);
     }
+
+    public void TriggerSceneTransitionWithLoadingScreen(string sceneName)
+    {
+        m_SceneManager.LoadSceneByNameAsync(sceneName);
+    }
 }
