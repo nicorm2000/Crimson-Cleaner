@@ -2030,6 +2030,33 @@
 								<ActiveSource Name="Van_Honk" ID="{A8292447-810A-4B78-8FF6-F9ED5AA97014}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Garage_Door_Open" ID="{EEFB3D47-3FAC-40EE-84FE-8E2DC6D64AD4}" ShortID="1045372171">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Garage_Door_Open" ID="{280C9271-411F-482C-8795-E8F0B5576976}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.75"/>
+										<Property Name="TrimEnd" Type="Real64" Value="3.75"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Garage_Door_Open.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="38686072"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Garage_Door_Open" ID="{280C9271-411F-482C-8795-E8F0B5576976}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Sanity" ID="{267B6CE0-0DCA-424D-B80A-F8AAC7F2077C}" ShortID="201213198">

@@ -1446,6 +1446,27 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Garage_Door_Open" ID="{8B0B8BF4-37D6-4596-B4EB-529045D697CB}">
+							<ChildrenList>
+								<Action Name="" ID="{3A346A5E-7205-4DD6-AA36-01F181F169A9}" ShortID="964925680">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Garage_Door_Open" ID="{EEFB3D47-3FAC-40EE-84FE-8E2DC6D64AD4}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{DE62BD8A-C7DC-4D42-9916-47D05C6D378E}" ShortID="5269929">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Garage_Door_Open" ID="{EEFB3D47-3FAC-40EE-84FE-8E2DC6D64AD4}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Player" ID="{C522BED6-6246-49B1-822C-2AD03AE35608}" ShortID="565143225">

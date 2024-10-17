@@ -48,6 +48,7 @@ namespace AK
         static const AkUniqueID FRIDGE_CIOSE = 2736826332U;
         static const AkUniqueID FRIDGE_OPEN = 2916123785U;
         static const AkUniqueID GAME_CLICK = 2188449690U;
+        static const AkUniqueID GARAGE_DOOR_OPEN = 1483201616U;
         static const AkUniqueID GAS_STOVE_GAS_LOOP = 382197601U;
         static const AkUniqueID GAS_STOVE_GAS_LOOP_STOP = 326450532U;
         static const AkUniqueID GAS_STOVE_TURN_OFF = 1218911394U;
