@@ -202,8 +202,8 @@ public class PlayerController : MonoBehaviour
     {
         if (!hasAnimator) return;
 
-        mousePos.x = inputManager.Look.x * playerSensitivitySettings.sensitivityX * Time.deltaTime;
-        mousePos.y = inputManager.Look.y * playerSensitivitySettings.sensitivityY * Time.deltaTime;
+        mousePos.x = inputManager.Look.x * playerSensitivitySettings.sensitivity * Time.deltaTime;
+        mousePos.y = inputManager.Look.y * playerSensitivitySettings.sensitivity * Time.deltaTime;
         camera.position = cameraRoot.position;
 
         xRotation -= mousePos.y;

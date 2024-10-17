@@ -21,12 +21,13 @@ public class SettingsUIManager : MonoBehaviour
     [Header("Controls Tab")]
     [SerializeField] private GameObject controlsTab = null;
     [SerializeField] private Button controlsBackToSettingsButton = null;
-    [SerializeField] private Slider mouseSensitivityXSlider = null;
-    [SerializeField] private Slider mouseSensitivityYSlider = null;
+    [SerializeField] private Slider mouseSensitivitySlider = null;
 
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
     [SerializeField] private string clickEvent = null;
+
+    private const float alpha = 2.0f;
 
     private void Awake()
     {
@@ -43,14 +44,12 @@ public class SettingsUIManager : MonoBehaviour
         musicStateButton.onClick.AddListener(() => { });
         sfxStateButton.onClick.AddListener(() => { });
 
-        mouseSensitivityXSlider.onValueChanged.AddListener(OnSensitivityXChanged);
-        mouseSensitivityYSlider.onValueChanged.AddListener(OnSensitivityYChanged);
+        mouseSensitivitySlider.minValue = 0f;
+        mouseSensitivitySlider.maxValue = 2f;
 
-        mouseSensitivityXSlider.value = sensitivitySettings.sensitivityX;
-        mouseSensitivityYSlider.value = sensitivitySettings.sensitivityY;
-        mouseSensitivityXSlider.maxValue = sensitivitySettings.maxSensitivityX;
-        mouseSensitivityYSlider.maxValue = sensitivitySettings.maxSensitivityY;
+        mouseSensitivitySlider.value = SensitivityToSliderValue(sensitivitySettings.sensitivity);
 
+        mouseSensitivitySlider.onValueChanged.AddListener(OnSensitivityChanged);
     }
 
     private void OpenTab(GameObject go, bool state)
@@ -59,19 +58,23 @@ public class SettingsUIManager : MonoBehaviour
         audioManager.PlaySound(clickEvent);
     }
 
-    private void OnSensitivityXChanged(float value)
+    private void OnSensitivityChanged(float value)
     {
-        sensitivitySettings.sensitivityX = value;
+        sensitivitySettings.sensitivity = ApplyExponentialScaling(value);
     }
 
-    private void OnSensitivityYChanged(float value)
+    private float ApplyExponentialScaling(float sliderValue)
     {
-        sensitivitySettings.sensitivityY = value;
+        return Mathf.Exp(alpha * sliderValue) - 1;
+    }
+
+    private float SensitivityToSliderValue(float sensitivity)
+    {
+        return Mathf.Log(sensitivity + 1f) / alpha;
     }
 
     private void OnDestroy()
     {
-        mouseSensitivityXSlider.onValueChanged.RemoveListener(OnSensitivityXChanged);
-        mouseSensitivityYSlider.onValueChanged.RemoveListener(OnSensitivityYChanged);
+        mouseSensitivitySlider.onValueChanged.RemoveListener(OnSensitivityChanged);
     }
 }

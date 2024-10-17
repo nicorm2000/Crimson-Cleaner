@@ -4,8 +4,5 @@ using UnityEngine;
 public class PlayerSensitivitySettings : ScriptableObject
 {
     [Header("Mouse Sensitivity")]
-    public float sensitivityX;
-    public float sensitivityY;
-    public float maxSensitivityX;
-    public float maxSensitivityY;
+    public float sensitivity = 6.5f;
 }
