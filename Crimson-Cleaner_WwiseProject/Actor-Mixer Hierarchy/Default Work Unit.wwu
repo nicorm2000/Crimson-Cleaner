@@ -1856,6 +1856,9 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="Van_Engine_Start" ID="{FAE179B0-00BC-4A90-A577-D0C0E8072B73}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Van_Engine_Start.wav</AudioFile>
 									<MediaIDList>
@@ -2031,6 +2034,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Garage_Door_Open" ID="{EEFB3D47-3FAC-40EE-84FE-8E2DC6D64AD4}" ShortID="1045372171">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
