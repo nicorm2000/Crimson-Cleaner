@@ -89,9 +89,9 @@ public class PCCanvasController : Interactable, IInteractable
         previousCameraPosition = mainCamera.transform.position;
         previousCameraRotation = mainCamera.transform.rotation;
 
-        //Vector3 initialPosition = mainCamera.transform.position;
-        //Quaternion initialRotation = mainCamera.transform.rotation;
-        Vector3 initialPlayerPosition = playerController.transform.position;
+        Vector3 initialPosition = mainCamera.transform.position;
+        Quaternion initialRotation = mainCamera.transform.rotation;
+        //Vector3 initialPlayerPosition = playerController.transform.position;
 
         float elapsedTime = 0f;
 
@@ -99,19 +99,18 @@ public class PCCanvasController : Interactable, IInteractable
         {
             float t = elapsedTime / lerpDuration;
 
-            //mainCamera.transform.position = Vector3.Lerp(initialPosition, targetTransform.position, t);
-            //mainCamera.transform.rotation = Quaternion.Lerp(initialRotation, targetTransform.rotation, t);
+            mainCamera.transform.position = Vector3.Lerp(initialPosition, targetTransform.position, t);
+            mainCamera.transform.rotation = Quaternion.Lerp(initialRotation, targetTransform.rotation, t);
 
-            playerController.transform.position = Vector3.Lerp(initialPlayerPosition, targetPlayerPosition.position, t);
+            //playerController.transform.position = Vector3.Lerp(initialPlayerPosition, targetPlayerPosition.position, t);
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        //mainCamera.transform.position = targetTransform.position;
-        //mainCamera.transform.rotation = targetTransform.rotation;
+        mainCamera.transform.position = targetTransform.position;
+        mainCamera.transform.rotation = targetTransform.rotation;
 
-        mainMenuUIManager.ToggleCanvas(mainMenuUIManager.pcCanvas, true);
         inputManager.ShowCursor();
 
         isPlayerMoving = false;
@@ -150,7 +149,6 @@ public class PCCanvasController : Interactable, IInteractable
         mainCamera.transform.position = previousCameraPosition;
         mainCamera.transform.rotation = previousCameraRotation;
 
-        mainMenuUIManager.ToggleCanvas(mainMenuUIManager.pcCanvas, false);
         mainMenuUIManager.ToggleCanvas(mainMenuUIManager.mainCanvas, true);
 
         inputManager.HideCursor();

@@ -13,7 +13,6 @@ public class MainMenuUIManager : MonoBehaviour
     public Van van;
 
     [Header("UI")]
-    public GameObject pcCanvas;
     public GameObject mainCanvas;
     [SerializeField] private Image missingKeyImageWarning;
     [SerializeField] private float missingKeyErrorDuration;
