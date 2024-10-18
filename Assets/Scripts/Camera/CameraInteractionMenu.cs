@@ -80,6 +80,7 @@ public class CameraInteractionMenu : MonoBehaviour
             if (openableObject != null)
             {
                 AppendInteractableSprites(openableObject, ref interactionSprite);
+                UpdateUI(interactionSprite);
                 return true;
             }
 

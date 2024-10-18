@@ -51401,6 +51401,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704111832}
   m_CullTransparentMesh: 1
+--- !u!1 &1708159273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1708159274}
+  m_Layer: 0
+  m_Name: PC Startup Right Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1708159274
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708159273}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.261, y: -0.336, z: 3.509}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1744022375}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1719233020
 GameObject:
   m_ObjectHideFlags: 0
@@ -52586,6 +52617,8 @@ Transform:
   - {fileID: 4239316980546637885}
   - {fileID: 792319254566617602}
   - {fileID: 1653594521}
+  - {fileID: 2035855683}
+  - {fileID: 1708159274}
   m_Father: {fileID: 3075038666180725595}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1748664781
@@ -54957,6 +54990,7 @@ MonoBehaviour:
   audioManager: {fileID: 409798544}
   soundEvent: Cabinet_Close
   soundEvent2: Cabinet_Open
+  playerControllerMenu: {fileID: 1792020651}
   startTransform: {fileID: 1116800483}
   endTransform: {fileID: 230216504}
   animationDuration: 0.5
@@ -60705,6 +60739,7 @@ MonoBehaviour:
   audioManager: {fileID: 409798544}
   soundEvent: Cabinet_Close
   soundEvent2: Cabinet_Open
+  playerControllerMenu: {fileID: 1792020651}
   startTransform: {fileID: 244723940}
   endTransform: {fileID: 1969700928}
   animationDuration: 0.5
@@ -61592,6 +61627,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2035277922}
   m_CullTransparentMesh: 1
+--- !u!1 &2035855682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2035855683}
+  m_Layer: 0
+  m_Name: PC Startup Left Position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2035855683
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035855682}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.791, y: -0.336, z: 3.509}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1744022375}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2036538615
 GameObject:
   m_ObjectHideFlags: 0
@@ -93214,10 +93280,11 @@ MonoBehaviour:
   audioManager: {fileID: 409798544}
   soundEvent: Van_Door_Open
   soundEvent2: Van_Door_Close
+  playerControllerMenu: {fileID: 1792020651}
   startTransform: {fileID: 1719233021}
   endTransform: {fileID: 812678160}
-  animationDuration: 1
-  cooldown: 0
+  animationDuration: 0.5
+  cooldown: 0.5
   interactable: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}
   keysManager: {fileID: 0}
   requiredKeys: []
@@ -96877,6 +96944,8 @@ MonoBehaviour:
   playerController: {fileID: 1792020651}
   mainCamera: {fileID: 679338708}
   targetTransform: {fileID: 1848119280}
+  leftStartupPosition: {fileID: 2035855683}
+  rightStartupPosition: {fileID: 1708159274}
   raycastDistance: 1
   lerpDuration: 1
   interactSprite: {fileID: 21300000, guid: 360f7e5ff335eed4a927a976fc9b7d53, type: 3}

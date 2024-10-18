@@ -3,6 +3,7 @@ using UnityEngine;
 public class OpenableNoAnimator : Interactable, IOpenable
 {
     [Header("Openable Config")]
+    [SerializeField] private PlayerControllerMenu playerControllerMenu;
     [SerializeField] private Transform startTransform;
     [SerializeField] private Transform endTransform;
     [SerializeField] private float animationDuration = 1f;
@@ -88,28 +89,26 @@ public class OpenableNoAnimator : Interactable, IOpenable
 
     private void ToggleObjectState(PlayerController playerController)
     {
-        if (playerController.GetObjectGrabbable() == null && !isAnimating)
-        {
-            IsOpen = !IsOpen;
-            StartCoroutine(AnimateObject(IsOpen));
+        if (!CanToggleState(playerController)) return;
 
-            if (!string.IsNullOrEmpty(soundEvent))
-            {
-                if (!string.IsNullOrEmpty(soundEvent2))
-                {
-                    audioManager.PlaySound(IsOpen ? soundEvent2 : soundEvent);
-                }
-                else
-                {
-                    audioManager.PlaySound(soundEvent);
-                }
-            }
+        IsOpen = !IsOpen;
+        StartCoroutine(AnimateObject(IsOpen));
+        PlaySound(IsOpen);
 
-            if (!IsOpen)
-            {
-                lastInteractionTime = Time.time;
-            }
-        }
+        if (!IsOpen) lastInteractionTime = Time.time;
+    }
+
+    private bool CanToggleState(PlayerController playerController)
+    {
+        var grabbable = playerController?.GetObjectGrabbable() ?? playerControllerMenu?.GetObjectGrabbable();
+        return grabbable == null && !isAnimating;
+    }
+
+    private void PlaySound(bool isOpen)
+    {
+        if (string.IsNullOrEmpty(soundEvent)) return;
+        string soundToPlay = isOpen && !string.IsNullOrEmpty(soundEvent2) ? soundEvent2 : soundEvent;
+        audioManager.PlaySound(soundToPlay);
     }
 
     private System.Collections.IEnumerator AnimateObject(bool opening)
