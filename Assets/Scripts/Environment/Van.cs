@@ -6,7 +6,7 @@ public class Van : Interactable, IInteractable
     [Header("Config")]
     //[SerializeField] private MySceneManager mySceneManager;
     //[SerializeField] private string level1Name;
-    [SerializeField] private PlayerController playerController;
+    [SerializeField] private PlayerControllerMenu playerController;
     [SerializeField] private Animator changeSceneAnimator;
     [SerializeField] private string changeSceneTrigger;
     [SerializeField] private Animator endGameAnimator;

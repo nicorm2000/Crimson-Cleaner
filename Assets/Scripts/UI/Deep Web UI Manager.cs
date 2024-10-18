@@ -6,7 +6,7 @@ public class DeepWebUIManager : MonoBehaviour
 {
 
     [Header("Config")]
-    [SerializeField] private PCCanvasController[] pCCanvasControllers;
+    [SerializeField] private PCCanvasController pCCanvasController;
     [SerializeField] private GameObject key;
     [SerializeField] private float grabKeyAnimationDuration = 2f;
     [SerializeField] private float grabKeySoundEventDelay = 0.5f;
@@ -84,11 +84,8 @@ public class DeepWebUIManager : MonoBehaviour
             yield return null;
         }
 
-        foreach (var controller in pCCanvasControllers)
-        {
-            if (controller.isPlayerOnPC)
-                controller.ShutDownPC();
-        }
+        if (pCCanvasController.isPlayerOnPC)
+            pCCanvasController.ShutDownPC();
 
         mainMenuCanvas.SetActive(false);
         LevelAccepted?.Invoke();

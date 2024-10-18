@@ -5,7 +5,7 @@ using UnityEngine;
 public class ExitPanelManager : MonoBehaviour
 {
     [SerializeField] private InputManager inputManager;
-    [SerializeField] private PlayerController playerController;
+    [SerializeField] private PlayerControllerMenu playerController;
     [SerializeField] private MainMenuUIManager mainMenuUIManager;
     [SerializeField] private GameObject PCCanvas;
     [SerializeField] private GameObject exitGamePanel;
@@ -22,10 +22,8 @@ public class ExitPanelManager : MonoBehaviour
 
     public void OnPauseEvent()
     {
-        foreach (var controller in mainMenuUIManager.pCCanvasController) 
-        {
-            if (controller.isPlayerOnPC || controller.isPlayerMoving) return;
-        }
+        if (mainMenuUIManager.pCCanvasController.isPlayerOnPC || mainMenuUIManager.pCCanvasController.isPlayerMoving) return;
+
 
         mainMenuUIManager.StartSimpleGaussianBlurState();
         //ToggleSimpleGaussianBlur();

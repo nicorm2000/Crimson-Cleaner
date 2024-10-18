@@ -8,7 +8,8 @@ public class CameraInteractionMenu : MonoBehaviour
 
     [SerializeField] private Image interactionImage;
 
-    [SerializeField] private float raycastDistance = 2f;
+    [SerializeField] private float defaultRaycastDistance = 2f;
+    [SerializeField] private float pcRaycastDistance = 1f;
     [SerializeField] private LayerMask interactLayer;
 
     private void OnEnable()
@@ -31,27 +32,31 @@ public class CameraInteractionMenu : MonoBehaviour
         if (van.isSceneTransitioned) return;
 
         Ray ray = new(mainCamera.transform.position, mainCamera.transform.forward);
+        float raycastDistance = defaultRaycastDistance;
 
         if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance, interactLayer))
         {
-            IInteractable inmersiveObject = hit.collider.gameObject.GetComponent<PCCanvasController>();
-            IInteractable inmersiveObject2 = hit.collider.gameObject.GetComponent<Cat>();
-            IInteractable inmersiveObject3 = hit.collider.gameObject.GetComponent<Van>();
+            IInteractable pcObject = hit.collider.gameObject.GetComponent<PCCanvasController>();
+            IInteractable catObject = hit.collider.gameObject.GetComponent<Cat>();
+            IInteractable vanObject = hit.collider.gameObject.GetComponent<Van>();
             IOpenable openableObject = hit.collider.gameObject.GetComponent<OpenableNoAnimator>();
 
             Sprite interactionSprite = interactionImage.sprite;
 
-            if (inmersiveObject != null)
+            if (pcObject != null)
             {
-                AppendInteractableSprites(inmersiveObject, ref interactionSprite);
+                if (Physics.Raycast(ray, out hit, pcRaycastDistance, interactLayer))
+                {
+                    AppendInteractableSprites(pcObject, ref interactionSprite);
+                }
             }
-            if (inmersiveObject2 != null)
+            if (catObject != null)
             {
-                AppendInteractableSprites(inmersiveObject2, ref interactionSprite);
+                AppendInteractableSprites(catObject, ref interactionSprite);
             }
-            if (inmersiveObject3 != null)
+            if (vanObject != null)
             {
-                AppendInteractableSprites(inmersiveObject3, ref interactionSprite);
+                AppendInteractableSprites(vanObject, ref interactionSprite);
             }
             if (openableObject != null)
             {
@@ -74,6 +79,7 @@ public class CameraInteractionMenu : MonoBehaviour
     private void SetImageState(bool state)
     {
         interactionImage.enabled = state;
+        interactionImage.sprite = null;
     }
 
     private void AppendInteractableSprites(IInteractable inmersiveObject, ref Sprite activeSprite)

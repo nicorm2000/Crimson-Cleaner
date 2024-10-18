@@ -5,9 +5,10 @@ public class PCCanvasController : Interactable, IInteractable
 {
     [SerializeField] private InputManager inputManager;
     [SerializeField] private MainMenuUIManager mainMenuUIManager;
-    [SerializeField] private PlayerController playerController;
+    [SerializeField] private PlayerControllerMenu playerController;
     [SerializeField] private Transform mainCamera;
     [SerializeField] private Transform targetTransform;
+    [SerializeField] private float raycastDistance = 1f;
     [SerializeField] private float lerpDuration = 1f;
 
     [SerializeField] private Sprite interactSprite;
@@ -22,7 +23,33 @@ public class PCCanvasController : Interactable, IInteractable
     private Coroutine goCoroutine;
     private Coroutine returnCoroutine;
 
-    public void Interact(PlayerController playerController)
+    private void OnEnable()
+    {
+        inputManager.InteractEvent += OnInteract;
+    }
+
+    private void OnDisable()
+    {
+        inputManager.InteractEvent -= OnInteract;
+    }
+
+    private void OnInteract()
+    {
+        IsMouseLookingAtObject();
+    }
+
+    protected void IsMouseLookingAtObject()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(mainCamera.position, mainCamera.forward, out hit, raycastDistance))
+        {
+            if (hit.collider.gameObject == this.transform.gameObject)
+                Interact();
+        }
+    }
+
+    public void Interact()
     {
         if (goCoroutine == null && returnCoroutine == null)
         {
@@ -30,9 +57,17 @@ public class PCCanvasController : Interactable, IInteractable
         }
     }
 
+    public void Interact(PlayerController playerController)
+    {
+        //if (goCoroutine == null && returnCoroutine == null)
+        //{
+        //    goCoroutine = StartCoroutine(PCStartUpCoroutine());
+        //}
+    }
+
     protected override void PerformInteraction(PlayerController playerController)
     {
-        Interact(playerController);
+        //Interact(playerController);
     }
 
     private IEnumerator PCStartUpCoroutine()
