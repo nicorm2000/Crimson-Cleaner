@@ -38,6 +38,7 @@ public class InputManager : MonoBehaviour
     private InputAction secondToolAction;
     private InputAction thirdToolAction;
     private InputAction forthToolAction;
+    private InputAction fifthToolAction;
 
     public event Action PickUpEvent;
     public event Action InteractEvent;
@@ -58,6 +59,7 @@ public class InputManager : MonoBehaviour
     public event Action SecondToolEvent;
     public event Action ThirdToolEvent;
     public event Action ForthToolEvent;
+    public event Action FifthToolEvent;
 
     private bool isCursorVisible = true;
     private bool isCleaning = false;
@@ -88,6 +90,7 @@ public class InputManager : MonoBehaviour
         secondToolAction = playerInput.actions.FindAction("SecondTool");
         thirdToolAction = playerInput.actions.FindAction("ThirdTool");
         forthToolAction = playerInput.actions.FindAction("ForthTool");
+        fifthToolAction = playerInput.actions.FindAction("FifthTool");
 
         moveAction.performed += OnMove;
         lookAction.performed += OnLook;
@@ -111,6 +114,7 @@ public class InputManager : MonoBehaviour
         secondToolAction.performed += OnSecondToolSelected;
         thirdToolAction.performed += OnThirdToolSelected;
         forthToolAction.performed += OnForthToolSelected;
+        fifthToolAction.performed += OnFifthToolSelected;
 
         moveAction.canceled += OnMove;
         lookAction.canceled += OnLook;
@@ -237,6 +241,10 @@ public class InputManager : MonoBehaviour
     private void OnForthToolSelected(InputAction.CallbackContext context)
     {
         ForthToolEvent?.Invoke();
+    }
+    private void OnFifthToolSelected(InputAction.CallbackContext context)
+    {
+        FifthToolEvent?.Invoke();
     }
 
     public void ToggleGameplayMap(bool active)

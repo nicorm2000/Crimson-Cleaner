@@ -190,6 +190,15 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""FifthTool"",
+                    ""type"": ""Button"",
+                    ""id"": ""763f6fef-1986-4e6c-bac6-58fd2f39ed0b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Retrieve"",
                     ""type"": ""Button"",
                     ""id"": ""ad04a1c9-9e9b-43ad-821a-2802aa2f5f4b"",
@@ -573,6 +582,17 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
                     ""action"": ""Retrieve"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""390bd42e-03b1-42a6-bbff-89d16c336fc0"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FifthTool"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -660,6 +680,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         m_Player_SecondTool = m_Player.FindAction("SecondTool", throwIfNotFound: true);
         m_Player_ThirdTool = m_Player.FindAction("ThirdTool", throwIfNotFound: true);
         m_Player_ForthTool = m_Player.FindAction("ForthTool", throwIfNotFound: true);
+        m_Player_FifthTool = m_Player.FindAction("FifthTool", throwIfNotFound: true);
         m_Player_Retrieve = m_Player.FindAction("Retrieve", throwIfNotFound: true);
         // Pause
         m_Pause = asset.FindActionMap("Pause", throwIfNotFound: true);
@@ -743,6 +764,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SecondTool;
     private readonly InputAction m_Player_ThirdTool;
     private readonly InputAction m_Player_ForthTool;
+    private readonly InputAction m_Player_FifthTool;
     private readonly InputAction m_Player_Retrieve;
     public struct PlayerActions
     {
@@ -766,6 +788,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         public InputAction @SecondTool => m_Wrapper.m_Player_SecondTool;
         public InputAction @ThirdTool => m_Wrapper.m_Player_ThirdTool;
         public InputAction @ForthTool => m_Wrapper.m_Player_ForthTool;
+        public InputAction @FifthTool => m_Wrapper.m_Player_FifthTool;
         public InputAction @Retrieve => m_Wrapper.m_Player_Retrieve;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -830,6 +853,9 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @ForthTool.started += instance.OnForthTool;
             @ForthTool.performed += instance.OnForthTool;
             @ForthTool.canceled += instance.OnForthTool;
+            @FifthTool.started += instance.OnFifthTool;
+            @FifthTool.performed += instance.OnFifthTool;
+            @FifthTool.canceled += instance.OnFifthTool;
             @Retrieve.started += instance.OnRetrieve;
             @Retrieve.performed += instance.OnRetrieve;
             @Retrieve.canceled += instance.OnRetrieve;
@@ -891,6 +917,9 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
             @ForthTool.started -= instance.OnForthTool;
             @ForthTool.performed -= instance.OnForthTool;
             @ForthTool.canceled -= instance.OnForthTool;
+            @FifthTool.started -= instance.OnFifthTool;
+            @FifthTool.performed -= instance.OnFifthTool;
+            @FifthTool.canceled -= instance.OnFifthTool;
             @Retrieve.started -= instance.OnRetrieve;
             @Retrieve.performed -= instance.OnRetrieve;
             @Retrieve.canceled -= instance.OnRetrieve;
@@ -977,6 +1006,7 @@ public partial class @InputMaster: IInputActionCollection2, IDisposable
         void OnSecondTool(InputAction.CallbackContext context);
         void OnThirdTool(InputAction.CallbackContext context);
         void OnForthTool(InputAction.CallbackContext context);
+        void OnFifthTool(InputAction.CallbackContext context);
         void OnRetrieve(InputAction.CallbackContext context);
     }
     public interface IPauseActions

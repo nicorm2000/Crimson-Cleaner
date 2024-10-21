@@ -41,6 +41,7 @@ public class CleaningTool : MonoBehaviour
         cleaningManager.GetInputManager().SecondToolEvent += OnSelectSecondTool;
         cleaningManager.GetInputManager().ThirdToolEvent += OnSelectThirdTool;
         cleaningManager.GetInputManager().ForthToolEvent += OnSelectForthTool;
+        cleaningManager.GetInputManager().FifthToolEvent += OnSelectFifthTool;
     }
     private void OnDisable()
     {
@@ -48,6 +49,7 @@ public class CleaningTool : MonoBehaviour
         cleaningManager.GetInputManager().SecondToolEvent -= OnSelectSecondTool;
         cleaningManager.GetInputManager().ThirdToolEvent -= OnSelectThirdTool;
         cleaningManager.GetInputManager().ForthToolEvent -= OnSelectForthTool;
+        cleaningManager.GetInputManager().FifthToolEvent -= OnSelectFifthTool;
     }
     private void Start()
     {
@@ -231,22 +233,27 @@ public class CleaningTool : MonoBehaviour
 
     private void OnSelectFirstTool()
     {
+        if (CurrentToolIndex != 2) // Tablet now in first position
+            SwitchTool(2);
+    }
+    private void OnSelectSecondTool()
+    {
         if (CurrentToolIndex != 0)
             SwitchTool(0);
     }
-    private void OnSelectSecondTool()
+    private void OnSelectThirdTool()
     {
         if (CurrentToolIndex != 1)
             SwitchTool(1);
     }
-    private void OnSelectThirdTool()
-    {
-        if (CurrentToolIndex != 2)
-            SwitchTool(2);
-    }
     private void OnSelectForthTool()
     {
-        if (CurrentToolIndex != 3)
+        if (CurrentToolIndex != 3) // Hands now in first position
             SwitchTool(3);
+    }
+    private void OnSelectFifthTool()
+    {
+        if (CurrentToolIndex != 4) // Hands now in first position
+            SwitchTool(4);
     }
 }
