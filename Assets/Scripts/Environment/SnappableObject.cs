@@ -24,8 +24,11 @@ public class SnappableObject : MonoBehaviour
     private bool isObjectSnapped = false;
     private MeshRenderer meshRenderer;
 
+    private Rigidbody rb;
+
     private void Awake()
     {
+        rb = GetComponent<Rigidbody>();
         objectGrabbable = GetComponent<ObjectGrabbable>();
         meshRenderer = GetComponent<MeshRenderer>();
         Debug.Log("Material is: " + baseMaterial);
@@ -47,11 +50,20 @@ public class SnappableObject : MonoBehaviour
         float newDistance = Vector3.Distance(transform.position, snapPoint.snapTransform.position);
         float newAngle = Quaternion.Angle(transform.rotation, snapPoint.snapTransform.rotation);
 
-        return newDistance < distance && newAngle < angle; 
+        float tolerance = Mathf.Lerp(angle, angle * 1.5f, newDistance / distance);
+
+        return newDistance < distance && newAngle < tolerance; 
     }
 
     private void SnapObject()
     {
+        if (rb != null)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            rb.isKinematic = true; 
+        }
+
         transform.position = snapPoint.snapTransform.position;
         transform.rotation = snapPoint.snapTransform.rotation;
 
