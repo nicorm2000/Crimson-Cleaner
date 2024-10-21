@@ -71,6 +71,7 @@ public class SnappableObject : MonoBehaviour
         
         isObjectSnapped = true;
         objectGrabbable.enabled = false;
+        baseMaterial = meshRenderer.material;
         meshRenderer.material = completeSnapMaterial;
         Snapped?.Invoke();
         SnappedGO?.Invoke(gameObject);
