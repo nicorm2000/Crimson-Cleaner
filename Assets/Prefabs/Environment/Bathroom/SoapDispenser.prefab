@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 141575127574719584}
   - component: {fileID: 8652740679935433609}
   - component: {fileID: 6310077611221499033}
+  - component: {fileID: 5497644783568832481}
+  - component: {fileID: 525892380985017902}
+  - component: {fileID: 2206637180938160558}
   m_Layer: 0
   m_Name: SoapDispenser
   m_TagString: Untagged
@@ -27,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5445819037016732067}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -105,3 +108,75 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.22758423, y: 0.41747177, z: 0.26855832}
   m_Center: {x: 0.00000010430813, y: 0, z: 0.00000020116568}
+--- !u!54 &5497644783568832481
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5445819037016732067}
+  serializedVersion: 4
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!114 &525892380985017902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5445819037016732067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lerpSpeed: 10
+  rotationSpeed: 10
+  throwingForce: 10
+  breakForceThreshold: 10
+  collisionCooldown: 0.1
+  fallHeightThreshold: 5
+  isObjectMulitple: 0
+  hologramObject: {fileID: 0}
+  audioManager: {fileID: 0}
+  breakBottleEvent: Rope_Collision
+  isObjectSanityModifier: 0
+  isObjectBreakable: 0
+--- !u!114 &2206637180938160558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5445819037016732067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3630630ac01644b44a39d11f5a34784c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseMaterial: {fileID: 2100000, guid: 885dbbbbb77ae984f820a6fa7b2801a6, type: 2}
+  completeSnapMaterial: {fileID: 2100000, guid: 2a20a9916bd00de4488eae1b06f9428f,
+    type: 2}
+  snapPoint: {fileID: 0}
+  distance: 0.2
+  angle: 10
+  completionShaderDuration: 1.5
+  audioManager: {fileID: 0}
+  snapObjectEvent: Bottle_Drop
