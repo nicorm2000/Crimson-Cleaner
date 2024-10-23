@@ -84,6 +84,7 @@ public class PlayerControllerMenu : MonoBehaviour
     {
         if (!isMovable)
         {
+            playerRigidBody.velocity = Vector3.zero;
             isMoving = false;
             animator.SetBool(animatorWalkBool, isMoving);
 
