@@ -84,6 +84,8 @@ public class PCCanvasController : Interactable, IInteractable
         playerController.ToggleMovement(false);
         playerController.ToggleCameraMovement(false);
 
+        playerController.GetComponent<Rigidbody>().velocity = Vector3.zero;
+
         mainMenuUIManager.ToggleCanvas(mainMenuUIManager.mainCanvas, false);
 
         previousCameraPosition = mainCamera.transform.position;
