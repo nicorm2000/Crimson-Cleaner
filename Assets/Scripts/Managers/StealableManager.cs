@@ -16,7 +16,6 @@ public class StealableManager : MonoBehaviour
     [SerializeField] private string moneyEvent = null;
     
     public static Coroutine currentPopUpCoroutine = null;
-    private bool coroutineRunning = false;
 
     public void AddMoney(float amount)
     {
@@ -25,6 +24,7 @@ public class StealableManager : MonoBehaviour
         if (currentPopUpCoroutine != null)
         {
             StopCoroutine(currentPopUpCoroutine);
+            moneyText.gameObject.SetActive(false);
         }
 
         currentPopUpCoroutine = StartCoroutine(ShowMoneyPopUp());
@@ -32,21 +32,20 @@ public class StealableManager : MonoBehaviour
 
     private IEnumerator ShowMoneyPopUp()
     {
-        coroutineRunning = true;
+        moneyText.gameObject.SetActive(true);
         float elapsedTime = 0f;
 
         while (elapsedTime < moneyPopUpDuration)
         {
             moneyText.text = "$" + playerStats.currentMoney.ToString();
             pauseMoneyText.text = "$" + playerStats.currentMoney.ToString();
-            moneyText.gameObject.SetActive(true);
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
         moneyText.gameObject.SetActive(false);
-        coroutineRunning = false;
+        currentPopUpCoroutine = null;
     }
 
     public void PlayMoneySFX() => audioManager.PlaySound(moneyEvent);
