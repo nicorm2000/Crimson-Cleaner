@@ -15,7 +15,7 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private PickUpDrop pickUpDrop;
     [SerializeField] private GameStateManager gameStateManager;
     [SerializeField] private Openable[] openables;
-    [SerializeField] private OpenableNoAnimator[] openablesnoAnimator;
+    [SerializeField] private OpenableNoAnimator[] openablesNoAnimator;
     [SerializeField] private GameObject tablet;
     [SerializeField] private string notebookAnimatorOpenHash;
     [SerializeField] private Animator cleaningListAnimator;
@@ -161,7 +161,7 @@ public class PlayersUIManager : MonoBehaviour
             openable.ungrabbedKey += () => OnMissingKeyWarning(ref missingKeyWarningCoroutine, missingKeyImageWarning, missingKeyErrorDuration);
         }
         
-        foreach (var openable in openablesnoAnimator)
+        foreach (var openable in openablesNoAnimator)
         {
             openable.ungrabbedKey += () => OnMissingKeyWarning(ref missingKeyWarningCoroutine, missingKeyImageWarning, missingKeyErrorDuration);
         }
@@ -238,7 +238,7 @@ public class PlayersUIManager : MonoBehaviour
             openable.ungrabbedKey -= () => OnMissingKeyWarning(ref missingKeyWarningCoroutine, missingKeyImageWarning, missingKeyErrorDuration);
         }
         
-        foreach (var openable in openablesnoAnimator)
+        foreach (var openable in openablesNoAnimator)
         {
             openable.ungrabbedKey -= () => OnMissingKeyWarning(ref missingKeyWarningCoroutine, missingKeyImageWarning, missingKeyErrorDuration);
         }
