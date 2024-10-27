@@ -5,8 +5,8 @@ using UnityEngine;
 public class SnappableObject : MonoBehaviour
 {
     [Header("Config")]
-    [SerializeField] private Material baseMaterial;
     [SerializeField] private Material completeSnapMaterial;
+    [SerializeField] private Material[] completeSnapMaterials;
     [SerializeField] private SnapPoint snapPoint;
     [SerializeField] private float distance = 0.2f;
     [SerializeField] private float angle = 10f;
@@ -17,32 +17,47 @@ public class SnappableObject : MonoBehaviour
     [SerializeField] private string snapObjectEvent = null;
 
     private ObjectGrabbable objectGrabbable;
+    private Material previousMaterial;
+    private Material[] previousMaterials;
 
     public event Action Snapped;
     public event Action<GameObject> SnappedGO;
 
+    private bool isObjectSnappable = false;
     private bool isObjectSnapped = false;
     private MeshRenderer meshRenderer;
 
     private Rigidbody rb;
+
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         objectGrabbable = GetComponent<ObjectGrabbable>();
         meshRenderer = GetComponent<MeshRenderer>();
-        Debug.Log("Material is: " + baseMaterial);
+        //Debug.Log("Material is: " + baseMaterial);
+    }
+
+    private void Start()
+    {
+        StartCoroutine(WaitForSnapDelay());
     }
 
     void Update()
     {
-        if (!isObjectSnapped)
+        if (!isObjectSnapped && isObjectSnappable)
         {
             if (IsNearSnapPoint())
             {
                  SnapObject();
             }
         }
+    }
+
+    private IEnumerator WaitForSnapDelay()
+    {
+        yield return new WaitForSeconds(1.5f);
+        isObjectSnappable = true;
     }
 
     private bool IsNearSnapPoint()
@@ -71,11 +86,29 @@ public class SnappableObject : MonoBehaviour
         
         isObjectSnapped = true;
         objectGrabbable.enabled = false;
-        baseMaterial = meshRenderer.material;
-        meshRenderer.material = completeSnapMaterial;
+        
+        if (completeSnapMaterial != null)
+        {
+            previousMaterial = meshRenderer.material;
+            meshRenderer.material = completeSnapMaterial;
+        }
+        else if (completeSnapMaterials.Length != 0)
+        {
+            var currentMaterials = meshRenderer.materials;
+
+            previousMaterials = new Material[currentMaterials.Length];
+
+            for (int i = 0; i < completeSnapMaterials.Length; i++)
+            {
+                previousMaterials[i] = currentMaterials[i];
+            }
+            
+            meshRenderer.materials = completeSnapMaterials;
+        }
+
         Snapped?.Invoke();
         SnappedGO?.Invoke(gameObject);
-        if (snapObjectEvent != null)
+        if (snapObjectEvent != null && audioManager != null)
             audioManager.PlaySound(snapObjectEvent);
         StartCoroutine(WaitToSwapMaterial(completionShaderDuration));
     }
@@ -83,6 +116,14 @@ public class SnappableObject : MonoBehaviour
     private IEnumerator WaitToSwapMaterial(float duration)
     {
         yield return new WaitForSeconds(duration);
-        meshRenderer.material = baseMaterial;
+
+        if (completeSnapMaterial != null)
+        {
+            meshRenderer.material = previousMaterial;
+        }
+        else if (completeSnapMaterials.Length != 0 && previousMaterials != null)
+        {
+            meshRenderer.materials = previousMaterials;
+        }
     }
 }
