@@ -194,6 +194,90 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Shooting" ID="{7DF876DA-F678-4B19-BABF-87ADC8F7BD3B}">
+							<ChildrenList>
+								<Action Name="" ID="{6E90B025-D07A-49D1-B32E-D735AFBA365E}" ShortID="597265101">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="TiroteoSFX_Audio" ID="{01D73E8F-7A12-4B46-8FCC-94EF11AFFB55}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{298E7D29-9562-4500-AACD-52AC80D3FD8C}" ShortID="6354163">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="TiroteoSFX_Audio" ID="{01D73E8F-7A12-4B46-8FCC-94EF11AFFB55}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Mom_Calming" ID="{1704B695-07F7-4DB5-A401-73D0DDF15D66}">
+							<ChildrenList>
+								<Action Name="" ID="{76EA3B12-6FFD-4F70-9674-FB441E9E40C1}" ShortID="639968803">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Mom_CalmVoiceSFX_Audio" ID="{E3697826-C501-4C33-B24D-4898843137B6}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{96FF4227-4414-4FCF-9110-D1D7FF7BD398}" ShortID="1051345145">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Mom_CalmVoiceSFX_Audio" ID="{E3697826-C501-4C33-B24D-4898843137B6}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Whipping" ID="{933CA238-D74B-4E16-9235-6F53AF8CAFA3}">
+							<ChildrenList>
+								<Action Name="" ID="{66427C81-293C-417F-91AB-70D94849FD73}" ShortID="235312732">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Whipping" ID="{057898F3-190F-4F77-8590-BDC9E6DE061B}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{1479C521-8224-4885-AA31-96E20444D996}" ShortID="711549167">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Whipping" ID="{057898F3-190F-4F77-8590-BDC9E6DE061B}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Knock" ID="{3359A58C-8FE5-4590-8641-862E150B81B4}">
+							<ChildrenList>
+								<Action Name="" ID="{60C601A1-6841-418E-8444-6B7513A66F6A}" ShortID="1007499811">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Door_KnockSFX_Audio_V2" ID="{2E7201AB-DAA6-4961-B737-A2ACAD600DEE}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{8E1088FE-E013-4E6C-A4CE-0191B368E2AC}" ShortID="496523438">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Door_KnockSFX_Audio_V2" ID="{2E7201AB-DAA6-4961-B737-A2ACAD600DEE}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Retrievables" ID="{5E3E8AA8-2759-49DE-9E69-CEF83EF27226}" ShortID="611592331">
@@ -2229,6 +2313,27 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Object_Placement_Confirmation" ID="{67B8EFAC-A90B-44AE-9829-033B31DAF45E}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Confirmation_Placement" ID="{5E635AB3-FC9E-4B12-B7E0-6400F895F91E}">
+							<ChildrenList>
+								<Action Name="" ID="{CCCFDB72-BAF8-4BB8-B7B8-9374A458B1AB}" ShortID="169371417">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Confirmation_Placementt" ID="{84BE75AE-52C6-4B54-8D59-98AFCB7C992A}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{75CC88AB-9597-401C-9C90-CF2C74034066}" ShortID="71221174">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Confirmation_Placementt" ID="{84BE75AE-52C6-4B54-8D59-98AFCB7C992A}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

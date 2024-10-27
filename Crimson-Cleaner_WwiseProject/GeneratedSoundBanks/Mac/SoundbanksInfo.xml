@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{1E80B229-8B36-2BC5-FF77-436539837FB7}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{153B8669-06F7-56B2-D2F9-BDFC7B805D38}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -190,6 +190,10 @@
 					<ShortName>Plate_Break.wav</ShortName>
 					<CachePath>SFX/Plate_Break_01740FD9.wem</CachePath>
 				</File>
+				<File Id="371194305" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Whipping.wav</ShortName>
+					<CachePath>SFX/Whipping_818F3B66.wem</CachePath>
+				</File>
 				<File Id="380028755" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Lamp_Collision.wav</ShortName>
 					<CachePath>SFX/Lamp_Collision_891D2D88.wem</CachePath>
@@ -197,6 +201,10 @@
 				<File Id="399657563" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps_BloodySFX_Audio-[AudioTrimmer.com] (2).wav</ShortName>
 					<CachePath>SFX/Footsteps_BloodySFX_Audio-[AudioTrimmer.com] (2)_4FC06FCB.wem</CachePath>
+				</File>
+				<File Id="405530386" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Door_KnockSFX_Audio_V2.wav</ShortName>
+					<CachePath>SFX/Door_KnockSFX_Audio_V2_818F3B66.wem</CachePath>
 				</File>
 				<File Id="420430069" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Bathroom Door.wav</ShortName>
@@ -406,6 +414,10 @@
 					<ShortName>Footsteps_NormalSFX_Audio-[AudioTrimmer.com] (2).wav</ShortName>
 					<CachePath>SFX/Footsteps_NormalSFX_Audio-[AudioTrimmer.com] (2)_EFA29E80.wem</CachePath>
 				</File>
+				<File Id="891737475" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>TiroteoSFX_Audio.wav</ShortName>
+					<CachePath>SFX/TiroteoSFX_Audio_818F3B66.wem</CachePath>
+				</File>
 				<File Id="892225877" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>TirarBolsaBasura_1.wav</ShortName>
 					<CachePath>SFX/TirarBolsaBasura_1_F4D67A98.wem</CachePath>
@@ -481,6 +493,10 @@
 				<File Id="1054048262" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps_RunSFX_Audio.wav</ShortName>
 					<CachePath>SFX/Footsteps_RunSFX_Audio_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1057789632" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Mom_CalmVoiceSFX_Audio.wav</ShortName>
+					<CachePath>SFX/Mom_CalmVoiceSFX_Audio_818F3B66.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -698,6 +714,11 @@
 						<MediaRef Id="951993581"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3764079811" Name="Knock" DurationType="OneShot" DurationMin="1.2666667" DurationMax="1.2666667">
+					<MediaRefs>
+						<MediaRef Id="405530386"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2628227250" Name="Lamp_Collision" DurationType="OneShot" DurationMin="0.23719633" DurationMax="0.23719633">
 					<MediaRefs>
 						<MediaRef Id="380028755"/>
@@ -747,6 +768,11 @@
 				<Event Id="3090986788" Name="Message_Notification" DurationType="OneShot" DurationMin="4" DurationMax="4">
 					<MediaRefs>
 						<MediaRef Id="874516579"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1210360252" Name="Mom_Calming" DurationType="OneShot" DurationMin="5" DurationMax="5">
+					<MediaRefs>
+						<MediaRef Id="1057789632"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="758863303" Name="Money" DurationType="OneShot" DurationMin="0.53173226" DurationMax="0.53173226">
@@ -899,6 +925,11 @@
 						<MediaRef Id="368920920"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3373695666" Name="Shooting" DurationType="OneShot" DurationMin="4" DurationMax="4">
+					<MediaRefs>
+						<MediaRef Id="891737475"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1165214467" Name="Sponge" DurationType="OneShot" DurationMin="0.55" DurationMax="0.55">
 					<MediaRefs>
 						<MediaRef Id="131550839"/>
@@ -1022,6 +1053,11 @@
 						<MediaRef Id="701664573"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="793769351" Name="Whipping" DurationType="OneShot" DurationMin="8" DurationMax="8">
+					<MediaRefs>
+						<MediaRef Id="371194305"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2628386460" Name="Whispers" DurationType="OneShot" DurationMin="8" DurationMax="8">
 					<MediaRefs>
 						<MediaRef Id="303229491"/>
@@ -1038,5 +1074,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{82C46E47-E471-92C7-4AC1-F3E7D0FBAC47}</FileHash>
+	<FileHash>{96F2C0AC-5B85-30E4-B5D7-9398C9CF7775}</FileHash>
 </SoundBanksInfo>

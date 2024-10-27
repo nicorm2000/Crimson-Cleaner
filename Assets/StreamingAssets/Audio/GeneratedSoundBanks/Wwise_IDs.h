@@ -57,6 +57,7 @@ namespace AK
         static const AkUniqueID GUN_COLLISION = 1154053212U;
         static const AkUniqueID HEAVY_TOOL_COLLISION = 2015415870U;
         static const AkUniqueID KNIFE_COLLISION = 1966534225U;
+        static const AkUniqueID KNOCK = 3764079811U;
         static const AkUniqueID LAMP_COLLISION = 2628227250U;
         static const AkUniqueID LAMP_SWITCH_LOOP = 3815506779U;
         static const AkUniqueID LAMP_SWITCH_LOOP_END = 3983889213U;
@@ -68,6 +69,7 @@ namespace AK
         static const AkUniqueID MEDIUM_METAL_TOOL_COLLISION = 579873924U;
         static const AkUniqueID MENU_COLLISION = 295281277U;
         static const AkUniqueID MESSAGE_NOTIFICATION = 3090986788U;
+        static const AkUniqueID MOM_CALMING = 1210360252U;
         static const AkUniqueID MONEY = 758863303U;
         static const AkUniqueID MOP = 1082004779U;
         static const AkUniqueID MOP_DIRTY = 68175526U;
@@ -98,6 +100,7 @@ namespace AK
         static const AkUniqueID SELECT_MOP = 1557923336U;
         static const AkUniqueID SELECT_SPONGE = 2836144950U;
         static const AkUniqueID SELECT_TRASH_BIN = 1254856804U;
+        static const AkUniqueID SHOOTING = 3373695666U;
         static const AkUniqueID SPONGE = 1165214467U;
         static const AkUniqueID SPONGE_DIRTY = 1222748174U;
         static const AkUniqueID SPONGE_WOOSH = 2179797042U;
@@ -125,6 +128,7 @@ namespace AK
         static const AkUniqueID WATER_FLOW_STOP = 1430150536U;
         static const AkUniqueID WATER_TAP = 2864239532U;
         static const AkUniqueID WEAPON_SWAP = 2239924753U;
+        static const AkUniqueID WHIPPING = 793769351U;
         static const AkUniqueID WHISPERS = 2628386460U;
         static const AkUniqueID WOOD_FOOTSTEP_PLAY = 1523901220U;
         static const AkUniqueID WOOD_FOOTSTEP_STOP = 1381150U;

@@ -2332,6 +2332,122 @@
 								<ActiveSource Name="Revolver_Cock" ID="{1D5802EF-35E3-45D1-A524-47B2704FDE48}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Mom_CalmVoiceSFX_Audio" ID="{E3697826-C501-4C33-B24D-4898843137B6}" ShortID="927189944">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Mom_CalmVoiceSFX_Audio" ID="{1A4A6A0A-BECB-4273-B826-16E9B76DA0E4}">
+									<Language>SFX</Language>
+									<AudioFile>Mom_CalmVoiceSFX_Audio.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1057789632"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Mom_CalmVoiceSFX_Audio" ID="{1A4A6A0A-BECB-4273-B826-16E9B76DA0E4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="TiroteoSFX_Audio" ID="{01D73E8F-7A12-4B46-8FCC-94EF11AFFB55}" ShortID="402614235">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="TiroteoSFX_Audio" ID="{519948A7-5EF8-4CDF-87FF-626593F0D09B}">
+									<Language>SFX</Language>
+									<AudioFile>TiroteoSFX_Audio.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="891737475"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="TiroteoSFX_Audio" ID="{519948A7-5EF8-4CDF-87FF-626593F0D09B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Whipping" ID="{057898F3-190F-4F77-8590-BDC9E6DE061B}" ShortID="205578296">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Whipping" ID="{2598F2E2-F103-4CAC-A450-828D4AA89978}">
+									<Language>SFX</Language>
+									<AudioFile>Whipping.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="371194305"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Whipping" ID="{2598F2E2-F103-4CAC-A450-828D4AA89978}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Door_KnockSFX_Audio_V2" ID="{2E7201AB-DAA6-4961-B737-A2ACAD600DEE}" ShortID="970656740">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Door_KnockSFX_Audio_V2" ID="{759889BD-396F-42A8-A697-5BAC915DF348}">
+									<Language>SFX</Language>
+									<AudioFile>Door_KnockSFX_Audio_V2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="405530386"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Door_KnockSFX_Audio_V2" ID="{759889BD-396F-42A8-A697-5BAC915DF348}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Retrievables" ID="{60621710-2701-480F-BE0E-43751DAE5648}" ShortID="724998173">
@@ -4586,6 +4702,33 @@
 								</Sound>
 							</ChildrenList>
 						</Folder>
+						<Sound Name="Confirmation_Placementt" ID="{84BE75AE-52C6-4B54-8D59-98AFCB7C992A}" ShortID="419951572">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Confirmation_Placementt" ID="{391F9E1E-6E86-4235-BBB9-8A07CE2EBF7F}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.18806161745828"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.3"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Confirmation_Placementt.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="652045968"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Confirmation_Placementt" ID="{391F9E1E-6E86-4235-BBB9-8A07CE2EBF7F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

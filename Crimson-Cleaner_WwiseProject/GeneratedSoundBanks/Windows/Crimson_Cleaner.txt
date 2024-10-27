@@ -20,6 +20,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	745179803	Throw			\Default Work Unit\Player\Player Tools\Throw	
 	758863303	Money			\Default Work Unit\Environment\Money	
 	790135102	Light_Switch			\Default Work Unit\Environment\Light_Switch	
+	793769351	Whipping			\Default Work Unit\Sanity\Whipping	
 	815270946	Van_Door_Close			\Default Work Unit\Environment\Van_Door_Close	
 	828966006	Van_Door_Open			\Default Work Unit\Environment\Van_Door_Open	
 	836873265	Object_Cleaned			\Default Work Unit\Player\Object_Cleaned	
@@ -30,6 +31,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1116333876	Bloody_Footstep_Stop			\Default Work Unit\Player\Footsteps\Bloody_Footstep_Stop	
 	1154053212	Gun_Collision			\Default Work Unit\Retrievables\Gun_Collision	
 	1165214467	Sponge			\Default Work Unit\Player\Player Tools\Sponge	
+	1210360252	Mom_Calming			\Default Work Unit\Sanity\Mom_Calming	
 	1218911394	Gas_Stove_Turn_Off			\Default Work Unit\Environment\Gas_Stove_Turn_Off	
 	1222748174	Sponge_Dirty			\Default Work Unit\Player\Player Tools\Sponge_Dirty	
 	1254856804	Select_Trash_Bin			\Default Work Unit\Player\Player Tools\Select_Trash_Bin	
@@ -94,6 +96,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3295692891	Bar_Fight			\Default Work Unit\Sanity\Bar_Fight	
 	3299309797	Wash_Sponge			\Default Work Unit\Player\Game Tools\Wash_Sponge	
 	3337018563	Bloodpool_Footstep_Play			\Default Work Unit\Player\Footsteps\Bloodpool_Footstep_Play	
+	3373695666	Shooting			\Default Work Unit\Sanity\Shooting	
 	3401439988	Phone_Ring			\Default Work Unit\Sanity\Phone_Ring	
 	3514483227	Bottle_Drop			\Default Work Unit\Environment\Bottle_Drop	
 	3537521357	Chair_Collision			\Default Work Unit\Environment\Chair_Collision	
@@ -105,6 +108,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3695522715	Mouse_Click			\Default Work Unit\UI\Mouse_Click	
 	3697444650	Cart_Close			\Default Work Unit\Player\Game Tools\Cart_Close	
 	3753111523	Drawer_Close			\Default Work Unit\Environment\Drawer_Close	
+	3764079811	Knock			\Default Work Unit\Sanity\Knock	
 	3815506779	Lamp_Switch_Loop			\Default Work Unit\Player\Game Tools\Lamp_Switch_Loop	
 	3903016069	Swap_Mop			\Default Work Unit\Player\Player Tools\Swap_Mop	
 	3910342553	Swap_Trash_Bin			\Default Work Unit\Player\Player Tools\Swap_Trash_Bin	
@@ -157,8 +161,10 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	363758932	Safe_Open_Close	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Safe_Open_Close_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Environment\Safe_Open_Close		50754
 	368920920	SelectTrashBin	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\SelectTrashBin_AA136D92.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Player Tools\SelectTrashBin		192096
 	369679358	Plate_Break	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Plate_Break_01740FD9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Environment\Plate_Break		51456
+	371194305	Whipping	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Whipping_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sanity\Whipping		1536096
 	380028755	Lamp_Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Lamp_Collision_891D2D88.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Game Tools\Lamp_Collision		41936
 	399657563	Footsteps_BloodySFX_Audio-[AudioTrimmer_com] (2)	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Footsteps_BloodySFX_Audio-[AudioTrimmer.com] (2)_4FC06FCB.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Bloody Footsteps\Footsteps_BloodySFX_Audio-[AudioTrimmer_com] (2)		38496
+	405530386	Door_KnockSFX_Audio_V2	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Door_KnockSFX_Audio_V2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sanity\Door_KnockSFX_Audio_V2		243296
 	420430069	Bathroom Door	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Bathroom Door_7B14B400.wem		\Actor-Mixer Hierarchy\Default Work Unit\Environment\Bathroom Door		79108
 	435834974	Van_Engine_Start	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Van_Engine_Start_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Environment\Van_Engine_Start		768096
 	442455513	Grab & Drop	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Grab_EA0BE89E.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Player Tools\Grab & Drop		34740
@@ -211,6 +217,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	874516579	Message_Notification	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Message_Notification_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sanity\Message_Notification		768096
 	885125837	Chair_Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Chair_Collision_D54F6104.wem		\Actor-Mixer Hierarchy\Default Work Unit\Environment\Chair_Collision		96096
 	890074073	Footsteps_NormalSFX_Audio-[AudioTrimmer_com] (2)	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Footsteps_NormalSFX_Audio-[AudioTrimmer.com] (2)_EFA29E80.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Footsteps\Wood Foosteps\Footsteps_NormalSFX_Audio-[AudioTrimmer_com] (2)		38496
+	891737475	TiroteoSFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\TiroteoSFX_Audio_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sanity\TiroteoSFX_Audio		768096
 	892225877	Trash Bag Collision	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\TirarBolsaBasura_1_F4D67A98.wem		\Actor-Mixer Hierarchy\Default Work Unit\Environment\Trash Bag Collision		265204
 	892690072	LimpiarMopaSFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\LimpiarMopaSFX_Audio_A620CDF1.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Player Tools\LimpiarMopaSFX_Audio		96096
 	902178105	Bucket_DumpWaterSFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Bucket_DumpWaterSFX_Audio_A3BAA9D4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Game Tools\Bucket_DumpWaterSFX_Audio		163296
@@ -230,4 +237,5 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	1044247357	Mop_CleaningDirtySFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Mop_CleaningDirtySFX_Audio_2A971F85.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Player Tools\Mop_CleaningDirtySFX_Audio		96096
 	1050266505	SwapTrashBin	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\SwapTrashBin_C3287A9C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Player Tools\SwapTrashBin		102080
 	1054048262	Footsteps_RunSFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Footsteps_RunSFX_Audio_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sanity\Footsteps_RunSFX_Audio		1152096
+	1057789632	Mom_CalmVoiceSFX_Audio	C:\Users\Nico\Desktop\Tesis\Crimson-Cleaner\Crimson-Cleaner_WwiseProject\.cache\Windows\SFX\Mom_CalmVoiceSFX_Audio_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sanity\Mom_CalmVoiceSFX_Audio		960096
 
