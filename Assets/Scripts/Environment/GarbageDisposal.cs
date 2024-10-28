@@ -20,13 +20,8 @@ public class GarbageDisposal : MonoBehaviour
     public void DestroyBoxContents()
     {
         coll.enabled = true;
-        Vector3 boxCenter = coll.transform.position;
-        Vector3 boxHalfExtents = coll.size * 0.5f;
 
-        Debug.Log("Box Center: " + boxCenter);
-        Debug.Log("Box Half Extents: " + boxHalfExtents);
-
-        Collider[] hitColliders = Physics.OverlapBox(boxCenter, boxHalfExtents);
+        Collider[] hitColliders = Physics.OverlapBox(coll.transform.position, coll.size);
 
         foreach (Collider hitCollider in hitColliders)
         {
@@ -48,4 +43,10 @@ public class GarbageDisposal : MonoBehaviour
 
     public void ActivateBarrier() => coll.enabled = true;
     public void DeactivateBarrier() => coll.enabled = false;
+
+    //private void OnDrawGizmos()
+    //{
+    //    if (coll == null) return;
+    //    Gizmos.DrawWireCube(coll.center, coll.size);
+    //}
 }

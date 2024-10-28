@@ -180,7 +180,7 @@ public class GameStateManager : MonoBehaviour
             {
                 if (go == item.gameObject)
                 {
-                    if (zone.corpsesCurrentAmmount < zone.clothes.Count)
+                    if (zone.corpsesCurrentAmmount < zone.corpses.Count)
                     {
                         zone.corpsesCurrentAmmount++;
                         tabletUIManager.UpdateCorpsesText(zone);
