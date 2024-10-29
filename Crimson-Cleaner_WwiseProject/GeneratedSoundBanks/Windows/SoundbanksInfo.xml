@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{153B8669-06F7-56B2-D2F9-BDFC7B805D38}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{5CE8F3D6-7A40-25A1-6FAF-2A18C8728E4D}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -142,6 +142,10 @@
 					<ShortName>CokeBag1SFX_Audio.wav</ShortName>
 					<CachePath>SFX/CokeBag1SFX_Audio_818F3B66.wem</CachePath>
 				</File>
+				<File Id="270014389" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Hands_GrabSFX_Audio.wav</ShortName>
+					<CachePath>SFX/Hands_GrabSFX_Audio_818F3B66.wem</CachePath>
+				</File>
 				<File Id="279046986" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UV_Light_ON.wav</ShortName>
 					<CachePath>SFX/UV_Light_ON_6813D86D.wem</CachePath>
@@ -258,6 +262,10 @@
 					<ShortName>Bucket_CleanSpongeSFX_Audio.wav</ShortName>
 					<CachePath>SFX/Bucket_CleanSpongeSFX_Audio_818F3B66.wem</CachePath>
 				</File>
+				<File Id="522223258" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Hands_ThrowSFX_Audio.wav</ShortName>
+					<CachePath>SFX/Hands_ThrowSFX_Audio_818F3B66.wem</CachePath>
+				</File>
 				<File Id="523957758" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UV_Light_Loop.wav</ShortName>
 					<CachePath>SFX/UV_Light_Loop_C6DF2C11.wem</CachePath>
@@ -285,6 +293,10 @@
 				<File Id="540584377" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Water Tap.wav</ShortName>
 					<CachePath>SFX/Water Tap_3A40A386.wem</CachePath>
+				</File>
+				<File Id="540999901" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Hands_DropSFX_Audio.wav</ShortName>
+					<CachePath>SFX/Hands_DropSFX_Audio_818F3B66.wem</CachePath>
 				</File>
 				<File Id="550167775" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Bottle Breaking.wav</ShortName>
@@ -328,7 +340,7 @@
 				</File>
 				<File Id="652045968" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Confirmation_Placementt.wav</ShortName>
-					<CachePath>SFX/Confirmation_Placementt_7E9AE710.wem</CachePath>
+					<CachePath>SFX/Confirmation_Placementt_5BC5FCB3.wem</CachePath>
 				</File>
 				<File Id="676679731" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Revolver_Cock.wav</ShortName>
@@ -704,6 +716,21 @@
 						<MediaRef Id="75652571"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="390192102" Name="Hand_Drop" DurationType="OneShot" DurationMin="0.7" DurationMax="0.7">
+					<MediaRefs>
+						<MediaRef Id="540999901"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2768327323" Name="Hand_Grab" DurationType="OneShot" DurationMin="0.9" DurationMax="0.9">
+					<MediaRefs>
+						<MediaRef Id="270014389"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1382942719" Name="Hand_Throw" DurationType="OneShot" DurationMin="0.8" DurationMax="0.8">
+					<MediaRefs>
+						<MediaRef Id="522223258"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2015415870" Name="Heavy_Tool_Collision" DurationType="OneShot" DurationMin="0.275" DurationMax="0.275">
 					<MediaRefs>
 						<MediaRef Id="577271348"/>
@@ -1074,5 +1101,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{E7057945-5E82-3D03-95BC-97B71626B103}</FileHash>
+	<FileHash>{529B196D-DFB1-6D87-F8A0-7374056269AA}</FileHash>
 </SoundBanksInfo>

@@ -55,6 +55,9 @@ namespace AK
         static const AkUniqueID GAS_STOVE_TURN_OFF = 1218911394U;
         static const AkUniqueID GAS_STOVE_TURN_ON = 2084731556U;
         static const AkUniqueID GUN_COLLISION = 1154053212U;
+        static const AkUniqueID HAND_DROP = 390192102U;
+        static const AkUniqueID HAND_GRAB = 2768327323U;
+        static const AkUniqueID HAND_THROW = 1382942719U;
         static const AkUniqueID HEAVY_TOOL_COLLISION = 2015415870U;
         static const AkUniqueID KNIFE_COLLISION = 1966534225U;
         static const AkUniqueID KNOCK = 3764079811U;
