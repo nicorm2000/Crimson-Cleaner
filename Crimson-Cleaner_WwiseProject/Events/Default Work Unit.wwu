@@ -2195,6 +2195,69 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Hand_Drop" ID="{FDB5CE85-5A6D-4802-937D-FFD8DBAEA8C6}">
+									<ChildrenList>
+										<Action Name="" ID="{A84E08B5-1198-40A6-9450-1AD0C7361C2E}" ShortID="849423452">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Hands_DropSFX_Audio" ID="{4CAFE497-737F-4161-A7B8-9CCBA35ED535}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{47A22917-4A7C-4B3F-A94B-59D488BD50C9}" ShortID="384966736">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Hands_DropSFX_Audio" ID="{4CAFE497-737F-4161-A7B8-9CCBA35ED535}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Hand_Grab" ID="{8B8DF9D0-CCA1-4B60-8944-21859C1F7EE0}">
+									<ChildrenList>
+										<Action Name="" ID="{B68599AC-BC58-4F2C-BA07-961C0B34D28E}" ShortID="581049449">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Hands_GrabSFX_Audio" ID="{87C1F93C-E175-4B3B-A8BF-EAE6F1B6F867}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{5E5AB07F-A8F6-4EBA-9983-884DA4CA2EE5}" ShortID="833252039">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Hands_GrabSFX_Audio" ID="{87C1F93C-E175-4B3B-A8BF-EAE6F1B6F867}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Hand_Throw" ID="{C49C37E3-ADE6-4717-A171-AD8D63D74797}">
+									<ChildrenList>
+										<Action Name="" ID="{AC902585-26D7-4402-A524-2A5048BBCEA7}" ShortID="651453473">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Hands_ThrowSFX_Audio" ID="{544577F7-6CB2-4664-ABC2-09380BD2C319}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{5EF60938-9619-481E-8796-1044D0BBA879}" ShortID="897278963">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Hands_ThrowSFX_Audio" ID="{544577F7-6CB2-4664-ABC2-09380BD2C319}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Footsteps" ID="{26FF4134-3558-46ED-BD1F-DB1E1DAE5C91}" ShortID="78703965">
