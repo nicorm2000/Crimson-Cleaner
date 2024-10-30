@@ -81,7 +81,7 @@ public class UIManager : MonoBehaviour
 
         //Audio
         musicStateButton.onClick.AddListener(() => { });
-        sfxStateButton.onClick.AddListener(() => { });
+        sfxStateButton.onClick.AddListener(() => { audioManager.ToggleMute(); });
 
         //Controls
         mouseSensitivitySlider.minValue = 0f;

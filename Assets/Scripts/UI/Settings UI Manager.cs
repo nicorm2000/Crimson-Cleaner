@@ -37,7 +37,7 @@ public class SettingsUIManager : MonoBehaviour
 
         audioBackToSettingsButton.onClick.AddListener(() => { OpenTab(audioTab, false); });
         musicStateButton.onClick.AddListener(() => { audioManager.PlaySound(clickEvent); });
-        sfxStateButton.onClick.AddListener(() => { audioManager.PlaySound(clickEvent); });
+        sfxStateButton.onClick.AddListener(() => { audioManager.PlaySound(clickEvent); audioManager.ToggleMute(); });
 
         controlsBackToSettingsButton.onClick.AddListener(() => { OpenTab(controlsTab, false); });
 

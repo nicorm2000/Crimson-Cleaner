@@ -1,14 +1,18 @@
+using System.Threading;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public static bool muteSFX = false;
+
     /// <summary>
     /// Plays a sound using the specified audio event and game object.
     /// </summary>
     /// <param name="audioEvent">The name of the audio event to play.</param>
     public void PlaySound(string audioEvent)
     {
-        AkSoundEngine.PostEvent(audioEvent, gameObject);
+        if (!muteSFX)
+            AkSoundEngine.PostEvent(audioEvent, gameObject);
     }
 
     /// <summary>
@@ -18,7 +22,8 @@ public class AudioManager : MonoBehaviour
     /// <param name="gameObject">The game object associated with the sound.</param>
     public void PlaySound(string audioEvent, GameObject gameObject)
     {
-        AkSoundEngine.PostEvent(audioEvent, gameObject);
+        if (!muteSFX)
+            AkSoundEngine.PostEvent(audioEvent, gameObject);
     }
 
     /// <summary>
@@ -35,5 +40,10 @@ public class AudioManager : MonoBehaviour
     public void StopSpecificSound(string audioEvent, GameObject gameObject)
     {
         AkSoundEngine.StopPlayingID(AkSoundEngine.PostEvent(audioEvent, gameObject));
+    }
+
+    public void ToggleMute()
+    {
+        muteSFX = !muteSFX;
     }
 }
