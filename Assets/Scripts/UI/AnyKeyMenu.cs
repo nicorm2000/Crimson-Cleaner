@@ -9,6 +9,10 @@ public class AnyKeyMenu : MonoBehaviour
     [SerializeField] private Animator animator = null;
     [SerializeField] private float waitToLoby = 3f;
 
+    [Header("Audio")]
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string gameIntroStop;
+
     private void Update()
     {
         if (mySceneManager == null) 
@@ -24,6 +28,8 @@ public class AnyKeyMenu : MonoBehaviour
     private IEnumerator MenuToLobby(float duration)
     {
         yield return new WaitForSeconds(duration);
+        if (!AudioManager.muteSFX)
+            audioManager.PlaySound(gameIntroStop);
         mySceneManager.LoadSceneByName("Lobby");
     }
 }

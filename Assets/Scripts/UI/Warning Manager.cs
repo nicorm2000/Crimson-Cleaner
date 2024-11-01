@@ -13,6 +13,10 @@ public class WarningManager : MonoBehaviour
     [SerializeField] private float maxWeight = 0.8f;
     [SerializeField] private float speed = 3f;
 
+    [Header("Audio")]
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string gameIntro = null;
+
     public bool isReady = false;
 
     private void OnEnable()
@@ -37,6 +41,8 @@ public class WarningManager : MonoBehaviour
 
     private IEnumerator SetIsReady(float duration)
     {
+        if (!AudioManager.muteSFX)
+            audioManager.PlaySound(gameIntro);
         yield return new WaitForSeconds(duration);
         isReady = true;
     }
