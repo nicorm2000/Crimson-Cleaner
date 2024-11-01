@@ -98,6 +98,35 @@
 								<ActiveSource Name="Tablet_Cross_Out_Task" ID="{16C3E65D-28F6-4FD1-8AB6-69617FEA6C6B}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="HomepageSFX_Audio" ID="{3D2AF7C1-7F2F-445E-8691-AD5A03AF5DED}" ShortID="927779499">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="HomepageSFX_Audio" ID="{B0D6174A-53F5-477A-8356-B5E81DB03DBF}">
+									<Language>SFX</Language>
+									<AudioFile>HomepageSFX_Audio.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="101833176"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="HomepageSFX_Audio" ID="{B0D6174A-53F5-477A-8356-B5E81DB03DBF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Environment" ID="{FA1E034F-6B57-4D1D-9457-7ED05686817E}" ShortID="946708407">

@@ -2469,6 +2469,41 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Game_Intro" ID="{5E703B01-706A-48B7-8AE8-F856114264CA}">
+							<ChildrenList>
+								<Action Name="" ID="{C04EEBCB-6650-4F96-94B8-7A4E64D97029}" ShortID="508537989">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="HomepageSFX_Audio" ID="{3D2AF7C1-7F2F-445E-8691-AD5A03AF5DED}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{ABC19D16-5E57-43B3-A7EC-A02CE37F2914}" ShortID="760962539">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="HomepageSFX_Audio" ID="{3D2AF7C1-7F2F-445E-8691-AD5A03AF5DED}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Game_Intro_Stop" ID="{165D4990-7124-42AD-B371-6C659E05A744}">
+							<ChildrenList>
+								<Action Name="" ID="{15520CED-C5A0-408F-BED9-815C517CF6DC}" ShortID="111766169">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="HomepageSFX_Audio" ID="{3D2AF7C1-7F2F-445E-8691-AD5A03AF5DED}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
