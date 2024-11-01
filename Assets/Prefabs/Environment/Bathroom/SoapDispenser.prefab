@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5497644783568832481}
   - component: {fileID: 525892380985017902}
   - component: {fileID: 2206637180938160558}
+  - component: {fileID: 3970709602166952772}
   m_Layer: 0
   m_Name: SoapDispenser
   m_TagString: Untagged
@@ -171,12 +172,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3630630ac01644b44a39d11f5a34784c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMaterial: {fileID: 2100000, guid: 885dbbbbb77ae984f820a6fa7b2801a6, type: 2}
   completeSnapMaterial: {fileID: 2100000, guid: 2a20a9916bd00de4488eae1b06f9428f,
     type: 2}
+  completeSnapMaterials: []
   snapPoint: {fileID: 0}
   distance: 0.2
   angle: 10
   completionShaderDuration: 1.5
   audioManager: {fileID: 0}
   snapObjectEvent: Bottle_Drop
+--- !u!114 &3970709602166952772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5445819037016732067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad5000eb9cd91244a8ce2ad49cb4b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

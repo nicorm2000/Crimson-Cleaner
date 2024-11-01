@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7943136805619222381}
   - component: {fileID: 8191255698445749601}
   - component: {fileID: 8628249165437629752}
+  - component: {fileID: 8101754596441760275}
   m_Layer: 0
   m_Name: Document01
   m_TagString: Untagged
@@ -118,7 +119,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d762f5069bbb6842adf03e9eb481b2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  environmentRaycaster: {fileID: 0}
+  inputManager: {fileID: 0}
+  playerController: {fileID: 0}
+  pickUpDrop: {fileID: 0}
   audioManager: {fileID: 0}
+  cameraTransform: {fileID: 0}
   soundEvent: Retrieve_Documents
-  soundEvent2: 
+  raycastDistance: 0
+--- !u!114 &8101754596441760275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997918192629243075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad5000eb9cd91244a8ce2ad49cb4b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

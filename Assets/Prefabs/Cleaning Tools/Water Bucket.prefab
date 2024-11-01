@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 5978755581075131631}
   - component: {fileID: 3763355843516972746}
   - component: {fileID: 1001982321743339526}
+  - component: {fileID: 1034507824939542814}
   m_Layer: 8
   m_Name: Water Bucket
   m_TagString: Untagged
@@ -378,6 +379,7 @@ MonoBehaviour:
   waterStartPoint: {fileID: 3313524098750377119}
   waterFinishPoint: {fileID: 2072943175117889001}
   canModifySanity: 1
+  forwardForce: 500
 --- !u!114 &2477554787538987907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,6 +398,7 @@ MonoBehaviour:
   breakForceThreshold: 10
   collisionCooldown: 0.1
   fallHeightThreshold: 1
+  isObjectMulitple: 0
   hologramObject: {fileID: 0}
   audioManager: {fileID: 0}
   breakBottleEvent: Bucket_Collision
@@ -462,6 +465,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1281081761838074489, guid: aa6d2318c6ace834cbf079b82705fbc4, type: 3}
+--- !u!114 &1034507824939542814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8646402649197588519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad5000eb9cd91244a8ce2ad49cb4b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1247291487805130933
 PrefabInstance:
   m_ObjectHideFlags: 0

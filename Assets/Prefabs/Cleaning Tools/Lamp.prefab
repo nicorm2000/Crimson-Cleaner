@@ -883,6 +883,7 @@ GameObject:
   - component: {fileID: 7259491775674364381}
   - component: {fileID: 3227463330357277393}
   - component: {fileID: 6295501912247368877}
+  - component: {fileID: 7486426367983122713}
   m_Layer: 8
   m_Name: Lamp
   m_TagString: Untagged
@@ -1008,6 +1009,7 @@ MonoBehaviour:
   breakForceThreshold: 10
   collisionCooldown: 1
   fallHeightThreshold: 5
+  isObjectMulitple: 0
   hologramObject: {fileID: 0}
   audioManager: {fileID: 0}
   breakBottleEvent: 
@@ -1062,6 +1064,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 3999027181095874054, guid: c333df68657127043a42484c0b083f46, type: 3}
+--- !u!114 &7486426367983122713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4975878844396848819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad5000eb9cd91244a8ce2ad49cb4b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6758869442542672566
 GameObject:
   m_ObjectHideFlags: 0

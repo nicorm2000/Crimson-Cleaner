@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5504213195659556211}
   - component: {fileID: 1129222973256754744}
   - component: {fileID: 3612550729400093301}
+  - component: {fileID: 478328098728456958}
   m_Layer: 8
   m_Name: SM_Knife
   m_TagString: Trash
@@ -147,7 +148,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d762f5069bbb6842adf03e9eb481b2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  environmentRaycaster: {fileID: 0}
+  inputManager: {fileID: 0}
+  playerController: {fileID: 0}
+  pickUpDrop: {fileID: 0}
   audioManager: {fileID: 0}
+  cameraTransform: {fileID: 0}
   soundEvent: Knife_Collision
-  soundEvent2: 
+  raycastDistance: 0
+--- !u!114 &478328098728456958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7391136648523354882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad5000eb9cd91244a8ce2ad49cb4b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

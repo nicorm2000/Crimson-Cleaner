@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 2367545733401028182}
   - component: {fileID: 1649688727521045953}
   - component: {fileID: 4711356780880030120}
+  - component: {fileID: 2531971933305363325}
   m_Layer: 0
   m_Name: Dollar Stack
   m_TagString: Untagged
@@ -230,10 +231,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d039f0ad5dbafd4781d79f8b3f88e10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputManager: {fileID: 0}
-  raycastDistance: 3
+  environmentRaycaster: {fileID: 0}
   audioManager: {fileID: 0}
   soundEvent: 
   soundEvent2: 
   stealableManager: {fileID: 0}
   moneyAmount: 0
+--- !u!114 &2531971933305363325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8396380430336905646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad5000eb9cd91244a8ce2ad49cb4b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

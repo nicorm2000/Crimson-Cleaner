@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -240111771272278618}
   - component: {fileID: -1710492242731147106}
   - component: {fileID: 3729124177004794012}
+  - component: {fileID: 4848559013686454037}
   m_Layer: 0
   m_Name: Arm Torso
   m_TagString: Trash
@@ -106,6 +107,7 @@ MonoBehaviour:
   breakForceThreshold: 10
   collisionCooldown: 0.1
   fallHeightThreshold: 1
+  isObjectMulitple: 0
   hologramObject: {fileID: 0}
   audioManager: {fileID: 0}
   breakBottleEvent: Body_Parts_Collision
@@ -191,3 +193,15 @@ MonoBehaviour:
     type: 3}
   stainLifetime: 3.5
   stainOffset: 0.01
+--- !u!114 &4848559013686454037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012043609356899064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad5000eb9cd91244a8ce2ad49cb4b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
