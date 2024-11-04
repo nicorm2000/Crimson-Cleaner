@@ -29,11 +29,11 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   roundness:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   rounded:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   mask:
     m_OverrideState: 1
     m_Value: {fileID: 2800000, guid: e56d735eb7c44a64388907128ce23039, type: 3}
@@ -57,6 +57,7 @@ MonoBehaviour:
   - {fileID: -6813027455695481559}
   - {fileID: 2428858922291451017}
   - {fileID: 6179581796683258983}
+  - {fileID: 2901459629842764434}
 --- !u!114 &2428858922291451017
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -76,6 +77,22 @@ MonoBehaviour:
   speed:
     m_OverrideState: 1
     m_Value: 250
+--- !u!114 &2901459629842764434
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79863c88852b02a45b0f118843b4be60, type: 3}
+  m_Name: ScreenFuzz
+  m_EditorClassIdentifier: 
+  active: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.155
 --- !u!114 &3240038849916718157
 MonoBehaviour:
   m_ObjectHideFlags: 3
