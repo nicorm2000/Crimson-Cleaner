@@ -12,6 +12,8 @@ public class PCCanvasController : Interactable, IInteractable
     [SerializeField] private Transform rightStartupPosition;
     [SerializeField] private float raycastDistance = 1f;
     [SerializeField] private float lerpDuration = 1f;
+    [SerializeField] private string standUpEvent = "";
+    [SerializeField] private string sitDownEvent = "";
 
     [SerializeField] private Sprite interactSprite;
     public Sprite InteractMessage => interactSprite;
@@ -95,6 +97,11 @@ public class PCCanvasController : Interactable, IInteractable
 
         float elapsedTime = 0f;
 
+        if (sitDownEvent != null && audioManager != null)
+        {
+            audioManager.PlaySound(sitDownEvent);
+        }
+
         while (elapsedTime < lerpDuration)
         {
             float t = elapsedTime / lerpDuration;
@@ -135,6 +142,11 @@ public class PCCanvasController : Interactable, IInteractable
 
         float elapsedTime = 0f;
 
+        if (standUpEvent != null && audioManager != null)
+        {
+            audioManager.PlaySound(standUpEvent);
+        }
+
         while (elapsedTime < lerpDuration)
         {
             float t = elapsedTime / lerpDuration;
@@ -160,5 +172,4 @@ public class PCCanvasController : Interactable, IInteractable
         isPlayerOnPC = false;
         returnCoroutine = null;
     }
-
 }

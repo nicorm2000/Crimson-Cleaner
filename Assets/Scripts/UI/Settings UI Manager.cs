@@ -36,12 +36,12 @@ public class SettingsUIManager : MonoBehaviour
         controlsTabButton.onClick.AddListener(() => { OpenTab(controlsTab, true); });
 
         audioBackToSettingsButton.onClick.AddListener(() => { OpenTab(audioTab, false); });
-        musicStateButton.onClick.AddListener(() => { audioManager.PlaySound(clickEvent); });
+        //musicStateButton.onClick.AddListener(() => { audioManager.PlaySound(clickEvent); });
         sfxStateButton.onClick.AddListener(() => { audioManager.PlaySound(clickEvent); audioManager.ToggleMute(); });
 
         controlsBackToSettingsButton.onClick.AddListener(() => { OpenTab(controlsTab, false); });
 
-        musicStateButton.onClick.AddListener(() => { });
+        //musicStateButton.onClick.AddListener(() => { });
         sfxStateButton.onClick.AddListener(() => { });
 
         mouseSensitivitySlider.minValue = 0f;
