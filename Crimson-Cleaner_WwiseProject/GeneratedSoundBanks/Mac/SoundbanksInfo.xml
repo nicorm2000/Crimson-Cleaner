@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{C95FCD0F-7310-51C8-6821-F6ED59F1919E}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{E55D3CCF-4DD3-DCF9-EF03-0C4638F330D7}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -206,6 +206,10 @@
 					<ShortName>Lamp_Collision.wav</ShortName>
 					<CachePath>SFX/Lamp_Collision_891D2D88.wem</CachePath>
 				</File>
+				<File Id="396068905" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ToolWheel_Close.wav</ShortName>
+					<CachePath>SFX/ToolWheel_Close_3B563227.wem</CachePath>
+				</File>
 				<File Id="399657563" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps_BloodySFX_Audio-[AudioTrimmer.com] (2).wav</ShortName>
 					<CachePath>SFX/Footsteps_BloodySFX_Audio-[AudioTrimmer.com] (2)_4FC06FCB.wem</CachePath>
@@ -230,6 +234,10 @@
 					<ShortName>Van_Honk.wav</ShortName>
 					<CachePath>SFX/Van_Honk_818F3B66.wem</CachePath>
 				</File>
+				<File Id="458482183" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ToolWheel_Clic_02.wav</ShortName>
+					<CachePath>SFX/ToolWheel_Clic_02_818F3B66.wem</CachePath>
+				</File>
 				<File Id="460527488" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Water Flow.wav</ShortName>
 					<CachePath>SFX/Water Flow_37358B8B.wem</CachePath>
@@ -253,6 +261,10 @@
 				<File Id="496383856" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>EsponjaGuardarSFX_Audio.wav</ShortName>
 					<CachePath>SFX/EsponjaGuardarSFX_Audio_7B5945AC.wem</CachePath>
+				</File>
+				<File Id="503826935" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ToolWheel_Open.wav</ShortName>
+					<CachePath>SFX/ToolWheel_Open_42DBE777.wem</CachePath>
 				</File>
 				<File Id="508666165" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Toilet.wav</ShortName>
@@ -458,6 +470,10 @@
 					<ShortName>Tablet_Cross_Out_Task.wav</ShortName>
 					<CachePath>SFX/Tablet_Cross_Out_Task_59688096.wem</CachePath>
 				</File>
+				<File Id="929354351" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ToolWheel_Clic_03.wav</ShortName>
+					<CachePath>SFX/ToolWheel_Clic_03_818F3B66.wem</CachePath>
+				</File>
 				<File Id="942760120" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps_NormalSFX_Audio-[AudioTrimmer.com] (1).wav</ShortName>
 					<CachePath>SFX/Footsteps_NormalSFX_Audio-[AudioTrimmer.com] (1)_96BE7550.wem</CachePath>
@@ -513,6 +529,10 @@
 				<File Id="1057789632" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Mom_CalmVoiceSFX_Audio.wav</ShortName>
 					<CachePath>SFX/Mom_CalmVoiceSFX_Audio_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1073321793" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ToolWheel_Clic_01.wav</ShortName>
+					<CachePath>SFX/ToolWheel_Clic_01_818F3B66.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -617,6 +637,11 @@
 				<Event Id="4085905093" Name="Close_Notebook" DurationType="OneShot" DurationMin="0.7019771" DurationMax="0.7019771">
 					<MediaRefs>
 						<MediaRef Id="524869861"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2000017309" Name="Close_ToolWheel" DurationType="OneShot" DurationMin="0.43754166" DurationMax="0.43754166">
+					<MediaRefs>
+						<MediaRef Id="396068905"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2869224002" Name="Confirmation_Placement" DurationType="OneShot" DurationMin="0.3" DurationMax="0.3">
@@ -746,6 +771,21 @@
 						<MediaRef Id="577271348"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1862457371" Name="Hover_ToolWheel_1" DurationType="OneShot" DurationMin="0.16164583" DurationMax="0.16164583">
+					<MediaRefs>
+						<MediaRef Id="1073321793"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1862457368" Name="Hover_ToolWheel_2" DurationType="OneShot" DurationMin="0.16164583" DurationMax="0.16164583">
+					<MediaRefs>
+						<MediaRef Id="458482183"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1862457369" Name="Hover_ToolWheel_3" DurationType="OneShot" DurationMin="0.16383334" DurationMax="0.16383334">
+					<MediaRefs>
+						<MediaRef Id="929354351"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1966534225" Name="Knife_Collision" DurationType="OneShot" DurationMin="0.35758007" DurationMax="0.35965148">
 					<MediaRefs>
 						<MediaRef Id="951993581"/>
@@ -850,6 +890,11 @@
 				<Event Id="1673104519" Name="Open_Notebook" DurationType="OneShot" DurationMin="0.6" DurationMax="0.6">
 					<MediaRefs>
 						<MediaRef Id="915260624"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4151030847" Name="Open_ToolWheel" DurationType="OneShot" DurationMin="0.49289584" DurationMax="0.49289584">
+					<MediaRefs>
+						<MediaRef Id="503826935"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3401439988" Name="Phone_Ring" DurationType="OneShot" DurationMin="6" DurationMax="6">
@@ -1111,5 +1156,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A3BE4318-1D14-9AA6-83AA-D513F8C08DEF}</FileHash>
+	<FileHash>{0CB4BE1C-5695-2345-B43B-0B7C2989203A}</FileHash>
 </SoundBanksInfo>

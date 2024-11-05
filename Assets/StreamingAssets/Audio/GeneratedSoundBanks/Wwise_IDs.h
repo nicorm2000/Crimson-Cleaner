@@ -34,6 +34,7 @@ namespace AK
         static const AkUniqueID CERAMIC_COLLISION = 494474302U;
         static const AkUniqueID CHAIR_COLLISION = 3537521357U;
         static const AkUniqueID CLOSE_NOTEBOOK = 4085905093U;
+        static const AkUniqueID CLOSE_TOOLWHEEL = 2000017309U;
         static const AkUniqueID CONFIRMATION_PLACEMENT = 2869224002U;
         static const AkUniqueID COUCH_CHAIR_COLLISION = 910731106U;
         static const AkUniqueID COUPLE_FIGHT = 3987390466U;
@@ -61,6 +62,9 @@ namespace AK
         static const AkUniqueID HAND_GRAB = 2768327323U;
         static const AkUniqueID HAND_THROW = 1382942719U;
         static const AkUniqueID HEAVY_TOOL_COLLISION = 2015415870U;
+        static const AkUniqueID HOVER_TOOLWHEEL_1 = 1862457371U;
+        static const AkUniqueID HOVER_TOOLWHEEL_2 = 1862457368U;
+        static const AkUniqueID HOVER_TOOLWHEEL_3 = 1862457369U;
         static const AkUniqueID KNIFE_COLLISION = 1966534225U;
         static const AkUniqueID KNOCK = 3764079811U;
         static const AkUniqueID LAMP_COLLISION = 2628227250U;
@@ -83,6 +87,7 @@ namespace AK
         static const AkUniqueID OBJECT_CLEANED = 836873265U;
         static const AkUniqueID OBJECT_PLACEMENT_CONFIRMATION = 1967001744U;
         static const AkUniqueID OPEN_NOTEBOOK = 1673104519U;
+        static const AkUniqueID OPEN_TOOLWHEEL = 4151030847U;
         static const AkUniqueID PHONE_RING = 3401439988U;
         static const AkUniqueID PICK_UP = 467838998U;
         static const AkUniqueID PICK_UP_TRASH = 3160723937U;
