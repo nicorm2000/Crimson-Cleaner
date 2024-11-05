@@ -2258,6 +2258,48 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Hand_Swap" ID="{3DD50511-F909-4D4A-A950-CF99580985EC}">
+									<ChildrenList>
+										<Action Name="" ID="{382AF9B4-BCB4-468A-9BCF-E0955C561335}" ShortID="1007950265">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Hand_SwapSFX" ID="{722FD31E-CF54-423B-8B9D-A182FABFC6FA}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{C1A402F4-DC2B-49E5-B605-0B8659521807}" ShortID="689433713">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Hand_SwapSFX" ID="{722FD31E-CF54-423B-8B9D-A182FABFC6FA}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Hand_Select" ID="{1C5ADCE2-75BF-4B37-BD4C-B92809AB4D51}">
+									<ChildrenList>
+										<Action Name="" ID="{0A73C3E8-4F2D-43DA-BAE9-5C8DEB0D703B}" ShortID="882873098">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Hand_SelectSFX" ID="{51660151-D66C-4DF7-BC4D-249C81B0ACA7}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{C0253E24-896B-4231-A50B-A38D4AA35CC6}" ShortID="431984079">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Hand_SelectSFX" ID="{51660151-D66C-4DF7-BC4D-249C81B0ACA7}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Footsteps" ID="{26FF4134-3558-46ED-BD1F-DB1E1DAE5C91}" ShortID="78703965">
@@ -2402,6 +2444,48 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="StandUp_Chair" ID="{B02835DC-D5F6-4FDD-810C-E984BFB6D9E8}">
+							<ChildrenList>
+								<Action Name="" ID="{E93FBB82-F632-47D7-8738-17B5645955C6}" ShortID="445807068">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Chair_StandUpSFX" ID="{C34F9B14-6AC3-442D-A005-07704C512C2C}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{B10333DE-C33A-4BD2-A2BA-E52F1C2EFA6A}" ShortID="760778476">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Chair_StandUpSFX" ID="{C34F9B14-6AC3-442D-A005-07704C512C2C}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="SitDown_Chair" ID="{FAEAE88F-305A-44D9-AD5B-64569DBDD8B0}">
+							<ChildrenList>
+								<Action Name="" ID="{66C3C30A-6C2E-45CB-8A2F-AE71C8F61515}" ShortID="708218929">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Chair_SitDownExhaustedSFX" ID="{017538B7-E70A-4B3C-9A67-E1B4DD06868D}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{3A1EF4BE-9022-4163-A4ED-FF19EF42E68C}" ShortID="790694842">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Chair_SitDownExhaustedSFX" ID="{017538B7-E70A-4B3C-9A67-E1B4DD06868D}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="UI" ID="{FFE41726-3CAE-4D7A-BC78-E73544CBE47F}" ShortID="385437452">
@@ -2499,6 +2583,111 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="HomepageSFX_Audio" ID="{3D2AF7C1-7F2F-445E-8691-AD5A03AF5DED}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Open_ToolWheel" ID="{46A59556-2156-4ACC-B98B-7F1FB70F5217}">
+							<ChildrenList>
+								<Action Name="" ID="{972AAC01-A67C-4818-BE03-FD0E1C611112}" ShortID="239543471">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ToolWheel_Open" ID="{B0DEF33B-B947-494C-84A4-A03F599604B1}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{DCE48B74-D8F9-466A-B8AE-719BE9A26DAB}" ShortID="449912983">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ToolWheel_Open" ID="{B0DEF33B-B947-494C-84A4-A03F599604B1}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Close_ToolWheel" ID="{95873DA2-EE08-4C26-BB2D-C0D2328128CF}">
+							<ChildrenList>
+								<Action Name="" ID="{6A7C4DF4-2DEE-4CC9-A9A0-288207742A8F}" ShortID="775246390">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ToolWheel_Close" ID="{D6F9B165-E281-4760-8560-56E529A70329}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{C2285A93-C5B4-4900-9E74-555C51DB0A09}" ShortID="142811723">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ToolWheel_Close" ID="{D6F9B165-E281-4760-8560-56E529A70329}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Hover_ToolWheel_1" ID="{0EBF32DE-8F96-45CD-8BD1-9B734B62D7ED}">
+							<ChildrenList>
+								<Action Name="" ID="{530E5F5F-5551-4C57-AAC4-CB5644316FD6}" ShortID="943511208">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ToolWheel_Clic_01" ID="{5A0E05C0-BDBD-442E-9D67-14104AF65839}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{0AF1C648-F5FA-4EDD-83FC-6D36339F01E3}" ShortID="774103597">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ToolWheel_Clic_01" ID="{5A0E05C0-BDBD-442E-9D67-14104AF65839}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Hover_ToolWheel_2" ID="{21625FB3-9225-4CE1-A0EC-A33C9D409004}">
+							<ChildrenList>
+								<Action Name="" ID="{D5DBF152-2BBB-48F5-8F2E-FAD62FEF5EE6}" ShortID="626855135">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ToolWheel_Clic_02" ID="{CE1D20FF-48A2-45F9-861C-BAD5F7DC552D}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{AE1CDADD-8CED-497A-95A9-FF156AFBA11C}" ShortID="616451420">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ToolWheel_Clic_02" ID="{CE1D20FF-48A2-45F9-861C-BAD5F7DC552D}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Hover_ToolWheel_3" ID="{B8546C57-9136-4217-B069-6857EBA30DB0}">
+							<ChildrenList>
+								<Action Name="" ID="{AA25C10D-6AF1-4427-8B09-7FB817AA822B}" ShortID="857020074">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ToolWheel_Clic_03" ID="{20B2CD00-12CD-4924-9803-D49B3FE7BFEE}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{279B35BB-BFC5-4429-9FC7-156CFCBFF4F5}" ShortID="308351716">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ToolWheel_Clic_03" ID="{20B2CD00-12CD-4924-9803-D49B3FE7BFEE}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
