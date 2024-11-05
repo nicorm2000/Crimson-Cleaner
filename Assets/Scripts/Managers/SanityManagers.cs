@@ -42,7 +42,6 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
     [Header("Outcomes")]
     [SerializeField] private Outcome[] lowTierOutcomes;
     [SerializeField] private Outcome[] mediumTierOutcomes;
-    //[SerializeField] private Outcome[] highTierOutcomes;
 
     public bool isRageActive = false;
     public bool isCatatoniaActive = false;
@@ -221,7 +220,13 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
             case Tiers.Low:
                 lowTierOutcomeActive = true;
                 if (outcome.audioEventPlay != null)
+                {
                     audioManager.PlaySound(outcome.audioEventPlay);
+                }
+                else
+                {
+                    Debug.Log("Start Audio is null");
+                }
                 break;
             case Tiers.Medium:
                 mediumTierOutcomeActive = true;
@@ -229,7 +234,6 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
                 break;
             case Tiers.High:
                 isHighTierActive = true;
-
                 break;
             default:
                 break;
@@ -246,7 +250,13 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
                 lowTierDuration = Random.Range(lowTierDurationMin, lowTierDurationMax);
                 lowTierTimer = 0f;
                 if (outcome.audioEventStop != null)
+                {
                     audioManager.PlaySound(outcome.audioEventStop);
+                }
+                else
+                {
+                    Debug.Log("Stop Audio is null");
+                }
                 break;
             case Tiers.Medium:
                 mediumTierOutcomeActive = false;

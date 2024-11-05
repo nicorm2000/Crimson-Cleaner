@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{E55D3CCF-4DD3-DCF9-EF03-0C4638F330D7}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{3708E0A7-CA00-81C1-7B65-F3EF1127A412}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -230,6 +230,10 @@
 					<ShortName>Grab.wav</ShortName>
 					<CachePath>SFX/Grab_EA0BE89E.wem</CachePath>
 				</File>
+				<File Id="451881122" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Hand_SwapSFX.wav</ShortName>
+					<CachePath>SFX/Hand_SwapSFX_818F3B66.wem</CachePath>
+				</File>
 				<File Id="453576743" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Van_Honk.wav</ShortName>
 					<CachePath>SFX/Van_Honk_818F3B66.wem</CachePath>
@@ -398,6 +402,10 @@
 					<ShortName>CokeBag2SFX_Audio.wav</ShortName>
 					<CachePath>SFX/CokeBag2SFX_Audio_818F3B66.wem</CachePath>
 				</File>
+				<File Id="769851073" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Hand_SelectSFX.wav</ShortName>
+					<CachePath>SFX/Hand_SelectSFX_818F3B66.wem</CachePath>
+				</File>
 				<File Id="782901985" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Billiard Ball Collision.wav</ShortName>
 					<CachePath>SFX/Billiard Ball Collision_818F3B66.wem</CachePath>
@@ -462,6 +470,10 @@
 					<ShortName>Open Notebook.wav</ShortName>
 					<CachePath>SFX/Open Notebook_5CC97F43.wem</CachePath>
 				</File>
+				<File Id="916104102" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Chair_SitDownExhaustedSFX.wav</ShortName>
+					<CachePath>SFX/Chair_SitDownExhaustedSFX_818F3B66.wem</CachePath>
+				</File>
 				<File Id="926498869" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Sponge _Cleaning Dirty SFX_Audio.wav</ShortName>
 					<CachePath>SFX/Sponge _Cleaning Dirty SFX_Audio_184DB1B4.wem</CachePath>
@@ -509,6 +521,10 @@
 				<File Id="996095744" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Fire Cart.wav</ShortName>
 					<CachePath>SFX/Fire Cart_C411068A.wem</CachePath>
+				</File>
+				<File Id="1036499557" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Chair_StandUpSFX.wav</ShortName>
+					<CachePath>SFX/Chair_StandUpSFX_818F3B66.wem</CachePath>
 				</File>
 				<File Id="1039951081" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Game Click.wav</ShortName>
@@ -759,6 +775,16 @@
 				<Event Id="2768327323" Name="Hand_Grab" DurationType="OneShot" DurationMin="0.9" DurationMax="0.9">
 					<MediaRefs>
 						<MediaRef Id="270014389"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1255161993" Name="Hand_Select" DurationType="OneShot" DurationMin="0.54" DurationMax="0.54">
+					<MediaRefs>
+						<MediaRef Id="769851073"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3564942804" Name="Hand_Swap" DurationType="OneShot" DurationMin="0.61172915" DurationMax="0.61172915">
+					<MediaRefs>
+						<MediaRef Id="451881122"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1382942719" Name="Hand_Throw" DurationType="OneShot" DurationMin="0.8" DurationMax="0.8">
@@ -1012,6 +1038,11 @@
 						<MediaRef Id="891737475"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="740637113" Name="SitDown_Chair" DurationType="OneShot" DurationMin="1.6632708" DurationMax="1.6632708">
+					<MediaRefs>
+						<MediaRef Id="916104102"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1165214467" Name="Sponge" DurationType="OneShot" DurationMin="0.55" DurationMax="0.55">
 					<MediaRefs>
 						<MediaRef Id="131550839"/>
@@ -1025,6 +1056,11 @@
 				<Event Id="2179797042" Name="Sponge_Woosh" DurationType="OneShot" DurationMin="0.09501134" DurationMax="0.09501134">
 					<MediaRefs>
 						<MediaRef Id="139344711"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1107887202" Name="StandUp_Chair" DurationType="OneShot" DurationMin="0.9038545" DurationMax="0.9038545">
+					<MediaRefs>
+						<MediaRef Id="1036499557"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3903016069" Name="Swap_Mop" DurationType="OneShot" DurationMin="0.8999583" DurationMax="0.8999583">
@@ -1156,5 +1192,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{0CB4BE1C-5695-2345-B43B-0B7C2989203A}</FileHash>
+	<FileHash>{09600AD5-425D-8273-2D30-CE74FAC8574E}</FileHash>
 </SoundBanksInfo>

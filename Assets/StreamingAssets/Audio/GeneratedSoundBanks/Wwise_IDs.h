@@ -60,6 +60,8 @@ namespace AK
         static const AkUniqueID GUN_COLLISION = 1154053212U;
         static const AkUniqueID HAND_DROP = 390192102U;
         static const AkUniqueID HAND_GRAB = 2768327323U;
+        static const AkUniqueID HAND_SELECT = 1255161993U;
+        static const AkUniqueID HAND_SWAP = 3564942804U;
         static const AkUniqueID HAND_THROW = 1382942719U;
         static const AkUniqueID HEAVY_TOOL_COLLISION = 2015415870U;
         static const AkUniqueID HOVER_TOOLWHEEL_1 = 1862457371U;
@@ -111,9 +113,11 @@ namespace AK
         static const AkUniqueID SELECT_SPONGE = 2836144950U;
         static const AkUniqueID SELECT_TRASH_BIN = 1254856804U;
         static const AkUniqueID SHOOTING = 3373695666U;
+        static const AkUniqueID SITDOWN_CHAIR = 740637113U;
         static const AkUniqueID SPONGE = 1165214467U;
         static const AkUniqueID SPONGE_DIRTY = 1222748174U;
         static const AkUniqueID SPONGE_WOOSH = 2179797042U;
+        static const AkUniqueID STANDUP_CHAIR = 1107887202U;
         static const AkUniqueID SWAP_MOP = 3903016069U;
         static const AkUniqueID SWAP_SPONGE = 87353021U;
         static const AkUniqueID SWAP_TRASH_BIN = 3910342553U;
