@@ -10,6 +10,7 @@ public class MediumTierOutcome : MonoBehaviour
     [SerializeField] private GameObject visualObject;
     public float duration;
     public bool isActiveNow = false;
+    public bool shouldVolumeLerp = false;
 
     public void ToggleVisualObjectState(bool active)
     {
@@ -27,7 +28,10 @@ public class MediumTierOutcome : MonoBehaviour
         }
         else
         {
-            volumeController.EndVolumeVFX();
+            if (shouldVolumeLerp)
+                volumeController.EndVolumeVFX();
+            else
+                volumeController.GetVolume().gameObject.SetActive(active);
         }
     }
 
@@ -37,7 +41,7 @@ public class MediumTierOutcome : MonoBehaviour
     }
     private IEnumerator ToggleVolumeControllerCoroutine()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(volumeController.endTogglingDuration);
         volumeController.gameObject.SetActive(false);
         gameObject.SetActive(false);
     }
