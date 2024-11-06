@@ -257,6 +257,7 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
                 lowTierOutcomeActive = true;
                 if (outcome.audioEventPlay != null)
                 {
+                    Debug.Log("Nombre del audio start:" + outcome.audioEventPlay);
                     audioManager.PlaySound(outcome.audioEventPlay);
                 }
                 else
@@ -286,8 +287,9 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
                 lowTierOutcomeActive = false;
                 lowTierDuration = Random.Range(lowTierDurationMin, lowTierDurationMax);
                 lowTierTimer = 0f;
-                if (outcome.audioEventStop != null)
+                if (!string.IsNullOrWhiteSpace(outcome.audioEventStop))
                 {
+                    Debug.Log("Nombre del audio end:" + outcome.audioEventStop);
                     audioManager.PlaySound(outcome.audioEventStop);
                 }
                 else
