@@ -66,4 +66,9 @@ public class VolumeController : MonoBehaviour
     {
         StartCoroutine(ToggleBlurVFX(0, 0.075f, startTogglingDuration));
     }
+
+    public Volume GetVolume()
+    { 
+        return volume; 
+    }
 }

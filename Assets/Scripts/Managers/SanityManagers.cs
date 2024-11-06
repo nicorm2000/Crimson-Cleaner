@@ -41,7 +41,7 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
 
     [Header("Outcomes")]
     [SerializeField] private Outcome[] lowTierOutcomes;
-    [SerializeField] private Outcome[] mediumTierOutcomes;
+    [SerializeField] private MediumTierOutcome[] mediumTierOutcomes;
 
     public bool isRageActive = false;
     public bool isCatatoniaActive = false;
@@ -121,9 +121,13 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
             TriggerOutcome(Tiers.Low, lowTierOutcomes, ref lowTierOutcomeActive);
         }
 
-        if (mediumTierTimer >= mediumTierDuration && !lowTierOutcomeActive && !isHighTierActive)
+        if (mediumTierTimer >= mediumTierDuration && !lowTierOutcomeActive && !mediumTierOutcomeActive && !isHighTierActive)
         {
-            TriggerOutcome(Tiers.Medium, mediumTierOutcomes, ref mediumTierOutcomeActive);
+            //TriggerOutcome(Tiers.Medium, mediumTierOutcomes, ref mediumTierOutcomeActive);
+
+            int randomIndex = Random.Range(0, mediumTierOutcomes.Length);
+            mediumTierOutcomes[randomIndex].gameObject.SetActive(true);
+            StartCoroutine(StartOutcome(mediumTierOutcomes[randomIndex]));
         }
 
         if (highTierTimer >= highTierDuration && !isHighTierActive)
@@ -140,6 +144,38 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
                 Debug.LogWarning("Esperando a que los outcomes de los tiers bajo o medio terminen antes de iniciar el high tier (Brote).");
             }
         }
+    }
+
+    private IEnumerator StartOutcome(MediumTierOutcome outcome)
+    {
+        outcome.gameObject.SetActive(true);
+        outcome.TriggerOutcome?.Invoke();
+        outcome.isActiveNow = true;
+
+        //Debug.Log(outcome.tier + ": " + outcome.eventID + " started");
+
+        mediumTierOutcomeActive = true;
+
+
+        yield return new WaitForSeconds(outcome.duration);
+
+        mediumTierOutcomeActive = false;
+
+        lowTierDuration = Random.Range(lowTierDurationMin, lowTierDurationMax);
+        mediumTierDuration = Random.Range(mediumTierDurationMin, mediumTierDurationMax);
+        highTierDuration = Random.Range(highTierDurationMin, highTierDurationMax);
+
+        lowTierTimer = 0f;
+        mediumTierTimer = 0f;
+        highTierTimer = 0f;
+
+        outcome.isActiveNow = false;
+
+        outcome.ToggleVolumeController(false);
+        outcome.ToggleVisualObjectState(false);
+
+        outcome.StartVolumeControllerCoroutine();
+        //Debug.Log(outcome.tier + ": " + outcome.eventID + " : finished");
     }
 
     private IEnumerator StartOutcome(HighTierOutcome outcome)
@@ -230,7 +266,8 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
                 break;
             case Tiers.Medium:
                 mediumTierOutcomeActive = true;
-                newVisualEffect = Instantiate(outcome.visualOutcome);
+                //newVisualEffect = Instantiate(outcome.visualOutcome);
+                outcome.visualOutcome.SetActive(true);
                 break;
             case Tiers.High:
                 isHighTierActive = true;
@@ -262,7 +299,8 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
                 mediumTierOutcomeActive = false;
                 mediumTierDuration =  Random.Range(mediumTierDurationMin, mediumTierDurationMax);
                 mediumTierTimer = 0f;
-                Destroy(newVisualEffect.gameObject);
+                //Destroy(newVisualEffect.gameObject);
+                outcome.visualOutcome.SetActive(false);
                 break;
             case Tiers.High:
                 isHighTierActive = false;
