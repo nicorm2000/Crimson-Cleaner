@@ -5,6 +5,9 @@ using UnityEngine.Rendering;
 
 public class Concentration : MonoBehaviour
 {
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string heavyBreathingPlayEvent = null;
+    [SerializeField] private string heavyBreathingStopEvent = null;
     [SerializeField] private GameStateManager gameStateManager;
     [SerializeField] private VolumeController volumeController;
     [SerializeField] private Animator animator;
@@ -34,6 +37,7 @@ public class Concentration : MonoBehaviour
     public void StartConcentration()
     {
         volumeController.StartVolumeVFX();
+        audioManager.PlaySound(heavyBreathingPlayEvent);
         TriggerConstantBlinking();
     }
 
@@ -92,6 +96,7 @@ public class Concentration : MonoBehaviour
         }
         else
         {
+            audioManager.PlaySound(heavyBreathingStopEvent);
             volumeController.EndVolumeVFX();
             gameStateManager.SetDefaultLayer();
             SanityManager.Instance.isConcentrationActive = false;
