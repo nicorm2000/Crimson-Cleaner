@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{399E2396-9742-64DD-1154-0DC9BAC7A21C}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{37AA1645-9BDA-37CA-4E3A-69937946530C}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -45,6 +45,10 @@
 				<File Id="52850419" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cabinet_Open.wav</ShortName>
 					<CachePath>SFX/Cabinet_Open_818F3B66.wem</CachePath>
+				</File>
+				<File Id="54970831" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Heavy Breathing.wav</ShortName>
+					<CachePath>SFX/Heavy Breathing_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="56451287" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Object_Placement_Confirmation.wav</ShortName>
@@ -828,6 +832,12 @@
 						<MediaRef Id="522223258"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="30093910" Name="Heavy_Breathing_Play" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="54970831"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="802104808" Name="Heavy_Breathing_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2015415870" Name="Heavy_Tool_Collision" DurationType="OneShot" DurationMin="0.275" DurationMax="0.275">
 					<MediaRefs>
 						<MediaRef Id="577271348"/>
@@ -1228,5 +1238,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{9891EFF2-47DD-2880-0C01-C664422ED534}</FileHash>
+	<FileHash>{1A55E28F-AA68-B6D4-78EA-B37348DC5C3D}</FileHash>
 </SoundBanksInfo>

@@ -67,6 +67,8 @@ namespace AK
         static const AkUniqueID HAND_SELECT = 1255161993U;
         static const AkUniqueID HAND_SWAP = 3564942804U;
         static const AkUniqueID HAND_THROW = 1382942719U;
+        static const AkUniqueID HEAVY_BREATHING_PLAY = 30093910U;
+        static const AkUniqueID HEAVY_BREATHING_STOP = 802104808U;
         static const AkUniqueID HEAVY_TOOL_COLLISION = 2015415870U;
         static const AkUniqueID HOVER_TOOLWHEEL_1 = 1862457371U;
         static const AkUniqueID HOVER_TOOLWHEEL_2 = 1862457368U;
