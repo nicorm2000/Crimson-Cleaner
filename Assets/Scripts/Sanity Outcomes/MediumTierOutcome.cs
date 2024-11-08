@@ -5,17 +5,32 @@ using UnityEngine.Events;
 
 public class MediumTierOutcome : MonoBehaviour
 {
+    [Header("Audio")]
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string soundEvent = null;
+
     public UnityEvent TriggerOutcome;
     [SerializeField] private VolumeController volumeController;
     [SerializeField] private GameObject visualObject;
+
     public float duration;
     public bool isActiveNow = false;
     public bool shouldVolumeLerp = false;
+
+    public void CallAudio()
+    {
+        audioManager.PlaySound(soundEvent);
+    }
 
     public void ToggleVisualObjectState(bool active)
     {
         if (visualObject)
             visualObject.SetActive(active);
+    }
+
+    public void TriggerAudio()
+    {
+        audioManager.PlaySound(soundEvent);
     }
 
     public void ToggleVolumeController(bool active)
