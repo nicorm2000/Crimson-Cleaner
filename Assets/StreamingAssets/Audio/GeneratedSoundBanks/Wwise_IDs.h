@@ -35,6 +35,7 @@ namespace AK
         static const AkUniqueID CHAIR_COLLISION = 3537521357U;
         static const AkUniqueID CLOSE_NOTEBOOK = 4085905093U;
         static const AkUniqueID CLOSE_TOOLWHEEL = 2000017309U;
+        static const AkUniqueID COCKROACHES = 3818324596U;
         static const AkUniqueID CONFIRMATION_PLACEMENT = 2869224002U;
         static const AkUniqueID COUCH_CHAIR_COLLISION = 910731106U;
         static const AkUniqueID COUPLE_FIGHT = 3987390466U;
@@ -44,9 +45,11 @@ namespace AK
         static const AkUniqueID DRAWER_OPEN = 850583253U;
         static const AkUniqueID DROP = 1878686274U;
         static const AkUniqueID DROP_BOILING_WATER = 1925664349U;
+        static const AkUniqueID EARTHQUAKE = 1245902094U;
         static const AkUniqueID FIRE_CART = 1357891606U;
         static const AkUniqueID FOOTSTEPS_RUN = 2462760816U;
         static const AkUniqueID FRAME_COLLISION = 3611395209U;
+        static const AkUniqueID FREEZING = 2323192249U;
         static const AkUniqueID FRIDGE_CIOSE = 2736826332U;
         static const AkUniqueID FRIDGE_OPEN = 2916123785U;
         static const AkUniqueID GAME_CLICK = 2188449690U;
@@ -57,6 +60,7 @@ namespace AK
         static const AkUniqueID GAS_STOVE_GAS_LOOP_STOP = 326450532U;
         static const AkUniqueID GAS_STOVE_TURN_OFF = 1218911394U;
         static const AkUniqueID GAS_STOVE_TURN_ON = 2084731556U;
+        static const AkUniqueID GLASS_CRACKING = 2356286768U;
         static const AkUniqueID GUN_COLLISION = 1154053212U;
         static const AkUniqueID HAND_DROP = 390192102U;
         static const AkUniqueID HAND_GRAB = 2768327323U;

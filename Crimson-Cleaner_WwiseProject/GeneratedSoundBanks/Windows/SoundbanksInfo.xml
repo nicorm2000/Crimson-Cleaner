@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{3708E0A7-CA00-81C1-7B65-F3EF1127A412}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{399E2396-9742-64DD-1154-0DC9BAC7A21C}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -141,6 +141,10 @@
 				<File Id="231866133" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Baby_CryingSFX_Audio.wav</ShortName>
 					<CachePath>SFX/Baby_CryingSFX_Audio_818F3B66.wem</CachePath>
+				</File>
+				<File Id="237611860" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Freezing.wav</ShortName>
+					<CachePath>SFX/Freezing_818F3B66.wem</CachePath>
 				</File>
 				<File Id="246298671" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CokeBag1SFX_Audio.wav</ShortName>
@@ -265,6 +269,10 @@
 				<File Id="496383856" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>EsponjaGuardarSFX_Audio.wav</ShortName>
 					<CachePath>SFX/EsponjaGuardarSFX_Audio_7B5945AC.wem</CachePath>
+				</File>
+				<File Id="500941011" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cockroaches.wav</ShortName>
+					<CachePath>SFX/Cockroaches_DC093362.wem</CachePath>
 				</File>
 				<File Id="503826935" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>ToolWheel_Open.wav</ShortName>
@@ -398,6 +406,10 @@
 					<ShortName>Footsteps_PoolOfBloodSFX_Audio-[AudioTrimmer.com].wav</ShortName>
 					<CachePath>SFX/Footsteps_PoolOfBloodSFX_Audio-[AudioTrimmer.com]_BAD6C07B.wem</CachePath>
 				</File>
+				<File Id="755212419" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Earthquake.wav</ShortName>
+					<CachePath>SFX/Earthquake_65A2D9F7.wem</CachePath>
+				</File>
 				<File Id="762487305" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CokeBag2SFX_Audio.wav</ShortName>
 					<CachePath>SFX/CokeBag2SFX_Audio_818F3B66.wem</CachePath>
@@ -429,6 +441,10 @@
 				<File Id="803740784" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PickUpTrash.wav</ShortName>
 					<CachePath>SFX/PickUpTrash_685249E9.wem</CachePath>
+				</File>
+				<File Id="840706661" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Glass Cracking.wav</ShortName>
+					<CachePath>SFX/Glass Cracking_818F3B66.wem</CachePath>
 				</File>
 				<File Id="845704027" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UV_Light_OFF.wav</ShortName>
@@ -660,6 +676,11 @@
 						<MediaRef Id="396068905"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3818324596" Name="Cockroaches" DurationType="OneShot" DurationMin="1.4158113" DurationMax="1.5891948">
+					<MediaRefs>
+						<MediaRef Id="500941011"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2869224002" Name="Confirmation_Placement" DurationType="OneShot" DurationMin="0.3" DurationMax="0.3">
 					<MediaRefs>
 						<MediaRef Id="652045968"/>
@@ -705,6 +726,11 @@
 						<MediaRef Id="988590754"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1245902094" Name="Earthquake" DurationType="OneShot" DurationMin="4.25" DurationMax="4.25">
+					<MediaRefs>
+						<MediaRef Id="755212419"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1357891606" Name="Fire_Cart" DurationType="OneShot" DurationMin="3" DurationMax="3">
 					<MediaRefs>
 						<MediaRef Id="996095744"/>
@@ -718,6 +744,11 @@
 				<Event Id="3611395209" Name="Frame_Collision" DurationType="OneShot" DurationMin="0.11678125" DurationMax="0.11678125">
 					<MediaRefs>
 						<MediaRef Id="784004900"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2323192249" Name="Freezing" DurationType="OneShot" DurationMin="7.007" DurationMax="7.007">
+					<MediaRefs>
+						<MediaRef Id="237611860"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2736826332" Name="Fridge_Ciose" DurationType="OneShot" DurationMin="0.6" DurationMax="0.6">
@@ -760,6 +791,11 @@
 				<Event Id="2084731556" Name="Gas_Stove_Turn_On" DurationType="OneShot" DurationMin="0.8" DurationMax="0.8">
 					<MediaRefs>
 						<MediaRef Id="164498283"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2356286768" Name="Glass_Cracking" DurationType="OneShot" DurationMin="2" DurationMax="2">
+					<MediaRefs>
+						<MediaRef Id="840706661"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1154053212" Name="Gun_Collision" DurationType="OneShot" DurationMin="0.38089868" DurationMax="0.38310516">
@@ -1192,5 +1228,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{C829A7DA-C55C-79DB-E2B2-BE2319F26CD2}</FileHash>
+	<FileHash>{C62C7408-807F-3D09-716B-0159B7417546}</FileHash>
 </SoundBanksInfo>
