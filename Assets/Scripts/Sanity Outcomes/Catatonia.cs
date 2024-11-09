@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Catatonia : MonoBehaviour
 {
+    [SerializeField] private AudioManager audioManager = null;
+    [SerializeField] private string schreechEvent = null;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private VolumeController volumeController;
     [SerializeField] private GameObject handsGO;
@@ -25,6 +27,7 @@ public class Catatonia : MonoBehaviour
 
     private IEnumerator TriggerVolumeVFX()
     {
+        audioManager.PlaySound(schreechEvent);
         volumeController.StartVolumeVFX();
         volumeController.BlurVolume();
         yield return new WaitForSeconds(volumeController.startTogglingDurationVFX);
