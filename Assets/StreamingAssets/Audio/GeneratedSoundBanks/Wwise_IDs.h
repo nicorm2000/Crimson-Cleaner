@@ -39,6 +39,7 @@ namespace AK
         static const AkUniqueID CONFIRMATION_PLACEMENT = 2869224002U;
         static const AkUniqueID COUCH_CHAIR_COLLISION = 910731106U;
         static const AkUniqueID COUPLE_FIGHT = 3987390466U;
+        static const AkUniqueID CREATURE = 2661483290U;
         static const AkUniqueID CUBICLE_BATHROOM_DOOR = 3141789928U;
         static const AkUniqueID DOBILLIARD_BALL_COLLISION = 636776174U;
         static const AkUniqueID DRAWER_CLOSE = 3753111523U;

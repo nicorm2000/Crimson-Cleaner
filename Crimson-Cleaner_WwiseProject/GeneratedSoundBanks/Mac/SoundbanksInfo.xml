@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{37AA1645-9BDA-37CA-4E3A-69937946530C}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{A21CF96B-9E24-A460-E42F-80C9AD15A748}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -438,6 +438,10 @@
 					<ShortName>Body Part Collision.wav</ShortName>
 					<CachePath>SFX/Body Part Collision_371AD4B1.wem</CachePath>
 				</File>
+				<File Id="802274448" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Creature.wav</ShortName>
+					<CachePath>SFX/Creature_818F3B66.wem</CachePath>
+				</File>
 				<File Id="803077529" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Bat_Collision.wav</ShortName>
 					<CachePath>SFX/Bat_Collision_B092361D.wem</CachePath>
@@ -698,6 +702,11 @@
 				<Event Id="3987390466" Name="Couple_Fight" DurationType="OneShot" DurationMin="11.518771" DurationMax="11.518771">
 					<MediaRefs>
 						<MediaRef Id="491117853"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2661483290" Name="Creature" DurationType="OneShot" DurationMin="6" DurationMax="6">
+					<MediaRefs>
+						<MediaRef Id="802274448"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3141789928" Name="Cubicle_Bathroom_Door" DurationType="OneShot" DurationMin="0.25370133" DurationMax="0.25370133">
@@ -1238,5 +1247,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{1A55E28F-AA68-B6D4-78EA-B37348DC5C3D}</FileHash>
+	<FileHash>{C5726710-5086-1112-A5EC-D4A31AC7AE56}</FileHash>
 </SoundBanksInfo>
