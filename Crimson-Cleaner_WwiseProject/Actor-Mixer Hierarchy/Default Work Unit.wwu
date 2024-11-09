@@ -2616,6 +2616,215 @@
 								<ActiveSource Name="Door_KnockSFX_Audio_V2" ID="{759889BD-396F-42A8-A697-5BAC915DF348}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Cockroaches" ID="{E09D4F58-3AA7-4AAD-9696-C81D97BA5E09}" ShortID="207981614">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{4347147A-06BF-4503-883D-E7AC051C86DB}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="100"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{8523CDF4-7FF0-40D7-8381-A9E743876BAC}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-8"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Cockroaches" ID="{C61DFE76-4BEC-47A3-A0C7-E629B5386D71}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.456996148908858"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.5"/>
+										<Property Name="TrimEnd" Type="Real64" Value="2"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Cockroaches.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="500941011"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Cockroaches" ID="{C61DFE76-4BEC-47A3-A0C7-E629B5386D71}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Earthquake" ID="{F867CC7D-BA48-4818-94BD-BA6E250F66A8}" ShortID="293118802">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-8</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Earthquake" ID="{DF7CBE8C-765E-4962-888F-AD0A4D2FD70E}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.709563543003852"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimEnd" Type="Real64" Value="4.25"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Earthquake.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="755212419"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Earthquake" ID="{DF7CBE8C-765E-4962-888F-AD0A4D2FD70E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Freezing" ID="{D1448E3A-CDD0-43BE-AD8C-9E2BB3AF975A}" ShortID="1004254772">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-12</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Freezing" ID="{DB12550B-B245-4930-A04A-FC142ED3352D}">
+									<Language>SFX</Language>
+									<AudioFile>Freezing.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="237611860"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Freezing" ID="{DB12550B-B245-4930-A04A-FC142ED3352D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Glass Cracking" ID="{3ABFC1B9-14E1-48F6-8B31-B27A6D645D63}" ShortID="30112735">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Glass Cracking" ID="{561F1E63-21EC-4083-BF33-FC7AF8924A5F}">
+									<Language>SFX</Language>
+									<AudioFile>Glass Cracking.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="840706661"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Glass Cracking" ID="{561F1E63-21EC-4083-BF33-FC7AF8924A5F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Heavy Breathing" ID="{CF70D24A-CA51-4BF0-B876-5627839D1032}" ShortID="632768911">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Heavy Breathing" ID="{8881572F-AAE2-45FF-A65C-AC0ADE61A3F8}">
+									<Language>SFX</Language>
+									<AudioFile>Heavy Breathing.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="54970831"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Heavy Breathing" ID="{8881572F-AAE2-45FF-A65C-AC0ADE61A3F8}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Creature" ID="{A6746DC7-2C82-4E4D-BD5D-565E639941B0}" ShortID="902255624">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Creature" ID="{139FDB9B-99B6-47DD-B95D-B0CC2988A908}">
+									<Language>SFX</Language>
+									<AudioFile>Creature.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="802274448"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Creature" ID="{139FDB9B-99B6-47DD-B95D-B0CC2988A908}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Retrievables" ID="{60621710-2701-480F-BE0E-43751DAE5648}" ShortID="724998173">
