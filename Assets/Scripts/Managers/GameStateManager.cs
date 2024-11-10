@@ -165,6 +165,8 @@ public class GameStateManager : MonoBehaviour
         {
             foreach (var item in zone.blood)
             {
+                if (!item) break;
+
                 if (go == item.gameObject)
                 {
                     if (zone.bloodCurrentAmmount < zone.blood.Count)
@@ -178,6 +180,8 @@ public class GameStateManager : MonoBehaviour
             
             foreach (var item in zone.corpses)
             {
+                if (!item) break;
+
                 if (go == item.gameObject)
                 {
                     if (zone.corpsesCurrentAmmount < zone.corpses.Count)
@@ -191,6 +195,7 @@ public class GameStateManager : MonoBehaviour
 
             foreach (var item in zone.uvCleanables)
             {
+                if (!item) break;
                 if (go == item.gameObject)
                 {
                     if (zone.uvCleanablesCurrentAmmount < zone.uvCleanables.Count)
@@ -204,6 +209,7 @@ public class GameStateManager : MonoBehaviour
 
             foreach (var item in zone.bloodyObjects)
             {
+                if (!item) break;
                 if (go == item.gameObject)
                 {
                     if (zone.bloodyObjectsCurrentAmmount < zone.bloodyObjects.Count)
@@ -217,6 +223,7 @@ public class GameStateManager : MonoBehaviour
 
             foreach (var item in zone.arrabgables)
             {
+                if (!item) break;
                 if (go == item.gameObject)
                 {
                     if (zone.arrabgablesCurrentAmmount < zone.arrabgables.Count)
@@ -230,6 +237,7 @@ public class GameStateManager : MonoBehaviour
 
             foreach (var item in zone.weapons)
             {
+                if (!item) break;
                 if (go == item.gameObject)
                 {
                     if (zone.weaponsCurrentAmmount < zone.weapons.Count)
@@ -243,6 +251,7 @@ public class GameStateManager : MonoBehaviour
 
             foreach (var item in zone.documents)
             {
+                if (!item) break;
                 if (go == item.gameObject)
                 {
                     if (zone.documentsCurrentAmmount < zone.documents.Count)
@@ -256,6 +265,7 @@ public class GameStateManager : MonoBehaviour
 
             foreach (var item in zone.clothes)
             {
+                if (!item) break;
                 if (go == item.gameObject)
                 {
                     if (zone.clothesCurrentAmmount < zone.clothes.Count)
@@ -269,6 +279,7 @@ public class GameStateManager : MonoBehaviour
 
             foreach (var item in zone.miscellaneous)
             {
+                if (!item) break;
                 if (go == item.gameObject)
                 {
                     if (zone.miscellaneousCurrentAmmount < zone.miscellaneous.Count)
