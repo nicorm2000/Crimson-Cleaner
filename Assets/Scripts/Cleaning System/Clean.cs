@@ -180,6 +180,7 @@ public class Clean : MonoBehaviour, ICleanable
         Cleaned?.Invoke();
         CleanedGO?.Invoke(gameObject);
         StopCleaning();
+        GetComponent<BoxCollider>().enabled = false;
     }
 
     public void CleanSurface()
