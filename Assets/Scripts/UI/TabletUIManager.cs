@@ -11,6 +11,10 @@ public class TabletUIManager : MonoBehaviour
     #endregion
     #region CONTENT
     [SerializeField] private ScrollRect scrollRect;
+    [SerializeField] private float baseSpacing = 0.02f;
+    [SerializeField] private int totalElements = 9;
+    [SerializeField] private int spacingOffset = 9;
+
     #endregion
     #region AUDIO
     [Header("Audio")]
@@ -563,10 +567,10 @@ public class TabletUIManager : MonoBehaviour
             if (zone.zoneName == barName) UpdateText(barBloodProgressText, zone.bloodCurrentAmmount, zone.blood.Count);
             else if (zone.zoneName == menBathroomName) UpdateText(menBathroomBloodProgressText, zone.bloodCurrentAmmount, zone.blood.Count);
             else if (zone.zoneName == womenBathroomName) UpdateText(womenBathroomBloodProgressText, zone.bloodCurrentAmmount, zone.blood.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(kitchenBloodProgressText, zone.bloodCurrentAmmount, zone.blood.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(storageBloodProgressText, zone.bloodCurrentAmmount, zone.blood.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(vipRoomBloodProgressText, zone.bloodCurrentAmmount, zone.blood.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(bettingRoomBloodProgressText, zone.bloodCurrentAmmount, zone.blood.Count);
+            else if (zone.zoneName == kitchenName) UpdateText(kitchenBloodProgressText, zone.bloodCurrentAmmount, zone.blood.Count);
+            else if (zone.zoneName == storageRoomName) UpdateText(storageBloodProgressText, zone.bloodCurrentAmmount, zone.blood.Count);
+            else if (zone.zoneName == vipRoomName) UpdateText(vipRoomBloodProgressText, zone.bloodCurrentAmmount, zone.blood.Count);
+            else if (zone.zoneName == bettingRoomName) UpdateText(bettingRoomBloodProgressText, zone.bloodCurrentAmmount, zone.blood.Count);
         }
 
         foreach (var zone in gameStateManager.Zones)
@@ -574,10 +578,10 @@ public class TabletUIManager : MonoBehaviour
             if (zone.zoneName == barName) UpdateText(barCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
             else if (zone.zoneName == menBathroomName) UpdateText(menBathroomCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
             else if (zone.zoneName == womenBathroomName) UpdateText(womenBathroomCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(kitchenCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(storageCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(vipRoomCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(bettingRoomCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
+            else if (zone.zoneName == kitchenName) UpdateText(kitchenCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
+            else if (zone.zoneName == storageRoomName) UpdateText(storageCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
+            else if (zone.zoneName == vipRoomName) UpdateText(vipRoomCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
+            else if (zone.zoneName == bettingRoomName) UpdateText(bettingRoomCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
         }
 
         foreach (var zone in gameStateManager.Zones)
@@ -585,10 +589,10 @@ public class TabletUIManager : MonoBehaviour
             if (zone.zoneName == barName) UpdateText(barUVCleanablesProgressText, zone.uvCleanablesCurrentAmmount, zone.uvCleanables.Count);
             else if (zone.zoneName == menBathroomName) UpdateText(menBathroomUVCleanablesProgressText, zone.uvCleanablesCurrentAmmount, zone.uvCleanables.Count);
             else if (zone.zoneName == womenBathroomName) UpdateText(womenBathroomUVCleanablesProgressText, zone.uvCleanablesCurrentAmmount, zone.uvCleanables.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(kitchenUVCleanablesProgressText, zone.uvCleanablesCurrentAmmount, zone.uvCleanables.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(storageUVCleanablesProgressText, zone.uvCleanablesCurrentAmmount, zone.uvCleanables.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(vipRoomUVCleanablesProgressText, zone.uvCleanablesCurrentAmmount, zone.uvCleanables.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(bettingRoomUVCleanablesProgressText, zone.uvCleanablesCurrentAmmount, zone.uvCleanables.Count);
+            else if (zone.zoneName == kitchenName) UpdateText(kitchenUVCleanablesProgressText, zone.uvCleanablesCurrentAmmount, zone.uvCleanables.Count);
+            else if (zone.zoneName == storageRoomName) UpdateText(storageUVCleanablesProgressText, zone.uvCleanablesCurrentAmmount, zone.uvCleanables.Count);
+            else if (zone.zoneName == vipRoomName) UpdateText(vipRoomUVCleanablesProgressText, zone.uvCleanablesCurrentAmmount, zone.uvCleanables.Count);
+            else if (zone.zoneName == bettingRoomName) UpdateText(bettingRoomUVCleanablesProgressText, zone.uvCleanablesCurrentAmmount, zone.uvCleanables.Count);
         }
 
         foreach (var zone in gameStateManager.Zones)
@@ -596,10 +600,10 @@ public class TabletUIManager : MonoBehaviour
             if (zone.zoneName == barName) UpdateText(barBloodyObjectsProgressText, zone.bloodyObjectsCurrentAmmount, zone.bloodyObjects.Count);
             else if (zone.zoneName == menBathroomName) UpdateText(menBathroomBloodyObjectsProgressText, zone.bloodyObjectsCurrentAmmount, zone.bloodyObjects.Count);
             else if (zone.zoneName == womenBathroomName) UpdateText(womenBathroomBloodyObjectsProgressText, zone.bloodyObjectsCurrentAmmount, zone.bloodyObjects.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(kitchenBloodyObjectsProgressText, zone.bloodyObjectsCurrentAmmount, zone.bloodyObjects.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(storageBloodyObjectsProgressText, zone.bloodyObjectsCurrentAmmount, zone.bloodyObjects.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(vipRoomBloodyObjectsProgressText, zone.bloodyObjectsCurrentAmmount, zone.bloodyObjects.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(bettingRoomBloodyObjectsProgressText, zone.bloodyObjectsCurrentAmmount, zone.bloodyObjects.Count);
+            else if (zone.zoneName == kitchenName) UpdateText(kitchenBloodyObjectsProgressText, zone.bloodyObjectsCurrentAmmount, zone.bloodyObjects.Count);
+            else if (zone.zoneName == storageRoomName) UpdateText(storageBloodyObjectsProgressText, zone.bloodyObjectsCurrentAmmount, zone.bloodyObjects.Count);
+            else if (zone.zoneName == vipRoomName) UpdateText(vipRoomBloodyObjectsProgressText, zone.bloodyObjectsCurrentAmmount, zone.bloodyObjects.Count);
+            else if (zone.zoneName == bettingRoomName) UpdateText(bettingRoomBloodyObjectsProgressText, zone.bloodyObjectsCurrentAmmount, zone.bloodyObjects.Count);
         }
 
         foreach (var zone in gameStateManager.Zones)
@@ -607,10 +611,10 @@ public class TabletUIManager : MonoBehaviour
             if (zone.zoneName == barName) UpdateText(barArrangablesProgressText, zone.arrabgablesCurrentAmmount, zone.arrabgables.Count);
             else if (zone.zoneName == menBathroomName) UpdateText(menBathroomArrangablesProgressText, zone.arrabgablesCurrentAmmount, zone.arrabgables.Count);
             else if (zone.zoneName == womenBathroomName) UpdateText(womenBathroomArrangablesProgressText, zone.arrabgablesCurrentAmmount, zone.arrabgables.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(kitchenArrangablesProgressText, zone.arrabgablesCurrentAmmount, zone.arrabgables.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(storageArrangablesProgressText, zone.arrabgablesCurrentAmmount, zone.arrabgables.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(vipRoomArrangablesProgressText, zone.arrabgablesCurrentAmmount, zone.arrabgables.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(bettingRoomArrangablesProgressText, zone.arrabgablesCurrentAmmount, zone.arrabgables.Count);
+            else if (zone.zoneName == kitchenName) UpdateText(kitchenArrangablesProgressText, zone.arrabgablesCurrentAmmount, zone.arrabgables.Count);
+            else if (zone.zoneName == storageRoomName) UpdateText(storageArrangablesProgressText, zone.arrabgablesCurrentAmmount, zone.arrabgables.Count);
+            else if (zone.zoneName == vipRoomName) UpdateText(vipRoomArrangablesProgressText, zone.arrabgablesCurrentAmmount, zone.arrabgables.Count);
+            else if (zone.zoneName == bettingRoomName) UpdateText(bettingRoomArrangablesProgressText, zone.arrabgablesCurrentAmmount, zone.arrabgables.Count);
         }
 
         foreach (var zone in gameStateManager.Zones)
@@ -618,10 +622,10 @@ public class TabletUIManager : MonoBehaviour
             if (zone.zoneName == barName) UpdateText(barWeaponsProgressText, zone.weaponsCurrentAmmount, zone.weapons.Count);
             else if (zone.zoneName == menBathroomName) UpdateText(menBathroomWeaponsProgressText, zone.weaponsCurrentAmmount, zone.weapons.Count);
             else if (zone.zoneName == womenBathroomName) UpdateText(womenBathroomWeaponsProgressText, zone.weaponsCurrentAmmount, zone.weapons.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(kitchenWeaponsProgressText, zone.weaponsCurrentAmmount, zone.weapons.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(storageWeaponsProgressText, zone.weaponsCurrentAmmount, zone.weapons.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(vipRoomWeaponsProgressText, zone.weaponsCurrentAmmount, zone.weapons.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(bettingRoomWeaponsProgressText, zone.weaponsCurrentAmmount, zone.weapons.Count);
+            else if (zone.zoneName == kitchenName) UpdateText(kitchenWeaponsProgressText, zone.weaponsCurrentAmmount, zone.weapons.Count);
+            else if (zone.zoneName == storageRoomName) UpdateText(storageWeaponsProgressText, zone.weaponsCurrentAmmount, zone.weapons.Count);
+            else if (zone.zoneName == vipRoomName) UpdateText(vipRoomWeaponsProgressText, zone.weaponsCurrentAmmount, zone.weapons.Count);
+            else if (zone.zoneName == bettingRoomName) UpdateText(bettingRoomWeaponsProgressText, zone.weaponsCurrentAmmount, zone.weapons.Count);
         }
 
         foreach (var zone in gameStateManager.Zones)
@@ -629,10 +633,10 @@ public class TabletUIManager : MonoBehaviour
             if (zone.zoneName == barName) UpdateText(barDocumentsProgressText, zone.documentsCurrentAmmount, zone.documents.Count);
             else if (zone.zoneName == menBathroomName) UpdateText(menBathroomDocumentsProgressText, zone.documentsCurrentAmmount, zone.documents.Count);
             else if (zone.zoneName == womenBathroomName) UpdateText(womenBathroomDocumentsProgressText, zone.documentsCurrentAmmount, zone.documents.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(kitchenDocumentsProgressText, zone.documentsCurrentAmmount, zone.documents.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(storageDocumentsProgressText, zone.documentsCurrentAmmount, zone.documents.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(vipRoomDocumentsProgressText, zone.documentsCurrentAmmount, zone.documents.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(bettingRoomDocumentsProgressText, zone.documentsCurrentAmmount, zone.documents.Count);
+            else if (zone.zoneName == kitchenName) UpdateText(kitchenDocumentsProgressText, zone.documentsCurrentAmmount, zone.documents.Count);
+            else if (zone.zoneName == storageRoomName) UpdateText(storageDocumentsProgressText, zone.documentsCurrentAmmount, zone.documents.Count);
+            else if (zone.zoneName == vipRoomName) UpdateText(vipRoomDocumentsProgressText, zone.documentsCurrentAmmount, zone.documents.Count);
+            else if (zone.zoneName == bettingRoomName) UpdateText(bettingRoomDocumentsProgressText, zone.documentsCurrentAmmount, zone.documents.Count);
         }
 
         foreach (var zone in gameStateManager.Zones)
@@ -640,10 +644,10 @@ public class TabletUIManager : MonoBehaviour
             if (zone.zoneName == barName) UpdateText(barClothesProgressText, zone.clothesCurrentAmmount, zone.clothes.Count);
             else if (zone.zoneName == menBathroomName) UpdateText(menBathroomClothesProgressText, zone.clothesCurrentAmmount, zone.clothes.Count);
             else if (zone.zoneName == womenBathroomName) UpdateText(womenBathroomClothesProgressText, zone.clothesCurrentAmmount, zone.clothes.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(kitchenClothesProgressText, zone.clothesCurrentAmmount, zone.clothes.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(storageClothesProgressText, zone.clothesCurrentAmmount, zone.clothes.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(vipRoomClothesProgressText, zone.clothesCurrentAmmount, zone.clothes.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(bettingRoomClothesProgressText, zone.clothesCurrentAmmount, zone.clothes.Count);
+            else if (zone.zoneName == kitchenName) UpdateText(kitchenClothesProgressText, zone.clothesCurrentAmmount, zone.clothes.Count);
+            else if (zone.zoneName == storageRoomName) UpdateText(storageClothesProgressText, zone.clothesCurrentAmmount, zone.clothes.Count);
+            else if (zone.zoneName == vipRoomName) UpdateText(vipRoomClothesProgressText, zone.clothesCurrentAmmount, zone.clothes.Count);
+            else if (zone.zoneName == bettingRoomName) UpdateText(bettingRoomClothesProgressText, zone.clothesCurrentAmmount, zone.clothes.Count);
         }
 
         foreach (var zone in gameStateManager.Zones)
@@ -651,12 +655,62 @@ public class TabletUIManager : MonoBehaviour
             if (zone.zoneName == barName) UpdateText(barMiscellaneousProgressText, zone.miscellaneousCurrentAmmount, zone.miscellaneous.Count);
             else if (zone.zoneName == menBathroomName) UpdateText(menBathroomMiscellaneousProgressText, zone.miscellaneousCurrentAmmount, zone.miscellaneous.Count);
             else if (zone.zoneName == womenBathroomName) UpdateText(womenBathroomMiscellaneousProgressText, zone.miscellaneousCurrentAmmount, zone.miscellaneous.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(kitchenMiscellaneousProgressText, zone.miscellaneousCurrentAmmount, zone.miscellaneous.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(storageMiscellaneousProgressText, zone.miscellaneousCurrentAmmount, zone.miscellaneous.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(vipRoomMiscellaneousProgressText, zone.miscellaneousCurrentAmmount, zone.miscellaneous.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(bettingRoomMiscellaneousProgressText, zone.miscellaneousCurrentAmmount, zone.miscellaneous.Count);
+            else if (zone.zoneName == kitchenName) UpdateText(kitchenMiscellaneousProgressText, zone.miscellaneousCurrentAmmount, zone.miscellaneous.Count);
+            else if (zone.zoneName == storageRoomName) UpdateText(storageMiscellaneousProgressText, zone.miscellaneousCurrentAmmount, zone.miscellaneous.Count);
+            else if (zone.zoneName == vipRoomName)  UpdateText(vipRoomMiscellaneousProgressText, zone.miscellaneousCurrentAmmount, zone.miscellaneous.Count);
+            else if (zone.zoneName == bettingRoomName) UpdateText(bettingRoomMiscellaneousProgressText, zone.miscellaneousCurrentAmmount, zone.miscellaneous.Count);
         }
-        #endregion 
+        #endregion
+        #region ADJUST VERTICAL LAYOUT GROUPS
+        AdjustVerticalLayoutGroups();
+#endregion
+    }
+
+    private void AdjustVerticalLayoutGroups()
+    {
+        foreach (var zone in gameStateManager.Zones)
+        {
+            VerticalLayoutGroup layoutGroup = null;
+
+            if (zone.zoneName == barName)
+                layoutGroup = barBloodProgressText?.transform.parent.parent.GetComponent<VerticalLayoutGroup>();
+            else if (zone.zoneName == menBathroomName)
+                layoutGroup = menBathroomBloodProgressText?.transform.parent.parent.GetComponent<VerticalLayoutGroup>();
+            else if (zone.zoneName == womenBathroomName)
+                layoutGroup = womenBathroomBloodProgressText?.transform.parent.parent.GetComponent<VerticalLayoutGroup>();
+            else if (zone.zoneName == kitchenName)
+                layoutGroup = kitchenBloodProgressText?.transform.parent.parent.GetComponent<VerticalLayoutGroup>();
+            else if (zone.zoneName == storageRoomName)
+                layoutGroup = storageBloodProgressText?.transform.parent.parent.GetComponent<VerticalLayoutGroup>();
+            else if (zone.zoneName == vipRoomName)
+                layoutGroup = vipRoomBloodProgressText?.transform.parent.parent.GetComponent<VerticalLayoutGroup>();
+            else if (zone.zoneName == bettingRoomName)
+                layoutGroup = bettingRoomBloodProgressText?.transform.parent.parent.GetComponent<VerticalLayoutGroup>();
+
+            if (layoutGroup != null)
+            {
+                UpdateSpacing(layoutGroup);
+            }
+        }
+    }
+
+    private void UpdateSpacing(VerticalLayoutGroup verticalLayoutGroup)
+    {
+        int activeChildrenCount = 0;
+        foreach (Transform child in verticalLayoutGroup.transform)
+        {
+            if (child.gameObject.activeSelf)
+                activeChildrenCount++;
+        }
+
+        if (activeChildrenCount > 1)
+        {
+            verticalLayoutGroup.spacing -= baseSpacing * totalElements / activeChildrenCount * spacingOffset;
+        }
+        else
+        {
+            verticalLayoutGroup.spacing = 0;
+        }
     }
 
     public void UpdateBloodText(Zone zone)
@@ -1294,6 +1348,9 @@ public class TabletUIManager : MonoBehaviour
 
     private void UpdateText(TextMeshProUGUI text, int currentAmount, int maxAmount)
     {
-        text.text = $"{currentAmount:D2}/{maxAmount:D2}";
+        if (maxAmount != 0) 
+            text.text = $"{currentAmount:D2}/{maxAmount:D2}";
+        else
+            text.transform.parent.gameObject.SetActive(false);
     }
 }
