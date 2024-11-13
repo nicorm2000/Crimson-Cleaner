@@ -2833,6 +2833,48 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Warning_To_Lobby_1" ID="{B46487E2-EAD1-4731-9CB4-E365EFAED8F0}">
+							<ChildrenList>
+								<Action Name="" ID="{4CA86763-6B32-48C7-B11C-BC686F98BED9}" ShortID="898460005">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="WarningToLobby_1" ID="{4CFF80D8-1A1F-4F04-85EC-ACBC6E2D94F5}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{97058B89-9CA5-4714-A7D8-EC806A043F29}" ShortID="398915616">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="WarningToLobby_1" ID="{4CFF80D8-1A1F-4F04-85EC-ACBC6E2D94F5}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Warning_To_Lobby_2" ID="{0A83D6EF-0175-4EE6-AEC4-8A35E63389C6}">
+							<ChildrenList>
+								<Action Name="" ID="{57B0673E-F678-4FFD-9A96-0C5A12026673}" ShortID="857255774">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="WarningToLobby_2" ID="{A9FB79B8-586A-47D2-9EBE-8C95A249EA04}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{84B1A7F8-2037-4E49-B9C5-D7D0B7F55AC5}" ShortID="622920711">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="WarningToLobby_2" ID="{A9FB79B8-586A-47D2-9EBE-8C95A249EA04}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

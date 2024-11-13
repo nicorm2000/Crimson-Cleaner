@@ -266,6 +266,74 @@
 								<ActiveSource Name="ToolWheel_Clic_03" ID="{8254CC26-22B1-49FC-B715-02E34AF00486}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="WarningToLobby_1" ID="{4CFF80D8-1A1F-4F04-85EC-ACBC6E2D94F5}" ShortID="798105683">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-600</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="WarningToLobby_1" ID="{DD2F47C2-8DA6-40BD-8877-EA38E0DD1AC6}">
+									<Language>SFX</Language>
+									<AudioFile>WarningToLobby_1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="833407633"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="WarningToLobby_1" ID="{DD2F47C2-8DA6-40BD-8877-EA38E0DD1AC6}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="WarningToLobby_2" ID="{A9FB79B8-586A-47D2-9EBE-8C95A249EA04}" ShortID="315105018">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-600</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="WarningToLobby_2" ID="{59E10BF5-2A09-4117-9F72-28C710EE579A}">
+									<Language>SFX</Language>
+									<AudioFile>WarningToLobby_2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="577644198"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="WarningToLobby_2" ID="{59E10BF5-2A09-4117-9F72-28C710EE579A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Environment" ID="{FA1E034F-6B57-4D1D-9457-7ED05686817E}" ShortID="946708407">
