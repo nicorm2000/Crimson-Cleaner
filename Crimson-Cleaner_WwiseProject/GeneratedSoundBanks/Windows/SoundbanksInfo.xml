@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{A21CF96B-9E24-A460-E42F-80C9AD15A748}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{89EEA4BF-5141-63D7-2951-EA6551250CFA}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -276,7 +276,7 @@
 				</File>
 				<File Id="500941011" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cockroaches.wav</ShortName>
-					<CachePath>SFX/Cockroaches_DC093362.wem</CachePath>
+					<CachePath>SFX/Cockroaches_DCEC3200.wem</CachePath>
 				</File>
 				<File Id="503826935" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>ToolWheel_Open.wav</ShortName>
@@ -341,6 +341,10 @@
 				<File Id="577271348" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Heavy_Metal_Tool_Collision.wav</ShortName>
 					<CachePath>SFX/Heavy_Metal_Tool_Collision_48D10DD5.wem</CachePath>
+				</File>
+				<File Id="577644198" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WarningToLobby_2.wav</ShortName>
+					<CachePath>SFX/WarningToLobby_2_818F3B66.wem</CachePath>
 				</File>
 				<File Id="592302926" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cart Close.wav</ShortName>
@@ -412,7 +416,7 @@
 				</File>
 				<File Id="755212419" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Earthquake.wav</ShortName>
-					<CachePath>SFX/Earthquake_65A2D9F7.wem</CachePath>
+					<CachePath>SFX/Earthquake_EE954415.wem</CachePath>
 				</File>
 				<File Id="762487305" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CokeBag2SFX_Audio.wav</ShortName>
@@ -449,6 +453,10 @@
 				<File Id="803740784" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PickUpTrash.wav</ShortName>
 					<CachePath>SFX/PickUpTrash_685249E9.wem</CachePath>
+				</File>
+				<File Id="833407633" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WarningToLobby_1.wav</ShortName>
+					<CachePath>SFX/WarningToLobby_1_818F3B66.wem</CachePath>
 				</File>
 				<File Id="840706661" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Glass Cracking.wav</ShortName>
@@ -1195,6 +1203,16 @@
 						<MediaRef Id="453576743"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3883341852" Name="Warning_To_Lobby_1" DurationType="OneShot" DurationMin="2.8903284" DurationMax="2.8903284">
+					<MediaRefs>
+						<MediaRef Id="833407633"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3883341855" Name="Warning_To_Lobby_2" DurationType="OneShot" DurationMin="2.8903284" DurationMax="2.8903284">
+					<MediaRefs>
+						<MediaRef Id="577644198"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3676508413" Name="Wash_Mop" DurationType="OneShot" DurationMin="1.0766667" DurationMax="1.0766667">
 					<MediaRefs>
 						<MediaRef Id="190901790"/>
@@ -1247,5 +1265,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{823C878C-0869-6E85-8B0C-86D652769D8F}</FileHash>
+	<FileHash>{4343DC95-ECE5-A131-6888-AB1F6D3E29B4}</FileHash>
 </SoundBanksInfo>

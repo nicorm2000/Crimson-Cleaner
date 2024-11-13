@@ -22,6 +22,7 @@ public class WarningManager : MonoBehaviour
 
     [Header("Config")]
     [SerializeField] private GameObject mike = null;
+    [SerializeField] private GameObject blood = null;
     [SerializeField] private Transform targetTransform;
     [SerializeField] private Transform startTransform;
     [SerializeField] private float mikeDuration = 2f;
@@ -43,6 +44,7 @@ public class WarningManager : MonoBehaviour
     {
         sceneVolume.weight = 0;
         isReady = false;
+        blood.SetActive(true);
         //gameTitle.SetActive(true);
     }
 

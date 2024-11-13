@@ -891,6 +891,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 161684429}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &172147003 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1730563151647514990, guid: 828446ae4dac79745814af8f4b0867d5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1571801198}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &203106519
 GameObject:
   m_ObjectHideFlags: 0
@@ -2575,12 +2581,14 @@ MonoBehaviour:
   mySceneManager: {fileID: 314811453}
   sceneName: Lobby
   animator: {fileID: 1726419796}
-  waitToLobby: 2
+  waitToLobby: 3
   warningManager: {fileID: 1965501131}
-  endBlackColor: {r: 0, g: 0, b: 0, a: 1}
-  colorLerpDuration: 2
+  endBlackValue: 0
+  colorLerpDuration: 3
+  fadeDuration: 1
   audioManager: {fileID: 1887823827}
   gameIntroStop: Game_Intro_Stop
+  warningToLobby: Warning_To_Lobby_1
 --- !u!114 &913507614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4804,6 +4812,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1559746199}
   m_CullTransparentMesh: 1
+--- !u!1001 &1571801198
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 959846949834228871, guid: 828446ae4dac79745814af8f4b0867d5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.391
+      objectReference: {fileID: 0}
+    - target: {fileID: 959846949834228871, guid: 828446ae4dac79745814af8f4b0867d5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.181
+      objectReference: {fileID: 0}
+    - target: {fileID: 959846949834228871, guid: 828446ae4dac79745814af8f4b0867d5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.299
+      objectReference: {fileID: 0}
+    - target: {fileID: 959846949834228871, guid: 828446ae4dac79745814af8f4b0867d5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 959846949834228871, guid: 828446ae4dac79745814af8f4b0867d5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 959846949834228871, guid: 828446ae4dac79745814af8f4b0867d5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 959846949834228871, guid: 828446ae4dac79745814af8f4b0867d5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 959846949834228871, guid: 828446ae4dac79745814af8f4b0867d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 959846949834228871, guid: 828446ae4dac79745814af8f4b0867d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 959846949834228871, guid: 828446ae4dac79745814af8f4b0867d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730563151647514990, guid: 828446ae4dac79745814af8f4b0867d5,
+        type: 3}
+      propertyPath: m_Name
+      value: Blood 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1730563151647514990, guid: 828446ae4dac79745814af8f4b0867d5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 930283238918831480, guid: 828446ae4dac79745814af8f4b0867d5, type: 3}
+    - {fileID: 384645582066115734, guid: 828446ae4dac79745814af8f4b0867d5, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 828446ae4dac79745814af8f4b0867d5, type: 3}
 --- !u!1 &1656829791
 GameObject:
   m_ObjectHideFlags: 0
@@ -5622,10 +5705,12 @@ MonoBehaviour:
   animator: {fileID: 1726419796}
   waitToLobby: 3
   warningManager: {fileID: 0}
-  endBlackColor: {r: 0, g: 0, b: 0, a: 1}
+  endBlackValue: 0
   colorLerpDuration: 2
+  fadeDuration: 1
   audioManager: {fileID: 1887823827}
   gameIntroStop: Game_Intro_Stop
+  warningToLobby: 
 --- !u!1 &1965501128
 GameObject:
   m_ObjectHideFlags: 0
@@ -5706,7 +5791,7 @@ MonoBehaviour:
   sceneVolume: {fileID: 34482860}
   gameBG: {fileID: 136808116}
   colorLerpDuration: 2
-  endRedColor: {r: 200, g: 0, b: 0, a: 1}
+  endRedValue: 200
   title: {fileID: 1559746201}
   alphaLerpDuration: 3
   pressAnyKey: {fileID: 913507614}
@@ -5746,6 +5831,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   mike: {fileID: 387154873}
+  blood: {fileID: 172147003}
   targetTransform: {fileID: 2083760398}
   startTransform: {fileID: 280842587}
   mikeDuration: 1
@@ -6034,6 +6120,7 @@ SceneRoots:
   - {fileID: 868982489}
   - {fileID: 280842587}
   - {fileID: 2083760398}
+  - {fileID: 1571801198}
   - {fileID: 387154874}
   - {fileID: 910351612}
   - {fileID: 760209180}

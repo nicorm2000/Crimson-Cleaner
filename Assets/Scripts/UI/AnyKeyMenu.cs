@@ -18,6 +18,7 @@ public class AnyKeyMenu : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioManager audioManager = null;
     [SerializeField] private string gameIntroStop;
+    [SerializeField] private string warningToLobby;
 
     private void Update()
     {
@@ -33,12 +34,23 @@ public class AnyKeyMenu : MonoBehaviour
 
     private IEnumerator MenuToLobby(float duration)
     {
-        StopCoroutine(warningManager.pressAnyKeyCoroutine);
+        if (!AudioManager.muteSFX)
+            audioManager.PlaySound(warningToLobby);
+
+        if (warningManager.pressAnyKeyCoroutine != null)
+        {
+            warningManager.StopCoroutine(warningManager.pressAnyKeyCoroutine);
+            warningManager.pressAnyKeyCoroutine = null;
+        }
         StartCoroutine(warningManager.FadeAlphaToZero(fadeDuration));
         StartCoroutine(warningManager.LerpColor(endBlackValue, colorLerpDuration));
+        
         yield return new WaitForSeconds(duration);
+        
         if (!AudioManager.muteSFX)
             audioManager.PlaySound(gameIntroStop);
+        
+        
         mySceneManager.LoadSceneByName("Lobby");
     }
 }
