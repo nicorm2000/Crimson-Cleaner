@@ -66,6 +66,8 @@ MonoBehaviour:
   - {fileID: -8271544724249693675}
   - {fileID: 1814508963534106874}
   - {fileID: -2045313413592674647}
+  - {fileID: 6712888046377505661}
+  - {fileID: 2785538740115847385}
 --- !u!114 &1814508963534106874
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -84,4 +86,60 @@ MonoBehaviour:
     m_Value: 0.15
   angle:
     m_OverrideState: 1
+    m_Value: 10
+--- !u!114 &2785538740115847385
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c1be1b6c95cd2e41b27903b9270817f, type: 3}
+  m_Name: Vignette
+  m_EditorClassIdentifier: 
+  active: 1
+  mode:
+    m_OverrideState: 1
     m_Value: 0
+  color:
+    m_OverrideState: 1
+    m_Value: {r: 0.5, g: 0, b: 0, a: 1}
+  center:
+    m_OverrideState: 1
+    m_Value: {x: 0.5, y: 0.5}
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.5
+  smoothness:
+    m_OverrideState: 1
+    m_Value: 0.2
+  roundness:
+    m_OverrideState: 1
+    m_Value: 1
+  rounded:
+    m_OverrideState: 1
+    m_Value: 0
+  mask:
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: e853fb3742239884484595ad785334e2, type: 3}
+  opacity:
+    m_OverrideState: 1
+    m_Value: 0.099
+--- !u!114 &6712888046377505661
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79863c88852b02a45b0f118843b4be60, type: 3}
+  m_Name: ScreenFuzz
+  m_EditorClassIdentifier: 
+  active: 1
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.1
