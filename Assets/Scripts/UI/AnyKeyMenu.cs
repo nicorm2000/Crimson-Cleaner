@@ -49,8 +49,7 @@ public class AnyKeyMenu : MonoBehaviour
         
         if (!AudioManager.muteSFX)
             audioManager.PlaySound(gameIntroStop);
-        
-        
+            
         mySceneManager.LoadSceneByName("Lobby");
     }
 }
