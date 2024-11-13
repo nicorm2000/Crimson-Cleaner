@@ -11,6 +11,10 @@ public class Teaser : MonoBehaviour
     [SerializeField] private List<Rigidbody> mopRb = new();
     [SerializeField] private List<Collider> mopColl = new();
 
+    [Header("Mop 2 Config")]
+    [SerializeField] private GameObject mop2 = null;
+    private Animator mop2Animator = null;
+
     private void Awake()
     {
         for (int i = 0; i < rbs.Count; i++)
@@ -29,6 +33,8 @@ public class Teaser : MonoBehaviour
         {
             mopColl[i].enabled = false;
         }
+
+        mop2Animator = mop2.GetComponent<Animator>();
     }
 
     private void Update()
@@ -41,6 +47,11 @@ public class Teaser : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.O))
         {
             MopEvent();
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            Mop2Event();
         }
     }
 
@@ -56,6 +67,11 @@ public class Teaser : MonoBehaviour
         {
             mopColl[i].enabled = true;
         }
+    }
+
+    public void Mop2Event()
+    {
+        mop2Animator.SetBool("Activate", true);
     }
 
     public void BodyEvent()
