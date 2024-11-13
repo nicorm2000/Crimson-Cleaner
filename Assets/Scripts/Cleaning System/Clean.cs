@@ -6,6 +6,7 @@ public class Clean : MonoBehaviour, ICleanable
     [Header("Config")]
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private Material[] cleaningMaterials;
+    [SerializeField] private bool notCollidable = false;
 
     private Renderer _renderer;
 
@@ -180,7 +181,8 @@ public class Clean : MonoBehaviour, ICleanable
         Cleaned?.Invoke();
         CleanedGO?.Invoke(gameObject);
         StopCleaning();
-        GetComponent<BoxCollider>().enabled = false;
+        if (notCollidable)
+        GetComponent<Collider>().enabled = false;
     }
 
     public void CleanSurface()
