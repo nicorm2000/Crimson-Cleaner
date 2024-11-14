@@ -1,5 +1,7 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 
 public class AnyKeyMenu : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class AnyKeyMenu : MonoBehaviour
 
     [Header("Warning Manager Config")]
     [SerializeField] private WarningManager warningManager = null;
+    [SerializeField] private TextMeshProUGUI gameTitle = null;
+    [SerializeField] private TextMeshProUGUI pressAnyKey = null;
     [SerializeField] private float endBlackValue = 0f;
     [SerializeField] private float colorLerpDuration = 2f;
     [SerializeField] private float fadeDuration = 1f;
@@ -19,15 +23,18 @@ public class AnyKeyMenu : MonoBehaviour
     [SerializeField] private AudioManager audioManager = null;
     [SerializeField] private string gameIntroStop;
     [SerializeField] private string warningToLobby;
+    
+    private bool isReady = false;
 
     private void Update()
     {
         if (mySceneManager == null) 
             return;
 
-        if (Input.anyKeyDown)
+        if (Input.anyKeyDown && !isReady)
         {
-            animator.SetBool("GoToLobby", true);
+            isReady = true;
+            //animator.SetBool("GoToLobby", true);
             StartCoroutine(MenuToLobby(waitToLobby));
         }
     }
@@ -42,7 +49,8 @@ public class AnyKeyMenu : MonoBehaviour
             warningManager.StopCoroutine(warningManager.pressAnyKeyCoroutine);
             warningManager.pressAnyKeyCoroutine = null;
         }
-        StartCoroutine(warningManager.FadeAlphaToZero(fadeDuration));
+        StartCoroutine(warningManager.FadeAlphaToZero(gameTitle, fadeDuration));
+        StartCoroutine(warningManager.FadeAlphaToZero(pressAnyKey, fadeDuration));
         StartCoroutine(warningManager.LerpColor(endBlackValue, colorLerpDuration));
         
         yield return new WaitForSeconds(duration);

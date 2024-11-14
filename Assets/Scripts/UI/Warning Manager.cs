@@ -115,12 +115,12 @@ public class WarningManager : MonoBehaviour
         while (elapsedTime < firstAlphaLerpDurationKey)
         {
             elapsedTime += Time.deltaTime;
-            float alpha = Mathf.Lerp(0f, 50f / 255f, elapsedTime / firstAlphaLerpDurationKey);
+            float alpha = Mathf.Lerp(0f, 75f / 255f, elapsedTime / firstAlphaLerpDurationKey);
             pressAnyKey.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
             yield return null;
         }
 
-        pressAnyKey.color = new Color(originalColor.r, originalColor.g, originalColor.b, 50f / 255f);
+        pressAnyKey.color = new Color(originalColor.r, originalColor.g, originalColor.b, 75f / 255f);
 
         pressAnyKey.GetComponent<AnyKeyMenu>().enabled = true;
         pressAnyKeyCoroutine = StartCoroutine(PulseAlpha());
@@ -137,7 +137,7 @@ public class WarningManager : MonoBehaviour
             while (elapsedTime < alphaLerpDurationKey)
             {
                 elapsedTime += Time.deltaTime;
-                float alphaValue = Mathf.Lerp(50f / 255f, 1f, alphaCurve.Evaluate(elapsedTime / alphaLerpDurationKey));
+                float alphaValue = Mathf.Lerp(75f / 255f, 1f, alphaCurve.Evaluate(elapsedTime / alphaLerpDurationKey));
                 pressAnyKey.color = new Color(originalColor.r, originalColor.g, originalColor.b, alphaValue);
                 yield return null;
             }
@@ -164,9 +164,9 @@ public class WarningManager : MonoBehaviour
         StartCoroutine(LerpColor(endRedValue, colorLerpDuration));
     }
 
-    public IEnumerator FadeAlphaToZero(float duration)
+    public IEnumerator FadeAlphaToZero(TextMeshProUGUI image, float duration)
     {
-        Color currentColor = pressAnyKey.color;
+        Color currentColor = image.color;
         float currentAlpha = currentColor.a;
         float elapsedTime = 0f;
 
@@ -176,11 +176,11 @@ public class WarningManager : MonoBehaviour
 
             float newAlpha = Mathf.Lerp(currentAlpha, 0f, elapsedTime / duration);
 
-            pressAnyKey.color = new Color(currentColor.r, currentColor.g, currentColor.b, newAlpha);
+            image.color = new Color(currentColor.r, currentColor.g, currentColor.b, newAlpha);
 
             yield return null;
         }
 
-        pressAnyKey.color = new Color(currentColor.r, currentColor.g, currentColor.b, 0f);
+        image.color = new Color(currentColor.r, currentColor.g, currentColor.b, 0f);
     }
 }
