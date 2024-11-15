@@ -19,11 +19,11 @@ public class CleanableObjectState
 
 public enum Tools
 {
-    Mop = 0,
+    Hands = 0,
+    Mop,
     Sponge,
-    Hands,
-    Tablet,
-    Bin
+    Bin,
+    Tablet
 }
 
 public class CleaningManager : MonoBehaviour
