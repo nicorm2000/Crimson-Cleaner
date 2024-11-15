@@ -1,14 +1,17 @@
+using System.Collections;
 using UnityEngine;
 
 public class ToolAnimatorController : MonoBehaviour
 {
     [Header("Config")]
     [SerializeField] private Animator animator = null;
+    [SerializeField] private CleaningManager cleaningManager = null;
 
     [Header("Mop")]
     [SerializeField] private string mopToSpongeTransitionName;
     [SerializeField] private string mopToBinTransitionName;
     [SerializeField] private string mopToHandsTransitionName;
+    [SerializeField] private string mopToTabletTransitionName;
 
     [SerializeField] private string mopCleanName;
     [SerializeField] private string mopBucketName;
@@ -17,6 +20,7 @@ public class ToolAnimatorController : MonoBehaviour
     [SerializeField] private string spongeToMopTransitionName;
     [SerializeField] private string spongeToBinTransitionName;
     [SerializeField] private string spongeToHandsTransitionName;
+    [SerializeField] private string spongeToTabletTransitionName;
 
     [SerializeField] private string spongeCleanName;
     [SerializeField] private string spongeBucketName;
@@ -25,6 +29,7 @@ public class ToolAnimatorController : MonoBehaviour
     [SerializeField] private string handsToMopTransitionName;
     [SerializeField] private string handsToBinTransitionName;
     [SerializeField] private string handsToSpongeTransitionName;
+    [SerializeField] private string handsToTabletTransitionName;
 
     [SerializeField] private string handsPickupName;
     [SerializeField] private string handsThrowName;
@@ -35,25 +40,120 @@ public class ToolAnimatorController : MonoBehaviour
     [SerializeField] private string binToMopTransitionName;
     [SerializeField] private string binToSpongeTransitionName;
     [SerializeField] private string binToHandsTransitionName;
+    [SerializeField] private string binToTabletTransitionName;
 
     [SerializeField] private string binRemoveName;
     [SerializeField] private string binCleanName;
+
+    [Header("Tablet")]
+    [SerializeField] private string tabletToHandsTransitionName;
+    [SerializeField] private string tabletToMopTransitionName;
+    [SerializeField] private string tabletToSpongeTransitionName;
+    [SerializeField] private string tabletToBinTransitionName;
 
     [Header("Swap")]
     [SerializeField] private string mopOffName;
     [SerializeField] private string spongeOffName;
     [SerializeField] private string handsOffName;
     [SerializeField] private string binOffName;
+    [SerializeField] private string tabletOffName;
 
-    private string previousBool = "";
+    private string previousOffBool = "";
 
-    public void TransitionStateByBool(string transitionName)
+    public void HandleOffTool(int previousToolIndex)
     {
-        animator.SetBool(previousBool, false);
+        string offToolTransition = GetOffToolTransitionName(previousToolIndex);
 
-        animator.SetBool(transitionName,true);
+        if (!string.IsNullOrEmpty(offToolTransition))
+        {
+            animator.SetBool(previousOffBool, false);
+            animator.SetBool(offToolTransition, true); 
+            previousOffBool = offToolTransition;
+        }
+    }
 
-        previousBool = animator.GetBool(transitionName).ToString();
+    public void HandleToolSwitched(int currentToolIndex)
+    {
+        string transitionName = GetToolTransitionName(currentToolIndex);
+
+        if (!string.IsNullOrEmpty(transitionName))
+        {
+            animator.SetBool(transitionName, true);
+            StartCoroutine(ResetTransition(transitionName));
+        }
+    }
+
+    private string GetOffToolTransitionName(int toolIndex)
+    {
+        return toolIndex switch
+        {
+            0 => handsOffName,
+            1 => mopOffName,
+            2 => spongeOffName,
+            3 => binOffName,
+            4 => tabletOffName,
+            _ => null,
+        };
+    }
+
+    private string GetToolTransitionName(int toolIndex)
+    {
+        switch (cleaningManager.GetToolSelector().GetPreviousToolIndex())
+        {
+            case 0: // Desde Hands
+                return toolIndex switch
+                {
+                    1 => handsToMopTransitionName,
+                    2 => handsToSpongeTransitionName,
+                    3 => handsToBinTransitionName,
+                    4 => handsToTabletTransitionName,
+                    _ => null,
+                };
+            case 1: // Desde Mop
+                return toolIndex switch
+                {
+                    0 => mopToHandsTransitionName,
+                    2 => mopToSpongeTransitionName,
+                    3 => mopToBinTransitionName,
+                    4 => mopToTabletTransitionName,
+                    _ => null,
+                };
+            case 2: // Desde Sponge
+                return toolIndex switch
+                {
+                    0 => spongeToHandsTransitionName,
+                    1 => spongeToMopTransitionName,
+                    3 => spongeToBinTransitionName,
+                    4 => spongeToTabletTransitionName,
+                    _ => null,
+                };
+            case 3: // Desde Bin
+                return toolIndex switch
+                {
+                    0 => binToHandsTransitionName,
+                    1 => binToMopTransitionName,
+                    2 => binToSpongeTransitionName,
+                    4 => binToTabletTransitionName,
+                    _ => null,
+                };
+            case 4: // Desde Tablet
+                return toolIndex switch
+                {
+                    0 => tabletToHandsTransitionName,
+                    1 => tabletToMopTransitionName,
+                    2 => tabletToSpongeTransitionName,
+                    3 => tabletToBinTransitionName,
+                    _ => null,
+                };
+            default:
+                return null;
+        }
+    }
+
+    private IEnumerator ResetTransition(string transitionName)
+    {
+        yield return new WaitForSeconds(2f);
+        animator.SetBool(transitionName, false);
     }
 
     public Animator GetAnimator() => animator;

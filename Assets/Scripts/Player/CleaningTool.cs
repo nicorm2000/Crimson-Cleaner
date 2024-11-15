@@ -1,10 +1,12 @@
 using System;
+using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class CleaningTool : MonoBehaviour
 {
     [Header("Config")]
+    [SerializeField] private ToolAnimatorController toolAnimatorController;
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private GameObject[] tools;
     [SerializeField] private GameObject[] cleaningTools;
@@ -29,6 +31,8 @@ public class CleaningTool : MonoBehaviour
     public int CleaningToolsLength => cleaningTools.Length;
     public int ToolsLength => tools.Length;
     public int CurrentToolIndex => _currentToolIndex;
+
+    private int tabletIndex = 0;
 
     private void Awake()
     {
@@ -55,31 +59,44 @@ public class CleaningTool : MonoBehaviour
     {
         for (int i = 0; i < cleaningTools.Length; i++)
         {
-            cleaningTools[i].SetActive(i == _currentToolIndex);
             dirtyPercentages[i] = 0;
         }
+
+        for (int i = 0; i < tools.Length; i++)
+        {
+            tools[i].SetActive(false);
+            if (Tools[i].name == tabletName)
+            {
+                tabletIndex = i;
+            }
+        }
+
     }
 
     public void SwitchTool(int newIndex)
     {
         newIndex = Mathf.Clamp(newIndex, 0, tools.Length - 1);
 
-        if (Tools[newIndex].name == tabletName && isTabletOpen)
+        if (newIndex == tabletIndex && isTabletOpen)
         {
             return;
         }
 
-        tools[_currentToolIndex].SetActive(false);
-        tools[newIndex].SetActive(true);
+        //tools[_currentToolIndex].SetActive(false);        
 
         _previousToolIndex = _currentToolIndex;
         _currentToolIndex = newIndex;
 
         OnToolSwitched?.Invoke(_currentToolIndex);
+
+        toolAnimatorController.HandleOffTool(_previousToolIndex);
+        toolAnimatorController.HandleToolSwitched(_currentToolIndex);
+
         PlayToolSwapSound(_currentToolIndex);
 
-        if (Tools[newIndex].name == tabletName)
+        if (newIndex == tabletIndex)
         {
+            tools[newIndex].SetActive(true);
             isTabletOpen = true;
             CleaningListEvent?.Invoke();
         }
@@ -112,7 +129,7 @@ public class CleaningTool : MonoBehaviour
             if (cleaningManager.GetHandSwapEvent() != null)
                 audioManager.PlaySound(cleaningManager.GetHandSwapEvent());
         }
-        else if (toolIndex == 4) // Bin
+        else if (toolIndex == 3) // Bin
         {
             if (cleaningManager.GetTrashBinSwapEvent() != null)
                 audioManager.PlaySound(cleaningManager.GetTrashBinSwapEvent());
@@ -233,18 +250,18 @@ public class CleaningTool : MonoBehaviour
 
     private void OnSelectFirstTool()
     {
-        if (CurrentToolIndex != 2) // Tablet now in first position
-            SwitchTool(2);
+        if (CurrentToolIndex != 0) // Tablet now in first position
+            SwitchTool(0);
     }
     private void OnSelectSecondTool()
     {
-        if (CurrentToolIndex != 0)
-            SwitchTool(0);
+        if (CurrentToolIndex != 1)
+            SwitchTool(1);
     }
     private void OnSelectThirdTool()
     {
-        if (CurrentToolIndex != 1)
-            SwitchTool(1);
+        if (CurrentToolIndex != 2)
+            SwitchTool(2);
     }
     private void OnSelectForthTool()
     {
@@ -256,4 +273,6 @@ public class CleaningTool : MonoBehaviour
         if (CurrentToolIndex != 4) // Hands now in first position
             SwitchTool(4);
     }
+
+    public int GetPreviousToolIndex() => _previousToolIndex;
 }

@@ -251,7 +251,7 @@ public class PlayersUIManager : MonoBehaviour
         jobFinished.SetActive(false);
         jobUnfinished.SetActive(false);
 
-        CreateCleaningList();
+        //CreateCleaningList();
         UpdateRetrievableTexts();
     }
 
@@ -271,6 +271,10 @@ public class PlayersUIManager : MonoBehaviour
         if (!_cleaningListState)
         {
             cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetCloseTabletEvent());
+            //if (cleaningListAnimator)
+            //{
+            //    cleaningListAnimator.SetBool(notebookAnimatorOpenHash, _cleaningListState);
+            //}
         }
         else
         {
@@ -281,10 +285,10 @@ public class PlayersUIManager : MonoBehaviour
             cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetOpenTabletEvent());
             ToggleTabletState(true);
 
-            if (cleaningListAnimator)
-            {
-                cleaningListAnimator.SetBool(notebookAnimatorOpenHash, _cleaningListState);
-            }
+            //if (cleaningListAnimator)
+            //{
+            //    cleaningListAnimator.SetBool(notebookAnimatorOpenHash, _cleaningListState);
+            //}
 
         }
     }
