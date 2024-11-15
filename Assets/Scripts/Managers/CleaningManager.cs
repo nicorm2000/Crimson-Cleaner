@@ -138,7 +138,7 @@ public class CleaningManager : MonoBehaviour
 
     public Camera GetCamera() => gameCamera;
     public Animator GetPlayerAnimator() => playerAnimator;
-    public Animator GetMopAnimator() => mopAnimator;
+    public Animator GetToolAnimator() => mopAnimator;
     public Animator GetSpongeAnimator() => spongeAnimator;
     public Animator GetHandsAnimator() => handsAnimator;
     public InputManager GetInputManager() => inputManager;

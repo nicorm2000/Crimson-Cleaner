@@ -103,7 +103,7 @@ public class Clean : MonoBehaviour, ICleanable
 
         if (toolIndex == 0)
         {
-            toolAnimator = cleaningManager.GetMopAnimator();
+            toolAnimator = cleaningManager.GetToolAnimator();
         }
         else if (toolIndex == 1)
         {
