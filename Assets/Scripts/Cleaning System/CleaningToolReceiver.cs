@@ -19,11 +19,11 @@ public class CleaningToolReceiver : MonoBehaviour
     public void MoveToolEvent()
     {
         int currentToolIndex = cleaningManager.GetToolSelector().CurrentToolIndex;
-        if (currentToolIndex == 0)
+        if (currentToolIndex == 1)
         {
             cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetMopWooshEvent());
         }
-        else if (currentToolIndex == 1)
+        else if (currentToolIndex == 2)
         {
             cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetSpongeWooshEvent());
         }
@@ -56,12 +56,12 @@ public class CleaningToolReceiver : MonoBehaviour
             }
             else
             {
-                if (cleaningManager.GetToolSelector().CurrentToolIndex == 0)
+                if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetMop())
                 {
                     cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetMopDirtyEvent());
                     cleaningManager.GetMopCleaningDirtyParticles().Play();
                 }
-                else if (cleaningManager.GetToolSelector().CurrentToolIndex == 1)
+                else if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetSponge())
                 {
                     cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetSpongeDirtyEvent());
                     cleaningManager.GetSpongeCleaningDirtyParticles().Play();

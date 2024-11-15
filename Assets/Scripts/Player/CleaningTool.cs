@@ -117,17 +117,17 @@ public class CleaningTool : MonoBehaviour
         if (toolIndex == 0) // Mop
         {
             if (cleaningManager.GetMopSwapEvent() != null)
-                audioManager.PlaySound(cleaningManager.GetMopSwapEvent());
+                audioManager.PlaySound(cleaningManager.GetHandSwapEvent());
         }
         else if (toolIndex == 1) // Sponge
         {
             if (cleaningManager.GetSpongeSwapEvent() != null)
-                audioManager.PlaySound(cleaningManager.GetSpongeSwapEvent());
+                audioManager.PlaySound(cleaningManager.GetMopSwapEvent());
         }
         else if (toolIndex == 2) // Hands
         {
             if (cleaningManager.GetHandSwapEvent() != null)
-                audioManager.PlaySound(cleaningManager.GetHandSwapEvent());
+                audioManager.PlaySound(cleaningManager.GetSpongeSwapEvent());
         }
         else if (toolIndex == 3) // Bin
         {

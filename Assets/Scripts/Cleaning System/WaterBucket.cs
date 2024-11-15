@@ -69,7 +69,7 @@ public class WaterBucket : Interactable, ICleanable
         int currentToolIndex = cleaningManager.GetToolSelector().CurrentToolIndex;
         int dirtyPercentage = cleaningManager.GetToolSelector().GetDirtyPercentage(currentToolIndex);
 
-        if (cleaningManager.GetToolSelector().CurrentToolIndex >= 2)
+        if (cleaningManager.GetToolSelector().CurrentToolIndex != cleaningManager.GetMop() && cleaningManager.GetToolSelector().CurrentToolIndex != cleaningManager.GetSponge())
         {
             WaterBucketUnavailable?.Invoke();
             return;
@@ -92,17 +92,17 @@ public class WaterBucket : Interactable, ICleanable
                 if (water != null)
                     UpdateMaterial(_bucketDirtState, _rendererWater);
             }
-            if (cleaningManager.GetToolSelector().CurrentToolIndex == 0)
+            if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetMop())
                 audioManager.PlaySound(soundEvent);
-            else if (cleaningManager.GetToolSelector().CurrentToolIndex == 1)
+            else if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetSponge())
                 audioManager.PlaySound(soundEvent2);
             ActivateWashing();
             cleaningManager.GetToolSelector().ResetDirtyPercentage(currentToolIndex);
             cleaningManager.GetToolSelector().ChangeToolMaterial(currentToolIndex, cleaningManager.GetToolSelector().GetOriginalMaterial());
             SanityManager.Instance.ModifySanityScalar(SanityManager.Instance.WashToolScaler / 2f);
-            if (cleaningManager.GetToolSelector().CurrentToolIndex == 0)
+            if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetMop())
                 cleaningManager.GetMopDrippingParticles().Play();
-            else if (cleaningManager.GetToolSelector().CurrentToolIndex == 1)
+            else if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetSponge())
                 cleaningManager.GetSpongeDrippingParticles().Play();
             SanityManager.Instance.ModifySanityScalar(SanityManager.Instance.WashToolScaler);
 

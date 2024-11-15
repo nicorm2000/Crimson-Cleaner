@@ -54,7 +54,7 @@ public class PickUpDrop : MonoBehaviour
 
     private void PickUpAndDropObject()
     {
-        if (ObjectGrabbable == null && cleaningManager.GetToolSelector().CurrentToolIndex == 2)
+        if (ObjectGrabbable == null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetHands())
         {
             if (Physics.Raycast(mainCamera.position, mainCamera.forward, out RaycastHit raycastHit, cleaningManager.GetInteractionDistance()))
             {
@@ -82,7 +82,7 @@ public class PickUpDrop : MonoBehaviour
         }
         else
         {
-            if (cleaningManager.GetToolSelector().CurrentToolIndex != 2)
+            if (cleaningManager.GetToolSelector().CurrentToolIndex != cleaningManager.GetHands())
             {
                 if (Physics.Raycast(mainCamera.position, mainCamera.forward, out RaycastHit raycastHit, cleaningManager.GetInteractionDistance()))
                 {

@@ -56,25 +56,25 @@ public class Clean : MonoBehaviour, ICleanable
         if (startCleaning)
         {
             StartCleaning();
-            cleaningManager.GetPlayerAnimator().SetBool("Cleaning", true);
+            //cleaningManager.GetPlayerAnimator().SetBool("Cleaning", true);
         }
         else
         {
             StopCleaning();
-            cleaningManager.GetPlayerAnimator().SetBool("Cleaning", false);
+            //cleaningManager.GetPlayerAnimator().SetBool("Cleaning", false);
         }
     }
 
     private void StartCleaning()
     {
         _isCleaning = true;
-        SetToolAnimator(true);
+        //SetToolAnimator(true);
     }
 
     private void StopCleaning()
     {
         _isCleaning = false;
-        SetToolAnimator(false);
+        //SetToolAnimator(false);
         if (_coroutine != null)
         {
             StopCoroutine(_coroutine);
@@ -86,11 +86,11 @@ public class Clean : MonoBehaviour, ICleanable
     private void ResetCurrentCleanableObject()
     {
         int currentToolIndex = cleaningManager.GetToolSelector().CurrentToolIndex;
-        if (currentToolIndex == 0)
+        if (currentToolIndex == cleaningManager.GetMop())
         {
             cleaningManager.GetMopToolReceiver().SetCurrentCleanableObject(null);
         }
-        else if (currentToolIndex == 1)
+        else if (currentToolIndex == cleaningManager.GetSponge())
         {
             cleaningManager.GetSpongeToolReceiver().SetCurrentCleanableObject(null);
         }
@@ -128,12 +128,12 @@ public class Clean : MonoBehaviour, ICleanable
 
         UpdateMaterialAndDirtyPercentage(cleaningManager.GetToolSelector().CurrentToolIndex);
 
-        if (cleaningManager.GetToolSelector().CurrentToolIndex == 0)
+        if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetMop())
         {
             cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetMopEvent());
             cleaningManager.GetMopCleaningParticles().Play();
         }
-        else if (cleaningManager.GetToolSelector().CurrentToolIndex == 1)
+        else if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetSponge())
         {
             cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetSpongeEvent());
             cleaningManager.GetSpongeCleaningParticles().Play();
@@ -169,7 +169,7 @@ public class Clean : MonoBehaviour, ICleanable
     private void UpdateMaterialAndDirtyPercentage(int toolIndex)
     {
         UpdateMaterial(_currentMaterialIndex);
-        cleaningManager.GetToolSelector().IncrementDirtyPercentage(toolIndex, cleaningManager.DirtyIncrementAmount);
+        cleaningManager.GetToolSelector().IncrementDirtyPercentage(toolIndex++, cleaningManager.DirtyIncrementAmount);
         SanityManager.Instance.ModifySanityScalar(SanityManager.Instance.CleanScaler);
     }
 
