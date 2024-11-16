@@ -74,8 +74,6 @@ public class PlayersUIManager : MonoBehaviour
     [SerializeField] private Volume playerVolume = null;
 
     private bool _cleaningListState = false;
-    private List<GameObject> cleaningTextElements = new();
-    private List<GameObject> disposalTextElements = new();
 
     private Coroutine notebookWarningCoroutine;
     private Coroutine waterBucketWarningCoroutine;
@@ -107,16 +105,9 @@ public class PlayersUIManager : MonoBehaviour
 
         foreach (Clean cleanableObject in gameStateManager.CleanableObjects)
         {
-            cleanableObject.GetComponent<Clean>().CleanedGO += UpdateCleaningList;
             cleanableObject.GetComponent<Clean>().WrongTool += () => OnWrongToolWarning(ref wrongToolCleaningWarningCoroutine, new[] { mopImageWarning, spongeImageWarning }, wrongToolErrorDuration);
             cleanableObject.GetComponent<Clean>().WrongToolMop += () => OnToolWarning(ref wrongToolMopCleaningWarningCoroutine, mopImageWarning, wrongToolErrorDuration);
             cleanableObject.GetComponent<Clean>().WrongToolSponge += () => OnToolWarning(ref wrongToolSpongeCleaningWarningCoroutine, spongeImageWarning, wrongToolErrorDuration);
-        }
-
-        foreach (DisposableObject disposableObject in gameStateManager.DisposableObjects)
-        {
-            disposableObject.GetComponent<DisposableObject>().DisposedGO += UpdateDisposableList;
-            disposableObject.GetComponent<DisposableObject>().Broken += UpdateDisposableListMultiple;
         }
 
         foreach (var tool in cleaningToolReceivers)
@@ -180,19 +171,9 @@ public class PlayersUIManager : MonoBehaviour
         {
             if (cleanableObject != null)
             {
-                cleanableObject.GetComponent<Clean>().CleanedGO -= UpdateCleaningList;
                 cleanableObject.GetComponent<Clean>().WrongTool -= () => OnWrongToolWarning(ref wrongToolCleaningWarningCoroutine, new[] { mopImageWarning, spongeImageWarning }, wrongToolErrorDuration);
                 cleanableObject.GetComponent<Clean>().WrongToolMop -= () => OnToolWarning(ref wrongToolMopCleaningWarningCoroutine, mopImageWarning, wrongToolErrorDuration);
                 cleanableObject.GetComponent<Clean>().WrongToolSponge -= () => OnToolWarning(ref wrongToolSpongeCleaningWarningCoroutine, spongeImageWarning, wrongToolErrorDuration);
-            }
-        }
-
-        foreach (DisposableObject disposableObject in gameStateManager.DisposableObjects)
-        {
-            if (disposableObject != null)
-            {
-                disposableObject.GetComponent<DisposableObject>().DisposedGO -= UpdateDisposableList;
-                disposableObject.GetComponent<DisposableObject>().Broken -= UpdateDisposableListMultiple;
             }
         }
 
@@ -383,68 +364,6 @@ public class PlayersUIManager : MonoBehaviour
     {
         jobFinished.SetActive(true);
         gameStateManager.uiManager.TriggerEndGame();
-    }
-
-    public void CreateCleaningList()
-    {
-        cleaningTextElements.Clear();
-        disposalTextElements.Clear();
-
-        foreach (var cleanableObject in gameStateManager.CleanableObjects)
-        {
-            cleaningTextElements.Add(cleanableObject.gameObject);
-        }
-
-        foreach (var disposableObject in gameStateManager.DisposableObjects)
-        {
-            disposalTextElements.Add(disposableObject.gameObject);
-        }
-
-        UpdateCleanableListText();
-        UpdateDisposableListText();
-    }
-
-    private void UpdateCleanableListText()
-    {
-        cleanableListText.GetComponent<TextMeshPro>().text = "Cleaning List " + "\n";
-        foreach (var cleanableObject in cleaningTextElements)
-        {
-            cleanableListText.GetComponent<TextMeshPro>().text += cleanableObject.name + "\n";
-        }
-    }
-
-    private void UpdateDisposableListText()
-    {
-        disposableListText.GetComponent<TextMeshPro>().text = "Disposable List " + "\n";
-        foreach (var disposableObject in disposalTextElements)
-        {
-            disposableListText.GetComponent<TextMeshPro>().text += disposableObject.name + "\n";
-        }
-    }
-
-    private void UpdateCleaningList(GameObject objectInList)
-    {
-        cleaningTextElements.Remove(objectInList);
-        UpdateCleanableListText();
-    }
-
-    private void UpdateDisposableList(GameObject objectInList)
-    {
-        disposalTextElements.Remove(objectInList);
-        UpdateDisposableListText();
-    }
-
-    private void UpdateDisposableListMultiple(GameObject objectInList, List<GameObject> objectsToAdd)
-    {
-        disposalTextElements.Remove(objectInList);
-
-        foreach (var disposableObject in objectsToAdd)
-        {
-            disposalTextElements.Add(disposableObject);
-            disposableObject.GetComponent<DisposableObject>().DisposedGO += UpdateDisposableList;
-        }
-
-        UpdateDisposableListText();
     }
 
     private void UpdateRetrievableTexts()

@@ -41,15 +41,10 @@ public class CleaningToolReceiver : MonoBehaviour
             {
                 if (hit.transform.gameObject.GetComponent<Clean>() != null)
                 {
-                    if (currentToolIndex == 0)
+                    if (currentToolIndex == cleaningManager.GetMop() || currentToolIndex == cleaningManager.GetSponge())
                     {
                         currentCleanableObject = hit.transform.gameObject.GetComponent<Clean>();
-                        cleaningManager.GetMopToolReceiver().SetCurrentCleanableObject(currentCleanableObject);
-                    }
-                    else if (currentToolIndex == 1)
-                    {
-                        currentCleanableObject = hit.transform.gameObject.GetComponent<Clean>();
-                        cleaningManager.GetSpongeToolReceiver().SetCurrentCleanableObject(currentCleanableObject);
+                        cleaningManager.GetToolReceiver().SetCurrentCleanableObject(currentCleanableObject);
                     }
                     currentCleanableObject.CleanSurface();
                 }

@@ -6,10 +6,12 @@ using UnityEngine.Events;
 public class CleaningTool : MonoBehaviour
 {
     [Header("Config")]
-    [SerializeField] private ToolAnimatorController toolAnimatorController;
+    public ToolAnimatorController toolAnimatorController;
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private GameObject[] tools;
     [SerializeField] private GameObject[] cleaningTools;
+    public GameObject mopObject;
+    public GameObject spongeObject;
     [SerializeField] private int[] dirtyPercentages;
     [SerializeField] private int dirtyIncrementAmount;
     [SerializeField] private Material mopCleanMaterial;
@@ -64,7 +66,7 @@ public class CleaningTool : MonoBehaviour
 
         for (int i = 0; i < tools.Length; i++)
         {
-            tools[i].SetActive(false);
+            //tools[i].SetActive(false);
             if (Tools[i].name == tabletName)
             {
                 tabletIndex = i;
@@ -149,43 +151,43 @@ public class CleaningTool : MonoBehaviour
 
             if (dirtyPercentages[toolIndex] <= 100)
             {
-                if (_currentToolIndex == 0)
+                if (_currentToolIndex == cleaningManager.GetMop())
                 {
                     if (dirtyPercentages[_currentToolIndex] >= 25 && dirtyPercentages[_currentToolIndex] < 50)
                     {
-                        ChangeToolMaterial(toolIndex, mopDirtyMaterial[0]);
+                        ChangeToolMaterial(mopObject, toolIndex, mopDirtyMaterial[0]);
                     }
                     else if (dirtyPercentages[_currentToolIndex] >= 50 && dirtyPercentages[_currentToolIndex] < 75)
                     {
-                        ChangeToolMaterial(toolIndex, mopDirtyMaterial[1]);
+                        ChangeToolMaterial(mopObject, toolIndex, mopDirtyMaterial[1]);
                     }
                     else if (dirtyPercentages[_currentToolIndex] >= 75 && dirtyPercentages[_currentToolIndex] < 100)
                     {
-                        ChangeToolMaterial(toolIndex, mopDirtyMaterial[2]);
+                        ChangeToolMaterial(mopObject, toolIndex, mopDirtyMaterial[2]);
                     }
                     else if (dirtyPercentages[_currentToolIndex] == 100)
                     {
-                        ChangeToolMaterial(toolIndex, mopDirtyMaterial[3]);
+                        ChangeToolMaterial(mopObject, toolIndex, mopDirtyMaterial[3]);
                         cleaningManager.GetMopDrippingDirtyParticles().Play();
                     }
                 }
-                else if (_currentToolIndex == 1)
+                else if (_currentToolIndex == cleaningManager.GetSponge())
                 {
                     if (dirtyPercentages[_currentToolIndex] >= 25 && dirtyPercentages[_currentToolIndex] < 50)
                     {
-                        ChangeToolMaterial(toolIndex, spongeDirtyMaterial[0]);
+                        ChangeToolMaterial(spongeObject, toolIndex, spongeDirtyMaterial[0]);
                     }
                     else if (dirtyPercentages[_currentToolIndex] >= 50 && dirtyPercentages[_currentToolIndex] < 75)
                     {
-                        ChangeToolMaterial(toolIndex, spongeDirtyMaterial[1]);
+                        ChangeToolMaterial(spongeObject, toolIndex, spongeDirtyMaterial[1]);
                     }
                     else if (dirtyPercentages[_currentToolIndex] >= 75 && dirtyPercentages[_currentToolIndex] < 100)
                     {
-                        ChangeToolMaterial(toolIndex, spongeDirtyMaterial[2]);
+                        ChangeToolMaterial(spongeObject, toolIndex, spongeDirtyMaterial[2]);
                     }
                     else if (dirtyPercentages[_currentToolIndex] == 100)
                     {
-                        ChangeToolMaterial(toolIndex, spongeDirtyMaterial[3]);
+                        ChangeToolMaterial(spongeObject, toolIndex, spongeDirtyMaterial[3]);
                         cleaningManager.GetSpongeDrippingDirtyParticles().Play();
                     }
                 }
@@ -206,29 +208,21 @@ public class CleaningTool : MonoBehaviour
         return 0;
     }
 
-    public void ChangeToolMaterial(int toolIndex, Material newMaterial)
+    public void ChangeToolMaterial(GameObject toolObject,int toolIndex, Material newMaterial)
     {
-        for (int i = 0; i < cleaningTools[_currentToolIndex].transform.childCount; i++)
-        {
-            Renderer toolRenderer = cleaningTools[_currentToolIndex].transform.GetChild(i).GetComponentInChildren<Renderer>();
-            if (toolRenderer != null)
-            {
-                toolRenderer.material = newMaterial;
-            }
-            else
-            {
-                Debug.LogError($"Renderer component not found on tool {toolIndex}.");
-            }
-        }
+        if (toolObject)
+            toolObject.GetComponent<Renderer>().material = newMaterial;
+        else
+            Debug.LogError($"Renderer component not found on tool {toolIndex}.");
     }
 
     public Material GetOriginalMaterial()
     {
-        if (_currentToolIndex == 0)
+        if (_currentToolIndex == cleaningManager.GetMop())
         {
             return mopCleanMaterial;
         }
-        else if (_currentToolIndex == 1)
+        else if (_currentToolIndex == cleaningManager.GetSponge())
         {
             return spongeCleanMaterial;
         }

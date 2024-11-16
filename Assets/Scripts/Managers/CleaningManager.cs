@@ -32,8 +32,7 @@ public class CleaningManager : MonoBehaviour
     [SerializeField] private Camera gameCamera = null;
     [SerializeField] private InputManager inputManager = null;
     [SerializeField] private CleaningTool cleaningTool = null;
-    [SerializeField] private CleaningToolReceiver mopToolReceiver;
-    [SerializeField] private CleaningToolReceiver spongeToolReceiver;
+    [SerializeField] private CleaningToolReceiver toolReceiver;
     
     [Header("Animators")]
     [SerializeField] private Animator playerAnimator = null;
@@ -188,8 +187,7 @@ public class CleaningManager : MonoBehaviour
     public ParticleSystem GetSpongeCleaningDirtyParticles() => spongeCleaningDirtyParticles;
     public ParticleSystem GetSpongeDrippingParticles() => spongeDrippingParticles;
     public ParticleSystem GetSpongeDrippingDirtyParticles() => spongeDrippingDirtyParticles;
-    public CleaningToolReceiver GetMopToolReceiver() => mopToolReceiver;
-    public CleaningToolReceiver GetSpongeToolReceiver() => spongeToolReceiver;
+    public CleaningToolReceiver GetToolReceiver() => toolReceiver;
     public Sprite GetPickUpMessage() => pickUpMessage;
     public Sprite GetDropMessage() => dropMessage;
     public Sprite GetThrowMessage() => throwMessage;

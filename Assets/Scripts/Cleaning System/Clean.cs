@@ -68,13 +68,13 @@ public class Clean : MonoBehaviour, ICleanable
     private void StartCleaning()
     {
         _isCleaning = true;
-        //SetToolAnimator(true);
+        SetToolAnimator(_isCleaning);
     }
 
     private void StopCleaning()
     {
         _isCleaning = false;
-        //SetToolAnimator(false);
+        SetToolAnimator(_isCleaning);
         if (_coroutine != null)
         {
             StopCoroutine(_coroutine);
@@ -86,33 +86,19 @@ public class Clean : MonoBehaviour, ICleanable
     private void ResetCurrentCleanableObject()
     {
         int currentToolIndex = cleaningManager.GetToolSelector().CurrentToolIndex;
-        if (currentToolIndex == cleaningManager.GetMop())
+        if (currentToolIndex == cleaningManager.GetMop() || currentToolIndex == cleaningManager.GetSponge())
         {
-            cleaningManager.GetMopToolReceiver().SetCurrentCleanableObject(null);
-        }
-        else if (currentToolIndex == cleaningManager.GetSponge())
-        {
-            cleaningManager.GetSpongeToolReceiver().SetCurrentCleanableObject(null);
+            cleaningManager.GetToolReceiver().SetCurrentCleanableObject(null);
         }
     }
 
     private void SetToolAnimator(bool isCleaning)
     {
         int toolIndex = cleaningManager.GetToolSelector().CurrentToolIndex;
-        Animator toolAnimator = null;
 
-        if (toolIndex == 0)
+        if (toolIndex == cleaningManager.GetMop() || toolIndex == cleaningManager.GetSponge())
         {
-            toolAnimator = cleaningManager.GetToolAnimator();
-        }
-        else if (toolIndex == 1)
-        {
-            toolAnimator = cleaningManager.GetSpongeAnimator();
-        }
-
-        if (toolAnimator != null)
-        {
-            toolAnimator.SetBool("Cleaning", isCleaning);
+            cleaningManager.GetToolSelector().toolAnimatorController.TriggerParticularAction(cleaningManager.GetToolSelector().toolAnimatorController.GetCleaningName(), isCleaning);
         }
     }
 
@@ -180,7 +166,7 @@ public class Clean : MonoBehaviour, ICleanable
         isCleaned = true;
         Cleaned?.Invoke();
         CleanedGO?.Invoke(gameObject);
-        StopCleaning();
+        //StopCleaning();
         if (notCollidable)
         GetComponent<Collider>().enabled = false;
     }
@@ -197,7 +183,7 @@ public class Clean : MonoBehaviour, ICleanable
         LayerMask mopLayer = cleaningManager.GetMopLayerMask();
         LayerMask spongeLayer = cleaningManager.GetSpongeLayerMask();
 
-        if (currentToolIndex == 0) // Mop
+        if (currentToolIndex == cleaningManager.GetMop()) // Mop
         {
             if ((mopLayer.value & (1 << gameObject.layer)) != 0)
             {
@@ -209,7 +195,7 @@ public class Clean : MonoBehaviour, ICleanable
                 ResetCurrentCleanableObject();
             }
         }
-        else if (currentToolIndex == 1) // Sponge
+        else if (currentToolIndex == cleaningManager.GetSponge()) // Sponge
         {
             if ((spongeLayer.value & (1 << gameObject.layer)) != 0)
             {
@@ -221,7 +207,7 @@ public class Clean : MonoBehaviour, ICleanable
                 ResetCurrentCleanableObject();
             }
         }
-        else if (currentToolIndex >= 2)//CHECK
+        else if (currentToolIndex == 0 || currentToolIndex >= 2)//CHECK
         {
             if ((mopLayer.value & (1 << gameObject.layer)) != 0)
                 WrongToolMop?.Invoke();

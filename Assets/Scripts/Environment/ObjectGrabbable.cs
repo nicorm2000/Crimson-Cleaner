@@ -3,6 +3,7 @@ using UnityEngine;
 public class ObjectGrabbable : MonoBehaviour, IPickable
 {
     [Header("Config")]
+    [SerializeField] private ToolAnimatorController toolAnimatorController;
     [SerializeField] private float lerpSpeed = 10f;
     [SerializeField] private float rotationSpeed = 10f;
     [SerializeField] private float throwingForce = 10f;
@@ -74,6 +75,8 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
 
     public void Grab(Transform ObjectGrabPointTransform, Transform playerTransform)
     {
+        toolAnimatorController.TriggerParticularAction(toolAnimatorController.GetHandsGrabName(), true);
+
         this.objectGrabPointTransform = ObjectGrabPointTransform;
         this.playerTransform = playerTransform;
 
@@ -104,6 +107,9 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
 
     public void Drop()
     {
+        toolAnimatorController.TriggerParticularAction(toolAnimatorController.GetHandsGrabName(), false);
+        toolAnimatorController.TriggerParticularAction(toolAnimatorController.GetHandsDropName());
+
         this.objectGrabPointTransform = null;
         this.playerTransform = null;
 
@@ -137,6 +143,9 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
 
     public void Throw(float throwingForce, Vector3 throwDirection)
     {
+        toolAnimatorController.TriggerParticularAction(toolAnimatorController.GetHandsGrabName(), false);
+        toolAnimatorController.TriggerParticularAction(toolAnimatorController.GetHandsThrowName());
+
         this.objectGrabPointTransform = null;
         this.playerTransform = null;
 

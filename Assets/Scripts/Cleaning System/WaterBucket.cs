@@ -98,7 +98,18 @@ public class WaterBucket : Interactable, ICleanable
                 audioManager.PlaySound(soundEvent2);
             ActivateWashing();
             cleaningManager.GetToolSelector().ResetDirtyPercentage(currentToolIndex);
-            cleaningManager.GetToolSelector().ChangeToolMaterial(currentToolIndex, cleaningManager.GetToolSelector().GetOriginalMaterial());
+            cleaningManager.GetToolSelector().toolAnimatorController.TriggerParticularAction(cleaningManager.GetToolSelector().toolAnimatorController.GetBucketName());
+
+            if (currentToolIndex == cleaningManager.GetMop())
+            {
+                cleaningManager.GetToolSelector().ChangeToolMaterial(cleaningManager.GetToolSelector().mopObject,currentToolIndex, cleaningManager.GetToolSelector().GetOriginalMaterial());
+            }
+            else if (currentToolIndex == cleaningManager.GetSponge())
+            {
+                cleaningManager.GetToolSelector().ChangeToolMaterial(cleaningManager.GetToolSelector().spongeObject, currentToolIndex, cleaningManager.GetToolSelector().GetOriginalMaterial());
+            }
+
+
             SanityManager.Instance.ModifySanityScalar(SanityManager.Instance.WashToolScaler / 2f);
             if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetMop())
                 cleaningManager.GetMopDrippingParticles().Play();

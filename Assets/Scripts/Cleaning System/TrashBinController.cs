@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class TrashBinController : MonoBehaviour
@@ -28,13 +29,13 @@ public class TrashBinController : MonoBehaviour
     private void OnEnable()
     {
         inputManager.StoreObjectEvent += OnPickUp;
-        inputManager.DispatchBagEvent += OnDispatchBag;
+        //inputManager.DispatchBagEvent += OnDispatchBag;
     }
 
     private void OnDisable()
     {
         inputManager.StoreObjectEvent -= OnPickUp;
-        inputManager.DispatchBagEvent -= OnDispatchBag;
+        //inputManager.DispatchBagEvent -= OnDispatchBag;
     }
 
     private void Start()
@@ -45,7 +46,7 @@ public class TrashBinController : MonoBehaviour
 
     private void OnPickUp()
     {
-        if (isBagDispatched)
+        if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetBin() && isBagDispatched)
             CheckForInteraction();
     }
 
@@ -76,12 +77,17 @@ public class TrashBinController : MonoBehaviour
 
                     counter = 0;
                     isBagDispatched = false;
+
+                    cleaningManager.GetToolSelector().toolAnimatorController.TriggerParticularAction(cleaningManager.GetToolSelector().toolAnimatorController.GetBinCleanName());
+                    StartCoroutine(RemoveAnimationCoroutine());
                 }
                 else
                 {
                     // Implementar audio - trash picked up
                     if (audioManager != null && pickUpTrashEvent != null)
                         audioManager.PlaySound(pickUpTrashEvent);
+
+                    cleaningManager.GetToolSelector().toolAnimatorController.TriggerParticularAction(cleaningManager.GetToolSelector().toolAnimatorController.GetBinCleanName());
                     //if (cleaningManager.GetPickUpTrashEvent() != null)
                     //    cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetPickUpTrashEvent());
                 }
@@ -97,13 +103,27 @@ public class TrashBinController : MonoBehaviour
             emptyBagGO.SetActive(true);
             fullBagGO.SetActive(false);
 
+
             // Implementar audio - new empty bag
             //if (cleaningManager.GetAddNewTrashBagEvent() != null)
             //    cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetAddNewTrashBagEvent());
 
-            
 
-            Instantiate(bagPrefab, newBagTransform.position, newBagTransform.rotation);
+            cleaningManager.GetToolSelector().toolAnimatorController.TriggerParticularAction(cleaningManager.GetToolSelector().toolAnimatorController.GetBinRemoveName());
+
+            StartCoroutine(InstantiateBagCoroutin());
         }
+    }
+
+    private IEnumerator RemoveAnimationCoroutine()
+    {
+        yield return new WaitForSeconds(1f);
+        OnDispatchBag();
+    }
+
+    private IEnumerator InstantiateBagCoroutin()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Instantiate(bagPrefab, newBagTransform.position, newBagTransform.rotation);
     }
 }
