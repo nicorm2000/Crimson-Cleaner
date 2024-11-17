@@ -119,6 +119,10 @@ public class RetrievableObject : MonoBehaviour, IRetrievable
 
         if (playerController.GetObjectGrabbable() == null)
         {
+            ToolAnimatorController toolAnimatorController = CleaningManager.Instance.GetToolSelector().toolAnimatorController;
+
+            toolAnimatorController.TriggerParticularAction(toolAnimatorController.GetHandsPickupName());
+
             Debug.Log("Retrieve Object: " + name);
 
             if (soundEvent != null && audioManager != null)
