@@ -93,8 +93,8 @@ public class CleaningTool : MonoBehaviour
 
         toolAnimatorController.HandleOffTool(_previousToolIndex);
         toolAnimatorController.HandleToolSwitched(_currentToolIndex);
-
-        PlayToolSwapSound(_currentToolIndex);
+        if (newIndex != _previousToolIndex)
+            PlayToolSwapSound(_currentToolIndex);
 
         if (newIndex == tabletIndex)
         {
