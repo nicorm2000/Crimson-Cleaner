@@ -77,6 +77,8 @@ public class CleaningTool : MonoBehaviour
 
     public void SwitchTool(int newIndex)
     {
+        if (!toolAnimatorController.canTriggerAction) return;
+
         newIndex = Mathf.Clamp(newIndex, 0, tools.Length - 1);
 
         if (newIndex == tabletIndex && isTabletOpen)

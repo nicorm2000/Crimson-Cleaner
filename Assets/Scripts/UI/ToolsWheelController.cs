@@ -168,7 +168,8 @@ public class ToolsWheelController : MonoBehaviour
     {
         if (currentToolID >= 0 && currentToolID < cleaningTool.ToolsLength)
         {
-            cleaningTool.SwitchTool(currentToolID);
+            if (currentToolID != cleaningTool.CurrentToolIndex)
+                cleaningTool.SwitchTool(currentToolID);
         }
         else
         {

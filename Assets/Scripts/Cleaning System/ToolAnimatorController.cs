@@ -55,7 +55,8 @@ public class ToolAnimatorController : MonoBehaviour
     [Header("Particular Actions")]
     [SerializeField] private string cleaning;
     [SerializeField] private string bucket;
-    
+
+    public bool canTriggerAction = true;
 
     private int previousOffBoolHash = 0;
     private Dictionary<(int, int), int> toolTransitionHashes;
@@ -133,6 +134,7 @@ public class ToolAnimatorController : MonoBehaviour
         {
             animator.SetBool(transitionHash, true);
             StartCoroutine(ResetTransition(transitionHash));
+            StartCoroutine(WaitForToolSwitchEnd(transitionHash));
         }
     }
 
@@ -150,6 +152,15 @@ public class ToolAnimatorController : MonoBehaviour
         {
             animator.SetTrigger(actionName);
         }
+    }
+
+    private IEnumerator WaitForToolSwitchEnd(int transitionHash)
+    {
+        canTriggerAction = false;
+
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+
+        canTriggerAction = true; 
     }
 
     private IEnumerator ResetTransition(int transitionHash)
