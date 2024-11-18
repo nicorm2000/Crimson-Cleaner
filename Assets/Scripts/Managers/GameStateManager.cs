@@ -54,13 +54,6 @@ public class GameStateManager : MonoBehaviour
     private Dictionary<string, IGameState> states;
 
     public bool isTimerCompleted;
-    public int cleanedCount = 0;
-    public int disposedCount = 0;
-
-    public int retrievedDocumetsCount = 0;
-    public int retrievedClothesCount = 0;
-    public int retrievedMiscellaneousCount = 0;
-    public int retrievedWeaponsCount = 0;
 
     public string totalMoneyString = "TotalMoney";
 
@@ -114,42 +107,6 @@ public class GameStateManager : MonoBehaviour
             currentState = states[newStateName];
             currentState.EnterState(this);
         }
-    }
-
-    public void OnObjectCleaned(GameObject go)
-    {
-        UpdateTabletUI(go);
-        cleanedCount++;
-    }
-    
-    public void OnObjectDisposed(GameObject go)
-    {
-        UpdateTabletUI(go);
-        disposedCount++;
-    } 
-    
-    public void OnDocumentRetrieved(GameObject go)
-    {
-        UpdateTabletUI(go);
-        retrievedDocumetsCount++;
-    }
-    
-    public void OnClothesRetrieved(GameObject go)
-    {
-        UpdateTabletUI(go);
-        retrievedClothesCount++;
-    }
-    
-    public void OnMiscellaneousRetrieved(GameObject go)
-    {
-        UpdateTabletUI(go);
-        retrievedMiscellaneousCount++;
-    }
-    
-    public void OnWeaponsRetrieved(GameObject go)
-    {
-        UpdateTabletUI(go);
-        retrievedWeaponsCount++;
     }
 
     public void OnSnapObject(GameObject go)
@@ -436,23 +393,23 @@ public class InitializationState : IGameState
         {
             foreach (var item in zone.blood)
             {
-                if (item != null) item.CleanedGO += gameStateManager.OnObjectCleaned;
+                if (item != null) item.CleanedGO += (go) => gameStateManager.UpdateTabletUI(go);
             }
 
             foreach (var item in zone.corpses)
             {
-                if (item != null) item.DisposedGO += gameStateManager.OnObjectDisposed;
+                if (item != null) item.DisposedGO += (go) => gameStateManager.UpdateTabletUI(go);
                 if (item != null) item.Broken += gameStateManager.OnObjectBroken;
             }
 
             foreach (var item in zone.uvCleanables)
             {
-                if (item != null) item.CleanedGO += gameStateManager.OnObjectCleaned;
+                if (item != null) item.CleanedGO += (go) => gameStateManager.UpdateTabletUI(go);
             }
 
             foreach (var item in zone.bloodyObjects)
             {
-                if (item != null) item.CleanedGO += gameStateManager.OnObjectCleaned;
+                if (item != null) item.CleanedGO += (go) => gameStateManager.UpdateTabletUI(go);
             }
 
             foreach (var item in zone.arrabgables)
@@ -462,28 +419,24 @@ public class InitializationState : IGameState
 
             foreach (var item in zone.weapons)
             {
-                if (item != null) item.ObjectRetrievedEventGO += gameStateManager.OnWeaponsRetrieved;
+                if (item != null) item.ObjectRetrievedEventGO += (go) => gameStateManager.UpdateTabletUI(go);
             }
 
             foreach (var item in zone.documents)
             {
-                if (item != null) item.ObjectRetrievedEventGO += gameStateManager.OnDocumentRetrieved;
+                if (item != null) item.ObjectRetrievedEventGO += (go) => gameStateManager.UpdateTabletUI(go);
             }
 
             foreach (var item in zone.clothes)
             {
-                if (item != null) item.ObjectRetrievedEventGO += gameStateManager.OnClothesRetrieved;
+                if (item != null) item.ObjectRetrievedEventGO += (go) => gameStateManager.UpdateTabletUI(go);
             }
 
             foreach (var item in zone.miscellaneous)
             {
-                if (item != null) item.ObjectRetrievedEventGO += gameStateManager.OnMiscellaneousRetrieved;
+                if (item != null) item.ObjectRetrievedEventGO += (go) => gameStateManager.UpdateTabletUI(go);
             }
         }
-
-
-        gameStateManager.cleanedCount = 0;
-        gameStateManager.disposedCount = 0;
 
         gameStateManager.TransitionToState("GamePlay");
 
@@ -513,22 +466,33 @@ public class GamePlayState : IGameState
 
     public void UpdateState(GameStateManager gameStateManager)
     {
-        if (gameStateManager.cleanedCount == gameStateManager.CleanableObjects.Count && 
-            gameStateManager.disposedCount == gameStateManager.DisposableObjects.Count &&
-            gameStateManager.retrievedDocumetsCount == gameStateManager.Documents.Count &&
-            gameStateManager.retrievedClothesCount == gameStateManager.Clothes.Count &&
-            gameStateManager.retrievedMiscellaneousCount == gameStateManager.Miscellaneous.Count &&
-            gameStateManager.retrievedWeaponsCount == gameStateManager.Weapons.Count)
+        foreach (var zone in gameStateManager.Zones)
         {
-            gameStateManager.TransitionToState("Win");
-            return;
+            if (!IsZoneFullyCompleted(zone))
+            {
+                return; 
+            }
         }
+
+        gameStateManager.TransitionToState("Win");
 
         if (gameStateManager.isTimerCompleted) //Update in the future
         {
             gameStateManager.TransitionToState("Lose");
             return;
         }
+    }
+
+    private bool IsZoneFullyCompleted(Zone zone)
+    {
+        return zone.bloodCurrentAmmount == zone.blood.Count &&
+               zone.corpsesCurrentAmmount == zone.corpses.Count &&
+               zone.uvCleanablesCurrentAmmount == zone.uvCleanables.Count &&
+               zone.bloodyObjectsCurrentAmmount == zone.bloodyObjects.Count &&
+               zone.arrabgablesCurrentAmmount == zone.arrabgables.Count &&
+               zone.weaponsCurrentAmmount == zone.weapons.Count &&
+               zone.clothesCurrentAmmount == zone.clothes.Count &&
+               zone.miscellaneousCurrentAmmount == zone.miscellaneous.Count;
     }
 
     public void ExitState(GameStateManager gameStateManager)
@@ -615,23 +579,23 @@ public class DeInitializationState : IGameState
         {
             foreach (var item in zone.blood)
             {
-                if (item != null) item.CleanedGO -= gameStateManager.OnObjectCleaned;
+                if (item != null) item.CleanedGO -= (go) => gameStateManager.UpdateTabletUI(go);
             }
 
             foreach (var item in zone.corpses)
             {
-                if (item != null) item.DisposedGO -= gameStateManager.OnObjectDisposed;
+                if (item != null) item.DisposedGO -= (go) => gameStateManager.UpdateTabletUI(go);
                 if (item != null) item.Broken -= gameStateManager.OnObjectBroken;
             }
 
             foreach (var item in zone.uvCleanables)
             {
-                if (item != null) item.CleanedGO -= gameStateManager.OnObjectCleaned;
+                if (item != null) item.CleanedGO -= (go) => gameStateManager.UpdateTabletUI(go);
             }
 
             foreach (var item in zone.bloodyObjects)
             {
-                if (item != null) item.CleanedGO -= gameStateManager.OnObjectCleaned;
+                if (item != null) item.CleanedGO -= (go) => gameStateManager.UpdateTabletUI(go);
             }
 
             foreach (var item in zone.arrabgables)
@@ -641,22 +605,22 @@ public class DeInitializationState : IGameState
 
             foreach (var item in zone.weapons)
             {
-                if (item != null) item.ObjectRetrievedEventGO -= gameStateManager.OnWeaponsRetrieved;
+                if (item != null) item.ObjectRetrievedEventGO -= (go) => gameStateManager.UpdateTabletUI(go);
             }
 
             foreach (var item in zone.documents)
             {
-                if (item != null) item.ObjectRetrievedEventGO -= gameStateManager.OnDocumentRetrieved;
+                if (item != null) item.ObjectRetrievedEventGO -= (go) => gameStateManager.UpdateTabletUI(go);
             }
 
             foreach (var item in zone.clothes)
             {
-                if (item != null) item.ObjectRetrievedEventGO -= gameStateManager.OnClothesRetrieved;
+                if (item != null) item.ObjectRetrievedEventGO -= (go) => gameStateManager.UpdateTabletUI(go);
             }
 
             foreach (var item in zone.miscellaneous)
             {
-                if (item != null) item.ObjectRetrievedEventGO -= gameStateManager.OnMiscellaneousRetrieved;
+                if (item != null) item.ObjectRetrievedEventGO -= (go) => gameStateManager.UpdateTabletUI(go);
             }
         }
 

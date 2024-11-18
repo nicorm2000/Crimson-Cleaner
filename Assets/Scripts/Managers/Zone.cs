@@ -4,6 +4,9 @@ using System.Collections.Generic;
 public class Zone
 {
     public string zoneName;
+    public Dictionary<string, int> currentAmounts = new Dictionary<string, int>();
+    public Dictionary<string, int> maxAmounts = new Dictionary<string, int>();
+
     public List<Clean> blood;
     public int bloodCurrentAmmount = 0;
     public List<DisposableObject> corpses;
@@ -22,4 +25,27 @@ public class Zone
     public int clothesCurrentAmmount = 0;
     public List<RetrievableObject> miscellaneous;
     public int miscellaneousCurrentAmmount = 0;
+
+    public void InitializeZone()
+    {
+        maxAmounts["blood"] = blood.Count;
+        maxAmounts["corpses"] = corpses.Count;
+        maxAmounts["uvCleanables"] = uvCleanables.Count;
+        maxAmounts["bloodyObjects"] = bloodyObjects.Count;
+        maxAmounts["arrabgables"] = arrabgables.Count;
+        maxAmounts["weapons"] = weapons.Count;
+        maxAmounts["documents"] = documents.Count;
+        maxAmounts["clothes"] = clothes.Count;
+        maxAmounts["miscellaneous"] = miscellaneous.Count;
+
+        currentAmounts["blood"] = bloodCurrentAmmount;
+        currentAmounts["corpses"] = corpsesCurrentAmmount;
+        currentAmounts["uvCleanables"] = uvCleanablesCurrentAmmount;
+        currentAmounts["bloodyObjects"] = bloodyObjectsCurrentAmmount;
+        currentAmounts["arrabgables"] = arrabgablesCurrentAmmount;
+        currentAmounts["weapons"] = weaponsCurrentAmmount;
+        currentAmounts["documents"] = documentsCurrentAmmount;
+        currentAmounts["clothes"] = clothesCurrentAmmount;
+        currentAmounts["miscellaneous"] = miscellaneousCurrentAmmount;
+    }
 }
