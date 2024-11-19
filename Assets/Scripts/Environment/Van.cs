@@ -16,6 +16,11 @@ public class Van : Interactable, IInteractable
     [SerializeField] private float stopEngineDelay = 2f;
     [SerializeField] private float garageDoorDelay = 1f;
 
+    [Header("Camera")]
+    [SerializeField] private Transform camera;
+    [SerializeField] private Transform cameraTargetTransform;
+    [SerializeField] private float cameraLerpDuration = 1f;
+
     [Header("Audio")]
     [SerializeField] private string engineStartEvent = null;
     [SerializeField] private string engineStopEvent = null;
@@ -71,6 +76,22 @@ public class Van : Interactable, IInteractable
         SceneTransitioned?.Invoke();
         playerController.ToggleMovement(false);
         playerController.ToggleCameraMovement(false);
+
+        float elapsedTime = 0f;
+
+        Vector3 initialPosition = camera.transform.position;
+        Quaternion initialRotation = camera.transform.rotation;
+
+        while (elapsedTime < cameraLerpDuration)
+        {
+            float t = elapsedTime / cameraLerpDuration;
+
+            camera.transform.position = Vector3.Lerp(initialPosition, cameraTargetTransform.position, t);
+            camera.transform.rotation = Quaternion.Lerp(initialRotation, cameraTargetTransform.rotation, t);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
 
         yield return new WaitForSeconds(startEngineDelay);
 

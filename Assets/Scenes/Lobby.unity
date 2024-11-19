@@ -200,6 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 0}
   lerpSpeed: 10
   rotationSpeed: 10
   throwingForce: 10
@@ -9464,6 +9465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 0}
   lerpSpeed: 10
   rotationSpeed: 10
   throwingForce: 10
@@ -15301,6 +15303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 0}
   lerpSpeed: 10
   rotationSpeed: 10
   throwingForce: 10
@@ -18544,6 +18547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 0}
   lerpSpeed: 10
   rotationSpeed: 10
   throwingForce: 10
@@ -25964,6 +25968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 0}
   lerpSpeed: 10
   rotationSpeed: 10
   throwingForce: 10
@@ -31005,6 +31010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 0}
   lerpSpeed: 10
   rotationSpeed: 10
   throwingForce: 10
@@ -37582,6 +37588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 0}
   lerpSpeed: 10
   rotationSpeed: 10
   throwingForce: 10
@@ -38429,6 +38436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 0}
   lerpSpeed: 10
   rotationSpeed: 10
   throwingForce: 10
@@ -41829,6 +41837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 0}
   lerpSpeed: 10
   rotationSpeed: 10
   throwingForce: 10
@@ -42057,7 +42066,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1285143215
 RectTransform:
   m_ObjectHideFlags: 0
@@ -44835,6 +44844,298 @@ Transform:
   - {fileID: 1422672861}
   m_Father: {fileID: 3075038666180725595}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1372332094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1372332101}
+  - component: {fileID: 1372332100}
+  - component: {fileID: 1372332099}
+  - component: {fileID: 1372332098}
+  - component: {fileID: 1372332097}
+  - component: {fileID: 1372332096}
+  - component: {fileID: 1372332095}
+  m_Layer: 0
+  m_Name: Inside Car Camera Transform
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1372332095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372332094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clearColorMode: 0
+  backgroundColorHDR: {r: 0.025, g: 0.07, b: 0.19, a: 0}
+  clearDepth: 1
+  volumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  volumeAnchorOverride: {fileID: 0}
+  antialiasing: 0
+  SMAAQuality: 2
+  dithering: 0
+  stopNaNs: 0
+  taaSharpenStrength: 0.5
+  TAAQuality: 1
+  taaHistorySharpening: 0.35
+  taaAntiFlicker: 0.5
+  taaMotionVectorRejection: 0
+  taaAntiHistoryRinging: 0
+  taaBaseBlendFactor: 0.875
+  taaJitterScale: 1
+  physicalParameters:
+    m_Iso: 200
+    m_ShutterSpeed: 0.005
+    m_Aperture: 16
+    m_FocusDistance: 10
+    m_BladeCount: 5
+    m_Curvature: {x: 2, y: 11}
+    m_BarrelClipping: 0.25
+    m_Anamorphism: 0
+  flipYMode: 0
+  xrRendering: 1
+  fullscreenPassthrough: 0
+  allowDynamicResolution: 0
+  customRenderingSettings: 0
+  invertFaceCulling: 0
+  probeLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  hasPersistentHistory: 0
+  screenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  screenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  allowDeepLearningSuperSampling: 1
+  deepLearningSuperSamplingUseCustomQualitySettings: 0
+  deepLearningSuperSamplingQuality: 0
+  deepLearningSuperSamplingUseCustomAttributes: 0
+  deepLearningSuperSamplingUseOptimalSettings: 1
+  deepLearningSuperSamplingSharpening: 0
+  fsrOverrideSharpness: 0
+  fsrSharpness: 0.92
+  exposureTarget: {fileID: 0}
+  materialMipBias: 0
+  m_RenderingPathCustomFrameSettings:
+    bitDatas:
+      data1: 140666587840333
+      data2: 13763000512783810584
+    lodBias: 1
+    lodBiasMode: 0
+    lodBiasQualityLevel: 0
+    maximumLODLevel: 0
+    maximumLODLevelMode: 0
+    maximumLODLevelQualityLevel: 0
+    sssQualityMode: 0
+    sssQualityLevel: 0
+    sssCustomSampleBudget: 20
+    msaaMode: 1
+    materialQuality: 0
+  renderingPathCustomFrameSettingsOverrideMask:
+    mask:
+      data1: 0
+      data2: 0
+  defaultFrameSettings: 0
+  m_Version: 9
+  m_ObsoleteRenderingPath: 0
+  m_ObsoleteFrameSettings:
+    overrides: 0
+    enableShadow: 0
+    enableContactShadows: 0
+    enableShadowMask: 0
+    enableSSR: 0
+    enableSSAO: 0
+    enableSubsurfaceScattering: 0
+    enableTransmission: 0
+    enableAtmosphericScattering: 0
+    enableVolumetrics: 0
+    enableReprojectionForVolumetrics: 0
+    enableLightLayers: 0
+    enableExposureControl: 1
+    diffuseGlobalDimmer: 0
+    specularGlobalDimmer: 0
+    shaderLitMode: 0
+    enableDepthPrepassWithDeferredRendering: 0
+    enableTransparentPrepass: 0
+    enableMotionVectors: 0
+    enableObjectMotionVectors: 0
+    enableDecals: 0
+    enableRoughRefraction: 0
+    enableTransparentPostpass: 0
+    enableDistortion: 0
+    enablePostprocess: 0
+    enableOpaqueObjects: 0
+    enableTransparentObjects: 0
+    enableRealtimePlanarReflection: 0
+    enableMSAA: 0
+    enableAsyncCompute: 0
+    runLightListAsync: 0
+    runSSRAsync: 0
+    runSSAOAsync: 0
+    runContactShadowsAsync: 0
+    runVolumeVoxelizationAsync: 0
+    lightLoopSettings:
+      overrides: 0
+      enableDeferredTileAndCluster: 0
+      enableComputeLightEvaluation: 0
+      enableComputeLightVariants: 0
+      enableComputeMaterialVariants: 0
+      enableFptlForForwardOpaque: 0
+      enableBigTilePrepass: 0
+      isFptlEnabled: 0
+--- !u!114 &1372332096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372332094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02024f541c07c9e4780c23b45adf3e59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  devUpdateGO: {fileID: 1237242520}
+  exitDevUpdate: {fileID: 930318745}
+  changeLogVersionText: {fileID: 1394719165}
+  changeLogText: {fileID: 1415518363}
+  audioManager: {fileID: 409798544}
+  buttonClickEvent: Mouse_Click
+--- !u!114 &1372332097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372332094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe64384ca7b0a04389be101b9eae7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDefaultListener: 1
+  listenerId: 0
+--- !u!114 &1372332098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372332094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef3fcda9f9becb40839998a9feb8ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 0
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
+--- !u!95 &1372332099
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372332094}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2871ff53d4c98a646ac45aa17a97a5de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!20 &1372332100
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372332094}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.1
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 0
+  m_AllowMSAA: 0
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &1372332101
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372332094}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0776552, y: -0.7028298, z: 0.0776552, w: 0.7028298}
+  m_LocalPosition: {x: -6.8, y: 1.53, z: -4.87}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 12.61, y: -90, z: 0}
 --- !u!1 &1374748472
 GameObject:
   m_ObjectHideFlags: 0
@@ -45993,6 +46294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 0}
   lerpSpeed: 10
   rotationSpeed: 10
   throwingForce: 10
@@ -50960,6 +51262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 0}
   lerpSpeed: 10
   rotationSpeed: 10
   throwingForce: 10
@@ -57001,6 +57304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 0}
   lerpSpeed: 10
   rotationSpeed: 10
   throwingForce: 10
@@ -59412,6 +59716,9 @@ MonoBehaviour:
   startEngineDelay: 1
   stopEngineDelay: 2
   garageDoorDelay: 1
+  camera: {fileID: 679338708}
+  cameraTargetTransform: {fileID: 1372332101}
+  cameraLerpDuration: 2
   engineStartEvent: Van_Engine_Start
   engineStopEvent: Van_Engine_Stop
   garageDoorEvent: Garage_Door_Open
@@ -61252,6 +61559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 0}
   lerpSpeed: 10
   rotationSpeed: 10
   throwingForce: 10
@@ -65665,6 +65973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 0}
   lerpSpeed: 10
   rotationSpeed: 10
   throwingForce: 10
@@ -77430,7 +77739,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &3047474109189004102
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -100586,6 +100895,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1927029684}
   - {fileID: 1848119280}
+  - {fileID: 1372332101}
   - {fileID: 1792020650}
   - {fileID: 1401326808}
   - {fileID: 391576440}
