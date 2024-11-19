@@ -168,7 +168,8 @@ public class CameraInteraction : MonoBehaviour
 
             UpdateUI(activeSprites);
         }
-        else if (currentPickableObject != null && currentPickableObject.IsObjectPickedUp)
+
+        if (currentPickableObject != null && currentPickableObject.IsObjectPickedUp)
         {
             var activeSprites = new Sprite[interactionImages.Length];
             AppendPickUpSprites(currentPickableObject, ref activeSprites);
