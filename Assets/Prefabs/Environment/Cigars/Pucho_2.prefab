@@ -32,11 +32,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.0030762923, y: 0.03783954, z: 0.0030762923}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.000057204586, y: 0.0007036379, z: 0.000057204586}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &5232016396082022458
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 0}
   lerpSpeed: 10
   rotationSpeed: 10
   throwingForce: 10
