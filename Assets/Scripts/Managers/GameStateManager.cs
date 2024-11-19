@@ -135,16 +135,16 @@ public class GameStateManager : MonoBehaviour
                 }
             }
             
-            foreach (var item in zone.corpses)
+            foreach (var item in zone.disposables)
             {
                 if (!item) break;
 
                 if (go == item.gameObject)
                 {
-                    if (zone.corpsesCurrentAmmount < zone.corpses.Count)
+                    if (zone.disposablesCurrentAmmount < zone.disposables.Count)
                     {
-                        zone.corpsesCurrentAmmount++;
-                        tabletUIManager.UpdateCorpsesText(zone);
+                        zone.disposablesCurrentAmmount++;
+                        tabletUIManager.UpdateDisposablesText(zone);
                     }
                     return;
                 }
@@ -396,7 +396,7 @@ public class InitializationState : IGameState
                 if (item != null) item.CleanedGO += (go) => gameStateManager.UpdateTabletUI(go);
             }
 
-            foreach (var item in zone.corpses)
+            foreach (var item in zone.disposables)
             {
                 if (item != null) item.DisposedGO += (go) => gameStateManager.UpdateTabletUI(go);
                 if (item != null) item.Broken += gameStateManager.OnObjectBroken;
@@ -486,7 +486,7 @@ public class GamePlayState : IGameState
     private bool IsZoneFullyCompleted(Zone zone)
     {
         return zone.bloodCurrentAmmount == zone.blood.Count &&
-               zone.corpsesCurrentAmmount == zone.corpses.Count &&
+               zone.disposablesCurrentAmmount == zone.disposables.Count &&
                zone.uvCleanablesCurrentAmmount == zone.uvCleanables.Count &&
                zone.bloodyObjectsCurrentAmmount == zone.bloodyObjects.Count &&
                zone.arrabgablesCurrentAmmount == zone.arrabgables.Count &&
@@ -582,7 +582,7 @@ public class DeInitializationState : IGameState
                 if (item != null) item.CleanedGO -= (go) => gameStateManager.UpdateTabletUI(go);
             }
 
-            foreach (var item in zone.corpses)
+            foreach (var item in zone.disposables)
             {
                 if (item != null) item.DisposedGO -= (go) => gameStateManager.UpdateTabletUI(go);
                 if (item != null) item.Broken -= gameStateManager.OnObjectBroken;

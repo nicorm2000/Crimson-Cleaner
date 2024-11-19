@@ -9,8 +9,8 @@ public class Zone
 
     public List<Clean> blood;
     public int bloodCurrentAmmount = 0;
-    public List<DisposableObject> corpses;
-    public int corpsesCurrentAmmount = 0;
+    public List<DisposableObject> disposables;
+    public int disposablesCurrentAmmount = 0;
     public List<Clean> uvCleanables;
     public int uvCleanablesCurrentAmmount = 0;
     public List<Clean> bloodyObjects;
@@ -29,7 +29,7 @@ public class Zone
     public void InitializeZone()
     {
         maxAmounts["blood"] = blood.Count;
-        maxAmounts["corpses"] = corpses.Count;
+        maxAmounts["disposables"] = disposables.Count;
         maxAmounts["uvCleanables"] = uvCleanables.Count;
         maxAmounts["bloodyObjects"] = bloodyObjects.Count;
         maxAmounts["arrabgables"] = arrabgables.Count;
@@ -39,7 +39,7 @@ public class Zone
         maxAmounts["miscellaneous"] = miscellaneous.Count;
 
         currentAmounts["blood"] = bloodCurrentAmmount;
-        currentAmounts["corpses"] = corpsesCurrentAmmount;
+        currentAmounts["disposables"] = disposablesCurrentAmmount;
         currentAmounts["uvCleanables"] = uvCleanablesCurrentAmmount;
         currentAmounts["bloodyObjects"] = bloodyObjectsCurrentAmmount;
         currentAmounts["arrabgables"] = arrabgablesCurrentAmmount;

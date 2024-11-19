@@ -32,10 +32,10 @@ public class TabletUIManager : MonoBehaviour
     [SerializeField] private Image barBloodCrossedOutImage = null;
     [SerializeField] private TextMeshProUGUI barBloodProgressText = null;
 
-    [Header("Bar Corpses")]
-    [SerializeField] private Image barCorpsesTickImage = null;
-    [SerializeField] private Image barCorpsesCrossedOutImage = null;
-    [SerializeField] private TextMeshProUGUI barCorpsesProgressText = null;
+    [Header("Bar Disposables")]
+    [SerializeField] private Image barDisposablesTickImage = null;
+    [SerializeField] private Image barDisposableCrossedOutImage = null;
+    [SerializeField] private TextMeshProUGUI barDisposableProgressText = null;
 
     [Header("Bar UV Cleanables")]
     [SerializeField] private Image barUVCleanablesTickImage = null;
@@ -83,10 +83,10 @@ public class TabletUIManager : MonoBehaviour
     [SerializeField] private Image menBathroomBloodCrossedOutImage = null;
     [SerializeField] private TextMeshProUGUI menBathroomBloodProgressText = null;
 
-    [Header("Men's Bathroom Corpses")]
-    [SerializeField] private Image menBathroomCorpsesTickImage = null;
-    [SerializeField] private Image menBathroomCorpsesCrossedOutImage = null;
-    [SerializeField] private TextMeshProUGUI menBathroomCorpsesProgressText = null;
+    [Header("Men's Bathroom Disposables")]
+    [SerializeField] private Image menBathroomDisposablesTickImage = null;
+    [SerializeField] private Image menBathroomDisposablesCrossedOutImage = null;
+    [SerializeField] private TextMeshProUGUI menBathroomDisposablesProgressText = null;
 
     [Header("Men's Bathroom UV Cleanables")]
     [SerializeField] private Image menBathroomUVCleanablesTickImage = null;
@@ -134,10 +134,10 @@ public class TabletUIManager : MonoBehaviour
     [SerializeField] private Image womenBathroomBloodCrossedOutImage = null;
     [SerializeField] private TextMeshProUGUI womenBathroomBloodProgressText = null;
 
-    [Header("Women's Bathroom Corpses")]
-    [SerializeField] private Image womenBathroomCorpsesTickImage = null;
-    [SerializeField] private Image womenBathroomCorpsesCrossedOutImage = null;
-    [SerializeField] private TextMeshProUGUI womenBathroomCorpsesProgressText = null;
+    [Header("Women's Bathroom Disposables")]
+    [SerializeField] private Image womenBathroomDisposablesTickImage = null;
+    [SerializeField] private Image womenBathroomDisposablesCrossedOutImage = null;
+    [SerializeField] private TextMeshProUGUI womenBathroomDisposablesProgressText = null;
 
     [Header("Women's Bathroom UV Cleanables")]
     [SerializeField] private Image womenBathroomUVCleanablesTickImage = null;
@@ -185,10 +185,10 @@ public class TabletUIManager : MonoBehaviour
     [SerializeField] private Image kitchenBloodCrossedOutImage = null;
     [SerializeField] private TextMeshProUGUI kitchenBloodProgressText = null;
 
-    [Header("Kitchen Corpses")]
-    [SerializeField] private Image kitchenCorpsesTickImage = null;
-    [SerializeField] private Image kitchenCorpsesCrossedOutImage = null;
-    [SerializeField] private TextMeshProUGUI kitchenCorpsesProgressText = null;
+    [Header("Kitchen Disposables")]
+    [SerializeField] private Image kitchenDisposablesTickImage = null;
+    [SerializeField] private Image kitchenDisposablesCrossedOutImage = null;
+    [SerializeField] private TextMeshProUGUI kitchenDisposablesProgressText = null;
 
     [Header("Kitchen UV Cleanables")]
     [SerializeField] private Image kitchenUVCleanablesTickImage = null;
@@ -236,10 +236,10 @@ public class TabletUIManager : MonoBehaviour
     [SerializeField] private Image storageBloodCrossedOutImage = null;
     [SerializeField] private TextMeshProUGUI storageBloodProgressText = null;
 
-    [Header("Storage Room Corpses")]
-    [SerializeField] private Image storageCorpsesTickImage = null;
-    [SerializeField] private Image storageCorpsesCrossedOutImage = null;
-    [SerializeField] private TextMeshProUGUI storageCorpsesProgressText = null;
+    [Header("Storage Room Disposables")]
+    [SerializeField] private Image storageDisposablesTickImage = null;
+    [SerializeField] private Image storageDisposablesCrossedOutImage = null;
+    [SerializeField] private TextMeshProUGUI storageDisposablesProgressText = null;
 
     [Header("Storage Room UV Cleanables")]
     [SerializeField] private Image storageUVCleanablesTickImage = null;
@@ -287,10 +287,10 @@ public class TabletUIManager : MonoBehaviour
     [SerializeField] private Image vipRoomBloodCrossedOutImage = null;
     [SerializeField] private TextMeshProUGUI vipRoomBloodProgressText = null;
 
-    [Header("VIP Room Corpses")]
-    [SerializeField] private Image vipRoomCorpsesTickImage = null;
-    [SerializeField] private Image vipRoomCorpsesCrossedOutImage = null;
-    [SerializeField] private TextMeshProUGUI vipRoomCorpsesProgressText = null;
+    [Header("VIP Room Disposables")]
+    [SerializeField] private Image vipRoomDisposablesTickImage = null;
+    [SerializeField] private Image vipRoomDisposablesCrossedOutImage = null;
+    [SerializeField] private TextMeshProUGUI vipRoomDisposablesProgressText = null;
 
     [Header("VIP Room UV Cleanables")]
     [SerializeField] private Image vipRoomUVCleanablesTickImage = null;
@@ -338,10 +338,10 @@ public class TabletUIManager : MonoBehaviour
     [SerializeField] private Image bettingRoomBloodCrossedOutImage = null;
     [SerializeField] private TextMeshProUGUI bettingRoomBloodProgressText = null;
 
-    [Header("Betting Room Corpses")]
-    [SerializeField] private Image bettingRoomCorpsesTickImage = null;
-    [SerializeField] private Image bettingRoomCorpsesCrossedOutImage = null;
-    [SerializeField] private TextMeshProUGUI bettingRoomCorpsesProgressText = null;
+    [Header("Betting Room Disposables")]
+    [SerializeField] private Image bettingRoomDisposablesTickImage = null;
+    [SerializeField] private Image bettingRoomDisposablesCrossedOutImage = null;
+    [SerializeField] private TextMeshProUGUI bettingRoomDisposablesProgressText = null;
 
     [Header("Betting Room UV Cleanables")]
     [SerializeField] private Image bettingRoomUVCleanablesTickImage = null;
@@ -411,7 +411,7 @@ public class TabletUIManager : MonoBehaviour
         SetImageState(barArrangablesTickImage);
         SetImageState(barBloodyObjectsTickImage);
         SetImageState(barClothesTickImage);
-        SetImageState(barCorpsesTickImage);
+        SetImageState(barDisposablesTickImage);
         SetImageState(barDocumentsTickImage);
         SetImageState(barMiscellaneousTickImage);
         SetImageState(barUVCleanablesTickImage);
@@ -423,7 +423,7 @@ public class TabletUIManager : MonoBehaviour
         SetImageState(menBathroomBloodTickImage);
         SetImageState(menBathroomBloodyObjectsTickImage);
         SetImageState(menBathroomClothesTickImage);
-        SetImageState(menBathroomCorpsesTickImage);
+        SetImageState(menBathroomDisposablesTickImage);
         SetImageState(menBathroomDocumentsTickImage);
         SetImageState(menBathroomUVCleanablesTickImage);
         SetImageState(menBathroomWeaponsTickImage);
@@ -437,14 +437,14 @@ public class TabletUIManager : MonoBehaviour
         SetImageState(womenBathroomMiscellaneousTickImage);
         SetImageState(womenBathroomWeaponsTickImage);
         SetImageState(womenBathroomUVCleanablesTickImage);
-        SetImageState(womenBathroomCorpsesTickImage);
+        SetImageState(womenBathroomDisposablesTickImage);
         #endregion
         #region KITCHEN TICK IMAGE
         SetImageState(kitchenArrangablesTickImage);
         SetImageState(kitchenBloodTickImage);
         SetImageState(kitchenBloodyObjectsTickImage);
         SetImageState(kitchenClothesTickImage);
-        SetImageState(kitchenCorpsesTickImage);
+        SetImageState(kitchenDisposablesTickImage);
         SetImageState(kitchenDocumentsTickImage);
         SetImageState(kitchenMiscellaneousTickImage);
         SetImageState(kitchenWeaponsTickImage);
@@ -455,7 +455,7 @@ public class TabletUIManager : MonoBehaviour
         SetImageState(storageBloodTickImage);
         SetImageState(storageBloodyObjectsTickImage);
         SetImageState(storageClothesTickImage);
-        SetImageState(storageCorpsesTickImage);
+        SetImageState(storageDisposablesTickImage);
         SetImageState(storageDocumentsTickImage);
         SetImageState(storageMiscellaneousTickImage);
         SetImageState(storageUVCleanablesTickImage);
@@ -466,7 +466,7 @@ public class TabletUIManager : MonoBehaviour
         SetImageState(vipRoomBloodTickImage);
         SetImageState(vipRoomBloodyObjectsTickImage);
         SetImageState(vipRoomClothesTickImage);
-        SetImageState(vipRoomCorpsesTickImage);
+        SetImageState(vipRoomDisposablesTickImage);
         SetImageState(vipRoomDocumentsTickImage);
         SetImageState(vipRoomMiscellaneousTickImage);
         SetImageState(vipRoomUVCleanablesTickImage);
@@ -479,7 +479,7 @@ public class TabletUIManager : MonoBehaviour
         SetImageState(bettingRoomArrangablesTickImage);
         SetImageState(bettingRoomBloodTickImage);
         SetImageState(bettingRoomBloodyObjectsTickImage);
-        SetImageState(bettingRoomCorpsesTickImage);
+        SetImageState(bettingRoomDisposablesTickImage);
         SetImageState(bettingRoomUVCleanablesTickImage);
         SetImageState(bettingRoomWeaponsTickImage);
         #endregion
@@ -488,7 +488,7 @@ public class TabletUIManager : MonoBehaviour
         SetImageFillValue(barBloodCrossedOutImage);
         SetImageFillValue(barBloodyObjectsCrossedOutImage);
         SetImageFillValue(barClothesCrossedOutImage);
-        SetImageFillValue(barCorpsesCrossedOutImage);
+        SetImageFillValue(barDisposableCrossedOutImage);
         SetImageFillValue(barDocumentsCrossedOutImage);
         SetImageFillValue(barMiscellaneousCrossedOutImage);
         SetImageFillValue(barUVCleanablesCrossedOutImage);
@@ -499,7 +499,7 @@ public class TabletUIManager : MonoBehaviour
         SetImageFillValue(menBathroomBloodCrossedOutImage);
         SetImageFillValue(menBathroomBloodyObjectsCrossedOutImage);
         SetImageFillValue(menBathroomClothesCrossedOutImage);
-        SetImageFillValue(menBathroomCorpsesCrossedOutImage);
+        SetImageFillValue(menBathroomDisposablesCrossedOutImage);
         SetImageFillValue(menBathroomDocumentsCrossedOutImage);
         SetImageFillValue(menBathroomMiscellaneousCrossedOutImage);
         SetImageFillValue(menBathroomUVCleanablesCrossedOutImage);
@@ -510,7 +510,7 @@ public class TabletUIManager : MonoBehaviour
         SetImageFillValue(womenBathroomBloodCrossedOutImage);
         SetImageFillValue(womenBathroomBloodyObjectsCrossedOutImage);
         SetImageFillValue(womenBathroomClothesCrossedOutImage);
-        SetImageFillValue(womenBathroomCorpsesCrossedOutImage);
+        SetImageFillValue(womenBathroomDisposablesCrossedOutImage);
         SetImageFillValue(womenBathroomDocumentsCrossedOutImage);
         SetImageFillValue(womenBathroomMiscellaneousCrossedOutImage);
         SetImageFillValue(womenBathroomUVCleanablesCrossedOutImage);
@@ -521,7 +521,7 @@ public class TabletUIManager : MonoBehaviour
         SetImageFillValue(kitchenBloodCrossedOutImage);
         SetImageFillValue(kitchenBloodyObjectsCrossedOutImage);
         SetImageFillValue(kitchenClothesCrossedOutImage);
-        SetImageFillValue(kitchenCorpsesCrossedOutImage);
+        SetImageFillValue(kitchenDisposablesCrossedOutImage);
         SetImageFillValue(kitchenDocumentsCrossedOutImage);
         SetImageFillValue(kitchenMiscellaneousCrossedOutImage);
         SetImageFillValue(kitchenUVCleanablesCrossedOutImage);
@@ -532,7 +532,7 @@ public class TabletUIManager : MonoBehaviour
         SetImageFillValue(storageBloodCrossedOutImage);
         SetImageFillValue(storageBloodyObjectsCrossedOutImage);
         SetImageFillValue(storageClothesCrossedOutImage);
-        SetImageFillValue(storageCorpsesCrossedOutImage);
+        SetImageFillValue(storageDisposablesCrossedOutImage);
         SetImageFillValue(storageDocumentsCrossedOutImage);
         SetImageFillValue(storageMiscellaneousCrossedOutImage);
         SetImageFillValue(storageUVCleanablesCrossedOutImage);
@@ -543,7 +543,7 @@ public class TabletUIManager : MonoBehaviour
         SetImageFillValue(vipRoomBloodCrossedOutImage);
         SetImageFillValue(vipRoomBloodyObjectsCrossedOutImage);
         SetImageFillValue(vipRoomClothesCrossedOutImage);
-        SetImageFillValue(vipRoomCorpsesCrossedOutImage);
+        SetImageFillValue(vipRoomDisposablesCrossedOutImage);
         SetImageFillValue(vipRoomDocumentsCrossedOutImage);
         SetImageFillValue(vipRoomMiscellaneousCrossedOutImage);
         SetImageFillValue(vipRoomUVCleanablesCrossedOutImage);
@@ -554,7 +554,7 @@ public class TabletUIManager : MonoBehaviour
         SetImageFillValue(bettingRoomBloodCrossedOutImage);
         SetImageFillValue(bettingRoomBloodyObjectsCrossedOutImage);
         SetImageFillValue(bettingRoomClothesCrossedOutImage);
-        SetImageFillValue(bettingRoomCorpsesCrossedOutImage);
+        SetImageFillValue(bettingRoomDisposablesCrossedOutImage);
         SetImageFillValue(bettingRoomDocumentsCrossedOutImage);
         SetImageFillValue(bettingRoomMiscellaneousCrossedOutImage);
         SetImageFillValue(bettingRoomUVCleanablesCrossedOutImage);
@@ -575,13 +575,13 @@ public class TabletUIManager : MonoBehaviour
 
         foreach (var zone in gameStateManager.Zones)
         {
-            if (zone.zoneName == barName) UpdateText(barCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
-            else if (zone.zoneName == menBathroomName) UpdateText(menBathroomCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
-            else if (zone.zoneName == womenBathroomName) UpdateText(womenBathroomCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
-            else if (zone.zoneName == kitchenName) UpdateText(kitchenCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
-            else if (zone.zoneName == storageRoomName) UpdateText(storageCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
-            else if (zone.zoneName == vipRoomName) UpdateText(vipRoomCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
-            else if (zone.zoneName == bettingRoomName) UpdateText(bettingRoomCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
+            if (zone.zoneName == barName) UpdateText(barDisposableProgressText, zone.disposablesCurrentAmmount, zone.disposables.Count);
+            else if (zone.zoneName == menBathroomName) UpdateText(menBathroomDisposablesProgressText, zone.disposablesCurrentAmmount, zone.disposables.Count);
+            else if (zone.zoneName == womenBathroomName) UpdateText(womenBathroomDisposablesProgressText, zone.disposablesCurrentAmmount, zone.disposables.Count);
+            else if (zone.zoneName == kitchenName) UpdateText(kitchenDisposablesProgressText, zone.disposablesCurrentAmmount, zone.disposables.Count);
+            else if (zone.zoneName == storageRoomName) UpdateText(storageDisposablesProgressText, zone.disposablesCurrentAmmount, zone.disposables.Count);
+            else if (zone.zoneName == vipRoomName) UpdateText(vipRoomDisposablesProgressText, zone.disposablesCurrentAmmount, zone.disposables.Count);
+            else if (zone.zoneName == bettingRoomName) UpdateText(bettingRoomDisposablesProgressText, zone.disposablesCurrentAmmount, zone.disposables.Count);
         }
 
         foreach (var zone in gameStateManager.Zones)
@@ -778,64 +778,64 @@ public class TabletUIManager : MonoBehaviour
         }
     }
 
-    public void UpdateCorpsesText(Zone zone)
+    public void UpdateDisposablesText(Zone zone)
     {
         switch (zone.zoneName)
         {
             case barName:
-                UpdateText(barCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
-                if (zone.corpsesCurrentAmmount == zone.corpses.Count)
+                UpdateText(barDisposableProgressText, zone.disposablesCurrentAmmount, zone.disposables.Count);
+                if (zone.disposablesCurrentAmmount == zone.disposables.Count)
                 {
-                    SetImageState(barCorpsesTickImage, true);
-                    StartFillingImage(barCorpsesCrossedOutImage);
+                    SetImageState(barDisposablesTickImage, true);
+                    StartFillingImage(barDisposableCrossedOutImage);
                 }
                 break;
             case menBathroomName:
-                UpdateText(menBathroomCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
-                if (zone.corpsesCurrentAmmount == zone.corpses.Count)
+                UpdateText(menBathroomDisposablesProgressText, zone.disposablesCurrentAmmount, zone.disposables.Count);
+                if (zone.disposablesCurrentAmmount == zone.disposables.Count)
                 {
-                    SetImageState(menBathroomCorpsesTickImage, true);
-                    StartFillingImage(menBathroomCorpsesCrossedOutImage);
+                    SetImageState(menBathroomDisposablesTickImage, true);
+                    StartFillingImage(menBathroomDisposablesCrossedOutImage);
                 }
                 break;
             case womenBathroomName:
-                UpdateText(womenBathroomCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
-                if (zone.corpsesCurrentAmmount == zone.corpses.Count)
+                UpdateText(womenBathroomDisposablesProgressText, zone.disposablesCurrentAmmount, zone.disposables.Count);
+                if (zone.disposablesCurrentAmmount == zone.disposables.Count)
                 {
-                    SetImageState(womenBathroomCorpsesTickImage, true);
-                    StartFillingImage(womenBathroomCorpsesCrossedOutImage);
+                    SetImageState(womenBathroomDisposablesTickImage, true);
+                    StartFillingImage(womenBathroomDisposablesCrossedOutImage);
                 }
                 break;
             case kitchenName:
-                UpdateText(kitchenCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
-                if (zone.corpsesCurrentAmmount == zone.corpses.Count)
+                UpdateText(kitchenDisposablesProgressText, zone.disposablesCurrentAmmount, zone.disposables.Count);
+                if (zone.disposablesCurrentAmmount == zone.disposables.Count)
                 {
-                    SetImageState(kitchenCorpsesTickImage, true);
-                    StartFillingImage(kitchenCorpsesCrossedOutImage);
+                    SetImageState(kitchenDisposablesTickImage, true);
+                    StartFillingImage(kitchenDisposablesCrossedOutImage);
                 }
                 break;
             case storageRoomName:
-                UpdateText(storageCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
-                if (zone.corpsesCurrentAmmount == zone.corpses.Count)
+                UpdateText(storageDisposablesProgressText, zone.disposablesCurrentAmmount, zone.disposables.Count);
+                if (zone.disposablesCurrentAmmount == zone.disposables.Count)
                 {
-                    SetImageState(storageCorpsesTickImage, true);
-                    StartFillingImage(storageCorpsesCrossedOutImage);
+                    SetImageState(storageDisposablesTickImage, true);
+                    StartFillingImage(storageDisposablesCrossedOutImage);
                 }
                 break;
             case vipRoomName:
-                UpdateText(vipRoomCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
-                if (zone.corpsesCurrentAmmount == zone.corpses.Count)
+                UpdateText(vipRoomDisposablesProgressText, zone.disposablesCurrentAmmount, zone.disposables.Count);
+                if (zone.disposablesCurrentAmmount == zone.disposables.Count)
                 {
-                    SetImageState(vipRoomCorpsesTickImage, true);
-                    StartFillingImage(vipRoomCorpsesCrossedOutImage);
+                    SetImageState(vipRoomDisposablesTickImage, true);
+                    StartFillingImage(vipRoomDisposablesCrossedOutImage);
                 }
                 break;
             case bettingRoomName:
-                UpdateText(bettingRoomCorpsesProgressText, zone.corpsesCurrentAmmount, zone.corpses.Count);
-                if (zone.corpsesCurrentAmmount == zone.corpses.Count)
+                UpdateText(bettingRoomDisposablesProgressText, zone.disposablesCurrentAmmount, zone.disposables.Count);
+                if (zone.disposablesCurrentAmmount == zone.disposables.Count)
                 {
-                    SetImageState(bettingRoomCorpsesTickImage, true);
-                    StartFillingImage(bettingRoomCorpsesCrossedOutImage);
+                    SetImageState(bettingRoomDisposablesTickImage, true);
+                    StartFillingImage(bettingRoomDisposablesCrossedOutImage);
                 }
                 break;
             default:
@@ -1173,56 +1173,56 @@ public class TabletUIManager : MonoBehaviour
         switch (zone.zoneName)
         {
             case barName:
-                UpdateText(barClothesProgressText, zone.clothesCurrentAmmount, zone.corpses.Count);
-                if (zone.clothesCurrentAmmount == zone.corpses.Count)
+                UpdateText(barClothesProgressText, zone.clothesCurrentAmmount, zone.disposables.Count);
+                if (zone.clothesCurrentAmmount == zone.disposables.Count)
                 {
                     SetImageState(barClothesTickImage, true);
                     StartFillingImage(barClothesCrossedOutImage);
                 }
                 break;
             case menBathroomName:
-                UpdateText(menBathroomClothesProgressText, zone.clothesCurrentAmmount, zone.corpses.Count);
-                if (zone.clothesCurrentAmmount == zone.corpses.Count)
+                UpdateText(menBathroomClothesProgressText, zone.clothesCurrentAmmount, zone.disposables.Count);
+                if (zone.clothesCurrentAmmount == zone.disposables.Count)
                 {
                     SetImageState(menBathroomClothesTickImage, true);
                     StartFillingImage(menBathroomClothesCrossedOutImage);
                 }
                 break;
             case womenBathroomName:
-                UpdateText(womenBathroomClothesProgressText, zone.clothesCurrentAmmount, zone.corpses.Count);
-                if (zone.clothesCurrentAmmount == zone.corpses.Count)
+                UpdateText(womenBathroomClothesProgressText, zone.clothesCurrentAmmount, zone.disposables.Count);
+                if (zone.clothesCurrentAmmount == zone.disposables.Count)
                 {
                     SetImageState(womenBathroomClothesTickImage, true);
                     StartFillingImage(womenBathroomClothesCrossedOutImage);
                 }
                 break;
             case kitchenName:
-                UpdateText(kitchenClothesProgressText, zone.clothesCurrentAmmount, zone.corpses.Count);
-                if (zone.clothesCurrentAmmount == zone.corpses.Count)
+                UpdateText(kitchenClothesProgressText, zone.clothesCurrentAmmount, zone.disposables.Count);
+                if (zone.clothesCurrentAmmount == zone.disposables.Count)
                 {
                     SetImageState(kitchenClothesTickImage, true);
                     StartFillingImage(kitchenClothesCrossedOutImage);
                 }
                 break;
             case storageRoomName:
-                UpdateText(storageClothesProgressText, zone.clothesCurrentAmmount, zone.corpses.Count);
-                if (zone.clothesCurrentAmmount == zone.corpses.Count)
+                UpdateText(storageClothesProgressText, zone.clothesCurrentAmmount, zone.disposables.Count);
+                if (zone.clothesCurrentAmmount == zone.disposables.Count)
                 {
                     SetImageState(storageClothesTickImage, true);
                     StartFillingImage(storageClothesCrossedOutImage);
                 }
                 break;
             case vipRoomName:
-                UpdateText(vipRoomClothesProgressText, zone.clothesCurrentAmmount, zone.corpses.Count);
-                if (zone.clothesCurrentAmmount == zone.corpses.Count)
+                UpdateText(vipRoomClothesProgressText, zone.clothesCurrentAmmount, zone.disposables.Count);
+                if (zone.clothesCurrentAmmount == zone.disposables.Count)
                 {
                     SetImageState(vipRoomClothesTickImage, true);
                     StartFillingImage(vipRoomClothesCrossedOutImage);
                 }
                 break;
             case bettingRoomName:
-                UpdateText(bettingRoomClothesProgressText, zone.clothesCurrentAmmount, zone.corpses.Count);
-                if (zone.clothesCurrentAmmount == zone.corpses.Count)
+                UpdateText(bettingRoomClothesProgressText, zone.clothesCurrentAmmount, zone.disposables.Count);
+                if (zone.clothesCurrentAmmount == zone.disposables.Count)
                 {
                     SetImageState(bettingRoomClothesTickImage, true);
                     StartFillingImage(bettingRoomClothesCrossedOutImage);
