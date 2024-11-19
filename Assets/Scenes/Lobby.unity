@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 33552}
   - component: {fileID: 33551}
   - component: {fileID: 33550}
-  - component: {fileID: 33549}
   - component: {fileID: 33548}
   - component: {fileID: 33553}
   m_Layer: 0
@@ -155,7 +154,7 @@ Transform:
   m_GameObject: {fileID: 33546}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.28134075, z: -0, w: 0.95960796}
-  m_LocalPosition: {x: -1.1359, y: -0.1307, z: 2.7879}
+  m_LocalPosition: {x: -1.584, y: -0.071, z: 2.828}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -188,30 +187,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &33549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lerpSpeed: 10
-  rotationSpeed: 10
-  throwingForce: 10
-  breakForceThreshold: 10
-  collisionCooldown: 0.1
-  fallHeightThreshold: 5
-  isObjectMulitple: 0
-  hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: Tin_Collision
-  isObjectSanityModifier: 0
-  isObjectBreakable: 0
 --- !u!64 &33550
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1389,8 +1364,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 13.818362, y: 6.377329, z: 4.649981}
-  m_Center: {x: -1.2239993, y: -0.92025155, z: 1.4634143}
+  m_Size: {x: 3.576125, y: 5.0669312, z: 4.649981}
+  m_Center: {x: 3.8971007, y: -1.5754505, z: 1.4634131}
 --- !u!1 &44227108
 GameObject:
   m_ObjectHideFlags: 0
@@ -6731,6 +6706,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 43459317}
+  - {fileID: 1451741977}
   - {fileID: 1223893899}
   m_Father: {fileID: 3075038666180725595}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9552,7 +9528,6 @@ GameObject:
   - component: {fileID: 305893182}
   - component: {fileID: 305893181}
   - component: {fileID: 305893180}
-  - component: {fileID: 305893179}
   - component: {fileID: 305893178}
   - component: {fileID: 305893183}
   m_Layer: 0
@@ -9604,30 +9579,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &305893179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 305893176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lerpSpeed: 10
-  rotationSpeed: 10
-  throwingForce: 10
-  breakForceThreshold: 10
-  collisionCooldown: 0.1
-  fallHeightThreshold: 5
-  isObjectMulitple: 0
-  hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: Heavy_Tool_Collision
-  isObjectSanityModifier: 0
-  isObjectBreakable: 0
 --- !u!64 &305893180
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15478,7 +15429,6 @@ GameObject:
   - component: {fileID: 520406305}
   - component: {fileID: 520406304}
   - component: {fileID: 520406303}
-  - component: {fileID: 520406302}
   - component: {fileID: 520406301}
   - component: {fileID: 520406306}
   m_Layer: 0
@@ -15497,7 +15447,7 @@ Transform:
   m_GameObject: {fileID: 520406299}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.6288167, z: -0, w: 0.7775536}
-  m_LocalPosition: {x: -1.575, y: -0.1307, z: 2.293}
+  m_LocalPosition: {x: -1.601, y: -0.071, z: 2.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15530,30 +15480,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &520406302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 520406299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lerpSpeed: 10
-  rotationSpeed: 10
-  throwingForce: 10
-  breakForceThreshold: 10
-  collisionCooldown: 0.1
-  fallHeightThreshold: 5
-  isObjectMulitple: 0
-  hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: Tin_Collision
-  isObjectSanityModifier: 0
-  isObjectBreakable: 0
 --- !u!64 &520406303
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18586,7 +18512,6 @@ GameObject:
   - component: {fileID: 604130338}
   - component: {fileID: 604130337}
   - component: {fileID: 604130336}
-  - component: {fileID: 604130335}
   - component: {fileID: 604130334}
   - component: {fileID: 604130339}
   m_Layer: 0
@@ -18605,7 +18530,7 @@ Transform:
   m_GameObject: {fileID: 604130332}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.25621215, z: -0, w: 0.96662056}
-  m_LocalPosition: {x: -1.3176, y: 0.1206, z: 2.6448}
+  m_LocalPosition: {x: -1.4198, y: 0.1736, z: 2.6921}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18638,30 +18563,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &604130335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 604130332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lerpSpeed: 10
-  rotationSpeed: 10
-  throwingForce: 10
-  breakForceThreshold: 10
-  collisionCooldown: 0.1
-  fallHeightThreshold: 5
-  isObjectMulitple: 0
-  hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: Heavy_Tool_Collision
-  isObjectSanityModifier: 0
-  isObjectBreakable: 0
 --- !u!64 &604130336
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26192,7 +26093,6 @@ GameObject:
   - component: {fileID: 851816021}
   - component: {fileID: 851816020}
   - component: {fileID: 851816019}
-  - component: {fileID: 851816018}
   - component: {fileID: 851816017}
   - component: {fileID: 851816022}
   m_Layer: 0
@@ -26244,30 +26144,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &851816018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 851816015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lerpSpeed: 10
-  rotationSpeed: 10
-  throwingForce: 10
-  breakForceThreshold: 10
-  collisionCooldown: 0.1
-  fallHeightThreshold: 5
-  isObjectMulitple: 0
-  hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: Medium_Metal_Tool_Collision
-  isObjectSanityModifier: 0
-  isObjectBreakable: 0
 --- !u!64 &851816019
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31372,7 +31248,6 @@ GameObject:
   - component: {fileID: 992619238}
   - component: {fileID: 992619237}
   - component: {fileID: 992619236}
-  - component: {fileID: 992619235}
   - component: {fileID: 992619234}
   - component: {fileID: 992619239}
   m_Layer: 0
@@ -31424,30 +31299,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &992619235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992619232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lerpSpeed: 10
-  rotationSpeed: 10
-  throwingForce: 10
-  breakForceThreshold: 10
-  collisionCooldown: 0.1
-  fallHeightThreshold: 5
-  isObjectMulitple: 0
-  hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: Medium_Metal_Tool_Collision
-  isObjectSanityModifier: 0
-  isObjectBreakable: 0
 --- !u!64 &992619236
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -37957,7 +37808,6 @@ GameObject:
   - component: {fileID: 1158706494}
   - component: {fileID: 1158706493}
   - component: {fileID: 1158706492}
-  - component: {fileID: 1158706491}
   - component: {fileID: 1158706490}
   - component: {fileID: 1158706495}
   m_Layer: 0
@@ -38009,30 +37859,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1158706491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1158706488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lerpSpeed: 10
-  rotationSpeed: 10
-  throwingForce: 10
-  breakForceThreshold: 10
-  collisionCooldown: 0.1
-  fallHeightThreshold: 5
-  isObjectMulitple: 0
-  hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: Light_Metal_Tool_Collision
-  isObjectSanityModifier: 0
-  isObjectBreakable: 0
 --- !u!64 &1158706492
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -38804,7 +38630,6 @@ GameObject:
   - component: {fileID: 1185132599}
   - component: {fileID: 1185132598}
   - component: {fileID: 1185132597}
-  - component: {fileID: 1185132596}
   - component: {fileID: 1185132595}
   - component: {fileID: 1185132600}
   m_Layer: 0
@@ -38856,30 +38681,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1185132596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1185132593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lerpSpeed: 10
-  rotationSpeed: 10
-  throwingForce: 10
-  breakForceThreshold: 10
-  collisionCooldown: 0.1
-  fallHeightThreshold: 5
-  isObjectMulitple: 0
-  hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: Heavy_Tool_Collision
-  isObjectSanityModifier: 0
-  isObjectBreakable: 0
 --- !u!64 &1185132597
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -42205,7 +42006,6 @@ GameObject:
   - component: {fileID: 1279188505}
   - component: {fileID: 1279188504}
   - component: {fileID: 1279188503}
-  - component: {fileID: 1279188502}
   - component: {fileID: 1279188501}
   - component: {fileID: 1279188506}
   m_Layer: 0
@@ -42257,30 +42057,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1279188502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1279188499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lerpSpeed: 10
-  rotationSpeed: 10
-  throwingForce: 10
-  breakForceThreshold: 10
-  collisionCooldown: 0.1
-  fallHeightThreshold: 5
-  isObjectMulitple: 0
-  hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: Light_Metal_Tool_Collision
-  isObjectSanityModifier: 0
-  isObjectBreakable: 0
 --- !u!64 &1279188503
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -46661,7 +46437,6 @@ GameObject:
   - component: {fileID: 1422672866}
   - component: {fileID: 1422672865}
   - component: {fileID: 1422672864}
-  - component: {fileID: 1422672863}
   - component: {fileID: 1422672862}
   - component: {fileID: 1422672867}
   m_Layer: 0
@@ -46713,30 +46488,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1422672863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422672860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lerpSpeed: 10
-  rotationSpeed: 10
-  throwingForce: 10
-  breakForceThreshold: 10
-  collisionCooldown: 0.1
-  fallHeightThreshold: 5
-  isObjectMulitple: 0
-  hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: Light_Metal_Tool_Collision
-  isObjectSanityModifier: 0
-  isObjectBreakable: 0
 --- !u!64 &1422672864
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47045,6 +46796,59 @@ MonoBehaviour:
   - Credits
   - Settings
   - Exit
+--- !u!1 &1451741976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1451741977}
+  - component: {fileID: 1451741978}
+  m_Layer: 0
+  m_Name: Collider 1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1451741977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451741976}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.23193419, z: -0, w: 0.9727315}
+  m_LocalPosition: {x: 60.9, y: -195, z: 451.9}
+  m_LocalScale: {x: 20.494202, y: 20.494202, z: 20.494202}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 217467596}
+  m_LocalEulerAnglesHint: {x: 0, y: 26.822, z: 0}
+--- !u!65 &1451741978
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451741976}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.576125, y: 5.0669312, z: 4.649981}
+  m_Center: {x: 3.8971007, y: -1.5754505, z: 1.4634131}
 --- !u!1 &1458770051
 GameObject:
   m_ObjectHideFlags: 0
@@ -51628,7 +51432,6 @@ GameObject:
   - component: {fileID: 1616067817}
   - component: {fileID: 1616067816}
   - component: {fileID: 1616067815}
-  - component: {fileID: 1616067814}
   - component: {fileID: 1616067813}
   - component: {fileID: 1616067818}
   m_Layer: 0
@@ -51646,13 +51449,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616067811}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.9980475, z: -0, w: -0.06245984}
-  m_LocalPosition: {x: -1.6962, y: 0.373, z: 2.3168}
+  m_LocalRotation: {x: -0, y: -0.96302366, z: -0, w: -0.26941693}
+  m_LocalPosition: {x: -1.6962, y: 0.4168, z: 2.3168}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1365014009}
-  m_LocalEulerAnglesHint: {x: 0, y: -187.162, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -211.259, z: 0}
 --- !u!54 &1616067813
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -51680,30 +51483,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1616067814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1616067811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lerpSpeed: 10
-  rotationSpeed: 10
-  throwingForce: 10
-  breakForceThreshold: 10
-  collisionCooldown: 0.1
-  fallHeightThreshold: 5
-  isObjectMulitple: 0
-  hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: Heavy_Tool_Collision
-  isObjectSanityModifier: 0
-  isObjectBreakable: 0
 --- !u!64 &1616067815
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -57298,8 +57077,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1792020640}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.006, y: -0.474, z: -3.911}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -5.55, y: -0.474, z: -2.19}
   m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -57309,7 +57088,7 @@ Transform:
   - {fileID: 754706325}
   - {fileID: 795561933}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &1792020651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57669,7 +57448,6 @@ GameObject:
   - component: {fileID: 1802902974}
   - component: {fileID: 1802902973}
   - component: {fileID: 1802902972}
-  - component: {fileID: 1802902971}
   - component: {fileID: 1802902970}
   - component: {fileID: 1802902975}
   m_Layer: 0
@@ -57688,7 +57466,7 @@ Transform:
   m_GameObject: {fileID: 1802902968}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.27871948, z: -0, w: 0.96037257}
-  m_LocalPosition: {x: -1.48, y: -0.1307, z: 2.635}
+  m_LocalPosition: {x: -1.506, y: -0.071, z: 2.652}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -57721,30 +57499,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1802902971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1802902968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lerpSpeed: 10
-  rotationSpeed: 10
-  throwingForce: 10
-  breakForceThreshold: 10
-  collisionCooldown: 0.1
-  fallHeightThreshold: 5
-  isObjectMulitple: 0
-  hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: Tin_Collision
-  isObjectSanityModifier: 0
-  isObjectBreakable: 0
 --- !u!64 &1802902972
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -62058,7 +61812,6 @@ GameObject:
   - component: {fileID: 1934145794}
   - component: {fileID: 1934145793}
   - component: {fileID: 1934145792}
-  - component: {fileID: 1934145791}
   - component: {fileID: 1934145790}
   - component: {fileID: 1934145795}
   m_Layer: 0
@@ -62110,30 +61863,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1934145791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1934145788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lerpSpeed: 10
-  rotationSpeed: 10
-  throwingForce: 10
-  breakForceThreshold: 10
-  collisionCooldown: 0.1
-  fallHeightThreshold: 5
-  isObjectMulitple: 0
-  hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: Medium_Metal_Tool_Collision
-  isObjectSanityModifier: 0
-  isObjectBreakable: 0
 --- !u!64 &1934145792
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -66289,7 +66018,6 @@ GameObject:
   - component: {fileID: 2089759535}
   - component: {fileID: 2089759534}
   - component: {fileID: 2089759533}
-  - component: {fileID: 2089759532}
   - component: {fileID: 2089759537}
   m_Layer: 0
   m_Name: FireExtinguisher (1)
@@ -66313,30 +66041,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1134332412}
   m_LocalEulerAnglesHint: {x: 0, y: -160.864, z: 0}
---- !u!114 &2089759532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2089759530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lerpSpeed: 10
-  rotationSpeed: 10
-  throwingForce: 10
-  breakForceThreshold: 10
-  collisionCooldown: 0.1
-  fallHeightThreshold: 5
-  isObjectMulitple: 0
-  hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: Tin_Collision
-  isObjectSanityModifier: 0
-  isObjectBreakable: 0
 --- !u!54 &2089759533
 Rigidbody:
   m_ObjectHideFlags: 0
