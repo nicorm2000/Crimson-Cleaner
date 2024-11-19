@@ -33,6 +33,14 @@ public class CameraInteraction : MonoBehaviour
 
     private void DetectInteractableObject()
     {
+        if (currentPickableObject != null && currentPickableObject.IsObjectPickedUp)
+        {
+            var activeSprites = new Sprite[interactionImages.Length];
+            AppendPickUpSprites(currentPickableObject, ref activeSprites);
+            UpdateUI(activeSprites);
+            return;
+        }
+
         Ray ray = new(mainCamera.transform.position, mainCamera.transform.forward);
 
         if (Physics.Raycast(ray, out RaycastHit hit, cleaningManager.GetInteractionDistance()))
@@ -167,18 +175,10 @@ public class CameraInteraction : MonoBehaviour
             //    lastRetrievableObjectHighlighted.gameObject.layer = LayerMask.NameToLayer(defaultLayerName);
 
             UpdateUI(activeSprites);
-        }
 
-        if (currentPickableObject != null && currentPickableObject.IsObjectPickedUp)
-        {
-            var activeSprites = new Sprite[interactionImages.Length];
-            AppendPickUpSprites(currentPickableObject, ref activeSprites);
-            UpdateUI(activeSprites);
+            return;
         }
-        else
-        {
-            SetImageState(false);
-        }
+        SetImageState(false);
     }
 
     private void SetImageState(bool state)
