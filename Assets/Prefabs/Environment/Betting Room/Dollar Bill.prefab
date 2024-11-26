@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5873890570715915575}
   - component: {fileID: 9092755541566651353}
   - component: {fileID: 2881854622790848023}
-  - component: {fileID: -6495952505655928757}
   - component: {fileID: -4302774684423984117}
   - component: {fileID: 8556687869859986385}
+  - component: {fileID: 4189207949123939334}
   - component: {fileID: 1694292313974719324}
   m_Layer: 0
   m_Name: Dollar Bill
@@ -87,30 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-6495952505655928757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8681390857896420991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lerpSpeed: 10
-  rotationSpeed: 10
-  throwingForce: 10
-  breakForceThreshold: 10
-  collisionCooldown: 0.1
-  fallHeightThreshold: 5
-  isObjectMulitple: 0
-  hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: 
-  isObjectSanityModifier: 0
-  isObjectBreakable: 0
 --- !u!65 &-4302774684423984117
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -159,6 +135,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &4189207949123939334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8681390857896420991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d039f0ad5dbafd4781d79f8b3f88e10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  environmentRaycaster: {fileID: 0}
+  audioManager: {fileID: 0}
+  soundEvent: Money
+  soundEvent2: 
+  stealableManager: {fileID: 0}
+  moneyAmount: 100
 --- !u!114 &1694292313974719324
 MonoBehaviour:
   m_ObjectHideFlags: 0
