@@ -64,6 +64,8 @@ public class ToolAnimatorController : MonoBehaviour
 
     [SerializeField] private List<string> particularActions = new List<string>();
 
+    private Coroutine triggerActionCoroutine;
+
     private void Awake()
     {
         InitializeTransitionHashes();
@@ -134,7 +136,7 @@ public class ToolAnimatorController : MonoBehaviour
         {
             animator.SetBool(transitionHash, true);
             StartCoroutine(ResetTransition(transitionHash));
-            StartCoroutine(WaitForToolSwitchEnd(transitionHash));
+            StartCoroutine(WaitForToolSwitchEnd());
         }
     }
 
@@ -146,15 +148,15 @@ public class ToolAnimatorController : MonoBehaviour
         }
     }
 
-    public void TriggerParticularAction(string actionName)
+    public void TriggerParticularAction(string triggerName)
     {
         if (animator)
         {
-            animator.SetTrigger(actionName);
+            animator.SetTrigger(triggerName);
         }
     }
 
-    private IEnumerator WaitForToolSwitchEnd(int transitionHash)
+    private IEnumerator WaitForToolSwitchEnd()
     {
         canTriggerAction = false;
 
@@ -168,6 +170,24 @@ public class ToolAnimatorController : MonoBehaviour
         yield return new WaitForSeconds(2f);
         animator.SetBool(transitionHash, false);
     }
+
+    public void TriggerActionCoroutine(float animationDuration)
+    {
+        if (triggerActionCoroutine != null)
+        {
+            StopCoroutine(triggerActionCoroutine);
+        }
+        triggerActionCoroutine = StartCoroutine(ActionCoroutine(animationDuration));
+    }
+
+    private IEnumerator ActionCoroutine(float animationDuration)
+    {
+        canTriggerAction = false;
+        yield return new WaitForSeconds(animationDuration);
+        canTriggerAction = true;
+    }
+
+    public Animator GetAnimator() => animator;
 
     public string GetCleaningName() => cleaning;
     public string GetBucketName() => bucket;

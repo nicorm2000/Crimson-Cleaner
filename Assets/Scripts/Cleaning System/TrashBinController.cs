@@ -16,6 +16,10 @@ public class TrashBinController : MonoBehaviour
     [Header("New bag Config")]
     [SerializeField] private GameObject bagPrefab;
     [SerializeField] private Transform newBagTransform;
+    [Header("Animations")]
+    [SerializeField] private float binCleanAnimDuration;
+    [SerializeField] private float binRemoveAnimDuration;
+
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private string pickUpTrashEvent;
@@ -78,7 +82,6 @@ public class TrashBinController : MonoBehaviour
                     counter = 0;
                     isBagDispatched = false;
 
-                    cleaningManager.GetToolSelector().toolAnimatorController.TriggerParticularAction(cleaningManager.GetToolSelector().toolAnimatorController.GetBinCleanName());
                     StartCoroutine(RemoveAnimationCoroutine());
                 }
                 else
@@ -87,10 +90,13 @@ public class TrashBinController : MonoBehaviour
                     if (audioManager != null && pickUpTrashEvent != null)
                         audioManager.PlaySound(pickUpTrashEvent);
 
-                    cleaningManager.GetToolSelector().toolAnimatorController.TriggerParticularAction(cleaningManager.GetToolSelector().toolAnimatorController.GetBinCleanName());
+
                     //if (cleaningManager.GetPickUpTrashEvent() != null)
                     //    cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetPickUpTrashEvent());
                 }
+
+                cleaningManager.GetToolSelector().toolAnimatorController.TriggerParticularAction(cleaningManager.GetToolSelector().toolAnimatorController.GetBinCleanName());
+                cleaningManager.GetToolSelector().toolAnimatorController.TriggerActionCoroutine(binCleanAnimDuration);
             }
         }
     }
@@ -110,7 +116,7 @@ public class TrashBinController : MonoBehaviour
 
 
             cleaningManager.GetToolSelector().toolAnimatorController.TriggerParticularAction(cleaningManager.GetToolSelector().toolAnimatorController.GetBinRemoveName());
-
+            cleaningManager.GetToolSelector().toolAnimatorController.TriggerActionCoroutine(binRemoveAnimDuration);
             StartCoroutine(InstantiateBagCoroutin());
         }
     }
