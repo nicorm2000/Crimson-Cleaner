@@ -8,6 +8,7 @@ public class SnappableObject : MonoBehaviour
     [SerializeField] private Material completeSnapMaterial;
     [SerializeField] private Material[] completeSnapMaterials;
     [SerializeField] private SnapPoint snapPoint;
+    [SerializeField] private PickUpDrop pickUpDrop;
     [SerializeField] private float distance = 0.2f;
     [SerializeField] private float angle = 10f;
     [SerializeField] private float completionShaderDuration = 1.5f;
@@ -45,11 +46,14 @@ public class SnappableObject : MonoBehaviour
 
     void Update()
     {
-        if (!isObjectSnapped && isObjectSnappable)
+        if (!isObjectSnapped && isObjectSnappable && pickUpDrop.GetObjectGrabbable() != null)
         {
-            if (IsNearSnapPoint())
+            if (pickUpDrop.GetObjectGrabbable() == objectGrabbable)
             {
-                 SnapObject();
+                if (IsNearSnapPoint())
+                {
+                    SnapObject();
+                }
             }
         }
     }
