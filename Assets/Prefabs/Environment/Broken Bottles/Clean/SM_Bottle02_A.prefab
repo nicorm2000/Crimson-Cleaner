@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d7957ca10773abb4d995da53df45d8db, type: 2}
+  - {fileID: 2100000, guid: 3cdb6001d02385a489147d32d488250e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -154,9 +154,11 @@ MonoBehaviour:
   breakForceThreshold: 10
   collisionCooldown: 0.1
   fallHeightThreshold: 1
+  isObjectMulitple: 0
   hologramObject: {fileID: 0}
   audioManager: {fileID: 0}
   breakBottleEvent: Bottle_Breaking
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!114 &4313016346784655460
 MonoBehaviour:
