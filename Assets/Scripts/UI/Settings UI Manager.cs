@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,7 @@ public class SettingsUIManager : MonoBehaviour
     [SerializeField] private Slider musicVolumeSlider = null;
     [SerializeField] private Button sfxStateButton = null;
     [SerializeField] private Slider sfxVolumeSlider = null;
+    [SerializeField] private TextMeshProUGUI sfxCrossText;
 
     [Header("Controls Tab")]
     [SerializeField] private GameObject controlsTab = null;
@@ -37,7 +39,7 @@ public class SettingsUIManager : MonoBehaviour
 
         audioBackToSettingsButton.onClick.AddListener(() => { OpenTab(audioTab, false); });
         //musicStateButton.onClick.AddListener(() => { audioManager.PlaySound(clickEvent); });
-        sfxStateButton.onClick.AddListener(() => { audioManager.PlaySound(clickEvent); audioManager.ToggleMute(); });
+        sfxStateButton.onClick.AddListener(() => {  audioManager.PlaySound(clickEvent); audioManager.ToggleMute(); ToggleSFXCrossText(); });
 
         controlsBackToSettingsButton.onClick.AddListener(() => { OpenTab(controlsTab, false); });
 
@@ -50,6 +52,7 @@ public class SettingsUIManager : MonoBehaviour
         mouseSensitivitySlider.value = SensitivityToSliderValue(sensitivitySettings.sensitivity);
 
         mouseSensitivitySlider.onValueChanged.AddListener(OnSensitivityChanged);
+        ToggleSFXCrossText();
     }
 
     private void OpenTab(GameObject go, bool state)
@@ -71,6 +74,11 @@ public class SettingsUIManager : MonoBehaviour
     private float SensitivityToSliderValue(float sensitivity)
     {
         return Mathf.Log(sensitivity + 1f) / alpha;
+    }
+
+    private void ToggleSFXCrossText()
+    {
+        sfxCrossText.text = AudioManager.muteSFX ? "" : "X";
     }
 
     private void OnDestroy()

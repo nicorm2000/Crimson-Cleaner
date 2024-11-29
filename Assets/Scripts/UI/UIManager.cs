@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -39,6 +40,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Slider musicVolumeSlider = null;
     [SerializeField] private Button sfxStateButton = null;
     [SerializeField] private Slider sfxVolumeSlider = null;
+    [SerializeField] private TextMeshProUGUI sfxCrossText;
 
     [Header("Controls Tab")]
     [SerializeField] private GameObject controlsTabPanel = null;
@@ -81,7 +83,7 @@ public class UIManager : MonoBehaviour
 
         //Audio
         musicStateButton.onClick.AddListener(() => { });
-        sfxStateButton.onClick.AddListener(() => { audioManager.ToggleMute(); });
+        sfxStateButton.onClick.AddListener(() => {  audioManager.ToggleMute(); ToggleSFXCrossText(); });
 
         //Controls
         mouseSensitivitySlider.minValue = 0f;
@@ -93,6 +95,7 @@ public class UIManager : MonoBehaviour
 
         //Tutorial
         tutorialImage.SetActive(false);
+        ToggleSFXCrossText();
     }
 
     private void OnEnable()
@@ -171,6 +174,11 @@ public class UIManager : MonoBehaviour
     private void TriggerDeInit()
     {
         gameStateManager.TransitionToState("DeInit");
+    }
+
+    private void ToggleSFXCrossText()
+    {
+        sfxCrossText.text = AudioManager.muteSFX ? "" : "X";
     }
 
     private void OnDestroy()
