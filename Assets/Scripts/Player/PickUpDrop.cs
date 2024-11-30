@@ -6,9 +6,9 @@ public class PickUpDrop : MonoBehaviour
     [Header("Config")]
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private PlayerController playerController;
+    [SerializeField] private SanityManager sanityManager;
     [SerializeField] private Transform mainCamera;
     [SerializeField] private Transform objectGrabPointTransform;
-    [SerializeField] private LayerMask pickupLayerMask;
     [SerializeField] private float maxThrowingForce = 20f;
     [SerializeField] private float forceChargeRateThrow = 5f;
     [SerializeField] private InputManager inputManager;
@@ -26,7 +26,8 @@ public class PickUpDrop : MonoBehaviour
         inputManager.PickUpEvent += PickUpAndDropObject;
         inputManager.ThrowStartEvent += StartChargingThrow;
         inputManager.ThrowEndEvent += ThrowObject;
-        cleaningManager.GetToolSelector().OnToolSwitched += HandleToolSwitched;
+        if (cleaningManager.GetToolSelector())
+            cleaningManager.GetToolSelector().OnToolSwitched += HandleToolSwitched;
     }
 
     private void OnDisable()
@@ -34,7 +35,8 @@ public class PickUpDrop : MonoBehaviour
         inputManager.PickUpEvent -= PickUpAndDropObject;
         inputManager.ThrowStartEvent -= StartChargingThrow;
         inputManager.ThrowEndEvent -= ThrowObject;
-        cleaningManager.GetToolSelector().OnToolSwitched -= HandleToolSwitched;
+        if (cleaningManager.GetToolSelector())
+            cleaningManager.GetToolSelector().OnToolSwitched -= HandleToolSwitched;
     }
 
     private void Update()
@@ -45,53 +47,71 @@ public class PickUpDrop : MonoBehaviour
             currentThrowingForce = Mathf.Min(currentThrowingForce * scalarThrowingForce, maxThrowingForce);
         }
 
-        if (ObjectGrabbable != null && SanityManager.Instance.isRageActive)
+        if (ObjectGrabbable != null)
         {
-            if (ObjectGrabbable.gameObject.GetComponent<SnappableObject>() != null)
-                DropObject();
+            if (sanityManager != null)
+            {
+                if (sanityManager.isRageActive)
+                {
+                    if (ObjectGrabbable.gameObject.GetComponent<SnappableObject>() != null)
+                        DropObject();
+                }
+            }
         }
     }
 
     private void PickUpAndDropObject()
     {
-        if (ObjectGrabbable == null && cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetHands())
+        if (ObjectGrabbable == null)
         {
-            if (Physics.Raycast(mainCamera.position, mainCamera.forward, out RaycastHit raycastHit, cleaningManager.GetInteractionDistance()))
+            if (cleaningManager.GetToolSelector())
             {
-                ObjectGrabbable newObjectGrabbable;
-
-                if (raycastHit.transform.TryGetComponent(out newObjectGrabbable))
+                if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetHands())
                 {
-                    if (!newObjectGrabbable.IsObjectSnapped)
+                    DetectPickUpDrop();
+                }
+                if (cleaningManager.GetToolSelector().CurrentToolIndex != cleaningManager.GetHands())
+                {
+                    if (Physics.Raycast(mainCamera.position, mainCamera.forward, out RaycastHit raycastHit, cleaningManager.GetInteractionDistance()))
                     {
-                        if (newObjectGrabbable.gameObject.GetComponent<SnappableObject>() != null && SanityManager.Instance.isRageActive) return;
+                        ObjectGrabbable newObjectGrabbable;
 
-                        cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetPickUpEvent());
-                        newObjectGrabbable.Grab(objectGrabPointTransform, this.transform);
-                        playerController.SetObjectGrabbable(newObjectGrabbable);
-                        SetObjectGrabbable(newObjectGrabbable);
-
+                        if (raycastHit.transform.TryGetComponent(out newObjectGrabbable))
+                        {
+                            PickUpUnavailableEvent?.Invoke();
+                        }
                     }
                 }
             }
+            else
+            {
+                DetectPickUpDrop();
+            }
+            
         }
         else if (ObjectGrabbable != null)
         {
             cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetDropEvent());
             DropObject();
         }
-        else
-        {
-            if (cleaningManager.GetToolSelector().CurrentToolIndex != cleaningManager.GetHands())
-            {
-                if (Physics.Raycast(mainCamera.position, mainCamera.forward, out RaycastHit raycastHit, cleaningManager.GetInteractionDistance()))
-                {
-                    ObjectGrabbable newObjectGrabbable;
+    }
 
-                    if (raycastHit.transform.TryGetComponent(out newObjectGrabbable))
-                    {
-                        PickUpUnavailableEvent?.Invoke();
-                    }
+    private void DetectPickUpDrop()
+    {
+        if (Physics.Raycast(mainCamera.position, mainCamera.forward, out RaycastHit raycastHit, cleaningManager.GetInteractionDistance()))
+        {
+            ObjectGrabbable newObjectGrabbable;
+
+            if (raycastHit.transform.TryGetComponent(out newObjectGrabbable))
+            {
+                if (!newObjectGrabbable.IsObjectSnapped)
+                {
+                    if (newObjectGrabbable.gameObject.GetComponent<SnappableObject>() != null && sanityManager != null && sanityManager.isRageActive) return;
+
+                    cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetPickUpEvent());
+                    newObjectGrabbable.Grab(objectGrabPointTransform, this.transform);
+                    playerController.SetObjectGrabbable(newObjectGrabbable);
+                    SetObjectGrabbable(newObjectGrabbable);
                 }
             }
         }

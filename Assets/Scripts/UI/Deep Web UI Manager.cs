@@ -23,8 +23,6 @@ public class DeepWebUIManager : MonoBehaviour
     [SerializeField] private string vanHonkEvent = null;
     [SerializeField] private string retreiveKeyEvent = null;
 
-    private bool isLevelSelected = false;
-
     public event System.Action LevelAccepted;
 
     private void Awake()
@@ -35,13 +33,13 @@ public class DeepWebUIManager : MonoBehaviour
 
     private void AcceptLevel()
     {
-        if (isLevelSelected) return;
+        if (pCCanvasController.isLevelSelected) return;
             StartCoroutine(GrabKeyAnimation());
     }
 
     private IEnumerator GrabKeyAnimation()
     {
-        isLevelSelected = true;
+        pCCanvasController.isLevelSelected = true;
         audioManager.PlaySound(clickEvent);
         float elapsedTime = 0f;
         bool vanClosed = false;

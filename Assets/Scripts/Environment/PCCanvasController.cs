@@ -5,7 +5,8 @@ public class PCCanvasController : Interactable, IInteractable
 {
     [SerializeField] private InputManager inputManager;
     [SerializeField] private MainMenuUIManager mainMenuUIManager;
-    [SerializeField] private PlayerControllerMenu playerController;
+    [SerializeField] private PlayerController playerController;
+    [SerializeField] private ToolAnimatorController toolAnimatorControllerlayerController;
     [SerializeField] private Transform mainCamera;
     [SerializeField] private Transform targetTransform;
     [SerializeField] private Transform leftStartupPosition;
@@ -20,13 +21,13 @@ public class PCCanvasController : Interactable, IInteractable
 
     public bool isPlayerOnPC = false;
     public bool isPlayerMoving = false;
+    public bool isLevelSelected = false;
 
     private Vector3 previousCameraPosition;
     private Quaternion previousCameraRotation;
 
     private Coroutine goCoroutine;
     private Coroutine returnCoroutine;
-
     private void OnEnable()
     {
         inputManager.InteractEvent += OnInteract;
@@ -48,7 +49,7 @@ public class PCCanvasController : Interactable, IInteractable
 
         if (Physics.Raycast(mainCamera.position, mainCamera.forward, out hit, raycastDistance))
         {
-            if (hit.collider.gameObject == this.transform.gameObject)
+            if (hit.collider.gameObject == this.transform.gameObject && !isLevelSelected)
                 Interact();
         }
     }
@@ -75,7 +76,9 @@ public class PCCanvasController : Interactable, IInteractable
     }
 
     private IEnumerator PCStartUpCoroutine()
-    {
+    {        
+        toolAnimatorControllerlayerController.TriggerParticularAction(toolAnimatorControllerlayerController.GetPCName(), true);
+
         float leftPlayerDistance = Vector3.Distance(playerController.transform.position, leftStartupPosition.position);
         float rightPlayerDistance = Vector3.Distance(playerController.transform.position, rightStartupPosition.position);
 
@@ -85,6 +88,9 @@ public class PCCanvasController : Interactable, IInteractable
         isPlayerMoving = true;
         playerController.ToggleMovement(false);
         playerController.ToggleCameraMovement(false);
+
+        //Collider col = playerController.GetComponent<Collider>();
+        //col.enabled = false;
 
         mainMenuUIManager.ToggleCanvas(mainMenuUIManager.mainCanvas, false);
 
@@ -135,6 +141,7 @@ public class PCCanvasController : Interactable, IInteractable
 
     private IEnumerator PCShutDownCoroutine()
     {
+        bool animationActive = false;
         isPlayerMoving = true;
 
         Vector3 initialPosition = mainCamera.transform.position;
@@ -154,6 +161,13 @@ public class PCCanvasController : Interactable, IInteractable
             mainCamera.transform.position = Vector3.Lerp(initialPosition, previousCameraPosition, t);
             mainCamera.transform.rotation = Quaternion.Lerp(initialRotation, previousCameraRotation, t);
 
+            if (!animationActive && elapsedTime >= lerpDuration / 2)
+            {
+                toolAnimatorControllerlayerController.TriggerParticularAction(toolAnimatorControllerlayerController.GetPCName(), false);
+                animationActive = true;
+            }
+
+
             elapsedTime += Time.deltaTime;
             yield return null;
         }
@@ -167,6 +181,9 @@ public class PCCanvasController : Interactable, IInteractable
 
         playerController.ToggleMovement(true);
         playerController.ToggleCameraMovement(true);
+
+        //Collider col = playerController.GetComponent<Collider>();
+        //col.enabled = true;
 
         isPlayerMoving = false;
         isPlayerOnPC = false;

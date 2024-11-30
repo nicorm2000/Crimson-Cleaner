@@ -126,7 +126,8 @@ public class CleaningManager : MonoBehaviour
     private void Start()
     {
         DirtyMaxValue = 100;
-        DirtyIncrementAmount = cleaningTool.DirtyIncrement;
+        if (cleaningTool)
+            DirtyIncrementAmount = cleaningTool.DirtyIncrement;
     }
 
     public void ModifyAnimationSpeed(int scalar)

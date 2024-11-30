@@ -3,7 +3,6 @@ using UnityEngine;
 public class OpenableNoAnimator : Interactable, IOpenable
 {
     [Header("Openable Config")]
-    [SerializeField] private PlayerControllerMenu playerControllerMenu;
     [SerializeField] private Transform startTransform;
     [SerializeField] private Transform endTransform;
     [SerializeField] private float animationDuration = 1f;
@@ -100,8 +99,7 @@ public class OpenableNoAnimator : Interactable, IOpenable
 
     private bool CanToggleState(PlayerController playerController)
     {
-        var grabbable = playerController?.GetObjectGrabbable() ?? playerControllerMenu?.GetObjectGrabbable();
-        return grabbable == null && !isAnimating;
+        return playerController.GetObjectGrabbable() == null && !isAnimating;
     }
 
     private void PlaySound(bool isOpen)

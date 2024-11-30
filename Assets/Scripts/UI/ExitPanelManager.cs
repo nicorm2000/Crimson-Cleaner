@@ -5,7 +5,7 @@ using UnityEngine;
 public class ExitPanelManager : MonoBehaviour
 {
     [SerializeField] private InputManager inputManager;
-    [SerializeField] private PlayerControllerMenu playerController;
+    [SerializeField] private PlayerController playerController;
     [SerializeField] private MainMenuUIManager mainMenuUIManager;
     [SerializeField] private StartGameManager startGameManager;
     [SerializeField] private GameObject PCCanvas;

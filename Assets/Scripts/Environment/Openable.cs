@@ -16,7 +16,7 @@ public class Openable : Interactable, IOpenable
 
     public bool IsOpen { get; private set; } = false;
     public Sprite InteractMessage => CleaningManager.Instance.GetInteractMessage();
-    public bool IsInteractable => IsOpen || (Time.time - lastInteractionTime >= cooldown);
+    public bool IsInteractable => /*IsOpen && */(Time.time - lastInteractionTime >= cooldown);
 
     private readonly string openableOpen = "Open";
 

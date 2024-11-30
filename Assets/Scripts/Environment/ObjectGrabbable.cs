@@ -3,7 +3,7 @@ using UnityEngine;
 public class ObjectGrabbable : MonoBehaviour, IPickable
 {
     [Header("Config")]
-    private ToolAnimatorController toolAnimatorController;
+    [SerializeField] private ToolAnimatorController toolAnimatorController;
     [SerializeField] private float lerpSpeed = 10f;
     [SerializeField] private float rotationSpeed = 10f;
     [SerializeField] private float throwingForce = 10f;
@@ -64,7 +64,6 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
     private void Start()
     {
         isObjectSnapped = false;
-        toolAnimatorController = CleaningManager.Instance.GetToolSelector().toolAnimatorController;
     }
 
     private void Update()

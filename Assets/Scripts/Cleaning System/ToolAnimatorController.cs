@@ -55,6 +55,7 @@ public class ToolAnimatorController : MonoBehaviour
     [Header("Particular Actions")]
     [SerializeField] private string cleaning;
     [SerializeField] private string bucket;
+    [SerializeField] private string pc;
 
     public bool canTriggerAction = true;
 
@@ -199,6 +200,7 @@ public class ToolAnimatorController : MonoBehaviour
 
     public string GetBinCleanName() => binCleanName;
     public string GetBinRemoveName() => binRemoveName;
+    public string GetPCName() => pc;
 
 
 }
