@@ -10021,7 +10021,8 @@ GameObject:
   - component: {fileID: 305893180}
   - component: {fileID: 305893178}
   - component: {fileID: 305893183}
-  m_Layer: 0
+  - component: {fileID: 305893184}
+  m_Layer: 8
   m_Name: Clamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10069,7 +10070,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &305893180
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10154,6 +10155,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad5000eb9cd91244a8ce2ad49cb4b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &305893184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305893176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 737328205}
+  lerpSpeed: 10
+  rotationSpeed: 10
+  throwingForce: 10
+  breakForceThreshold: 10
+  collisionCooldown: 0.1
+  fallHeightThreshold: 1
+  isObjectMulitple: 0
+  hologramObject: {fileID: 0}
+  audioManager: {fileID: 409798544}
+  breakBottleEvent: Heavy_Tool_Collision
+  isObjectSanityModifier: 0
+  isObjectBreakable: 0
 --- !u!1 &307382616
 GameObject:
   m_ObjectHideFlags: 0
@@ -28528,8 +28554,9 @@ GameObject:
   - component: {fileID: 851816020}
   - component: {fileID: 851816019}
   - component: {fileID: 851816017}
+  - component: {fileID: 851816023}
   - component: {fileID: 851816022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Screwdriver02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28577,7 +28604,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &851816019
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28662,6 +28689,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad5000eb9cd91244a8ce2ad49cb4b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &851816023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851816015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 737328205}
+  lerpSpeed: 10
+  rotationSpeed: 10
+  throwingForce: 10
+  breakForceThreshold: 10
+  collisionCooldown: 0.1
+  fallHeightThreshold: 1
+  isObjectMulitple: 0
+  hologramObject: {fileID: 0}
+  audioManager: {fileID: 409798544}
+  breakBottleEvent: Medium_Metal_Tool_Collision
+  isObjectSanityModifier: 0
+  isObjectBreakable: 0
 --- !u!1 &852668934
 GameObject:
   m_ObjectHideFlags: 0
@@ -33822,8 +33874,9 @@ GameObject:
   - component: {fileID: 992619237}
   - component: {fileID: 992619236}
   - component: {fileID: 992619234}
+  - component: {fileID: 992619240}
   - component: {fileID: 992619239}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hammer02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33871,7 +33924,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &992619236
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -33956,6 +34009,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad5000eb9cd91244a8ce2ad49cb4b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &992619240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992619232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 737328205}
+  lerpSpeed: 10
+  rotationSpeed: 10
+  throwingForce: 10
+  breakForceThreshold: 10
+  collisionCooldown: 0.1
+  fallHeightThreshold: 1
+  isObjectMulitple: 0
+  hologramObject: {fileID: 0}
+  audioManager: {fileID: 409798544}
+  breakBottleEvent: Heavy_Tool_Collision
+  isObjectSanityModifier: 0
+  isObjectBreakable: 0
 --- !u!1 &997121485
 GameObject:
   m_ObjectHideFlags: 0
@@ -41681,8 +41759,9 @@ GameObject:
   - component: {fileID: 1185132598}
   - component: {fileID: 1185132597}
   - component: {fileID: 1185132595}
+  - component: {fileID: 1185132601}
   - component: {fileID: 1185132600}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wrench
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41730,7 +41809,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!64 &1185132597
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -41815,6 +41894,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad5000eb9cd91244a8ce2ad49cb4b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1185132601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185132593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 737328205}
+  lerpSpeed: 10
+  rotationSpeed: 10
+  throwingForce: 10
+  breakForceThreshold: 10
+  collisionCooldown: 0.1
+  fallHeightThreshold: 1
+  isObjectMulitple: 0
+  hologramObject: {fileID: 0}
+  audioManager: {fileID: 409798544}
+  breakBottleEvent: Heavy_Tool_Collision
+  isObjectSanityModifier: 0
+  isObjectBreakable: 0
 --- !u!1 &1185686337
 GameObject:
   m_ObjectHideFlags: 0
@@ -62951,7 +63055,6 @@ MonoBehaviour:
   audioManager: {fileID: 409798544}
   soundEvent: Cabinet_Close
   soundEvent2: Cabinet_Open
-  playerController: {fileID: 1792020655}
   startTransform: {fileID: 1116800483}
   endTransform: {fileID: 230216504}
   animationDuration: 0.5
@@ -69316,7 +69419,6 @@ MonoBehaviour:
   audioManager: {fileID: 409798544}
   soundEvent: Cabinet_Close
   soundEvent2: Cabinet_Open
-  playerController: {fileID: 1792020655}
   startTransform: {fileID: 244723940}
   endTransform: {fileID: 1969700928}
   animationDuration: 0.5
@@ -84945,7 +85047,10 @@ GameObject:
   - component: {fileID: 5777592441153464953}
   - component: {fileID: 3137977221382776817}
   - component: {fileID: 5777592441153464954}
-  m_Layer: 0
+  - component: {fileID: 5777592441153464956}
+  - component: {fileID: 5777592441153464955}
+  - component: {fileID: 5777592441153464957}
+  m_Layer: 8
   m_Name: BucketPaint05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87242,11 +87347,11 @@ MonoBehaviour:
   throwingForce: 50
   breakForceThreshold: 10
   collisionCooldown: 1
-  fallHeightThreshold: 5
+  fallHeightThreshold: 1
   isObjectMulitple: 0
   hologramObject: {fileID: 0}
   audioManager: {fileID: 409798544}
-  breakBottleEvent: Lamp_Collision
+  breakBottleEvent: Tin_Collision
   isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!54 &4458006911507629082
@@ -88303,7 +88408,10 @@ GameObject:
   - component: {fileID: 2511295745551206521}
   - component: {fileID: 6888897418448736279}
   - component: {fileID: 8909680888022050094}
-  m_Layer: 0
+  - component: {fileID: 8909680888022050096}
+  - component: {fileID: 8909680888022050095}
+  - component: {fileID: 8909680888022050097}
+  m_Layer: 8
   m_Name: BucketPaint04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91411,7 +91519,10 @@ GameObject:
   - component: {fileID: 8296439005856067774}
   - component: {fileID: 6092291457169010087}
   - component: {fileID: 8898140943497786415}
-  m_Layer: 0
+  - component: {fileID: 8898140943497786417}
+  - component: {fileID: 8898140943497786416}
+  - component: {fileID: 8898140943497786418}
+  m_Layer: 8
   m_Name: BucketPaintOpen01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91589,6 +91700,70 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8928357721086686492, guid: 4025ef0bb65a4e248969f74a5c570767, type: 3}
+--- !u!114 &5777592441153464955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3710432475136770288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad5000eb9cd91244a8ce2ad49cb4b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5777592441153464956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3710432475136770288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 737328205}
+  lerpSpeed: 10
+  rotationSpeed: 10
+  throwingForce: 10
+  breakForceThreshold: 10
+  collisionCooldown: 0.1
+  fallHeightThreshold: 1
+  isObjectMulitple: 0
+  hologramObject: {fileID: 0}
+  audioManager: {fileID: 409798544}
+  breakBottleEvent: Tin_Collision
+  isObjectSanityModifier: 0
+  isObjectBreakable: 0
+--- !u!54 &5777592441153464957
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3710432475136770288}
+  serializedVersion: 4
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!23 &5779538288498715769
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -102328,7 +102503,6 @@ MonoBehaviour:
   audioManager: {fileID: 409798544}
   soundEvent: Van_Door_Open
   soundEvent2: Van_Door_Close
-  playerController: {fileID: 1792020655}
   startTransform: {fileID: 1719233021}
   endTransform: {fileID: 812678160}
   animationDuration: 0.5
@@ -104300,6 +104474,70 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1750057620872886618, guid: 4025ef0bb65a4e248969f74a5c570767, type: 3}
+--- !u!114 &8898140943497786416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5763195690528011000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad5000eb9cd91244a8ce2ad49cb4b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8898140943497786417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5763195690528011000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 737328205}
+  lerpSpeed: 10
+  rotationSpeed: 10
+  throwingForce: 10
+  breakForceThreshold: 10
+  collisionCooldown: 0.1
+  fallHeightThreshold: 1
+  isObjectMulitple: 0
+  hologramObject: {fileID: 0}
+  audioManager: {fileID: 409798544}
+  breakBottleEvent: Tin_Collision
+  isObjectSanityModifier: 0
+  isObjectBreakable: 0
+--- !u!54 &8898140943497786418
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5763195690528011000}
+  serializedVersion: 4
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!33 &8907196166131239018
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -104429,6 +104667,70 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1802605333348455014, guid: 4025ef0bb65a4e248969f74a5c570767, type: 3}
+--- !u!114 &8909680888022050095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4770254009508362844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad5000eb9cd91244a8ce2ad49cb4b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8909680888022050096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4770254009508362844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 737328205}
+  lerpSpeed: 10
+  rotationSpeed: 10
+  throwingForce: 10
+  breakForceThreshold: 10
+  collisionCooldown: 0.1
+  fallHeightThreshold: 1
+  isObjectMulitple: 0
+  hologramObject: {fileID: 0}
+  audioManager: {fileID: 409798544}
+  breakBottleEvent: Tin_Collision
+  isObjectSanityModifier: 0
+  isObjectBreakable: 0
+--- !u!54 &8909680888022050097
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4770254009508362844}
+  serializedVersion: 4
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!1 &8921578537942839434
 GameObject:
   m_ObjectHideFlags: 0
@@ -105933,7 +106235,7 @@ MonoBehaviour:
   throwingForce: 10
   breakForceThreshold: 10
   collisionCooldown: 0.1
-  fallHeightThreshold: 5
+  fallHeightThreshold: 1
   isObjectMulitple: 0
   hologramObject: {fileID: 777434495}
   audioManager: {fileID: 409798544}
@@ -105966,7 +106268,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &9140597630677885197
 MonoBehaviour:
   m_ObjectHideFlags: 0
