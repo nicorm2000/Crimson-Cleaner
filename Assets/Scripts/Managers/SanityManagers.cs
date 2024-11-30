@@ -167,7 +167,6 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
 
         lowTierTimer = 0f;
         mediumTierTimer = 0f;
-        highTierTimer = 0f;
 
         outcome.isActiveNow = false;
 
