@@ -5,13 +5,20 @@ using UnityEngine;
 public class SnappableObject : MonoBehaviour
 {
     [Header("Config")]
-    [SerializeField] private Material completeSnapMaterial;
-    [SerializeField] private Material[] completeSnapMaterials;
     [SerializeField] private SnapPoint snapPoint;
     [SerializeField] private PickUpDrop pickUpDrop;
     [SerializeField] private float distance = 0.2f;
     [SerializeField] private float angle = 10f;
     [SerializeField] private float completionShaderDuration = 1.5f;
+
+    [Header("Materials")]
+    [Header("Single Object")]
+    [SerializeField] private Material completeSnapMaterial;
+    [Header("If Cleanable")]
+    [SerializeField] private Material[] cleaningCompleteSnapMaterials;
+
+    [Header("Multiple Objects")]
+    [SerializeField] private Material[] completeSnapMaterials;
 
     [Header("Audio Config")]
     [SerializeField] private AudioManager audioManager = null;
@@ -30,12 +37,16 @@ public class SnappableObject : MonoBehaviour
 
     private Rigidbody rb;
 
+    private bool isCleanable = false;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         objectGrabbable = GetComponent<ObjectGrabbable>();
         meshRenderer = GetComponent<MeshRenderer>();
+
+        isCleanable = gameObject.GetComponent<Clean>() != null ? true : false;
+
         //Debug.Log("Material is: " + baseMaterial);
     }
 
@@ -94,7 +105,10 @@ public class SnappableObject : MonoBehaviour
         if (completeSnapMaterial != null)
         {
             previousMaterial = meshRenderer.material;
-            meshRenderer.material = completeSnapMaterial;
+            if (isCleanable)
+                meshRenderer.material = cleaningCompleteSnapMaterials[gameObject.GetComponent<Clean>().GetMaterialIndex()];
+            else
+                meshRenderer.material = completeSnapMaterial;
         }
         else if (completeSnapMaterials.Length != 0)
         {
