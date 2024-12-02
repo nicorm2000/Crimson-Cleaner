@@ -15,6 +15,9 @@ public class PCCanvasController : Interactable, IInteractable
     [SerializeField] private float lerpDuration = 1f;
     [SerializeField] private string standUpEvent = "";
     [SerializeField] private string sitDownEvent = "";
+    [SerializeField] private MeshRenderer cpu = null;
+    [SerializeField] private Material matOn = null;
+    [SerializeField] private Material matOff = null;
 
     [SerializeField] private Sprite interactSprite;
     public Sprite InteractMessage => interactSprite;
@@ -168,13 +171,14 @@ public class PCCanvasController : Interactable, IInteractable
                 animationActive = true;
             }
 
-
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
         mainCamera.transform.position = previousCameraPosition;
         mainCamera.transform.rotation = previousCameraRotation;
+
+        cpu.material = matOff;
 
         mainMenuUIManager.ToggleCanvas(mainMenuUIManager.mainCanvas, true);
 

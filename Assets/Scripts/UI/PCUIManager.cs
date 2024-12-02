@@ -88,10 +88,10 @@ public class PCUIManager : MonoBehaviour
         storeButton.onClick.AddListener(() => { OpenTab(storePanel, true); });        
         creditsButton.onClick.AddListener(() => { OpenTab(creditsPanel, true); });        
         settingsButton.onClick.AddListener(() => { OpenTab(settingsPanel, true); });
-        exitButton.onClick.AddListener(() => { OpenTab(exitPanel, true); });
+        //exitButton.onClick.AddListener(() => { OpenTab(exitPanel, true); });
 
-        yesExitButton.onClick.AddListener(() => { mySceneManager.Exit(); audioManager.PlaySound(clickEvent); });
-        noExitButton.onClick.AddListener(() => { OpenTab(exitPanel, false); });
+        //yesExitButton.onClick.AddListener(() => { mySceneManager.Exit(); audioManager.PlaySound(clickEvent); });
+        //noExitButton.onClick.AddListener(() => { OpenTab(exitPanel, false); });
 
         //REMEMBER TO DO THE VOLUME UPDATE WITH THE ESC KEY
         //newYesExitButton.onClick.AddListener(() => { mySceneManager.Exit(); audioManager.PlaySound(clickEvent); });
