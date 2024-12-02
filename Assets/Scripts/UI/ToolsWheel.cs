@@ -30,12 +30,10 @@ public class ToolsWheel : MonoBehaviour
         if (active)
         {
             image.sprite = enterSprite;
-            gameObject.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
         }
         else
         {
             image.sprite = exitSprite;
-            gameObject.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         }
     }
 }
