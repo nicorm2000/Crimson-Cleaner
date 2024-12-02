@@ -14,7 +14,7 @@ public class WaterBucket : Interactable, ICleanable
     [SerializeField] private Transform waterStartPoint;
     [SerializeField] private Transform waterFinishPoint;
 
-    public Sprite InteractMessage => CleaningManager.Instance.GetInteractMessage();
+    public Sprite InteractMessage => CleaningManager.Instance.GetWashMessage();
 
     public bool canModifySanity = true;
     public bool HasWater { get; private set; }

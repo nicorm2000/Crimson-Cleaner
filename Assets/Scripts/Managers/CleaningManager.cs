@@ -102,6 +102,7 @@ public class CleaningManager : MonoBehaviour
     [SerializeField] private Sprite rotateMessage;
     [SerializeField] private Sprite storeMessage;
     [SerializeField] private Sprite interactMessage;
+    [SerializeField] private Sprite washMessage;
     [SerializeField] private Sprite retrieveMessage;
 
     public static CleaningManager Instance { get; private set; }
@@ -195,5 +196,6 @@ public class CleaningManager : MonoBehaviour
     public Sprite GetRotateMessage() => rotateMessage;
     public Sprite GetStoreMessage() => storeMessage;
     public Sprite GetInteractMessage() => interactMessage;
+    public Sprite GetWashMessage() => washMessage;
     public Sprite GetRetrieveMessage() => retrieveMessage;
 }

@@ -40,7 +40,8 @@ public class PCCanvasController : Interactable, IInteractable
 
     private void OnInteract()
     {
-        IsMouseLookingAtObject();
+        if(!isPlayerOnPC && !isPlayerMoving)
+            IsMouseLookingAtObject();
     }
 
     protected void IsMouseLookingAtObject()
