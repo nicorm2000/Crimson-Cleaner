@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 1010339404862497549}
   - component: {fileID: 5468599124272370039}
   - component: {fileID: 6374285968692917144}
+  - component: {fileID: 5916444741646565377}
+  - component: {fileID: -3072535445315149186}
+  - component: {fileID: -1448862374175885940}
   m_Layer: 0
   m_Name: SM_Knife_01
   m_TagString: Untagged
@@ -83,3 +86,76 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5916444741646565377
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3369412269137832805}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.025598168, y: 0.012065251, z: 0.2042217}
+  m_Center: {x: -0.000000063795596, y: 9.313226e-10, z: 0}
+--- !u!54 &-3072535445315149186
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3369412269137832805}
+  serializedVersion: 4
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!114 &-1448862374175885940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3369412269137832805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 0}
+  lerpSpeed: 10
+  rotationSpeed: 10
+  throwingForce: 10
+  breakForceThreshold: 10
+  collisionCooldown: 0.1
+  fallHeightThreshold: 5
+  isObjectMulitple: 0
+  hologramObject: {fileID: 0}
+  audioManager: {fileID: 0}
+  breakBottleEvent: 
+  isObjectSanityModifier: 0
+  isObjectBreakable: 1

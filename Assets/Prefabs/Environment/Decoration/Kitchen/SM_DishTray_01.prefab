@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 7484776763972995819}
   - component: {fileID: 3665752085886150854}
   - component: {fileID: 4359758256768749152}
+  - component: {fileID: 4579755589042882145}
+  - component: {fileID: 2570476166956609954}
+  - component: {fileID: 8773477912526868058}
   m_Layer: 0
   m_Name: SM_DishTray_01
   m_TagString: Untagged
@@ -83,3 +86,76 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4579755589042882145
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316707326722189516}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.30303496, y: 0.11465622, z: 0.67052865}
+  m_Center: {x: -0.0000003054738, y: 0, z: 0}
+--- !u!54 &2570476166956609954
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316707326722189516}
+  serializedVersion: 4
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!114 &8773477912526868058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316707326722189516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 0}
+  lerpSpeed: 10
+  rotationSpeed: 10
+  throwingForce: 10
+  breakForceThreshold: 10
+  collisionCooldown: 0.1
+  fallHeightThreshold: 5
+  isObjectMulitple: 0
+  hologramObject: {fileID: 0}
+  audioManager: {fileID: 0}
+  breakBottleEvent: 
+  isObjectSanityModifier: 0
+  isObjectBreakable: 1

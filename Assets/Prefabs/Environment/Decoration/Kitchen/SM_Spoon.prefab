@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 1241838815641698747}
   - component: {fileID: 7691366415235346717}
   - component: {fileID: 5162128571432255875}
+  - component: {fileID: -118369252747127417}
+  - component: {fileID: -4784717206480214470}
+  - component: {fileID: -4299032117245769581}
   m_Layer: 0
   m_Name: SM_Spoon
   m_TagString: Untagged
@@ -83,3 +86,77 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-118369252747127417
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453131331965494056}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8479940288448901474, guid: dd944901f9fd77e4aa7dbc3fa8de3fb7, type: 3}
+--- !u!54 &-4784717206480214470
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453131331965494056}
+  serializedVersion: 4
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!114 &-4299032117245769581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6453131331965494056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 0}
+  lerpSpeed: 10
+  rotationSpeed: 10
+  throwingForce: 10
+  breakForceThreshold: 10
+  collisionCooldown: 0.1
+  fallHeightThreshold: 5
+  isObjectMulitple: 0
+  hologramObject: {fileID: 0}
+  audioManager: {fileID: 0}
+  breakBottleEvent: 
+  isObjectSanityModifier: 0
+  isObjectBreakable: 1
