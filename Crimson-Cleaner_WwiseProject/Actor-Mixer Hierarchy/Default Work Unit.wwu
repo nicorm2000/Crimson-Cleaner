@@ -2481,35 +2481,6 @@
 								<ActiveSource Name="Police_SirenSFX_Audio" ID="{D6673606-12A4-401B-BD76-34C51BED84EC}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="WhispersSFX_Audio" ID="{CC80ED46-623A-40CA-BDE8-B74D2BEBA063}" ShortID="346327989">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-6</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="WhispersSFX_Audio" ID="{9388811F-27AF-43B6-883E-33782151242D}">
-									<Language>SFX</Language>
-									<AudioFile>WhispersSFX_Audio.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="303229491"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="WhispersSFX_Audio" ID="{9388811F-27AF-43B6-883E-33782151242D}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
 						<Sound Name="Footsteps_RunSFX_Audio" ID="{BD413F35-CC41-4162-B0C4-8FBD593BBC54}" ShortID="787262987">
 							<PropertyList>
 								<Property Name="Volume" Type="Real64">
@@ -2653,35 +2624,6 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="Whipping" ID="{2598F2E2-F103-4CAC-A450-828D4AA89978}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Door_KnockSFX_Audio_V2" ID="{2E7201AB-DAA6-4961-B737-A2ACAD600DEE}" ShortID="970656740">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-2</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Door_KnockSFX_Audio_V2" ID="{759889BD-396F-42A8-A697-5BAC915DF348}">
-									<Language>SFX</Language>
-									<AudioFile>Door_KnockSFX_Audio_V2.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="405530386"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Door_KnockSFX_Audio_V2" ID="{759889BD-396F-42A8-A697-5BAC915DF348}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="Cockroaches" ID="{E09D4F58-3AA7-4AAD-9696-C81D97BA5E09}" ShortID="207981614">
@@ -2893,6 +2835,118 @@
 								<ActiveSource Name="Creature" ID="{139FDB9B-99B6-47DD-B95D-B0CC2988A908}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<RandomSequenceContainer Name="Whispers" ID="{261AE93D-9827-4907-9C9F-C74DC2F0D836}" ShortID="223066157">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="WhispersLeftSFX_Audio" ID="{D140CC90-7860-481B-8B8B-37AD5D80B274}" ShortID="541741443">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="WhispersLeftSFX_Audio" ID="{3CF1A5B0-16BF-4C2D-B04B-6D82649D7678}">
+											<Language>SFX</Language>
+											<AudioFile>WhispersLeftSFX_Audio.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1048491101"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="WhispersLeftSFX_Audio" ID="{3CF1A5B0-16BF-4C2D-B04B-6D82649D7678}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="WhispersRightSFX_Audio" ID="{969B84B5-E48D-4EBA-8CB0-3E3E0D2C19E9}" ShortID="285119390">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="WhispersRightSFX_Audio" ID="{2F1FCD64-DB6D-47B7-89D3-DDCBB0BBA9DC}">
+											<Language>SFX</Language>
+											<AudioFile>WhispersRightSFX_Audio.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="90916529"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="WhispersRightSFX_Audio" ID="{2F1FCD64-DB6D-47B7-89D3-DDCBB0BBA9DC}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Door Knock" ID="{AF9B4896-C12F-4548-9F24-B369ADC82651}" ShortID="414023146">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="DoorLeftSFX_Audio" ID="{105F64A9-6E05-4897-B7CB-02AA84762BAB}" ShortID="272047082">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DoorLeftSFX_Audio" ID="{45A23490-EC8A-47D4-A593-24797C4B0A48}">
+											<Language>SFX</Language>
+											<AudioFile>DoorLeftSFX_Audio.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="973535914"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="DoorLeftSFX_Audio" ID="{45A23490-EC8A-47D4-A593-24797C4B0A48}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="DoorRightSFX_Audio" ID="{06B07C43-2239-4987-BD87-8C59894093A2}" ShortID="105679137">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DoorRightSFX_Audio" ID="{63FDB6B5-0DD0-4906-ACD0-A01320C81AFC}">
+											<Language>SFX</Language>
+											<AudioFile>DoorRightSFX_Audio.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="606020621"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="DoorRightSFX_Audio" ID="{63FDB6B5-0DD0-4906-ACD0-A01320C81AFC}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Retrievables" ID="{60621710-2701-480F-BE0E-43751DAE5648}" ShortID="724998173">
