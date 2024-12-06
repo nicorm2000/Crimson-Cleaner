@@ -1691,6 +1691,111 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Wood_Collision" ID="{4D0B4858-35C3-4D2A-81BE-9B23CDF71FD0}">
+							<ChildrenList>
+								<Action Name="" ID="{43FFD045-CC85-4399-99F3-26CFAAD610F5}" ShortID="554227762">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="WoodCollision" ID="{58F6C4BD-6FAD-4FBF-8A19-B31B06B06B64}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{C686B9DD-3AFA-4069-BE0E-15D20130E557}" ShortID="907644037">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="WoodCollision" ID="{58F6C4BD-6FAD-4FBF-8A19-B31B06B06B64}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Book_Collision" ID="{D04E451F-5D59-44DC-98D9-6D3BE9093084}">
+							<ChildrenList>
+								<Action Name="" ID="{DD6CB592-5294-4DFF-A6AA-D57F8ADB8C38}" ShortID="837845032">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="BookCollision" ID="{BA7F6AC4-EDD0-4E1C-B002-9D8B231F489B}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{B86F4619-A24D-4D81-9890-07384D15DBCC}" ShortID="915919379">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="BookCollision" ID="{BA7F6AC4-EDD0-4E1C-B002-9D8B231F489B}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Steel_Collision" ID="{A6CA27AA-F0D7-4741-BD9F-290AE5B6C121}">
+							<ChildrenList>
+								<Action Name="" ID="{D897FBDB-C99A-4ADC-AE70-FA1F1D297CAD}" ShortID="645707747">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SteelCollision" ID="{C6BF9A64-FA34-486B-9C7C-9D128D4654BF}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{85E4EB13-1A02-490E-9B56-8F2B232B799A}" ShortID="769366603">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SteelCollision" ID="{C6BF9A64-FA34-486B-9C7C-9D128D4654BF}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Pan_Collision" ID="{D11DA4A7-C280-486A-9D4B-45C21CD7FD7D}">
+							<ChildrenList>
+								<Action Name="" ID="{9DAF7BC8-E5EE-43DC-A4F6-FFE9F9393FF7}" ShortID="536909345">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="PanCollision" ID="{9204DAD1-09AB-433F-8088-93C58E4CBC5E}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{4AD9FC0E-A7DE-45A8-ACE0-19A32FFA8DAA}" ShortID="132261014">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="PanCollision" ID="{9204DAD1-09AB-433F-8088-93C58E4CBC5E}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Metal_Lid_Collision" ID="{4B1D666F-200E-4639-AC99-FE6516494434}">
+							<ChildrenList>
+								<Action Name="" ID="{93A9A7D1-3F4C-4062-92A0-62AFC1CEC9EA}" ShortID="480660770">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MetalLidCollision" ID="{DA03B88C-C545-4F4B-A7EE-C2A04847FA51}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{A4C7464A-E647-49AB-A8CA-5BD6DA7AF9C0}" ShortID="983136642">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MetalLidCollision" ID="{DA03B88C-C545-4F4B-A7EE-C2A04847FA51}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Player" ID="{C522BED6-6246-49B1-822C-2AD03AE35608}" ShortID="565143225">

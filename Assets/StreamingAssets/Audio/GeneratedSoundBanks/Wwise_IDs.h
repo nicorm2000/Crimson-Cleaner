@@ -23,6 +23,7 @@ namespace AK
         static const AkUniqueID BLOODY_FOOTSTEP_PLAY = 4007099146U;
         static const AkUniqueID BLOODY_FOOTSTEP_STOP = 1116333876U;
         static const AkUniqueID BODY_PARTS_COLLISION = 2616152363U;
+        static const AkUniqueID BOOK_COLLISION = 2795281771U;
         static const AkUniqueID BOTTLE_BREAKING = 3569692999U;
         static const AkUniqueID BOTTLE_DROP = 3514483227U;
         static const AkUniqueID BUCKET_COLLISION = 1692852178U;
@@ -87,6 +88,7 @@ namespace AK
         static const AkUniqueID MEDIUM_METAL_TOOL_COLLISION = 579873924U;
         static const AkUniqueID MENU_COLLISION = 295281277U;
         static const AkUniqueID MESSAGE_NOTIFICATION = 3090986788U;
+        static const AkUniqueID METAL_LID_COLLISION = 1424092449U;
         static const AkUniqueID MOM_CALMING = 1210360252U;
         static const AkUniqueID MONEY = 758863303U;
         static const AkUniqueID MOP = 1082004779U;
@@ -97,6 +99,7 @@ namespace AK
         static const AkUniqueID OBJECT_PLACEMENT_CONFIRMATION = 1967001744U;
         static const AkUniqueID OPEN_NOTEBOOK = 1673104519U;
         static const AkUniqueID OPEN_TOOLWHEEL = 4151030847U;
+        static const AkUniqueID PAN_COLLISION = 1749973703U;
         static const AkUniqueID PHONE_RING = 3401439988U;
         static const AkUniqueID PICK_UP = 467838998U;
         static const AkUniqueID PICK_UP_TRASH = 3160723937U;
@@ -125,6 +128,7 @@ namespace AK
         static const AkUniqueID SPONGE_DIRTY = 1222748174U;
         static const AkUniqueID SPONGE_WOOSH = 2179797042U;
         static const AkUniqueID STANDUP_CHAIR = 1107887202U;
+        static const AkUniqueID STEEL_COLLISION = 2078851455U;
         static const AkUniqueID SWAP_MOP = 3903016069U;
         static const AkUniqueID SWAP_SPONGE = 87353021U;
         static const AkUniqueID SWAP_TRASH_BIN = 3910342553U;
@@ -153,6 +157,7 @@ namespace AK
         static const AkUniqueID WEAPON_SWAP = 2239924753U;
         static const AkUniqueID WHIPPING = 793769351U;
         static const AkUniqueID WHISPERS = 2628386460U;
+        static const AkUniqueID WOOD_COLLISION = 691204695U;
         static const AkUniqueID WOOD_FOOTSTEP_PLAY = 1523901220U;
         static const AkUniqueID WOOD_FOOTSTEP_STOP = 1381150U;
     } // namespace EVENTS
