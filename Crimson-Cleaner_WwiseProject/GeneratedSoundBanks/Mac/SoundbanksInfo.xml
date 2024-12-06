@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{971DFE89-AC60-32AF-AA34-A4C8BBB6BAFD}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{3E792526-CE1C-958F-72EE-12A4CF8E34D3}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -648,7 +648,7 @@
 						<MediaRef Id="146996785"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1692852178" Name="Bucket_Collision" MaxAttenuation="10" DurationType="OneShot" DurationMin="0.3381777" DurationMax="0.3401367">
+				<Event Id="1692852178" Name="Bucket_Collision" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.3381777" DurationMax="0.3401367">
 					<MediaRefs>
 						<MediaRef Id="323016438"/>
 					</MediaRefs>
@@ -760,7 +760,7 @@
 						<MediaRef Id="755212419"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1357891606" Name="Fire_Cart" DurationType="OneShot" DurationMin="3" DurationMax="3">
+				<Event Id="1357891606" Name="Fire_Cart" MaxAttenuation="15" DurationType="OneShot" DurationMin="3" DurationMax="3">
 					<MediaRefs>
 						<MediaRef Id="996095744"/>
 					</MediaRefs>
@@ -894,7 +894,7 @@
 						<MediaRef Id="973535914"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2628227250" Name="Lamp_Collision" DurationType="OneShot" DurationMin="0.23719633" DurationMax="0.23719633">
+				<Event Id="2628227250" Name="Lamp_Collision" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.23719633" DurationMax="0.23719633">
 					<MediaRefs>
 						<MediaRef Id="380028755"/>
 					</MediaRefs>
@@ -1275,5 +1275,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{1633999F-38D8-A88D-20A0-AA91CCF77683}</FileHash>
+	<FileHash>{B5E7C49E-F8B9-C77E-31D5-F3467A862637}</FileHash>
 </SoundBanksInfo>
