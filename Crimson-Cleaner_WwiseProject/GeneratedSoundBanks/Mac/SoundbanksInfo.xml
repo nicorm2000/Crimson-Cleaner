@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{17D8E0E1-E9BB-A87B-62B2-6F401CEF5ECE}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{16B26ACD-4B2C-4371-1789-4314F9D048C2}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -169,6 +169,10 @@
 				<File Id="246298671" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CokeBag1SFX_Audio.wav</ShortName>
 					<CachePath>SFX/CokeBag1SFX_Audio_818F3B66.wem</CachePath>
+				</File>
+				<File Id="255119726" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Bloody.wav</ShortName>
+					<CachePath>SFX/Bloody_05BD0812.wem</CachePath>
 				</File>
 				<File Id="270014389" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hands_GrabSFX_Audio.wav</ShortName>
@@ -653,6 +657,11 @@
 					</MediaRefs>
 				</Event>
 				<Event Id="1357019017" Name="Bloodpool_Footstep_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="396412040" Name="Bloody" DurationType="OneShot" DurationMin="2.5" DurationMax="2.5">
+					<MediaRefs>
+						<MediaRef Id="255119726"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="4007099146" Name="Bloody_Footstep_Play" DurationType="OneShot" DurationMin="0.2" DurationMax="0.2">
 					<MediaRefs>
 						<MediaRef Id="399657563"/>
@@ -1338,5 +1347,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{AF0C1CCC-DA3C-F50B-55E0-EC325C1C0148}</FileHash>
+	<FileHash>{04ABD413-0D2B-A5F9-4636-50992655CA6C}</FileHash>
 </SoundBanksInfo>

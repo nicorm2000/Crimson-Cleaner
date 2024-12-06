@@ -20,6 +20,7 @@ namespace AK
         static const AkUniqueID BATHROOM_DOOR = 1431659638U;
         static const AkUniqueID BLOODPOOL_FOOTSTEP_PLAY = 3337018563U;
         static const AkUniqueID BLOODPOOL_FOOTSTEP_STOP = 1357019017U;
+        static const AkUniqueID BLOODY = 396412040U;
         static const AkUniqueID BLOODY_FOOTSTEP_PLAY = 4007099146U;
         static const AkUniqueID BLOODY_FOOTSTEP_STOP = 1116333876U;
         static const AkUniqueID BODY_PARTS_COLLISION = 2616152363U;

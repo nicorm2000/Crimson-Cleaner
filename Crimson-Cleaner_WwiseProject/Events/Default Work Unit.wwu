@@ -439,6 +439,48 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Humans" ID="{E3E8C6EC-B4BE-417C-A6EE-0050767693AC}">
+							<ChildrenList>
+								<Action Name="" ID="{6FBD0332-D3C5-4451-A643-0DA15236AD40}" ShortID="139500590">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Humans" ID="{AA98E181-6769-40A0-BFBD-C41D02EF58D5}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{76AD48F2-6DC2-4831-935F-530D37AD2E6D}" ShortID="332770634">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Humans" ID="{AA98E181-6769-40A0-BFBD-C41D02EF58D5}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Bloody" ID="{32152026-8528-48B5-B070-090E177AECAE}">
+							<ChildrenList>
+								<Action Name="" ID="{1DD370B7-54B5-4EA6-AEF4-7B96469A15E3}" ShortID="131603786">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Bloody" ID="{61AB61B9-46AB-4DE8-A75C-CF1FF5629577}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{BF9D8429-EE8B-48F9-BA69-5990EFFE4AE8}" ShortID="459323257">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Bloody" ID="{61AB61B9-46AB-4DE8-A75C-CF1FF5629577}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Retrievables" ID="{5E3E8AA8-2759-49DE-9E69-CEF83EF27226}" ShortID="611592331">
