@@ -70,16 +70,16 @@ public class Openable : Interactable, IOpenable
                 {
                     if (!IsOpen)
                     {
-                        audioManager.PlaySound(soundEvent);
+                        audioManager.PlaySound(soundEvent, gameObject);
                     }
                     else
                     {
-                        audioManager.PlaySound(soundEvent2);
+                        audioManager.PlaySound(soundEvent2, gameObject);
                     }
                 }
                 else
                 {
-                    audioManager.PlaySound(soundEvent);
+                    audioManager.PlaySound(soundEvent, gameObject);
                 }
             }
 

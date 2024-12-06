@@ -49,12 +49,12 @@ public class WaterFaucetSystem : Interactable, IToggable
             audioManager.PlaySound(interactFaucetEvent);
             if (_isOpen)
             {
-                audioManager.PlaySound(waterFlowEvent);
+                audioManager.PlaySound(waterFlowEvent, gameObject);
                 waterParticles.Play();
             }
             else
             {
-                audioManager.PlaySound(waterFlowStopEvent);
+                audioManager.PlaySound(waterFlowStopEvent, gameObject);
                 waterParticles.Stop();
             }
             animator.SetBool(_openableOpen, _isOpen);

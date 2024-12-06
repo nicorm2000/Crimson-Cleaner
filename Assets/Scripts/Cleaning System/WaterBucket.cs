@@ -93,9 +93,9 @@ public class WaterBucket : Interactable, ICleanable
                     UpdateMaterial(_bucketDirtState, _rendererWater);
             }
             if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetMop())
-                audioManager.PlaySound(soundEvent);
+                audioManager.PlaySound(soundEvent, gameObject);
             else if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetSponge())
-                audioManager.PlaySound(soundEvent2);
+                audioManager.PlaySound(soundEvent2, gameObject);
             ActivateWashing();
             cleaningManager.GetToolSelector().ResetDirtyPercentage(currentToolIndex);
             cleaningManager.GetToolSelector().toolAnimatorController.TriggerParticularAction(cleaningManager.GetToolSelector().toolAnimatorController.GetBucketName());

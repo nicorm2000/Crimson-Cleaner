@@ -38,7 +38,7 @@ public class WaterBehaviour : MonoBehaviour
         {
             splashParticles.transform.rotation = transform.rotation;
             splashParticles.Play();
-            audioManager.PlaySound(waterDropEvent);
+            audioManager.PlaySound(waterDropEvent, gameObject);
             water.SetActive(false);
             waterBucket.SetWaterPercentage(0.0f);
             waterBucket.SetWaterState(false);

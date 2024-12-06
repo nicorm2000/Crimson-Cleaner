@@ -106,7 +106,7 @@ public class OpenableNoAnimator : Interactable, IOpenable
     {
         if (string.IsNullOrEmpty(soundEvent)) return;
         string soundToPlay = isOpen && !string.IsNullOrEmpty(soundEvent2) ? soundEvent2 : soundEvent;
-        audioManager.PlaySound(soundToPlay);
+        audioManager.PlaySound(soundToPlay, gameObject);
     }
 
     private System.Collections.IEnumerator AnimateObject(bool opening)

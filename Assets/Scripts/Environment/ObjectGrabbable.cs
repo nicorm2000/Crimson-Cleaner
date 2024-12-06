@@ -241,7 +241,7 @@ public class ObjectGrabbable : MonoBehaviour, IPickable
         if (collision.relativeVelocity.magnitude > breakForceThreshold || heightDifference > fallHeightThreshold)
         {
             if (breakBottleEvent != null && audioManager != null)
-                audioManager.PlaySound(breakBottleEvent);
+                audioManager.PlaySound(breakBottleEvent, gameObject);
             lastCollisionTime = Time.time;
             if (!isObjectBreakable)
                 return;

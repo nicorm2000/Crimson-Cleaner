@@ -38,7 +38,7 @@ public class GarbageDisposal : MonoBehaviour
     public void ActivateBurning()
     {
         burnParticles.Play();
-        audioManager.PlaySound(fireEvent);
+        audioManager.PlaySound(fireEvent, gameObject);
     }
 
     public void ActivateBarrier() => coll.enabled = true;

@@ -116,12 +116,12 @@ public class Clean : MonoBehaviour, ICleanable
 
         if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetMop())
         {
-            cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetMopEvent());
+            cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetMopEvent(), gameObject);
             cleaningManager.GetMopCleaningParticles().Play();
         }
         else if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetSponge())
         {
-            cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetSpongeEvent());
+            cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetSpongeEvent(), gameObject);
             cleaningManager.GetSpongeCleaningParticles().Play();
         }
 
@@ -161,7 +161,7 @@ public class Clean : MonoBehaviour, ICleanable
 
     private void FinishCleaning()
     {
-        cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetCleanedEvent());
+        cleaningManager.GetAudioManager().PlaySound(cleaningManager.GetCleanedEvent(), gameObject);
         _currentUIIndex = 0.0f;
         isCleaned = true;
         Cleaned?.Invoke();

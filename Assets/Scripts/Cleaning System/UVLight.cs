@@ -56,13 +56,13 @@ public class UVLight : Interactable, IToggable
         dustParticles.SetActive(isOn);
         if (isOn)
         {
-            audioManager.PlaySound(soundEvent);
-            audioManager.PlaySound(loopSFXStart);
+            audioManager.PlaySound(soundEvent, gameObject);
+            audioManager.PlaySound(loopSFXStart, gameObject);
         }
         else
         {
-            audioManager.PlaySound(soundEvent2);
-            audioManager.PlaySound(loopSFXEnd);
+            audioManager.PlaySound(soundEvent2, gameObject);
+            audioManager.PlaySound(loopSFXEnd, gameObject);
         }
         for (int i = 0; i < uvLight.Length; i++)
         {
