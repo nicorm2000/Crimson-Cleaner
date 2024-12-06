@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{3E792526-CE1C-958F-72EE-12A4CF8E34D3}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{074BD077-7213-3569-4384-4E584D2F4D4D}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -607,7 +607,7 @@
 						<MediaRef Id="96612494"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3932140208" Name="Bat__Collision" DurationType="OneShot" DurationMin="0.3" DurationMax="0.3">
+				<Event Id="3932140208" Name="Bat__Collision" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.3" DurationMax="0.3">
 					<MediaRefs>
 						<MediaRef Id="803077529"/>
 					</MediaRefs>
@@ -633,17 +633,17 @@
 					</MediaRefs>
 				</Event>
 				<Event Id="1116333876" Name="Bloody_Footstep_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
-				<Event Id="2616152363" Name="Body_Parts_Collision" DurationType="OneShot" DurationMin="0.3301948" DurationMax="0.33210757">
+				<Event Id="2616152363" Name="Body_Parts_Collision" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.3301948" DurationMax="0.33210757">
 					<MediaRefs>
 						<MediaRef Id="802040487"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3569692999" Name="Bottle_Breaking" DurationType="OneShot" DurationMin="0.38861278" DurationMax="0.4117209">
+				<Event Id="3569692999" Name="Bottle_Breaking" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.38861278" DurationMax="0.4117209">
 					<MediaRefs>
 						<MediaRef Id="550167775"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3514483227" Name="Bottle_Drop" DurationType="OneShot" DurationMin="0.3934709" DurationMax="0.3934709">
+				<Event Id="3514483227" Name="Bottle_Drop" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.3934709" DurationMax="0.3934709">
 					<MediaRefs>
 						<MediaRef Id="146996785"/>
 					</MediaRefs>
@@ -680,12 +680,12 @@
 						<MediaRef Id="720422672"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="494474302" Name="Ceramic_Collision" DurationType="OneShot" DurationMin="0.3" DurationMax="0.3">
+				<Event Id="494474302" Name="Ceramic_Collision" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.3" DurationMax="0.3">
 					<MediaRefs>
 						<MediaRef Id="161617688"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3537521357" Name="Chair_Collision" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+				<Event Id="3537521357" Name="Chair_Collision" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
 					<MediaRefs>
 						<MediaRef Id="885125837"/>
 					</MediaRefs>
@@ -710,7 +710,7 @@
 						<MediaRef Id="652045968"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="910731106" Name="Couch_Chair_Collision" DurationType="OneShot" DurationMin="0.263437" DurationMax="0.263437">
+				<Event Id="910731106" Name="Couch_Chair_Collision" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.263437" DurationMax="0.263437">
 					<MediaRefs>
 						<MediaRef Id="689012084"/>
 					</MediaRefs>
@@ -730,7 +730,7 @@
 						<MediaRef Id="988003584"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="636776174" Name="doBilliard_Ball_Collision" DurationType="OneShot" DurationMin="0.23874481" DurationMax="0.23985058">
+				<Event Id="636776174" Name="doBilliard_Ball_Collision" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.23874481" DurationMax="0.23985058">
 					<MediaRefs>
 						<MediaRef Id="782901985"/>
 					</MediaRefs>
@@ -770,7 +770,7 @@
 						<MediaRef Id="1054048262"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3611395209" Name="Frame_Collision" DurationType="OneShot" DurationMin="0.11678125" DurationMax="0.11678125">
+				<Event Id="3611395209" Name="Frame_Collision" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.11678125" DurationMax="0.11678125">
 					<MediaRefs>
 						<MediaRef Id="784004900"/>
 					</MediaRefs>
@@ -806,7 +806,7 @@
 						<MediaRef Id="38686072"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="382197601" Name="Gas_Stove_Gas_Loop" DurationType="Infinite">
+				<Event Id="382197601" Name="Gas_Stove_Gas_Loop" MaxAttenuation="15" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="221652275"/>
 					</MediaRefs>
@@ -863,7 +863,7 @@
 					</MediaRefs>
 				</Event>
 				<Event Id="802104808" Name="Heavy_Breathing_Stop" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
-				<Event Id="2015415870" Name="Heavy_Tool_Collision" DurationType="OneShot" DurationMin="0.275" DurationMax="0.275">
+				<Event Id="2015415870" Name="Heavy_Tool_Collision" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.275" DurationMax="0.275">
 					<MediaRefs>
 						<MediaRef Id="577271348"/>
 					</MediaRefs>
@@ -915,7 +915,7 @@
 						<MediaRef Id="279046986"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="515677665" Name="Light_Metal_Tool_Collision" DurationType="OneShot" DurationMin="0.1925" DurationMax="0.1925">
+				<Event Id="515677665" Name="Light_Metal_Tool_Collision" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.1925" DurationMax="0.1925">
 					<MediaRefs>
 						<MediaRef Id="593550720"/>
 					</MediaRefs>
@@ -930,12 +930,12 @@
 						<MediaRef Id="162453724"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="579873924" Name="Medium_Metal_Tool_Collision" DurationType="OneShot" DurationMin="0.19886622" DurationMax="0.19886622">
+				<Event Id="579873924" Name="Medium_Metal_Tool_Collision" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.19886622" DurationMax="0.19886622">
 					<MediaRefs>
 						<MediaRef Id="196769015"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="295281277" Name="Menu_Collision" DurationType="OneShot" DurationMin="0.1" DurationMax="0.1">
+				<Event Id="295281277" Name="Menu_Collision" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.1" DurationMax="0.1">
 					<MediaRefs>
 						<MediaRef Id="976852037"/>
 					</MediaRefs>
@@ -1010,12 +1010,12 @@
 						<MediaRef Id="803740784"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2970993869" Name="Plate_Breaking" DurationType="OneShot" DurationMin="0.535" DurationMax="0.535">
+				<Event Id="2970993869" Name="Plate_Breaking" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.535" DurationMax="0.535">
 					<MediaRefs>
 						<MediaRef Id="369679358"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3961112132" Name="Poker_Chip_Collision" DurationType="OneShot" DurationMin="0.1" DurationMax="0.1">
+				<Event Id="3961112132" Name="Poker_Chip_Collision" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.1" DurationMax="0.1">
 					<MediaRefs>
 						<MediaRef Id="694379001"/>
 					</MediaRefs>
@@ -1025,7 +1025,7 @@
 						<MediaRef Id="227645673"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3176396303" Name="Pool_Stick_Collision" DurationType="OneShot" DurationMin="0.14956743" DurationMax="0.15043384">
+				<Event Id="3176396303" Name="Pool_Stick_Collision" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.14956743" DurationMax="0.15043384">
 					<MediaRefs>
 						<MediaRef Id="571702833"/>
 					</MediaRefs>
@@ -1080,7 +1080,7 @@
 						<MediaRef Id="676679731"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3225123216" Name="Rope_Collision" DurationType="OneShot" DurationMin="0.25" DurationMax="0.25">
+				<Event Id="3225123216" Name="Rope_Collision" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.25" DurationMax="0.25">
 					<MediaRefs>
 						<MediaRef Id="204238787"/>
 					</MediaRefs>
@@ -1160,27 +1160,27 @@
 						<MediaRef Id="1662537"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2233184339" Name="Tin_Collision" DurationType="OneShot" DurationMin="0.15" DurationMax="0.15">
+				<Event Id="2233184339" Name="Tin_Collision" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.15" DurationMax="0.15">
 					<MediaRefs>
 						<MediaRef Id="294791835"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="560187437" Name="Toilet_Push" DurationType="OneShot" DurationMin="1.9283036" DurationMax="1.9283036">
+				<Event Id="560187437" Name="Toilet_Push" MaxAttenuation="15" DurationType="OneShot" DurationMin="1.9283036" DurationMax="1.9283036">
 					<MediaRefs>
 						<MediaRef Id="508666165"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2196568223" Name="Toolbox_Collision" DurationType="OneShot" DurationMin="0.37363318" DurationMax="0.37363318">
+				<Event Id="2196568223" Name="Toolbox_Collision" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.37363318" DurationMax="0.37363318">
 					<MediaRefs>
 						<MediaRef Id="524202143"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2629743283" Name="Trash_Bag_Collision" DurationType="OneShot" DurationMin="1.3775823" DurationMax="1.3839626">
+				<Event Id="2629743283" Name="Trash_Bag_Collision" MaxAttenuation="15" DurationType="OneShot" DurationMin="1.3775823" DurationMax="1.3839626">
 					<MediaRefs>
 						<MediaRef Id="892225877"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2110685349" Name="Urinal_Push" DurationType="OneShot" DurationMin="3" DurationMax="3">
+				<Event Id="2110685349" Name="Urinal_Push" MaxAttenuation="15" DurationType="OneShot" DurationMin="3" DurationMax="3">
 					<MediaRefs>
 						<MediaRef Id="360440042"/>
 					</MediaRefs>
@@ -1232,12 +1232,12 @@
 						<MediaRef Id="512802184"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2790747934" Name="Water_Drop" MaxAttenuation="10" DurationType="OneShot" DurationMin="0.85" DurationMax="0.85">
+				<Event Id="2790747934" Name="Water_Drop" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.85" DurationMax="0.85">
 					<MediaRefs>
 						<MediaRef Id="902178105"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2869063429" Name="Water_Flow" DurationType="Infinite">
+				<Event Id="2869063429" Name="Water_Flow" MaxAttenuation="15" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="460527488"/>
 					</MediaRefs>
@@ -1275,5 +1275,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{FB939915-964E-0663-2601-0D83D02E145D}</FileHash>
+	<FileHash>{DE53C1A0-5C6A-AD93-3587-338701871457}</FileHash>
 </SoundBanksInfo>
