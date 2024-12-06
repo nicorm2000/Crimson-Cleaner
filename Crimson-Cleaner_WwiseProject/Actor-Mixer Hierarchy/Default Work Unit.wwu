@@ -5781,6 +5781,42 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+						<Sound Name="Tinnitus" ID="{2431CFCB-E2E1-4D66-997A-928F7C3F37EB}" ShortID="288748616">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{63722DDB-7A39-4727-89CB-D3363B66B92F}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{1ED736FE-7660-4F29-83AD-66E58197D574}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Tinnitus" ID="{3D791905-1162-49B6-8119-B75D5A9A854A}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="2"/>
+										<Property Name="FadeOutDuration" Type="Real64" Value="2"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="2"/>
+										<Property Name="TrimEnd" Type="Real64" Value="8.5"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Tinnitus.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="818231150"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Tinnitus" ID="{3D791905-1162-49B6-8119-B75D5A9A854A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Retrievables" ID="{60621710-2701-480F-BE0E-43751DAE5648}" ShortID="724998173">

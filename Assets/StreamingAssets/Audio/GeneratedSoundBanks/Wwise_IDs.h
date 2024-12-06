@@ -75,6 +75,7 @@ namespace AK
         static const AkUniqueID HOVER_TOOLWHEEL_1 = 1862457371U;
         static const AkUniqueID HOVER_TOOLWHEEL_2 = 1862457368U;
         static const AkUniqueID HOVER_TOOLWHEEL_3 = 1862457369U;
+        static const AkUniqueID HUMANS = 2383602519U;
         static const AkUniqueID KNIFE_COLLISION = 1966534225U;
         static const AkUniqueID KNOCK = 3764079811U;
         static const AkUniqueID LAMP_COLLISION = 2628227250U;
@@ -84,6 +85,7 @@ namespace AK
         static const AkUniqueID LAMP_SWITCH_ON = 2768174490U;
         static const AkUniqueID LIGHT_METAL_TOOL_COLLISION = 515677665U;
         static const AkUniqueID LIGHT_SWITCH = 790135102U;
+        static const AkUniqueID LOW_PRESSURE = 1337404249U;
         static const AkUniqueID MACHETE_COLLISION = 2997531735U;
         static const AkUniqueID MEDIUM_METAL_TOOL_COLLISION = 579873924U;
         static const AkUniqueID MENU_COLLISION = 295281277U;

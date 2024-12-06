@@ -418,6 +418,27 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Low_Pressure" ID="{D43AD38A-9BBC-4E18-AB11-1918C62D9724}">
+							<ChildrenList>
+								<Action Name="" ID="{08B378E3-9E85-425B-AB8C-2C21F16B1E01}" ShortID="617673064">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Tinnitus" ID="{2431CFCB-E2E1-4D66-997A-928F7C3F37EB}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{05E90BF7-D70E-440D-B50A-53D108B73EE9}" ShortID="308563332">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Tinnitus" ID="{2431CFCB-E2E1-4D66-997A-928F7C3F37EB}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Retrievables" ID="{5E3E8AA8-2759-49DE-9E69-CEF83EF27226}" ShortID="611592331">
