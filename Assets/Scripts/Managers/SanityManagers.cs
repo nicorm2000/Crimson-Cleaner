@@ -6,7 +6,6 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
 {
     [Header("Config")]
     [SerializeField] private AudioManager audioManager;
-    [SerializeField] private HighTierOutcome[] highTierOutcomes;
     [SerializeField] private GameStateManager gameStateManager;
 
     [Header("Timers")]
@@ -42,6 +41,8 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
     [Header("Outcomes")]
     [SerializeField] private Outcome[] lowTierOutcomes;
     [SerializeField] private MediumTierOutcome[] mediumTierOutcomes;
+    [SerializeField] private HighTierOutcome[] highTierOutcomes;
+    [SerializeField] private MediumTierOutcome humansOutcome;
 
     public bool isRageActive = false;
     public bool isCatatoniaActive = false;
@@ -62,6 +63,8 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
     private bool lowTierOutcomeActive = false;
     private bool mediumTierOutcomeActive = false;
 
+    //public bool isTabletActive = false;
+    public bool isHumansOutcomeActive = false;
 
     private GameObject newVisualEffect;
 
@@ -148,9 +151,16 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
 
     private IEnumerator StartOutcome(MediumTierOutcome outcome)
     {
+        //isTabletActive = gameStateManager.GetTablet().activeSelf;
+
+        if (outcome == humansOutcome)
+            isHumansOutcomeActive = true;
+
         outcome.gameObject.SetActive(true);
         outcome.TriggerOutcome?.Invoke();
         outcome.isActiveNow = true;
+
+
 
         //Debug.Log(outcome.tier + ": " + outcome.eventID + " started");
 
@@ -170,8 +180,18 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
 
         outcome.isActiveNow = false;
 
+        if (outcome == humansOutcome)
+            isHumansOutcomeActive = false;
+
         outcome.ToggleVolumeController(false);
+        
+        if(outcome.GetVisualObject())
         outcome.ToggleVisualObjectState(false);
+        else if (outcome.GetVisualObjects() != null)
+        {
+            foreach(var obj in outcome.GetVisualObjects())
+                obj.SetActive(false);
+        }
 
         outcome.StartVolumeControllerCoroutine();
         //Debug.Log(outcome.tier + ": " + outcome.eventID + " : finished");

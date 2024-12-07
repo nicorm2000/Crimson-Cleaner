@@ -49,7 +49,7 @@ public class ToolsWheelController : MonoBehaviour
 
     private void Update()
     {
-        if (!isToolWheelActive) return;
+        if (!isToolWheelActive || SanityManager.Instance.isHumansOutcomeActive) return;
 
         Vector2 moveInput = new Vector2();
 

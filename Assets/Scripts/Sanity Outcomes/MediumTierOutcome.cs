@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,6 +11,7 @@ public class MediumTierOutcome : MonoBehaviour
     public UnityEvent TriggerOutcome;
     [SerializeField] private VolumeController volumeController;
     [SerializeField] private GameObject visualObject;
+    [SerializeField] private GameObject[] visualObjects;
 
     public float duration;
     public bool isActiveNow = false;
@@ -26,6 +26,15 @@ public class MediumTierOutcome : MonoBehaviour
     {
         if (visualObject)
             visualObject.SetActive(active);
+    }
+    
+    public void ToggleVisualObjectsState(bool active)
+    {
+        foreach (var obj in visualObjects)
+        {
+            if (obj)
+                obj.SetActive(active);
+        }
     }
 
     public void TriggerAudio()
@@ -59,6 +68,16 @@ public class MediumTierOutcome : MonoBehaviour
         yield return new WaitForSeconds(volumeController.endTogglingDuration);
         volumeController.gameObject.SetActive(false);
         gameObject.SetActive(false);
+    }
+
+    public GameObject GetVisualObject()
+    {
+        return visualObject;
+    }
+    
+    public GameObject[] GetVisualObjects()
+    {
+        return visualObjects;
     }
 
 }

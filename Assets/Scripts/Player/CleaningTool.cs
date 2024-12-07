@@ -76,7 +76,7 @@ public class CleaningTool : MonoBehaviour
 
     public void SwitchTool(int newIndex)
     {
-        if (toolAnimatorController.GetAnimator().GetBool(toolAnimatorController.GetCleaningName()) || !toolAnimatorController.canTriggerAction) return;
+        if (toolAnimatorController.GetAnimator().GetBool(toolAnimatorController.GetCleaningName()) || !toolAnimatorController.canTriggerAction || SanityManager.Instance.isHumansOutcomeActive) return;
 
         newIndex = Mathf.Clamp(newIndex, 0, tools.Length - 1);
 
@@ -99,7 +99,6 @@ public class CleaningTool : MonoBehaviour
 
         if (newIndex == tabletIndex)
         {
-            tools[newIndex].SetActive(true);
             isTabletOpen = true;
             CleaningListEvent?.Invoke();
         }
