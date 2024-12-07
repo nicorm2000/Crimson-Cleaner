@@ -78,7 +78,7 @@ public class SettingsUIManager : MonoBehaviour
 
     private void ToggleSFXCrossText()
     {
-        sfxCrossText.text = AudioManager.muteSFX ? "" : "X";
+        sfxCrossText.text = AudioManager.muteSFX ? "OFF" : "ON";
     }
 
     private void OnDestroy()
