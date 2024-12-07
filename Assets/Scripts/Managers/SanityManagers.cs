@@ -103,6 +103,21 @@ public class SanityManager : MonoBehaviourSingleton<SanityManager>
         //    highTierOutcomes[2].gameObject.SetActive(true);
 
         //Debug.Log("High tier: " + highTierTimer);
+
+        if (UnityEngine.Input.GetKeyDown(KeyCode.U))
+        {
+            StartCoroutine(StartOutcome(mediumTierOutcomes[mediumTierOutcomes.Length-3]));
+        }
+        
+        if (UnityEngine.Input.GetKeyDown(KeyCode.I))
+        {
+            StartCoroutine(StartOutcome(mediumTierOutcomes[mediumTierOutcomes.Length-2]));
+        }
+        
+        if (UnityEngine.Input.GetKeyDown(KeyCode.O))
+        {
+            StartCoroutine(StartOutcome(mediumTierOutcomes[mediumTierOutcomes.Length-1]));
+        }
     }
 
     private void IncreaseSanityBars()
