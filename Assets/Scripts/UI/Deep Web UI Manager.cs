@@ -39,6 +39,7 @@ public class DeepWebUIManager : MonoBehaviour
 
     private IEnumerator GrabKeyAnimation()
     {
+        pCCanvasController.toolAnimatorControllerlayerController.TriggerParticularAction(pCCanvasController.toolAnimatorControllerlayerController.GetGrabKeysName());
         pCCanvasController.isLevelSelected = true;
         audioManager.PlaySound(clickEvent);
         float elapsedTime = 0f;
@@ -75,7 +76,7 @@ public class DeepWebUIManager : MonoBehaviour
 
                     // REMEBER TO MOVE THIS TO HAND COLLISION
                     key.GetComponent<Key>().isKeyPickedUp = true;
-                    key.SetActive(false);
+                    //key.SetActive(false);
                 }
             }
 
@@ -83,7 +84,7 @@ public class DeepWebUIManager : MonoBehaviour
         }
 
         if (pCCanvasController.isPlayerOnPC)
-            pCCanvasController.ShutDownPC();
+            pCCanvasController.ShutDownPC(false);
 
         mainMenuCanvas.SetActive(false);
         LevelAccepted?.Invoke();

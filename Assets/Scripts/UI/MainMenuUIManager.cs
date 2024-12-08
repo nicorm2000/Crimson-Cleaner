@@ -58,7 +58,7 @@ public class MainMenuUIManager : MonoBehaviour
         }
 
         if (pCCanvasController.isPlayerOnPC)
-            pCCanvasController.ShutDownPC();
+            pCCanvasController.ShutDownPC(true);
     }
 
     public void StartSimpleGaussianBlurState()

@@ -56,6 +56,7 @@ public class ToolAnimatorController : MonoBehaviour
     [SerializeField] private string cleaning;
     [SerializeField] private string bucket;
     [SerializeField] private string pc;
+    [SerializeField] private string grabKeysName;
 
     public bool canTriggerAction = true;
 
@@ -201,6 +202,7 @@ public class ToolAnimatorController : MonoBehaviour
     public string GetBinCleanName() => binCleanName;
     public string GetBinRemoveName() => binRemoveName;
     public string GetPCName() => pc;
+    public string GetGrabKeysName() => grabKeysName;
 
 
 }

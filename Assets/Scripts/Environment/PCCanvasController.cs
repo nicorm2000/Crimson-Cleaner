@@ -6,7 +6,6 @@ public class PCCanvasController : Interactable, IInteractable
     [SerializeField] private InputManager inputManager;
     [SerializeField] private MainMenuUIManager mainMenuUIManager;
     [SerializeField] private PlayerController playerController;
-    [SerializeField] private ToolAnimatorController toolAnimatorControllerlayerController;
     [SerializeField] private Transform mainCamera;
     [SerializeField] private Transform targetTransform;
     [SerializeField] private Transform leftStartupPosition;
@@ -19,6 +18,7 @@ public class PCCanvasController : Interactable, IInteractable
     [SerializeField] private Material matOn = null;
     [SerializeField] private Material matOff = null;
     [SerializeField] private GameObject key = null;
+    public ToolAnimatorController toolAnimatorControllerlayerController;
 
     [SerializeField] private Sprite interactSprite;
     public Sprite InteractMessage => interactSprite;
@@ -136,15 +136,15 @@ public class PCCanvasController : Interactable, IInteractable
         goCoroutine = null;
     }
 
-    public void ShutDownPC()
+    public void ShutDownPC(bool shouldAnimatorTriggerWait)
     {
         if (returnCoroutine == null && goCoroutine == null)
         {
-            returnCoroutine = StartCoroutine(PCShutDownCoroutine());
+            returnCoroutine = StartCoroutine(PCShutDownCoroutine(shouldAnimatorTriggerWait));
         }
     }
 
-    private IEnumerator PCShutDownCoroutine()
+    private IEnumerator PCShutDownCoroutine(bool shouldAnimatorTriggerWait)
     {
         bool animationActive = false;
         isPlayerMoving = true;
@@ -159,6 +159,11 @@ public class PCCanvasController : Interactable, IInteractable
             audioManager.PlaySound(standUpEvent);
         }
 
+        if (!shouldAnimatorTriggerWait)
+        {
+            toolAnimatorControllerlayerController.TriggerParticularAction(toolAnimatorControllerlayerController.GetPCName(), false);
+        }
+
         while (elapsedTime < lerpDuration)
         {
             float t = elapsedTime / lerpDuration;
@@ -166,15 +171,19 @@ public class PCCanvasController : Interactable, IInteractable
             mainCamera.transform.position = Vector3.Lerp(initialPosition, previousCameraPosition, t);
             mainCamera.transform.rotation = Quaternion.Lerp(initialRotation, previousCameraRotation, t);
 
-            if (!animationActive && elapsedTime >= lerpDuration / 2)
+            if (shouldAnimatorTriggerWait)
             {
-                toolAnimatorControllerlayerController.TriggerParticularAction(toolAnimatorControllerlayerController.GetPCName(), false);
-                animationActive = true;
+                if (!animationActive && elapsedTime >= lerpDuration / 2)
+                {
+                    toolAnimatorControllerlayerController.TriggerParticularAction(toolAnimatorControllerlayerController.GetPCName(), false);
+                    animationActive = true;
+                }
             }
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+        
 
         mainCamera.transform.position = previousCameraPosition;
         mainCamera.transform.rotation = previousCameraRotation;
