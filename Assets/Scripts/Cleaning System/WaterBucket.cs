@@ -8,6 +8,7 @@ public class WaterBucket : Interactable, ICleanable
     [SerializeField] private CleaningManager cleaningManager;
     [SerializeField] private ParticleSystem washParticles;
     [SerializeField] private Material[] bucketMaterials;
+    [SerializeField] private Color[] waterColors;
 
     [Header("Water Config")]
     [SerializeField] private GameObject water;
@@ -25,6 +26,8 @@ public class WaterBucket : Interactable, ICleanable
     public event Action Cleaned;
     public event Action WaterBucketUnavailable;
 
+    private MaterialPropertyBlock materialPropertyBlock;
+
     private Renderer _renderer;
     private Renderer _rendererWater;
     private int _bucketDirtState;
@@ -34,10 +37,13 @@ public class WaterBucket : Interactable, ICleanable
         _bucketDirtState = 0;
         _renderer = GetComponent<Renderer>();
         if (water != null)
+        {
             _rendererWater = water.GetComponent<Renderer>();
-        UpdateMaterial(_bucketDirtState, _renderer);
+            UpdateMaterial(_bucketDirtState, _renderer);
+            materialPropertyBlock = new MaterialPropertyBlock();
+        }
         if (water != null)
-            UpdateMaterial(_bucketDirtState, _rendererWater);
+            UpdateMaterial(_bucketDirtState);
         HasWater = true;
         WaterPercentage = 1;
     }
@@ -90,7 +96,7 @@ public class WaterBucket : Interactable, ICleanable
                 _bucketDirtState++;
                 UpdateMaterial(_bucketDirtState, _renderer);
                 if (water != null)
-                    UpdateMaterial(_bucketDirtState, _rendererWater);
+                    UpdateMaterial(_bucketDirtState);
             }
             if (cleaningManager.GetToolSelector().CurrentToolIndex == cleaningManager.GetMop())
                 audioManager.PlaySound(soundEvent, gameObject);
@@ -151,6 +157,21 @@ public class WaterBucket : Interactable, ICleanable
         {
             renderer.material = bucketMaterials[materialIndex];
         }
+    }   
+    
+    private void UpdateMaterial(int materialIndex)
+    {
+        if (materialIndex >= 0 && materialIndex < waterColors.Length)
+        {
+            UpdateWaterProperty(waterColors[materialIndex]);
+        }
+    }
+
+    private void UpdateWaterProperty(Color color)
+    {
+        _rendererWater.GetPropertyBlock(materialPropertyBlock);
+        materialPropertyBlock.SetColor("Color_93e06cd551a5449091bcde90b46765a0", color);
+        _rendererWater.SetPropertyBlock(materialPropertyBlock);
     }
 
     public void SetBucketMaterialDefault()
@@ -158,7 +179,7 @@ public class WaterBucket : Interactable, ICleanable
         _bucketDirtState = 0;
         UpdateMaterial(_bucketDirtState, _renderer);
         if (water != null)
-            UpdateMaterial(_bucketDirtState, _rendererWater);
+            UpdateMaterial(_bucketDirtState);
     }
 
     private void TriggerBucketEyection()

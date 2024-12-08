@@ -111,4 +111,9 @@ public class WaterFaucetSystem : Interactable, IToggable
         }
         return true;
     }
+
+    public void StopAudio()
+    {
+        audioManager.PlaySound(waterFlowStopEvent, gameObject);
+    }
 }
