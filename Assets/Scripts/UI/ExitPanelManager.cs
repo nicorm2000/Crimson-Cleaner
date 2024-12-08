@@ -7,22 +7,20 @@ public class ExitPanelManager : MonoBehaviour
     [SerializeField] private InputManager inputManager;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private MainMenuUIManager mainMenuUIManager;
-    [SerializeField] private StartGameManager startGameManager;
     [SerializeField] private GameObject PCCanvas;
     [SerializeField] private GameObject exitGamePanel;
 
-    private bool canToggleExit = false;
+    public bool canToggleExit = false;
 
     private void OnEnable()
     {
         inputManager.PauseEvent += OnPauseEvent;
-        startGameManager.startGameFinishedEvent += OnStartGameFinishedEvent;
+
     }
 
     private void OnDisable()
     {
         inputManager.PauseEvent -= OnPauseEvent;
-        startGameManager.startGameFinishedEvent -= OnStartGameFinishedEvent;
     }
 
     public void OnPauseEvent()
@@ -37,7 +35,7 @@ public class ExitPanelManager : MonoBehaviour
         ToggleCursor();
     }
 
-    private void OnStartGameFinishedEvent()
+    public void EnablePanel()
     {
         canToggleExit = true;
     }

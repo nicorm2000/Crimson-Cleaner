@@ -9,7 +9,6 @@ public class MainMenuUIManager : MonoBehaviour
 {
     [Header("Config")]
     public PCCanvasController pCCanvasController;
-    [SerializeField] private StartGameManager startGameManager;
     public InputManager inputManager;
     public Van van;
 
@@ -32,14 +31,12 @@ public class MainMenuUIManager : MonoBehaviour
     {
         inputManager.PauseEvent += OnPauseEvent;
         van.ungrabbedKey += () => OnMissingKeyWarning(ref missingKeyWarningCoroutine, missingKeyImageWarning, missingKeyErrorDuration);
-        startGameManager.startGameFinishedEvent += OnStartGameFinishedEvent;
     }
 
     private void OnDisable()
     {
         inputManager.PauseEvent -= OnPauseEvent;
         van.ungrabbedKey -= () => OnMissingKeyWarning(ref missingKeyWarningCoroutine, missingKeyImageWarning, missingKeyErrorDuration);
-        startGameManager.startGameFinishedEvent -= OnStartGameFinishedEvent;
     }
 
     public void ToggleCanvas(GameObject canvas, bool active)
@@ -47,7 +44,7 @@ public class MainMenuUIManager : MonoBehaviour
         canvas.SetActive(active);
     }
 
-    private void OnStartGameFinishedEvent()
+    public void EnableReticle()
     {
         reticle.SetActive(true);
     }

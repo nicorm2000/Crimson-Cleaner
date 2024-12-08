@@ -18,6 +18,7 @@ public class PCCanvasController : Interactable, IInteractable
     [SerializeField] private MeshRenderer cpu = null;
     [SerializeField] private Material matOn = null;
     [SerializeField] private Material matOff = null;
+    [SerializeField] private GameObject key = null;
 
     [SerializeField] private Sprite interactSprite;
     public Sprite InteractMessage => interactSprite;
@@ -193,5 +194,10 @@ public class PCCanvasController : Interactable, IInteractable
         isPlayerMoving = false;
         isPlayerOnPC = false;
         returnCoroutine = null;
+    }
+
+    public void DespawnKey()
+    {
+        key.SetActive(false);
     }
 }
