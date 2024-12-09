@@ -241,7 +241,6 @@ GameObject:
   - component: {fileID: 2116929887523489322}
   - component: {fileID: 8096155179604221763}
   - component: {fileID: 973008316880996836}
-  - component: {fileID: 5221597177536846038}
   m_Layer: 0
   m_Name: Dollar2
   m_TagString: Untagged
@@ -314,27 +313,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5221597177536846038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7087329703330013620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lerpSpeed: 10
-  rotationSpeed: 10
-  throwingForce: 10
-  breakForceThreshold: 10
-  collisionCooldown: 0.1
-  fallHeightThreshold: 5
-  isObjectMulitple: 0
-  hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: 
-  isObjectSanityModifier: 0
-  isObjectBreakable: 0
