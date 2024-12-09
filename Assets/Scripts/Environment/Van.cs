@@ -80,6 +80,10 @@ public class Van : Interactable, IInteractable
         playerController.ToggleMovement(false);
         playerController.ToggleCameraMovement(false);
 
+        toolAnimatorController.TriggerParticularAction(toolAnimatorController.GetSitDownName());
+
+        yield return new WaitForSeconds(toolAnimatorController.GetAnimator().GetCurrentAnimatorStateInfo(0).length);
+
         float elapsedTime = 0f;
 
         Vector3 initialPosition = camera.transform.position;
@@ -96,8 +100,8 @@ public class Van : Interactable, IInteractable
             yield return null;
         }
 
-
         toolAnimatorController.TriggerParticularAction(toolAnimatorController.GetStartCarTriggerName());
+
 
         yield return new WaitForSeconds(toolAnimatorController.GetAnimator().GetCurrentAnimatorStateInfo(0).length);
 

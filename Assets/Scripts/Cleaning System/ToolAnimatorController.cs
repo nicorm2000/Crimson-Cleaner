@@ -58,6 +58,7 @@ public class ToolAnimatorController : MonoBehaviour
     [SerializeField] private string pc;
     [SerializeField] private string grabKeysName;
     [SerializeField] private string petCatName;
+    [SerializeField] private string sitDownName;
     [SerializeField] private string startCarTriggerName;
 
     public bool canTriggerAction = true;
@@ -206,6 +207,7 @@ public class ToolAnimatorController : MonoBehaviour
     public string GetPCName() => pc;
     public string GetGrabKeysName() => grabKeysName;
     public string GetPetCatName() => petCatName;
+    public string GetSitDownName() => sitDownName;
     public string GetStartCarTriggerName() => startCarTriggerName;
 
 
