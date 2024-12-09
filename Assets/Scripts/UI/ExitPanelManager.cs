@@ -35,6 +35,11 @@ public class ExitPanelManager : MonoBehaviour
         ToggleCursor();
     }
 
+    public void DisablePanel()
+    {
+        canToggleExit = false;
+    }
+
     public void EnablePanel()
     {
         canToggleExit = true;

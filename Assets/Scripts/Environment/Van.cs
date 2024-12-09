@@ -7,6 +7,8 @@ public class Van : Interactable, IInteractable
     //[SerializeField] private MySceneManager mySceneManager;
     //[SerializeField] private string level1Name;
     [SerializeField] private PlayerController playerController;
+    [SerializeField] private ToolAnimatorController toolAnimatorController;
+    [SerializeField] private ExitPanelManager exitPanelManager;
     [SerializeField] private Animator changeSceneAnimator;
     [SerializeField] private string changeSceneTrigger;
     [SerializeField] private Animator endGameAnimator;
@@ -72,6 +74,7 @@ public class Van : Interactable, IInteractable
     
     private IEnumerator TriggerSceneTransition()
     {
+        exitPanelManager.DisablePanel();
         isSceneTransitioned = true;
         SceneTransitioned?.Invoke();
         playerController.ToggleMovement(false);
@@ -92,6 +95,11 @@ public class Van : Interactable, IInteractable
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+
+
+        toolAnimatorController.TriggerParticularAction(toolAnimatorController.GetStartCarTriggerName());
+
+        yield return new WaitForSeconds(toolAnimatorController.GetAnimator().GetCurrentAnimatorStateInfo(0).length);
 
         yield return new WaitForSeconds(startEngineDelay);
 
