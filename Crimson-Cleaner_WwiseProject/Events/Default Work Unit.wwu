@@ -1859,6 +1859,59 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Cardboard_Collision" ID="{BC2A601D-04C2-46AA-8C0A-D1E28F73B18F}">
+							<ChildrenList>
+								<Action Name="" ID="{C3127562-3286-4CE8-BCF7-1CDF2ED45C23}" ShortID="388993265">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Cardboard" ID="{4D03894E-8F84-417E-85E9-9B87B665479F}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Fruit_Collision" ID="{4550AD1D-11C5-4946-A88C-F0BE250C6EAB}">
+							<ChildrenList>
+								<Action Name="" ID="{E5E5E53E-9FA5-4F2D-8A08-F7B5DE2CBAD3}" ShortID="57533441">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Fruit" ID="{97ED0AC7-57C1-4234-8ADF-4AAE33AFCBB4}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{84638389-5FF7-4E31-8DE2-DC4859385FDF}" ShortID="16243506">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Fruit" ID="{97ED0AC7-57C1-4234-8ADF-4AAE33AFCBB4}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Plastic_Collision" ID="{8F2C59C3-7C4A-494E-8622-DEA2FE540665}">
+							<ChildrenList>
+								<Action Name="" ID="{C2F3B7DF-F3EF-4A62-8425-50DEB507B87E}" ShortID="222254230">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Plastic" ID="{8D114E78-44DC-488A-92FA-073590D61603}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{2DDDBBE6-F991-4C5C-9866-9E9AFF31A8A3}" ShortID="992233586">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Plastic" ID="{8D114E78-44DC-488A-92FA-073590D61603}" WorkUnitID="{DAC42A46-3133-465E-9962-06A4D8E08F51}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Player" ID="{C522BED6-6246-49B1-822C-2AD03AE35608}" ShortID="565143225">

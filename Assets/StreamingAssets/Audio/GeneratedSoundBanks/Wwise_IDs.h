@@ -30,6 +30,7 @@ namespace AK
         static const AkUniqueID BUCKET_COLLISION = 1692852178U;
         static const AkUniqueID CABINET_CLOSE = 1948672150U;
         static const AkUniqueID CABINET_OPEN = 2458915778U;
+        static const AkUniqueID CARDBOARD_COLLISION = 145713536U;
         static const AkUniqueID CART_CLOSE = 3697444650U;
         static const AkUniqueID CART_OPEN = 2037208526U;
         static const AkUniqueID CAT_INTERACTION = 717945726U;
@@ -55,6 +56,7 @@ namespace AK
         static const AkUniqueID FREEZING = 2323192249U;
         static const AkUniqueID FRIDGE_CIOSE = 2736826332U;
         static const AkUniqueID FRIDGE_OPEN = 2916123785U;
+        static const AkUniqueID FRUIT_COLLISION = 1255784000U;
         static const AkUniqueID GAME_CLICK = 2188449690U;
         static const AkUniqueID GAME_INTRO = 387455016U;
         static const AkUniqueID GAME_INTRO_STOP = 2490666247U;
@@ -106,6 +108,7 @@ namespace AK
         static const AkUniqueID PHONE_RING = 3401439988U;
         static const AkUniqueID PICK_UP = 467838998U;
         static const AkUniqueID PICK_UP_TRASH = 3160723937U;
+        static const AkUniqueID PLASTIC_COLLISION = 3554254734U;
         static const AkUniqueID PLATE_BREAKING = 2970993869U;
         static const AkUniqueID POKER_CHIP_COLLISION = 3961112132U;
         static const AkUniqueID POLICE_SIREN = 2102979017U;

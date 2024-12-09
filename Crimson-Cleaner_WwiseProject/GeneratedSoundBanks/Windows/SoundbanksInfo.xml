@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{16B26ACD-4B2C-4371-1789-4314F9D048C2}">
+		<SoundBank Id="2581457243" Type="User" Language="SFX" Hash="{52A7FD00-80C0-BF6B-ECF1-FA9E58282CB7}">
 			<ShortName>Crimson_Cleaner</ShortName>
 			<Path>Crimson_Cleaner.bnk</Path>
 			<Media>
@@ -144,7 +144,7 @@
 				</File>
 				<File Id="211514850" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Humans.wav</ShortName>
-					<CachePath>SFX/Humans_24836974.wem</CachePath>
+					<CachePath>SFX/Humans_98F3C433.wem</CachePath>
 				</File>
 				<File Id="213727799" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Van_Door_Open.wav</ShortName>
@@ -153,6 +153,10 @@
 				<File Id="221652275" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Gas_Stove_Loop.wav</ShortName>
 					<CachePath>SFX/Gas_Stove_Loop_66B93D96.wem</CachePath>
+				</File>
+				<File Id="226136555" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Plastic.wav</ShortName>
+					<CachePath>SFX/Plastic_818F3B66.wem</CachePath>
 				</File>
 				<File Id="227645673" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Police_SirenSFX_Audio.wav</ShortName>
@@ -172,7 +176,7 @@
 				</File>
 				<File Id="255119726" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Bloody.wav</ShortName>
-					<CachePath>SFX/Bloody_05BD0812.wem</CachePath>
+					<CachePath>SFX/Bloody_1C371AAB.wem</CachePath>
 				</File>
 				<File Id="270014389" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Hands_GrabSFX_Audio.wav</ShortName>
@@ -430,6 +434,10 @@
 					<ShortName>Cat_2.wav</ShortName>
 					<CachePath>SFX/Cat_2_818F3B66.wem</CachePath>
 				</File>
+				<File Id="733995337" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cardboard.wav</ShortName>
+					<CachePath>SFX/Cardboard_4E7B4AC4.wem</CachePath>
+				</File>
 				<File Id="739600721" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Retrieve_PickUp_DocumentsSFX_Audio.wav</ShortName>
 					<CachePath>SFX/Retrieve_PickUp_DocumentsSFX_Audio_CF6C2245.wem</CachePath>
@@ -521,6 +529,10 @@
 				<File Id="892690072" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LimpiarMopaSFX_Audio.wav</ShortName>
 					<CachePath>SFX/LimpiarMopaSFX_Audio_A620CDF1.wem</CachePath>
+				</File>
+				<File Id="901114039" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Apple.wav</ShortName>
+					<CachePath>SFX/Apple_D9197B86.wem</CachePath>
 				</File>
 				<File Id="902178105" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Bucket_DumpWaterSFX_Audio.wav</ShortName>
@@ -705,6 +717,11 @@
 						<MediaRef Id="52850419"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="145713536" Name="Cardboard_Collision" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.1" DurationMax="0.1">
+					<MediaRefs>
+						<MediaRef Id="733995337"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3697444650" Name="Cart_Close" DurationType="OneShot" DurationMin="0.49855804" DurationMax="0.5014461">
 					<MediaRefs>
 						<MediaRef Id="592302926"/>
@@ -830,6 +847,11 @@
 				<Event Id="2916123785" Name="Fridge_Open" DurationType="OneShot" DurationMin="0.55" DurationMax="0.55">
 					<MediaRefs>
 						<MediaRef Id="81870092"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1255784000" Name="Fruit_Collision" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.2928805" DurationMax="0.2928805">
+					<MediaRefs>
+						<MediaRef Id="901114039"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2188449690" Name="Game_Click" DurationType="OneShot" DurationMin="0.04715625" DurationMax="0.04715625">
@@ -1070,6 +1092,11 @@
 				<Event Id="3160723937" Name="Pick_Up_Trash" DurationType="OneShot" DurationMin="1" DurationMax="1">
 					<MediaRefs>
 						<MediaRef Id="803740784"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3554254734" Name="Plastic_Collision" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.19577083" DurationMax="0.19577083">
+					<MediaRefs>
+						<MediaRef Id="226136555"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2970993869" Name="Plate_Breaking" MaxAttenuation="15" DurationType="OneShot" DurationMin="0.535" DurationMax="0.535">
@@ -1347,5 +1374,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A217956F-87F4-2B37-9D52-A70290A7D2DF}</FileHash>
+	<FileHash>{CA2298FE-B873-5D3F-73C1-3DC4B9E416D6}</FileHash>
 </SoundBanksInfo>
