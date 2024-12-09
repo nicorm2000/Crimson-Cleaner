@@ -7,6 +7,7 @@ public class DeepWebUIManager : MonoBehaviour
 
     [Header("Config")]
     [SerializeField] private PCCanvasController pCCanvasController;
+    [SerializeField] private PCUIManager pCUIManager;
     [SerializeField] private GameObject key;
     [SerializeField] private float grabKeyAnimationDuration = 2f;
     [SerializeField] private float grabKeySoundEventDelay = 0.5f;
@@ -25,6 +26,8 @@ public class DeepWebUIManager : MonoBehaviour
 
     public event System.Action LevelAccepted;
 
+    private bool canReturnToMenu = true;
+
     private void Awake()
     {
         level1Button.onClick.AddListener(() => AcceptLevel());
@@ -34,11 +37,13 @@ public class DeepWebUIManager : MonoBehaviour
     private void AcceptLevel()
     {
         if (pCCanvasController.isLevelSelected) return;
-            StartCoroutine(GrabKeyAnimation());
+
+        StartCoroutine(GrabKeyAnimation());
     }
 
     private IEnumerator GrabKeyAnimation()
     {
+        canReturnToMenu = false;
         pCCanvasController.toolAnimatorControllerlayerController.TriggerParticularAction(pCCanvasController.toolAnimatorControllerlayerController.GetGrabKeysName());
         pCCanvasController.isLevelSelected = true;
         audioManager.PlaySound(clickEvent);
@@ -93,7 +98,10 @@ public class DeepWebUIManager : MonoBehaviour
 
     private void OpenTab(GameObject go, bool state)
     {
-        go.SetActive(state);
-        audioManager.PlaySound(clickEvent);
+        if (canReturnToMenu)
+        {
+            go.SetActive(state);
+            audioManager.PlaySound(clickEvent);
+        }
     }
 }
