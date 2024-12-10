@@ -11,10 +11,7 @@ GameObject:
   - component: {fileID: 7515005036834636315}
   - component: {fileID: 8678743308124085073}
   - component: {fileID: 3798077728218327813}
-  - component: {fileID: 6157924136017105825}
-  - component: {fileID: -5145384947455634201}
-  - component: {fileID: 8137094254478716121}
-  - component: {fileID: 8070144641300385310}
+  - component: {fileID: 8109620422049030283}
   m_Layer: 0
   m_Name: SM_DishTray_02
   m_TagString: Untagged
@@ -87,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6157924136017105825
-BoxCollider:
+--- !u!64 &8109620422049030283
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -105,70 +102,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.5821368, y: 0.15431723, z: 0.76453316}
-  m_Center: {x: 0, y: 0, z: 0.000000014901161}
---- !u!54 &-5145384947455634201
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5228433344685935370}
-  serializedVersion: 4
-  m_Mass: 10
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
---- !u!114 &8137094254478716121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5228433344685935370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toolAnimatorController: {fileID: 0}
-  lerpSpeed: 10
-  rotationSpeed: 10
-  throwingForce: 10
-  breakForceThreshold: 10
-  collisionCooldown: 0.1
-  fallHeightThreshold: 5
-  isObjectMulitple: 0
-  hologramObject: {fileID: 0}
-  audioManager: {fileID: 0}
-  breakBottleEvent: Wood_Collision
-  isObjectSanityModifier: 0
-  isObjectBreakable: 1
---- !u!114 &8070144641300385310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5228433344685935370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fad5000eb9cd91244a8ce2ad49cb4b86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2532011851126282368, guid: dd944901f9fd77e4aa7dbc3fa8de3fb7, type: 3}
