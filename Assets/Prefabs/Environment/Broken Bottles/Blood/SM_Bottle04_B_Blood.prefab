@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 64b035a505c7efb43b31a19d38b3d674, type: 2}
+  - {fileID: 2100000, guid: 9635105a582087b47af3c7e0ccd3b419, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -148,15 +148,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab2b163cf7fa7c48b2f8d30d427fbf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolAnimatorController: {fileID: 0}
   lerpSpeed: 10
   rotationSpeed: 100
   throwingForce: 50
   breakForceThreshold: 10
   collisionCooldown: 0.1
   fallHeightThreshold: 1
+  isObjectMulitple: 0
   hologramObject: {fileID: 0}
   audioManager: {fileID: 0}
   breakBottleEvent: Bottle_Breaking
+  isObjectSanityModifier: 0
   isObjectBreakable: 0
 --- !u!114 &9077906662869578461
 MonoBehaviour:
