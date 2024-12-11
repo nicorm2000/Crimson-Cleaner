@@ -70,7 +70,7 @@ public class PickUpDrop : MonoBehaviour
                 {
                     DetectPickUpDrop();
                 }
-                if (cleaningManager.GetToolSelector().CurrentToolIndex != cleaningManager.GetHands())
+                if (cleaningManager.GetToolSelector().CurrentToolIndex != cleaningManager.GetHands() && cleaningManager.GetToolSelector().CurrentToolIndex != cleaningManager.GetBin())
                 {
                     if (Physics.Raycast(mainCamera.position, mainCamera.forward, out RaycastHit raycastHit, cleaningManager.GetInteractionDistance()))
                     {
