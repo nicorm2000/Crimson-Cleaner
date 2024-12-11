@@ -39,6 +39,8 @@ public class CleaningManager : MonoBehaviour
     [SerializeField] private Animator mopAnimator = null;
     [SerializeField] private Animator spongeAnimator = null;
     [SerializeField] private Animator handsAnimator = null;
+    [SerializeField] private string mopCleanAnimationName = null;
+    [SerializeField] private string spongeCleanAnimationName = null;
     
     [Header("Interaction")]
     [SerializeField] private LayerMask mopLayerMask;
@@ -129,12 +131,6 @@ public class CleaningManager : MonoBehaviour
         DirtyMaxValue = 100;
         if (cleaningTool)
             DirtyIncrementAmount = cleaningTool.DirtyIncrement;
-    }
-
-    public void ModifyAnimationSpeed(int scalar)
-    {
-        mopAnimator.speed = scalar;
-        spongeAnimator.speed = scalar;
     }
 
     public Camera GetCamera() => gameCamera;

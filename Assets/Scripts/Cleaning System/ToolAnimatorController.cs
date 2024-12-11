@@ -54,6 +54,7 @@ public class ToolAnimatorController : MonoBehaviour
 
     [Header("Particular Actions")]
     [SerializeField] private string cleaning;
+    [SerializeField] private string cleaningRage;
     [SerializeField] private string bucket;
     [SerializeField] private string pc;
     [SerializeField] private string grabKeysName;
@@ -195,6 +196,7 @@ public class ToolAnimatorController : MonoBehaviour
     public Animator GetAnimator() => animator;
 
     public string GetCleaningName() => cleaning;
+    public string GetCleaningRageName() => cleaningRage;
     public string GetBucketName() => bucket;
 
     public string GetHandsPickupName() => handsPickupName;

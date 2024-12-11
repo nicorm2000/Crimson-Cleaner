@@ -98,7 +98,10 @@ public class Clean : MonoBehaviour, ICleanable
 
         if (toolIndex == cleaningManager.GetMop() || toolIndex == cleaningManager.GetSponge())
         {
-            cleaningManager.GetToolSelector().toolAnimatorController.TriggerParticularAction(cleaningManager.GetToolSelector().toolAnimatorController.GetCleaningName(), isCleaning);
+            if (SanityManager.Instance.isRageActive)
+                cleaningManager.GetToolSelector().toolAnimatorController.TriggerParticularAction(cleaningManager.GetToolSelector().toolAnimatorController.GetCleaningRageName(), isCleaning);
+            else
+                cleaningManager.GetToolSelector().toolAnimatorController.TriggerParticularAction(cleaningManager.GetToolSelector().toolAnimatorController.GetCleaningName(), isCleaning);
         }
     }
 
